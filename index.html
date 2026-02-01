@@ -115,6 +115,35 @@
     .theme-toggle svg.moon {
       display: block;
     }
+    
+    /* Mobile Pipeline Scroll */
+    .pipeline-scroll {
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .pipeline-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .pipeline-column {
+      scroll-snap-align: start;
+    }
+    
+    /* Touch feedback */
+    .touch-manipulation {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .active\:scale-95:active {
+      transform: scale(0.95);
+    }
+    
+    /* Hide hover effects on touch devices */
+    @media (hover: none) {
+      [onmouseover], [onmouseout] {
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -232,15 +261,23 @@
   <!-- Demo -->
   <section id="demo" class="py-12 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-8">
+      <div class="text-center mb-6 md:mb-8">
         <p class="text-xs text-sky-400 font-mono mb-3">TASK PIPELINE DEMO</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-2">任务甬道交互演示</h2>
-        <p class="text-[var(--text-secondary)] text-sm">拖拽任务卡片，体验 4 阶段工作流</p>
+        <h2 class="text-xl md:text-3xl font-bold text-[var(--text-primary)] mb-2">任务甬道交互演示</h2>
+        <p class="text-[var(--text-secondary)] text-xs md:text-sm">拖拽卡片或点击查看 · 左右滑动切换阶段</p>
       </div>
 
-      <div class="grid md:grid-cols-4 gap-4" id="pipeline-board">
+      <!-- 移动端水平滚动容器 -->
+      <div class="pipeline-scroll md:grid md:grid-cols-4 gap-3 md:gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth" id="pipeline-board">
+        <!-- 滚动指示器 (移动端) -->
+        <div class="md:hidden absolute left-4 bottom-2 flex gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+        </div>
         <!-- Todo -->
-        <div class="pipeline-column bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" data-status="todo">
+        <div class="pipeline-column flex-shrink-0 w-[85vw] md:w-auto md:flex-1 bg-[var(--bg-card)] rounded-xl p-3 md:p-4 border border-[var(--border-color)]" data-status="todo">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
               <span class="text-lg">📋</span>
@@ -248,22 +285,22 @@
             </div>
             <span class="todo-count text-xs text-[var(--text-muted)] bg-[var(--bg-tertiary)] px-2 py-0.5 rounded-full">3</span>
           </div>
-          <div class="task-list space-y-3 min-h-[200px]">
-            <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-4 border border-[var(--border-color)] cursor-grab" draggable="true" data-id="task-1" data-type="product">
+          <div class="task-list space-y-2 md:space-y-3 min-h-[120px] md:min-h-[200px]">
+            <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-3 md:p-4 border border-[var(--border-color)] cursor-grab active:scale-95 touch-manipulation" draggable="true" data-id="task-1" data-type="product">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-mono" style="color: #a855f7;">PRD-001</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(168, 85, 247, 0.2); color: #a855f7;">产品</span>
               </div>
               <p class="text-sm text-[var(--text-primary)]">设计用户反馈系统原型</p>
             </div>
-            <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-4 border border-[var(--border-color)] cursor-grab" draggable="true" data-id="task-2" data-type="design">
+            <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-3 md:p-4 border border-[var(--border-color)] cursor-grab active:scale-95 touch-manipulation" draggable="true" data-id="task-2" data-type="design">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-mono" style="color: #ec4899;">DES-002</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(236, 72, 153, 0.2); color: #ec4899;">设计</span>
               </div>
               <p class="text-sm text-[var(--text-primary)]">设计登录页面 UI</p>
             </div>
-            <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-4 border border-[var(--border-color)] cursor-grab" draggable="true" data-id="task-3" data-type="dev">
+            <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-3 md:p-4 border border-[var(--border-color)] cursor-grab active:scale-95 touch-manipulation" draggable="true" data-id="task-3" data-type="dev">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-mono" style="color: var(--accent-primary);">DEV-003</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">开发</span>
@@ -274,7 +311,7 @@
         </div>
 
         <!-- Plan -->
-        <div class="pipeline-column bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" data-status="plan">
+        <div class="pipeline-column flex-shrink-0 w-[85vw] md:w-auto md:flex-1 bg-[var(--bg-card)] rounded-xl p-3 md:p-4 border border-[var(--border-color)]" data-status="plan">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
               <span class="text-lg">📝</span>
@@ -282,8 +319,8 @@
             </div>
             <span class="plan-count text-xs text-[var(--text-muted)] bg-[var(--bg-tertiary)] px-2 py-0.5 rounded-full">1</span>
           </div>
-          <div class="task-list space-y-3 min-h-[200px]">
-            <div class="task-card bg-yellow-500/5 rounded-lg p-4 border border-yellow-500/30 cursor-grab" draggable="true" data-id="task-4" data-type="product">
+          <div class="task-list space-y-2 md:space-y-3 min-h-[120px] md:min-h-[200px]">
+            <div class="task-card bg-yellow-500/5 rounded-lg p-3 md:p-4 border border-yellow-500/30 cursor-grab active:scale-95 touch-manipulation" draggable="true" data-id="task-4" data-type="product">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-mono" style="color: #eab308;">PRD-002</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(234, 179, 8, 0.2); color: #eab308;">产品</span>
@@ -297,7 +334,7 @@
         </div>
 
         <!-- Doing -->
-        <div class="pipeline-column bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" data-status="doing">
+        <div class="pipeline-column flex-shrink-0 w-[85vw] md:w-auto md:flex-1 bg-[var(--bg-card)] rounded-xl p-3 md:p-4 border border-[var(--border-color)]" data-status="doing">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
               <span class="text-lg">⚡</span>
@@ -306,8 +343,8 @@
             </div>
             <span class="doing-count text-xs text-[var(--text-muted)] bg-[var(--bg-tertiary)] px-2 py-0.5 rounded-full">1</span>
           </div>
-          <div class="task-list space-y-3 min-h-[200px]">
-            <div class="task-card bg-sky-500/5 rounded-lg p-4 border border-sky-500/30 cursor-grab" draggable="true" data-id="task-5" data-type="dev">
+          <div class="task-list space-y-2 md:space-y-3 min-h-[120px] md:min-h-[200px]">
+            <div class="task-card bg-sky-500/5 rounded-lg p-3 md:p-4 border border-sky-500/30 cursor-grab active:scale-95 touch-manipulation" draggable="true" data-id="task-5" data-type="dev">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-mono" style="color: var(--accent-primary);">DEV-001</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(59, 130, 246, 0.2); color: #3b82f6;">开发</span>
@@ -327,7 +364,7 @@
         </div>
 
         <!-- Done -->
-        <div class="pipeline-column bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" data-status="done">
+        <div class="pipeline-column flex-shrink-0 w-[85vw] md:w-auto md:flex-1 bg-[var(--bg-card)] rounded-xl p-3 md:p-4 border border-[var(--border-color)]" data-status="done">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
               <span class="text-lg">✅</span>
@@ -335,8 +372,8 @@
             </div>
             <span class="done-count text-xs text-[var(--text-muted)] bg-[var(--bg-tertiary)] px-2 py-0.5 rounded-full">1</span>
           </div>
-          <div class="task-list space-y-3 min-h-[200px]">
-            <div class="task-card bg-emerald-500/5 rounded-lg p-4 border border-emerald-500/20 opacity-75 cursor-grab" draggable="true" data-id="task-6" data-type="design">
+          <div class="task-list space-y-2 md:space-y-3 min-h-[120px] md:min-h-[200px]">
+            <div class="task-card bg-emerald-500/5 rounded-lg p-3 md:p-4 border border-emerald-500/20 opacity-75 cursor-grab active:scale-95 touch-manipulation" draggable="true" data-id="task-6" data-type="design">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-mono" style="color: #22c55e;">DES-001</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(34, 197, 94, 0.15); color: #22c55e;">设计</span>
@@ -351,7 +388,7 @@
       </div>
 
       <!-- AI Assistant -->
-      <div class="mt-6 bg-[var(--bg-card)] rounded-xl p-5 max-w-md mx-auto border border-[var(--border-color)]">
+      <div class="mt-4 md:mt-6 bg-[var(--bg-card)] rounded-xl p-4 md:p-5 max-w-md mx-auto border border-[var(--border-color)]">
         <div class="flex items-start gap-3">
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
             <span class="text-lg">🤖</span>
@@ -587,7 +624,7 @@
     <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeTaskModal()"></div>
     
     <!-- Modal Content -->
-    <div class="absolute inset-4 md:inset-8 lg:inset-12 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)] flex overflow-hidden shadow-2xl">
+    <div class="absolute inset-0 md:inset-4 lg:inset-12 bg-[var(--bg-secondary)] rounded-none md:rounded-2xl border border-[var(--border-color)] flex flex-col overflow-hidden shadow-2xl">
       <!-- Close Button -->
       <button onclick="closeTaskModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-[var(--bg-tertiary)] hover:bg-[var(--bg-tertiary)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -596,7 +633,7 @@
       </button>
       
       <!-- Left Panel: Task Info -->
-      <div class="w-full md:w-[60%] lg:w-[62%] border-r border-[var(--border-color)] flex flex-col">
+      <div class="w-full md:w-[60%] lg:w-[62%] border-b md:border-b-0 md:border-r border-[var(--border-color)] flex flex-col overflow-y-auto">
         <!-- Task Header -->
         <div class="p-6 border-b border-[var(--border-color)]">
           <div class="flex items-center gap-3 mb-3">
@@ -607,9 +644,9 @@
         </div>
         
         <!-- Task Properties -->
-        <div class="p-6 border-b border-[var(--border-color)]">
+        <div class="p-4 md:p-6 border-b border-[var(--border-color)]">
           <h3 class="text-xs text-[var(--text-muted)] font-medium mb-4 uppercase tracking-wider">Properties</h3>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-3 md:gap-4">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 rounded-full bg-[var(--bg-tertiary)] flex items-center justify-center text-sm">👤</div>
               <div>
@@ -642,7 +679,7 @@
         </div>
         
         <!-- Task Description -->
-        <div class="flex-1 p-6 overflow-y-auto">
+        <div class="flex-1 p-4 md:p-6 overflow-y-auto">
           <h3 class="text-xs text-[var(--text-muted)] font-medium mb-4 uppercase tracking-wider">Description</h3>
           <div class="prose prose-invert prose-sm max-w-none">
             <p class="text-[var(--text-secondary)] leading-relaxed">
