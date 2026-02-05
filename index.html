@@ -813,11 +813,54 @@
       <p class="text-xs text-sky-400 font-mono mb-3">JOIN US</p>
       <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3">一起打造未来工作方式</h2>
       <p class="text-[var(--text-secondary)] text-sm mb-6">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
-      <form onsubmit="event.preventDefault(); alert('感谢加入！我们会发送最新动态到你的邮箱。'); this.reset();" class="space-y-3">
-        <input type="email" placeholder="输入你的邮箱" required class="w-full px-4 py-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-slate-500 text-sm" style="outline: none;">
-        <button type="submit" class="w-full px-6 py-3 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">加入等待列表</button>
+      <form id="joinForm" class="space-y-3">
+        <input type="email" id="emailInput" placeholder="输入你的邮箱" required class="w-full px-4 py-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-slate-500 text-sm" style="outline: none;">
+        <button type="submit" id="submitBtn" class="w-full px-6 py-3 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">加入等待列表</button>
+        <p id="formStatus" class="text-sm"></p>
       </form>
-      <p class="text-[var(--text-muted)] text-xs mt-4">已有 <span class="text-sky-400 font-mono">127</span> 人加入</p>
+      <script>
+      async function handleJoin(event) {
+        event.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('formStatus');
+        
+        btn.disabled = true;
+        btn.textContent = '提交中...';
+        
+        try {
+          const response = await fetch('/api/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+          });
+          
+          if (response.ok) {
+            status.textContent = '✅ 感谢加入！我们会发送最新动态到你的邮箱。';
+            status.className = 'text-sm text-green-400';
+            document.getElementById('joinForm').reset();
+          } else {
+            status.textContent = '❌ 提交失败，请重试。';
+            status.className = 'text-sm text-red-400';
+          }
+        } catch (e) {
+          status.textContent = '❌ 网络错误，请重试。';
+          status.className = 'text-sm text-red-400';
+        }
+        
+        btn.disabled = false;
+        btn.textContent = '加入等待列表';
+      }
+      document.getElementById('joinForm').addEventListener('submit', handleJoin);
+      </script>
+      <p class="text-[var(--text-muted)] text-xs mt-4">已有 <span id="joinCount" class="text-sky-400 font-mono">--</span> 人加入</p>
+      <script>
+      // 获取实时人数
+      fetch('/api/count')
+        .then(r => r.json())
+        .then(d => document.getElementById('joinCount').textContent = d.count)
+        .catch(() => document.getElementById('joinCount').textContent = '127');
+      </script>
     </div>
   </section>
 
