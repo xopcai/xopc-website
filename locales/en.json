@@ -112,6 +112,10 @@
     "aiSuggestionDone": "Task completed! AI is summarizing insights."
   },
   "join": {
+    "emailPlaceholder": "Enter your email",
+    "submitting": "Submitting...",
+    "submitSuccess": "Thank you for joining! We'll send updates to your email.",
+    "submitError": "Submission failed, please try again.",
     "alreadyJoined": "",
     "peopleJoined": " people joined"
   },

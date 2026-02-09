@@ -812,10 +812,10 @@
   <section id="join" class="py-12 px-4" style="background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));">
     <div class="max-w-md mx-auto text-center">
       <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="join.sectionLabel">JOIN US</p>
-      <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3" data-i18n="join.title" data-i18n="join.title">一起打造未来工作方式</h2>
-      <p class="text-[var(--text-secondary)] text-sm mb-6" data-i18n="join.subtitle" data-i18n="join.subtitle">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
+      <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3" data-i18n="join.title">一起打造未来工作方式</h2>
+      <p class="text-[var(--text-secondary)] text-sm mb-6" data-i18n="join.subtitle">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
       <form id="joinForm" class="space-y-3">
-        <input type="email" id="emailInput" placeholder="输入你的邮箱" required class="w-full px-4 py-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-slate-500 text-sm" style="outline: none;">
+        <input type="email" id="emailInput" placeholder data-i18n="join.emailPlaceholder" required class="w-full px-4 py-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-slate-500 text-sm" style="outline: none;">
         <button type="submit" id="submitBtn" class="w-full px-6 py-3 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);" data-i18n="join.submitButton">加入等待列表</button>
         <p id="formStatus" class="text-sm"></p>
       </form>
@@ -827,7 +827,7 @@
         const status = document.getElementById('formStatus');
         
         btn.disabled = true;
-        btn.textContent = '提交中...';
+        btn.textContent = i18n.get('join.submitting') || '提交中...';
         
         try {
           const response = await fetch('/api/join', {
@@ -837,20 +837,20 @@
           });
           
           if (response.ok) {
-            status.textContent = '✅ 感谢加入！我们会发送最新动态到你的邮箱。';
+            status.textContent = i18n.get('join.submitSuccess') || '✅ 感谢加入！我们会发送最新动态到你的邮箱。';
             status.className = 'text-sm text-green-400';
             document.getElementById('joinForm').reset();
           } else {
-            status.textContent = '❌ 提交失败，请重试。';
+            status.textContent = i18n.get('join.submitError') || '❌ 提交失败，请重试。';
             status.className = 'text-sm text-red-400';
           }
         } catch (e) {
-          status.textContent = '❌ 网络错误，请重试。';
+          status.textContent = i18n.get('join.networkError') || '❌ 网络错误，请重试。';
           status.className = 'text-sm text-red-400';
         }
         
         btn.disabled = false;
-        btn.textContent = '加入等待列表';
+        btn.textContent = i18n.get('join.submitButton') || '加入等待列表';
       }
       document.getElementById('joinForm').addEventListener('submit', handleJoin);
       </script>

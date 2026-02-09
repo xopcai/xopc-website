@@ -123,6 +123,10 @@
     "aiSuggestionDone": "💡 任务完成！AI 正在总结经验。"
   },
   "join": {
+    "emailPlaceholder": "输入你的邮箱",
+    "submitting": "提交中...",
+    "submitSuccess": "✅ 感谢加入！我们会发送最新动态到你的邮箱。",
+    "submitError": "❌ 提交失败，请重试。",
     "alreadyJoined": "",
     "peopleJoined": " 人加入"
   },
