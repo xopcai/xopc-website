@@ -521,7 +521,7 @@
                 <span class="text-xs font-mono" style="color: #a855f7;">PRD-001</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(168, 85, 247, 0.2); color: #a855f7;" data-i18n="taskLabels.product">产品</span>
               </div>
-              <p class="text-sm text-[var(--text-primary)]" data-i18n="taskTitles.task1" data-i18n="taskDetail.task1Title">设计用户反馈系统原型</p>
+              <p class="text-sm text-[var(--text-primary)]" data-i18n="taskDetail.task1Title">设计用户反馈系统原型</p>
             </div>
             <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-4 border border-[var(--border-color)] cursor-grab" draggable="true" data-id="task-2" data-type="design">
               <div class="flex items-center justify-between mb-2">
@@ -950,12 +950,12 @@
         
         <!-- Task Description -->
         <div class="flex-1 p-6 overflow-y-auto">
-          <h3 class="text-xs text-[var(--text-muted)] font-medium mb-4 uppercase tracking-wider">Description</h3>
+          <h3 class="text-xs text-[var(--text-muted)] font-medium mb-4 uppercase tracking-wider" data-i18n="taskModal.description">Description</h3>
           <div class="prose prose-invert prose-sm max-w-none">
-            <p class="text-[var(--text-secondary)] leading-relaxed">
+            <p class="text-[var(--text-secondary)] leading-relaxed" data-i18n="taskDetail.task1Desc">
               设计一个完整的用户反馈系统原型，包括反馈提交表单、反馈列表管理、反馈处理工作流等功能。
             </p>
-            <h4 class="text-[var(--text-primary)] font-medium mt-4 mb-2">Requirements:</h4>
+            <h4 class="text-[var(--text-primary)] font-medium mt-4 mb-2" data-i18n="taskModal.requirements">Requirements:</h4>
             <ul class="text-[var(--text-secondary)] space-y-1 list-disc list-inside">
               <li data-i18n="taskDetail.task1Req1">支持多种反馈类型（Bug / Feature / Question）</li>
               <li data-i18n="taskDetail.task1Req2">反馈提交后自动分类和优先级排序</li>
@@ -966,19 +966,19 @@
           
           <!-- Subtasks -->
           <div class="mt-6">
-            <h3 class="text-xs text-[var(--text-muted)] font-medium mb-3 uppercase tracking-wider">Subtasks</h3>
+            <h3 class="text-xs text-[var(--text-muted)] font-medium mb-3 uppercase tracking-wider" data-i18n="taskModal.subtasks">Subtasks</h3>
             <div class="space-y-2">
               <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--bg-card)] cursor-pointer">
                 <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-[var(--bg-tertiary)] text-cyan-500 focus:ring-cyan-500">
-                <span class="text-sm text-[var(--text-secondary)]">设计反馈表单 UI</span>
+                <span class="text-sm text-[var(--text-secondary)]" data-i18n="taskModal.subtask1">设计反馈表单 UI</span>
               </label>
               <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--bg-card)] cursor-pointer">
                 <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-[var(--bg-tertiary)] text-cyan-500 focus:ring-cyan-500">
-                <span class="text-sm text-[var(--text-secondary)]">实现表单验证逻辑</span>
+                <span class="text-sm text-[var(--text-secondary)]" data-i18n="taskModal.subtask2">实现表单验证逻辑</span>
               </label>
               <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--bg-card)] cursor-pointer">
                 <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-[var(--bg-tertiary)] text-cyan-500 focus:ring-cyan-500">
-                <span class="text-sm text-[var(--text-secondary)] line-through">设计反馈列表页面</span>
+                <span class="text-sm text-[var(--text-secondary)] line-through" data-i18n="taskModal.subtask3">设计反馈列表页面</span>
               </label>
             </div>
           </div>
@@ -1150,7 +1150,7 @@
       const descEl = modal.querySelector('.prose');
       descEl.innerHTML = `
         <p class="text-[var(--text-secondary)] leading-relaxed">${task.description}</p>
-        <h4 class="text-[var(--text-primary)] font-medium mt-4 mb-2">Requirements:</h4>
+        <h4 class="text-[var(--text-primary)] font-medium mt-4 mb-2" data-i18n="taskModal.requirements">Requirements:</h4>
         <ul class="text-[var(--text-secondary)] space-y-1 list-disc list-inside">
           ${task.requirements.map(r => `<li>${r}</li>`).join('')}
         </ul>

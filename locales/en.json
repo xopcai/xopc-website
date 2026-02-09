@@ -128,12 +128,9 @@
     "discord": "Discord"
   },
   "taskModal": {
-    "aiWelcome": "Hello! I'm XOPC AI Assistant. Regarding this task, I can help you with:",
-    "feature1": "Analyze task requirements",
-    "feature2": "Generate implementation plans",
-    "feature3": "Write code or documentation",
-    "feature4": "Answer related questions",
-    "wantMore": "Would you like me to elaborate on any part? Or tell me your specific needs.",
+    "description": "Description",
+    "requirements": "Requirements:",
+    "subtasks": "Subtasks",
     "subtask1": "Design feedback form UI",
     "subtask2": "Implement form validation logic",
     "subtask3": "Design feedback list page"
@@ -152,10 +149,6 @@
     "task6": "Design Logo Draft"
   },
   "taskDetail": {
-    "task1Title": "Design User Feedback System Prototype",
-    "task1Req1": "Support multiple feedback types (Bug / Feature / Question)",
-    "task1Req2": "Auto categorize and prioritize after submission",
-    "task1Req3": "Support screenshot and file uploads",
-    "task1Req4": "Real-time status update notifications"
+    "task1Desc": "Design a complete user feedback system prototype, including feedback submission form, feedback list management, feedback processing workflow, etc."
   }
 }

@@ -137,31 +137,12 @@
     "discord": "Discord"
   },
   "taskModal": {
-    "assignee": "Assignee",
-    "you": "You",
-    "priority": "Priority",
-    "high": "High",
-    "dueDate": "Due Date",
-    "labels": "Labels",
     "description": "Description",
     "requirements": "Requirements:",
     "subtasks": "Subtasks",
-    "aiWelcome": "你好！我是 XOPC AI 助手。关于这个任务，我可以帮你：",
-    "aiFeatures": [
-      "分析任务需求",
-      "生成实现方案",
-      "编写代码或文档",
-      "回答相关问题"
-    ],
-    "chatPlaceholder": "Ask AI about this task...",
-    "aiDisclaimer": "AI can make mistakes. Please verify important information.",
-    "aiResponses": [
-      "这是一个很好的问题！让我帮你分析一下...",
-      "根据任务描述，我建议可以按以下步骤实现：",
-      "这个功能可以参考业界最佳实践，比如 Trello 或 Notion 的做法。",
-      "我来帮你生成一个初步的实现方案。"
-    ],
-    "wantMore": "想要我详细展开某个部分吗？或者告诉我你的具体需求。"
+    "subtask1": "设计反馈表单 UI",
+    "subtask2": "实现表单验证逻辑",
+    "subtask3": "设计反馈列表页面"
   },
   "taskLabels": {
     "product": "产品",
@@ -175,5 +156,8 @@
     "task4": "确认支付流程方案",
     "task5": "生成 API 文档",
     "task6": "设计 Logo 草图"
+  },
+  "taskDetail": {
+    "task1Desc": "设计一个完整的用户反馈系统原型，包括反馈提交表单、反馈列表管理、反馈处理工作流等功能。"
   }
 }
