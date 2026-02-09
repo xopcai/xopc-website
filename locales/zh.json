@@ -123,15 +123,8 @@
     "aiSuggestionDone": "💡 任务完成！AI 正在总结经验。"
   },
   "join": {
-    "sectionLabel": "JOIN US",
-    "title": "一起打造未来工作方式",
-    "subtitle": "XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。",
-    "emailPlaceholder": "输入你的邮箱",
-    "submitButton": "加入等待列表",
-    "success": "✅ 感谢加入！我们会发送最新动态到你的邮箱。",
-    "error": "❌ 提交失败，请重试。",
-    "networkError": "❌ 网络错误，请重试。",
-    "alreadyJoined": "已有"
+    "alreadyJoined": "",
+    "peopleJoined": " 人加入"
   },
   "footer": {
     "copyright": "© 2026",

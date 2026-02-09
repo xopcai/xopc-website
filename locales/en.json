@@ -38,21 +38,10 @@
     "videoNotSupported": "Your browser does not support video playback"
   },
   "howItWorks": {
-    "sectionLabel": "HOW IT WORKS",
-    "title": "How AI Helps You Work",
-    "description": "XOPC enables one person to do the work of an entire team through intelligent task scheduling, automated workflow orchestration, and human-machine collaboration.",
-    "step1Title": "Natural Conversation",
-    "step1Desc": "Describe your needs in everyday language, AI understands and breaks down tasks",
-    "step2Title": "Auto Planning",
-    "step2Desc": "AI automatically generates task lists, assigns priorities and dependencies",
-    "step3Title": "Auto Execution",
-    "step3Desc": "AI handles tasks in parallel, automatically generating code, designs, and documents",
-    "step4Title": "Human Confirmation",
-    "step4Desc": "Human in the loop at key points to ensure quality and direction",
-    "youDescribe": "You describe needs",
-    "aiEngine": "AI Engine",
-    "outputResult": "Output result",
-    "youConfirm": "You confirm"
+    "step1Title": "1. Natural Conversation",
+    "step2Title": "2. Auto Planning",
+    "step3Title": "3. Auto Execution",
+    "step4Title": "4. Human Confirmation"
   },
   "useCases": {
     "sectionLabel": "USE CASES",
@@ -123,15 +112,8 @@
     "aiSuggestionDone": "Task completed! AI is summarizing insights."
   },
   "join": {
-    "sectionLabel": "JOIN US",
-    "title": "Build the Future of Work Together",
-    "subtitle": "XOPC is building the AI-era personal productivity operating system. Join the waitlist to become an early access user.",
-    "emailPlaceholder": "Enter your email",
-    "submitButton": "Join Waitlist",
-    "success": "Thank you for joining! Well send updates to your email.",
-    "error": "Submission failed, please try again.",
-    "networkError": "Network error, please try again.",
-    "alreadyJoined": "already joined"
+    "alreadyJoined": "",
+    "peopleJoined": " people joined"
   },
   "footer": {
     "copyright": "© 2026",
@@ -140,31 +122,15 @@
     "discord": "Discord"
   },
   "taskModal": {
-    "assignee": "Assignee",
-    "you": "You",
-    "priority": "Priority",
-    "high": "High",
-    "dueDate": "Due Date",
-    "labels": "Labels",
-    "description": "Description",
-    "requirements": "Requirements:",
-    "subtasks": "Subtasks",
-    "aiWelcome": "Hello! Im XOPC AI Assistant. Regarding this task, I can help you with:",
-    "aiFeatures": [
-      "Analyze task requirements",
-      "Generate implementation plans",
-      "Write code or documentation",
-      "Answer related questions"
-    ],
-    "chatPlaceholder": "Ask AI about this task...",
-    "aiDisclaimer": "AI can make mistakes. Please verify important information.",
-    "aiResponses": [
-      "Great question! Let me analyze it for you...",
-      "Based on the task description, I suggest implementing it in these steps:",
-      "You can refer to industry best practices like Trello or Notion.",
-      "Let me generate an initial implementation plan for you."
-    ],
-    "wantMore": "Would you like me to elaborate on any part? Or tell me your specific needs."
+    "aiWelcome": "Hello! I'm XOPC AI Assistant. Regarding this task, I can help you with:",
+    "feature1": "Analyze task requirements",
+    "feature2": "Generate implementation plans",
+    "feature3": "Write code or documentation",
+    "feature4": "Answer related questions",
+    "wantMore": "Would you like me to elaborate on any part? Or tell me your specific needs.",
+    "subtask1": "Design feedback form UI",
+    "subtask2": "Implement form validation logic",
+    "subtask3": "Design feedback list page"
   },
   "taskLabels": {
     "product": "Product",
@@ -178,5 +144,12 @@
     "task4": "Confirm Payment Flow Plan",
     "task5": "Generate API Documentation",
     "task6": "Design Logo Draft"
+  },
+  "taskDetail": {
+    "task1Title": "Design User Feedback System Prototype",
+    "task1Req1": "Support multiple feedback types (Bug / Feature / Question)",
+    "task1Req2": "Auto categorize and prioritize after submission",
+    "task1Req3": "Support screenshot and file uploads",
+    "task1Req4": "Real-time status update notifications"
   }
 }

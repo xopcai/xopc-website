@@ -250,28 +250,28 @@
           <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] flex items-center justify-center">
             <span class="text-2xl">💬</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">1. 自然对话</h3>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="howItWorks.step1Title">1. 自然对话</h3>
           <p class="text-sm text-[var(--text-muted)]" data-i18n="howItWorks.step1Desc">用日常语言描述需求，AI 理解并拆解任务</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] flex items-center justify-center">
             <span class="text-2xl">📋</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">2. 自动规划</h3>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="howItWorks.step2Title">2. 自动规划</h3>
           <p class="text-sm text-[var(--text-muted)]" data-i18n="howItWorks.step2Desc">AI 自动生成任务清单，分配优先级和依赖关系</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] flex items-center justify-center">
             <span class="text-2xl">⚡</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">3. 自动执行</h3>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="howItWorks.step3Title">3. 自动执行</h3>
           <p class="text-sm text-[var(--text-muted)]" data-i18n="howItWorks.step3Desc">AI 并行处理任务，自动生成代码、设计、文档</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] flex items-center justify-center">
             <span class="text-2xl">✅</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">4. 人工确认</h3>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="howItWorks.step4Title">4. 人工确认</h3>
           <p class="text-sm text-[var(--text-muted)]" data-i18n="howItWorks.step4Desc">关键节点 Human in Loop，确保质量和方向</p>
         </div>
       </div>
@@ -395,7 +395,7 @@
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12">
         <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="faq.sectionLabel">FAQ</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]" data-i18n="faq.title">常见问题</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]" data-i18n="faq.title" data-i18n="faq.title">常见问题</h2>
       </div>
 
       <div class="space-y-4">
@@ -521,7 +521,7 @@
                 <span class="text-xs font-mono" style="color: #a855f7;">PRD-001</span>
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background-color: rgba(168, 85, 247, 0.2); color: #a855f7;" data-i18n="taskLabels.product">产品</span>
               </div>
-              <p class="text-sm text-[var(--text-primary)]" data-i18n="taskTitles.task1">设计用户反馈系统原型</p>
+              <p class="text-sm text-[var(--text-primary)]" data-i18n="taskTitles.task1" data-i18n="taskDetail.task1Title">设计用户反馈系统原型</p>
             </div>
             <div class="task-card bg-[var(--bg-tertiary)] rounded-lg p-4 border border-[var(--border-color)] cursor-grab" draggable="true" data-id="task-2" data-type="design">
               <div class="flex items-center justify-between mb-2">
@@ -812,8 +812,8 @@
   <section id="join" class="py-12 px-4" style="background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));">
     <div class="max-w-md mx-auto text-center">
       <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="join.sectionLabel">JOIN US</p>
-      <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3" data-i18n="join.title">一起打造未来工作方式</h2>
-      <p class="text-[var(--text-secondary)] text-sm mb-6" data-i18n="join.subtitle">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
+      <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3" data-i18n="join.title" data-i18n="join.title">一起打造未来工作方式</h2>
+      <p class="text-[var(--text-secondary)] text-sm mb-6" data-i18n="join.subtitle" data-i18n="join.subtitle">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
       <form id="joinForm" class="space-y-3">
         <input type="email" id="emailInput" placeholder="输入你的邮箱" required class="w-full px-4 py-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-slate-500 text-sm" style="outline: none;">
         <button type="submit" id="submitBtn" class="w-full px-6 py-3 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);" data-i18n="join.submitButton">加入等待列表</button>
@@ -854,7 +854,7 @@
       }
       document.getElementById('joinForm').addEventListener('submit', handleJoin);
       </script>
-      <p class="text-[var(--text-muted)] text-xs mt-4">已有 <span id="joinCount" class="text-sky-400 font-mono">--</span> 人加入</p>
+      <p class="text-[var(--text-muted)] text-xs mt-4" data-i18n="join.alreadyJoined">已有 </span><span id="joinCount" class="text-sky-400 font-mono">--</span> 人加入</p>
       <script>
       // 获取实时人数
       fetch('/api/count')
@@ -957,10 +957,10 @@
             </p>
             <h4 class="text-[var(--text-primary)] font-medium mt-4 mb-2">Requirements:</h4>
             <ul class="text-[var(--text-secondary)] space-y-1 list-disc list-inside">
-              <li>支持多种反馈类型（Bug / Feature / Question）</li>
-              <li>反馈提交后自动分类和优先级排序</li>
-              <li>支持截图和附件上传</li>
-              <li>实时反馈状态更新通知</li>
+              <li data-i18n="taskDetail.task1Req1">支持多种反馈类型（Bug / Feature / Question）</li>
+              <li data-i18n="taskDetail.task1Req2">反馈提交后自动分类和优先级排序</li>
+              <li data-i18n="taskDetail.task1Req3">支持截图和附件上传</li>
+              <li data-i18n="taskDetail.task1Req4">实时反馈状态更新通知</li>
             </ul>
           </div>
           
@@ -1002,12 +1002,12 @@
               <span class="text-sm">🤖</span>
             </div>
             <div class="bg-[var(--bg-tertiary)] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
-              <p class="text-sm text-[var(--text-primary)]">你好！我是 XOPC AI 助手。关于这个任务，我可以帮你：</p>
+              <p class="text-sm text-[var(--text-primary)]" data-i18n="taskModal.aiWelcome">你好！我是 XOPC AI 助手。关于这个任务，我可以帮你：</p>
               <ul class="text-sm text-[var(--text-secondary)] mt-2 space-y-1 list-disc list-inside">
-                <li>分析任务需求</li>
-                <li>生成实现方案</li>
-                <li>编写代码或文档</li>
-                <li>回答相关问题</li>
+                <li data-i18n="taskModal.feature1">分析任务需求</li>
+                <li data-i18n="taskModal.feature2">生成实现方案</li>
+                <li data-i18n="taskModal.feature3">编写代码或文档</li>
+                <li data-i18n="taskModal.feature4">回答相关问题</li>
               </ul>
             </div>
           </div>
@@ -1188,12 +1188,12 @@
             <span class="text-sm">🤖</span>
           </div>
           <div class="bg-[var(--bg-tertiary)] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
-            <p class="text-sm text-[var(--text-primary)]">你好！我是 XOPC AI 助手。关于这个任务，我可以帮你：</p>
+            <p class="text-sm text-[var(--text-primary)]" data-i18n="taskModal.aiWelcome">你好！我是 XOPC AI 助手。关于这个任务，我可以帮你：</p>
             <ul class="text-sm text-[var(--text-secondary)] mt-2 space-y-1 list-disc list-inside">
-              <li>分析任务需求</li>
-              <li>生成实现方案</li>
-              <li>编写代码或文档</li>
-              <li>回答相关问题</li>
+              <li data-i18n="taskModal.feature1">分析任务需求</li>
+              <li data-i18n="taskModal.feature2">生成实现方案</li>
+              <li data-i18n="taskModal.feature3">编写代码或文档</li>
+              <li data-i18n="taskModal.feature4">回答相关问题</li>
             </ul>
           </div>
         </div>
@@ -1258,7 +1258,7 @@
             </div>
             <div class="bg-[var(--bg-tertiary)] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
               <p class="text-sm text-[var(--text-primary)]">${randomResponse}</p>
-              <p class="text-sm text-[var(--text-secondary)] mt-2">想要我详细展开某个部分吗？或者告诉我你的具体需求。</p>
+              <p class="text-sm text-[var(--text-secondary)] mt-2" data-i18n="taskModal.wantMore">想要我详细展开某个部分吗？或者告诉我你的具体需求。</p>
             </div>
           </div>
         `;
