@@ -126,12 +126,16 @@
         <span class="text-xs border px-2 py-0.5 rounded" style="border-color: var(--accent-primary); color: var(--accent-primary); background: var(--accent-glow);">ALPHA</span>
       </div>
       <nav class="hidden md:flex items-center gap-6">
-        <a href="#vision" class="text-sm transition-colors" style="color: var(--text-secondary);">Vision</a>
-        <a href="#demo" class="text-sm transition-colors" style="color: var(--text-secondary);">Demo</a>
-        <a href="#join" class="text-sm transition-colors" style="color: var(--text-secondary);">Join</a>
+        <a href="#vision" class="text-sm transition-colors" style="color: var(--text-secondary);" data-i18n="nav.vision">Vision</a>
+        <a href="#demo" class="text-sm transition-colors" style="color: var(--text-secondary);" data-i18n="nav.demo">Demo</a>
+        <a href="#join" class="text-sm transition-colors" style="color: var(--text-secondary);" data-i18n="nav.join">Join</a>
       </nav>
       <div class="flex items-center gap-3">
         <!-- Theme Toggle -->
+                <!-- Language Toggle -->
+        <button onclick="toggleLang()" class="lang-toggle" title="Toggle Language">
+          <span id="lang-icon">中</span>
+        </button>
         <button onclick="toggleTheme()" class="theme-toggle" title="Toggle Theme">
           <svg class="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
@@ -140,7 +144,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
           </svg>
         </button>
-        <button onclick="document.getElementById('join').scrollIntoView({behavior: 'smooth'})" class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">Join Waitlist</button>
+        <button onclick="document.getElementById('join').scrollIntoView({behavior: 'smooth'})" class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));" data-i18n="cta.joinWaitlist">\1</button>
       </div>
     </div>
   </header>
@@ -149,33 +153,33 @@
   <section class="pt-28 pb-16 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-3xl md:text-5xl font-bold mb-5 leading-tight">
-        <span class="text-[var(--text-primary)]">Super Personal</span><br/>
-        <span style="background: linear-gradient(135deg, #0ea5e9, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Creation Formula</span>
+        <span class="text-[var(--text-primary)]" data-i18n="hero.title">\1</span><br/>
+        <span style="background: linear-gradient(135deg, #0ea5e9, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" data-i18n="hero.subtitle">\1</span>
       </h1>
-      <p class="text-[var(--text-secondary)] text-lg mb-8">
+      <p class="text-[var(--text-secondary)] text-lg mb-8" data-i18n="hero.tagline">
         XOPC = x • One • Person • Company<br/>
-        <span class="text-sky-400 font-medium">一个人 + AI = 一家公司</span>
+        <span class="text-sky-400 font-medium" data-i18n="hero.taglineCn">一个人 + AI = 一家公司</span>
       </p>
       
       <div class="grid md:grid-cols-3 gap-3 mb-8 max-w-2xl mx-auto">
         <div class="bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2rem mb-2">🤖</div>
-          <h3 class="font-semibold text-[var(--text-primary)] text-sm">AI Task Engine</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">智能任务调度中心</p>
+          <h3 class="font-semibold text-[var(--text-primary)] text-sm" data-i18n="hero.aiTaskEngine">\1</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="hero.smartTaskCenter">\1</p>
         </div>
         <div class="bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2rem mb-2">🔄</div>
-          <h3 class="font-semibold text-[var(--text-primary)] text-sm">Task Pipeline</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">4 阶段工作流</p>
+          <h3 class="font-semibold text-[var(--text-primary)] text-sm" data-i18n="hero.taskPipeline">\1</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="hero.fourStages">\1</p>
         </div>
         <div class="bg-[var(--bg-card)] rounded-xl p-4 border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2rem mb-2">👤</div>
-          <h3 class="font-semibold text-[var(--text-primary)] text-sm">Human in Loop</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">人工介入确认</p>
+          <h3 class="font-semibold text-[var(--text-primary)] text-sm" data-i18n="hero.humanInLoop">\1</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="hero.humanConfirmation">\1</p>
         </div>
       </div>
 
-      <button onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 rounded-xl text-base font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">🚀 View Demo</button>
+      <button onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 rounded-xl text-base font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);" data-i18n="cta.viewDemo">\1</button>
     </div>
   </section>
 
@@ -183,30 +187,30 @@
   <section id="vision" class="py-12 px-4 bg-[var(--bg-secondary)]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10">
-        <p class="text-xs text-sky-400 font-mono mb-3">OUR VISION</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">重新定义个人创造力</h2>
+        <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="vision.sectionLabel">\1</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]" data-i18n="vision.title">\1</h2>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div class="bg-[var(--bg-card)] rounded-xl p-4 text-center border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2.5rem mb-2">💻</div>
-          <h3 class="font-medium text-[var(--text-primary)] text-sm">程序员</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">AI 帮你写代码</p>
+          <h3 class="font-medium text-[var(--text-primary)] text-sm" data-i18n="vision.programmer">程序员</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="vision.aiWritesCode">AI 帮你写代码</p>
         </div>
         <div class="bg-[var(--bg-card)] rounded-xl p-4 text-center border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2.5rem mb-2">🎨</div>
-          <h3 class="font-medium text-[var(--text-primary)] text-sm">设计师</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">AI 帮你做设计</p>
+          <h3 class="font-medium text-[var(--text-primary)] text-sm" data-i18n="vision.designer" data-i18n="useCases.designer">设计师</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="vision.aiDesigns">AI 帮你做设计</p>
         </div>
         <div class="bg-[var(--bg-card)] rounded-xl p-4 text-center border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2.5rem mb-2">📐</div>
-          <h3 class="font-medium text-[var(--text-primary)] text-sm">产品经理</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">AI 帮你规划功能</p>
+          <h3 class="font-medium text-[var(--text-primary)] text-sm" data-i18n="vision.productManager" data-i18n="useCases.productManager">产品经理</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="vision.aiPlansFeatures">AI 帮你规划功能</p>
         </div>
         <div class="bg-[var(--bg-card)] rounded-xl p-4 text-center border border-[var(--border-color)]" style="transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
           <div class="text-2.5rem mb-2">✍️</div>
-          <h3 class="font-medium text-[var(--text-primary)] text-sm">知识创作者</h3>
-          <p class="text-[var(--text-muted)] text-xs mt-1">AI 帮你创作内容</p>
+          <h3 class="font-medium text-[var(--text-primary)] text-sm" data-i18n="vision.contentCreator">知识创作者</h3>
+          <p class="text-[var(--text-muted)] text-xs mt-1" data-i18n="vision.aiCreatesContent">AI 帮你创作内容</p>
         </div>
       </div>
     </div>
@@ -215,8 +219,8 @@
   <!-- Video -->
   <section class="py-12 px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-xs text-sky-400 font-mono mb-3">INTRO VIDEO</p>
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-6">了解 XOPC</h2>
+      <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="video.sectionLabel">INTRO VIDEO</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-6" data-i18n="video.title">了解 XOPC</h2>
       <div class="rounded-xl overflow-hidden border border-[var(--border-color)]" style="background: var(--bg-secondary);">
         <video 
           class="w-full aspect-video" 
@@ -233,8 +237,8 @@
   <section id="how-it-works" class="py-16 px-4 bg-[var(--bg-secondary)]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
-        <p class="text-xs text-sky-400 font-mono mb-3">HOW IT WORKS</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">AI 如何帮你工作</h2>
+        <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="howItWorks.sectionLabel">HOW IT WORKS</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]" data-i18n="howItWorks.title">AI 如何帮你工作</h2>
         <p class="text-[var(--text-secondary)] mt-3 max-w-2xl mx-auto">
           XOPC 通过智能任务调度、自动流程编排和人机协作，让一个人就能完成整个团队的工作。
         </p>
@@ -293,9 +297,9 @@
   <section id="use-cases" class="py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <p class="text-xs text-sky-400 font-mono mb-3">USE CASES</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">适用场景</h2>
-        <p class="text-[var(--text-secondary)] mt-3">无论你是什么角色，XOPC 都能提升你的生产力</p>
+        <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="useCases.sectionLabel">USE CASES</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]" data-i18n="useCases.title">适用场景</h2>
+        <p class="text-[var(--text-secondary)] mt-3" data-i18n="useCases.subtitle">无论你是什么角色，XOPC 都能提升你的生产力</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -304,12 +308,12 @@
           <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
             <span class="text-xl">💻</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">独立开发者</h3>
-          <p class="text-sm text-[var(--text-muted)] mb-4">从需求分析到代码实现，AI 全程辅助。一个人的开发团队也能快速迭代。</p>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="useCases.independentDev">独立开发者</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="useCases.devDesc">从需求分析到代码实现，AI 全程辅助。一个人的开发团队也能快速迭代。</p>
           <ul class="text-xs text-[var(--text-secondary)] space-y-1">
-            <li>✨ 代码生成与审查</li>
-            <li>✨ API 文档自动生成</li>
-            <li>✨ Bug 定位与修复</li>
+            <li data-i18n="useCases.codeGeneration">✨ 代码生成与审查</li>
+            <li data-i18n="useCases.apiDocs">✨ API 文档自动生成</li>
+            <li data-i18n="useCases.bugFix">✨ Bug 定位与修复</li>
           </ul>
         </div>
 
@@ -318,12 +322,12 @@
           <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4">
             <span class="text-xl">🎨</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">设计师</h3>
-          <p class="text-sm text-[var(--text-muted)] mb-4">用文字描述想法，AI 生成设计稿、插图和素材，省去大量重复劳动。</p>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="vision.designer" data-i18n="useCases.designer">设计师</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="useCases.designDesc">用文字描述想法，AI 生成设计稿、插图和素材，省去大量重复劳动。</p>
           <ul class="text-xs text-[var(--text-secondary)] space-y-1">
-            <li>✨ UI 稿自动生成</li>
-            <li>✨ 图片素材生成</li>
-            <li>✨ 设计规范整理</li>
+            <li data-i18n="useCases.uiGeneration">✨ UI 稿自动生成</li>
+            <li data-i18n="useCases.imageAssets">✨ 图片素材生成</li>
+            <li data-i18n="useCases.designSpecs">✨ 设计规范整理</li>
           </ul>
         </div>
 
@@ -332,12 +336,12 @@
           <div class="w-12 h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center mb-4">
             <span class="text-xl">✍️</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">内容创作者</h3>
-          <p class="text-sm text-[var(--text-muted)] mb-4">从选题到成文，AI 辅助创作更高质量的内容，保持持续输出。</p>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="useCases.contentCreator">内容创作者</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="useCases.contentDesc">从选题到成文，AI 辅助创作更高质量的内容，保持持续输出。</p>
           <ul class="text-xs text-[var(--text-secondary)] space-y-1">
-            <li>✨ 文章大纲生成</li>
-            <li>✨ 文案润色优化</li>
-            <li>✨ 多平台适配</li>
+            <li data-i18n="useCases.outlineGen">✨ 文章大纲生成</li>
+            <li data-i18n="useCases.copyEdit">✨ 文案润色优化</li>
+            <li data-i18n="useCases.multiPlatform">✨ 多平台适配</li>
           </ul>
         </div>
 
@@ -346,12 +350,12 @@
           <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
             <span class="text-xl">📐</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">产品经理</h3>
-          <p class="text-sm text-[var(--text-muted)] mb-4">快速产出 PRD、画原型、写文档，把时间花在真正重要的决策上。</p>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="vision.productManager" data-i18n="useCases.productManager">产品经理</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="useCases.pmDesc">快速产出 PRD、画原型、写文档，把时间花在真正重要的决策上。</p>
           <ul class="text-xs text-[var(--text-secondary)] space-y-1">
-            <li>✨ PRD 自动生成</li>
-            <li>✨ 竞品分析</li>
-            <li>✨ 用户调研整理</li>
+            <li data-i18n="useCases.prdGen">✨ PRD 自动生成</li>
+            <li data-i18n="useCases.competitorAnalysis">✨ 竞品分析</li>
+            <li data-i18n="useCases.userResearch">✨ 用户调研整理</li>
           </ul>
         </div>
 
@@ -360,12 +364,12 @@
           <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
             <span class="text-xl">🚀</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">创业者</h3>
-          <p class="text-sm text-[var(--text-muted)] mb-4">一个人就是一支队伍，从 0 到 1 快速验证想法，降低试错成本。</p>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="useCases.entrepreneur">创业者</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="useCases.entrepreneurDesc">一个人就是一支队伍，从 0 到 1 快速验证想法，降低试错成本。</p>
           <ul class="text-xs text-[var(--text-secondary)] space-y-1">
-            <li>✨ MVP 快速搭建</li>
-            <li>✨ 市场调研分析</li>
-            <li>✨ 商业计划撰写</li>
+            <li data-i18n="useCases.mvpBuild">✨ MVP 快速搭建</li>
+            <li data-i18n="useCases.marketResearch">✨ 市场调研分析</li>
+            <li data-i18n="useCases.bpWriting">✨ 商业计划撰写</li>
           </ul>
         </div>
 
@@ -374,12 +378,12 @@
           <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4">
             <span class="text-xl">📊</span>
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">自由职业者</h3>
-          <p class="text-sm text-[var(--text-muted)] mb-4">同时服务多个客户，AI 帮你高效管理项目和交付质量。</p>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2" data-i18n="useCases.freelancer">自由职业者</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4" data-i18n="useCases.freelancerDesc">同时服务多个客户，AI 帮你高效管理项目和交付质量。</p>
           <ul class="text-xs text-[var(--text-secondary)] space-y-1">
-            <li>✨ 项目进度追踪</li>
-            <li>✨ 自动周报月报</li>
-            <li>✨ 客户沟通模板</li>
+            <li data-i18n="useCases.projectTracking">✨ 项目进度追踪</li>
+            <li data-i18n="useCases.autoReports">✨ 自动周报月报</li>
+            <li data-i18n="useCases.clientTemplates">✨ 客户沟通模板</li>
           </ul>
         </div>
       </div>
@@ -390,15 +394,15 @@
   <section id="faq" class="py-16 px-4 bg-[var(--bg-secondary)]">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12">
-        <p class="text-xs text-sky-400 font-mono mb-3">FAQ</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">常见问题</h2>
+        <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="faq.sectionLabel">FAQ</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)]" data-i18n="faq.title">常见问题</h2>
       </div>
 
       <div class="space-y-4">
         <!-- Q1 -->
         <div class="faq-item bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium text-[var(--text-primary)]">XOPC 适合什么样的人使用？</span>
+            <span class="font-medium text-[var(--text-primary)]" data-i18n="faq.q1">XOPC 适合什么样的人使用？</span>
             <span class="text-[var(--text-muted)] text-xl">+</span>
           </button>
           <div class="faq-content hidden px-6 pb-4">
@@ -411,7 +415,7 @@
         <!-- Q2 -->
         <div class="faq-item bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium text-[var(--text-primary)]">AI 生成的内容质量如何保证？</span>
+            <span class="font-medium text-[var(--text-primary)]" data-i18n="faq.q2">AI 生成的内容质量如何保证？</span>
             <span class="text-[var(--text-muted)] text-xl">+</span>
           </button>
           <div class="faq-content hidden px-6 pb-4">
@@ -424,7 +428,7 @@
         <!-- Q3 -->
         <div class="faq-item bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium text-[var(--text-primary)]">使用 XOPC 需要编程基础吗？</span>
+            <span class="font-medium text-[var(--text-primary)]" data-i18n="faq.q3">使用 XOPC 需要编程基础吗？</span>
             <span class="text-[var(--text-muted)] text-xl">+</span>
           </button>
           <div class="faq-content hidden px-6 pb-4">
@@ -437,7 +441,7 @@
         <!-- Q4 -->
         <div class="faq-item bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium text-[var(--text-primary)]">我的数据会被存储和共享吗？</span>
+            <span class="font-medium text-[var(--text-primary)]" data-i18n="faq.q4">我的数据会被存储和共享吗？</span>
             <span class="text-[var(--text-muted)] text-xl">+</span>
           </button>
           <div class="faq-content hidden px-6 pb-4">
@@ -450,7 +454,7 @@
         <!-- Q5 -->
         <div class="faq-item bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium text-[var(--text-primary)]">XOPC 目前处于什么阶段？</span>
+            <span class="font-medium text-[var(--text-primary)]" data-i18n="faq.q5">XOPC 目前处于什么阶段？</span>
             <span class="text-[var(--text-muted)] text-xl">+</span>
           </button>
           <div class="faq-content hidden px-6 pb-4">
@@ -463,7 +467,7 @@
         <!-- Q6 -->
         <div class="faq-item bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium text-[var(--text-primary)]">如何加入等待列表？</span>
+            <span class="font-medium text-[var(--text-primary)]" data-i18n="faq.q6">如何加入等待列表？</span>
             <span class="text-[var(--text-muted)] text-xl">+</span>
           </button>
           <div class="faq-content hidden px-6 pb-4">
@@ -810,12 +814,12 @@
   <!-- Join -->
   <section id="join" class="py-12 px-4" style="background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));">
     <div class="max-w-md mx-auto text-center">
-      <p class="text-xs text-sky-400 font-mono mb-3">JOIN US</p>
-      <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3">一起打造未来工作方式</h2>
-      <p class="text-[var(--text-secondary)] text-sm mb-6">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
+      <p class="text-xs text-sky-400 font-mono mb-3" data-i18n="join.sectionLabel">JOIN US</p>
+      <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-3" data-i18n="join.title">一起打造未来工作方式</h2>
+      <p class="text-[var(--text-secondary)] text-sm mb-6" data-i18n="join.subtitle">XOPC 正在构建 AI 时代的个人生产力操作系统。<br/>加入等待列表，成为早期体验用户。</p>
       <form id="joinForm" class="space-y-3">
         <input type="email" id="emailInput" placeholder="输入你的邮箱" required class="w-full px-4 py-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-slate-500 text-sm" style="outline: none;">
-        <button type="submit" id="submitBtn" class="w-full px-6 py-3 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">加入等待列表</button>
+        <button type="submit" id="submitBtn" class="w-full px-6 py-3 rounded-lg text-sm font-medium text-[var(--text-primary)]" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);" data-i18n="join.submitButton">加入等待列表</button>
         <p id="formStatus" class="text-sm"></p>
       </form>
       <script>
@@ -1288,5 +1292,6 @@
       document.body.setAttribute('data-theme', savedTheme);
     });
   </script>
+  <script src="/js/i18n.js"></script>
 </body>
 </html>
