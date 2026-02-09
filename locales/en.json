@@ -41,7 +41,9 @@
     "step1Title": "1. Natural Conversation",
     "step2Title": "2. Auto Planning",
     "step3Title": "3. Auto Execution",
-    "step4Title": "4. Human Confirmation"
+    "step4Title": "4. Human Confirmation",
+    "title": "How AI Helps You Work",
+    "description": "XOPC enables one person to do the work of an entire team through intelligent task scheduling, automated workflow orchestration, and human-machine collaboration."
   },
   "useCases": {
     "sectionLabel": "USE CASES",
