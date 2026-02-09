@@ -150,7 +150,12 @@
     "requirements": "Requirements:",
     "subtasks": "Subtasks",
     "aiWelcome": "你好！我是 XOPC AI 助手。关于这个任务，我可以帮你：",
-    "aiFeatures": ["分析任务需求", "生成实现方案", "编写代码或文档", "回答相关问题"],
+    "aiFeatures": [
+      "分析任务需求",
+      "生成实现方案",
+      "编写代码或文档",
+      "回答相关问题"
+    ],
     "chatPlaceholder": "Ask AI about this task...",
     "aiDisclaimer": "AI can make mistakes. Please verify important information.",
     "aiResponses": [
@@ -160,5 +165,18 @@
       "我来帮你生成一个初步的实现方案。"
     ],
     "wantMore": "想要我详细展开某个部分吗？或者告诉我你的具体需求。"
+  },
+  "taskLabels": {
+    "product": "产品",
+    "design": "设计",
+    "dev": "开发"
+  },
+  "taskTitles": {
+    "task1": "设计用户反馈系统原型",
+    "task2": "设计登录页面 UI",
+    "task3": "实现用户认证 API",
+    "task4": "确认支付流程方案",
+    "task5": "生成 API 文档",
+    "task6": "设计 Logo 草图"
   }
 }

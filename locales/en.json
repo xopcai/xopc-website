@@ -150,7 +150,12 @@
     "requirements": "Requirements:",
     "subtasks": "Subtasks",
     "aiWelcome": "Hello! Im XOPC AI Assistant. Regarding this task, I can help you with:",
-    "aiFeatures": ["Analyze task requirements", "Generate implementation plans", "Write code or documentation", "Answer related questions"],
+    "aiFeatures": [
+      "Analyze task requirements",
+      "Generate implementation plans",
+      "Write code or documentation",
+      "Answer related questions"
+    ],
     "chatPlaceholder": "Ask AI about this task...",
     "aiDisclaimer": "AI can make mistakes. Please verify important information.",
     "aiResponses": [
@@ -160,5 +165,18 @@
       "Let me generate an initial implementation plan for you."
     ],
     "wantMore": "Would you like me to elaborate on any part? Or tell me your specific needs."
+  },
+  "taskLabels": {
+    "product": "Product",
+    "design": "Design",
+    "dev": "Dev"
+  },
+  "taskTitles": {
+    "task1": "Design User Feedback System Prototype",
+    "task2": "Design Login Page UI",
+    "task3": "Implement User Authentication API",
+    "task4": "Confirm Payment Flow Plan",
+    "task5": "Generate API Documentation",
+    "task6": "Design Logo Draft"
   }
 }
