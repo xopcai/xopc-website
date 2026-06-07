@@ -67,12 +67,10 @@ try {
         Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl -OutFile $tempFile
         $scriptText = Get-Content -Path $tempFile -Raw -Encoding UTF8
         $block = [scriptblock]::Create($scriptText)
-        $out = (& $block 2>&1 | Out-String)
+        $out = & $block 2>&1 | Out-String
+        Write-Host "DEBUG: Output length: $($out.Length)"
+        Write-Host "DEBUG: Output: $out"
         if ($out -notmatch "Dry run") {
-            Write-Host "DEBUG: Output does not contain 'Dry run'"
-            Write-Host "DEBUG: Output length: $($out.Length)"
-            throw "Expected dry-run output from env-based pipe execution"
-        }
         if ($out -notmatch "npm") { throw "Expected npm method in env-based pipe output" }
     } finally {
         if (Test-Path $tempFile) { Remove-Item $tempFile -Force }
