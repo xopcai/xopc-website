@@ -36,6 +36,7 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         with:
           scandir: public
+          severity: error
 
       - name: Bash syntax check
         run: bash -n public/install.sh
