@@ -175,8 +175,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
       </nav>
 
       <section className="hero">
-        <div className="hero-ripples" aria-hidden />
-        <div className="hero-glow" aria-hidden />
+        <div className="hero-grid" aria-hidden />
         <div className="container hero-inner">
           <div className="hero-brand fade-up delay-1">
             <div className="hero-brand-logo" aria-hidden>
