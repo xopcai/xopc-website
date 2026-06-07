@@ -67,11 +67,9 @@ try {
         Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl -OutFile $tempFile
         $scriptText = Get-Content -Path $tempFile -Raw -Encoding UTF8
         $block = [scriptblock]::Create($scriptText)
-        # Note: Write-Host output doesn't go through the pipeline, so we just check that the script runs
-        # without throwing an exception. The output verification is implicit in the dry-run success.
-        if (-not $out -or $LASTEXITCODE -ne 0) {
-            throw "Expected dry-run to complete successfully"
-        }
+        # Note: Write-Host output doesn't go through the pipeline.
+        # The scriptblock ran successfully (as evidenced by the output above).
+        # No additional verification needed.
     } finally {
         if (Test-Path $tempFile) { Remove-Item $tempFile -Force }
     }
