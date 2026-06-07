@@ -31,7 +31,7 @@
       "taglineStrong": "与你一起成长的 AI 工作站",
       "desc": "为一人公司打造的本地优先 AI 助手。CLI、桌面、浏览器、手机、即时通讯——全平台覆盖。自带钥匙，无需 fork 即可扩展。",
       "starGithub": "在 GitHub 上 Star",
-      "watchDemo": "观看演示 (▶ 1:45)",
+      "watchDemo": "观看演示",
       "stats": [
         { "value": "MIT", "suffix": "", "label": "License" },
         { "value": "20", "suffix": "+", "label": "LLM 提供商" },

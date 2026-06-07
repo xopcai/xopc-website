@@ -31,7 +31,7 @@
       "taglineStrong": "THE AI WORKSTATION THAT GROWS WITH YOU.",
       "desc": "A local-first personal AI for one-person companies — CLI, desktop, browser, mobile, and your favorite messengers. Bring your own keys. Extend without forking.",
       "starGithub": "Star on GitHub",
-      "watchDemo": "Watch Demo (▶ 1:45)",
+      "watchDemo": "Watch Demo",
       "stats": [
         { "value": "MIT", "suffix": "", "label": "License" },
         { "value": "20", "suffix": "+", "label": "LLM Providers" },
