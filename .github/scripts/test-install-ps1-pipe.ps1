@@ -62,20 +62,31 @@ try {
     Write-Host "==> irm | scriptblock with env-based dry-run (homepage-style pipe)"
     $env:XOPC_DRY_RUN = "1"
     $env:XOPC_INSTALL_METHOD = "npm"
-    $response = Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl
-    $bytes = [byte[]]$response.Content
-    $scriptText = [System.Text.Encoding]::UTF8.GetString($bytes)
-    $block = [scriptblock]::Create($scriptText)
-    $out = (& $block 2>&1 | Out-String)
-    if ($out -notmatch "Dry run") { throw "Expected dry-run output from env-based pipe execution" }
-    if ($out -notmatch "npm") { throw "Expected npm method in env-based pipe output" }
+    $tempFile = [IO.Path]::GetTempFileName() + ".ps1"
+    try {
+        Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl -OutFile $tempFile
+        $scriptText = Get-Content -Path $tempFile -Raw -Encoding UTF8
+        $block = [scriptblock]::Create($scriptText)
+        $out = (& $block 2>&1 | Out-String)
+        if ($out -notmatch "Dry run") { throw "Expected dry-run output from env-based pipe execution" }
+        if ($out -notmatch "npm") { throw "Expected npm method in env-based pipe output" }
+    } finally {
+        if (Test-Path $tempFile) { Remove-Item $tempFile -Force }
+    }
 
     Write-Host "==> irm | scriptblock with -DryRun -InstallMethod git"
     Remove-Item Env:XOPC_DRY_RUN -ErrorAction SilentlyContinue
-    $response = Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl
-    $bytes = [byte[]]$response.Content
-    $scriptText = [System.Text.Encoding]::UTF8.GetString($bytes)
-    $block = [scriptblock]::Create($scriptText)
+    $tempFile = [IO.Path]::GetTempFileName() + ".ps1"
+    try {
+        Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl -OutFile $tempFile
+        $scriptText = Get-Content -Path $tempFile -Raw -Encoding UTF8
+        $block = [scriptblock]::Create($scriptText)
+        $out = (& $block -DryRun -NoPrompt -InstallMethod git 2>&1 | Out-String)
+        if ($out -notmatch "Install plan") { throw "Expected install plan in git pipe dry-run" }
+        if ($out -notmatch "git") { throw "Expected git method in pipe dry-run output" }
+    } finally {
+        if (Test-Path $tempFile) { Remove-Item $tempFile -Force }
+    }
     $out = (& $block -DryRun -NoPrompt -InstallMethod git 2>&1 | Out-String)
     if ($out -notmatch "Install plan") { throw "Expected install plan in git pipe dry-run" }
     if ($out -notmatch "git") { throw "Expected git method in pipe dry-run output" }
