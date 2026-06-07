@@ -62,15 +62,19 @@ try {
     Write-Host "==> irm | scriptblock with env-based dry-run (homepage-style pipe)"
     $env:XOPC_DRY_RUN = "1"
     $env:XOPC_INSTALL_METHOD = "npm"
-    $bytes = Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl -Raw
-    $block = [scriptblock]::Create($bytes)
+    $response = Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl
+    $bytes = [byte[]]$response.Content
+    $scriptText = [System.Text.Encoding]::UTF8.GetString($bytes)
+    $block = [scriptblock]::Create($scriptText)
     $out = (& $block 2>&1 | Out-String)
     if ($out -notmatch "Dry run") { throw "Expected dry-run output from env-based pipe execution" }
     if ($out -notmatch "npm") { throw "Expected npm method in env-based pipe output" }
 
     Write-Host "==> irm | scriptblock with -DryRun -InstallMethod git"
     Remove-Item Env:XOPC_DRY_RUN -ErrorAction SilentlyContinue
-    $scriptText = Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl -Raw
+    $response = Invoke-WebRequest -UseBasicParsing -Uri $BaseUrl
+    $bytes = [byte[]]$response.Content
+    $scriptText = [System.Text.Encoding]::UTF8.GetString($bytes)
     $block = [scriptblock]::Create($scriptText)
     $out = (& $block -DryRun -NoPrompt -InstallMethod git 2>&1 | Out-String)
     if ($out -notmatch "Install plan") { throw "Expected install plan in git pipe dry-run" }
