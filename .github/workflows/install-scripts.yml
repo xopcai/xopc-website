@@ -1,0 +1,119 @@
+name: Install scripts
+
+on:
+  pull_request:
+    paths:
+      - public/install.sh
+      - public/install.ps1
+      - .github/workflows/install-scripts.yml
+      - .github/scripts/**
+  push:
+    branches:
+      - main
+    paths:
+      - public/install.sh
+      - public/install.ps1
+      - .github/workflows/install-scripts.yml
+      - .github/scripts/**
+  workflow_dispatch:
+    inputs:
+      run_e2e:
+        description: Run npm E2E install tests
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ShellCheck install.sh
+        uses: koalaman/shellcheck-action@v0.9.0
+        with:
+          scandir: public
+          include: install.sh
+
+      - name: Bash syntax check
+        run: bash -n public/install.sh
+
+      - name: Installer constants consistency
+        run: bash .github/scripts/check-installer-constants.sh
+
+      - name: Parse install.ps1
+        shell: pwsh
+        run: |
+          $errors = $null
+          $null = [System.Management.Automation.Language.Parser]::ParseFile(
+            'public/install.ps1',
+            [ref]$null,
+            [ref]$errors
+          )
+          if ($errors) {
+            $errors | ForEach-Object { Write-Error $_ }
+            exit 1
+          }
+
+  linux-dry-run:
+    name: Linux dry-run
+    needs: static
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash .github/scripts/test-install-sh.sh
+      - run: bash .github/scripts/test-install-sh-pipe.sh
+
+  macos-dry-run:
+    name: macOS dry-run
+    needs: static
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash .github/scripts/test-install-sh.sh
+      - run: bash .github/scripts/test-install-sh-pipe.sh
+
+  windows-dry-run:
+    name: Windows dry-run
+    needs: static
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: pwsh
+        run: ./.github/scripts/test-install-ps1.ps1
+      - shell: pwsh
+        run: ./.github/scripts/test-install-ps1-pipe.ps1
+
+  e2e-npm:
+    name: E2E npm (${{ matrix.label }})
+    needs: [linux-dry-run, windows-dry-run]
+    if: >
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_dispatch' && inputs.run_e2e)
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            label: Linux
+            shell: bash
+            command: bash .github/scripts/test-install-sh-e2e.sh
+          - os: windows-latest
+            label: Windows
+            shell: pwsh
+            command: ./.github/scripts/test-install-ps1-e2e.ps1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: E2E npm install
+        shell: ${{ matrix.shell }}
+        run: ${{ matrix.command }}

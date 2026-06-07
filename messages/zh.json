@@ -1,0 +1,377 @@
+{
+  "meta": {
+    "title": "xopc — 与你一起成长的 AI 工作站",
+    "description": "为一人公司打造的本地优先 AI 助手。CLI、桌面、浏览器、手机、即时通讯——全平台覆盖。自带钥匙，无需 fork 即可扩展。",
+    "ogDescription": "本地优先 AI 工作站：CLI、桌面、浏览器、手机、即时通讯。BYOK、20+ 大模型、Skills 与 Extensions——Node.js 22+，MIT 开源。"
+  },
+  "header": {
+    "chooseLanguage": "选择语言",
+    "langZh": "简体中文",
+    "langEn": "English",
+    "themeLight": "切换到浅色主题",
+    "themeDark": "切换到深色主题",
+    "themeToggle": "切换浅色 / 深色主题"
+  },
+  "landing": {
+    "nav": {
+      "download": "下载",
+      "features": "功能",
+      "channels": "渠道",
+      "providers": "提供商",
+      "automation": "自动化",
+      "workflows": "工作流",
+      "github": "GitHub"
+    },
+    "hero": {
+      "brandName": "xopc",
+      "titleLine1Before": "与你一起成长的",
+      "titleLine1Highlight": "",
+      "titleLine1After": "",
+      "titleEm": "OPC 工作站",
+      "taglineStrong": "与你一起成长的 AI 工作站",
+      "desc": "为一人公司打造的本地优先 AI 助手。CLI、桌面、浏览器、手机、即时通讯——全平台覆盖。自带钥匙，无需 fork 即可扩展。",
+      "starGithub": "在 GitHub 上 Star",
+      "watchDemo": "观看演示 (▶ 1:45)",
+      "stats": [
+        { "value": "MIT", "suffix": "", "label": "License" },
+        { "value": "20", "suffix": "+", "label": "LLM 提供商" },
+        { "value": "≥", "suffix": "22", "label": "Node.js" }
+      ],
+      "screenshotAlt": "xopc Web 控制台"
+    },
+    "download": {
+      "quickStartHeading": "快速开始",
+      "methodTabsAria": "选择安装方式",
+      "methodOneLiner": "一键安装",
+      "methodNpm": "npm",
+      "methodDesktop": "桌面版",
+      "npmQuickComment": "# 需要 Node.js 22+，然后执行 onboard。",
+      "desktopQuickComment": "# macOS、Windows、Linux 原生应用。",
+      "title": "30 秒，立即开始。",
+      "subtitle": "一条命令安装 Node.js 与 xopc，并引导完成 onboard — 支持 macOS、Linux 与 Windows。",
+      "quickInstallTabsAria": "选择安装平台",
+      "quickInstallUnixTab": "macOS & Linux",
+      "quickInstallWindowsTab": "Windows",
+      "quickInstallComment": "# Works everywhere. Installs everything. You're welcome.",
+      "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
+      "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
+      "quickInstallFootnote": "安装脚本会自动检测系统、按需安装 Node.js 并启动 onboard。也可切换 npm 或 macOS / Windows / Linux 桌面版 Tab。",
+      "advancedHeading": "使用 npm 安装",
+      "advancedSubtitle": "若已安装 Node.js 22+，可直接用包管理器。",
+      "npmBody": "需要 Node.js 22+。亦支持 pnpm：pnpm add -g @xopcai/xopc。国内镜像：npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com。然后开聊：xopc tui --local",
+      "npmInstallLabel": "1. 安装",
+      "npmCommand": "npm install -g @xopcai/xopc",
+      "npmOnboardLabel": "2. 配置",
+      "npmOnboardBody": "交互式引导：选模型、填 key。想更快可先执行：xopc onboard --quick",
+      "onboardCommand": "xopc onboard",
+      "copy": "复制",
+      "copied": "已复制",
+      "desktopHeading": "桌面应用",
+      "desktopSubtitle": "从 GitHub Releases 下载 macOS、Windows 或 Linux 的 Electron 构建包。",
+      "loading": "正在获取下载信息…",
+      "error": "暂时无法获取下载信息。",
+      "openReleases": "打开下载页",
+      "currentVersion": "当前版本",
+      "hint": "不确定选哪一项时，可在系统设置或「关于本机」里查看处理器类型。",
+      "thisDevice": "本机",
+      "downloadTitle": "下载",
+      "downloadAria": "下载 {label}",
+      "platformNames": {
+        "macos": "macOS",
+        "windows": "Windows",
+        "linux": "Linux"
+      },
+      "pickerToggleAria": "选择 {platform} 的下载选项",
+      "choices": {
+        "mac-x64": "Intel（x64）",
+        "mac-arm64": "Apple Silicon（ARM64）",
+        "win-x64": "x64（常见电脑）",
+        "win-arm64": "ARM 64 位",
+        "linux-x64-appimage": "x64 · AppImage",
+        "linux-x64-deb": "x64 · Debian 安装包",
+        "linux-arm64-appimage": "ARM 64 位 · AppImage"
+      },
+      "platformSubtitles": {
+        "macos": "11 或更高",
+        "windows": "10 或更高",
+        "linux": "64 位 / ARM"
+      }
+    },
+    "demo": {
+      "titleLine1": "看工作站",
+      "titleLine2": "如何运转",
+      "desc": "从安装、onboard 到在终端、浏览器或常用 IM 里对话——同一套助手，密钥在你手里。",
+      "videoAria": "xopc 产品演示"
+    },
+    "features": {
+      "titleLine1": "不一样，",
+      "titleLine2": "为你而生。",
+      "desc": "本地优先、自带钥匙、可成长的生态——一人公司选择 xopc 的三个理由。",
+      "tagFeatured": "核心差异点",
+      "items": [
+        {
+          "icon": "🔑",
+          "title": "自带钥匙，任选模型。",
+          "body": "DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure——内置 20+ 供应商。纯离线本地推理也行，云端本地混搭也行，你说了算。一行配置切换模型，零厂商绑定。",
+          "featured": false
+        },
+        {
+          "icon": "📡",
+          "title": "一个大脑，每块屏幕都能用",
+          "body": "同一个助手——终端、浏览器、桌面应用、手机、即时通讯。无需同步，因为本来就是同一个系统。"
+        },
+        {
+          "icon": "🔀",
+          "title": "动态工作流",
+          "body": "确定性脚本扇出多个隔离子 Agent——仓库审计、多视角评审、并行调研。每次运行独立会话，进度全程可见。"
+        },
+        {
+          "icon": "🤖",
+          "title": "多 Agent 路由",
+          "body": "不同场景路由到不同 Agent——各自模型、工作区、工具与系统提示词，上下文完全隔离。工作、创作、编码各用一套。"
+        },
+        {
+          "icon": "🧩",
+          "title": "跟你一起长大，永远不会过时。",
+          "body": "一行命令安装技能，Extensions 增加工具/通道/UI 面板，Cron 实现定时自动化，多 Agent 路由不同场景。它是你的系统——你来塑造。xopc skills install · xopc extensions install——装好就能用。"
+        },
+        {
+          "icon": "🏠",
+          "title": "你的机器，你的规则。",
+          "body": "xopc 运行在你自己的硬件上。对话留在本地，密钥存在你的配置里。没有强制云端，没有意外账单，没有数据在你不知情时外流。~/.xopc/——一切尽在你拥有的目录里。",
+          "featured": true
+        },
+        {
+          "icon": "🌐",
+          "title": "HTTP/SSE 网关",
+          "body": "REST JSON API 与用于流式、实时更新的 SSE；React 控制台与 Electron 内为同一套界面。URL 见日志或网关配置。"
+        },
+        {
+          "icon": "🛠️",
+          "title": "类型安全工具",
+          "body": "用 TypeBox 定义工具。网页搜索、浏览器（Playwright，按需开启）、文件操作——按需扩展 Agent 能力。"
+        },
+        {
+          "icon": "🎙️",
+          "title": "语音与图像",
+          "body": "在已配置的路径上提供 STT/TTS（如 Telegram、网关等）。图像支持识图与按需生图，详见语音与工具文档。"
+        }
+      ]
+    },
+    "channels": {
+      "titleLine1": "一个大脑，",
+      "titleLine2": "每块屏幕都能用。",
+      "desc": "同一个助手——终端、浏览器、桌面应用、手机、即时通讯。无需同步，因为本来就是同一个系统。",
+      "placeholderAction": "待补充素材",
+      "items": [
+        {
+          "id": "tui",
+          "label": "TUI",
+          "tag": "Terminal",
+          "caption": "全键盘操作，流式输出，零延迟感。",
+          "imageAlt": "xopc 全屏终端界面",
+          "placeholderTitle": "TUI · 全屏终端截图"
+        },
+        {
+          "id": "web",
+          "label": "Web UI",
+          "tag": "Browser",
+          "caption": "打开浏览器就是完整控制台。",
+          "imageAlt": "xopc 网关 Web 控制台",
+          "placeholderTitle": "Web UI · Gateway Console"
+        },
+        {
+          "id": "desktop",
+          "label": "Desktop",
+          "tag": "Electron",
+          "caption": "原生桌面体验，三平台通吃。",
+          "imageAlt": "xopc Electron 桌面应用",
+          "placeholderTitle": "Desktop · macOS 窗口截图"
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile",
+          "tag": "Phone",
+          "caption": "扫码配对，通勤路上也能用。",
+          "imageAlt": "xopc 手机配对与对话",
+          "placeholderTitle": "Mobile · 扫码配对"
+        },
+        {
+          "id": "telegram",
+          "label": "Telegram",
+          "tag": "Messenger",
+          "caption": "在你最常用的 IM 里直接对话。",
+          "imageAlt": "xopc Telegram 对话",
+          "placeholderTitle": "Telegram · 对话气泡截图"
+        },
+        {
+          "id": "wechat",
+          "label": "WeChat",
+          "tag": "微信",
+          "caption": "微信里也能叫它。",
+          "imageAlt": "xopc 微信对话",
+          "placeholderTitle": "微信 · 对话截图"
+        }
+      ]
+    },
+    "providers": {
+      "titleLine1": "自带钥匙，",
+      "titleLine2": "任选模型。",
+      "desc": "DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure——内置 20+ 供应商。纯离线本地推理也行，云端本地混搭也行，你说了算。一行配置切换模型，零厂商绑定。",
+      "viewProviders": "查看全部支持的提供商 →",
+      "chips": [
+        { "name": "OpenAI", "dot": "blue" },
+        { "name": "Anthropic", "dot": "purple" },
+        { "name": "Google AI", "dot": "green" },
+        { "name": "DeepSeek", "dot": "amber" },
+        { "name": "Mistral", "dot": "pink" },
+        { "name": "Groq", "dot": "blue" },
+        { "name": "Cohere", "dot": "purple" },
+        { "name": "Together AI", "dot": "green" },
+        { "name": "OpenRouter", "dot": "amber" },
+        { "name": "Ollama", "dot": "pink" },
+        { "name": "Azure OpenAI", "dot": "blue" },
+        { "name": "xAI", "dot": "purple" },
+        { "name": "AWS Bedrock", "dot": "green" },
+        { "name": "Vertex AI", "dot": "amber" },
+        { "name": "SiliconFlow", "dot": "pink" },
+        { "name": "自定义", "dot": "purple" }
+      ]
+    },
+    "automation": {
+      "titleLine1": "跟你一起长大，",
+      "titleLine2": "永远不会过时。",
+      "desc": "一行命令安装技能，Extensions 增加工具/通道/UI 面板，Cron 实现定时自动化，多 Agent 路由不同场景。它是你的系统——你来塑造。",
+      "codeTitle": "~/.xopc/xopc.json",
+      "bullets": [
+        "xopc skills install——用 SKILL.md 教会助手新领域，不写代码",
+        "xopc extensions install——工具、通道、UI 面板，装好即用，无需重启",
+        "Cron 定时任务：每日摘要、每周复盘、任意自定义计划",
+        "Cron 可直接定时执行工作流（workflowRun 任务类型）",
+        "按任务选择 Agent——不同任务可用不同模型"
+      ]
+    },
+    "workflows": {
+      "titleLine1": "一次提示，",
+      "titleLine2": "多个 Agent。",
+      "desc": "可分解的大任务扇出到多个隔离子 Agent，再合并为一份结果——在独立 Chat 会话中执行，不污染触发它的那条对话。",
+      "bullets": [
+        "内置模板：audit_repo、multi_perspective_review、research",
+        "看板 #/workflows — 排队、进行中、已完成、需关注",
+        "可从 Chat、网关 UI、Cron workflowRun 或 REST API 启动",
+        "脚本可保存到 ~/.xopc/workflows/ 并自定义"
+      ],
+      "viewDocs": "阅读工作流文档 →",
+      "screenshotPlaceholderTitle": "Workflows · 网关控制台",
+      "board": {
+        "ariaLabel": "工作流运行看板示例：audit_repo 进行中并显示子 Agent 进度，另有已完成评审与超时失败的调研任务",
+        "windowTitle": "xopc Gateway",
+        "sceneLabel": "周五发版前审查",
+        "sceneHint": "audit_repo · 7/12 子 Agent · Synthesize 阶段",
+        "columns": [
+          {
+            "id": "queued",
+            "label": "排队中",
+            "count": "1",
+            "cards": [
+              {
+                "title": "release_notes",
+                "meta": "main · cron 09:00",
+                "status": "queued",
+                "featured": false
+              }
+            ]
+          },
+          {
+            "id": "running",
+            "label": "进行中",
+            "count": "1",
+            "cards": [
+              {
+                "title": "audit_repo",
+                "meta": "Review 4/6 · 2 运行中",
+                "detail": "style review · docs review",
+                "status": "running",
+                "progress": "58%",
+                "featured": true
+              }
+            ]
+          },
+          {
+            "id": "done",
+            "label": "已完成",
+            "count": "3",
+            "cards": [
+              {
+                "title": "multi_perspective_review",
+                "meta": "成功 · 12 分钟前",
+                "status": "succeeded",
+                "featured": false
+              }
+            ]
+          },
+          {
+            "id": "attention",
+            "label": "需关注",
+            "count": "1",
+            "cards": [
+              {
+                "title": "research",
+                "meta": "超时 · 可重试",
+                "status": "failed",
+                "featured": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "architecture": {
+      "titleLine1": "不断壮大的",
+      "titleLine2": "生态。",
+      "desc": "Skills、Extensions 与社区贡献——秒级安装，无需重启。Skills 用 SKILL.md 教知识，Extensions 以 npm 包扩展全功能，UI Extensions 在 Web 控制台嵌入自定义面板。",
+      "diagramAlt": "xopc 系统技术架构：用户入口、Gateway、Channel Manager、Agent Service、扩展与 LLM 层"
+    },
+    "testimonials": {
+      "title": "为什么都自己干的人而造。",
+      "desc": "无论你是独立做 SaaS、接自由职业，还是一人创意工作室。",
+      "items": [
+        {
+          "quote": "以前需要开三个窗口的事，现在一个 xopc 就搞定了。",
+          "author": "[ 待补充姓名 ]",
+          "role": "独立开发者 / Solo SaaS Builder",
+          "avatar": "A",
+          "avatarStyle": "accent"
+        },
+        {
+          "quote": "统一入口这件事，比我想象中重要十倍。",
+          "author": "[ 待补充姓名 ]",
+          "role": "自由设计师 / 内容创作者",
+          "avatar": "B",
+          "avatarStyle": "green"
+        },
+        {
+          "quote": "终于有人做了一个不偷我数据的 AI assistant。",
+          "author": "[ 待补充姓名 ]",
+          "role": "隐私优先的技术人",
+          "avatar": "C",
+          "avatarStyle": "purple"
+        }
+      ]
+    },
+    "cta": {
+      "titleLine1": "你的 AI 工作站，",
+      "titleLine2": "从这里开始。",
+      "desc": "MIT 开源。安装 CLI 或下载 Electron 构建包——onboard 一次，再选 TUI、CLI、浏览器或 IM。",
+      "primary": "立即开始 →",
+      "secondary": "GitHub 加星 ⭐"
+    },
+    "footer": {
+      "github": "GitHub",
+      "docs": "文档",
+      "license": "许可证",
+      "issues": "问题反馈",
+      "copyright": "© {year} xopcai · MIT License"
+    }
+  }
+}

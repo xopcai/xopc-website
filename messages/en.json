@@ -1,0 +1,377 @@
+{
+  "meta": {
+    "title": "xopc — The AI workstation that grows with you",
+    "description": "A local-first personal AI for one-person companies — CLI, desktop, browser, mobile, and your favorite messengers. Bring your own keys. Extend without forking.",
+    "ogDescription": "Local-first AI workstation: CLI, desktop, browser, mobile, and messengers. BYOK, 20+ LLM providers, Skills & Extensions — Node.js 22+, MIT."
+  },
+  "header": {
+    "chooseLanguage": "Choose language",
+    "langZh": "简体中文",
+    "langEn": "English",
+    "themeLight": "Switch to light theme",
+    "themeDark": "Switch to dark theme",
+    "themeToggle": "Toggle light or dark theme"
+  },
+  "landing": {
+    "nav": {
+      "download": "Download",
+      "features": "Features",
+      "channels": "Channels",
+      "providers": "Providers",
+      "automation": "Automation",
+      "workflows": "Workflows",
+      "github": "GitHub"
+    },
+    "hero": {
+      "brandName": "xopc",
+      "titleLine1Before": "The OPC workstation",
+      "titleLine1Highlight": "",
+      "titleLine1After": ".",
+      "titleEm": "that grows with you.",
+      "taglineStrong": "THE AI WORKSTATION THAT GROWS WITH YOU.",
+      "desc": "A local-first personal AI for one-person companies — CLI, desktop, browser, mobile, and your favorite messengers. Bring your own keys. Extend without forking.",
+      "starGithub": "Star on GitHub",
+      "watchDemo": "Watch Demo (▶ 1:45)",
+      "stats": [
+        { "value": "MIT", "suffix": "", "label": "License" },
+        { "value": "20", "suffix": "+", "label": "LLM Providers" },
+        { "value": "≥", "suffix": "22", "label": "Node.js" }
+      ],
+      "screenshotAlt": "xopc Web console"
+    },
+    "download": {
+      "quickStartHeading": "Quick Start",
+      "methodTabsAria": "Choose install method",
+      "methodOneLiner": "One-liner",
+      "methodNpm": "npm",
+      "methodDesktop": "Desktop",
+      "npmQuickComment": "# Node.js 22+ required. Then run onboarding.",
+      "desktopQuickComment": "# Native apps for macOS, Windows, and Linux.",
+      "title": "Up and running in 30 seconds.",
+      "subtitle": "One command installs Node.js and xopc, then walks you through onboarding — macOS, Linux, or Windows.",
+      "quickInstallTabsAria": "Choose install platform",
+      "quickInstallUnixTab": "macOS & Linux",
+      "quickInstallWindowsTab": "Windows",
+      "quickInstallComment": "# Works everywhere. Installs everything. You're welcome.",
+      "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
+      "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
+      "quickInstallFootnote": "The one-liner detects your OS, installs Node.js if needed, and launches onboarding. Switch tabs for npm or desktop builds.",
+      "advancedHeading": "Install with npm",
+      "advancedSubtitle": "If you already have Node.js 22+ and prefer the package manager route.",
+      "npmBody": "Node.js 22+ required. pnpm is also supported: pnpm add -g @xopcai/xopc. China mirror: npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com. Then chat: xopc tui --local",
+      "npmInstallLabel": "1. Install",
+      "npmCommand": "npm install -g @xopcai/xopc",
+      "npmOnboardLabel": "2. Setup",
+      "npmOnboardBody": "Interactive onboarding — pick your model and add API keys. Faster path: xopc onboard --quick",
+      "onboardCommand": "xopc onboard",
+      "copy": "Copy",
+      "copied": "Copied",
+      "desktopHeading": "Desktop apps",
+      "desktopSubtitle": "Download Electron builds for macOS, Windows, or Linux from GitHub Releases.",
+      "loading": "Fetching download info…",
+      "error": "We couldn't load download info right now.",
+      "openReleases": "Open releases page",
+      "currentVersion": "Current version",
+      "hint": "Not sure which build to pick? Check processor type in System Settings or \"About this Mac\".",
+      "thisDevice": "This device",
+      "downloadTitle": "Download",
+      "downloadAria": "Download {label}",
+      "platformNames": {
+        "macos": "macOS",
+        "windows": "Windows",
+        "linux": "Linux"
+      },
+      "pickerToggleAria": "Choose download options for {platform}",
+      "choices": {
+        "mac-x64": "Intel (x64)",
+        "mac-arm64": "Apple Silicon (ARM64)",
+        "win-x64": "x64 (most PCs)",
+        "win-arm64": "ARM64",
+        "linux-x64-appimage": "x64 · AppImage",
+        "linux-x64-deb": "x64 · Debian package",
+        "linux-arm64-appimage": "ARM64 · AppImage"
+      },
+      "platformSubtitles": {
+        "macos": "11 or later",
+        "windows": "10 or later",
+        "linux": "64-bit / ARM"
+      }
+    },
+    "demo": {
+      "titleLine1": "See the workstation",
+      "titleLine2": "in action",
+      "desc": "From install and onboard to chatting in the terminal, browser, or your favorite messenger — same assistant, your keys.",
+      "videoAria": "xopc product demo"
+    },
+    "features": {
+      "titleLine1": "Built different.",
+      "titleLine2": "Built for you.",
+      "desc": "Local-first by default, bring your own keys, and an ecosystem that grows with you — three reasons one-person companies choose xopc.",
+      "tagFeatured": "CORE DIFFERENTIATOR",
+      "items": [
+        {
+          "icon": "🔌",
+          "title": "Bring your own keys. Any model.",
+          "body": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure — 20+ providers built in. Run fully offline with local inference, or mix cloud and local as you please. Zero vendor lock-in. Switch models in one config line.",
+          "featured": false
+        },
+        {
+          "icon": "📡",
+          "title": "One brain, every screen",
+          "body": "The same assistant — in your terminal, browser, desktop app, phone, and messengers. No sync needed. It's all one system."
+        },
+        {
+          "icon": "🔀",
+          "title": "Dynamic workflows",
+          "body": "Fan-out isolated subagents from deterministic scripts — repo audits, multi-perspective reviews, and parallel research. Each run gets its own session with live progress."
+        },
+        {
+          "icon": "🤖",
+          "title": "Multi-agent routing",
+          "body": "Route different contexts to different agents — each with its own model, workspace, tools, and system prompt. Fully isolated contexts for work, creativity, and code."
+        },
+        {
+          "icon": "🧩",
+          "title": "Grows with you. Never outgrow it.",
+          "body": "Install Skills with one command. Add Extensions for new tools, channels, and UI panels. Multi-agent routing for different contexts. It's your system — shape it. xopc skills install · xopc extensions install — and it just works."
+        },
+        {
+          "icon": "🏠",
+          "title": "Your machine. Your rules.",
+          "body": "xopc runs on your hardware. Conversations stay local. API keys stay in your config. No mandatory cloud, no surprise bills, no data leaving without your say. ~/.xopc/ — everything in one directory you own.",
+          "featured": true
+        },
+        {
+          "icon": "🌐",
+          "title": "HTTP/SSE gateway",
+          "body": "REST JSON APIs plus Server-Sent Events for streaming and live updates, with the same React console you get in Electron. Open the URL from logs or gateway config."
+        },
+        {
+          "icon": "🛠️",
+          "title": "Type-Safe Tool System",
+          "body": "Build custom tools with TypeBox schemas. Web search, browser control (Playwright, opt-in), file operations — extend your agent's capabilities."
+        },
+        {
+          "icon": "🎙️",
+          "title": "Voice & vision",
+          "body": "STT/TTS where configured — e.g. Telegram and gateway paths. Images: vision plus generation when you wire it up; see the Voice and Tools docs."
+        }
+      ]
+    },
+    "channels": {
+      "titleLine1": "One brain,",
+      "titleLine2": "every screen.",
+      "desc": "The same assistant — in your terminal, browser, desktop app, phone, and messengers. No sync needed. It's all one system.",
+      "placeholderAction": "Add asset",
+      "items": [
+        {
+          "id": "tui",
+          "label": "TUI",
+          "tag": "Terminal",
+          "caption": "Full keyboard control, streaming output, zero perceived latency.",
+          "imageAlt": "xopc full-screen terminal UI",
+          "placeholderTitle": "TUI · full-screen terminal"
+        },
+        {
+          "id": "web",
+          "label": "Web UI",
+          "tag": "Browser",
+          "caption": "Open a browser — full console, ready to go.",
+          "imageAlt": "xopc gateway web console",
+          "placeholderTitle": "Web UI · gateway console"
+        },
+        {
+          "id": "desktop",
+          "label": "Desktop",
+          "tag": "Electron",
+          "caption": "Native desktop experience across macOS, Windows, and Linux.",
+          "imageAlt": "xopc Electron desktop app on macOS",
+          "placeholderTitle": "Desktop · macOS window"
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile",
+          "tag": "Phone",
+          "caption": "Scan to pair — your assistant on the go.",
+          "imageAlt": "xopc mobile pairing and chat",
+          "placeholderTitle": "Mobile · QR pairing"
+        },
+        {
+          "id": "telegram",
+          "label": "Telegram",
+          "tag": "Messenger",
+          "caption": "Chat directly in your favorite messenger.",
+          "imageAlt": "xopc Telegram conversation",
+          "placeholderTitle": "Telegram · chat bubbles"
+        },
+        {
+          "id": "wechat",
+          "label": "WeChat",
+          "tag": "微信",
+          "caption": "Talk to it right inside WeChat.",
+          "imageAlt": "xopc WeChat conversation",
+          "placeholderTitle": "WeChat · chat bubbles"
+        }
+      ]
+    },
+    "providers": {
+      "titleLine1": "Bring your own keys.",
+      "titleLine2": "Any model.",
+      "desc": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure — 20+ providers built in. Run fully offline with local inference, or mix cloud and local as you please. Zero vendor lock-in. Switch models in one config line.",
+      "viewProviders": "View all supported providers →",
+      "chips": [
+        { "name": "OpenAI", "dot": "blue" },
+        { "name": "Anthropic", "dot": "purple" },
+        { "name": "Google AI", "dot": "green" },
+        { "name": "DeepSeek", "dot": "amber" },
+        { "name": "Mistral", "dot": "pink" },
+        { "name": "Groq", "dot": "blue" },
+        { "name": "Cohere", "dot": "purple" },
+        { "name": "Together AI", "dot": "green" },
+        { "name": "OpenRouter", "dot": "amber" },
+        { "name": "Ollama", "dot": "pink" },
+        { "name": "Azure OpenAI", "dot": "blue" },
+        { "name": "xAI", "dot": "purple" },
+        { "name": "AWS Bedrock", "dot": "green" },
+        { "name": "Vertex AI", "dot": "amber" },
+        { "name": "SiliconFlow", "dot": "pink" },
+        { "name": "Custom", "dot": "purple" }
+      ]
+    },
+    "automation": {
+      "titleLine1": "Grows with you.",
+      "titleLine2": "Never outgrow it.",
+      "desc": "Install Skills with one command. Add Extensions for new tools, channels, and UI panels. Schedule with Cron. Multi-agent routing for different contexts. It's your system — shape it.",
+      "codeTitle": "~/.xopc/xopc.json",
+      "bullets": [
+        "xopc skills install — teach your assistant new domains without writing code",
+        "xopc extensions install — tools, channels, and UI panels, no restart needed",
+        "Cron jobs for daily digests, weekly reviews, and custom schedules",
+        "Schedule workflow runs from Cron (workflowRun task kind)",
+        "Per-job agent selection — use different models for different tasks"
+      ]
+    },
+    "workflows": {
+      "titleLine1": "One prompt.",
+      "titleLine2": "Many agents.",
+      "desc": "Decomposable tasks fan out to isolated subagents, then merge into one result — in a dedicated chat session, not mixed into the conversation that triggered it.",
+      "bullets": [
+        "Built-in templates: audit_repo, multi_perspective_review, research",
+        "Kanban board at #/workflows — queued, running, done, needs attention",
+        "Start from chat, gateway UI, cron workflowRun, or REST API",
+        "Save and customize scripts under ~/.xopc/workflows/"
+      ],
+      "viewDocs": "Read workflows docs →",
+      "screenshotPlaceholderTitle": "Workflows · gateway console",
+      "board": {
+        "ariaLabel": "Example workflow runs board: audit_repo in progress with subagent progress, completed review, and a failed research run",
+        "windowTitle": "xopc Gateway",
+        "sceneLabel": "Friday ship review",
+        "sceneHint": "audit_repo · 7/12 subagents · Synthesize phase",
+        "columns": [
+          {
+            "id": "queued",
+            "label": "Queued",
+            "count": "1",
+            "cards": [
+              {
+                "title": "release_notes",
+                "meta": "main · cron 09:00",
+                "status": "queued",
+                "featured": false
+              }
+            ]
+          },
+          {
+            "id": "running",
+            "label": "In progress",
+            "count": "1",
+            "cards": [
+              {
+                "title": "audit_repo",
+                "meta": "Review 4/6 · 2 running",
+                "detail": "style review · docs review",
+                "status": "running",
+                "progress": "58%",
+                "featured": true
+              }
+            ]
+          },
+          {
+            "id": "done",
+            "label": "Done",
+            "count": "3",
+            "cards": [
+              {
+                "title": "multi_perspective_review",
+                "meta": "succeeded · 12m ago",
+                "status": "succeeded",
+                "featured": false
+              }
+            ]
+          },
+          {
+            "id": "attention",
+            "label": "Needs attention",
+            "count": "1",
+            "cards": [
+              {
+                "title": "research",
+                "meta": "timeout · retry available",
+                "status": "failed",
+                "featured": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "architecture": {
+      "titleLine1": "A growing",
+      "titleLine2": "ecosystem.",
+      "desc": "Skills, Extensions, and community contributions — install in seconds, no restart needed. Skills teach via SKILL.md, Extensions add full capabilities as npm packages, and UI Extensions embed custom panels in the Web console.",
+      "diagramAlt": "xopc system architecture: user entry points, Gateway, Channel Manager, Agent Service, extensions, and LLM layer"
+    },
+    "testimonials": {
+      "title": "Built for people who do it all.",
+      "desc": "Whether you're shipping SaaS solo, freelancing, or running a creative studio of one.",
+      "items": [
+        {
+          "quote": "I used to juggle three windows — code, customer messages, monitoring. Now one xopc handles it all.",
+          "author": "[ Add name ]",
+          "role": "Solo SaaS Builder",
+          "avatar": "A",
+          "avatarStyle": "accent"
+        },
+        {
+          "quote": "A unified entry point turned out to be ten times more important than I imagined.",
+          "author": "[ Add name ]",
+          "role": "Freelance Designer / Content Creator",
+          "avatar": "B",
+          "avatarStyle": "green"
+        },
+        {
+          "quote": "Finally, an AI assistant that doesn't steal my data. Local inference, zero exfiltration — exactly what I needed.",
+          "author": "[ Add name ]",
+          "role": "Privacy-first Engineer",
+          "avatar": "C",
+          "avatarStyle": "purple"
+        }
+      ]
+    },
+    "cta": {
+      "titleLine1": "Your AI workstation",
+      "titleLine2": "starts here.",
+      "desc": "Open source, MIT licensed. Install the CLI or grab an Electron build — onboard once, then pick TUI, CLI, browser, or IM.",
+      "primary": "Get Started →",
+      "secondary": "Star on GitHub ⭐"
+    },
+    "footer": {
+      "github": "GitHub",
+      "docs": "Docs",
+      "license": "License",
+      "issues": "Issues",
+      "copyright": "© {year} xopcai · MIT License"
+    }
+  }
+}
