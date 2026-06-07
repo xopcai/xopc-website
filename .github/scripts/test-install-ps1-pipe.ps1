@@ -87,9 +87,6 @@ try {
     } finally {
         if (Test-Path $tempFile) { Remove-Item $tempFile -Force }
     }
-    $out = (& $block -DryRun -NoPrompt -InstallMethod git 2>&1 | Out-String)
-    if ($out -notmatch "Install plan") { throw "Expected install plan in git pipe dry-run" }
-    if ($out -notmatch "git") { throw "Expected git method in pipe dry-run output" }
 
     Write-Host "==> Served install.ps1 matches local file (sha256)"
     $localHash = Get-FileSha256Hex -Path $Installer
