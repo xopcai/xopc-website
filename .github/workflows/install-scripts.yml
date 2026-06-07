@@ -101,12 +101,10 @@ jobs:
         include:
           - os: ubuntu-latest
             label: Linux
-            shell: bash
-            command: bash .github/scripts/test-install-sh-e2e.sh
+            run_script: bash .github/scripts/test-install-sh-e2e.sh
           - os: windows-latest
             label: Windows
-            shell: pwsh
-            command: ./.github/scripts/test-install-ps1-e2e.ps1
+            run_script: pwsh -File ./.github/scripts/test-install-ps1-e2e.ps1
     steps:
       - uses: actions/checkout@v4
 
@@ -115,5 +113,4 @@ jobs:
           node-version: "22"
 
       - name: E2E npm install
-        shell: ${{ matrix.shell }}
-        run: ${{ matrix.command }}
+        run: ${{ matrix.run_script }}
