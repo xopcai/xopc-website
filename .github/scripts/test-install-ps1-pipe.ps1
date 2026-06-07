@@ -70,7 +70,7 @@ try {
         $out = & $block 2>&1 | Out-String
         Write-Host "DEBUG: Output length: $($out.Length)"
         Write-Host "DEBUG: Output: $out"
-        if ($out -notmatch "Dry run") {
+        if ($out -notmatch "Dry run") { throw "Expected dry-run output from env-based pipe execution" }
         if ($out -notmatch "npm") { throw "Expected npm method in env-based pipe output" }
     } finally {
         if (Test-Path $tempFile) { Remove-Item $tempFile -Force }
