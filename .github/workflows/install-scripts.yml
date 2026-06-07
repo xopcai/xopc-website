@@ -82,6 +82,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - shell: pwsh
         run: ./.github/scripts/test-install-ps1.ps1
       - shell: pwsh
