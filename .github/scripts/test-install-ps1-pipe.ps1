@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+#Requires -Version 7.0
 $ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
