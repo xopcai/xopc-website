@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Check, Copy } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
+import type { DesktopPlatformId } from "@/components/desktop-download-picker";
 import type { Messages } from "@/lib/i18n/messages";
 
 const DesktopDownloadPicker = dynamic(
@@ -20,19 +21,21 @@ const DesktopDownloadPicker = dynamic(
 
 type D = Messages["landing"]["download"];
 type ShellPlatform = "unix" | "windows";
-type Method = "oneliner" | "npm" | "macos" | "windows" | "linux";
-type CopiedKey = "oneliner" | "npm" | "onboard" | null;
-type DesktopPlatform = "macos" | "windows" | "linux";
-
-const DESKTOP_METHODS = new Set<Method>(["macos", "windows", "linux"]);
+type Method = "oneliner" | "npm" | "hackable" | "apps";
+type PackageTool = "npm" | "pnpm";
+type HackableTool = "installer" | "pnpm";
 
 function detectShellPlatform(): ShellPlatform {
   if (typeof navigator === "undefined") return "unix";
   return /Win/i.test(navigator.userAgent) ? "windows" : "unix";
 }
 
-function isDesktopMethod(method: Method): method is DesktopPlatform {
-  return DESKTOP_METHODS.has(method);
+function detectDesktopPlatform(): DesktopPlatformId {
+  if (typeof navigator === "undefined") return "macos";
+  const ua = navigator.userAgent;
+  if (/Win/i.test(ua)) return "windows";
+  if (/Linux/i.test(ua)) return "linux";
+  return "macos";
 }
 
 function CopyButton({
@@ -90,6 +93,104 @@ function CodeLine({
   );
 }
 
+function ToolTabs<T extends string>({
+  ariaLabel,
+  tabs,
+  active,
+  onChange,
+}: {
+  ariaLabel: string;
+  tabs: { id: T; label: string }[];
+  active: T;
+  onChange: (id: T) => void;
+}) {
+  return (
+    <div className="quick-start-tool-tabs" role="tablist" aria-label={ariaLabel}>
+      {tabs.map(({ id, label }) => (
+        <button
+          key={id}
+          type="button"
+          role="tab"
+          aria-selected={active === id}
+          className={`quick-start-tool-tab${active === id ? " quick-start-tool-tab--active" : ""}`}
+          onClick={() => onChange(id)}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function PlatformTabs({
+  ariaLabel,
+  unixLabel,
+  windowsLabel,
+  platform,
+  onChange,
+}: {
+  ariaLabel: string;
+  unixLabel: string;
+  windowsLabel: string;
+  platform: ShellPlatform;
+  onChange: (platform: ShellPlatform) => void;
+}) {
+  return (
+    <div className="quick-start-platform-tabs" role="tablist" aria-label={ariaLabel}>
+      <button
+        type="button"
+        role="tab"
+        id="quick-start-platform-unix"
+        aria-selected={platform === "unix"}
+        className={`quick-start-platform-tab${platform === "unix" ? " quick-start-platform-tab--active" : ""}`}
+        onClick={() => onChange("unix")}
+      >
+        {unixLabel}
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="quick-start-platform-windows"
+        aria-selected={platform === "windows"}
+        className={`quick-start-platform-tab${platform === "windows" ? " quick-start-platform-tab--active" : ""}`}
+        onClick={() => onChange("windows")}
+      >
+        {windowsLabel}
+      </button>
+    </div>
+  );
+}
+
+function DesktopPlatformTabs({
+  ariaLabel,
+  platform,
+  names,
+  onChange,
+}: {
+  ariaLabel: string;
+  platform: DesktopPlatformId;
+  names: D["platformNames"];
+  onChange: (platform: DesktopPlatformId) => void;
+}) {
+  const ids: DesktopPlatformId[] = ["macos", "windows", "linux"];
+  return (
+    <div className="quick-start-platform-tabs" role="tablist" aria-label={ariaLabel}>
+      {ids.map((id) => (
+        <button
+          key={id}
+          type="button"
+          role="tab"
+          aria-selected={platform === id}
+          className={`quick-start-platform-tab${platform === id ? " quick-start-platform-tab--active" : ""}`}
+          onClick={() => onChange(id)}
+        >
+          {names[id]}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export function QuickInstallBlock({
   d,
   compact = false,
@@ -97,19 +198,29 @@ export function QuickInstallBlock({
   d: D;
   compact?: boolean;
 }) {
-  const [platform, setPlatform] = useState<ShellPlatform>("unix");
+  const [shellPlatform, setShellPlatform] = useState<ShellPlatform>("unix");
+  const [desktopPlatform, setDesktopPlatform] = useState<DesktopPlatformId>("macos");
   const [method, setMethod] = useState<Method>("oneliner");
-  const [copied, setCopied] = useState<CopiedKey>(null);
+  const [packageTool, setPackageTool] = useState<PackageTool>("npm");
+  const [hackableTool, setHackableTool] = useState<HackableTool>("installer");
+  const [copied, setCopied] = useState<string | null>(null);
 
   useEffect(() => {
-    setPlatform(detectShellPlatform());
+    setShellPlatform(detectShellPlatform());
+    setDesktopPlatform(detectDesktopPlatform());
   }, []);
 
   const onelinerCommand =
-    platform === "unix" ? d.quickInstallUnixCommand : d.quickInstallWindowsCommand;
-  const onelinerPrompt = platform === "unix" ? "$" : "PS>";
+    shellPlatform === "unix" ? d.quickInstallUnixCommand : d.quickInstallWindowsCommand;
+  const onelinerPrompt = shellPlatform === "unix" ? "$" : "PS>";
 
-  const copy = useCallback(async (key: Exclude<CopiedKey, null>, text: string) => {
+  const hackableCommand =
+    shellPlatform === "unix" ? d.hackableUnixCommand : d.hackableWindowsCommand;
+  const hackablePrompt = shellPlatform === "unix" ? "$" : "PS>";
+
+  const npmInstallCommand = packageTool === "npm" ? d.npmCommand : d.pnpmCommand;
+
+  const copy = useCallback(async (key: string, text: string) => {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(key);
@@ -119,15 +230,70 @@ export function QuickInstallBlock({
     }
   }, []);
 
-  const showPlatformToggle = method === "oneliner";
+  const showShellPlatformToggle =
+    method === "oneliner" || (method === "hackable" && hackableTool === "installer");
 
   const methodTabs: { id: Method; label: string }[] = [
     { id: "oneliner", label: d.methodOneLiner },
     { id: "npm", label: d.methodNpm },
-    { id: "macos", label: d.platformNames.macos },
-    { id: "windows", label: d.platformNames.windows },
-    { id: "linux", label: d.platformNames.linux },
+    { id: "hackable", label: d.methodHackable },
+    { id: "apps", label: d.methodApps },
   ];
+
+  const packageToolTabs: { id: PackageTool; label: string }[] = [
+    { id: "npm", label: d.npmToolNpm },
+    { id: "pnpm", label: d.npmToolPnpm },
+  ];
+
+  const hackableToolTabs: { id: HackableTool; label: string }[] = [
+    { id: "installer", label: d.hackableToolInstaller },
+    { id: "pnpm", label: d.hackableToolPnpm },
+  ];
+
+  const titlebarSecondary =
+    method === "npm" ? (
+      <ToolTabs
+        ariaLabel={d.npmToolTabsAria}
+        tabs={packageToolTabs}
+        active={packageTool}
+        onChange={setPackageTool}
+      />
+    ) : method === "hackable" ? (
+      <ToolTabs
+        ariaLabel={d.hackableToolTabsAria}
+        tabs={hackableToolTabs}
+        active={hackableTool}
+        onChange={setHackableTool}
+      />
+    ) : method === "apps" ? (
+      <DesktopPlatformTabs
+        ariaLabel={d.appsPlatformTabsAria}
+        platform={desktopPlatform}
+        names={d.platformNames}
+        onChange={setDesktopPlatform}
+      />
+    ) : showShellPlatformToggle ? (
+      <PlatformTabs
+        ariaLabel={d.quickInstallTabsAria}
+        unixLabel={d.quickInstallUnixTab}
+        windowsLabel={d.quickInstallWindowsTab}
+        platform={shellPlatform}
+        onChange={setShellPlatform}
+      />
+    ) : (
+      <span className="quick-start-titlebar-spacer" aria-hidden />
+    );
+
+  const titlebarTertiary =
+    method === "hackable" && hackableTool === "installer" ? (
+      <PlatformTabs
+        ariaLabel={d.quickInstallTabsAria}
+        unixLabel={d.quickInstallUnixTab}
+        windowsLabel={d.quickInstallWindowsTab}
+        platform={shellPlatform}
+        onChange={setShellPlatform}
+      />
+    ) : null;
 
   return (
     <div className={`quick-start-block${compact ? " quick-start-block--compact" : ""}`}>
@@ -163,36 +329,10 @@ export function QuickInstallBlock({
             ))}
           </div>
 
-          {showPlatformToggle ? (
-            <div
-              className="quick-start-platform-tabs"
-              role="tablist"
-              aria-label={d.quickInstallTabsAria}
-            >
-              <button
-                type="button"
-                role="tab"
-                id="quick-start-platform-unix"
-                aria-selected={platform === "unix"}
-                className={`quick-start-platform-tab${platform === "unix" ? " quick-start-platform-tab--active" : ""}`}
-                onClick={() => setPlatform("unix")}
-              >
-                {d.quickInstallUnixTab}
-              </button>
-              <button
-                type="button"
-                role="tab"
-                id="quick-start-platform-windows"
-                aria-selected={platform === "windows"}
-                className={`quick-start-platform-tab${platform === "windows" ? " quick-start-platform-tab--active" : ""}`}
-                onClick={() => setPlatform("windows")}
-              >
-                {d.quickInstallWindowsTab}
-              </button>
-            </div>
-          ) : (
-            <span className="quick-start-titlebar-spacer" aria-hidden />
-          )}
+          <div className="quick-start-titlebar-actions">
+            {titlebarSecondary}
+            {titlebarTertiary}
+          </div>
         </div>
 
         <div className="quick-start-body" id="quick-start-panel" role="tabpanel">
@@ -215,11 +355,11 @@ export function QuickInstallBlock({
               <p className="quick-start-comment">{d.npmQuickComment}</p>
               <CodeLine
                 prompt="$"
-                command={d.npmCommand}
-                copyLabel={`${d.copy}: ${d.npmCommand}`}
-                copiedLabel={`${d.copied}: ${d.npmCommand}`}
-                copied={copied === "npm"}
-                onCopy={() => void copy("npm", d.npmCommand)}
+                command={npmInstallCommand}
+                copyLabel={`${d.copy}: ${npmInstallCommand}`}
+                copiedLabel={`${d.copied}: ${npmInstallCommand}`}
+                copied={copied === "npm-install"}
+                onCopy={() => void copy("npm-install", npmInstallCommand)}
               />
               <div className="quick-start-npm-onboard">
                 <span className="quick-start-npm-label">{d.npmOnboardLabel}</span>
@@ -235,9 +375,55 @@ export function QuickInstallBlock({
             </>
           ) : null}
 
-          {isDesktopMethod(method) ? (
+          {method === "hackable" && hackableTool === "installer" ? (
+            <>
+              <p className="quick-start-comment">{d.hackableComment}</p>
+              <CodeLine
+                prompt={hackablePrompt}
+                command={hackableCommand}
+                copyLabel={`${d.copy}: ${hackableCommand}`}
+                copiedLabel={`${d.copied}: ${hackableCommand}`}
+                copied={copied === "hackable-installer"}
+                onCopy={() => void copy("hackable-installer", hackableCommand)}
+              />
+            </>
+          ) : null}
+
+          {method === "hackable" && hackableTool === "pnpm" ? (
+            <div className="quick-start-stack">
+              <p className="quick-start-comment">{d.hackablePnpmComment1}</p>
+              <CodeLine
+                prompt="$"
+                command={d.hackablePnpmCloneCommand}
+                copyLabel={`${d.copy}: ${d.hackablePnpmCloneCommand}`}
+                copiedLabel={`${d.copied}: ${d.hackablePnpmCloneCommand}`}
+                copied={copied === "hackable-clone"}
+                onCopy={() => void copy("hackable-clone", d.hackablePnpmCloneCommand)}
+              />
+              <CodeLine
+                prompt="$"
+                command={d.hackablePnpmInstallCommand}
+                copyLabel={`${d.copy}: ${d.hackablePnpmInstallCommand}`}
+                copiedLabel={`${d.copied}: ${d.hackablePnpmInstallCommand}`}
+                copied={copied === "hackable-install"}
+                onCopy={() => void copy("hackable-install", d.hackablePnpmInstallCommand)}
+              />
+              <p className="quick-start-comment quick-start-comment--tight">{d.hackablePnpmComment2}</p>
+              <CodeLine
+                prompt="$"
+                command={d.hackablePnpmOnboardCommand}
+                copyLabel={`${d.copy}: ${d.hackablePnpmOnboardCommand}`}
+                copiedLabel={`${d.copied}: ${d.hackablePnpmOnboardCommand}`}
+                copied={copied === "hackable-onboard"}
+                onCopy={() => void copy("hackable-onboard", d.hackablePnpmOnboardCommand)}
+              />
+            </div>
+          ) : null}
+
+          {method === "apps" ? (
             <div className="quick-start-desktop">
-              <DesktopDownloadPicker d={d} platform={method} />
+              <p className="quick-start-comment">{d.desktopQuickComment}</p>
+              <DesktopDownloadPicker d={d} platform={desktopPlatform} />
             </div>
           ) : null}
         </div>
