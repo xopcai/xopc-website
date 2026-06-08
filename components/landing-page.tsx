@@ -203,18 +203,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
               {L.hero.watchDemo}
             </a>
           </div>
-
-          <div className="hero-stats fade-up delay-5">
-            {L.hero.stats.map((s) => (
-              <div className="stat-item" key={s.label}>
-                <div className="stat-num">
-                  {s.value}
-                  {s.suffix ? <span>{s.suffix}</span> : null}
-                </div>
-                <div className="stat-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

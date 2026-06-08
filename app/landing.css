@@ -409,33 +409,6 @@
       flex-shrink: 0;
     }
 
-    .landing-page .hero-stats{
-      display: flex;
-      gap: 40px;
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--edge);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .landing-page .stat-item{ display: flex; flex-direction: column; gap: 4px; }
-
-    .landing-page .stat-num{
-      font-family: var(--mono);
-      font-size: 26px;
-      color: var(--fg-head);
-      font-weight: 600;
-    }
-
-    .landing-page .stat-num span{ color: var(--accent); }
-
-    .landing-page .stat-label{
-      font-size: 12px;
-      color: var(--fg-dim);
-      letter-spacing: 0.05em;
-    }
-
     /* ─── SECTION COMMON ────────────────────────────────────────────── */
     .landing-page .section-header{
       text-align: center;
@@ -2113,7 +2086,6 @@
       .landing-page .container{ padding: 0 20px; }
       .landing-page .features-grid{ grid-template-columns: 1fr; }
       .landing-page .wf-board-columns{ grid-template-columns: 1fr; }
-      .landing-page .hero-stats{ flex-wrap: wrap; gap: 24px; }
       .landing-page .nav-links{ display: none; }
     }
 

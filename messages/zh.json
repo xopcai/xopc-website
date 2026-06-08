@@ -32,11 +32,6 @@
       "desc": "为一人公司打造的本地优先 AI 助手。CLI、桌面、浏览器、手机、即时通讯——全平台覆盖。自带钥匙，无需 fork 即可扩展。",
       "starGithub": "在 GitHub 上 Star",
       "watchDemo": "观看演示",
-      "stats": [
-        { "value": "MIT", "suffix": "", "label": "License" },
-        { "value": "20", "suffix": "+", "label": "LLM 提供商" },
-        { "value": "≥", "suffix": "22", "label": "Node.js" }
-      ],
       "screenshotAlt": "xopc Web 控制台"
     },
     "download": {
@@ -116,15 +111,15 @@
       }
     },
     "demo": {
-      "titleLine1": "看工作站",
-      "titleLine2": "如何运转",
-      "desc": "从安装、onboard 到在终端、浏览器或常用 IM 里对话——同一套助手，密钥在你手里。",
+      "titleLine1": "先看一遍，",
+      "titleLine2": "上手有多快。",
+      "desc": "一键安装、选好模型，在终端、浏览器或微信里开聊——同一套助手，密钥在你手里。",
       "videoAria": "xopc 产品演示"
     },
     "features": {
-      "titleLine1": "不一样，",
-      "titleLine2": "为你而生。",
-      "desc": "本地优先、自带钥匙、可成长的生态——一人公司选择 xopc 的三个理由。",
+      "titleLine1": "本地优先，",
+      "titleLine2": "你完全掌控。",
+      "desc": "数据留在你的机器、自带 API Key、需要什么就装什么——一人公司选 xopc，这三个理由就够了。",
       "tagFeatured": "核心差异点",
       "items": [
         {
@@ -345,9 +340,9 @@
       }
     },
     "architecture": {
-      "titleLine1": "不断壮大的",
-      "titleLine2": "生态。",
-      "desc": "Skills、Extensions 与社区贡献——秒级安装，无需重启。Skills 用 SKILL.md 教知识，Extensions 以 npm 包扩展全功能，UI Extensions 在 Web 控制台嵌入自定义面板。",
+      "titleLine1": "需要什么，",
+      "titleLine2": "就装什么。",
+      "desc": "一行命令安装 Skills 和 Extensions——新能力秒级生效，不用重启，也不用改源码。教它新领域、加新工具、接新渠道，都在你的掌控之中。",
       "diagramAlt": "xopc 系统技术架构：用户入口、Gateway、Channel Manager、Agent Service、扩展与 LLM 层"
     },
     "testimonials": {
