@@ -15,6 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import { HeroBrand } from "@/components/hero-brand";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { QuickInstallBlock } from "@/components/quick-install-block";
@@ -214,15 +215,11 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         <div className="hero-glow" aria-hidden />
         <div className="hero-grid" aria-hidden />
         <div className="container hero-inner">
-          <div className="hero-brand fade-up delay-1">
-            <div className="hero-brand-logo" aria-hidden>
-              <XopcLogoMark />
-            </div>
-            <h1>{L.hero.brandName}</h1>
-            {L.hero.taglineStrong.trim() ? (
-              <p className="hero-tagline">{L.hero.taglineStrong}</p>
-            ) : null}
-          </div>
+          <HeroBrand
+            brandName={L.hero.brandName}
+            headlineLine1={L.hero.headlineLine1}
+            headlineLine2={L.hero.headlineLine2}
+          />
 
           <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
 

@@ -311,37 +311,162 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+
+    .landing-page .hero-brand-logo-wrap{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 112px;
+      height: 112px;
+      margin-bottom: 8px;
+    }
+
+    .landing-page .hero-brand-ring{
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .landing-page .hero-brand-ring--outer{
+      inset: 0;
+      border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+      animation: heroRingPulse 4.2s ease-in-out infinite;
+    }
+
+    .landing-page .hero-brand-ring--inner{
+      inset: 10px;
+      border: 1px dashed color-mix(in srgb, var(--accent) 18%, transparent);
+      animation: heroRingPulse 4.2s ease-in-out infinite reverse;
+      animation-delay: -1.4s;
+    }
+
+    @keyframes heroRingPulse {
+      0%, 100% {
+        opacity: 0.45;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.04);
+      }
     }
 
     .landing-page .hero-brand-logo{
-      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
       line-height: 0;
+      animation: heroLogoFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes heroLogoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
     .landing-page .hero-brand-logo .xopc-logo-img{
-      height: 72px;
+      height: 80px;
       width: auto;
+      filter: drop-shadow(0 8px 24px color-mix(in srgb, var(--accent) 22%, transparent));
     }
 
-    .landing-page .hero h1{
-      font-size: clamp(44px, 9vw, 76px);
-      letter-spacing: -0.04em;
-      margin: 0 0 10px;
-      line-height: 1;
-      color: var(--accent);
+    .landing-page .hero-wordmark{
+      margin: 0 0 12px;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-family: var(--display);
+      font-size: clamp(56px, 12vw, 104px);
       font-weight: 600;
+      background: linear-gradient(
+        110deg,
+        var(--accent-bright) 0%,
+        var(--accent) 38%,
+        color-mix(in srgb, var(--accent) 70%, #fff) 52%,
+        var(--accent) 68%,
+        var(--accent-hover) 100%
+      );
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: heroWordmarkShimmer 9s ease-in-out infinite;
     }
 
-    .landing-page .hero-tagline{
-      font-size: clamp(11px, 1.6vw, 13px);
-      color: var(--accent);
-      margin: 0;
-      line-height: 1.4;
-      max-width: 520px;
+    @keyframes heroWordmarkShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .landing-page .hero-wordmark-char{
+      display: inline-block;
+      animation: heroCharIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+      animation-delay: calc(0.12s + var(--char-i) * 0.07s);
+    }
+
+    @keyframes heroCharIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.92);
+        filter: blur(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    .landing-page .hero-headline{
+      margin: 0 0 24px;
+      max-width: min(640px, 92vw);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .landing-page .hero-headline-line1{
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(22px, 4.2vw, 36px);
       font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      color: var(--fg-head);
+    }
+
+    .landing-page .hero-headline-line2{
+      display: block;
+      margin-top: 6px;
+      font-family: var(--display);
+      font-size: clamp(22px, 4.2vw, 36px);
+      font-weight: 500;
+      color: var(--fg-mid);
+    }
+
+    .landing-page .hero-headline-typewriter{
+      display: inline;
+    }
+
+    .landing-page .hero-headline-typewriter-text{
+      background: linear-gradient(90deg, var(--fg-mid) 0%, var(--accent-bright) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .landing-page .hero-headline-cursor{
+      display: inline-block;
+      margin-left: 2px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-style: normal;
+      font-weight: 400;
+      animation: heroCursorBlink 1s step-end infinite;
+    }
+
+    @keyframes heroCursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     .landing-page .hero-desc{
@@ -2452,5 +2577,14 @@
       }
       .landing-page .surfaces-panel-enter{
         animation: none;
+      }
+      .landing-page .hero-brand-ring,
+      .landing-page .hero-brand-logo,
+      .landing-page .hero-wordmark,
+      .landing-page .hero-wordmark-char {
+        animation: none;
+      }
+      .landing-page .hero-headline-cursor {
+        display: none;
       }
     }
