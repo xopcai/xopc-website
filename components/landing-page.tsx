@@ -17,7 +17,6 @@ import {
 
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
-import { LandingSocialProof } from "@/components/landing-social-proof";
 import { QuickInstallBlock } from "@/components/quick-install-block";
 import { SurfaceGallery } from "@/components/surface-gallery";
 import { WorkflowBoardPreview } from "@/components/workflow-board-preview";
@@ -60,8 +59,6 @@ type Props = {
   messages: Messages;
   docHome: string;
   docWorkflows: string;
-  githubStars: number | null;
-  releaseTag: string | null;
 };
 
 function dotClass(dot: string): string {
@@ -143,14 +140,7 @@ function AutomationCodeBlock({ title }: { title: string }) {
   );
 }
 
-export function LandingPage({
-  locale,
-  messages: m,
-  docHome,
-  docWorkflows,
-  githubStars,
-  releaseTag,
-}: Props) {
+export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Props) {
   const L = m.landing;
   const year = new Date().getFullYear();
   const providerChipsRow = [...L.providers.chips, ...L.providers.chips];
@@ -235,15 +225,6 @@ export function LandingPage({
           </div>
 
           <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
-
-          <div className="hero-social-proof fade-up delay-2">
-            <LandingSocialProof
-              locale={locale}
-              copy={L.socialProof}
-              stars={githubStars}
-              versionTag={releaseTag}
-            />
-          </div>
 
           <div className="hero-quick-start fade-up delay-3" id="download">
             <QuickInstallBlock d={L.download} />

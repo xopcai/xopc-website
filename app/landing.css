@@ -348,63 +348,10 @@
       font-size: 17px;
       color: var(--fg-mid);
       max-width: 540px;
-      margin: 0 auto 20px;
+      margin: 0 auto 36px;
       font-weight: 400;
       line-height: 1.65;
       text-align: center;
-    }
-
-    .landing-page .hero-social-proof{
-      margin: 0 auto 28px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .landing-page .social-proof{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .landing-page .social-proof-item{
-      display: inline-flex;
-    }
-
-    .landing-page .social-proof-chip{
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--edge-bright);
-      background: color-mix(in srgb, var(--bg-card) 88%, transparent);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: var(--fg-mid);
-      text-decoration: none;
-      transition: border-color 0.15s ease-out, color 0.15s ease-out, background 0.15s ease-out;
-    }
-
-    .landing-page .social-proof-chip--muted{
-      cursor: default;
-    }
-
-    .landing-page .social-proof-chip--link:hover{
-      border-color: color-mix(in srgb, var(--accent) 40%, var(--edge-bright));
-      color: var(--fg-head);
-      background: var(--bg-card);
-      text-decoration: none;
-    }
-
-    .landing-page .social-proof-ic{
-      width: 14px;
-      height: 14px;
-      color: var(--accent);
-      flex-shrink: 0;
     }
 
     .landing-page .hero-quick-start{

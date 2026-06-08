@@ -21,21 +21,19 @@ const DesktopDownloadPicker = dynamic(
 
 type D = Messages["landing"]["download"];
 type ShellPlatform = "unix" | "windows";
-type Method = "oneliner" | "npm" | "hackable" | "apps";
+type Method = "oneliner" | "npm" | "hackable" | DesktopPlatformId;
 type PackageTool = "npm" | "pnpm";
 type HackableTool = "installer" | "pnpm";
+
+const DESKTOP_METHODS: DesktopPlatformId[] = ["macos", "windows", "linux"];
+
+function isDesktopMethod(method: Method): method is DesktopPlatformId {
+  return DESKTOP_METHODS.includes(method as DesktopPlatformId);
+}
 
 function detectShellPlatform(): ShellPlatform {
   if (typeof navigator === "undefined") return "unix";
   return /Win/i.test(navigator.userAgent) ? "windows" : "unix";
-}
-
-function detectDesktopPlatform(): DesktopPlatformId {
-  if (typeof navigator === "undefined") return "macos";
-  const ua = navigator.userAgent;
-  if (/Win/i.test(ua)) return "windows";
-  if (/Linux/i.test(ua)) return "linux";
-  return "macos";
 }
 
 function CopyButton({
@@ -161,36 +159,6 @@ function PlatformTabs({
   );
 }
 
-function DesktopPlatformTabs({
-  ariaLabel,
-  platform,
-  names,
-  onChange,
-}: {
-  ariaLabel: string;
-  platform: DesktopPlatformId;
-  names: D["platformNames"];
-  onChange: (platform: DesktopPlatformId) => void;
-}) {
-  const ids: DesktopPlatformId[] = ["macos", "windows", "linux"];
-  return (
-    <div className="quick-start-platform-tabs" role="tablist" aria-label={ariaLabel}>
-      {ids.map((id) => (
-        <button
-          key={id}
-          type="button"
-          role="tab"
-          aria-selected={platform === id}
-          className={`quick-start-platform-tab${platform === id ? " quick-start-platform-tab--active" : ""}`}
-          onClick={() => onChange(id)}
-        >
-          {names[id]}
-        </button>
-      ))}
-    </div>
-  );
-}
-
 export function QuickInstallBlock({
   d,
   compact = false,
@@ -199,7 +167,6 @@ export function QuickInstallBlock({
   compact?: boolean;
 }) {
   const [shellPlatform, setShellPlatform] = useState<ShellPlatform>("unix");
-  const [desktopPlatform, setDesktopPlatform] = useState<DesktopPlatformId>("macos");
   const [method, setMethod] = useState<Method>("oneliner");
   const [packageTool, setPackageTool] = useState<PackageTool>("npm");
   const [hackableTool, setHackableTool] = useState<HackableTool>("installer");
@@ -207,7 +174,6 @@ export function QuickInstallBlock({
 
   useEffect(() => {
     setShellPlatform(detectShellPlatform());
-    setDesktopPlatform(detectDesktopPlatform());
   }, []);
 
   const onelinerCommand =
@@ -237,7 +203,9 @@ export function QuickInstallBlock({
     { id: "oneliner", label: d.methodOneLiner },
     { id: "npm", label: d.methodNpm },
     { id: "hackable", label: d.methodHackable },
-    { id: "apps", label: d.methodApps },
+    { id: "macos", label: d.platformNames.macos },
+    { id: "windows", label: d.platformNames.windows },
+    { id: "linux", label: d.platformNames.linux },
   ];
 
   const packageToolTabs: { id: PackageTool; label: string }[] = [
@@ -264,13 +232,6 @@ export function QuickInstallBlock({
         tabs={hackableToolTabs}
         active={hackableTool}
         onChange={setHackableTool}
-      />
-    ) : method === "apps" ? (
-      <DesktopPlatformTabs
-        ariaLabel={d.appsPlatformTabsAria}
-        platform={desktopPlatform}
-        names={d.platformNames}
-        onChange={setDesktopPlatform}
       />
     ) : showShellPlatformToggle ? (
       <PlatformTabs
@@ -420,10 +381,10 @@ export function QuickInstallBlock({
             </div>
           ) : null}
 
-          {method === "apps" ? (
+          {isDesktopMethod(method) ? (
             <div className="quick-start-desktop">
               <p className="quick-start-comment">{d.desktopQuickComment}</p>
-              <DesktopDownloadPicker d={d} platform={desktopPlatform} />
+              <DesktopDownloadPicker d={d} platform={method} />
             </div>
           ) : null}
         </div>

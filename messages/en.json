@@ -34,13 +34,6 @@
       "watchDemo": "Watch Demo",
       "screenshotAlt": "xopc Web console"
     },
-    "socialProof": {
-      "mit": "MIT License",
-      "openSource": "Open source",
-      "stars": "{count} GitHub stars",
-      "version": "{tag}",
-      "starsAria": "{count} stars on GitHub"
-    },
     "download": {
       "quickStartHeading": "Quick Start",
       "methodTabsAria": "Choose install method",
@@ -74,7 +67,7 @@
       "quickInstallComment": "# One command — macOS, Linux, and Windows.",
       "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
       "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
-      "quickInstallFootnote": "Works on macOS, Linux, and Windows. The one-liner installs Node.js and everything else for you. Hackable clones from git for local hacking. Switch tabs for npm or desktop apps.",
+      "quickInstallFootnote": "Works on macOS, Linux, and Windows. The one-liner installs Node.js and everything else for you. Hackable clones from git for local hacking. Switch tabs for npm or desktop downloads.",
       "pnpmCommand": "pnpm add -g @xopcai/xopc",
       "advancedHeading": "Install with npm",
       "advancedSubtitle": "If you already have Node.js 22+ and prefer the package manager route.",
