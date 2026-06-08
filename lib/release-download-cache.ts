@@ -28,7 +28,7 @@ function upstreamFetchSignal(name: string): AbortSignal | undefined {
   return AbortSignal.timeout(ms);
 }
 
-function githubHeaders(): Record<string, string> {
+export function githubApiHeaders(): Record<string, string> {
   const h: Record<string, string> = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
@@ -93,7 +93,7 @@ export async function resolveAssetDownloadUrl(tag: string, name: string): Promis
   assertAllowedReleaseTag(tag);
   assertAllowedReleaseAssetName(name);
   const url = `https://api.github.com/repos/${GITHUB_REPO}/releases/tags/${encodeURIComponent(tag)}`;
-  const res = await fetch(url, { headers: githubHeaders(), cache: "no-store" });
+  const res = await fetch(url, { headers: githubApiHeaders(), cache: "no-store" });
   if (!res.ok) return null;
   const data = (await res.json()) as { assets?: { name: string; browser_download_url: string }[] };
   const hit = data.assets?.find((a) => a.name === name);
@@ -206,7 +206,7 @@ export async function fetchLatestReleaseForPrefetch(): Promise<LatestReleaseMeta
   }
 
   const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/releases/latest`, {
-    headers: githubHeaders(),
+    headers: githubApiHeaders(),
     cache: "no-store",
   });
 

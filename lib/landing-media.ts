@@ -109,7 +109,8 @@ export const LANDING_MEDIA = {
       ready: true,
       width: 1200,
       height: 600,
-      spec: "1200×600 · SVG export preferred",
+      spec: "1200×600 · theme: diagram.{dark|light}.{locale}.png",
+      fileHint: "architecture/diagram.{theme}.{locale}.png",
     }),
   },
   workflows: {

@@ -34,6 +34,13 @@
       "watchDemo": "Watch Demo",
       "screenshotAlt": "xopc Web console"
     },
+    "socialProof": {
+      "mit": "MIT License",
+      "openSource": "Open source",
+      "stars": "{count} GitHub stars",
+      "version": "{tag}",
+      "starsAria": "{count} stars on GitHub"
+    },
     "download": {
       "quickStartHeading": "Quick Start",
       "methodTabsAria": "Choose install method",
@@ -51,7 +58,7 @@
       "appsPlatformTabsAria": "Choose desktop platform",
       "npmQuickComment": "# Node.js 22+ required. Then run onboarding.",
       "desktopQuickComment": "# Native apps for macOS, Windows, and Linux.",
-      "hackableComment": "# For those who read source code for fun",
+      "hackableComment": "# Source install — for contributors and deep customization",
       "hackableUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash -s -- --install-method git",
       "hackableWindowsCommand": "powershell -c \"& ([scriptblock]::Create((irm https://xopc.ai/install.ps1))) -InstallMethod git\"",
       "hackablePnpmComment1": "# Source checkouts are pnpm workspaces",
@@ -64,7 +71,7 @@
       "quickInstallTabsAria": "Choose install platform",
       "quickInstallUnixTab": "macOS & Linux",
       "quickInstallWindowsTab": "Windows",
-      "quickInstallComment": "# Works everywhere. Installs everything. You're welcome.",
+      "quickInstallComment": "# One command — macOS, Linux, and Windows.",
       "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
       "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
       "quickInstallFootnote": "Works on macOS, Linux, and Windows. The one-liner installs Node.js and everything else for you. Hackable clones from git for local hacking. Switch tabs for npm or desktop apps.",
@@ -117,64 +124,64 @@
       "videoAria": "xopc product demo"
     },
     "features": {
-      "titleLine1": "Built different.",
-      "titleLine2": "Built for you.",
-      "desc": "Local-first by default, bring your own keys, and an ecosystem that grows with you — three reasons one-person companies choose xopc.",
+      "titleLine1": "Local-first.",
+      "titleLine2": "You own it.",
+      "desc": "Data on your hardware, your API keys, extend on demand — three reasons OPC builders choose xopc.",
       "tagFeatured": "CORE DIFFERENTIATOR",
       "items": [
         {
-          "icon": "🔌",
+          "icon": "key",
           "title": "Bring your own keys. Any model.",
           "body": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure — 20+ providers built in. Run fully offline with local inference, or mix cloud and local as you please. Zero vendor lock-in. Switch models in one config line.",
           "featured": false
         },
         {
-          "icon": "📡",
+          "icon": "layers",
           "title": "One brain, every screen",
           "body": "The same assistant — in your terminal, browser, desktop app, phone, and messengers. No sync needed. It's all one system."
         },
         {
-          "icon": "🔀",
+          "icon": "git-branch",
           "title": "Dynamic workflows",
           "body": "Fan-out isolated subagents from deterministic scripts — repo audits, multi-perspective reviews, and parallel research. Each run gets its own session with live progress."
         },
         {
-          "icon": "🤖",
+          "icon": "bot",
           "title": "Multi-agent routing",
           "body": "Route different contexts to different agents — each with its own model, workspace, tools, and system prompt. Fully isolated contexts for work, creativity, and code."
         },
         {
-          "icon": "🧩",
+          "icon": "puzzle",
           "title": "Grows with you. Never outgrow it.",
           "body": "Install Skills with one command. Add Extensions for new tools, channels, and UI panels. Multi-agent routing for different contexts. It's your system — shape it. xopc skills install · xopc extensions install — and it just works."
         },
         {
-          "icon": "🏠",
+          "icon": "hard-drive",
           "title": "Your machine. Your rules.",
           "body": "xopc runs on your hardware. Conversations stay local. API keys stay in your config. No mandatory cloud, no surprise bills, no data leaving without your say. ~/.xopc/ — everything in one directory you own.",
           "featured": true
         },
         {
-          "icon": "🌐",
+          "icon": "globe",
           "title": "HTTP/SSE gateway",
           "body": "REST JSON APIs plus Server-Sent Events for streaming and live updates, with the same React console you get in Electron. Open the URL from logs or gateway config."
         },
         {
-          "icon": "🛠️",
+          "icon": "wrench",
           "title": "Type-Safe Tool System",
           "body": "Build custom tools with TypeBox schemas. Web search, browser control (Playwright, opt-in), file operations — extend your agent's capabilities."
         },
         {
-          "icon": "🎙️",
+          "icon": "mic",
           "title": "Voice & vision",
           "body": "STT/TTS where configured — e.g. Telegram and gateway paths. Images: vision plus generation when you wire it up; see the Voice and Tools docs."
         }
       ]
     },
     "channels": {
-      "titleLine1": "One brain,",
-      "titleLine2": "every screen.",
-      "desc": "The same assistant — in your terminal, browser, desktop app, phone, and messengers. No sync needed. It's all one system.",
+      "titleLine1": "Every surface.",
+      "titleLine2": "One assistant.",
+      "desc": "Terminal, browser, desktop, phone, and messengers — same assistant everywhere, no sync layer needed.",
       "placeholderAction": "Add asset",
       "items": [
         {
@@ -230,7 +237,7 @@
     "providers": {
       "titleLine1": "Bring your own keys.",
       "titleLine2": "Any model.",
-      "desc": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure — 20+ providers built in. Run fully offline with local inference, or mix cloud and local as you please. Zero vendor lock-in. Switch models in one config line.",
+      "desc": "OpenAI, Anthropic, DeepSeek, Ollama, and 20+ more. Cloud, local, or hybrid — switch models in one config line.",
       "viewProviders": "View all supported providers →",
       "chips": [
         { "name": "OpenAI", "dot": "blue" },
@@ -340,10 +347,12 @@
       }
     },
     "architecture": {
-      "titleLine1": "A growing",
-      "titleLine2": "ecosystem.",
-      "desc": "Skills, Extensions, and community contributions — install in seconds, no restart needed. Skills teach via SKILL.md, Extensions add full capabilities as npm packages, and UI Extensions embed custom panels in the Web console.",
-      "diagramAlt": "xopc system architecture: user entry points, Gateway, Channel Manager, Agent Service, extensions, and LLM layer"
+      "titleLine1": "Composable",
+      "titleLine2": "by design.",
+      "desc": "Gateway, channels, agents, and LLM providers — modular layers you extend with Skills and Extensions, no fork required.",
+      "diagramAlt": "xopc system architecture: user entry points, Gateway, Channel Manager, Agent Service, extensions, and LLM layer",
+      "expandLabel": "Expand architecture diagram",
+      "closeLabel": "Close expanded diagram"
     },
     "testimonials": {
       "title": "Built for people who do it all.",

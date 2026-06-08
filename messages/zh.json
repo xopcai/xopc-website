@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — 与你一起成长的 AI 工作站",
-    "description": "为一人公司打造的本地优先 AI 助手。CLI、桌面、浏览器、手机、即时通讯——全平台覆盖。自带钥匙，无需 fork 即可扩展。",
-    "ogDescription": "本地优先 AI 工作站：CLI、桌面、浏览器、手机、即时通讯。BYOK、20+ 大模型、Skills 与 Extensions——Node.js 22+，MIT 开源。"
+    "title": "xopc — 本地 AI 助手 · 一人公司 AI 工作站",
+    "description": "为一人公司打造的本地 AI 助手与工作站。本地优先、自带 API Key，支持 CLI、桌面、浏览器、微信与 Telegram——MIT 开源，20+ 大模型。",
+    "ogDescription": "本地 AI 助手 · 一人公司工作站：本地优先，BYOK，CLI/桌面/浏览器/IM 全端覆盖。Skills 与 Extensions 可扩展，Node.js 22+，MIT 开源。"
   },
   "header": {
     "chooseLanguage": "选择语言",
@@ -34,6 +34,13 @@
       "watchDemo": "观看演示",
       "screenshotAlt": "xopc Web 控制台"
     },
+    "socialProof": {
+      "mit": "MIT 开源",
+      "openSource": "开放源码",
+      "stars": "GitHub {count} Star",
+      "version": "{tag}",
+      "starsAria": "GitHub 上 {count} 个 Star"
+    },
     "download": {
       "quickStartHeading": "快速开始",
       "methodTabsAria": "选择安装方式",
@@ -51,7 +58,7 @@
       "appsPlatformTabsAria": "选择桌面平台",
       "npmQuickComment": "# 需要 Node.js 22+，然后执行 onboard。",
       "desktopQuickComment": "# macOS、Windows、Linux 原生应用。",
-      "hackableComment": "# 爱读源码的人专用",
+      "hackableComment": "# 源码安装 — 适合贡献者与深度定制",
       "hackableUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash -s -- --install-method git",
       "hackableWindowsCommand": "powershell -c \"& ([scriptblock]::Create((irm https://xopc.ai/install.ps1))) -InstallMethod git\"",
       "hackablePnpmComment1": "# 源码仓库为 pnpm workspace",
@@ -64,7 +71,7 @@
       "quickInstallTabsAria": "选择安装平台",
       "quickInstallUnixTab": "macOS & Linux",
       "quickInstallWindowsTab": "Windows",
-      "quickInstallComment": "# Works everywhere. Installs everything. You're welcome.",
+      "quickInstallComment": "# 一条命令，支持 macOS、Linux 与 Windows。",
       "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
       "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
       "quickInstallFootnote": "支持 macOS、Linux 与 Windows。一键安装脚本会自动安装 Node.js 等依赖。Hackable 从 git 克隆源码，方便本地魔改。也可切换 npm 或桌面应用 Tab。",
@@ -123,58 +130,58 @@
       "tagFeatured": "核心差异点",
       "items": [
         {
-          "icon": "🔑",
+          "icon": "key",
           "title": "自带钥匙，任选模型。",
           "body": "DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure——内置 20+ 供应商。纯离线本地推理也行，云端本地混搭也行，你说了算。一行配置切换模型，零厂商绑定。",
           "featured": false
         },
         {
-          "icon": "📡",
+          "icon": "layers",
           "title": "一个大脑，每块屏幕都能用",
           "body": "同一个助手——终端、浏览器、桌面应用、手机、即时通讯。无需同步，因为本来就是同一个系统。"
         },
         {
-          "icon": "🔀",
+          "icon": "git-branch",
           "title": "动态工作流",
           "body": "确定性脚本扇出多个隔离子 Agent——仓库审计、多视角评审、并行调研。每次运行独立会话，进度全程可见。"
         },
         {
-          "icon": "🤖",
+          "icon": "bot",
           "title": "多 Agent 路由",
           "body": "不同场景路由到不同 Agent——各自模型、工作区、工具与系统提示词，上下文完全隔离。工作、创作、编码各用一套。"
         },
         {
-          "icon": "🧩",
+          "icon": "puzzle",
           "title": "跟你一起长大，永远不会过时。",
           "body": "一行命令安装技能，Extensions 增加工具/通道/UI 面板，Cron 实现定时自动化，多 Agent 路由不同场景。它是你的系统——你来塑造。xopc skills install · xopc extensions install——装好就能用。"
         },
         {
-          "icon": "🏠",
+          "icon": "hard-drive",
           "title": "你的机器，你的规则。",
           "body": "xopc 运行在你自己的硬件上。对话留在本地，密钥存在你的配置里。没有强制云端，没有意外账单，没有数据在你不知情时外流。~/.xopc/——一切尽在你拥有的目录里。",
           "featured": true
         },
         {
-          "icon": "🌐",
+          "icon": "globe",
           "title": "HTTP/SSE 网关",
           "body": "REST JSON API 与用于流式、实时更新的 SSE；React 控制台与 Electron 内为同一套界面。URL 见日志或网关配置。"
         },
         {
-          "icon": "🛠️",
+          "icon": "wrench",
           "title": "类型安全工具",
           "body": "用 TypeBox 定义工具。网页搜索、浏览器（Playwright，按需开启）、文件操作——按需扩展 Agent 能力。"
         },
         {
-          "icon": "🎙️",
+          "icon": "mic",
           "title": "语音与图像",
           "body": "在已配置的路径上提供 STT/TTS（如 Telegram、网关等）。图像支持识图与按需生图，详见语音与工具文档。"
         }
       ]
     },
     "channels": {
-      "titleLine1": "一个大脑，",
-      "titleLine2": "每块屏幕都能用。",
-      "desc": "同一个助手——终端、浏览器、桌面应用、手机、即时通讯。无需同步，因为本来就是同一个系统。",
+      "titleLine1": "全端接入，",
+      "titleLine2": "同一助手。",
+      "desc": "终端、浏览器、桌面、手机与即时通讯——同一套助手，无需额外同步层。",
       "placeholderAction": "待补充素材",
       "items": [
         {
@@ -230,7 +237,7 @@
     "providers": {
       "titleLine1": "自带钥匙，",
       "titleLine2": "任选模型。",
-      "desc": "DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure——内置 20+ 供应商。纯离线本地推理也行，云端本地混搭也行，你说了算。一行配置切换模型，零厂商绑定。",
+      "desc": "OpenAI、Anthropic、DeepSeek、Ollama 等 20+ 供应商。纯云端、纯本地或混合部署——一行配置切换模型。",
       "viewProviders": "查看全部支持的提供商 →",
       "chips": [
         { "name": "OpenAI", "dot": "blue" },
@@ -340,10 +347,12 @@
       }
     },
     "architecture": {
-      "titleLine1": "需要什么，",
-      "titleLine2": "就装什么。",
-      "desc": "一行命令安装 Skills 和 Extensions——新能力秒级生效，不用重启，也不用改源码。教它新领域、加新工具、接新渠道，都在你的掌控之中。",
-      "diagramAlt": "xopc 系统技术架构：用户入口、Gateway、Channel Manager、Agent Service、扩展与 LLM 层"
+      "titleLine1": "可组合",
+      "titleLine2": "架构。",
+      "desc": "Gateway、渠道、Agent 与 LLM 层模块化设计——用 Skills 和 Extensions 按需扩展，无需 fork。",
+      "diagramAlt": "xopc 系统技术架构：用户入口、Gateway、Channel Manager、Agent Service、扩展与 LLM 层",
+      "expandLabel": "放大查看架构图",
+      "closeLabel": "关闭架构图"
     },
     "testimonials": {
       "title": "为什么都自己干的人而造。",

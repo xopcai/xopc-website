@@ -4,6 +4,8 @@
 
     html[data-theme="light"] body.landing-body,
     html[data-theme="dark"] body.landing-body {
+      --display: var(--font-display), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -41,6 +43,9 @@
       --play-fill: rgba(37, 99, 235, 0.1);
       --play-fill-hover: rgba(37, 99, 235, 0.16);
       --cta-glow: rgba(37, 99, 235, 0.06);
+      --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      --glow-accent: rgba(37, 99, 235, 0.08);
+      --hero-glow: rgba(37, 99, 235, 0.07);
     }
 
     /* Dark · DESIGN.md §2.2 */
@@ -75,6 +80,9 @@
       --play-fill: rgba(59, 130, 246, 0.15);
       --play-fill-hover: rgba(59, 130, 246, 0.28);
       --cta-glow: rgba(59, 130, 246, 0.1);
+      --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+      --glow-accent: rgba(59, 130, 246, 0.14);
+      --hero-glow: rgba(59, 130, 246, 0.12);
     }
 
     html[data-theme="light"] body.landing-body,
@@ -120,9 +128,9 @@
       mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
     }
 
-    /* ─── Typography (titles: sans + semibold, tracking-tight · DESIGN §3) ─ */
+    /* ─── Typography (titles: display + semibold, tracking-tight · DESIGN §3) ─ */
     .landing-page h1, .landing-page h2, .landing-page h3, .landing-page h4 {
-      font-family: var(--sans);
+      font-family: var(--display);
       font-weight: 600;
       color: var(--fg-head);
       line-height: 1.15;
@@ -287,6 +295,18 @@
       mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
     }
 
+    .landing-page .hero-glow{
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(720px, 90vw);
+      height: 420px;
+      pointer-events: none;
+      background: radial-gradient(ellipse 70% 60% at 50% 40%, var(--hero-glow) 0%, transparent 72%);
+      z-index: 1;
+    }
+
     .landing-page .hero-brand{
       display: flex;
       flex-direction: column;
@@ -310,7 +330,7 @@
       margin: 0 0 10px;
       line-height: 1;
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .landing-page .hero-tagline{
@@ -328,10 +348,63 @@
       font-size: 17px;
       color: var(--fg-mid);
       max-width: 540px;
-      margin: 0 auto 36px;
+      margin: 0 auto 20px;
       font-weight: 400;
       line-height: 1.65;
       text-align: center;
+    }
+
+    .landing-page .hero-social-proof{
+      margin: 0 auto 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .landing-page .social-proof{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .landing-page .social-proof-item{
+      display: inline-flex;
+    }
+
+    .landing-page .social-proof-chip{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--edge-bright);
+      background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--fg-mid);
+      text-decoration: none;
+      transition: border-color 0.15s ease-out, color 0.15s ease-out, background 0.15s ease-out;
+    }
+
+    .landing-page .social-proof-chip--muted{
+      cursor: default;
+    }
+
+    .landing-page .social-proof-chip--link:hover{
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--edge-bright));
+      color: var(--fg-head);
+      background: var(--bg-card);
+      text-decoration: none;
+    }
+
+    .landing-page .social-proof-ic{
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      flex-shrink: 0;
     }
 
     .landing-page .hero-quick-start{
@@ -460,8 +533,10 @@
       border: 1px solid var(--edge-bright);
       background: var(--bg-card);
       overflow: hidden;
-      box-shadow: 0 2px 8px color-mix(in srgb, var(--fg-head) 4%, transparent),
-        0 12px 40px color-mix(in srgb, var(--fg-head) 6%, transparent);
+      box-shadow: var(--rim-light),
+        0 2px 8px color-mix(in srgb, var(--fg-head) 4%, transparent),
+        0 12px 40px color-mix(in srgb, var(--fg-head) 6%, transparent),
+        0 0 48px var(--glow-accent);
     }
 
     .landing-page .quick-start-titlebar{
@@ -577,12 +652,12 @@
     }
 
     .landing-page .quick-start-tool-tab--active{
-      background: #e5484d;
+      background: var(--accent);
       color: #fff;
     }
 
     html[data-theme="dark"] .landing-page .quick-start-tool-tab--active{
-      background: #e5484d;
+      background: var(--accent);
       color: #fff;
     }
 
@@ -1223,6 +1298,16 @@
       background: linear-gradient(135deg, var(--featured-start) 0%, var(--featured-end) 100%);
     }
 
+    .landing-page .feature-card.featured{
+      box-shadow: var(--rim-light), 0 0 0 1px color-mix(in srgb, var(--accent) 22%, var(--edge-bright));
+    }
+
+    .landing-page .feature-card.featured:hover,
+    .landing-page .feature-card.featured:focus-within{
+      box-shadow: var(--rim-light), 0 0 0 1px color-mix(in srgb, var(--accent) 35%, var(--edge-bright)),
+        0 0 32px var(--glow-accent);
+    }
+
     .landing-page .feature-card:hover::before,
     .landing-page .feature-card:focus-within::before{
       opacity: 1;
@@ -1236,8 +1321,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
       margin-bottom: 20px;
+    }
+
+    .landing-page .feature-icon-svg{
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
     }
 
     .landing-page .feature-card h3{
@@ -1361,7 +1451,7 @@
       overflow: hidden;
       border: 1px solid var(--edge-bright);
       background: var(--bg-card);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+      box-shadow: var(--rim-light), 0 24px 64px rgba(0, 0, 0, 0.28), 0 0 40px var(--glow-accent);
       line-height: 0;
     }
 
@@ -1382,6 +1472,21 @@
       font-size: 15px;
       line-height: 1.6;
       color: var(--fg-mid);
+    }
+
+    @keyframes surfacePanelEnter {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .landing-page .surfaces-panel-enter{
+      animation: surfacePanelEnter 0.28s ease-out both;
     }
 
     .landing-page .media-placeholder{
@@ -1655,6 +1760,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      min-width: 0;
     }
 
     .landing-page .workflows-screenshot-slot{
@@ -1870,10 +1976,111 @@
       background: var(--bg-card);
       border: 1px solid var(--edge-bright);
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      box-shadow: var(--rim-light), 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 48px var(--glow-accent);
+    }
+
+    .landing-page .arch-diagram-trigger{
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: transparent;
+      cursor: zoom-in;
+      text-align: left;
+    }
+
+    .landing-page .arch-diagram-trigger:focus-visible{
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
     .landing-page .arch-diagram-image{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .landing-page .arch-diagram-expand{
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--edge-bright);
+      background: color-mix(in srgb, var(--bg-card) 92%, transparent);
+      color: var(--fg-mid);
+      box-shadow: var(--rim-light);
+      pointer-events: none;
+      transition: color 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    .landing-page .arch-diagram-expand svg{
+      width: 16px;
+      height: 16px;
+    }
+
+    .landing-page .arch-diagram-trigger:hover .arch-diagram-expand{
+      color: var(--fg-head);
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--edge-bright));
+    }
+
+    .landing-page .arch-lightbox{
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: color-mix(in srgb, var(--bg-void) 72%, transparent);
+      backdrop-filter: blur(12px);
+    }
+
+    .landing-page .arch-lightbox-close{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--edge-bright);
+      background: var(--bg-card);
+      color: var(--fg-body);
+      cursor: pointer;
+      transition: background 0.15s ease-out, color 0.15s ease-out;
+    }
+
+    .landing-page .arch-lightbox-close:hover{
+      background: var(--bg-card-hover);
+      color: var(--fg-head);
+    }
+
+    .landing-page .arch-lightbox-close svg{
+      width: 20px;
+      height: 20px;
+    }
+
+    .landing-page .arch-lightbox-inner{
+      width: min(1200px, 100%);
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      border-radius: 16px;
+      border: 1px solid var(--edge-bright);
+      background: var(--bg-card);
+      box-shadow: var(--rim-light), 0 32px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .landing-page .arch-lightbox-image{
       display: block;
       width: 100%;
       height: auto;
@@ -2029,6 +2236,18 @@
     .landing-page .footer-copy{
       font-size: 12px;
       color: var(--fg-dim);
+    }
+
+    /* ─── Scroll reveal (sections below hero) ─────────────────────── */
+    .landing-page .landing-reveal{
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    }
+
+    .landing-page .landing-reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ─── Animations ────────────────────────────────────────────────── */
@@ -2277,6 +2496,14 @@
       .landing-page .delay-3,
       .landing-page .delay-4,
       .landing-page .delay-5 {
+        animation: none;
+      }
+      .landing-page .landing-reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .landing-page .surfaces-panel-enter{
         animation: none;
       }
     }

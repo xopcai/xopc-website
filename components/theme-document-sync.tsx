@@ -3,13 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useLayoutEffect } from "react";
 
-import { applyTheme, getStoredTheme, prefersDark, type Theme } from "@/lib/theme";
-
-function resolveTheme(): Theme {
-  const s = getStoredTheme();
-  if (s) return s;
-  return prefersDark() ? "dark" : "light";
-}
+import { applyTheme, resolveThemePreference } from "@/lib/theme";
 
 /**
  * Re-applies `data-theme` on the document after navigations.
@@ -19,7 +13,7 @@ function resolveTheme(): Theme {
 export function ThemeDocumentSync() {
   const pathname = usePathname();
   useLayoutEffect(() => {
-    applyTheme(resolveTheme());
+    applyTheme(resolveThemePreference());
   }, [pathname]);
   return null;
 }

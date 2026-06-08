@@ -3,13 +3,13 @@
 import { Moon, Sun } from "lucide-react";
 import { useCallback, useSyncExternalStore } from "react";
 
-import { applyTheme, type Theme } from "@/lib/theme";
+import { applyTheme, DEFAULT_THEME, type Theme } from "@/lib/theme";
 
 function readTheme(): Theme {
-  if (typeof document === "undefined") return "dark";
+  if (typeof document === "undefined") return DEFAULT_THEME;
   const a = document.documentElement.getAttribute("data-theme");
   if (a === "light" || a === "dark") return a;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return DEFAULT_THEME;
 }
 
 function subscribeTheme(callback: () => void): () => void {

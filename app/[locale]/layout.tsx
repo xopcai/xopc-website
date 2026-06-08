@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import { ThemeDocumentSync } from "@/components/theme-document-sync";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
-import { THEME_STORAGE_KEY } from "@/lib/theme";
+import { landingDisplayFont } from "@/lib/landing-fonts";
+import { DEFAULT_THEME, THEME_STORAGE_KEY } from "@/lib/theme";
 
 import "../globals.css";
 
-const themeInitScript = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var t=localStorage.getItem(k);if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`;
+const themeInitScript = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var d=${JSON.stringify(DEFAULT_THEME)};var t=localStorage.getItem(k);if(t!=="light"&&t!=="dark"){t=d;}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme",${JSON.stringify(DEFAULT_THEME)});}})();`;
 
 const siteUrl = "https://xopcai.github.io/xopc/";
 
@@ -31,6 +32,21 @@ export async function generateMetadata({
       canonical: `/${loc}`,
       languages: { zh: "/zh", en: "/en" },
     },
+    ...(loc === "zh"
+      ? {
+          keywords: [
+            "本地 AI 助手",
+            "一人公司",
+            "OPC",
+            "AI 工作站",
+            "BYOK",
+            "本地优先",
+            "开源 AI",
+            "微信 AI",
+            "DeepSeek",
+          ],
+        }
+      : {}),
     title: {
       default: m.meta.title,
       template: "%s · xopc",
@@ -65,7 +81,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale === "zh" ? "zh-CN" : "en"} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col landing-body">
+      <body className={`${landingDisplayFont.variable} min-h-full flex flex-col landing-body`}>
         {/* Apply stored or system theme before paint to reduce flash */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <ThemeDocumentSync />

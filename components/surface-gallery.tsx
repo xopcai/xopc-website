@@ -34,7 +34,7 @@ export function SurfaceGallery({ locale, titleLine1, titleLine2, desc, items, pl
   const isMobileLike = MOBILE_SURFACE_IDS.has(active?.id ?? "");
 
   return (
-    <section className="surfaces-section" id="channels">
+    <section className="surfaces-section landing-reveal" id="channels">
       <div className="container">
         <div className="section-header surfaces-header">
           <h2>
@@ -68,7 +68,8 @@ export function SurfaceGallery({ locale, titleLine1, titleLine2, desc, items, pl
 
           {active ? (
             <div
-              className="surfaces-panel"
+              key={active.id}
+              className="surfaces-panel surfaces-panel-enter"
               role="tabpanel"
               id={`surface-panel-${active.id}`}
               aria-labelledby={`surface-tab-${active.id}`}
@@ -83,6 +84,7 @@ export function SurfaceGallery({ locale, titleLine1, titleLine2, desc, items, pl
                   placeholderAction={placeholderAction}
                   className="surfaces-visual-img"
                   sizes={isMobileLike ? "320px" : "(max-width: 900px) 100vw, 960px"}
+                  priority={active.id === items[0]?.id}
                   unoptimized
                 />
               </div>

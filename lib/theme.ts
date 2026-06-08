@@ -22,6 +22,15 @@ export function getStoredTheme(): Theme | null {
   return null;
 }
 
+/** Default theme when the user has not chosen one (landing defaults to dark). */
+export const DEFAULT_THEME: Theme = "dark";
+
 export function prefersDark(): boolean {
   return typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
+export function resolveThemePreference(): Theme {
+  const stored = getStoredTheme();
+  if (stored) return stored;
+  return DEFAULT_THEME;
 }

@@ -1,11 +1,26 @@
 import type { CSSProperties } from "react";
-import Image from "next/image";
-import { BookOpen, Github, Play } from "lucide-react";
+import {
+  BookOpen,
+  Bot,
+  GitBranch,
+  Github,
+  Globe,
+  HardDrive,
+  KeyRound,
+  Layers,
+  Mic,
+  Play,
+  Puzzle,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 
+import { ArchitectureDiagram } from "@/components/architecture-diagram";
+import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
+import { LandingSocialProof } from "@/components/landing-social-proof";
 import { QuickInstallBlock } from "@/components/quick-install-block";
 import { SurfaceGallery } from "@/components/surface-gallery";
 import { WorkflowBoardPreview } from "@/components/workflow-board-preview";
-import { MediaPlaceholder } from "@/components/media-placeholder";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LogoHomeLink } from "@/components/logo-home-link";
@@ -18,11 +33,35 @@ import { resolveLocaleMediaSrc } from "@/lib/locale-media.server";
 
 const SHOW_TESTIMONIALS_SECTION = false;
 
+const FEATURE_ICON_MAP: Record<string, LucideIcon> = {
+  key: KeyRound,
+  layers: Layers,
+  "git-branch": GitBranch,
+  bot: Bot,
+  puzzle: Puzzle,
+  "hard-drive": HardDrive,
+  globe: Globe,
+  wrench: Wrench,
+  mic: Mic,
+};
+
+function FeatureIcon({ name }: { name: string }) {
+  const Icon = FEATURE_ICON_MAP[name] ?? KeyRound;
+
+  return (
+    <div className="feature-icon">
+      <Icon className="feature-icon-svg" strokeWidth={1.75} aria-hidden />
+    </div>
+  );
+}
+
 type Props = {
   locale: Locale;
   messages: Messages;
   docHome: string;
   docWorkflows: string;
+  githubStars: number | null;
+  releaseTag: string | null;
 };
 
 function dotClass(dot: string): string {
@@ -104,15 +143,22 @@ function AutomationCodeBlock({ title }: { title: string }) {
   );
 }
 
-export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Props) {
+export function LandingPage({
+  locale,
+  messages: m,
+  docHome,
+  docWorkflows,
+  githubStars,
+  releaseTag,
+}: Props) {
   const L = m.landing;
   const year = new Date().getFullYear();
   const providerChipsRow = [...L.providers.chips, ...L.providers.chips];
   const demoVideoSrc = resolveLocaleMediaSrc(LANDING_MEDIA.demo.full, locale);
-  const architectureDiagramSrc = resolveLocaleMediaSrc(LANDING_MEDIA.architecture.diagram, locale);
 
   return (
     <div className="landing-page">
+      <LandingScrollReveal />
       <nav>
         <div className="container nav-inner">
           <div className="nav-logo">
@@ -175,6 +221,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
       </nav>
 
       <section className="hero">
+        <div className="hero-glow" aria-hidden />
         <div className="hero-grid" aria-hidden />
         <div className="container hero-inner">
           <div className="hero-brand fade-up delay-1">
@@ -188,6 +235,15 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           </div>
 
           <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
+
+          <div className="hero-social-proof fade-up delay-2">
+            <LandingSocialProof
+              locale={locale}
+              copy={L.socialProof}
+              stars={githubStars}
+              versionTag={releaseTag}
+            />
+          </div>
 
           <div className="hero-quick-start fade-up delay-3" id="download">
             <QuickInstallBlock d={L.download} />
@@ -206,7 +262,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="demo-section" id="demo">
+      <section className="demo-section landing-reveal" id="demo">
         <div className="container">
           <div className="section-header">
             <h2>
@@ -231,7 +287,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="features-section" id="features">
+      <section className="features-section landing-reveal" id="features">
         <div className="container">
           <div className="section-header">
             <h2>
@@ -248,7 +304,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
                 className={`feature-card${item.featured ? " featured" : ""}`}
                 key={item.title}
               >
-                <div className="feature-icon">{item.icon}</div>
+                <FeatureIcon name={item.icon} />
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
                 {item.featured ? <span className="feature-tag">{L.features.tagFeatured}</span> : null}
@@ -267,7 +323,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         placeholderAction={L.channels.placeholderAction}
       />
 
-      <section className="providers-section" id="providers">
+      <section className="providers-section landing-reveal" id="providers">
         <div className="container">
           <div className="section-header">
             <h2>
@@ -299,7 +355,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="automation-section" id="automation">
+      <section className="automation-section landing-reveal" id="automation">
         <div className="container">
           <div className="automation-layout">
             <AutomationCodeBlock title={L.automation.codeTitle} />
@@ -324,7 +380,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="workflows-section" id="workflows">
+      <section className="workflows-section landing-reveal" id="workflows">
         <div className="container">
           <div className="workflows-layout">
             <div className="workflows-content">
@@ -355,24 +411,13 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             </div>
 
             <div className="workflows-visual">
-              <div className="workflows-screenshot-slot">
-                <MediaPlaceholder
-                  slot={LANDING_MEDIA.workflows.console}
-                  locale={locale}
-                  alt={L.workflows.screenshotPlaceholderTitle}
-                  placeholderTitle={L.workflows.screenshotPlaceholderTitle}
-                  placeholderAction={L.channels.placeholderAction}
-                  className="workflows-screenshot"
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                />
-              </div>
               <WorkflowBoardPreview board={L.workflows.board} />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="arch-section" id="architecture">
+      <section className="arch-section landing-reveal" id="architecture">
         <div className="container">
           <div className="section-header">
             <h2>
@@ -383,17 +428,13 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <p>{L.architecture.desc}</p>
           </div>
 
-          <figure className="arch-diagram">
-            <Image
-              src={architectureDiagramSrc}
-              width={1200}
-              height={600}
-              alt={L.architecture.diagramAlt}
-              sizes="100vw"
-              className="arch-diagram-image"
-              unoptimized
-            />
-          </figure>
+          <ArchitectureDiagram
+            slot={LANDING_MEDIA.architecture.diagram}
+            locale={locale}
+            alt={L.architecture.diagramAlt}
+            expandLabel={L.architecture.expandLabel}
+            closeLabel={L.architecture.closeLabel}
+          />
         </div>
       </section>
 
@@ -425,7 +466,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </section>
       ) : null}
 
-      <section className="cta-section">
+      <section className="cta-section landing-reveal">
         <div className="cta-glow" aria-hidden />
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <h2>
@@ -436,12 +477,11 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           <p>{L.cta.desc}</p>
 
           <div className="cta-actions">
-            <a href={LANDING_GITHUB_REPO} className="btn-primary" target="_blank" rel="noopener noreferrer">
-              <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
+            <a href="#download" className="btn-primary">
               {L.cta.primary}
             </a>
-            <a href={docHome} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <BookOpen className="btn-ic" strokeWidth={1.75} aria-hidden />
+            <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
+              <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
               {L.cta.secondary}
             </a>
           </div>
