@@ -174,11 +174,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <li>
               <a href="#workflows">{L.nav.workflows}</a>
             </li>
-            <li>
-              <a href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer">
-                {L.nav.github}
-              </a>
-            </li>
           </ul>
           <div className="nav-extra">
             <div className="nav-extra-tools">
