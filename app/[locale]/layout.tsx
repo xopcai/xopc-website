@@ -38,7 +38,7 @@ export async function generateMetadata({
             "本地 AI 助手",
             "一人公司",
             "OPC",
-            "AI 工作站",
+            "OPC 工作站",
             "BYOK",
             "本地优先",
             "开源 AI",
