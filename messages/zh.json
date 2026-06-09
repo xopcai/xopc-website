@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "xopc — 本地 AI 助手 · 一人公司 OPC 工作站",
+    "title": "xopc — 本地 AI 助手 · 一人公司 AI 工作站",
     "description": "为一人公司打造的本地 AI 助手与工作站。本地优先、自带 API Key，支持 CLI、桌面、浏览器、微信与 Telegram——MIT 开源，20+ 大模型。",
     "ogDescription": "本地 AI 助手 · 一人公司工作站：本地优先，BYOK，CLI/桌面/浏览器/IM 全端覆盖。Skills 与 Extensions 可扩展，Node.js 22+，MIT 开源。"
   },
@@ -25,11 +25,11 @@
     "hero": {
       "brandName": "xopc",
       "headlineLine1": "与你一起成长的",
-      "headlineLine2": "OPC 工作站",
+      "headlineLine2": "AI 工作站",
       "titleLine1Before": "与你一起成长的",
       "titleLine1Highlight": "",
       "titleLine1After": "",
-      "titleEm": "OPC 工作站",
+      "titleEm": "AI 工作站",
       "taglineStrong": "",
       "desc": "为一人公司打造的本地优先 AI 助手。CLI、桌面、浏览器、手机、即时通讯——全平台覆盖。自带钥匙，无需 fork 即可扩展。",
       "starGithub": "在 GitHub 上 Star",
@@ -377,7 +377,7 @@
       ]
     },
     "cta": {
-      "titleLine1": "你的 OPC 工作站，",
+      "titleLine1": "你的 AI 工作站，",
       "titleLine2": "从这里开始。",
       "desc": "MIT 开源。安装 CLI 或下载 Electron 构建包——onboard 一次，再选 TUI、CLI、浏览器或 IM。",
       "primary": "立即开始 →",

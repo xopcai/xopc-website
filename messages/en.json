@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — The OPC workstation that grows with you",
+    "title": "xopc — The AI workstation that grows with you",
     "description": "A local-first personal AI for one-person companies — CLI, desktop, browser, mobile, and your favorite messengers. Bring your own keys. Extend without forking.",
-    "ogDescription": "Local-first OPC workstation: CLI, desktop, browser, mobile, and messengers. BYOK, 20+ LLM providers, Skills & Extensions — Node.js 22+, MIT."
+    "ogDescription": "Local-first AI workstation: CLI, desktop, browser, mobile, and messengers. BYOK, 20+ LLM providers, Skills & Extensions — Node.js 22+, MIT."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -24,9 +24,9 @@
     },
     "hero": {
       "brandName": "xopc",
-      "headlineLine1": "The OPC workstation",
+      "headlineLine1": "The AI workstation",
       "headlineLine2": "that grows with you.",
-      "titleLine1Before": "The OPC workstation",
+      "titleLine1Before": "The AI workstation",
       "titleLine1Highlight": "",
       "titleLine1After": "",
       "titleEm": "that grows with you.",
@@ -377,7 +377,7 @@
       ]
     },
     "cta": {
-      "titleLine1": "Your OPC workstation",
+      "titleLine1": "Your AI workstation",
       "titleLine2": "starts here.",
       "desc": "Open source, MIT licensed. Install the CLI or grab an Electron build — onboard once, then pick TUI, CLI, browser, or IM.",
       "primary": "Get Started →",
