@@ -138,7 +138,7 @@
         {
           "icon": "git-branch",
           "title": "动态工作流",
-          "body": "确定性脚本扇出多个隔离子 Agent——仓库审计、多视角评审、并行调研。每次运行独立会话，进度全程可见。"
+          "body": "确定性脚本拆分并行多个隔离子 Agent——仓库审计、多视角评审、并行调研。每次运行独立会话，进度全程可见。"
         },
         {
           "icon": "bot",
@@ -269,7 +269,7 @@
     "workflows": {
       "titleLine1": "一次提示，",
       "titleLine2": "多个 Agent。",
-      "desc": "可分解的大任务扇出到多个隔离子 Agent，再合并为一份结果——在独立 Chat 会话中执行，不污染触发它的那条对话。",
+      "desc": "可分解的大任务拆分并行到多个隔离子 Agent，再合并为一份结果——在独立 Chat 会话中执行，不污染触发它的那条对话。",
       "bullets": [
         "内置模板：audit_repo、multi_perspective_review、research",
         "看板 #/workflows — 排队、进行中、已完成、需关注",
