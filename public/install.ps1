@@ -1,4 +1,4 @@
-﻿# xopc Installer for Windows
+# xopc Installer for Windows
 # Usage: powershell -c "irm https://xopc.ai/install.ps1 | iex"
 #        powershell -c "& ([scriptblock]::Create((irm https://xopc.ai/install.ps1))) -Version beta -InstallMethod git -DryRun"
 
