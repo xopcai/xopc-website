@@ -383,7 +383,9 @@ export function QuickInstallBlock({
 
           {isDesktopMethod(method) ? (
             <div className="quick-start-desktop">
-              <p className="quick-start-comment">{d.desktopQuickComment}</p>
+              {d.desktopQuickComment.trim() ? (
+                <p className="quick-start-comment">{d.desktopQuickComment}</p>
+              ) : null}
               <DesktopDownloadPicker d={d} platform={method} />
             </div>
           ) : null}
