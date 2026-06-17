@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — The AI workstation that grows with you",
-    "description": "A local-first personal AI for one-person companies — CLI, desktop, browser, mobile, and your favorite messengers. Bring your own keys. Extend without forking.",
-    "ogDescription": "Local-first AI workstation: CLI, desktop, browser, mobile, and messengers. BYOK, 20+ LLM providers, Skills & Extensions — Node.js 22+, MIT."
+    "title": "xopc — Goal Loop Operating System",
+    "description": "Turn goals into loops. XOPC is an Agent OS that connects direction, action, and feedback so what matters keeps moving.",
+    "ogDescription": "A Goal Loop OS — not a task manager or another chatbot. XOPC keeps direction, action, and feedback aligned across local-first, extensible agents."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -14,27 +14,32 @@
   },
   "landing": {
     "nav": {
-      "download": "Download",
+      "download": "Start",
       "features": "Features",
-      "channels": "Channels",
+      "channels": "Surfaces",
       "providers": "Providers",
       "automation": "Automation",
       "workflows": "Workflows",
-      "github": "GitHub"
+      "github": "GitHub",
+      "belief": "Belief",
+      "loop": "Loop",
+      "system": "System",
+      "extension": "Extend"
     },
     "hero": {
       "brandName": "xopc",
       "headlineLine1": "Turn goals into loops.",
-      "headlineLine2": "Keep direction, action, and feedback aligned.",
+      "headlineLine2": "Keep what matters moving.",
       "titleLine1Before": "Turn goals into loops.",
       "titleLine1Highlight": "",
       "titleLine1After": "",
       "titleEm": "Keep direction, action, and feedback aligned.",
       "taglineStrong": "",
-      "desc": "A personal Agent built for long-term progress—not just answers when asked. Local-first across CLI, desktop, browser, mobile, and messengers. BYOK. Extend without forking.",
-      "starGithub": "Star on GitHub",
+      "desc": "An Agent OS for long-term goals. It helps you build the loop that keeps what matters moving.",
+      "starGithub": "View GitHub",
       "watchDemo": "Watch Demo",
-      "screenshotAlt": "xopc Web console"
+      "screenshotAlt": "xopc Web console",
+      "primaryCta": "Understand the loop →"
     },
     "download": {
       "quickStartHeading": "Quick Start",
@@ -113,16 +118,16 @@
       }
     },
     "demo": {
-      "titleLine1": "See the workstation",
-      "titleLine2": "in action",
-      "desc": "From install and onboard to chatting in the terminal, browser, or your favorite messenger — same assistant, your keys.",
+      "titleLine1": "Progress is not one push.",
+      "titleLine2": "It is loops that keep moving.",
+      "desc": "From install and setup to every surface: one system stays continuous across terminal, desktop, browser, and messengers.",
       "videoAria": "xopc product demo"
     },
     "features": {
-      "titleLine1": "Local-first.",
-      "titleLine2": "You own it.",
-      "desc": "Data on your hardware, your API keys, extend on demand — three reasons OPC builders choose xopc.",
-      "tagFeatured": "CORE DIFFERENTIATOR",
+      "titleLine1": "Not task management.",
+      "titleLine2": "A Goal Loop OS.",
+      "desc": "Every capability supports one promise: connect goals, action, and feedback so long-term progress does not drop.",
+      "tagFeatured": "LOOP MEMORY",
       "items": [
         {
           "icon": "key",
@@ -175,8 +180,8 @@
     },
     "channels": {
       "titleLine1": "Every surface.",
-      "titleLine2": "One assistant.",
-      "desc": "Terminal, browser, desktop, phone, and messengers — same assistant everywhere, no sync layer needed.",
+      "titleLine2": "One continuous loop.",
+      "desc": "Terminal, browser, desktop, phone, and messengers carry the same system — important goals do not break when screens change.",
       "placeholderAction": "Add asset",
       "items": [
         {
@@ -231,32 +236,80 @@
     },
     "providers": {
       "titleLine1": "Bring your own keys.",
-      "titleLine2": "Any model.",
-      "desc": "OpenAI, Anthropic, DeepSeek, Ollama, and 20+ more. Cloud, local, or hybrid — switch models in one config line.",
+      "titleLine2": "Keep the system unlocked.",
+      "desc": "Cloud, local, or hybrid models. Your keys, your data, your deployment rhythm.",
       "viewProviders": "View all supported providers →",
       "chips": [
-        { "name": "OpenAI", "dot": "blue" },
-        { "name": "Anthropic", "dot": "purple" },
-        { "name": "Google AI", "dot": "green" },
-        { "name": "DeepSeek", "dot": "amber" },
-        { "name": "Mistral", "dot": "pink" },
-        { "name": "Groq", "dot": "blue" },
-        { "name": "Cohere", "dot": "purple" },
-        { "name": "Together AI", "dot": "green" },
-        { "name": "OpenRouter", "dot": "amber" },
-        { "name": "Ollama", "dot": "pink" },
-        { "name": "Azure OpenAI", "dot": "blue" },
-        { "name": "xAI", "dot": "purple" },
-        { "name": "AWS Bedrock", "dot": "green" },
-        { "name": "Vertex AI", "dot": "amber" },
-        { "name": "SiliconFlow", "dot": "pink" },
-        { "name": "Custom", "dot": "purple" }
+        {
+          "name": "OpenAI",
+          "dot": "blue"
+        },
+        {
+          "name": "Anthropic",
+          "dot": "purple"
+        },
+        {
+          "name": "Google AI",
+          "dot": "green"
+        },
+        {
+          "name": "DeepSeek",
+          "dot": "amber"
+        },
+        {
+          "name": "Mistral",
+          "dot": "pink"
+        },
+        {
+          "name": "Groq",
+          "dot": "blue"
+        },
+        {
+          "name": "Cohere",
+          "dot": "purple"
+        },
+        {
+          "name": "Together AI",
+          "dot": "green"
+        },
+        {
+          "name": "OpenRouter",
+          "dot": "amber"
+        },
+        {
+          "name": "Ollama",
+          "dot": "pink"
+        },
+        {
+          "name": "Azure OpenAI",
+          "dot": "blue"
+        },
+        {
+          "name": "xAI",
+          "dot": "purple"
+        },
+        {
+          "name": "AWS Bedrock",
+          "dot": "green"
+        },
+        {
+          "name": "Vertex AI",
+          "dot": "amber"
+        },
+        {
+          "name": "SiliconFlow",
+          "dot": "pink"
+        },
+        {
+          "name": "Custom",
+          "dot": "purple"
+        }
       ]
     },
     "automation": {
-      "titleLine1": "Grows with you.",
-      "titleLine2": "Never outgrow it.",
-      "desc": "Install Skills with one command. Add Extensions for new tools, channels, and UI panels. Schedule with Cron. Multi-agent routing for different contexts. It's your system — shape it.",
+      "titleLine1": "Rhythm, review, reminders —",
+      "titleLine2": "all part of the loop.",
+      "desc": "Skills, Extensions, Cron, and multi-agent routing let the system evolve with your goals: install new capabilities and define new rhythms when needed.",
       "codeTitle": "~/.xopc/xopc.json",
       "bullets": [
         "xopc skills install — teach your assistant new domains without writing code",
@@ -267,9 +320,9 @@
       ]
     },
     "workflows": {
-      "titleLine1": "One prompt.",
-      "titleLine2": "Many agents.",
-      "desc": "Decomposable tasks fan out to isolated subagents, then merge into one result — in a dedicated chat session, not mixed into the conversation that triggered it.",
+      "titleLine1": "Complex goals,",
+      "titleLine2": "broken into moving loops.",
+      "desc": "Parallel subagents handle audits, research, and multi-perspective reviews; each run keeps its own state for review and recalibration.",
       "bullets": [
         "Built-in templates: audit_repo, multi_perspective_review, research",
         "Kanban board at #/workflows — queued, running, done, needs attention",
@@ -342,9 +395,9 @@
       }
     },
     "architecture": {
-      "titleLine1": "Composable",
-      "titleLine2": "by design.",
-      "desc": "Gateway, channels, agents, and LLM providers — modular layers you extend with Skills and Extensions, no fork required.",
+      "titleLine1": "Clean, composable,",
+      "titleLine2": "built to last.",
+      "desc": "Gateway, channels, agents, and LLM layers stay modular. Extend with Skills and Extensions instead of forking the system into fragments.",
       "diagramAlt": "xopc system architecture: user entry points, Gateway, Channel Manager, Agent Service, extensions, and LLM layer",
       "expandLabel": "Expand architecture diagram",
       "closeLabel": "Close expanded diagram"
@@ -377,11 +430,11 @@
       ]
     },
     "cta": {
-      "titleLine1": "Your AI workstation",
-      "titleLine2": "starts here.",
-      "desc": "Open source, MIT licensed. Install the CLI or grab an Electron build — onboard once, then pick TUI, CLI, browser, or IM.",
-      "primary": "Get Started →",
-      "secondary": "Star on GitHub ⭐"
+      "titleLine1": "Put what matters",
+      "titleLine2": "into a loop.",
+      "desc": "MIT open source. Local-first. Install, onboard, and start building your own system for long-term progress.",
+      "primary": "Start now →",
+      "secondary": "View GitHub"
     },
     "footer": {
       "github": "GitHub",
@@ -389,6 +442,42 @@
       "license": "License",
       "issues": "Issues",
       "copyright": "© {year} xopcai · MIT License"
+    },
+    "belief": {
+      "kicker": "Brand belief",
+      "title": "What matters should not rely on willpower alone.",
+      "body": "Meaningful goals often take months, years, or longer. They need to be remembered, moved forward, reflected on, and recalibrated. Sustained progress comes from loops, not motivation alone.",
+      "linesLabel": "Common ways meaningful goals lose momentum",
+      "lines": [
+        "Direction drifts.",
+        "Action stalls.",
+        "Feedback disappears.",
+        "Momentum fades."
+      ]
+    },
+    "loop": {
+      "titleLine1": "Goal → Loop → Progress",
+      "titleLine2": "A system for long-term progress.",
+      "desc": "XOPC turns goals into operating loops: remember direction, move the next step, capture feedback, and recalibrate after change.",
+      "modelLabel": "XOPC goal loop model",
+      "steps": [
+        {
+          "title": "Direction",
+          "body": "Clarify what matters and preserve context, boundaries, and priority."
+        },
+        {
+          "title": "Action",
+          "body": "Move the next step at the right moment instead of leaving goals in plans."
+        },
+        {
+          "title": "Feedback",
+          "body": "Capture real status, progress, and friction so the system knows what changed."
+        },
+        {
+          "title": "Recalibration",
+          "body": "Realign rhythm after change so long-term goals keep moving."
+        }
+      ]
     }
   }
 }

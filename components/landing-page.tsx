@@ -9,7 +9,6 @@ import {
   KeyRound,
   Layers,
   Mic,
-  Play,
   Puzzle,
   Wrench,
   type LucideIcon,
@@ -157,22 +156,22 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           </div>
           <ul className="nav-links">
             <li>
-              <a href="#download">{L.nav.download}</a>
+              <a href="#belief">{L.nav.belief}</a>
             </li>
             <li>
-              <a href="#features">{L.nav.features}</a>
+              <a href="#loop">{L.nav.loop}</a>
+            </li>
+            <li>
+              <a href="#features">{L.nav.system}</a>
             </li>
             <li>
               <a href="#channels">{L.nav.channels}</a>
             </li>
             <li>
-              <a href="#providers">{L.nav.providers}</a>
+              <a href="#automation">{L.nav.extension}</a>
             </li>
             <li>
-              <a href="#automation">{L.nav.automation}</a>
-            </li>
-            <li>
-              <a href="#workflows">{L.nav.workflows}</a>
+              <a href="#download">{L.nav.download}</a>
             </li>
           </ul>
           <div className="nav-extra">
@@ -223,14 +222,50 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           </div>
 
           <div className="hero-actions fade-up delay-4">
-            <a href={LANDING_GITHUB_REPO} className="btn-primary" target="_blank" rel="noopener noreferrer">
+            <a href="#loop" className="btn-primary">
+              {L.hero.primaryCta}
+            </a>
+            <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
               <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
               {L.hero.starGithub}
             </a>
-            <a href="#demo" className="btn-secondary">
-              <Play className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.watchDemo}
-            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="belief-section landing-reveal" id="belief">
+        <div className="container belief-layout">
+          <div className="belief-kicker">{L.belief.kicker}</div>
+          <div className="belief-copy">
+            <h2>{L.belief.title}</h2>
+            <p>{L.belief.body}</p>
+          </div>
+          <div className="belief-lines" aria-label={L.belief.linesLabel}>
+            {L.belief.lines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="loop-section landing-reveal" id="loop">
+        <div className="container">
+          <div className="section-header">
+            <h2>
+              {L.loop.titleLine1}
+              <br />
+              {L.loop.titleLine2}
+            </h2>
+            <p>{L.loop.desc}</p>
+          </div>
+          <div className="loop-model" aria-label={L.loop.modelLabel}>
+            {L.loop.steps.map((step, index) => (
+              <div className="loop-step" key={step.title}>
+                <div className="loop-step-index">0{index + 1}</div>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
