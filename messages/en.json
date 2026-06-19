@@ -23,8 +23,10 @@
       "github": "GitHub",
       "belief": "Belief",
       "loop": "Loop",
-      "system": "System",
-      "extension": "Extend"
+      "system": "Capabilities",
+      "extension": "Automation",
+      "demo": "Demo",
+      "architecture": "Architecture"
     },
     "hero": {
       "brandName": "xopc",
@@ -35,11 +37,11 @@
       "titleLine1After": "",
       "titleEm": "Keep direction, action, and feedback aligned.",
       "taglineStrong": "",
-      "desc": "An Agent OS for long-term goals. It helps you build the loop that keeps what matters moving.",
+      "desc": "XOPC is a local-first Agent OS that remembers long-term goals, moves the next step, and turns feedback into progress.",
       "starGithub": "View GitHub",
       "watchDemo": "Watch Demo",
       "screenshotAlt": "xopc Web console",
-      "primaryCta": "Understand the loop →"
+      "primaryCta": "See how it works →"
     },
     "download": {
       "quickStartHeading": "Quick Start",
@@ -126,24 +128,24 @@
     "features": {
       "titleLine1": "Not task management.",
       "titleLine2": "A Goal Loop OS.",
-      "desc": "Every capability supports one promise: connect goals, action, and feedback so long-term progress does not drop.",
+      "desc": "Models, surfaces, workflows, and extensions serve one promise: keep goals, action, and feedback connected.",
       "tagFeatured": "LOOP MEMORY",
       "items": [
         {
           "icon": "key",
-          "title": "Bring your own keys. Any model.",
-          "body": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure — 20+ providers built in. Run fully offline with local inference, or mix cloud and local as you please. Zero vendor lock-in. Switch models in one config line.",
+          "title": "Bring your own API keys. Choose any model.",
+          "body": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure, and 20+ providers are built in. Run fully local inference or mix cloud and local models; switch with one config line and avoid vendor lock-in.",
           "featured": false
         },
         {
           "icon": "layers",
-          "title": "One brain, every screen",
-          "body": "The same assistant — in your terminal, browser, desktop app, phone, and messengers. No sync needed. It's all one system."
+          "title": "One assistant across every screen.",
+          "body": "Terminal, browser, desktop app, phone, and messengers all connect to the same system. No context resync needed — every surface reaches the same assistant."
         },
         {
           "icon": "git-branch",
           "title": "Dynamic workflows",
-          "body": "Fan-out isolated subagents from deterministic scripts — repo audits, multi-perspective reviews, and parallel research. Each run gets its own session with live progress."
+          "body": "Fan out isolated subagents from deterministic scripts: repo audits, multi-perspective reviews, and parallel research. Each run gets its own session with live progress."
         },
         {
           "icon": "bot",
@@ -152,13 +154,13 @@
         },
         {
           "icon": "puzzle",
-          "title": "Grows with you. Never outgrow it.",
-          "body": "Install Skills with one command. Add Extensions for new tools, channels, and UI panels. Multi-agent routing for different contexts. It's your system — shape it. xopc skills install · xopc extensions install — and it just works."
+          "title": "Extend it without hitting preset limits.",
+          "body": "Install Skills with one command. Add Extensions for tools, channels, and UI panels. Use Cron for scheduled automation. XOPC is your system — shape it around your goals."
         },
         {
           "icon": "hard-drive",
           "title": "Your machine. Your rules.",
-          "body": "xopc runs on your hardware. Conversations stay local. API keys stay in your config. No mandatory cloud, no surprise bills, no data leaving without your say. ~/.xopc/ — everything in one directory you own.",
+          "body": "xopc runs on your hardware. Conversations stay local. API keys stay in your config. No mandatory cloud. No surprise bills. No data leaves your machine without permission. ~/.xopc/ is the system directory you own.",
           "featured": true
         },
         {
@@ -175,6 +177,34 @@
           "icon": "mic",
           "title": "Voice & vision",
           "body": "STT/TTS where configured — e.g. Telegram and gateway paths. Images: vision plus generation when you wire it up; see the Voice and Tools docs."
+        }
+      ],
+      "groups": [
+        {
+          "title": "Model freedom",
+          "desc": "Your API keys, your models, your deployment rhythm.",
+          "items": [
+            0,
+            5
+          ]
+        },
+        {
+          "title": "One system, many surfaces",
+          "desc": "From terminal to desktop, browser to messengers, the same assistant keeps working.",
+          "items": [
+            1,
+            6,
+            8
+          ]
+        },
+        {
+          "title": "An extensible Agent OS",
+          "desc": "Shape the system with workflows, Skills, Extensions, and multi-agent routing.",
+          "items": [
+            2,
+            3,
+            4
+          ]
         }
       ]
     },
@@ -204,7 +234,7 @@
           "id": "desktop",
           "label": "Desktop",
           "tag": "Electron",
-          "caption": "Native desktop experience across macOS, Windows, and Linux.",
+          "caption": "Native desktop experience across the three major platforms.",
           "imageAlt": "xopc Electron desktop app on macOS",
           "placeholderTitle": "Desktop · macOS window"
         },
@@ -228,7 +258,7 @@
           "id": "wechat",
           "label": "WeChat",
           "tag": "微信",
-          "caption": "Talk to it right inside WeChat.",
+          "caption": "Chat with it directly inside WeChat.",
           "imageAlt": "xopc WeChat conversation",
           "placeholderTitle": "WeChat · chat bubbles"
         }

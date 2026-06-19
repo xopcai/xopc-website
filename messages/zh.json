@@ -23,8 +23,10 @@
       "github": "GitHub",
       "belief": "理念",
       "loop": "循环",
-      "system": "系统",
-      "extension": "扩展"
+      "system": "能力",
+      "extension": "自动化",
+      "demo": "演示",
+      "architecture": "架构"
     },
     "hero": {
       "brandName": "xopc",
@@ -35,11 +37,11 @@
       "titleLine1After": "",
       "titleEm": "让方向、行动与反馈持续对齐。",
       "taglineStrong": "",
-      "desc": "面向长期目标的 Agent OS。它帮助你建立循环，让重要的事持续向前。",
+      "desc": "xopc 是一个本地优先的 Agent OS：记住你的长期目标，推动下一步行动，并把反馈重新带回系统。",
       "starGithub": "查看 GitHub",
       "watchDemo": "观看演示",
       "screenshotAlt": "xopc Web 控制台",
-      "primaryCta": "理解循环 →"
+      "primaryCta": "看看它如何运转 →"
     },
     "download": {
       "quickStartHeading": "快速开始",
@@ -126,24 +128,24 @@
     "features": {
       "titleLine1": "不是任务管理，",
       "titleLine2": "是 Goal Loop OS。",
-      "desc": "底层能力服务于同一个承诺：持续连接目标、行动与反馈，让长期进展不断线。",
+      "desc": "模型、界面、工作流与扩展能力服务于同一个承诺：持续连接目标、行动与反馈。",
       "tagFeatured": "LOOP MEMORY",
       "items": [
         {
           "icon": "key",
-          "title": "自带钥匙，任选模型。",
-          "body": "DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure——内置 20+ 供应商。纯离线本地推理也行，云端本地混搭也行，你说了算。一行配置切换模型，零厂商绑定。",
+          "title": "自带 API Key，模型随你选。",
+          "body": "内置 DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure 等 20+ 提供商。可纯本地推理，也可云端与本地混合使用；一行配置切换模型，避免厂商绑定。",
           "featured": false
         },
         {
           "icon": "layers",
-          "title": "一个大脑，每块屏幕都能用",
-          "body": "同一个助手——终端、浏览器、桌面应用、手机、即时通讯。无需同步，因为本来就是同一个系统。"
+          "title": "同一个助手，贯穿每块屏幕。",
+          "body": "终端、浏览器、桌面应用、手机与即时通讯使用同一套系统。不需要重新同步上下文，因为入口背后是同一个助手。"
         },
         {
           "icon": "git-branch",
           "title": "动态工作流",
-          "body": "确定性脚本拆分并行多个隔离子 Agent——仓库审计、多视角评审、并行调研。每次运行独立会话，进度全程可见。"
+          "body": "用确定性脚本拆分并行的隔离子 Agent：仓库审计、多视角评审、并行调研。每次运行都有独立会话，进度全程可见。"
         },
         {
           "icon": "bot",
@@ -152,13 +154,13 @@
         },
         {
           "icon": "puzzle",
-          "title": "跟你一起长大，永远不会过时。",
-          "body": "一行命令安装技能，Extensions 增加工具/通道/UI 面板，Cron 实现定时自动化，多 Agent 路由不同场景。它是你的系统——你来塑造。xopc skills install · xopc extensions install——装好就能用。"
+          "title": "随你扩展，不被预设边界限制。",
+          "body": "一行命令安装 Skills；用 Extensions 增加工具、通道与 UI 面板；用 Cron 建立定时自动化。xopc 是你的系统，你可以按自己的目标塑造它。"
         },
         {
           "icon": "hard-drive",
           "title": "你的机器，你的规则。",
-          "body": "xopc 运行在你自己的硬件上。对话留在本地，密钥存在你的配置里。没有强制云端，没有意外账单，没有数据在你不知情时外流。~/.xopc/——一切尽在你拥有的目录里。",
+          "body": "xopc 运行在你的硬件上。对话留在本地，密钥保存在你的配置中。没有强制云端，没有意外账单；数据不会在未经允许时离开本机。~/.xopc/ 是你拥有的系统目录。",
           "featured": true
         },
         {
@@ -175,6 +177,34 @@
           "icon": "mic",
           "title": "语音与图像",
           "body": "在已配置的路径上提供 STT/TTS（如 Telegram、网关等）。图像支持识图与按需生图，详见语音与工具文档。"
+        }
+      ],
+      "groups": [
+        {
+          "title": "模型自由",
+          "desc": "你的 API Key、你的模型、你的部署方式。",
+          "items": [
+            0,
+            5
+          ]
+        },
+        {
+          "title": "一个系统，多种界面",
+          "desc": "从终端到桌面，从浏览器到 IM，同一个助手持续工作。",
+          "items": [
+            1,
+            6,
+            8
+          ]
+        },
+        {
+          "title": "可扩展的 Agent OS",
+          "desc": "用工作流、Skills、Extensions 与多 Agent 路由塑造自己的系统。",
+          "items": [
+            2,
+            3,
+            4
+          ]
         }
       ]
     },
@@ -204,7 +234,7 @@
           "id": "desktop",
           "label": "Desktop",
           "tag": "Electron",
-          "caption": "原生桌面体验，三平台通吃。",
+          "caption": "原生桌面体验，覆盖三大桌面平台。",
           "imageAlt": "xopc Electron 桌面应用",
           "placeholderTitle": "Desktop · macOS 窗口截图"
         },
@@ -228,7 +258,7 @@
           "id": "wechat",
           "label": "WeChat",
           "tag": "微信",
-          "caption": "微信里也能叫它。",
+          "caption": "在微信中直接对话。",
           "imageAlt": "xopc 微信对话",
           "placeholderTitle": "微信 · 对话截图"
         }
@@ -444,7 +474,7 @@
       "copyright": "© {year} xopcai · MIT License"
     },
     "belief": {
-      "kicker": "Brand belief",
+      "kicker": "品牌信念",
       "title": "重要的事，不该只靠决心。",
       "body": "真正重要的目标往往需要数月、数年，甚至更长时间。它们需要被记住、被推进、被反馈、被校准。持续的进展来自循环，而不是意志力。",
       "linesLabel": "长期目标失去动能的常见原因",

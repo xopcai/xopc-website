@@ -162,13 +162,19 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
               <a href="#loop">{L.nav.loop}</a>
             </li>
             <li>
+              <a href="#demo">{L.nav.demo}</a>
+            </li>
+            <li>
               <a href="#features">{L.nav.system}</a>
             </li>
             <li>
               <a href="#channels">{L.nav.channels}</a>
             </li>
             <li>
-              <a href="#automation">{L.nav.extension}</a>
+              <a href="#workflows">{L.nav.workflows}</a>
+            </li>
+            <li>
+              <a href="#architecture">{L.nav.architecture}</a>
             </li>
             <li>
               <a href="#download">{L.nav.download}</a>
@@ -221,15 +227,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <QuickInstallBlock d={L.download} />
           </div>
 
-          <div className="hero-actions fade-up delay-4">
-            <a href="#loop" className="btn-primary">
-              {L.hero.primaryCta}
-            </a>
-            <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.starGithub}
-            </a>
-          </div>
+
         </div>
       </section>
 
@@ -306,17 +304,32 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <p>{L.features.desc}</p>
           </div>
 
-          <div className="features-grid">
-            {L.features.items.map((item) => (
-              <div
-                className={`feature-card${item.featured ? " featured" : ""}`}
-                key={item.title}
-              >
-                <FeatureIcon name={item.icon} />
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-                {item.featured ? <span className="feature-tag">{L.features.tagFeatured}</span> : null}
-              </div>
+          <div className="feature-groups">
+            {L.features.groups.map((group, groupIndex) => (
+              <section className="feature-group" key={group.title} aria-labelledby={`feature-group-${groupIndex}`}>
+                <div className="feature-group-header">
+                  <h3 id={`feature-group-${groupIndex}`}>{group.title}</h3>
+                  <p>{group.desc}</p>
+                </div>
+
+                <div className="features-grid">
+                  {group.items.map((itemIndex) => {
+                    const item = L.features.items[itemIndex];
+
+                    return (
+                      <div
+                        className={`feature-card${item.featured ? " featured" : ""}`}
+                        key={item.title}
+                      >
+                        <FeatureIcon name={item.icon} />
+                        <h3>{item.title}</h3>
+                        <p>{item.body}</p>
+                        {item.featured ? <span className="feature-tag">{L.features.tagFeatured}</span> : null}
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
             ))}
           </div>
         </div>
