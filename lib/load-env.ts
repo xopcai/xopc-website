@@ -7,7 +7,7 @@ import path from "node:path";
  * 便于 PM2 等场景在服务器项目根目录放置 .env 而无需改启动命令。
  */
 export function loadEnvFiles(): void {
-  const root = process.cwd();
+  const root = /* turbopackIgnore: true */ process.cwd();
   const mode = process.env.NODE_ENV ?? "development";
   const files = [
     path.join(root, `.env.${mode}.local`),

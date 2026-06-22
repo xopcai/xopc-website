@@ -56,7 +56,12 @@ function shouldProxyBinaryThroughOrigin(): boolean {
 export function getReleaseCacheRoot(): string | null {
   const raw = process.env.RELEASE_CACHE_DIR;
   if (raw === "") return null;
-  if (raw?.trim()) return path.resolve(raw.trim());
+  const trimmed = raw?.trim();
+  if (trimmed) {
+    return path.isAbsolute(trimmed)
+      ? trimmed
+      : path.join(/* turbopackIgnore: true */ process.cwd(), trimmed);
+  }
   return path.join(/* turbopackIgnore: true */ process.cwd(), ".data", "release-cache");
 }
 
@@ -131,12 +136,12 @@ const LATEST_STALE_DISK_MS = 7 * 86_400_000;
 let latestReleaseMemory: { fetchedAt: number; data: LatestReleaseMeta } | null = null;
 
 function latestReleaseDiskPath(): string {
-  return path.join(process.cwd(), ".data", "github-latest-release.json");
+  return path.join(/* turbopackIgnore: true */ process.cwd(), ".data", "github-latest-release.json");
 }
 
 async function readLatestReleaseFromDisk(): Promise<{ savedAt: number; data: LatestReleaseMeta } | null> {
   try {
-    const raw = await readFile(latestReleaseDiskPath(), "utf8");
+    const raw = await readFile(/* turbopackIgnore: true */ latestReleaseDiskPath(), "utf8");
     const j = JSON.parse(raw) as {
       savedAt: number;
       tag: string;
@@ -152,15 +157,15 @@ async function readLatestReleaseFromDisk(): Promise<{ savedAt: number; data: Lat
 async function writeLatestReleaseToDisk(data: LatestReleaseMeta): Promise<void> {
   try {
     const dir = path.dirname(latestReleaseDiskPath());
-    await mkdir(dir, { recursive: true });
+    await mkdir(/* turbopackIgnore: true */ dir, { recursive: true });
     const tmp = `${latestReleaseDiskPath()}.tmp`;
     const payload = JSON.stringify({
       savedAt: Date.now(),
       tag: data.tag,
       assets: data.assets,
     });
-    await writeFile(tmp, payload, "utf8");
-    await rename(tmp, latestReleaseDiskPath());
+    await writeFile(/* turbopackIgnore: true */ tmp, payload, "utf8");
+    await rename(/* turbopackIgnore: true */ tmp, /* turbopackIgnore: true */ latestReleaseDiskPath());
   } catch {
     /* 只读部署等情况下跳过 */
   }
@@ -180,7 +185,7 @@ async function pruneReleaseCacheExceptTag(keepTag: string): Promise<void> {
 
   let entries;
   try {
-    entries = await readdir(root, { withFileTypes: true });
+    entries = await readdir(/* turbopackIgnore: true */ root, { withFileTypes: true });
   } catch {
     return;
   }
@@ -195,7 +200,7 @@ async function pruneReleaseCacheExceptTag(keepTag: string): Promise<void> {
     } catch {
       continue;
     }
-    await rm(path.join(root, name), { recursive: true, force: true }).catch(() => {});
+    await rm(/* turbopackIgnore: true */ path.join(root, name), { recursive: true, force: true }).catch(() => {});
   }
 }
 
@@ -256,7 +261,7 @@ function webReadableFromNode(stream: import("node:fs").ReadStream): ReadableStre
 
 async function statSafe(p: string): Promise<import("node:fs").Stats | null> {
   try {
-    return await stat(p);
+    return await stat(/* turbopackIgnore: true */ p);
   } catch {
     return null;
   }
@@ -276,8 +281,8 @@ function responseHeadersForReleaseFile(filename: string): {
 }
 
 async function fileResponseForReleaseAsset(finalPath: string, filename: string): Promise<Response> {
-  const s = await stat(finalPath);
-  const body = webReadableFromNode(createReadStream(finalPath));
+  const s = await stat(/* turbopackIgnore: true */ finalPath);
+  const body = webReadableFromNode(createReadStream(/* turbopackIgnore: true */ finalPath));
   const { contentType, cacheControl } = responseHeadersForReleaseFile(filename);
   return new Response(body, {
     headers: {
@@ -298,7 +303,7 @@ function lockPathFor(finalPath: string): string {
  */
 async function waitUntilCachedOrAcquireLock(finalPath: string): Promise<"cached" | "locked"> {
   const lock = lockPathFor(finalPath);
-  await mkdir(path.dirname(finalPath), { recursive: true });
+  await mkdir(/* turbopackIgnore: true */ path.dirname(finalPath), { recursive: true });
   const deadline = Date.now() + LOCK_WAIT_MS;
 
   while (Date.now() < deadline) {
@@ -307,15 +312,15 @@ async function waitUntilCachedOrAcquireLock(finalPath: string): Promise<"cached"
 
     const lockSt = await statSafe(lock);
     if (lockSt && Date.now() - lockSt.mtimeMs > STALE_LOCK_MS) {
-      await unlink(lock).catch(() => {});
+      await unlink(/* turbopackIgnore: true */ lock).catch(() => {});
       continue;
     }
 
     try {
-      await writeFile(lock, `${process.pid}\n`, { flag: "wx" });
+      await writeFile(/* turbopackIgnore: true */ lock, `${process.pid}\n`, { flag: "wx" });
       const again = await statSafe(finalPath);
       if (again) {
-        await unlink(lock).catch(() => {});
+        await unlink(/* turbopackIgnore: true */ lock).catch(() => {});
         return "cached";
       }
       return "locked";
@@ -356,14 +361,14 @@ export async function warmAssetToDisk(tag: string, name: string, upstreamUrl: st
     if (!res.ok || !res.body) throw new Error(`upstream ${res.status}`);
     const partPath = `${finalPath}.part`;
     try {
-      await pipeline(Readable.fromWeb(res.body as import("stream/web").ReadableStream), createWriteStream(partPath));
-      await rename(partPath, finalPath);
+      await pipeline(Readable.fromWeb(res.body as import("stream/web").ReadableStream), createWriteStream(/* turbopackIgnore: true */ partPath));
+      await rename(/* turbopackIgnore: true */ partPath, /* turbopackIgnore: true */ finalPath);
     } catch (e) {
-      await unlink(partPath).catch(() => {});
+      await unlink(/* turbopackIgnore: true */ partPath).catch(() => {});
       throw e;
     }
   } finally {
-    await unlink(lock).catch(() => {});
+    await unlink(/* turbopackIgnore: true */ lock).catch(() => {});
   }
 }
 
@@ -453,7 +458,7 @@ async function serveWithUpstreamUrl(tag: string, name: string, upstreamUrl: stri
 
     return new Response(upstream.body, { headers });
   } finally {
-    await unlink(lock).catch(() => {});
+    await unlink(/* turbopackIgnore: true */ lock).catch(() => {});
   }
 }
 

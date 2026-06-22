@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  outputFileTracingExcludes: {
+    "/*": ["./next.config.ts"],
+  },
 };
 
 export default nextConfig;
