@@ -38,7 +38,8 @@
       "titleEm": "Keep direction, action, and feedback aligned.",
       "taglineStrong": "",
       "desc": "XOPC is a local-first Agent OS that remembers long-term goals, moves the next step, and turns feedback into progress.",
-      "starGithub": "View GitHub",
+      "starGithub": "Star on GitHub",
+      "mobileApp": "Mobile app",
       "watchDemo": "Watch Demo",
       "screenshotAlt": "xopc Web console",
       "primaryCta": "See how it works →"
@@ -464,11 +465,13 @@
       "titleLine2": "into a loop.",
       "desc": "MIT open source. Local-first. Install, onboard, and start building your own system for long-term progress.",
       "primary": "Start now →",
-      "secondary": "View GitHub"
+      "secondary": "Star on GitHub",
+      "mobileApp": "Mobile app"
     },
     "footer": {
       "github": "GitHub",
       "docs": "Docs",
+      "mobileApp": "Mobile app",
       "license": "License",
       "issues": "Issues",
       "copyright": "© {year} xopcai · MIT License"

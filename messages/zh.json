@@ -38,7 +38,8 @@
       "titleEm": "让方向、行动与反馈持续对齐。",
       "taglineStrong": "",
       "desc": "xopc 是一个本地优先的 Agent OS：记住你的长期目标，推动下一步行动，并把反馈重新带回系统。",
-      "starGithub": "查看 GitHub",
+      "starGithub": "给 GitHub 加星",
+      "mobileApp": "移动端 App",
       "watchDemo": "观看演示",
       "screenshotAlt": "xopc Web 控制台",
       "primaryCta": "看看它如何运转 →"
@@ -464,11 +465,13 @@
       "titleLine2": "进入循环。",
       "desc": "MIT 开源。本地优先。安装后完成 onboard，开始建立属于你的长期进化系统。",
       "primary": "开始使用 →",
-      "secondary": "查看 GitHub"
+      "secondary": "给 GitHub 加星",
+      "mobileApp": "移动端 App"
     },
     "footer": {
       "github": "GitHub",
       "docs": "文档",
+      "mobileApp": "移动端",
       "license": "许可证",
       "issues": "问题反馈",
       "copyright": "© {year} xopcai · MIT License"

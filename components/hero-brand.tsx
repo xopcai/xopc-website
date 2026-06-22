@@ -16,17 +16,24 @@ function HeroTypewriter({ text }: { text: string }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    let intervalId: number | undefined;
+    let resetDelay: number | undefined;
+    let i = 0;
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setShown(text);
-      setDone(true);
-      return;
+      resetDelay = window.setTimeout(() => {
+        setShown(text);
+        setDone(true);
+      }, 0);
+      return () => {
+        if (resetDelay !== undefined) window.clearTimeout(resetDelay);
+      };
     }
 
-    setShown("");
-    setDone(false);
-
-    let intervalId: number | undefined;
-    let i = 0;
+    resetDelay = window.setTimeout(() => {
+      setShown("");
+      setDone(false);
+    }, 0);
 
     const startDelay = window.setTimeout(() => {
       intervalId = window.setInterval(() => {
@@ -41,6 +48,7 @@ function HeroTypewriter({ text }: { text: string }) {
 
     return () => {
       window.clearTimeout(startDelay);
+      if (resetDelay !== undefined) window.clearTimeout(resetDelay);
       if (intervalId !== undefined) window.clearInterval(intervalId);
     };
   }, [text]);

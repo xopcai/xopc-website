@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Film, ImageIcon, Monitor, Smartphone } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import type { Locale } from "@/lib/i18n/config";
 import { localeMediaCandidates } from "@/lib/locale-media";
@@ -13,13 +13,9 @@ type Variant = "screenshot" | "video" | "mobile" | "avatar";
 function useLocaleMediaSrc(slot: LandingMediaSlot, locale: Locale) {
   const candidates = useMemo(
     () => localeMediaCandidates(slot, locale),
-    [slot.basePath, slot.ext, slot.localized, locale],
+    [slot, locale],
   );
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    setIndex(0);
-  }, [locale, slot.basePath, slot.ext, slot.localized]);
 
   const src = candidates[Math.min(index, candidates.length - 1)] ?? candidates[0]!;
   const onError = useCallback(() => {

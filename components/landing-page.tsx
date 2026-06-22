@@ -5,6 +5,8 @@ import {
   GitBranch,
   Github,
   Globe,
+  Smartphone,
+  Star,
   HardDrive,
   KeyRound,
   Layers,
@@ -26,7 +28,12 @@ import { LogoHomeLink } from "@/components/logo-home-link";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
-import { LANDING_GITHUB_ISSUES, LANDING_GITHUB_LICENSE, LANDING_GITHUB_REPO } from "@/lib/landing-urls";
+import {
+  LANDING_GITHUB_ISSUES,
+  LANDING_GITHUB_LICENSE,
+  LANDING_GITHUB_REPO,
+  LANDING_MOBILE_APP_REPO,
+} from "@/lib/landing-urls";
 import { LANDING_MEDIA } from "@/lib/landing-media";
 import { resolveLocaleMediaSrc } from "@/lib/locale-media.server";
 
@@ -223,7 +230,18 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
 
           <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
 
-          <div className="hero-quick-start fade-up delay-3" id="download">
+          <div className="hero-actions fade-up delay-3">
+            <a href={LANDING_GITHUB_REPO} className="btn-primary" target="_blank" rel="noopener noreferrer">
+              <Star className="btn-ic" strokeWidth={1.75} aria-hidden />
+              {L.hero.starGithub}
+            </a>
+            <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
+              <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
+              {L.hero.mobileApp}
+            </a>
+          </div>
+
+          <div className="hero-quick-start fade-up delay-4" id="download">
             <QuickInstallBlock d={L.download} />
           </div>
 
@@ -502,8 +520,12 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
               {L.cta.primary}
             </a>
             <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
+              <Star className="btn-ic" strokeWidth={1.75} aria-hidden />
               {L.cta.secondary}
+            </a>
+            <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
+              <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
+              {L.cta.mobileApp}
             </a>
           </div>
         </div>
@@ -523,6 +545,11 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <li>
               <a href={docHome} target="_blank" rel="noopener noreferrer">
                 {L.footer.docs}
+              </a>
+            </li>
+            <li>
+              <a href={LANDING_MOBILE_APP_REPO} target="_blank" rel="noopener noreferrer">
+                {L.footer.mobileApp}
               </a>
             </li>
             <li>

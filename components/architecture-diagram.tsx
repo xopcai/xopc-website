@@ -27,13 +27,9 @@ function useThemeMediaSrc(slot: LandingMediaSlot, locale: Locale) {
   const theme = useSyncExternalStore(subscribeTheme, readTheme, () => DEFAULT_THEME);
   const candidates = useMemo(
     () => themeLocaleMediaCandidates(slot, locale, theme),
-    [slot.basePath, slot.ext, slot.localized, locale, theme],
+    [slot, locale, theme],
   );
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    setIndex(0);
-  }, [locale, slot.basePath, slot.ext, slot.localized, theme]);
 
   const src = candidates[Math.min(index, candidates.length - 1)] ?? candidates[0]!;
   const onError = useCallback(() => {

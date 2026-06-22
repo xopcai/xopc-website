@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Check, Copy } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 import type { DesktopPlatformId } from "@/components/desktop-download-picker";
 import type { Messages } from "@/lib/i18n/messages";
@@ -166,15 +166,11 @@ export function QuickInstallBlock({
   d: D;
   compact?: boolean;
 }) {
-  const [shellPlatform, setShellPlatform] = useState<ShellPlatform>("unix");
+  const [shellPlatform, setShellPlatform] = useState<ShellPlatform>(() => detectShellPlatform());
   const [method, setMethod] = useState<Method>("oneliner");
   const [packageTool, setPackageTool] = useState<PackageTool>("npm");
   const [hackableTool, setHackableTool] = useState<HackableTool>("installer");
   const [copied, setCopied] = useState<string | null>(null);
-
-  useEffect(() => {
-    setShellPlatform(detectShellPlatform());
-  }, []);
 
   const onelinerCommand =
     shellPlatform === "unix" ? d.quickInstallUnixCommand : d.quickInstallWindowsCommand;

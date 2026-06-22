@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * PM2 配置：直接启动 Next 二进制，避免 `pnpm start -- -p …` 被展开为
  * `next start -- -p …`（pnpm 会插入 `--`），在 Next.js 16 下会把 `-p` 当成项目目录。
