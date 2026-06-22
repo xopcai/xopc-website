@@ -1,0 +1,78 @@
+    /* ─── CTA SECTION ───────────────────────────────────────────────── */
+    .landing-page .cta-section{
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .landing-page .cta-glow{
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, var(--cta-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .landing-page .cta-section h2{
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .landing-page .cta-section p{
+      font-size: 17px;
+      color: var(--fg-mid);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .landing-page .cta-actions{
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────────── */
+    .landing-page footer{
+      border-top: 1px solid var(--edge);
+      padding: 48px 0;
+    }
+
+    .landing-page .footer-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .landing-page .footer-logo{
+      display: flex;
+      align-items: center;
+      color: var(--fg-mid);
+    }
+
+    .landing-page .footer-links{
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .landing-page .footer-links a{
+      font-size: 13px;
+      color: var(--fg-dim);
+      transition: color 0.2s;
+    }
+
+    .landing-page .footer-links a:hover{ color: var(--fg-body); text-decoration: none; }
+
+    .landing-page .footer-copy{
+      font-size: 12px;
+      color: var(--fg-dim);
+    }
+

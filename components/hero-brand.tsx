@@ -80,7 +80,7 @@ export function HeroBrand({ brandName, headlineLine1, headlineLine2 }: Props) {
         <span className="hero-brand-ring hero-brand-ring--outer" aria-hidden />
         <span className="hero-brand-ring hero-brand-ring--inner" aria-hidden />
         <div className="hero-brand-logo">
-          <XopcLogoMark />
+          <XopcLogoMark priority />
         </div>
       </div>
 

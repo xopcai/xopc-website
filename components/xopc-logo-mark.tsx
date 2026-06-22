@@ -9,7 +9,7 @@ const LOGO_WH = 71;
  * Renders both theme variants; visibility is toggled via `html[data-theme]` in CSS
  * (see `app/landing.css` `.xopc-logo-img--light` / `--dark`).
  */
-export function XopcLogoMark({ className }: { className?: string }) {
+export function XopcLogoMark({ className, priority = false }: { className?: string; priority?: boolean }) {
   return (
     <span className={className ?? "xopc-logo-mark"} aria-hidden>
       <Image
@@ -18,6 +18,7 @@ export function XopcLogoMark({ className }: { className?: string }) {
         width={LOGO_WH}
         height={LOGO_WH}
         className="xopc-logo-img xopc-logo-img--light"
+        priority={priority}
         unoptimized
       />
       <Image
@@ -26,6 +27,7 @@ export function XopcLogoMark({ className }: { className?: string }) {
         width={LOGO_WH}
         height={LOGO_WH}
         className="xopc-logo-img xopc-logo-img--dark"
+        priority={priority}
         unoptimized
       />
     </span>

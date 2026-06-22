@@ -38,7 +38,6 @@
       "titleEm": "Keep direction, action, and feedback aligned.",
       "taglineStrong": "",
       "desc": "XOPC is a local-first Agent OS that remembers long-term goals, moves the next step, and turns feedback into progress.",
-      "starGithub": "Star on GitHub",
       "mobileApp": "Mobile app",
       "watchDemo": "Watch Demo",
       "screenshotAlt": "xopc Web console",
@@ -433,39 +432,11 @@
       "expandLabel": "Expand architecture diagram",
       "closeLabel": "Close expanded diagram"
     },
-    "testimonials": {
-      "title": "Built for people who do it all.",
-      "desc": "Whether you're shipping SaaS solo, freelancing, or running a creative studio of one.",
-      "items": [
-        {
-          "quote": "I used to juggle three windows — code, customer messages, monitoring. Now one xopc handles it all.",
-          "author": "[ Add name ]",
-          "role": "Solo SaaS Builder",
-          "avatar": "A",
-          "avatarStyle": "accent"
-        },
-        {
-          "quote": "A unified entry point turned out to be ten times more important than I imagined.",
-          "author": "[ Add name ]",
-          "role": "Freelance Designer / Content Creator",
-          "avatar": "B",
-          "avatarStyle": "green"
-        },
-        {
-          "quote": "Finally, an AI assistant that doesn't steal my data. Local inference, zero exfiltration — exactly what I needed.",
-          "author": "[ Add name ]",
-          "role": "Privacy-first Engineer",
-          "avatar": "C",
-          "avatarStyle": "purple"
-        }
-      ]
-    },
     "cta": {
       "titleLine1": "Put what matters",
       "titleLine2": "into a loop.",
       "desc": "MIT open source. Local-first. Install, onboard, and start building your own system for long-term progress.",
       "primary": "Start now →",
-      "secondary": "Star on GitHub",
       "mobileApp": "Mobile app"
     },
     "footer": {

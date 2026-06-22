@@ -1,0 +1,53 @@
+    /* ─── Responsive ────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .landing-page .feature-group{ grid-template-columns: 1fr; gap: 12px; }
+      .landing-page .feature-group-header{ padding: 0; border-top: 0; }
+      .landing-page .feature-group-header p{ max-width: 520px; }
+      .landing-page .features-grid{ grid-template-columns: 1fr 1fr; }
+      .landing-page .belief-layout{ grid-template-columns: 1fr; gap: 28px; }
+      .landing-page .loop-model{ grid-template-columns: 1fr 1fr; }
+      .landing-page .automation-layout{ grid-template-columns: 1fr; }
+      .landing-page .workflows-layout{ grid-template-columns: 1fr; }
+      .landing-page .wf-board-columns{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .landing-page .footer-inner{ flex-direction: column; gap: 24px; text-align: center; }
+      .landing-page .footer-links{ flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 640px) {
+
+      .landing-page .quick-start-titlebar{
+        gap: 8px;
+      }
+
+      .landing-page .quick-start-method-tabs{
+        order: 3;
+        flex: 1 1 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .landing-page .quick-start-method-tabs::-webkit-scrollbar{
+        display: none;
+      }
+
+      .landing-page .quick-start-platform-tabs{
+        margin-left: 0;
+      }
+
+      .landing-page .quick-start-titlebar-actions{
+        margin-left: 0;
+        flex: 1 1 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .landing-page .container{ padding: 0 20px; }
+      .landing-page .features-grid{ grid-template-columns: 1fr; }
+      .landing-page .loop-model{ grid-template-columns: 1fr; }
+      .landing-page .loop-model::before{ display: none; }
+      .landing-page .loop-step{ min-height: auto; }
+      .landing-page .loop-step-index{ margin-bottom: 36px; }
+      .landing-page .wf-board-columns{ grid-template-columns: 1fr; }
+      .landing-page .nav-links{ display: none; }
+    }

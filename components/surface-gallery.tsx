@@ -6,6 +6,8 @@ import { MediaPlaceholder } from "@/components/media-placeholder";
 import type { Locale } from "@/lib/i18n/config";
 import { LANDING_MEDIA, type SurfaceMediaId } from "@/lib/landing-media";
 
+type SurfaceMediaSrcs = Partial<Record<SurfaceMediaId, string>>;
+
 type SurfaceItem = {
   id: string;
   label: string;
@@ -22,11 +24,12 @@ type Props = {
   desc: string;
   items: SurfaceItem[];
   placeholderAction: string;
+  mediaSrcs?: SurfaceMediaSrcs;
 };
 
 const MOBILE_SURFACE_IDS = new Set(["mobile", "telegram", "wechat"]);
 
-export function SurfaceGallery({ locale, titleLine1, titleLine2, desc, items, placeholderAction }: Props) {
+export function SurfaceGallery({ locale, titleLine1, titleLine2, desc, items, placeholderAction, mediaSrcs }: Props) {
   const [activeId, setActiveId] = useState<string>(items[0]?.id ?? "tui");
   const active = items.find((item) => item.id === activeId) ?? items[0];
   const mediaId = (active?.id ?? "tui") as SurfaceMediaId;
@@ -86,6 +89,7 @@ export function SurfaceGallery({ locale, titleLine1, titleLine2, desc, items, pl
                   sizes={isMobileLike ? "320px" : "(max-width: 900px) 100vw, 960px"}
                   priority={active.id === items[0]?.id}
                   unoptimized
+                  initialSrc={mediaSrcs?.[mediaId]}
                 />
               </div>
               <p className="surfaces-caption">{active.caption}</p>

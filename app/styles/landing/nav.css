@@ -1,0 +1,122 @@
+    /* ─── NAV ───────────────────────────────────────────────────────── */
+    .landing-page nav{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--edge-bright);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+    }
+
+    .landing-page .nav-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .landing-page .nav-logo{
+      display: flex;
+      align-items: center;
+    }
+
+    .landing-page .xopc-logo-link{
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .landing-page .xopc-logo-mark{
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+    }
+
+    .landing-page .xopc-logo-img{
+      display: block;
+      width: auto;
+      height: 32px;
+    }
+
+    .landing-page .footer-logo .xopc-logo-img{
+      height: 28px;
+    }
+
+    .landing-page .xopc-logo-img--light{
+      display: block;
+    }
+
+    .landing-page .xopc-logo-img--dark{
+      display: none;
+    }
+
+    html[data-theme="dark"] .landing-page .xopc-logo-img--light{
+      display: none;
+    }
+
+    html[data-theme="dark"] .landing-page .xopc-logo-img--dark{
+      display: block;
+    }
+
+    .landing-page .nav-links{
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .landing-page .nav-links a{
+      font-size: 13px;
+      color: var(--fg-mid);
+      transition: color 0.2s;
+    }
+
+    .landing-page .nav-links a:hover{ color: var(--fg-head); text-decoration: none; }
+
+    .landing-page .nav-extra {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .landing-page .nav-extra-tools {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .landing-page .nav-extra-divider {
+      width: 1px;
+      height: 20px;
+      margin: 0 10px;
+      background: var(--edge-bright);
+      flex-shrink: 0;
+    }
+
+    .landing-page .nav-github-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      padding: 0;
+      border: none;
+      border-radius: 10px;
+      color: var(--fg-mid);
+      background: transparent;
+      transition: color 0.15s ease-out, background 0.15s ease-out;
+    }
+
+    .landing-page .nav-github-link:hover {
+      color: var(--fg-head);
+      background: var(--bg-card-hover);
+      text-decoration: none;
+    }
+
+    .landing-page .nav-github-link svg {
+      width: 22px;
+      height: 22px;
+    }
+

@@ -1,0 +1,22 @@
+    /* ─── Scroll reveal (sections below hero) ─────────────────────── */
+    .landing-page .landing-reveal{
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    }
+
+    .landing-page .landing-reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Animations ────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .landing-page .fade-up{ animation: fadeUp 0.7s ease both; }
+    .landing-page .delay-2{ animation-delay: 0.2s; }
+    .landing-page .delay-3{ animation-delay: 0.3s; }
+

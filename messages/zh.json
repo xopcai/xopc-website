@@ -38,7 +38,6 @@
       "titleEm": "让方向、行动与反馈持续对齐。",
       "taglineStrong": "",
       "desc": "xopc 是一个本地优先的 Agent OS：记住你的长期目标，推动下一步行动，并把反馈重新带回系统。",
-      "starGithub": "给 GitHub 加星",
       "mobileApp": "移动端 App",
       "watchDemo": "观看演示",
       "screenshotAlt": "xopc Web 控制台",
@@ -433,39 +432,11 @@
       "expandLabel": "放大查看架构图",
       "closeLabel": "关闭架构图"
     },
-    "testimonials": {
-      "title": "为什么都自己干的人而造。",
-      "desc": "无论你是独立做 SaaS、接自由职业，还是一人创意工作室。",
-      "items": [
-        {
-          "quote": "以前需要开三个窗口的事，现在一个 xopc 就搞定了。",
-          "author": "[ 待补充姓名 ]",
-          "role": "独立开发者 / Solo SaaS Builder",
-          "avatar": "A",
-          "avatarStyle": "accent"
-        },
-        {
-          "quote": "统一入口这件事，比我想象中重要十倍。",
-          "author": "[ 待补充姓名 ]",
-          "role": "自由设计师 / 内容创作者",
-          "avatar": "B",
-          "avatarStyle": "green"
-        },
-        {
-          "quote": "终于有人做了一个不偷我数据的 AI assistant。",
-          "author": "[ 待补充姓名 ]",
-          "role": "隐私优先的技术人",
-          "avatar": "C",
-          "avatarStyle": "purple"
-        }
-      ]
-    },
     "cta": {
       "titleLine1": "让重要的事，",
       "titleLine2": "进入循环。",
       "desc": "MIT 开源。本地优先。安装后完成 onboard，开始建立属于你的长期进化系统。",
       "primary": "开始使用 →",
-      "secondary": "给 GitHub 加星",
       "mobileApp": "移动端 App"
     },
     "footer": {

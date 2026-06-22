@@ -1,0 +1,134 @@
+    /* ─── BRAND BELIEF / LOOP MODEL ───────────────────────────────── */
+    .landing-page .belief-section{
+      padding: 96px 0 88px;
+      border-top: 1px solid var(--edge-bright);
+      border-bottom: 1px solid var(--edge-bright);
+      background:
+        radial-gradient(circle at 18% 10%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 34%),
+        linear-gradient(180deg, var(--bg-card) 0%, var(--bg-void) 100%);
+    }
+
+    .landing-page .belief-layout{
+      display: grid;
+      grid-template-columns: 0.72fr 1.35fr 0.95fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .landing-page .belief-kicker{
+      color: var(--accent-bright);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding-top: 9px;
+    }
+
+    .landing-page .belief-copy h2{
+      max-width: 620px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+
+    .landing-page .belief-copy p{
+      max-width: 660px;
+      color: var(--fg-mid);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .landing-page .belief-lines{
+      display: grid;
+      gap: 1px;
+      border: 1px solid var(--edge);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--edge);
+      box-shadow: var(--rim-light);
+    }
+
+    .landing-page .belief-lines span{
+      display: block;
+      padding: 18px 20px;
+      color: var(--fg-body);
+      background: color-mix(in srgb, var(--bg-card) 92%, transparent);
+      font-family: var(--display);
+      font-size: 17px;
+      letter-spacing: -0.015em;
+    }
+
+    .landing-page .loop-section{
+      padding: 110px 0 100px;
+      background: var(--bg-void);
+    }
+
+    .landing-page .loop-model{
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--edge);
+      border-radius: 20px;
+      background: var(--edge);
+    }
+
+    .landing-page .loop-model::before{
+      content: '';
+      position: absolute;
+      left: 8%; right: 8%; top: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-bright), transparent);
+      opacity: 0.42;
+      pointer-events: none;
+    }
+
+    .landing-page .loop-step{
+      min-height: 260px;
+      padding: 34px 28px 30px;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 96%, transparent), var(--bg-card));
+      position: relative;
+    }
+
+    .landing-page .loop-step::after{
+      content: '↻';
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      color: color-mix(in srgb, var(--accent) 44%, transparent);
+      font-family: var(--mono);
+      font-size: 20px;
+    }
+
+    .landing-page .loop-step-index{
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 58px;
+      border-radius: 50%;
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--edge-bright));
+      background: var(--bg-card);
+      color: var(--accent-bright);
+      font-family: var(--mono);
+      font-size: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .landing-page .loop-step h3{
+      margin-bottom: 12px;
+      font-size: 20px;
+      letter-spacing: -0.025em;
+    }
+
+    .landing-page .loop-step p{
+      color: var(--fg-mid);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+

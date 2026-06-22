@@ -1,0 +1,177 @@
+    /* Language dropdown (landing): align with nav tool controls */
+    body.landing-body .locale-switcher-landing {
+      position: relative;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .landing-page .locale-switcher-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 74px;
+      min-width: 74px;
+      height: 40px;
+      min-height: 40px;
+      padding: 0 12px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--fg-mid);
+      cursor: pointer;
+      transition: border-color 0.15s ease-out, background 0.15s ease-out, color 0.15s ease-out;
+    }
+
+    .landing-page .locale-switcher-trigger:hover {
+      color: var(--fg-head);
+      background: var(--bg-card-hover);
+      text-decoration: none;
+    }
+
+    .landing-page .locale-switcher-trigger[data-open="true"] {
+      border-color: var(--edge-bright);
+      background: var(--bg-card);
+      color: var(--fg-head);
+    }
+
+    .landing-page .locale-switcher-trigger:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .landing-page .locale-switcher-trigger-ic {
+      width: 20px;
+      height: 20px;
+    }
+
+    .landing-page .locale-switcher-chevron {
+      width: 14px;
+      height: 14px;
+      opacity: 0.75;
+      transition: transform 0.2s ease;
+    }
+
+    .landing-page .locale-switcher-chevron--open {
+      transform: rotate(180deg);
+    }
+
+    .landing-page .locale-switcher-panel {
+      position: absolute;
+      z-index: 200;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 168px;
+      padding: 6px;
+      border-radius: 10px;
+      border: 1px solid var(--edge);
+      background: var(--bg-card);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.16);
+    }
+
+    .landing-page .locale-switcher-panel a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--fg-body);
+      text-decoration: none;
+      font-weight: 400;
+      transition: background 0.12s ease-out;
+    }
+
+    .landing-page .locale-switcher-panel a:hover {
+      background: var(--bg-card-hover);
+      text-decoration: none;
+    }
+
+    .landing-page .locale-switcher-panel a.is-active {
+      font-weight: 600;
+      color: var(--fg-head);
+    }
+
+    /* Theme: pill switch · knob carries sun / moon */
+    .landing-page .theme-toggle-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 9999px;
+      min-height: 40px;
+    }
+
+    .landing-page .theme-toggle-pill:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .landing-page .theme-toggle-pill-track {
+      position: relative;
+      width: 52px;
+      height: 30px;
+      border-radius: 9999px;
+      background: var(--bg-surface);
+      border: 1px solid var(--edge-bright);
+      box-sizing: border-box;
+    }
+
+    .landing-page .theme-toggle-pill-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--edge-bright);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    html[data-theme="light"] .landing-page .theme-toggle-pill-thumb {
+      transform: translateX(22px);
+    }
+
+    html[data-theme="dark"] .landing-page .theme-toggle-pill-thumb {
+      transform: translateX(0);
+    }
+
+    .landing-page .theme-toggle-pill-thumb-ic {
+      width: 14px;
+      height: 14px;
+      color: var(--fg-mid);
+    }
+
+    .landing-page .theme-toggle-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0;
+      border-radius: 10px;
+      border: 1px solid var(--edge-bright);
+      background: transparent;
+      color: var(--fg-mid);
+      cursor: pointer;
+      transition: background 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    .landing-page .theme-toggle-btn:hover{
+      background: var(--bg-card-hover);
+      color: var(--fg-head);
+      border-color: var(--edge-bright);
+    }
+
+    .landing-page .theme-toggle-icon{
+      width: 20px;
+      height: 20px;
+    }

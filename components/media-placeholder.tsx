@@ -10,12 +10,13 @@ import type { LandingMediaSlot } from "@/lib/landing-media";
 
 type Variant = "screenshot" | "video" | "mobile" | "avatar";
 
-function useLocaleMediaSrc(slot: LandingMediaSlot, locale: Locale) {
+function useLocaleMediaSrc(slot: LandingMediaSlot, locale: Locale, initialSrc?: string) {
   const candidates = useMemo(
     () => localeMediaCandidates(slot, locale),
     [slot, locale],
   );
-  const [index, setIndex] = useState(0);
+  const initialIndex = initialSrc ? Math.max(0, candidates.indexOf(initialSrc)) : 0;
+  const [index, setIndex] = useState(initialIndex);
 
   const src = candidates[Math.min(index, candidates.length - 1)] ?? candidates[0]!;
   const onError = useCallback(() => {
@@ -45,6 +46,7 @@ type Props = {
   sizes?: string;
   priority?: boolean;
   unoptimized?: boolean;
+  initialSrc?: string;
 };
 
 export function MediaPlaceholder({
@@ -58,8 +60,9 @@ export function MediaPlaceholder({
   sizes,
   priority,
   unoptimized,
+  initialSrc,
 }: Props) {
-  const { src, onError } = useLocaleMediaSrc(slot, locale);
+  const { src, onError } = useLocaleMediaSrc(slot, locale, initialSrc);
 
   if (slot.ready) {
     return (

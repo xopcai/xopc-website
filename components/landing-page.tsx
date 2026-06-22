@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import {
   BookOpen,
   Bot,
@@ -6,7 +5,6 @@ import {
   Github,
   Globe,
   Smartphone,
-  Star,
   HardDrive,
   KeyRound,
   Layers,
@@ -34,10 +32,8 @@ import {
   LANDING_GITHUB_REPO,
   LANDING_MOBILE_APP_REPO,
 } from "@/lib/landing-urls";
-import { LANDING_MEDIA } from "@/lib/landing-media";
+import { LANDING_MEDIA, type SurfaceMediaId } from "@/lib/landing-media";
 import { resolveLocaleMediaSrc } from "@/lib/locale-media.server";
-
-const SHOW_TESTIMONIALS_SECTION = false;
 
 const FEATURE_ICON_MAP: Record<string, LucideIcon> = {
   key: KeyRound,
@@ -70,12 +66,6 @@ type Props = {
 
 function dotClass(dot: string): string {
   return `dot dot-${dot}`;
-}
-
-function avatarStyle(style: string | undefined): CSSProperties | undefined {
-  if (style === "green") return { background: "linear-gradient(135deg,#34d399,#059669)" };
-  if (style === "purple") return { background: "linear-gradient(135deg,#a78bfa,#7c3aed)" };
-  return undefined;
 }
 
 function AutomationCodeBlock({ title }: { title: string }) {
@@ -152,6 +142,9 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
   const year = new Date().getFullYear();
   const providerChipsRow = [...L.providers.chips, ...L.providers.chips];
   const demoVideoSrc = resolveLocaleMediaSrc(LANDING_MEDIA.demo.full, locale);
+  const surfaceMediaSrcs = Object.fromEntries(
+    Object.entries(LANDING_MEDIA.surfaces).map(([id, media]) => [id, resolveLocaleMediaSrc(media, locale)]),
+  ) as Partial<Record<SurfaceMediaId, string>>;
 
   return (
     <div className="landing-page">
@@ -230,22 +223,9 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
 
           <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
 
-          <div className="hero-actions fade-up delay-3">
-            <a href={LANDING_GITHUB_REPO} className="btn-primary" target="_blank" rel="noopener noreferrer">
-              <Star className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.starGithub}
-            </a>
-            <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.mobileApp}
-            </a>
-          </div>
-
-          <div className="hero-quick-start fade-up delay-4" id="download">
+          <div className="hero-quick-start fade-up delay-3" id="download">
             <QuickInstallBlock d={L.download} />
           </div>
-
-
         </div>
       </section>
 
@@ -360,6 +340,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         desc={L.channels.desc}
         items={L.channels.items}
         placeholderAction={L.channels.placeholderAction}
+        mediaSrcs={surfaceMediaSrcs}
       />
 
       <section className="providers-section landing-reveal" id="providers">
@@ -477,34 +458,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      {SHOW_TESTIMONIALS_SECTION ? (
-        <section className="testimonials-section">
-          <div className="container">
-            <div className="section-header">
-              <h2>{L.testimonials.title}</h2>
-              <p>{L.testimonials.desc}</p>
-            </div>
-
-            <div className="testimonials-grid">
-              {L.testimonials.items.map((t, ti) => (
-                <div className="testimonial-card" key={`t-${ti}`}>
-                  <p className="testimonial-text">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="testimonial-author">
-                    <div className="avatar" style={avatarStyle(t.avatarStyle)}>
-                      {t.avatar}
-                    </div>
-                    <div className="author-info">
-                      <div className="author-name">{t.author}</div>
-                      <div className="author-role">{t.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
       <section className="cta-section landing-reveal">
         <div className="cta-glow" aria-hidden />
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
@@ -518,10 +471,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           <div className="cta-actions">
             <a href="#download" className="btn-primary">
               {L.cta.primary}
-            </a>
-            <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <Star className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.cta.secondary}
             </a>
             <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
               <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
