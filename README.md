@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# xopc website
 
-## Getting Started
+Official landing site for [xopc.ai](https://xopc.ai).
 
-First, run the development server:
+xopc is a local-first AI assistant for long-running goals: it remembers context, moves the next step, and runs across CLI, desktop, web, mobile, and messengers.
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Useful commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm lint
+pnpm build
+```
 
-## Learn More
+## Content map
 
-To learn more about Next.js, take a look at the following resources:
+- Landing page copy: `messages/en.json` and `messages/zh.json`
+- Landing page structure: `components/landing-page.tsx`
+- Landing styles: `app/styles/landing/`
+- Download/release proxy routes: `app/api/download/` and `app/api/github/latest-release/`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The primary product repository is [xopcai/xopc](https://github.com/xopcai/xopc).
