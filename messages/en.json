@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — Goal Loop Operating System",
-    "description": "Turn goals into loops. XOPC is an Agent OS that connects direction, action, and feedback so what matters keeps moving.",
-    "ogDescription": "A Goal Loop OS — not a task manager or another chatbot. XOPC keeps direction, action, and feedback aligned across local-first, extensible agents."
+    "title": "xopc — Private AI Workspace for Long-running Work",
+    "description": "Start with chat, run your agent on your computer, capture notes from your phone, and turn repeated follow-up into a private AI workspace.",
+    "ogDescription": "XOPC grows from local chat into project context, mobile note capture, connectors, and automations while your agent and data stay in your own runtime."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -22,7 +22,7 @@
       "workflows": "Workflows",
       "github": "GitHub",
       "belief": "Belief",
-      "loop": "Loop",
+      "loop": "Path",
       "system": "Capabilities",
       "extension": "Automation",
       "demo": "Demo",
@@ -37,7 +37,7 @@
       "titleLine1After": "",
       "titleEm": "Keep direction, action, and feedback aligned.",
       "taglineStrong": "",
-      "desc": "XOPC is a local-first Agent OS that remembers long-term goals, moves the next step, and turns feedback into progress.",
+      "desc": "Start with a local chat. Keep projects alive. Pair the mobile app by QR code to capture notes and ideas anywhere. Automations turn repeated follow-up into a private data flywheel.",
       "mobileApp": "Mobile app",
       "watchDemo": "Watch Demo",
       "screenshotAlt": "xopc Web console",
@@ -122,13 +122,13 @@
     "demo": {
       "titleLine1": "Progress is not one push.",
       "titleLine2": "It is loops that keep moving.",
-      "desc": "From install and setup to every surface: one system stays continuous across terminal, desktop, browser, and messengers.",
+      "desc": "From install and setup to every surface: one private agent stays continuous across terminal, desktop, browser, mobile, and messengers.",
       "videoAria": "xopc product demo"
     },
     "features": {
-      "titleLine1": "Not task management.",
-      "titleLine2": "A Goal Loop OS.",
-      "desc": "Models, surfaces, workflows, and extensions serve one promise: keep goals, action, and feedback connected.",
+      "titleLine1": "Start simple.",
+      "titleLine2": "Grow into a system.",
+      "desc": "Models, surfaces, workflows, and extensions serve one promise: turn useful context into the next action, then bring feedback back into the loop.",
       "tagFeatured": "LOOP MEMORY",
       "items": [
         {
@@ -141,6 +141,11 @@
           "icon": "layers",
           "title": "One assistant across every screen.",
           "body": "Terminal, browser, desktop app, phone, and messengers all connect to the same system. No context resync needed — every surface reaches the same assistant."
+        },
+        {
+          "icon": "smartphone",
+          "title": "Your phone is a private remote control.",
+          "body": "Run the agent on your computer, pair the mobile app by QR code, and capture notes, ideas, blockers, or project updates from anywhere without moving your data into a hosted chat account."
         },
         {
           "icon": "git-branch",
@@ -160,7 +165,7 @@
         {
           "icon": "hard-drive",
           "title": "Your machine. Your rules.",
-          "body": "xopc runs on your hardware. Conversations stay local. API keys stay in your config. No mandatory cloud. No surprise bills. No data leaves your machine without permission. ~/.xopc/ is the system directory you own.",
+          "body": "xopc runs on your hardware. Conversations, project context, and local state stay in your xopc runtime. API keys stay in your config. No mandatory cloud. No surprise bills.",
           "featured": true
         },
         {
@@ -185,25 +190,27 @@
           "desc": "Your API keys, your models, your deployment rhythm.",
           "items": [
             0,
-            5
+            6
           ]
         },
         {
           "title": "One system, many surfaces",
-          "desc": "From terminal to desktop, browser to messengers, the same assistant keeps working.",
+          "desc": "From terminal to phone, desktop to messengers, the same private agent keeps working.",
           "items": [
             1,
-            6,
-            8
+            2,
+            7,
+            9
           ]
         },
         {
-          "title": "An extensible Agent OS",
-          "desc": "Shape the system with workflows, Skills, Extensions, and multi-agent routing.",
+          "title": "A workspace you can extend",
+          "desc": "Shape your AI workspace with workflows, Skills, Extensions, and multi-agent routing.",
           "items": [
-            2,
             3,
-            4
+            4,
+            5,
+            8
           ]
         }
       ]
@@ -211,7 +218,7 @@
     "channels": {
       "titleLine1": "Every surface.",
       "titleLine2": "One continuous loop.",
-      "desc": "Terminal, browser, desktop, phone, and messengers carry the same system — important goals do not break when screens change.",
+      "desc": "Terminal, browser, desktop, phone, and messengers carry the same agent. Your project context follows you without becoming another hosted account.",
       "placeholderAction": "Add asset",
       "items": [
         {
@@ -242,7 +249,7 @@
           "id": "mobile",
           "label": "Mobile",
           "tag": "Phone",
-          "caption": "Scan to pair — your assistant on the go.",
+          "caption": "Scan to pair with the agent running on your computer. Capture notes and ideas on the go.",
           "imageAlt": "xopc mobile pairing and chat",
           "placeholderTitle": "Mobile · QR pairing"
         },
@@ -339,7 +346,7 @@
     "automation": {
       "titleLine1": "Rhythm, review, reminders —",
       "titleLine2": "all part of the loop.",
-      "desc": "Skills, Extensions, Cron, and multi-agent routing let the system evolve with your goals: install new capabilities and define new rhythms when needed.",
+      "desc": "Skills, Extensions, Cron, and multi-agent routing let the system evolve with your goals: install new capabilities, connect new inputs, and define new rhythms when work starts repeating.",
       "codeTitle": "~/.xopc/xopc.json",
       "bullets": [
         "xopc skills install — teach your assistant new domains without writing code",
@@ -435,7 +442,7 @@
     "cta": {
       "titleLine1": "Put what matters",
       "titleLine2": "into a loop.",
-      "desc": "MIT open source. Local-first. Install, onboard, and start building your own system for long-term progress.",
+      "desc": "MIT open source. Local-first. Install, onboard, pair your phone when ready, and start building your own system for long-term progress.",
       "primary": "Start now →",
       "mobileApp": "Mobile app"
     },
@@ -460,26 +467,30 @@
       ]
     },
     "loop": {
-      "titleLine1": "Goal → Loop → Progress",
-      "titleLine2": "A system for long-term progress.",
-      "desc": "XOPC turns goals into operating loops: remember direction, move the next step, capture feedback, and recalibrate after change.",
+      "titleLine1": "Chat → Project → Flywheel",
+      "titleLine2": "You do not need the whole system on day one.",
+      "desc": "Start with a normal conversation. Add project context, notes, mobile capture, connectors, and automation only when the work needs them.",
       "modelLabel": "XOPC goal loop model",
       "steps": [
         {
-          "title": "Direction",
-          "body": "Clarify what matters and preserve context, boundaries, and priority."
+          "title": "Chat",
+          "body": "Ask questions, think through work, and make decisions in a local assistant."
         },
         {
-          "title": "Action",
-          "body": "Move the next step at the right moment instead of leaving goals in plans."
+          "title": "Project",
+          "body": "Ask xopc to follow one goal over time: current state, blockers, decisions, and next actions."
         },
         {
-          "title": "Feedback",
-          "body": "Capture real status, progress, and friction so the system knows what changed."
+          "title": "Notes",
+          "body": "Drop rough ideas, links, progress updates, and feedback whenever they happen."
         },
         {
-          "title": "Recalibration",
-          "body": "Realign rhythm after change so long-term goals keep moving."
+          "title": "Mobile",
+          "body": "Pair by QR code and keep capturing context from your phone while the agent runs on your computer."
+        },
+        {
+          "title": "Automations",
+          "body": "Schedule reviews, reminders, summaries, and workflow runs so the loop keeps moving."
         }
       ]
     }

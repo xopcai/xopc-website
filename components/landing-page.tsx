@@ -45,6 +45,7 @@ const FEATURE_ICON_MAP: Record<string, LucideIcon> = {
   globe: Globe,
   wrench: Wrench,
   mic: Mic,
+  smartphone: Smartphone,
 };
 
 function FeatureIcon({ name }: { name: string }) {

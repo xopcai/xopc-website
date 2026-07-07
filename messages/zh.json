@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — 目标循环操作系统",
-    "description": "把目标变成循环。xopc 是面向长期目标的 Agent OS，连接方向、行动与反馈，让重要的事持续向前。",
-    "ogDescription": "Goal Loop OS：不是任务管理，也不是聊天机器人。xopc 让方向、行动与反馈持续对齐，支持本地优先、多端接入与可扩展 Agent。"
+    "title": "xopc — 服务长期工作的私人 AI 工作空间",
+    "description": "先从本地聊天开始，把 Agent 跑在自己的电脑上；手机扫码连接，随手记录 note/idea，再用自动化养成私人 AI 工作空间。",
+    "ogDescription": "xopc 从本地聊天开始，逐步长成项目上下文、手机随手记录、外部入口和自动化循环；Agent 与数据仍在你的本地环境里。"
   },
   "header": {
     "chooseLanguage": "选择语言",
@@ -22,7 +22,7 @@
       "workflows": "工作流",
       "github": "GitHub",
       "belief": "理念",
-      "loop": "循环",
+      "loop": "路径",
       "system": "能力",
       "extension": "自动化",
       "demo": "演示",
@@ -37,7 +37,7 @@
       "titleLine1After": "",
       "titleEm": "让方向、行动与反馈持续对齐。",
       "taglineStrong": "",
-      "desc": "xopc 是一个本地优先的 Agent OS：记住你的长期目标，推动下一步行动，并把反馈重新带回系统。",
+      "desc": "先从一次本地对话开始。把项目养起来，用手机扫码连接随手记录 note/idea，再让自动化把重复跟进变成私有数据飞轮。",
       "mobileApp": "移动端 App",
       "watchDemo": "观看演示",
       "screenshotAlt": "xopc Web 控制台",
@@ -122,13 +122,13 @@
     "demo": {
       "titleLine1": "不是一次完成，",
       "titleLine2": "而是一轮轮向前。",
-      "desc": "从安装、配置到多端使用：同一个系统在终端、桌面、浏览器与 IM 中保持连续。",
+      "desc": "从安装、配置到多端使用：同一个私有 Agent 在终端、桌面、浏览器、手机与 IM 中保持连续。",
       "videoAria": "xopc 产品演示"
     },
     "features": {
-      "titleLine1": "不是任务管理，",
-      "titleLine2": "是 Goal Loop OS。",
-      "desc": "模型、界面、工作流与扩展能力服务于同一个承诺：持续连接目标、行动与反馈。",
+      "titleLine1": "先简单用起来，",
+      "titleLine2": "再长成自己的系统。",
+      "desc": "模型、入口、工作流与扩展能力服务于同一件事：把有用上下文变成下一步行动，再把反馈带回循环。",
       "tagFeatured": "LOOP MEMORY",
       "items": [
         {
@@ -141,6 +141,11 @@
           "icon": "layers",
           "title": "同一个助手，贯穿每块屏幕。",
           "body": "终端、浏览器、桌面应用、手机与即时通讯使用同一套系统。不需要重新同步上下文，因为入口背后是同一个助手。"
+        },
+        {
+          "icon": "smartphone",
+          "title": "手机是私有入口，不是另一个云端大脑。",
+          "body": "Agent 跑在你的电脑上，手机 App 扫码连接。出门在外也能继续对话、记录 note/idea、发送项目进展，数据不需要搬到云端聊天账号里。"
         },
         {
           "icon": "git-branch",
@@ -160,7 +165,7 @@
         {
           "icon": "hard-drive",
           "title": "你的机器，你的规则。",
-          "body": "xopc 运行在你的硬件上。对话留在本地，密钥保存在你的配置中。没有强制云端，没有意外账单；数据不会在未经允许时离开本机。~/.xopc/ 是你拥有的系统目录。",
+          "body": "xopc 运行在你的硬件上。对话、项目上下文和本地状态都留在你的 xopc 运行环境里；密钥保存在你的配置中。没有强制云端，也没有意外账单。",
           "featured": true
         },
         {
@@ -185,25 +190,27 @@
           "desc": "你的 API Key、你的模型、你的部署方式。",
           "items": [
             0,
-            5
+            6
           ]
         },
         {
           "title": "一个系统，多种界面",
-          "desc": "从终端到桌面，从浏览器到 IM，同一个助手持续工作。",
+          "desc": "从终端到手机，从桌面到 IM，同一个私有 Agent 持续工作。",
           "items": [
             1,
-            6,
-            8
+            2,
+            7,
+            9
           ]
         },
         {
-          "title": "可扩展的 Agent OS",
-          "desc": "用工作流、Skills、Extensions 与多 Agent 路由塑造自己的系统。",
+          "title": "可以按需扩展的 AI 工作空间",
+          "desc": "用工作流、Skills、Extensions 与多 Agent 路由塑造自己的 AI 工作空间。",
           "items": [
-            2,
             3,
-            4
+            4,
+            5,
+            8
           ]
         }
       ]
@@ -211,7 +218,7 @@
     "channels": {
       "titleLine1": "多端接入，",
       "titleLine2": "同一条循环。",
-      "desc": "终端、浏览器、桌面、手机与即时通讯承载同一个系统；重要目标不因切换屏幕而断开。",
+      "desc": "终端、浏览器、桌面、手机与即时通讯连接同一个 Agent；项目上下文跟着你走，但不会变成另一个云端账号。",
       "placeholderAction": "待补充素材",
       "items": [
         {
@@ -242,7 +249,7 @@
           "id": "mobile",
           "label": "Mobile",
           "tag": "Phone",
-          "caption": "扫码配对，通勤路上也能用。",
+          "caption": "扫码连接电脑上的 Agent；通勤路上也能记录 note/idea。",
           "imageAlt": "xopc 手机配对与对话",
           "placeholderTitle": "Mobile · 扫码配对"
         },
@@ -339,7 +346,7 @@
     "automation": {
       "titleLine1": "节奏、复盘、提醒，",
       "titleLine2": "都可以进入循环。",
-      "desc": "Skills、Extensions、Cron 与多 Agent 路由让系统随目标演化：需要新能力时安装，需要新节奏时设定。",
+      "desc": "Skills、Extensions、Cron 与多 Agent 路由让系统随目标演化：需要新能力时安装，需要新入口时接入，需要新节奏时设定。",
       "codeTitle": "~/.xopc/xopc.json",
       "bullets": [
         "xopc skills install——用 SKILL.md 教会助手新领域，不写代码",
@@ -435,7 +442,7 @@
     "cta": {
       "titleLine1": "让重要的事，",
       "titleLine2": "进入循环。",
-      "desc": "MIT 开源。本地优先。安装后完成 onboard，开始建立属于你的长期进化系统。",
+      "desc": "MIT 开源。本地优先。安装后完成 onboard，用顺手后再配对手机，开始建立属于你的长期进化系统。",
       "primary": "开始使用 →",
       "mobileApp": "移动端 App"
     },
@@ -460,26 +467,30 @@
       ]
     },
     "loop": {
-      "titleLine1": "Goal → Loop → Progress",
-      "titleLine2": "长期目标的运行结构。",
-      "desc": "XOPC 把目标拆成可持续运转的循环：记住方向、推动下一步、接住反馈，并在每一次变化之后重新校准。",
+      "titleLine1": "聊天 → 项目 → 数据飞轮",
+      "titleLine2": "不需要第一天就搭好复杂系统。",
+      "desc": "先普通对话；当真实工作需要时，再逐步加入项目上下文、笔记、手机随手记录、外部入口和自动化。",
       "modelLabel": "XOPC 目标循环模型",
       "steps": [
         {
-          "title": "Direction",
-          "body": "明确什么重要，保留目标的上下文、边界与优先级。"
+          "title": "聊天",
+          "body": "先把 xopc 当作本地 AI 助手，用来问问题、整理思路、做判断。"
         },
         {
-          "title": "Action",
-          "body": "在合适的时刻推进下一步，而不是让目标停在计划里。"
+          "title": "项目",
+          "body": "让它持续跟进一个真实目标：状态、阻塞点、关键决策和下一步。"
         },
         {
-          "title": "Feedback",
-          "body": "捕捉真实状态、进展与阻力，让系统知道发生了什么。"
+          "title": "笔记",
+          "body": "随手丢进展、链接、想法、反馈和复盘，让零散输入沉淀成上下文。"
         },
         {
-          "title": "Recalibration",
-          "body": "根据变化重新对齐节奏，让长期目标继续运转。"
+          "title": "手机",
+          "body": "扫码连接电脑上的 Agent，不在电脑前也能继续对话、记录 note/idea。"
+        },
+        {
+          "title": "自动化",
+          "body": "设置定时复盘、提醒、摘要和工作流，让重要事项自己回到视野里。"
         }
       ]
     }
