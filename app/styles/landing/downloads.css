@@ -130,7 +130,7 @@
       height: 38px;
       border-radius: 10px;
       background: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
       text-decoration: none;
       transition: background 0.15s ease-out;
     }

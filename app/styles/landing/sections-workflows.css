@@ -1,8 +1,7 @@
     /* ─── WORKFLOWS SECTION ───────────────────────────────────────── */
     .landing-page .workflows-section{
       padding: 100px 0;
-      background: var(--bg-void);
-      border-top: 1px solid var(--edge);
+      background: transparent;
     }
 
     .landing-page .workflows-layout{
@@ -145,14 +144,18 @@
     }
 
     .landing-page .wf-board-card--featured{
-      border-color: rgba(37, 99, 235, 0.55);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15);
+      border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
       animation: wf-board-pulse 2.4s ease-in-out infinite;
     }
 
     @keyframes wf-board-pulse {
-      0%, 100% { box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15); }
-      50% { box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35), 0 0 18px rgba(37, 99, 235, 0.12); }
+      0%, 100% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent); }
+      50% {
+        box-shadow:
+          0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent),
+          0 0 18px color-mix(in srgb, var(--accent) 12%, transparent);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -216,6 +219,5 @@
     .landing-page .wf-board-card-progress-bar{
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      background: linear-gradient(90deg, var(--accent), var(--accent-bright));
     }
-

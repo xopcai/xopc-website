@@ -1,8 +1,7 @@
     /* ─── SURFACE GALLERY (One brain, every screen) ─────────────────── */
     .landing-page .surfaces-section{
       padding: 100px 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--edge-bright);
+      background: transparent;
     }
 
     .landing-page .surfaces-header{
@@ -58,9 +57,9 @@
     }
 
     .landing-page .surfaces-tab.active{
-      border-color: rgba(37, 99, 235, 0.45);
-      background: rgba(37, 99, 235, 0.08);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+      border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
     }
 
     .landing-page .surfaces-tab-label{
@@ -216,4 +215,3 @@
         margin-bottom: 32px;
       }
     }
-
