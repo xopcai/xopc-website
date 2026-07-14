@@ -1,7 +1,4 @@
     @media (prefers-reduced-motion: reduce) {
-      .landing-page .providers-marquee {
-        animation: none;
-      }
       .landing-page .fade-up{
         animation: none;
       }
@@ -12,19 +9,5 @@
       }
       .landing-page .surfaces-panel-enter{
         animation: none;
-      }
-      .landing-page .hero-brand-ring,
-      .landing-page .hero-brand-logo,
-      .landing-page .hero-wordmark,
-      .landing-page .hero-wordmark-char,
-      .landing-page .hero-brand-logo-wrap,
-      .landing-page .hero-headline-line1 {
-        animation: none;
-        opacity: 1;
-        transform: none;
-        filter: none;
-      }
-      .landing-page .hero-headline-cursor {
-        display: none;
       }
     }

@@ -4,9 +4,7 @@
       .landing-page .feature-group-header{ padding: 0; border-top: 0; }
       .landing-page .feature-group-header p{ max-width: 520px; }
       .landing-page .features-grid{ grid-template-columns: 1fr 1fr; }
-      .landing-page .belief-layout{ grid-template-columns: 1fr; gap: 28px; }
       .landing-page .loop-model{ grid-template-columns: 1fr 1fr; }
-      .landing-page .automation-layout{ grid-template-columns: 1fr; }
       .landing-page .workflows-layout{ grid-template-columns: 1fr; }
       .landing-page .wf-board-columns{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .landing-page .footer-inner{ flex-direction: column; gap: 24px; text-align: center; }

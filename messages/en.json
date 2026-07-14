@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — Private AI Workspace for Long-running Work",
-    "description": "Start with chat, run your agent on your computer, capture notes from your phone, and turn repeated follow-up into a private AI workspace.",
-    "ogDescription": "XOPC grows from local chat into project context, mobile note capture, connectors, and automations while your agent and data stay in your own runtime."
+    "title": "xopc — A Self-hosted Personal AI Runtime",
+    "description": "Run AI on your hardware. Connect models, agents, sessions, projects, goals, notes, workflows, and automations across terminal, web, desktop, mobile, and messengers.",
+    "ogDescription": "xopc is a self-hosted, local-first personal AI runtime. Own your data, keys, and environment while long-running work stays resumable, executable, and triggerable."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -15,33 +15,17 @@
   "landing": {
     "nav": {
       "download": "Start",
-      "features": "Features",
       "channels": "Surfaces",
-      "providers": "Providers",
-      "automation": "Automation",
       "workflows": "Workflows",
       "github": "GitHub",
-      "belief": "Belief",
-      "loop": "Path",
-      "system": "Capabilities",
-      "extension": "Automation",
-      "demo": "Demo",
-      "architecture": "Architecture"
+      "loop": "Product model",
+      "system": "Core capabilities"
     },
     "hero": {
       "brandName": "xopc",
       "headlineLine1": "Turn goals into loops.",
       "headlineLine2": "Keep what matters moving.",
-      "titleLine1Before": "Turn goals into loops.",
-      "titleLine1Highlight": "",
-      "titleLine1After": "",
-      "titleEm": "Keep direction, action, and feedback aligned.",
-      "taglineStrong": "",
-      "desc": "Start with a local chat. Keep projects alive. Pair the mobile app by QR code to capture notes and ideas anywhere. Automations turn repeated follow-up into a private data flywheel.",
-      "mobileApp": "Mobile app",
-      "watchDemo": "Watch Demo",
-      "screenshotAlt": "xopc Web console",
-      "primaryCta": "See how it works →"
+      "desc": "A self-hosted, local-first personal AI runtime connecting models, agents, durable state, workflows, automations, and every surface you use. You own the data, keys, and environment."
     },
     "download": {
       "quickStartHeading": "Quick Start",
@@ -119,17 +103,11 @@
         "linux": "64-bit / ARM"
       }
     },
-    "demo": {
-      "titleLine1": "Progress is not one push.",
-      "titleLine2": "It is loops that keep moving.",
-      "desc": "From install and setup to every surface: one private agent stays continuous across terminal, desktop, browser, mobile, and messengers.",
-      "videoAria": "xopc product demo"
-    },
     "features": {
-      "titleLine1": "Start simple.",
-      "titleLine2": "Grow into a system.",
-      "desc": "Models, surfaces, workflows, and extensions serve one promise: turn useful context into the next action, then bring feedback back into the loop.",
-      "tagFeatured": "LOOP MEMORY",
+      "titleLine1": "Chat is a surface.",
+      "titleLine2": "The runtime is the product.",
+      "desc": "xopc puts models, agents, durable state, and execution into an environment you control instead of piling features into another chat window.",
+      "tagFeatured": "LOCAL FIRST",
       "items": [
         {
           "icon": "key",
@@ -139,86 +117,68 @@
         },
         {
           "icon": "layers",
-          "title": "One assistant across every screen.",
-          "body": "Terminal, browser, desktop app, phone, and messengers all connect to the same system. No context resync needed — every surface reaches the same assistant."
+          "title": "Durable state, not one context window.",
+          "body": "Sessions, projects, goals, notes, workspaces, and run history have explicit ownership. Resume long-running work without reconstructing it every time."
         },
         {
-          "icon": "smartphone",
-          "title": "Your phone is a private remote control.",
-          "body": "Run the agent on your computer, pair the mobile app by QR code, and capture notes, ideas, blockers, or project updates from anywhere without moving your data into a hosted chat account."
+          "icon": "target",
+          "title": "Projects, Goals, and Notes have distinct jobs.",
+          "body": "Projects group context, Goals track status, blockers, and next actions, while Notes capture text, voice, images, and attachments wherever input happens."
         },
         {
           "icon": "git-branch",
-          "title": "Dynamic workflows",
-          "body": "Fan out isolated subagents from deterministic scripts: repo audits, multi-perspective reviews, and parallel research. Each run gets its own session with live progress."
+          "title": "Observable workflows. Traceable automations.",
+          "body": "Organize complex execution into phases and subagents, then trigger it on schedules, manually, or from webhooks. Progress, results, failures, and retries stay visible."
         },
         {
           "icon": "bot",
-          "title": "Multi-agent routing",
-          "body": "Route different contexts to different agents — each with its own model, workspace, tools, and system prompt. Fully isolated contexts for work, creativity, and code."
+          "title": "Agent capability boundaries are explicit.",
+          "body": "Give each agent its own identity, responsibilities, model roles, workspace, tool policy, skills, memory, and boundaries."
         },
         {
           "icon": "puzzle",
-          "title": "Extend it without hitting preset limits.",
-          "body": "Install Skills with one command. Add Extensions for tools, channels, and UI panels. Use Cron for scheduled automation. XOPC is your system — shape it around your goals."
+          "title": "Add capabilities only when needed.",
+          "body": "Skills provide task methods, Extensions add tools, channels, and UI, and Connectors bring in external capabilities while the core stays clear."
         },
         {
           "icon": "hard-drive",
           "title": "Your machine. Your rules.",
           "body": "xopc runs on your hardware. Conversations, project context, and local state stay in your xopc runtime. API keys stay in your config. No mandatory cloud. No surprise bills.",
           "featured": true
-        },
-        {
-          "icon": "globe",
-          "title": "HTTP/SSE gateway",
-          "body": "REST JSON APIs plus Server-Sent Events for streaming and live updates, with the same React console you get in Electron. Open the URL from logs or gateway config."
-        },
-        {
-          "icon": "wrench",
-          "title": "Type-Safe Tool System",
-          "body": "Build custom tools with TypeBox schemas. Web search, browser control (Playwright, opt-in), file operations — extend your agent's capabilities."
-        },
-        {
-          "icon": "mic",
-          "title": "Voice & vision",
-          "body": "STT/TTS where configured — e.g. Telegram and gateway paths. Images: vision plus generation when you wire it up; see the Voice and Tools docs."
         }
       ],
       "groups": [
         {
-          "title": "Model freedom",
-          "desc": "Your API keys, your models, your deployment rhythm.",
+          "title": "Runtime and ownership",
+          "desc": "Your hardware, keys, models, and deployment.",
           "items": [
-            0,
-            6
+            6,
+            0
           ]
         },
         {
-          "title": "One system, many surfaces",
-          "desc": "From terminal to phone, desktop to messengers, the same private agent keeps working.",
+          "title": "Durable state",
+          "desc": "Important information has a home and long-running work can resume.",
           "items": [
             1,
-            2,
-            7,
-            9
+            2
           ]
         },
         {
-          "title": "A workspace you can extend",
-          "desc": "Shape your AI workspace with workflows, Skills, Extensions, and multi-agent routing.",
+          "title": "Execution and boundaries",
+          "desc": "Complex work is observable, repeated work is triggerable, and capabilities are configurable.",
           "items": [
             3,
             4,
-            5,
-            8
+            5
           ]
         }
       ]
     },
     "channels": {
       "titleLine1": "Every surface.",
-      "titleLine2": "One continuous loop.",
-      "desc": "Terminal, browser, desktop, phone, and messengers carry the same agent. Your project context follows you without becoming another hosted account.",
+      "titleLine2": "One runtime.",
+      "desc": "Terminal, browser, desktop, mobile, and messengers share agents, sessions, and project state. The surface changes; your runtime and data ownership do not.",
       "placeholderAction": "Add asset",
       "items": [
         {
@@ -343,27 +303,14 @@
         }
       ]
     },
-    "automation": {
-      "titleLine1": "Rhythm, review, reminders —",
-      "titleLine2": "all part of the loop.",
-      "desc": "Skills, Extensions, Cron, and multi-agent routing let the system evolve with your goals: install new capabilities, connect new inputs, and define new rhythms when work starts repeating.",
-      "codeTitle": "~/.xopc/xopc.json",
-      "bullets": [
-        "xopc skills install — teach your assistant new domains without writing code",
-        "xopc extensions install — tools, channels, and UI panels, no restart needed",
-        "Cron jobs for daily digests, weekly reviews, and custom schedules",
-        "Schedule workflow runs from Cron (workflowRun task kind)",
-        "Per-job agent selection — use different models for different tasks"
-      ]
-    },
     "workflows": {
-      "titleLine1": "Complex goals,",
-      "titleLine2": "broken into moving loops.",
-      "desc": "Parallel subagents handle audits, research, and multi-perspective reviews; each run keeps its own state for review and recalibration.",
+      "titleLine1": "Complex execution,",
+      "titleLine2": "visible at every step.",
+      "desc": "Workflows use explicit phases and parallel subagents for audits, research, and multi-perspective reviews; each run records progress, results, and failures.",
       "bullets": [
         "Built-in templates: audit_repo, multi_perspective_review, research",
         "Kanban board at #/workflows — queued, running, done, needs attention",
-        "Start from chat, gateway UI, cron workflowRun, or REST API",
+        "Start from chat, gateway UI, an Automation, or REST API",
         "Save and customize scripts under ~/.xopc/workflows/"
       ],
       "viewDocs": "Read workflows docs →",
@@ -431,18 +378,10 @@
         ]
       }
     },
-    "architecture": {
-      "titleLine1": "Clean, composable,",
-      "titleLine2": "built to last.",
-      "desc": "Gateway, channels, agents, and LLM layers stay modular. Extend with Skills and Extensions instead of forking the system into fragments.",
-      "diagramAlt": "xopc system architecture: user entry points, Gateway, Channel Manager, Agent Service, extensions, and LLM layer",
-      "expandLabel": "Expand architecture diagram",
-      "closeLabel": "Close expanded diagram"
-    },
     "cta": {
-      "titleLine1": "Put what matters",
-      "titleLine2": "into a loop.",
-      "desc": "MIT open source. Local-first. Install, onboard, pair your phone when ready, and start building your own system for long-term progress.",
+      "titleLine1": "Run your own AI system",
+      "titleLine2": "on your own hardware.",
+      "desc": "MIT open source and local-first. Start with one model and agent, then add projects, goals, notes, workflows, and automations when the work becomes durable.",
       "primary": "Start now →",
       "mobileApp": "Mobile app"
     },
@@ -454,43 +393,27 @@
       "issues": "Issues",
       "copyright": "© {year} xopcai · MIT License"
     },
-    "belief": {
-      "kicker": "Brand belief",
-      "title": "What matters should not rely on willpower alone.",
-      "body": "Meaningful goals often take months, years, or longer. They need to be remembered, moved forward, reflected on, and recalibrated. Sustained progress comes from loops, not motivation alone.",
-      "linesLabel": "Common ways meaningful goals lose momentum",
-      "lines": [
-        "Direction drifts.",
-        "Action stalls.",
-        "Feedback disappears.",
-        "Momentum fades."
-      ]
-    },
     "loop": {
-      "titleLine1": "Chat → Project → Flywheel",
-      "titleLine2": "You do not need the whole system on day one.",
-      "desc": "Start with a normal conversation. Add project context, notes, mobile capture, connectors, and automation only when the work needs them.",
-      "modelLabel": "XOPC goal loop model",
+      "titleLine1": "One runtime.",
+      "titleLine2": "Work that has a next step.",
+      "desc": "xopc separates long-running work into explicit state, execution, triggers, and access. It does not assume AI remembers everything; important information has a home, complex execution is observable, and follow-up can start again.",
+      "modelLabel": "xopc continuous work model",
       "steps": [
         {
-          "title": "Chat",
-          "body": "Ask questions, think through work, and make decisions in a local assistant."
+          "title": "Durable state",
+          "body": "Sessions, Projects, Goals, Notes, and Workspaces retain conversations, progress, source material, and artifacts."
         },
         {
-          "title": "Project",
-          "body": "Ask xopc to follow one goal over time: current state, blockers, decisions, and next actions."
+          "title": "Explicit execution",
+          "body": "Agents use allowed tools and skills; Workflows organize multi-step or parallel work into inspectable runs."
         },
         {
-          "title": "Notes",
-          "body": "Drop rough ideas, links, progress updates, and feedback whenever they happen."
+          "title": "Active triggers",
+          "body": "Automations run agents or workflows on schedules, manually, or from webhooks, with visible success, failure, and retry history."
         },
         {
-          "title": "Mobile",
-          "body": "Pair by QR code and keep capturing context from your phone while the agent runs on your computer."
-        },
-        {
-          "title": "Automations",
-          "body": "Schedule reviews, reminders, summaries, and workflow runs so the loop keeps moving."
+          "title": "Access anywhere",
+          "body": "Terminal, web, desktop, mobile, messengers, and HTTP/SSE APIs connect to the same runtime and state."
         }
       ]
     }

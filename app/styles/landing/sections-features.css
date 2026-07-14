@@ -116,12 +116,11 @@
       display: inline-block;
       margin-top: 16px;
       padding: 3px 10px;
-      background: rgba(52,211,153,0.1);
-      border: 1px solid rgba(52,211,153,0.25);
+      background: var(--accent-glow);
+      border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--edge));
       border-radius: 100px;
       font-family: var(--mono);
       font-size: 10px;
-      color: var(--green);
+      color: var(--accent-bright);
       letter-spacing: 0.08em;
     }
-

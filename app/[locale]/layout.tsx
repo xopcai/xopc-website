@@ -35,15 +35,14 @@ export async function generateMetadata({
     ...(loc === "zh"
       ? {
           keywords: [
-            "本地 AI 助手",
-            "一人公司",
-            "OPC",
-            "AI 工作站",
-            "BYOK",
+            "自托管 AI",
+            "个人 AI 运行时",
             "本地优先",
             "开源 AI",
-            "微信 AI",
-            "DeepSeek",
+            "AI Agent",
+            "BYOK",
+            "多 Agent",
+            "AI 自动化",
           ],
         }
       : {}),

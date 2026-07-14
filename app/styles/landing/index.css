@@ -5,14 +5,11 @@
 @import "./section-common.css";
 @import "./quick-start.css";
 @import "./downloads.css";
-@import "./sections-belief-loop.css";
-@import "./sections-demo.css";
+@import "./sections-product-model.css";
 @import "./sections-features.css";
 @import "./sections-surfaces.css";
 @import "./sections-providers.css";
-@import "./sections-automation.css";
 @import "./sections-workflows.css";
-@import "./sections-architecture.css";
 @import "./sections-cta-footer.css";
 @import "./animations.css";
 @import "./responsive.css";

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — 服务长期工作的私人 AI 工作空间",
-    "description": "先从本地聊天开始，把 Agent 跑在自己的电脑上；手机扫码连接，随手记录 note/idea，再用自动化养成私人 AI 工作空间。",
-    "ogDescription": "xopc 从本地聊天开始，逐步长成项目上下文、手机随手记录、外部入口和自动化循环；Agent 与数据仍在你的本地环境里。"
+    "title": "xopc — 自托管的个人 AI 运行时",
+    "description": "在自己的设备上运行 AI：统一管理模型、Agent、会话、项目、目标、笔记、工作流和自动化，并从终端、网页、桌面、手机与即时通讯接入。",
+    "ogDescription": "xopc 是自托管、本地优先的个人 AI 运行时。你掌控数据、密钥和运行环境，让长期工作可恢复、可执行、可再次触发。"
   },
   "header": {
     "chooseLanguage": "选择语言",
@@ -15,33 +15,17 @@
   "landing": {
     "nav": {
       "download": "开始",
-      "features": "功能",
-      "channels": "界面",
-      "providers": "提供商",
-      "automation": "自动化",
+      "channels": "多端",
       "workflows": "工作流",
       "github": "GitHub",
-      "belief": "理念",
-      "loop": "路径",
-      "system": "能力",
-      "extension": "自动化",
-      "demo": "演示",
-      "architecture": "架构"
+      "loop": "产品模型",
+      "system": "核心能力"
     },
     "hero": {
       "brandName": "xopc",
       "headlineLine1": "把目标变成循环。",
       "headlineLine2": "让重要的事持续向前。",
-      "titleLine1Before": "把目标变成循环。",
-      "titleLine1Highlight": "",
-      "titleLine1After": "",
-      "titleEm": "让方向、行动与反馈持续对齐。",
-      "taglineStrong": "",
-      "desc": "先从一次本地对话开始。把项目养起来，用手机扫码连接随手记录 note/idea，再让自动化把重复跟进变成私有数据飞轮。",
-      "mobileApp": "移动端 App",
-      "watchDemo": "观看演示",
-      "screenshotAlt": "xopc Web 控制台",
-      "primaryCta": "看看它如何运转 →"
+      "desc": "自托管、本地优先的个人 AI 运行时。统一连接模型、Agent、持续状态、工作流、自动化与多端入口；你掌控数据、密钥和运行环境。"
     },
     "download": {
       "quickStartHeading": "快速开始",
@@ -119,17 +103,11 @@
         "linux": "64 位 / ARM"
       }
     },
-    "demo": {
-      "titleLine1": "不是一次完成，",
-      "titleLine2": "而是一轮轮向前。",
-      "desc": "从安装、配置到多端使用：同一个私有 Agent 在终端、桌面、浏览器、手机与 IM 中保持连续。",
-      "videoAria": "xopc 产品演示"
-    },
     "features": {
-      "titleLine1": "先简单用起来，",
-      "titleLine2": "再长成自己的系统。",
-      "desc": "模型、入口、工作流与扩展能力服务于同一件事：把有用上下文变成下一步行动，再把反馈带回循环。",
-      "tagFeatured": "LOOP MEMORY",
+      "titleLine1": "聊天只是入口，",
+      "titleLine2": "运行时才是产品。",
+      "desc": "xopc 把模型、Agent、持久状态和执行能力放进一套由你掌控的环境，而不是把功能堆在另一个聊天窗口里。",
+      "tagFeatured": "LOCAL FIRST",
       "items": [
         {
           "icon": "key",
@@ -139,86 +117,68 @@
         },
         {
           "icon": "layers",
-          "title": "同一个助手，贯穿每块屏幕。",
-          "body": "终端、浏览器、桌面应用、手机与即时通讯使用同一套系统。不需要重新同步上下文，因为入口背后是同一个助手。"
+          "title": "有状态，不只是一轮上下文。",
+          "body": "会话、项目、目标、笔记、工作区和运行记录都有明确归属。长期工作可以恢复，不必每次从零解释。"
         },
         {
-          "icon": "smartphone",
-          "title": "手机是私有入口，不是另一个云端大脑。",
-          "body": "Agent 跑在你的电脑上，手机 App 扫码连接。出门在外也能继续对话、记录 note/idea、发送项目进展，数据不需要搬到云端聊天账号里。"
+          "icon": "target",
+          "title": "项目、目标与笔记各司其职。",
+          "body": "Project 聚合上下文，Goal 显式记录状态、阻塞和下一步，Notes 用文字、语音、图片与附件接住随时发生的输入。"
         },
         {
           "icon": "git-branch",
-          "title": "动态工作流",
-          "body": "用确定性脚本拆分并行的隔离子 Agent：仓库审计、多视角评审、并行调研。每次运行都有独立会话，进度全程可见。"
+          "title": "工作流可观察，自动化可追踪。",
+          "body": "用阶段和子 Agent 组织复杂执行；再用定时、手动或 webhook 触发。运行进度、结果、失败和重试都有记录。"
         },
         {
           "icon": "bot",
-          "title": "多 Agent 路由",
-          "body": "不同场景路由到不同 Agent——各自模型、工作区、工具与系统提示词，上下文完全隔离。工作、创作、编码各用一套。"
+          "title": "Agent 的能力边界是明确的。",
+          "body": "每个 Agent 可以拥有独立的身份、职责、模型角色、工作区、工具策略、技能、记忆和边界。"
         },
         {
           "icon": "puzzle",
-          "title": "随你扩展，不被预设边界限制。",
-          "body": "一行命令安装 Skills；用 Extensions 增加工具、通道与 UI 面板；用 Cron 建立定时自动化。xopc 是你的系统，你可以按自己的目标塑造它。"
+          "title": "需要什么，再增加什么。",
+          "body": "Skills 提供任务方法，Extensions 增加工具、通道和 UI，Connectors 接入外部能力。核心保持清晰，能力按需安装。"
         },
         {
           "icon": "hard-drive",
           "title": "你的机器，你的规则。",
           "body": "xopc 运行在你的硬件上。对话、项目上下文和本地状态都留在你的 xopc 运行环境里；密钥保存在你的配置中。没有强制云端，也没有意外账单。",
           "featured": true
-        },
-        {
-          "icon": "globe",
-          "title": "HTTP/SSE 网关",
-          "body": "REST JSON API 与用于流式、实时更新的 SSE；React 控制台与 Electron 内为同一套界面。URL 见日志或网关配置。"
-        },
-        {
-          "icon": "wrench",
-          "title": "类型安全工具",
-          "body": "用 TypeBox 定义工具。网页搜索、浏览器（Playwright，按需开启）、文件操作——按需扩展 Agent 能力。"
-        },
-        {
-          "icon": "mic",
-          "title": "语音与图像",
-          "body": "在已配置的路径上提供 STT/TTS（如 Telegram、网关等）。图像支持识图与按需生图，详见语音与工具文档。"
         }
       ],
       "groups": [
         {
-          "title": "模型自由",
-          "desc": "你的 API Key、你的模型、你的部署方式。",
+          "title": "运行与所有权",
+          "desc": "你的硬件、密钥、模型与部署方式。",
           "items": [
-            0,
-            6
+            6,
+            0
           ]
         },
         {
-          "title": "一个系统，多种界面",
-          "desc": "从终端到手机，从桌面到 IM，同一个私有 Agent 持续工作。",
+          "title": "持续状态",
+          "desc": "重要信息有明确位置，长期工作随时可以恢复。",
           "items": [
             1,
-            2,
-            7,
-            9
+            2
           ]
         },
         {
-          "title": "可以按需扩展的 AI 工作空间",
-          "desc": "用工作流、Skills、Extensions 与多 Agent 路由塑造自己的 AI 工作空间。",
+          "title": "执行与边界",
+          "desc": "复杂任务可观察、重复任务可触发、能力范围可配置。",
           "items": [
             3,
             4,
-            5,
-            8
+            5
           ]
         }
       ]
     },
     "channels": {
       "titleLine1": "多端接入，",
-      "titleLine2": "同一条循环。",
-      "desc": "终端、浏览器、桌面、手机与即时通讯连接同一个 Agent；项目上下文跟着你走，但不会变成另一个云端账号。",
+      "titleLine2": "同一套运行时。",
+      "desc": "终端、浏览器、桌面、手机与即时通讯共享 Agent、会话和项目状态；入口可以变化，运行环境和数据所有权不变。",
       "placeholderAction": "待补充素材",
       "items": [
         {
@@ -249,7 +209,7 @@
           "id": "mobile",
           "label": "Mobile",
           "tag": "Phone",
-          "caption": "扫码连接电脑上的 Agent；通勤路上也能记录 note/idea。",
+          "caption": "扫码连接电脑上的 Agent；随时记录文字、语音、图片和附件。",
           "imageAlt": "xopc 手机配对与对话",
           "placeholderTitle": "Mobile · 扫码配对"
         },
@@ -343,27 +303,14 @@
         }
       ]
     },
-    "automation": {
-      "titleLine1": "节奏、复盘、提醒，",
-      "titleLine2": "都可以进入循环。",
-      "desc": "Skills、Extensions、Cron 与多 Agent 路由让系统随目标演化：需要新能力时安装，需要新入口时接入，需要新节奏时设定。",
-      "codeTitle": "~/.xopc/xopc.json",
-      "bullets": [
-        "xopc skills install——用 SKILL.md 教会助手新领域，不写代码",
-        "xopc extensions install——工具、通道、UI 面板，装好即用，无需重启",
-        "Cron 定时任务：每日摘要、每周复盘、任意自定义计划",
-        "Cron 可直接定时执行工作流（workflowRun 任务类型）",
-        "按任务选择 Agent——不同任务可用不同模型"
-      ]
-    },
     "workflows": {
-      "titleLine1": "复杂目标，",
-      "titleLine2": "拆成可推进的回路。",
-      "desc": "并行子 Agent 处理审计、研究与多视角评审；每次运行独立记录状态，便于回看与校准。",
+      "titleLine1": "复杂执行，",
+      "titleLine2": "每一步都看得见。",
+      "desc": "工作流用明确阶段和并行子 Agent 处理审计、研究与多视角评审；每次运行独立记录进度、结果和失败。",
       "bullets": [
         "内置模板：audit_repo、multi_perspective_review、research",
         "看板 #/workflows — 排队、进行中、已完成、需关注",
-        "可从 Chat、网关 UI、Cron workflowRun 或 REST API 启动",
+        "可从 Chat、网关 UI、Automation 或 REST API 启动",
         "脚本可保存到 ~/.xopc/workflows/ 并自定义"
       ],
       "viewDocs": "阅读工作流文档 →",
@@ -431,18 +378,10 @@
         ]
       }
     },
-    "architecture": {
-      "titleLine1": "干净、可组合，",
-      "titleLine2": "长期可维护。",
-      "desc": "Gateway、渠道、Agent 与 LLM 层模块化设计；用 Skills 和 Extensions 扩展，而不是把系统 fork 成碎片。",
-      "diagramAlt": "xopc 系统技术架构：用户入口、Gateway、Channel Manager、Agent Service、扩展与 LLM 层",
-      "expandLabel": "放大查看架构图",
-      "closeLabel": "关闭架构图"
-    },
     "cta": {
-      "titleLine1": "让重要的事，",
-      "titleLine2": "进入循环。",
-      "desc": "MIT 开源。本地优先。安装后完成 onboard，用顺手后再配对手机，开始建立属于你的长期进化系统。",
+      "titleLine1": "在自己的设备上，",
+      "titleLine2": "运行自己的 AI 系统。",
+      "desc": "MIT 开源，本地优先。先配置一个模型和 Agent；需要长期推进时，再加入项目、目标、笔记、工作流和自动化。",
       "primary": "开始使用 →",
       "mobileApp": "移动端 App"
     },
@@ -454,43 +393,27 @@
       "issues": "问题反馈",
       "copyright": "© {year} xopcai · MIT License"
     },
-    "belief": {
-      "kicker": "品牌信念",
-      "title": "重要的事，不该只靠决心。",
-      "body": "真正重要的目标往往需要数月、数年，甚至更长时间。它们需要被记住、被推进、被反馈、被校准。持续的进展来自循环，而不是意志力。",
-      "linesLabel": "长期目标失去动能的常见原因",
-      "lines": [
-        "方向会偏。",
-        "行动会断。",
-        "反馈会消失。",
-        "动能会慢慢消退。"
-      ]
-    },
     "loop": {
-      "titleLine1": "聊天 → 项目 → 数据飞轮",
-      "titleLine2": "不需要第一天就搭好复杂系统。",
-      "desc": "先普通对话；当真实工作需要时，再逐步加入项目上下文、笔记、手机随手记录、外部入口和自动化。",
-      "modelLabel": "XOPC 目标循环模型",
+      "titleLine1": "一套运行时，",
+      "titleLine2": "让工作真正有后续。",
+      "desc": "xopc 把长期工作拆成明确的状态、执行、触发和入口。它不假设 AI 会自动记住一切，而是让重要信息有位置、复杂执行可观察、后续任务能再次启动。",
+      "modelLabel": "xopc 持续工作模型",
       "steps": [
         {
-          "title": "聊天",
-          "body": "先把 xopc 当作本地 AI 助手，用来问问题、整理思路、做判断。"
+          "title": "持续状态",
+          "body": "Session、Project、Goal、Note 与 Workspace 分别保存对话、进度、材料和产物。"
         },
         {
-          "title": "项目",
-          "body": "让它持续跟进一个真实目标：状态、阻塞点、关键决策和下一步。"
+          "title": "明确执行",
+          "body": "Agent 使用被允许的工具和技能；Workflow 把多步骤或并行任务组织成可检查的运行。"
         },
         {
-          "title": "笔记",
-          "body": "随手丢进展、链接、想法、反馈和复盘，让零散输入沉淀成上下文。"
+          "title": "主动触发",
+          "body": "Automation 通过定时、手动或 webhook 运行 Agent 与 Workflow，并保留成功、失败和重试记录。"
         },
         {
-          "title": "手机",
-          "body": "扫码连接电脑上的 Agent，不在电脑前也能继续对话、记录 note/idea。"
-        },
-        {
-          "title": "自动化",
-          "body": "设置定时复盘、提醒、摘要和工作流，让重要事项自己回到视野里。"
+          "title": "随处接入",
+          "body": "终端、网页、桌面、手机、即时通讯与 HTTP/SSE API 连接同一套运行时和状态。"
         }
       ]
     }

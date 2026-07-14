@@ -3,19 +3,16 @@ import {
   Bot,
   GitBranch,
   Github,
-  Globe,
-  Smartphone,
   HardDrive,
   KeyRound,
   Layers,
-  Mic,
   Puzzle,
-  Wrench,
+  Smartphone,
+  Target,
   type LucideIcon,
 } from "lucide-react";
 
 import { HeroBrand } from "@/components/hero-brand";
-import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { QuickInstallBlock } from "@/components/quick-install-block";
 import { SurfaceGallery } from "@/components/surface-gallery";
@@ -42,10 +39,7 @@ const FEATURE_ICON_MAP: Record<string, LucideIcon> = {
   bot: Bot,
   puzzle: Puzzle,
   "hard-drive": HardDrive,
-  globe: Globe,
-  wrench: Wrench,
-  mic: Mic,
-  smartphone: Smartphone,
+  target: Target,
 };
 
 function FeatureIcon({ name }: { name: string }) {
@@ -69,80 +63,9 @@ function dotClass(dot: string): string {
   return `dot dot-${dot}`;
 }
 
-function AutomationCodeBlock({ title }: { title: string }) {
-  return (
-    <div className="code-block">
-      <div className="code-block-header">
-        <div className="code-dot red" />
-        <div className="code-dot yellow" />
-        <div className="code-dot green" />
-        <div className="code-block-title">{title}</div>
-      </div>
-      <div className="code-content">
-        <span className="code-punct">{"{"}</span>
-        {"\n  "}
-        <span className="code-key">&quot;cron&quot;</span>
-        <span className="code-punct">: {"{"}</span>
-        {"\n    "}
-        <span className="code-key">&quot;enabled&quot;</span>
-        <span className="code-punct">:</span> <span className="code-num">true</span>
-        <span className="code-punct">,</span>
-        {"\n    "}
-        <span className="code-key">&quot;jobs&quot;</span>
-        <span className="code-punct">: [</span>
-        {"\n      "}
-        <span className="code-punct">{"{"}</span>
-        {"\n        "}
-        <span className="code-key">&quot;id&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;daily-summary&quot;</span>
-        <span className="code-punct">,</span>
-        {"\n        "}
-        <span className="code-key">&quot;schedule&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;0 9 * * *&quot;</span>
-        <span className="code-punct">,</span>
-        {"\n        "}
-        <span className="code-key">&quot;agent&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;main&quot;</span>
-        <span className="code-punct">,</span>
-        {"\n        "}
-        <span className="code-key">&quot;prompt&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;Send me today&apos;s</span>
-        <br />
-        <span className="code-string">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;news summary&quot;</span>
-        {"\n      "}
-        <span className="code-punct">{"}"}</span>
-        <span className="code-punct">,</span>
-        {"\n      "}
-        <span className="code-punct">{"{"}</span>
-        {"\n        "}
-        <span className="code-key">&quot;id&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;weekly-review&quot;</span>
-        <span className="code-punct">,</span>
-        {"\n        "}
-        <span className="code-key">&quot;schedule&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;0 18 * * 5&quot;</span>
-        <span className="code-punct">,</span>
-        {"\n        "}
-        <span className="code-key">&quot;agent&quot;</span>
-        <span className="code-punct">:</span> <span className="code-string">&quot;work&quot;</span>
-        {"\n      "}
-        <span className="code-punct">{"}"}</span>
-        {"\n    "}
-        <span className="code-punct">]</span>
-        {"\n  "}
-        <span className="code-punct">{"}"}</span>
-        {"\n"}
-        <span className="code-punct">{"}"}</span>
-      </div>
-    </div>
-  );
-}
-
 export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Props) {
   const L = m.landing;
   const year = new Date().getFullYear();
-  const providerChipsRow = [...L.providers.chips, ...L.providers.chips];
-  const demoVideoSrc = resolveLocaleMediaSrc(LANDING_MEDIA.demo.full, locale);
   const surfaceMediaSrcs = Object.fromEntries(
     Object.entries(LANDING_MEDIA.surfaces).map(([id, media]) => [id, resolveLocaleMediaSrc(media, locale)]),
   ) as Partial<Record<SurfaceMediaId, string>>;
@@ -157,13 +80,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           </div>
           <ul className="nav-links">
             <li>
-              <a href="#belief">{L.nav.belief}</a>
-            </li>
-            <li>
               <a href="#loop">{L.nav.loop}</a>
-            </li>
-            <li>
-              <a href="#demo">{L.nav.demo}</a>
             </li>
             <li>
               <a href="#features">{L.nav.system}</a>
@@ -173,9 +90,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             </li>
             <li>
               <a href="#workflows">{L.nav.workflows}</a>
-            </li>
-            <li>
-              <a href="#architecture">{L.nav.architecture}</a>
             </li>
             <li>
               <a href="#download">{L.nav.download}</a>
@@ -230,21 +144,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="belief-section landing-reveal" id="belief">
-        <div className="container belief-layout">
-          <div className="belief-kicker">{L.belief.kicker}</div>
-          <div className="belief-copy">
-            <h2>{L.belief.title}</h2>
-            <p>{L.belief.body}</p>
-          </div>
-          <div className="belief-lines" aria-label={L.belief.linesLabel}>
-            {L.belief.lines.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="loop-section landing-reveal" id="loop">
         <div className="container">
           <div className="section-header">
@@ -263,31 +162,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
                 <p>{step.body}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="demo-section landing-reveal" id="demo">
-        <div className="container">
-          <div className="section-header">
-            <h2>
-              {L.demo.titleLine1}
-              <br />
-              {L.demo.titleLine2}
-            </h2>
-            <p>{L.demo.desc}</p>
-          </div>
-
-          <div className="video-wrapper">
-            <video
-              className="demo-video"
-              controls
-              playsInline
-              preload="metadata"
-              aria-label={L.demo.videoAria}
-            >
-              <source src={demoVideoSrc} type="video/mp4" />
-            </video>
           </div>
         </div>
       </section>
@@ -358,8 +232,8 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
 
         <div className="providers-marquee-wrapper">
           <div className="providers-marquee">
-            {providerChipsRow.map((chip, i) => (
-              <div className="provider-chip" key={`${chip.name}-${i}`}>
+            {L.providers.chips.map((chip) => (
+              <div className="provider-chip" key={chip.name}>
                 <span className={dotClass(chip.dot)} />
                 {chip.name}
               </div>
@@ -372,31 +246,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <a href={docHome} className="btn-secondary" target="_blank" rel="noopener noreferrer">
               {L.providers.viewProviders}
             </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="automation-section landing-reveal" id="automation">
-        <div className="container">
-          <div className="automation-layout">
-            <AutomationCodeBlock title={L.automation.codeTitle} />
-
-            <div className="automation-content">
-              <h2>
-                {L.automation.titleLine1}
-                <br />
-                {L.automation.titleLine2}
-              </h2>
-              <p>{L.automation.desc}</p>
-
-              <div className="feature-list">
-                {L.automation.bullets.map((line) => (
-                  <div className="feature-list-item" key={line}>
-                    {line}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -435,27 +284,6 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
               <WorkflowBoardPreview board={L.workflows.board} />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="arch-section landing-reveal" id="architecture">
-        <div className="container">
-          <div className="section-header">
-            <h2>
-              {L.architecture.titleLine1}
-              <br />
-              {L.architecture.titleLine2}
-            </h2>
-            <p>{L.architecture.desc}</p>
-          </div>
-
-          <ArchitectureDiagram
-            slot={LANDING_MEDIA.architecture.diagram}
-            locale={locale}
-            alt={L.architecture.diagramAlt}
-            expandLabel={L.architecture.expandLabel}
-            closeLabel={L.architecture.closeLabel}
-          />
         </div>
       </section>
 
