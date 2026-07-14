@@ -1,57 +1,41 @@
 /**
- * Sync website brand assets from the main xopc web logo sources.
- * Sources:
- *   ../xopc/web/public/favicon.svg
- *   ../xopc/web/public/logo.svg
- *   ../xopc/web/public/logo-dark.svg
+ * Sync website icons and brand SVGs from xopc/web/public.
+ *
+ * Keeping the pre-rendered image assets as the single source of truth avoids
+ * SVG rasterization differences between local machines and CI.
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-
-import pngToIco from "png-to-ico";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const xopcRoot = path.resolve(root, "../xopc");
+const sourcePublicDir = path.join(xopcRoot, "web", "public");
 
-const sourceIcon = path.join(xopcRoot, "web/public/favicon.svg");
-const sourceLogo = path.join(xopcRoot, "web/public/logo.svg");
-const sourceLogoDark = path.join(xopcRoot, "web/public/logo-dark.svg");
-const appDir = path.join(root, "app");
-const brandDir = path.join(root, "public/brand");
+const assets = [
+  // Next.js App Router file conventions.
+  ["favicon.ico", "app/favicon.ico"],
+  ["favicon.png", "app/icon.png"],
+  ["apple-touch-icon.png", "app/apple-icon.png"],
+  // Entries referenced by app/manifest.webmanifest.
+  ["pwa-192x192.png", "public/pwa-192x192.png"],
+  ["pwa-512x512.png", "public/pwa-512x512.png"],
+  // Shared branding used by the landing page.
+  ["logo.svg", "public/brand/logo.svg"],
+  ["logo-dark.svg", "public/brand/logo-dark.svg"],
+];
 
-for (const file of [sourceIcon, sourceLogo, sourceLogoDark]) {
+for (const [source] of assets) {
+  const file = path.join(sourcePublicDir, source);
   if (!fs.existsSync(file)) {
-    throw new Error(`Missing logo source: ${file}`);
+    throw new Error(`Missing icon or brand source: ${file}`);
   }
 }
 
-fs.mkdirSync(appDir, { recursive: true });
-fs.mkdirSync(brandDir, { recursive: true });
-fs.copyFileSync(sourceLogo, path.join(brandDir, "logo.svg"));
-fs.copyFileSync(sourceLogoDark, path.join(brandDir, "logo-dark.svg"));
-
-function renderPng(output, size) {
-  execFileSync(
-    "pnpm",
-    ["dlx", "@resvg/resvg-js-cli", "--fit-width", String(size), sourceIcon, output],
-    { stdio: "inherit" },
-  );
+for (const [source, destination] of assets) {
+  const output = path.join(root, destination);
+  fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.copyFileSync(path.join(sourcePublicDir, source), output);
+  console.log(`Synced ${destination}`);
 }
-
-const iconPng = path.join(appDir, "icon.png");
-const appleIconPng = path.join(appDir, "apple-icon.png");
-const faviconIco = path.join(appDir, "favicon.ico");
-
-renderPng(iconPng, 1024);
-renderPng(appleIconPng, 1024);
-
-const buf = await pngToIco(iconPng);
-fs.writeFileSync(faviconIco, buf);
-
-console.log("Synced brand SVGs to", brandDir);
-console.log("Wrote", iconPng);
-console.log("Wrote", appleIconPng);
-console.log("Wrote", faviconIco);
