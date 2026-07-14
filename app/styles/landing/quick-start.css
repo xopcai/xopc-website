@@ -20,7 +20,6 @@
 
     .landing-page .quick-start-window{
       border-radius: 14px;
-      border: 1px solid var(--edge-bright);
       background: var(--bg-card);
       overflow: hidden;
       box-shadow: var(--rim-light),
@@ -34,7 +33,6 @@
       align-items: center;
       gap: 10px;
       padding: 10px 12px;
-      border-bottom: 1px solid var(--edge);
       background: var(--bg-surface);
       flex-wrap: wrap;
     }
@@ -100,7 +98,6 @@
       padding: 2px;
       border-radius: 999px;
       background: var(--bg-card);
-      border: 1px solid var(--edge);
     }
 
     .landing-page .quick-start-titlebar-actions{
@@ -120,7 +117,6 @@
       padding: 2px;
       border-radius: 999px;
       background: var(--bg-card);
-      border: 1px solid var(--edge);
     }
 
     .landing-page .quick-start-tool-tab{
@@ -143,12 +139,12 @@
 
     .landing-page .quick-start-tool-tab--active{
       background: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
     }
 
     html[data-theme="dark"] .landing-page .quick-start-tool-tab--active{
       background: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
     }
 
     .landing-page .quick-start-titlebar-spacer{
@@ -176,7 +172,7 @@
 
     .landing-page .quick-start-platform-tab--active{
       background: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
     }
 
     .landing-page .quick-start-body{
@@ -217,7 +213,6 @@
       padding: 12px 14px;
       border-radius: 8px;
       background: var(--code-terminal);
-      border: 1px solid var(--edge-bright);
       font-family: var(--mono);
       font-size: 12px;
       line-height: 1.55;
@@ -241,7 +236,6 @@
       height: 40px;
       padding: 0;
       border-radius: 8px;
-      border: 1px solid var(--edge-bright);
       background: var(--bg-void);
       color: var(--fg-body);
       cursor: pointer;
@@ -250,7 +244,6 @@
 
     .landing-page .quick-start-copy:hover{
       background: var(--bg-card-hover);
-      border-color: color-mix(in srgb, var(--accent) 35%, var(--edge-bright));
     }
 
     .landing-page .quick-start-copy-ic{
@@ -297,4 +290,3 @@
       color: var(--fg-mid);
       text-align: center;
     }
-

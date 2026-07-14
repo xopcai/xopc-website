@@ -1,26 +1,23 @@
 /* ─── CONTINUOUS WORK MODEL ─────────────────────────────────────── */
 .landing-page .loop-section {
   padding: 104px 0;
-  border-top: 1px solid var(--edge-bright);
-  border-bottom: 1px solid var(--edge-bright);
-  background: var(--bg-void);
+  background: transparent;
 }
 
 .landing-page .loop-model {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  overflow: hidden;
-  border: 1px solid var(--edge);
+  gap: 12px;
   border-radius: 20px;
-  background: var(--edge);
-  box-shadow: var(--rim-light);
+  background: transparent;
 }
 
 .landing-page .loop-step {
   min-height: 252px;
   padding: 32px 28px;
+  border-radius: 18px;
   background: var(--bg-card);
+  box-shadow: var(--rim-light), 0 18px 48px color-mix(in srgb, var(--fg-head) 5%, transparent);
 }
 
 .landing-page .loop-step-index {
@@ -31,8 +28,8 @@
   height: 28px;
   margin-bottom: 52px;
   padding: 0 10px;
-  border: 1px solid var(--edge-bright);
   border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   color: var(--accent-bright);
   font-family: var(--mono);
   font-size: 11px;

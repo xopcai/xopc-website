@@ -25,13 +25,18 @@
 
 .landing-page .hero-glow {
   position: absolute;
-  top: 10%;
+  top: -10%;
   left: 50%;
-  width: min(700px, 90vw);
-  height: 400px;
+  width: min(1180px, 120vw);
+  height: 660px;
   transform: translateX(-50%);
   pointer-events: none;
-  background: radial-gradient(ellipse 70% 60% at 50% 40%, var(--hero-glow) 0%, transparent 72%);
+  background:
+    radial-gradient(ellipse 60% 46% at 50% 35%, var(--hero-glow) 0%, transparent 70%),
+    radial-gradient(ellipse 38% 36% at 28% 48%, var(--hero-warm-glow) 0%, transparent 74%),
+    radial-gradient(ellipse 42% 38% at 74% 44%, var(--hero-cool-glow) 0%, transparent 76%);
+  filter: blur(10px);
+  opacity: 0.72;
   z-index: 1;
 }
 
@@ -67,7 +72,12 @@
   font-size: clamp(48px, 9vw, 80px);
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
+  background: var(--hero-brand-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 18px 44px var(--hero-text-glow);
 }
 
 .landing-page .hero-headline {
@@ -75,7 +85,7 @@
   margin: 0 0 24px;
   font-family: var(--display);
   line-height: 1.08;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .landing-page .hero-headline-line1,
@@ -87,11 +97,20 @@
 
 .landing-page .hero-headline-line1 {
   color: var(--fg-head);
+  background: var(--hero-line1-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 18px 56px var(--hero-text-glow);
 }
 
 .landing-page .hero-headline-line2 {
   margin-top: 6px;
   color: var(--fg-mid);
+  background: var(--hero-line2-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .landing-page .hero-desc {
@@ -126,9 +145,9 @@
 }
 
 .landing-page .btn-primary {
-  border: 1px solid transparent;
+  border: none;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   transition: background 0.15s ease-out, transform 0.15s ease-out;
 }
 
@@ -138,14 +157,13 @@
 }
 
 .landing-page .btn-secondary {
-  border: 1px solid var(--edge-bright);
+  border: none;
   background: var(--bg-card);
   color: var(--fg-body);
   transition: background 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
 }
 
 .landing-page .btn-secondary:hover {
-  border-color: var(--edge-bright);
   background: var(--bg-card-hover);
   color: var(--fg-head);
   text-decoration: none;
