@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import { ChevronDown, Languages } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -16,6 +16,35 @@ function pathWithoutLocale(pathname: string | null): string {
 
 function setLocaleCookie(locale: Locale) {
   document.cookie = `NEXT_LOCALE=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+}
+
+function startLocaleNavigation(event: ReactMouseEvent<HTMLAnchorElement>, locale: Locale, href: string) {
+  if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+    return;
+  }
+
+  event.preventDefault();
+  setLocaleCookie(locale);
+
+  const target = new URL(href, window.location.href);
+  if (target.pathname === window.location.pathname) {
+    return;
+  }
+
+  try {
+    sessionStorage.setItem("xopc-locale-transition", "1");
+    sessionStorage.setItem("xopc-locale-transition-scroll-y", String(window.scrollY));
+  } catch {
+    /* ignore */
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reducedMotion) {
+    document.documentElement.classList.add("xopc-locale-transition-out");
+  }
+  window.setTimeout(() => {
+    window.location.assign(href);
+  }, reducedMotion ? 0 : 180);
 }
 
 function LocaleDropdownLanding({
@@ -81,8 +110,8 @@ function LocaleDropdownLanding({
             role="option"
             aria-selected={locale === "en"}
             className={locale === "en" ? "is-active" : undefined}
-            onClick={() => {
-              setLocaleCookie("en");
+            onClick={(event) => {
+              startLocaleNavigation(event, "en", enHref);
               setOpen(false);
             }}
           >
@@ -94,8 +123,8 @@ function LocaleDropdownLanding({
             role="option"
             aria-selected={locale === "zh"}
             className={locale === "zh" ? "is-active" : undefined}
-            onClick={() => {
-              setLocaleCookie("zh");
+            onClick={(event) => {
+              startLocaleNavigation(event, "zh", zhHref);
               setOpen(false);
             }}
           >
@@ -144,7 +173,7 @@ export function LocaleSwitcher({
     <div className="flex items-center gap-0.5 rounded-full border border-zinc-300 bg-zinc-100 p-0.5 text-xs font-medium dark:border-zinc-600 dark:bg-zinc-900">
       <a
         href={zhHref}
-        onClick={() => setLocaleCookie("zh")}
+        onClick={(event) => startLocaleNavigation(event, "zh", zhHref)}
         data-active={locale === "zh"}
         className={`rounded-full px-2 py-1 transition-colors duration-150 ${
           locale === "zh"
@@ -157,7 +186,7 @@ export function LocaleSwitcher({
       </a>
       <a
         href={enHref}
-        onClick={() => setLocaleCookie("en")}
+        onClick={(event) => startLocaleNavigation(event, "en", enHref)}
         data-active={locale === "en"}
         className={`rounded-full px-2 py-1 transition-colors duration-150 ${
           locale === "en"

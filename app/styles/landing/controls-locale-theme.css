@@ -10,22 +10,23 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      width: 74px;
-      min-width: 74px;
-      height: 40px;
-      min-height: 40px;
-      padding: 0 12px;
+      width: 66px;
+      min-width: 66px;
+      height: 38px;
+      min-height: 38px;
+      padding: 0 10px;
       border-radius: 10px;
       border: 1px solid transparent;
       background: transparent;
       color: var(--fg-mid);
       cursor: pointer;
-      transition: border-color 0.15s ease-out, background 0.15s ease-out, color 0.15s ease-out;
+      transition: border-color 0.15s ease-out, background 0.15s ease-out, color 0.15s ease-out, transform 0.15s ease-out;
     }
 
     .landing-page .locale-switcher-trigger:hover {
       color: var(--fg-head);
       background: var(--bg-card-hover);
+      transform: translateY(-1px);
       text-decoration: none;
     }
 
@@ -100,7 +101,12 @@
       background: transparent;
       cursor: pointer;
       border-radius: 9999px;
-      min-height: 40px;
+      min-height: 38px;
+      transition: transform 0.15s ease-out;
+    }
+
+    .landing-page .theme-toggle-pill:hover {
+      transform: translateY(-1px);
     }
 
     .landing-page .theme-toggle-pill:focus-visible {
@@ -110,8 +116,8 @@
 
     .landing-page .theme-toggle-pill-track {
       position: relative;
-      width: 52px;
-      height: 30px;
+      width: 50px;
+      height: 28px;
       border-radius: 9999px;
       background: var(--bg-surface);
       border: 1px solid var(--edge-bright);
@@ -122,8 +128,8 @@
       position: absolute;
       top: 2px;
       left: 2px;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: var(--bg-card);
       border: 1px solid var(--edge-bright);

@@ -24,6 +24,34 @@ function subscribeTheme(callback: () => void): () => void {
   };
 }
 
+function applyThemeWithTransition(next: Theme): void {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion) {
+    applyTheme(next);
+    return;
+  }
+
+  const root = document.documentElement;
+  const pageBackground = getComputedStyle(document.body).getPropertyValue("--page-bg").trim();
+
+  root.classList.remove("xopc-theme-transition-active", "xopc-theme-transition-reveal");
+  if (pageBackground) {
+    root.style.setProperty("--xopc-theme-transition-bg", pageBackground);
+  }
+
+  root.classList.add("xopc-theme-transition-active");
+  void root.offsetHeight;
+  applyTheme(next);
+
+  requestAnimationFrame(() => {
+    root.classList.add("xopc-theme-transition-reveal");
+    window.setTimeout(() => {
+      root.classList.remove("xopc-theme-transition-active", "xopc-theme-transition-reveal");
+      root.style.removeProperty("--xopc-theme-transition-bg");
+    }, 420);
+  });
+}
+
 export function ThemeToggle({
   ariaLight,
   ariaDark,
@@ -39,7 +67,7 @@ export function ThemeToggle({
 
   const toggle = useCallback(() => {
     const next: Theme = theme === "dark" ? "light" : "dark";
-    applyTheme(next);
+    applyThemeWithTransition(next);
   }, [theme]);
 
   if (variant === "pill") {

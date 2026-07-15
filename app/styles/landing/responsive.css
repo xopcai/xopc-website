@@ -11,6 +11,13 @@
       .landing-page .footer-links{ flex-wrap: wrap; justify-content: center; }
     }
 
+    @media (max-width: 760px) {
+      .landing-page .nav-inner{
+        height: 64px;
+      }
+      .landing-page .nav-links{ display: none; }
+    }
+
     @media (max-width: 640px) {
 
       .landing-page .quick-start-titlebar{

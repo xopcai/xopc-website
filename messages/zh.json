@@ -43,7 +43,7 @@
       "hackableToolPnpm": "pnpm",
       "appsPlatformTabsAria": "选择桌面平台",
       "npmQuickComment": "# 需要 Node.js 22+，然后执行 onboard。",
-      "desktopQuickComment": "# macOS、Windows、Linux 原生应用。",
+      "desktopQuickComment": "",
       "hackableComment": "# 源码安装 — 适合贡献者与深度定制",
       "hackableUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash -s -- --install-method git",
       "hackableWindowsCommand": "powershell -c \"& ([scriptblock]::Create((irm https://xopc.ai/install.ps1))) -InstallMethod git\"",

@@ -9,6 +9,43 @@
       opacity: var(--noise-opacity);
     }
 
+    html.xopc-locale-transition-in body.landing-body::after,
+    html.xopc-locale-transition-out body.landing-body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      pointer-events: none;
+      background: var(--page-bg);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    html.xopc-locale-transition-out body.landing-body::after,
+    html.xopc-locale-transition-in:not(.xopc-locale-transition-ready) body.landing-body::after {
+      opacity: 1;
+    }
+
+    html.xopc-locale-transition-out body.landing-body::after {
+      transition-duration: 0.18s;
+      transition-timing-function: ease-in;
+    }
+
+    html.xopc-theme-transition-active body.landing-body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 2100;
+      pointer-events: none;
+      background: var(--xopc-theme-transition-bg, var(--page-bg));
+      opacity: 1;
+      transition: opacity 0.38s ease-out;
+    }
+
+    html.xopc-theme-transition-active.xopc-theme-transition-reveal body.landing-body::after {
+      opacity: 0;
+    }
+
     /* ─── Grid Background (田字格) ──────────────────────────────────── */
     .landing-page .hero-grid{
       position: absolute;
@@ -62,7 +99,7 @@
       opacity: 0.78;
     }
 
-    html[data-theme="dark"] .landing-page nav,
+    html[data-theme="dark"] .landing-page .nav-extra-tools,
     html[data-theme="dark"] .landing-page .quick-start-window,
     html[data-theme="dark"] .landing-page .feature-card,
     html[data-theme="dark"] .landing-page .surfaces-tab,
@@ -87,7 +124,7 @@
       background: var(--glass-bg);
     }
 
-    html[data-theme="dark"] .landing-page nav{
+    html[data-theme="dark"] .landing-page .nav-extra-tools{
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
     }
 
