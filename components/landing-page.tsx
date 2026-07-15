@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 
 import { HeroBrand } from "@/components/hero-brand";
+import { LandingLocaleTransition } from "@/components/landing-locale-transition";
+import { LandingNavState } from "@/components/landing-nav-state";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { QuickInstallBlock } from "@/components/quick-install-block";
 import { SurfaceGallery } from "@/components/surface-gallery";
@@ -72,6 +74,8 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
 
   return (
     <div className="landing-page">
+      <LandingLocaleTransition />
+      <LandingNavState />
       <LandingScrollReveal />
       <nav>
         <div className="container nav-inner">
@@ -104,14 +108,12 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
                 chooseLanguageLabel={m.header.chooseLanguage}
                 variant="landing"
               />
-              <span className="nav-extra-divider" aria-hidden />
               <ThemeToggle
                 variant="pill"
                 ariaLight={m.header.themeLight}
                 ariaDark={m.header.themeDark}
                 ariaToggle={m.header.themeToggle}
               />
-              <span className="nav-extra-divider" aria-hidden />
               <a
                 href={LANDING_GITHUB_REPO}
                 className="nav-github-link"

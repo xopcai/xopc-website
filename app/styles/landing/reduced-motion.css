@@ -10,4 +10,13 @@
       .landing-page .surfaces-panel-enter{
         animation: none;
       }
+      .landing-page .xopc-logo-mark{
+        animation: none;
+        transform: none;
+      }
+      html.xopc-locale-transition-in body.landing-body::after,
+      html.xopc-locale-transition-out body.landing-body::after,
+      html.xopc-theme-transition-active body.landing-body::after{
+        transition: none;
+      }
     }
