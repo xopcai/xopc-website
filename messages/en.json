@@ -65,7 +65,7 @@
       "pnpmCommand": "pnpm add -g @xopcai/xopc",
       "advancedHeading": "Install with npm",
       "advancedSubtitle": "If you already have Node.js 22+ and prefer the package manager route.",
-      "npmBody": "Node.js 22+ required. pnpm is also supported: pnpm add -g @xopcai/xopc. China mirror: npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com. Then chat: xopc tui --local",
+      "npmBody": "Node.js 22+ required. pnpm is also supported: pnpm add -g @xopcai/xopc. China mirror: npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com. Then chat: xopc",
       "npmInstallLabel": "1. Install",
       "npmCommand": "npm install -g @xopcai/xopc",
       "npmOnboardLabel": "2. Setup",
@@ -433,7 +433,24 @@
         "titleLine1": "Delegate the task.",
         "titleLine2": "Keep the control.",
         "desc": "XOPC Worker understands a goal, plans the work, uses web and connected tools in your environment, asks before consequential actions, and returns a clear record with the result.",
-        "secondaryCta": "Get started with xopc",
+        "secondaryCta": "Download Worker",
+        "workerDownload": {
+          "kicker": "Download Worker",
+          "title": "Choose your desktop system.",
+          "desc": "Download the xopc Worker desktop app for Windows, macOS, or Linux. The page automatically marks the build that matches this device."
+        },
+        "quickStart": {
+          "kicker": "Start with Worker",
+          "title": "Start your local Worker in three steps.",
+          "desc": "Install xopc, complete one onboarding flow, then hand work to Worker through a local surface.",
+          "copy": "Copy",
+          "copied": "Copied",
+          "steps": [
+            { "label": "Install", "title": "Install xopc", "body": "The cross-platform installer prepares the dependencies required to run it.", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
+            { "label": "Configure", "title": "Complete onboarding", "body": "Choose a model and configure the provider you want to use.", "command": "xopc onboard" },
+            { "label": "Work", "title": "Open a local surface", "body": "Create a task in the local TUI and let Worker start moving it forward.", "command": "xopc" }
+          ]
+        },
         "media": {
           "title": "Needed: complete Worker task demo",
           "action": "Record goal → plan → browser/tool execution → approval → result, then export it to the file below",
@@ -495,7 +512,19 @@
         "titleLine1": "From request to",
         "titleLine2": "reviewable code changes.",
         "desc": "XOPC Code organizes coding work in your local project: understand the repository, make a plan, change code, run verification, and clearly present the diff and result. Built-in Codebase Memory turns the repository into a queryable knowledge graph, so agents do not have to guess context file by file.",
-        "secondaryCta": "Get started with xopc",
+        "secondaryCta": "Start with Code",
+        "quickStart": {
+          "kicker": "Start with Code",
+          "title": "Connect coding agents to a local project.",
+          "desc": "Install xopc, connect the coding capability you prefer, then begin work from a local workspace.",
+          "copy": "Copy",
+          "copied": "Copied",
+          "steps": [
+            { "label": "Install", "title": "Install the xopc CLI", "body": "For developers who already have a Node.js environment.", "command": "npm install -g @xopcai/xopc" },
+            { "label": "Connect", "title": "Complete provider onboarding", "body": "Connect Codex, Claude Code, or the coding capability you choose during setup.", "command": "xopc onboard" },
+            { "label": "Code", "title": "Open a local workspace", "body": "Start a coding task from the local TUI and associate it with a real project.", "command": "xopc" }
+          ]
+        },
         "media": {
           "title": "Needed: complete Code delivery demo",
           "action": "Record request → repository understanding → change → test/check → diff summary, then export it to the file below",
@@ -557,7 +586,19 @@
         "titleLine1": "Make your local runtime",
         "titleLine2": "a connected service.",
         "desc": "XOPC Gateway brings the agents, state, and workflows running in your environment to web, mobile, messaging channels, and APIs. It is a unified entry point—not another isolated backend.",
-        "secondaryCta": "Get started with xopc",
+        "secondaryCta": "Start with Gateway",
+        "quickStart": {
+          "kicker": "Start with Gateway",
+          "title": "Run your local runtime as a service.",
+          "desc": "Install xopc, start Gateway, then hand it to your operating system when it should run continuously.",
+          "copy": "Copy",
+          "copied": "Copied",
+          "steps": [
+            { "label": "Install", "title": "Install xopc", "body": "The cross-platform installer prepares the dependencies required to run it.", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
+            { "label": "Start", "title": "Start Gateway", "body": "Start the web server and local React console.", "command": "xopc gateway" },
+            { "label": "Serve", "title": "Install the system service", "body": "Let Gateway run continuously through the operating system service lifecycle.", "command": "xopc gateway service install" }
+          ]
+        },
         "media": {
           "title": "Needed: Gateway service connection demo",
           "action": "Record runtime start → channel or API connection → client response → service status, then export it to the file below",

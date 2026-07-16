@@ -5,6 +5,8 @@ import { LandingLocaleTransition } from "@/components/landing-locale-transition"
 import { LandingNavState } from "@/components/landing-nav-state";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { LogoHomeLink } from "@/components/logo-home-link";
+import { ProductQuickStart } from "@/components/product-quick-start";
+import { ProductWorkerDownloads } from "@/components/product-worker-downloads";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { VideoMediaSlot } from "@/components/media-placeholder";
 import type { Locale } from "@/lib/i18n/config";
@@ -93,10 +95,10 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
             </h1>
             <p>{P.desc}</p>
             <div className="product-hero-actions">
-              <Link href={homeHref} className="product-button product-button--secondary">
+              <a href="#get-started" className="product-button product-button--secondary">
                 {P.secondaryCta}
                 <ArrowRight aria-hidden />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="product-demo" id="demo">
@@ -111,6 +113,12 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
           </div>
         </div>
       </section>
+
+      {productSlug === "operator" ? (
+        <ProductWorkerDownloads d={m.landing.download} {...m.landing.products.operator.workerDownload} />
+      ) : (
+        <ProductQuickStart {...P.quickStart} />
+      )}
 
       <section className="product-section product-section--muted">
         <div className="container">
