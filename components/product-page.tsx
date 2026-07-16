@@ -1,7 +1,8 @@
-import { ArrowRight, ArrowRightLeft, Code2, Github, HardDrive, Home, Monitor, ShieldCheck, Terminal } from "lucide-react";
+import { ArrowRight, ArrowRightLeft, Code2, Github, HardDrive, Monitor, ShieldCheck, Terminal } from "lucide-react";
 import Link from "next/link";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
+import { LandingFooter } from "@/components/landing-footer";
 import { LandingNavState } from "@/components/landing-nav-state";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { LogoHomeLink } from "@/components/logo-home-link";
@@ -9,7 +10,7 @@ import { ProductQuickStart } from "@/components/product-quick-start";
 import { ProductWorkerDownloads } from "@/components/product-worker-downloads";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { VideoMediaSlot } from "@/components/media-placeholder";
-import type { Locale } from "@/lib/i18n/config";
+import { docBaseUrl, type Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { PRODUCT_MEDIA } from "@/lib/landing-media";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
@@ -44,6 +45,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
   const otherSlug: ProductSlug = productSlug === "worker" ? "code" : "worker";
   const other = m.landing.products[getProductDataSlug(otherSlug)];
   const homeHref = `/${locale}`;
+  const docsHref = docBaseUrl(locale);
 
   return (
     <div className="landing-page product-page">
@@ -249,18 +251,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
         </div>
       </section>
 
-      <footer>
-        <div className="container footer-inner">
-          <Link href={homeHref} className="footer-logo" aria-label="xopc home">
-            <Home aria-hidden />
-          </Link>
-          <ul className="footer-links">
-            <li><Link href={homeHref}>{m.landing.products.nav.home}</Link></li>
-            <li><a href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          </ul>
-          <div className="footer-copy">{m.landing.footer.copyright.replace("{year}", String(new Date().getFullYear()))}</div>
-        </div>
-      </footer>
+      <LandingFooter footer={m.landing.footer} docsHref={docsHref} />
     </div>
   );
 }

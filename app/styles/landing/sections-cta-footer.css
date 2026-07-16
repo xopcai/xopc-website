@@ -1,20 +1,33 @@
+    .landing-page .landing-cta-footer{
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .landing-page .landing-cta-footer::before{
+      position: absolute;
+      z-index: 0;
+      top: 14%;
+      left: 50%;
+      width: min(960px, 120vw);
+      height: 620px;
+      content: "";
+      background: radial-gradient(ellipse, var(--cta-glow) 0%, transparent 70%);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
     /* ─── CTA SECTION ───────────────────────────────────────────────── */
     .landing-page .cta-section{
       padding: 120px 0;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
-    .landing-page .cta-glow{
-      position: absolute;
-      bottom: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse, var(--cta-glow) 0%, transparent 70%);
-      pointer-events: none;
+    .landing-page .landing-cta-footer .cta-section,
+    .landing-page .landing-cta-footer footer{
+      position: relative;
+      z-index: 1;
     }
 
     .landing-page .cta-section h2{
@@ -42,6 +55,8 @@
     /* ─── FOOTER ────────────────────────────────────────────────────── */
     .landing-page footer{
       padding: 48px 0;
+      border: 0;
+      background: transparent;
     }
 
     .landing-page .footer-inner{
