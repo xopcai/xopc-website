@@ -16,6 +16,7 @@ import Link from "next/link";
 
 import { HeroBrand } from "@/components/hero-brand";
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
+import { LandingFooter } from "@/components/landing-footer";
 import { LandingNavState } from "@/components/landing-nav-state";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { QuickInstallBlock } from "@/components/quick-install-block";
@@ -24,15 +25,9 @@ import { WorkflowBoardPreview } from "@/components/workflow-board-preview";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LogoHomeLink } from "@/components/logo-home-link";
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
-import {
-  LANDING_GITHUB_ISSUES,
-  LANDING_GITHUB_LICENSE,
-  LANDING_GITHUB_REPO,
-  LANDING_MOBILE_APP_REPO,
-} from "@/lib/landing-urls";
+import { LANDING_GITHUB_REPO, LANDING_MOBILE_APP_REPO } from "@/lib/landing-urls";
 import { LANDING_MEDIA, type SurfaceMediaId } from "@/lib/landing-media";
 import { resolveLocaleMediaSrc } from "@/lib/locale-media.server";
 
@@ -69,7 +64,6 @@ function dotClass(dot: string): string {
 
 export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Props) {
   const L = m.landing;
-  const year = new Date().getFullYear();
   const surfaceMediaSrcs = Object.fromEntries(
     Object.entries(LANDING_MEDIA.surfaces).map(([id, media]) => [id, resolveLocaleMediaSrc(media, locale)]),
   ) as Partial<Record<SurfaceMediaId, string>>;
@@ -331,63 +325,30 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="cta-section landing-reveal">
-        <div className="cta-glow" aria-hidden />
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <h2>
-            {L.cta.titleLine1}
-            <br />
-            {L.cta.titleLine2}
-          </h2>
-          <p>{L.cta.desc}</p>
+      <div className="landing-cta-footer">
+        <section className="cta-section landing-reveal">
+          <div className="container">
+            <h2>
+              {L.cta.titleLine1}
+              <br />
+              {L.cta.titleLine2}
+            </h2>
+            <p>{L.cta.desc}</p>
 
-          <div className="cta-actions">
-            <a href="#download" className="btn-primary">
-              {L.cta.primary}
-            </a>
-            <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.cta.mobileApp}
-            </a>
+            <div className="cta-actions">
+              <a href="#download" className="btn-primary">
+                {L.cta.primary}
+              </a>
+              <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
+                {L.cta.mobileApp}
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <footer>
-        <div className="container footer-inner">
-          <div className="footer-logo" aria-label="xopc">
-            <XopcLogoMark />
-          </div>
-          <ul className="footer-links">
-            <li>
-              <a href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer">
-                {L.footer.github}
-              </a>
-            </li>
-            <li>
-              <a href={docHome} target="_blank" rel="noopener noreferrer">
-                {L.footer.docs}
-              </a>
-            </li>
-            <li>
-              <a href={LANDING_MOBILE_APP_REPO} target="_blank" rel="noopener noreferrer">
-                {L.footer.mobileApp}
-              </a>
-            </li>
-            <li>
-              <a href={LANDING_GITHUB_LICENSE} target="_blank" rel="noopener noreferrer">
-                {L.footer.license}
-              </a>
-            </li>
-            <li>
-              <a href={LANDING_GITHUB_ISSUES} target="_blank" rel="noopener noreferrer">
-                {L.footer.issues}
-              </a>
-            </li>
-          </ul>
-          <div className="footer-copy">{L.footer.copyright.replace("{year}", String(year))}</div>
-        </div>
-      </footer>
+        <LandingFooter footer={L.footer} docsHref={docHome} />
+      </div>
     </div>
   );
 }
