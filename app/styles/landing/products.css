@@ -106,6 +106,12 @@
 
 .landing-page .product-page {
   padding-top: 68px;
+  background:
+    radial-gradient(82% 30% at 84% 6%, color-mix(in srgb, var(--accent-glow) 74%, transparent), transparent 72%),
+    radial-gradient(72% 26% at 14% 49%, color-mix(in srgb, var(--hero-cool-glow) 28%, transparent), transparent 74%),
+    radial-gradient(80% 30% at 74% 90%, color-mix(in srgb, var(--accent-glow) 44%, transparent), transparent 76%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .landing-page .product-hero {
@@ -251,8 +257,7 @@
 
 .landing-page .product-get-started {
   padding: 82px 0;
-  border-block: 1px solid var(--edge);
-  background: color-mix(in srgb, var(--bg-surface) 66%, transparent);
+  background: transparent;
 }
 
 .landing-page .product-start-grid {
@@ -374,8 +379,7 @@
 .landing-page .product-command button svg { width: 14px; height: 14px; }
 
 .landing-page .product-section--muted {
-  border-block: 1px solid var(--edge);
-  background: color-mix(in srgb, var(--bg-surface) 66%, transparent);
+  background: transparent;
 }
 
 .landing-page .product-section-header {
