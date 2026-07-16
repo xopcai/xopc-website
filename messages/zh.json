@@ -430,16 +430,21 @@
       },
       "operator": {
         "name": "XOPC Worker",
-        "kicker": "XOPC Worker · 电脑 Agent",
-        "metaTitle": "XOPC Worker｜可托付结果的电脑 Agent",
-        "metaDescription": "在你的环境中规划、执行、确认并汇报日常电脑工作；数据、密钥和运行环境由你掌控。",
-        "titleLine1": "把任务交给 AI，",
-        "titleLine2": "不必交出控制权。",
-        "desc": "XOPC Worker 在你的环境中理解目标、拆解步骤、操作网页与工具，在关键节点请求确认，并把过程与结果清楚交还给你。",
+        "kicker": "XOPC Worker · Electron 桌面 Agent",
+        "metaTitle": "XOPC Worker｜跨平台桌面 Agent",
+        "metaDescription": "一款运行在 Windows、macOS 与 Linux 上的 Electron 桌面 Agent；在你的本机环境中规划、执行、确认并交付工作。",
+        "titleLine1": "把电脑上的任务，",
+        "titleLine2": "交给 AI 推进。",
+        "desc": "XOPC Worker 是运行在你桌面的跨平台 Agent 应用：它理解目标、调用本机可用的网页与工具，并在关键动作前把控制权交还给你。",
         "secondaryCta": "下载 Worker",
+        "desktopPoints": [
+          "Electron 跨平台桌面应用",
+          "Windows · macOS · Linux",
+          "在你的本机环境中运行"
+        ],
         "workerDownload": {
           "kicker": "下载 Worker",
-          "title": "下载 xopc Worker。",
+          "title": "下载 xopc Worker 桌面应用。",
           "desc": "适用于 Windows、macOS 与 Linux；我们会优先推荐适合当前设备的安装包。"
         },
         "quickStart": {
@@ -460,35 +465,35 @@
           "ariaLabel": "XOPC Worker 完整任务演示视频"
         },
         "flow": {
-          "kicker": "可见的执行",
-          "title": "委派，但始终可控。",
-          "desc": "Worker 不是一次性替你点几下按钮；它把工作组织成可理解、可检查、可继续的过程。",
+          "kicker": "从桌面发起",
+          "title": "在本机环境中，把工作推进到底。",
+          "desc": "Worker 不只是替你点几下按钮；它把电脑上的任务组织成可理解、可检查、可继续的执行过程。",
           "steps": [
-            { "title": "告诉它目标", "body": "用自然语言说明要推进的事情，以及交付标准。" },
-            { "title": "查看计划", "body": "在执行前看到任务拆解，必要时补充背景和边界。" },
-            { "title": "执行与暂停", "body": "Agent 使用被允许的工具推进工作，并在需要你决定时停下来。" },
-            { "title": "交付与后续", "body": "获得结果、记录和可继续推进的下一步，而不只是一次对话。" }
+            { "title": "在桌面端发起", "body": "用自然语言说明要推进的事情，以及交付标准。" },
+            { "title": "查看执行计划", "body": "在 Worker 中看到任务拆解，必要时补充背景和边界。" },
+            { "title": "调用本机工具", "body": "Agent 使用被允许的网页与工具推进工作，并在需要你决定时停下来。" },
+            { "title": "确认并交付", "body": "获得结果、记录和可继续推进的下一步，而不只是一次对话。" }
           ]
         },
         "capabilities": {
-          "kicker": "为真实工作而设计",
-          "title": "从目标到已推进的事务。",
-          "desc": "把网页、文件、信息入口与长期工作流连接到同一个可观察的 Agent 运行时。",
+          "kicker": "桌面端，而不止聊天框",
+          "title": "一个应用，连接你的真实工作环境。",
+          "desc": "在桌面端连接网页、文件、信息入口与长期工作流，并将它们交给同一个可观察的 Agent 运行时。",
           "items": [
-            { "title": "目标拆解", "body": "将自然语言目标组织成可追踪的任务与步骤，而非把复杂工作压进一条提示词。" },
-            { "title": "跨工具执行", "body": "让任务在浏览器、文件和已连接的工作入口之间推进。" },
-            { "title": "人在回路", "body": "将需要判断、授权或发送的关键动作保留给你确认。" },
-            { "title": "持续上下文", "body": "以 Session、Project、Goal 与 Workflow 保存状态，使后续工作能接着完成。" }
+            { "title": "跨平台桌面应用", "body": "基于 Electron 构建，覆盖 Windows、macOS 与 Linux，让每台工作电脑都有统一入口。" },
+            { "title": "本机环境执行", "body": "从桌面端将任务带到本机可用的网页、文件和已连接工具中推进。" },
+            { "title": "可见的执行过程", "body": "将目标组织为可追踪的步骤，而不是把复杂工作压进一条提示词。" },
+            { "title": "人在回路", "body": "把需要判断、授权或发送的关键动作保留给你确认。" }
           ]
         },
         "scenarios": {
           "kicker": "从结果开始",
           "title": "适合交给 Worker 的工作。",
           "items": [
-            { "eyebrow": "研究", "title": "资料整理与决策准备", "body": "从多个来源收集信息，整理为带出处的笔记、表格或下一步建议。" },
-            { "eyebrow": "运营", "title": "重复性后台工作", "body": "将固定流程变成可观察的任务，在异常或关键节点让你接管。" },
-            { "eyebrow": "协作", "title": "信息汇总与周报", "body": "把分散的进展、材料和待办整理成可发送、可继续更新的交付物。" },
-            { "eyebrow": "个人", "title": "跨应用的个人事务", "body": "让目标穿过你的日常工具，而不是困在单一聊天窗口中。" }
+            { "eyebrow": "桌面研究", "title": "资料整理与决策准备", "body": "从多个来源收集信息，整理为带出处的笔记、表格或下一步建议。" },
+            { "eyebrow": "桌面运营", "title": "重复性后台工作", "body": "将固定流程变成可观察的任务，在异常或关键节点让你接管。" },
+            { "eyebrow": "桌面协作", "title": "信息汇总与周报", "body": "把分散的进展、材料和待办整理成可发送、可继续更新的交付物。" },
+            { "eyebrow": "个人工作台", "title": "跨应用的个人事务", "body": "让目标穿过你的日常工具，而不是困在单一聊天窗口中。" }
           ]
         },
         "trust": {
@@ -509,23 +514,28 @@
       },
       "code": {
         "name": "XOPC Code",
-        "kicker": "XOPC Code · 编码 Agent",
-        "metaTitle": "XOPC Code｜本地代码库中的可验证编码 Agent",
-        "metaDescription": "在本地工作区中连接 Codex、Claude Code 等编码能力；内置 Codebase Memory 代码知识图谱，交付可审阅、可验证的代码改动。",
-        "titleLine1": "从需求到可审阅的，",
-        "titleLine2": "代码改动。",
-        "desc": "XOPC Code 在你的本地项目中组织编码任务：理解仓库、制定计划、修改代码、运行验证，并清楚呈现变更与结果。内置 Codebase Memory 将代码库沉淀为可查询的知识图谱，让 Agent 不必靠逐文件猜测上下文。",
-        "secondaryCta": "开始使用 Code",
+        "kicker": "XOPC Code · Terminal Agent 工作台",
+        "metaTitle": "XOPC Code｜在 Terminal 中使用强大 Coding Agent",
+        "metaDescription": "在项目目录运行 xopc，唤起强大的 Coding Agent 与 Harness；内置 Codebase Memory，并可在 Terminal 切换到非编码 Agent 完成其他工作。",
+        "titleLine1": "在 Terminal 中，",
+        "titleLine2": "让 Agent 开始工作。",
+        "desc": "在项目目录执行 xopc，即可使用强大的 Coding Agent 与 Harness 完成工程理解、改动和验证。内置 Codebase Memory 提供代码查询能力；需要研究、整理或其他任务时，也可在同一 Terminal 切换 Agent 继续推进。",
+        "secondaryCta": "在 Terminal 中使用",
+        "terminalPoints": [
+          "在项目目录执行 xopc",
+          "强大的 Coding Agent Harness",
+          "可切换到其他 Agent 工作"
+        ],
         "quickStart": {
           "kicker": "开始使用 Code",
-          "title": "让编码 Agent 接入本地工程。",
-          "desc": "安装 xopc、连接你的编码能力，然后在本地工作区中开始编码任务。",
+          "title": "从 Terminal 启动 Agent 工作。",
+          "desc": "安装 xopc、连接你偏好的 Agent，然后在本地项目目录中开始编码或切换到其他任务。",
           "copy": "复制",
           "copied": "已复制",
           "steps": [
             { "label": "安装", "title": "安装 xopc CLI", "body": "适合已有 Node.js 环境的开发者。", "command": "npm install -g @xopcai/xopc" },
             { "label": "连接", "title": "完成 Provider 引导", "body": "在引导中连接 Codex、Claude Code 或你选择的编码能力。", "command": "xopc onboard" },
-            { "label": "编码", "title": "打开本地工作区", "body": "从本地 TUI 发起编码任务，并将它关联到真实项目。", "command": "xopc" }
+            { "label": "启动", "title": "在 Terminal 运行 xopc", "body": "在项目目录唤起 Coding Agent；需要时可切换到其他 Agent。", "command": "xopc" }
           ]
         },
         "media": {
@@ -534,25 +544,25 @@
           "ariaLabel": "XOPC Code 完整编码任务演示视频"
         },
         "flow": {
-          "kicker": "可验证的交付",
-          "title": "把编码过程变成可审阅的闭环。",
-          "desc": "重点不是一次生成多少代码，而是围绕真实工程完成理解、改动、验证和交接。",
+          "kicker": "从 Terminal 到交付",
+          "title": "把 Coding Agent 的工作变成可审阅闭环。",
+          "desc": "重点不是一次生成多少代码，而是在真实工程中完成理解、改动、验证和交接。",
           "steps": [
-            { "title": "理解工程", "body": "从需求和本地工作区出发，建立与当前任务相关的项目上下文。" },
+            { "title": "在项目目录唤起", "body": "从 Terminal 和本地工作区出发，建立与当前任务相关的工程上下文。" },
             { "title": "提出计划", "body": "在修改前明确实施路径、影响范围和需要验证的内容。" },
-            { "title": "完成改动", "body": "调用已连接的编码 Agent 在工作区中推进实现与修复。" },
+            { "title": "由 Harness 推进", "body": "调用已连接的 Coding Agent，在工作区中完成实现、修复与必要工具调用。" },
             { "title": "审阅与验证", "body": "用 diff、命令和验证结果交代做了什么，以及还需要关注什么。" }
           ]
         },
         "capabilities": {
-          "kicker": "围绕本地工程",
-          "title": "把编码能力接入工作，而非另起一个孤岛。",
-          "desc": "XOPC Code 为 Codex、Claude Code 等编码能力提供项目上下文、任务组织和可审阅的交付界面；Codebase Memory 进一步把代码结构、关系与影响范围变成可查询的工程认知。",
+          "kicker": "一个 Terminal，多个 Agent",
+          "title": "为编码而强，也不止于编码。",
+          "desc": "XOPC Code 在 Terminal 中为 Coding Agent 提供任务组织、工程上下文与交付 Harness；Codebase Memory 将代码结构、关系和影响范围变成可查询的工程认知。需要非编码能力时，可以直接切换 Agent。",
           "items": [
-            { "title": "接入你的编码 Agent", "body": "根据任务连接和使用你偏好的编码能力，而不是锁定在单一模型或工具。" },
+            { "title": "强大的 Coding Agent Harness", "body": "围绕真实工程组织上下文、计划、工具调用、变更、diff 与验证，让 Coding Agent 不只生成片段，而是推进完整交付。" },
             { "title": "Codebase Memory", "body": "内置代码知识图谱，索引函数、类型、调用链、路由与跨服务关系；结合语义检索、结构化查询和影响分析快速定位相关代码。" },
-            { "title": "变更可追踪", "body": "将代码改动、执行命令和验证结果组织成能被人审阅的记录。" },
-            { "title": "从代码进入工作流", "body": "编码任务可以继续进入 xopc 的 Goal、Workflow 与多端入口，而不止停在终端。" }
+            { "title": "在 Terminal 切换 Agent", "body": "编码之外，也可在同一个入口切换到适合研究、整理、运营或日常事务的 Agent。" },
+            { "title": "变更可追踪", "body": "将代码改动、执行命令和验证结果组织成能被人审阅的记录。" }
           ]
         },
         "scenarios": {
@@ -562,7 +572,7 @@
             { "eyebrow": "实现", "title": "从 issue 到实施计划", "body": "先理解需求和影响范围，再让 Agent 交付可审阅的实现路径。" },
             { "eyebrow": "修复", "title": "Bug 定位与修复", "body": "围绕真实仓库追踪问题、完成修复，并把验证结果交还给你。" },
             { "eyebrow": "演进", "title": "重构与测试补全", "body": "把结构性改动拆成可验证步骤，减少只改代码、不看结果的风险。" },
-            { "eyebrow": "理解", "title": "代码库调研与方案", "body": "利用 Codebase Memory 查询架构、调用路径与影响范围，将仓库探索沉淀为可交接的技术结论和下一步计划。" }
+            { "eyebrow": "切换", "title": "从编码切换到其他任务", "body": "在同一个 Terminal 中按任务切换 Agent，将调研、资料整理或日常工作继续交给 xopc 推进。" }
           ]
         },
         "trust": {
@@ -570,7 +580,7 @@
           "title": "让每次改动都有依据。",
           "items": [
             "你的工作区：围绕本地项目和已有工具习惯工作。",
-            "你的选择：可根据任务接入不同的编码 Agent 与 Provider。",
+            "你的选择：可根据任务接入不同的 Coding Agent，或切换到其他 Agent。",
             "你的审阅：通过改动与验证记录判断是否接受交付。"
           ]
         },

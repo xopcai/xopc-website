@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
-import { ProductPage, isProductSlug, productSlugs } from "@/components/product-page";
+import { ProductPage, getProductDataSlug, isProductSlug, productSlugs } from "@/components/product-page";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 
@@ -16,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: loc, product } = await params;
   if (!isLocale(loc) || !isProductSlug(product)) return {};
-  const P = getMessages(loc).landing.products[product];
+  const P = getMessages(loc).landing.products[getProductDataSlug(product)];
 
   return {
     title: P.metaTitle,
@@ -34,7 +34,9 @@ export default async function ProductRoute({
   params: Promise<{ locale: string; product: string }>;
 }) {
   const { locale: loc, product } = await params;
-  if (!isLocale(loc) || !isProductSlug(product)) notFound();
+  if (!isLocale(loc)) notFound();
+  if (product === "operator") permanentRedirect(`/${loc}/products/worker`);
+  if (!isProductSlug(product)) notFound();
 
   const locale = loc as Locale;
   return <ProductPage locale={locale} messages={getMessages(locale)} productSlug={product} />;

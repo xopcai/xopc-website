@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Home, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowRightLeft, Code2, Github, HardDrive, Home, Monitor, ShieldCheck, Terminal } from "lucide-react";
 import Link from "next/link";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
@@ -14,11 +14,22 @@ import type { Messages } from "@/lib/i18n/messages";
 import { PRODUCT_MEDIA } from "@/lib/landing-media";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
 
-export const productSlugs = ["operator", "code", "gateway"] as const;
+export const productSlugs = ["worker", "code", "gateway"] as const;
 export type ProductSlug = (typeof productSlugs)[number];
+type ProductDataSlug = "operator" | "code" | "gateway";
+
+const productDataSlugs: Record<ProductSlug, ProductDataSlug> = {
+  worker: "operator",
+  code: "code",
+  gateway: "gateway",
+};
 
 export function isProductSlug(value: string): value is ProductSlug {
   return (productSlugs as readonly string[]).includes(value);
+}
+
+export function getProductDataSlug(productSlug: ProductSlug): ProductDataSlug {
+  return productDataSlugs[productSlug];
 }
 
 type Props = {
@@ -28,9 +39,10 @@ type Props = {
 };
 
 export function ProductPage({ locale, messages: m, productSlug }: Props) {
-  const P = m.landing.products[productSlug];
-  const otherSlug: ProductSlug = productSlug === "operator" ? "code" : "operator";
-  const other = m.landing.products[otherSlug];
+  const productDataSlug = getProductDataSlug(productSlug);
+  const P = m.landing.products[productDataSlug];
+  const otherSlug: ProductSlug = productSlug === "worker" ? "code" : "worker";
+  const other = m.landing.products[getProductDataSlug(otherSlug)];
   const homeHref = `/${locale}`;
 
   return (
@@ -47,7 +59,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
               <Link href={homeHref}>{m.landing.products.nav.home}</Link>
             </li>
             <li>
-              <Link href={`/${locale}/products/operator`} className={productSlug === "operator" ? "is-active" : undefined}>
+              <Link href={`/${locale}/products/worker`} className={productSlug === "worker" ? "is-active" : undefined}>
                 {m.landing.products.nav.operator}
               </Link>
             </li>
@@ -100,10 +112,42 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
                 <ArrowRight aria-hidden />
               </a>
             </div>
+            {productSlug === "worker" ? (
+              <ul className="product-hero-points">
+                <li>
+                  <Monitor aria-hidden />
+                  {m.landing.products.operator.desktopPoints[0]}
+                </li>
+                <li>
+                  <HardDrive aria-hidden />
+                  {m.landing.products.operator.desktopPoints[1]}
+                </li>
+                <li>
+                  <ShieldCheck aria-hidden />
+                  {m.landing.products.operator.desktopPoints[2]}
+                </li>
+              </ul>
+            ) : null}
+            {productSlug === "code" ? (
+              <ul className="product-hero-points">
+                <li>
+                  <Terminal aria-hidden />
+                  {m.landing.products.code.terminalPoints[0]}
+                </li>
+                <li>
+                  <Code2 aria-hidden />
+                  {m.landing.products.code.terminalPoints[1]}
+                </li>
+                <li>
+                  <ArrowRightLeft aria-hidden />
+                  {m.landing.products.code.terminalPoints[2]}
+                </li>
+              </ul>
+            ) : null}
           </div>
           <div className="product-demo" id="demo">
             <VideoMediaSlot
-              slot={PRODUCT_MEDIA[productSlug].demo}
+              slot={PRODUCT_MEDIA[productDataSlug].demo}
               locale={locale}
               ariaLabel={P.media.ariaLabel}
               placeholderTitle={P.media.title}
@@ -114,7 +158,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
         </div>
       </section>
 
-      {productSlug === "operator" ? (
+      {productSlug === "worker" ? (
         <ProductWorkerDownloads d={m.landing.download} {...m.landing.products.operator.workerDownload} />
       ) : (
         <ProductQuickStart {...P.quickStart} />
