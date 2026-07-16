@@ -433,7 +433,6 @@
         "titleLine1": "把任务交给 AI，",
         "titleLine2": "不必交出控制权。",
         "desc": "XOPC Worker 在你的环境中理解目标、拆解步骤、操作网页与工具，在关键节点请求确认，并把过程与结果清楚交还给你。",
-        "primaryCta": "观看演示",
         "secondaryCta": "开始使用 xopc",
         "media": {
           "title": "待补充：Worker 完整任务演示",
@@ -496,7 +495,6 @@
         "titleLine1": "从需求到可审阅的，",
         "titleLine2": "代码改动。",
         "desc": "XOPC Code 在你的本地项目中组织编码任务：理解仓库、制定计划、修改代码、运行验证，并清楚呈现变更与结果。内置 Codebase Memory 将代码库沉淀为可查询的知识图谱，让 Agent 不必靠逐文件猜测上下文。",
-        "primaryCta": "查看编码流程",
         "secondaryCta": "开始使用 xopc",
         "media": {
           "title": "待补充：Code 完整编码交付演示",
@@ -559,7 +557,6 @@
         "titleLine1": "让你的本地 runtime，",
         "titleLine2": "成为可连接的服务。",
         "desc": "XOPC Gateway 把正在你环境中运行的 Agent、状态与工作流带到网页、移动端、消息渠道和 API；它是统一入口，不是另一套孤立后端。",
-        "primaryCta": "观看服务演示",
         "secondaryCta": "开始使用 xopc",
         "media": {
           "title": "待补充：Gateway 服务连接演示",
