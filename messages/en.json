@@ -79,6 +79,9 @@
       "error": "We couldn't load download info right now.",
       "openReleases": "Open releases page",
       "currentVersion": "Current version",
+      "recommendedForThisDevice": "Recommended for this device",
+      "downloadRecommended": "Download {label}",
+      "otherDownloads": "Other downloads",
       "hint": "Not sure which build to pick? Check processor type in System Settings or \"About this Mac\".",
       "thisDevice": "This device",
       "downloadTitle": "Download",
@@ -436,8 +439,8 @@
         "secondaryCta": "Download Worker",
         "workerDownload": {
           "kicker": "Download Worker",
-          "title": "Choose your desktop system.",
-          "desc": "Download the xopc Worker desktop app for Windows, macOS, or Linux. The page automatically marks the build that matches this device."
+          "title": "Download xopc Worker.",
+          "desc": "For Windows, macOS, and Linux. We’ll recommend the installer that matches this device first."
         },
         "quickStart": {
           "kicker": "Start with Worker",

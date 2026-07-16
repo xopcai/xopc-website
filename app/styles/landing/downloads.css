@@ -51,6 +51,86 @@
       height: 14px;
     }
 
+    .landing-page .desktop-download-recommended{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 16px 0 18px;
+      padding: 16px;
+      border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--edge-bright));
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--accent-glow) 58%, var(--bg-card));
+    }
+
+    .landing-page .desktop-download-recommended-label{
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent-bright);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .landing-page .desktop-download-recommended h3{
+      margin: 0;
+      color: var(--fg-head);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .landing-page .desktop-download-recommended p{
+      margin: 4px 0 0;
+      color: var(--fg-mid);
+      font-size: 12px;
+    }
+
+    .landing-page .desktop-download-recommended-cta{
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 9px 12px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .landing-page .desktop-download-recommended-cta:hover{
+      background: var(--accent-hover);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .landing-page .desktop-download-recommended-cta svg{
+      width: 16px;
+      height: 16px;
+    }
+
+    .landing-page .desktop-download-list-header{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0 0 10px;
+    }
+
+    .landing-page .desktop-download-list-title{
+      margin: 0;
+      color: var(--fg-mid);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
     .landing-page .download-os-list{
       list-style: none;
       margin: 0;
@@ -147,4 +227,15 @@
     .landing-page .download-unavailable{
       font-size: 12px;
       color: var(--fg-dim);
+    }
+
+    @media (max-width: 520px) {
+      .landing-page .desktop-download-recommended{
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .landing-page .desktop-download-recommended-cta{
+        width: 100%;
+      }
     }

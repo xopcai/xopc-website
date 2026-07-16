@@ -242,7 +242,8 @@
 .landing-page .product-start-step p { min-height: 46px; color: var(--fg-mid); font-size: 14px; line-height: 1.65; }
 
 .landing-page .product-worker-downloads {
-  max-width: 720px;
+  width: min(100%, 760px);
+  margin: 0 auto;
   padding: 10px;
   border: 1px solid var(--edge-bright);
   border-radius: 18px;
@@ -252,6 +253,7 @@
 .landing-page .product-worker-platforms {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex: 1 1 280px;
   gap: 6px;
   padding: 4px;
   border: 1px solid var(--edge);
@@ -273,7 +275,32 @@
 
 .landing-page .product-worker-platforms button:hover { color: var(--fg-head); }
 .landing-page .product-worker-platforms button.is-active { background: var(--bg-card); color: var(--fg-head); box-shadow: var(--rim-light); }
-.landing-page .product-worker-downloads .desktop-download-picker { margin-top: 10px; }
+.landing-page .product-worker-downloads .desktop-download-picker { margin-top: 0; }
+
+.landing-page .product-get-started--worker .product-section-header {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.landing-page .product-worker-downloads .desktop-download-recommended {
+  margin-top: 0;
+  padding: 20px;
+}
+
+.landing-page .product-worker-downloads .desktop-download-list-header {
+  display: block;
+  margin-top: 22px;
+}
+
+.landing-page .product-worker-downloads .desktop-download-list-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.landing-page .product-worker-downloads .product-worker-platforms {
+  width: 100%;
+}
 
 .landing-page .product-command {
   display: flex;
