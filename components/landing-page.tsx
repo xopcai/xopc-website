@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   BookOpen,
   Bot,
   GitBranch,
@@ -11,6 +12,7 @@ import {
   Target,
   type LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 import { HeroBrand } from "@/components/hero-brand";
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
@@ -84,6 +86,15 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           </div>
           <ul className="nav-links">
             <li>
+              <Link href={`/${locale}/products/operator`}>{L.products.nav.operator}</Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/products/code`}>{L.products.nav.code}</Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/products/gateway`}>{L.products.nav.gateway}</Link>
+            </li>
+            <li>
               <a href="#loop">{L.nav.loop}</a>
             </li>
             <li>
@@ -142,6 +153,36 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
 
           <div className="hero-quick-start fade-up delay-3" id="download">
             <QuickInstallBlock d={L.download} />
+          </div>
+        </div>
+      </section>
+
+      <section className="product-chooser-section landing-reveal" aria-labelledby="products-title">
+        <div className="container">
+          <div className="product-chooser-header">
+            <p className="product-chooser-kicker">{L.products.home.kicker}</p>
+            <h2 id="products-title">
+              {L.products.home.titleLine1}
+              <br />
+              {L.products.home.titleLine2}
+            </h2>
+            <p>{L.products.home.desc}</p>
+          </div>
+          <div className="product-choice-grid">
+            {(["operator", "code", "gateway"] as const).map((product) => {
+              const item = L.products.home[product];
+              return (
+                <Link href={`/${locale}/products/${product}`} className="product-choice-card" key={product}>
+                  <span className="product-choice-label">{item.label}</span>
+                  <h3>{item.name}</h3>
+                  <p>{item.desc}</p>
+                  <span className="product-choice-link">
+                    {item.cta}
+                    <ArrowRight aria-hidden />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
