@@ -65,7 +65,7 @@
       "pnpmCommand": "pnpm add -g @xopcai/xopc",
       "advancedHeading": "使用 npm 安装",
       "advancedSubtitle": "若已安装 Node.js 22+，可直接用包管理器。",
-      "npmBody": "需要 Node.js 22+。亦支持 pnpm：pnpm add -g @xopcai/xopc。国内镜像：npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com。然后开聊：xopc tui --local",
+      "npmBody": "需要 Node.js 22+。亦支持 pnpm：pnpm add -g @xopcai/xopc。国内镜像：npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com。然后开聊：xopc",
       "npmInstallLabel": "1. 安装",
       "npmCommand": "npm install -g @xopcai/xopc",
       "npmOnboardLabel": "2. 配置",
@@ -433,7 +433,24 @@
         "titleLine1": "把任务交给 AI，",
         "titleLine2": "不必交出控制权。",
         "desc": "XOPC Worker 在你的环境中理解目标、拆解步骤、操作网页与工具，在关键节点请求确认，并把过程与结果清楚交还给你。",
-        "secondaryCta": "开始使用 xopc",
+        "secondaryCta": "下载 Worker",
+        "workerDownload": {
+          "kicker": "下载 Worker",
+          "title": "选择你的桌面系统。",
+          "desc": "下载适用于 Windows、macOS 或 Linux 的 xopc Worker 桌面应用；页面会自动标记适合本机的架构。"
+        },
+        "quickStart": {
+          "kicker": "开始使用 Worker",
+          "title": "三步启动你的本地 Worker。",
+          "desc": "安装、完成一次引导，然后从本地入口把任务交给 Worker。",
+          "copy": "复制",
+          "copied": "已复制",
+          "steps": [
+            { "label": "安装", "title": "安装 xopc", "body": "跨平台安装脚本会准备运行所需依赖。", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
+            { "label": "配置", "title": "完成引导", "body": "选择模型并配置你要使用的 Provider。", "command": "xopc onboard" },
+            { "label": "工作", "title": "启动本地入口", "body": "在本地 TUI 中创建任务，并让 Worker 开始推进。", "command": "xopc" }
+          ]
+        },
         "media": {
           "title": "待补充：Worker 完整任务演示",
           "action": "请录制“目标 → 计划 → 浏览器/工具执行 → 审批 → 结果”并导出到下方文件",
@@ -495,7 +512,19 @@
         "titleLine1": "从需求到可审阅的，",
         "titleLine2": "代码改动。",
         "desc": "XOPC Code 在你的本地项目中组织编码任务：理解仓库、制定计划、修改代码、运行验证，并清楚呈现变更与结果。内置 Codebase Memory 将代码库沉淀为可查询的知识图谱，让 Agent 不必靠逐文件猜测上下文。",
-        "secondaryCta": "开始使用 xopc",
+        "secondaryCta": "开始使用 Code",
+        "quickStart": {
+          "kicker": "开始使用 Code",
+          "title": "让编码 Agent 接入本地工程。",
+          "desc": "安装 xopc、连接你的编码能力，然后在本地工作区中开始编码任务。",
+          "copy": "复制",
+          "copied": "已复制",
+          "steps": [
+            { "label": "安装", "title": "安装 xopc CLI", "body": "适合已有 Node.js 环境的开发者。", "command": "npm install -g @xopcai/xopc" },
+            { "label": "连接", "title": "完成 Provider 引导", "body": "在引导中连接 Codex、Claude Code 或你选择的编码能力。", "command": "xopc onboard" },
+            { "label": "编码", "title": "打开本地工作区", "body": "从本地 TUI 发起编码任务，并将它关联到真实项目。", "command": "xopc" }
+          ]
+        },
         "media": {
           "title": "待补充：Code 完整编码交付演示",
           "action": "请录制“需求 → 工程理解 → 改动 → 测试/检查 → diff 总结”并导出到下方文件",
@@ -557,7 +586,19 @@
         "titleLine1": "让你的本地 runtime，",
         "titleLine2": "成为可连接的服务。",
         "desc": "XOPC Gateway 把正在你环境中运行的 Agent、状态与工作流带到网页、移动端、消息渠道和 API；它是统一入口，不是另一套孤立后端。",
-        "secondaryCta": "开始使用 xopc",
+        "secondaryCta": "开始使用 Gateway",
+        "quickStart": {
+          "kicker": "开始使用 Gateway",
+          "title": "将本地 runtime 作为服务运行。",
+          "desc": "先安装 xopc，再启动 Gateway；需要持续运行时，将它交给系统服务管理。",
+          "copy": "复制",
+          "copied": "已复制",
+          "steps": [
+            { "label": "安装", "title": "安装 xopc", "body": "跨平台安装脚本会准备运行所需依赖。", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
+            { "label": "启动", "title": "启动 Gateway", "body": "启动网页服务与本地 React 控制台。", "command": "xopc gateway" },
+            { "label": "服务化", "title": "安装系统服务", "body": "让 Gateway 按操作系统服务生命周期持续运行。", "command": "xopc gateway service install" }
+          ]
+        },
         "media": {
           "title": "待补充：Gateway 服务连接演示",
           "action": "请录制“runtime 启动 → 渠道或 API 接入 → 客户端响应 → 服务状态”并导出到下方文件",
