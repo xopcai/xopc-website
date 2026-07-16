@@ -79,6 +79,9 @@
       "error": "暂时无法获取下载信息。",
       "openReleases": "打开下载页",
       "currentVersion": "当前版本",
+      "recommendedForThisDevice": "推荐给此设备",
+      "downloadRecommended": "下载 {label}",
+      "otherDownloads": "其他下载",
       "hint": "不确定选哪一项时，可在系统设置或「关于本机」里查看处理器类型。",
       "thisDevice": "本机",
       "downloadTitle": "下载",
@@ -436,8 +439,8 @@
         "secondaryCta": "下载 Worker",
         "workerDownload": {
           "kicker": "下载 Worker",
-          "title": "选择你的桌面系统。",
-          "desc": "下载适用于 Windows、macOS 或 Linux 的 xopc Worker 桌面应用；页面会自动标记适合本机的架构。"
+          "title": "下载 xopc Worker。",
+          "desc": "适用于 Windows、macOS 与 Linux；我们会优先推荐适合当前设备的安装包。"
         },
         "quickStart": {
           "kicker": "开始使用 Worker",

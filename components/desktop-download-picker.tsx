@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, ExternalLink } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 
 import type { LatestReleasePayload } from "@/lib/github-latest-release";
 import { detectArchAsync, detectOsSync, type ClientArch } from "@/lib/client-platform";
@@ -50,9 +50,11 @@ function ariaFmt(template: string, label: string) {
 export function DesktopDownloadPicker({
   d,
   platform,
+  platformSelector,
 }: {
   d: D;
   platform: DesktopPlatformId;
+  platformSelector?: ReactNode;
 }) {
   const [payload, setPayload] = useState<LatestReleasePayload | null>(null);
   const [arch, setArch] = useState<ClientArch>("unknown");
@@ -109,6 +111,20 @@ export function DesktopDownloadPicker({
   const platformName = d.platformNames[platform];
   const platformSubtitle = d.platformSubtitles[platform];
 
+  const recommended = useMemo(() => {
+    if (!suggested || payload?.ok !== true) return null;
+    const asset = PICKERS[suggested](payload.assets);
+    if (!asset) return null;
+    const recommendedPlatform = CHOICE_PLATFORM[suggested];
+    return {
+      id: suggested,
+      asset,
+      label: d.choices[suggested],
+      platformName: d.platformNames[recommendedPlatform],
+      platformSubtitle: d.platformSubtitles[recommendedPlatform],
+    };
+  }, [d.choices, d.platformNames, d.platformSubtitles, payload, suggested]);
+
   if (payload === null) {
     return (
       <div className="desktop-download-picker desktop-download-picker--loading" role="status">
@@ -136,10 +152,6 @@ export function DesktopDownloadPicker({
 
   return (
     <div className="desktop-download-picker desktop-download-picker--single">
-      <p className="quick-start-comment">
-        # {platformName} · {platformSubtitle}
-      </p>
-
       <div className="desktop-download-meta">
         <span className="desktop-download-version">
           {d.currentVersion}: <strong>{payload.tag}</strong>
@@ -155,14 +167,37 @@ export function DesktopDownloadPicker({
         </a>
       </div>
 
-      <ul className="download-os-list">
-        {rows.map((row) => (
+      {recommended ? (
+        <div className="desktop-download-recommended">
+          <div>
+            <span className="desktop-download-recommended-label">{d.recommendedForThisDevice}</span>
+            <h3>{recommended.platformName} · {recommended.label}</h3>
+            <p>{recommended.platformSubtitle} · {payload.tag}</p>
+          </div>
+          <a
+            className="desktop-download-recommended-cta"
+            href={recommended.asset.url}
+            download={recommended.asset.name}
+            aria-label={ariaFmt(d.downloadAria, recommended.label)}
+          >
+            {d.downloadRecommended.replace("{label}", recommended.label)}
+            <Download strokeWidth={2} aria-hidden />
+          </a>
+        </div>
+      ) : null}
+
+      <div className="desktop-download-list-header">
+        <p className="desktop-download-list-title">
+          {recommended ? d.otherDownloads : `${platformName} · ${platformSubtitle}`}
+        </p>
+        {platformSelector}
+      </div>
+
+      <ul className="download-os-list" id="desktop-download-options">
+        {rows.filter((row) => row.id !== recommended?.id).map((row) => (
           <li key={row.id} className="download-os-item">
             <div className="download-os-item-main">
               <span className="download-os-item-label">{row.label}</span>
-              {suggested === row.id ? (
-                <span className="download-badge-suggested">{d.thisDevice}</span>
-              ) : null}
             </div>
             <div className="download-os-item-actions">
               {row.asset ? (
