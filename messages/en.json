@@ -14,6 +14,7 @@
   },
   "landing": {
     "nav": {
+      "products": "Products",
       "download": "Start",
       "channels": "Surfaces",
       "workflows": "Workflows",
@@ -392,6 +393,227 @@
       "license": "License",
       "issues": "Issues",
       "copyright": "© {year} xopcai · MIT License"
+    },
+    "products": {
+      "nav": {
+        "home": "Home",
+        "operator": "Worker",
+        "code": "Code",
+        "gateway": "Gateway"
+      },
+      "home": {
+        "kicker": "XOPC Agents",
+        "titleLine1": "One runtime.",
+        "titleLine2": "Two ways to deliver work.",
+        "desc": "Let agents keep working within the devices, data, identity, and workflows you own—then choose the entry point for the job at hand.",
+        "operator": {
+          "label": "For everyday computer work",
+          "name": "XOPC Worker",
+          "desc": "Hand over a goal. The agent plans, acts, asks at key decision points, and gives the result back to you.",
+          "cta": "Meet the computer agent"
+        },
+        "code": {
+          "label": "For software engineering",
+          "name": "XOPC Code",
+          "desc": "Connect coding agents to a local repository and receive reviewable, verifiable changes.",
+          "cta": "Meet the coding agent"
+        },
+        "gateway": {
+          "label": "As a local gateway service",
+          "name": "XOPC Gateway",
+          "desc": "Connect a local xopc runtime to web, mobile, messaging channels, and APIs as a service.",
+          "cta": "Meet Gateway"
+        }
+      },
+      "operator": {
+        "name": "XOPC Worker",
+        "kicker": "XOPC Worker · Computer agent",
+        "metaTitle": "XOPC Worker | A computer agent you can delegate to",
+        "metaDescription": "Plan, act, confirm, and report on everyday computer work in your environment—while you keep control of the data, keys, and runtime.",
+        "titleLine1": "Delegate the task.",
+        "titleLine2": "Keep the control.",
+        "desc": "XOPC Worker understands a goal, plans the work, uses web and connected tools in your environment, asks before consequential actions, and returns a clear record with the result.",
+        "primaryCta": "Watch the demo",
+        "secondaryCta": "Get started with xopc",
+        "media": {
+          "title": "Needed: complete Worker task demo",
+          "action": "Record goal → plan → browser/tool execution → approval → result, then export it to the file below",
+          "ariaLabel": "XOPC Worker complete task demonstration"
+        },
+        "flow": {
+          "kicker": "Execution you can see",
+          "title": "Delegate without disappearing from the loop.",
+          "desc": "Worker is more than a few automated clicks. It turns work into a process you can understand, inspect, and resume.",
+          "steps": [
+            { "title": "Set the goal", "body": "Describe what needs to move forward and what a useful result looks like." },
+            { "title": "See the plan", "body": "Review the breakdown before execution, then add context or boundaries when needed." },
+            { "title": "Act and pause", "body": "The agent uses allowed tools to progress, then stops when a decision belongs to you." },
+            { "title": "Deliver and continue", "body": "Receive the result and its record, with a clear next step instead of a one-off chat." }
+          ]
+        },
+        "capabilities": {
+          "kicker": "Built for real work",
+          "title": "From a goal to work already in motion.",
+          "desc": "Connect web, files, information entry points, and durable workflows to one observable agent runtime.",
+          "items": [
+            { "title": "Goal decomposition", "body": "Organize a natural-language objective into trackable tasks and steps instead of forcing complex work into one prompt." },
+            { "title": "Cross-tool execution", "body": "Let work move through the browser, files, and connected work entry points." },
+            { "title": "Human in the loop", "body": "Keep decisions, authorizations, and sending actions that matter with you." },
+            { "title": "Durable context", "body": "Use Sessions, Projects, Goals, and Workflows to retain state so follow-up work can continue." }
+          ]
+        },
+        "scenarios": {
+          "kicker": "Start with the outcome",
+          "title": "Work worth handing to Worker.",
+          "items": [
+            { "eyebrow": "Research", "title": "Research and decision preparation", "body": "Gather information from multiple sources and turn it into notes, a table, or grounded next steps." },
+            { "eyebrow": "Operations", "title": "Recurring back-office work", "body": "Turn a fixed process into observable tasks, taking over only at exceptions or key decisions." },
+            { "eyebrow": "Collaboration", "title": "Status synthesis and weekly updates", "body": "Shape scattered progress, source material, and todos into a deliverable that can keep evolving." },
+            { "eyebrow": "Personal", "title": "Cross-app personal tasks", "body": "Let a goal travel through everyday tools instead of being trapped in a chat window." }
+          ]
+        },
+        "trust": {
+          "kicker": "Runs inside your boundary",
+          "title": "Visible, controllable, and yours.",
+          "items": [
+            "Local-first: you control the data, keys, and runtime environment.",
+            "Visible process: know what the agent is doing and where it is waiting.",
+            "Clear boundaries: return high-impact actions to a person for confirmation."
+          ]
+        },
+        "cross": {
+          "kicker": "The same xopc runtime",
+          "title": "Need an agent to change a local codebase?",
+          "desc": "XOPC Code organizes coding agents, project workspaces, change review, and verification records into another complete delivery path.",
+          "cta": "Explore {product}"
+        }
+      },
+      "code": {
+        "name": "XOPC Code",
+        "kicker": "XOPC Code · Coding agent",
+        "metaTitle": "XOPC Code | Verifiable coding agents in local repositories",
+        "metaDescription": "Connect Codex, Claude Code, and other coding capabilities to a local workspace, with built-in Codebase Memory for reviewable, verifiable code changes.",
+        "titleLine1": "From request to",
+        "titleLine2": "reviewable code changes.",
+        "desc": "XOPC Code organizes coding work in your local project: understand the repository, make a plan, change code, run verification, and clearly present the diff and result. Built-in Codebase Memory turns the repository into a queryable knowledge graph, so agents do not have to guess context file by file.",
+        "primaryCta": "See the coding flow",
+        "secondaryCta": "Get started with xopc",
+        "media": {
+          "title": "Needed: complete Code delivery demo",
+          "action": "Record request → repository understanding → change → test/check → diff summary, then export it to the file below",
+          "ariaLabel": "XOPC Code complete coding-task demonstration"
+        },
+        "flow": {
+          "kicker": "Delivery you can verify",
+          "title": "Make the coding process a reviewable loop.",
+          "desc": "The point is not how much code appears at once; it is understanding, changing, validating, and handing off a real project responsibly.",
+          "steps": [
+            { "title": "Understand the project", "body": "Build task-relevant project context from the request and local workspace." },
+            { "title": "Propose a plan", "body": "Clarify the implementation path, impact area, and required verification before editing." },
+            { "title": "Make the change", "body": "Use connected coding agents to progress implementation and fixes in the workspace." },
+            { "title": "Review and verify", "body": "Use the diff, commands, and verification results to show what changed and what deserves attention." }
+          ]
+        },
+        "capabilities": {
+          "kicker": "Built around local projects",
+          "title": "Bring coding capability into the work, not another silo.",
+          "desc": "XOPC Code gives Codex, Claude Code, and other coding capabilities project context, task structure, and a reviewable delivery surface; Codebase Memory makes code structure, relationships, and impact scope part of that engineering understanding.",
+          "items": [
+            { "title": "Use your coding agents", "body": "Connect the coding capability you prefer for the task instead of being locked to one model or tool." },
+            { "title": "Codebase Memory", "body": "Use a built-in code knowledge graph for functions, types, call chains, routes, and cross-service relationships—then combine semantic search, structural queries, and impact analysis to find relevant code quickly." },
+            { "title": "Trackable changes", "body": "Organize code changes, executed commands, and verification results into a record people can review." },
+            { "title": "From code into workflow", "body": "Let coding tasks continue through xopc Goals, Workflows, and surfaces instead of ending at a terminal." }
+          ]
+        },
+        "scenarios": {
+          "kicker": "Start with an engineering task",
+          "title": "Work worth handing to Code.",
+          "items": [
+            { "eyebrow": "Build", "title": "From issue to implementation plan", "body": "Understand the request and impact area before receiving a reviewable path to implementation." },
+            { "eyebrow": "Fix", "title": "Bug investigation and repair", "body": "Trace a problem in the real repository, make the fix, and return the verification result." },
+            { "eyebrow": "Evolve", "title": "Refactoring and test coverage", "body": "Break structural change into verifiable steps to reduce the risk of changing code without checking outcomes." },
+            { "eyebrow": "Understand", "title": "Codebase research and technical proposals", "body": "Query Codebase Memory for architecture, call paths, and impact scope, then turn repository exploration into technical conclusions and a handoff-ready next-step plan." }
+          ]
+        },
+        "trust": {
+          "kicker": "See it before accepting it",
+          "title": "Give every change a basis.",
+          "items": [
+            "Your workspace: work around local projects and established tools.",
+            "Your choice: connect different coding agents and providers for different tasks.",
+            "Your review: use changes and verification records to decide whether to accept delivery."
+          ]
+        },
+        "cross": {
+          "kicker": "The same xopc runtime",
+          "title": "Need an agent to progress everyday computer work?",
+          "desc": "XOPC Worker organizes goals, tool execution, approvals, and durable state into a delivery path for real-world tasks.",
+          "cta": "Explore {product}"
+        }
+      },
+      "gateway": {
+        "name": "XOPC Gateway",
+        "kicker": "XOPC Gateway · Local gateway service",
+        "metaTitle": "XOPC Gateway | Make a local AI runtime a connected service",
+        "metaDescription": "Connect a local xopc runtime to web, mobile, messaging channels, and APIs while keeping control of configuration, identity, and data boundaries.",
+        "titleLine1": "Make your local runtime",
+        "titleLine2": "a connected service.",
+        "desc": "XOPC Gateway brings the agents, state, and workflows running in your environment to web, mobile, messaging channels, and APIs. It is a unified entry point—not another isolated backend.",
+        "primaryCta": "Watch the service demo",
+        "secondaryCta": "Get started with xopc",
+        "media": {
+          "title": "Needed: Gateway service connection demo",
+          "action": "Record runtime start → channel or API connection → client response → service status, then export it to the file below",
+          "ariaLabel": "XOPC Gateway service connection demonstration"
+        },
+        "flow": {
+          "kicker": "From local runtime to service entry point",
+          "title": "Run once. Connect from many places.",
+          "desc": "Gateway exposes a running xopc instance as a controlled entry point, so clients and channels share the same state and execution capability.",
+          "steps": [
+            { "title": "Run the runtime", "body": "Start xopc in an environment you own, retaining local configuration, data, and provider choices." },
+            { "title": "Connect surfaces", "body": "Configure web, mobile, messaging channels, or other enabled client entry points." },
+            { "title": "Serve clients", "body": "Use Gateway APIs and streaming connections for clients to access sessions, tasks, and runtime status." },
+            { "title": "Operate continuously", "body": "Observe service and channel status so the local runtime can operate as a durable service." }
+          ]
+        },
+        "capabilities": {
+          "kicker": "One runtime, one service boundary",
+          "title": "Put connection capability in one place.",
+          "desc": "Gateway provides a unified service layer for xopc clients, channels, and integrations, avoiding separate state and auth maintenance for every surface.",
+          "items": [
+            { "title": "One service entry point", "body": "Let web, mobile, and other clients connect to one local runtime instead of duplicating agent state." },
+            { "title": "Gateway APIs and streams", "body": "Expose service interfaces for sessions, tasks, state, and real-time updates." },
+            { "title": "Channel runtimes", "body": "Load and manage messaging channel runtimes while keeping those conversation surfaces connected to core agent capability." },
+            { "title": "Service lifecycle", "body": "Manage the local Gateway around start, status, restart, and system-service operation." }
+          ]
+        },
+        "scenarios": {
+          "kicker": "Start with a connection need",
+          "title": "Ways to use Gateway.",
+          "items": [
+            { "eyebrow": "Multi-device", "title": "Bring one runtime to more devices", "body": "Let web, mobile, desktop, and other surfaces see the same sessions, projects, and execution state." },
+            { "eyebrow": "Channels", "title": "Connect agents to messaging surfaces", "body": "Let people start and receive the same agent work through connected messaging channels." },
+            { "eyebrow": "Integration", "title": "Provide a backend for custom clients", "body": "Use APIs and streaming interfaces to bring xopc capability into existing products or internal tools." },
+            { "eyebrow": "Operations", "title": "Run continuously as a service", "body": "Keep a local AI runtime available over a manageable service lifecycle." }
+          ]
+        },
+        "trust": {
+          "kicker": "The service remains in your control",
+          "title": "Connect more surfaces without giving up the boundary.",
+          "items": [
+            "Local operation: start Gateway around your own device, configuration, and runtime environment.",
+            "Unified state: clients and channels connect to one runtime instead of scattered copies.",
+            "Operability: inspect service and channel status, then manage the lifecycle when needed."
+          ]
+        },
+        "cross": {
+          "kicker": "The same xopc runtime",
+          "title": "Need an agent to complete a concrete computer task?",
+          "desc": "XOPC Worker brings the runtime behind Gateway into everyday work that can be delegated and confirmed.",
+          "cta": "Explore {product}"
+        }
+      }
     },
     "loop": {
       "titleLine1": "One runtime.",

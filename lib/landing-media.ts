@@ -78,6 +78,40 @@ export const LANDING_MEDIA = {
   },
 } as const;
 
+/**
+ * Product-page media slots. Keep `ready: false` until the requested recording
+ * has been added to `public/`; the page then renders a precise handoff instead
+ * of implying that a placeholder is product footage.
+ */
+export const PRODUCT_MEDIA = {
+  operator: {
+    demo: slot("/media/products/worker/demo", "mp4", {
+      ready: true,
+      width: 1920,
+      height: 1080,
+      spec: "1920×1080 · 15.9s · MP4 (H.264) · desktop task completed end-to-end",
+    }),
+  },
+  code: {
+    demo: slot("/media/products/code/demo", "mp4", {
+      ready: true,
+      width: 1920,
+      height: 1080,
+      spec: "1920×1080 · 15.2s · MP4 (H.264) · request → diff → verification",
+    }),
+  },
+  gateway: {
+    demo: slot("/media/products/gateway/demo", "mp4", {
+      ready: true,
+      width: 1920,
+      height: 1080,
+      spec: "1920×1080 · 16.6s · MP4 (H.264) · runtime → channel/API → client response",
+    }),
+  },
+} as const;
+
+export type ProductMediaId = keyof typeof PRODUCT_MEDIA;
+
 export const BRAND_MEDIA = {
   logo: {
     basePath: "/brand/logo",

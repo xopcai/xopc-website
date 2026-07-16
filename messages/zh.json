@@ -14,6 +14,7 @@
   },
   "landing": {
     "nav": {
+      "products": "产品",
       "download": "开始",
       "channels": "多端",
       "workflows": "工作流",
@@ -392,6 +393,227 @@
       "license": "许可证",
       "issues": "问题反馈",
       "copyright": "© {year} xopcai · MIT License"
+    },
+    "products": {
+      "nav": {
+        "home": "首页",
+        "operator": "Worker",
+        "code": "Code",
+        "gateway": "Gateway"
+      },
+      "home": {
+        "kicker": "XOPC Agents",
+        "titleLine1": "同一套运行时，",
+        "titleLine2": "两种交付结果。",
+        "desc": "让 Agent 在你拥有的设备、数据、身份和工作流里持续工作；按要完成的工作，选择合适的入口。",
+        "operator": {
+          "label": "面向日常电脑工作",
+          "name": "XOPC Worker",
+          "desc": "把目标交给 AI，让它规划、执行、在关键节点请求确认，并把结果交还给你。",
+          "cta": "了解电脑 Agent"
+        },
+        "code": {
+          "label": "面向软件工程",
+          "name": "XOPC Code",
+          "desc": "在本地代码库中连接编码 Agent，交付可审阅、可验证的改动。",
+          "cta": "了解编码 Agent"
+        },
+        "gateway": {
+          "label": "作为本地 Gateway Service",
+          "name": "XOPC Gateway",
+          "desc": "把本地 xopc runtime 作为服务连接到网页、移动端、消息渠道与 API。",
+          "cta": "了解 Gateway"
+        }
+      },
+      "operator": {
+        "name": "XOPC Worker",
+        "kicker": "XOPC Worker · 电脑 Agent",
+        "metaTitle": "XOPC Worker｜可托付结果的电脑 Agent",
+        "metaDescription": "在你的环境中规划、执行、确认并汇报日常电脑工作；数据、密钥和运行环境由你掌控。",
+        "titleLine1": "把任务交给 AI，",
+        "titleLine2": "不必交出控制权。",
+        "desc": "XOPC Worker 在你的环境中理解目标、拆解步骤、操作网页与工具，在关键节点请求确认，并把过程与结果清楚交还给你。",
+        "primaryCta": "观看演示",
+        "secondaryCta": "开始使用 xopc",
+        "media": {
+          "title": "待补充：Worker 完整任务演示",
+          "action": "请录制“目标 → 计划 → 浏览器/工具执行 → 审批 → 结果”并导出到下方文件",
+          "ariaLabel": "XOPC Worker 完整任务演示视频"
+        },
+        "flow": {
+          "kicker": "可见的执行",
+          "title": "委派，但始终可控。",
+          "desc": "Worker 不是一次性替你点几下按钮；它把工作组织成可理解、可检查、可继续的过程。",
+          "steps": [
+            { "title": "告诉它目标", "body": "用自然语言说明要推进的事情，以及交付标准。" },
+            { "title": "查看计划", "body": "在执行前看到任务拆解，必要时补充背景和边界。" },
+            { "title": "执行与暂停", "body": "Agent 使用被允许的工具推进工作，并在需要你决定时停下来。" },
+            { "title": "交付与后续", "body": "获得结果、记录和可继续推进的下一步，而不只是一次对话。" }
+          ]
+        },
+        "capabilities": {
+          "kicker": "为真实工作而设计",
+          "title": "从目标到已推进的事务。",
+          "desc": "把网页、文件、信息入口与长期工作流连接到同一个可观察的 Agent 运行时。",
+          "items": [
+            { "title": "目标拆解", "body": "将自然语言目标组织成可追踪的任务与步骤，而非把复杂工作压进一条提示词。" },
+            { "title": "跨工具执行", "body": "让任务在浏览器、文件和已连接的工作入口之间推进。" },
+            { "title": "人在回路", "body": "将需要判断、授权或发送的关键动作保留给你确认。" },
+            { "title": "持续上下文", "body": "以 Session、Project、Goal 与 Workflow 保存状态，使后续工作能接着完成。" }
+          ]
+        },
+        "scenarios": {
+          "kicker": "从结果开始",
+          "title": "适合交给 Worker 的工作。",
+          "items": [
+            { "eyebrow": "研究", "title": "资料整理与决策准备", "body": "从多个来源收集信息，整理为带出处的笔记、表格或下一步建议。" },
+            { "eyebrow": "运营", "title": "重复性后台工作", "body": "将固定流程变成可观察的任务，在异常或关键节点让你接管。" },
+            { "eyebrow": "协作", "title": "信息汇总与周报", "body": "把分散的进展、材料和待办整理成可发送、可继续更新的交付物。" },
+            { "eyebrow": "个人", "title": "跨应用的个人事务", "body": "让目标穿过你的日常工具，而不是困在单一聊天窗口中。" }
+          ]
+        },
+        "trust": {
+          "kicker": "运行在你的边界内",
+          "title": "可见、可控、归你所有。",
+          "items": [
+            "本地优先：数据、密钥与运行环境由你掌控。",
+            "过程可见：知道 Agent 正在做什么，以及目前停在哪里。",
+            "明确边界：把需要确认的高影响操作交回给人。"
+          ]
+        },
+        "cross": {
+          "kicker": "同一个 xopc runtime",
+          "title": "需要让 Agent 改动本地代码库？",
+          "desc": "XOPC Code 将编码 Agent、项目工作区、变更审阅和验证记录组织成另一条完整交付路径。",
+          "cta": "探索 {product}"
+        }
+      },
+      "code": {
+        "name": "XOPC Code",
+        "kicker": "XOPC Code · 编码 Agent",
+        "metaTitle": "XOPC Code｜本地代码库中的可验证编码 Agent",
+        "metaDescription": "在本地工作区中连接 Codex、Claude Code 等编码能力；内置 Codebase Memory 代码知识图谱，交付可审阅、可验证的代码改动。",
+        "titleLine1": "从需求到可审阅的，",
+        "titleLine2": "代码改动。",
+        "desc": "XOPC Code 在你的本地项目中组织编码任务：理解仓库、制定计划、修改代码、运行验证，并清楚呈现变更与结果。内置 Codebase Memory 将代码库沉淀为可查询的知识图谱，让 Agent 不必靠逐文件猜测上下文。",
+        "primaryCta": "查看编码流程",
+        "secondaryCta": "开始使用 xopc",
+        "media": {
+          "title": "待补充：Code 完整编码交付演示",
+          "action": "请录制“需求 → 工程理解 → 改动 → 测试/检查 → diff 总结”并导出到下方文件",
+          "ariaLabel": "XOPC Code 完整编码任务演示视频"
+        },
+        "flow": {
+          "kicker": "可验证的交付",
+          "title": "把编码过程变成可审阅的闭环。",
+          "desc": "重点不是一次生成多少代码，而是围绕真实工程完成理解、改动、验证和交接。",
+          "steps": [
+            { "title": "理解工程", "body": "从需求和本地工作区出发，建立与当前任务相关的项目上下文。" },
+            { "title": "提出计划", "body": "在修改前明确实施路径、影响范围和需要验证的内容。" },
+            { "title": "完成改动", "body": "调用已连接的编码 Agent 在工作区中推进实现与修复。" },
+            { "title": "审阅与验证", "body": "用 diff、命令和验证结果交代做了什么，以及还需要关注什么。" }
+          ]
+        },
+        "capabilities": {
+          "kicker": "围绕本地工程",
+          "title": "把编码能力接入工作，而非另起一个孤岛。",
+          "desc": "XOPC Code 为 Codex、Claude Code 等编码能力提供项目上下文、任务组织和可审阅的交付界面；Codebase Memory 进一步把代码结构、关系与影响范围变成可查询的工程认知。",
+          "items": [
+            { "title": "接入你的编码 Agent", "body": "根据任务连接和使用你偏好的编码能力，而不是锁定在单一模型或工具。" },
+            { "title": "Codebase Memory", "body": "内置代码知识图谱，索引函数、类型、调用链、路由与跨服务关系；结合语义检索、结构化查询和影响分析快速定位相关代码。" },
+            { "title": "变更可追踪", "body": "将代码改动、执行命令和验证结果组织成能被人审阅的记录。" },
+            { "title": "从代码进入工作流", "body": "编码任务可以继续进入 xopc 的 Goal、Workflow 与多端入口，而不止停在终端。" }
+          ]
+        },
+        "scenarios": {
+          "kicker": "从工程任务开始",
+          "title": "适合交给 Code 的工作。",
+          "items": [
+            { "eyebrow": "实现", "title": "从 issue 到实施计划", "body": "先理解需求和影响范围，再让 Agent 交付可审阅的实现路径。" },
+            { "eyebrow": "修复", "title": "Bug 定位与修复", "body": "围绕真实仓库追踪问题、完成修复，并把验证结果交还给你。" },
+            { "eyebrow": "演进", "title": "重构与测试补全", "body": "把结构性改动拆成可验证步骤，减少只改代码、不看结果的风险。" },
+            { "eyebrow": "理解", "title": "代码库调研与方案", "body": "利用 Codebase Memory 查询架构、调用路径与影响范围，将仓库探索沉淀为可交接的技术结论和下一步计划。" }
+          ]
+        },
+        "trust": {
+          "kicker": "交付前看得见",
+          "title": "让每次改动都有依据。",
+          "items": [
+            "你的工作区：围绕本地项目和已有工具习惯工作。",
+            "你的选择：可根据任务接入不同的编码 Agent 与 Provider。",
+            "你的审阅：通过改动与验证记录判断是否接受交付。"
+          ]
+        },
+        "cross": {
+          "kicker": "同一个 xopc runtime",
+          "title": "需要让 Agent 推进日常电脑工作？",
+          "desc": "XOPC Worker 将目标、工具执行、审批和持续状态组织成面向现实任务的交付路径。",
+          "cta": "探索 {product}"
+        }
+      },
+      "gateway": {
+        "name": "XOPC Gateway",
+        "kicker": "XOPC Gateway · 本地 Gateway Service",
+        "metaTitle": "XOPC Gateway｜让本地 AI runtime 成为可连接的服务",
+        "metaDescription": "将本地 xopc runtime 连接到网页、移动端、消息渠道和 API，同时保留对配置、身份与数据边界的掌控。",
+        "titleLine1": "让你的本地 runtime，",
+        "titleLine2": "成为可连接的服务。",
+        "desc": "XOPC Gateway 把正在你环境中运行的 Agent、状态与工作流带到网页、移动端、消息渠道和 API；它是统一入口，不是另一套孤立后端。",
+        "primaryCta": "观看服务演示",
+        "secondaryCta": "开始使用 xopc",
+        "media": {
+          "title": "待补充：Gateway 服务连接演示",
+          "action": "请录制“runtime 启动 → 渠道或 API 接入 → 客户端响应 → 服务状态”并导出到下方文件",
+          "ariaLabel": "XOPC Gateway 服务连接演示视频"
+        },
+        "flow": {
+          "kicker": "从本地运行时到服务入口",
+          "title": "一次运行，多处连接。",
+          "desc": "Gateway 将运行中的 xopc 统一暴露为受控入口，让不同客户端和渠道接入同一份状态与执行能力。",
+          "steps": [
+            { "title": "运行 runtime", "body": "在你拥有的环境中启动 xopc，并保留本地配置、数据和 Provider 选择。" },
+            { "title": "连接入口", "body": "配置网页、移动端、消息渠道或其他已启用的客户端入口。" },
+            { "title": "提供服务", "body": "通过 Gateway API 和流式连接让客户端访问会话、任务与运行状态。" },
+            { "title": "持续运维", "body": "查看服务与渠道状态，使本地 runtime 成为可持续运行的服务。" }
+          ]
+        },
+        "capabilities": {
+          "kicker": "一套 runtime，一个服务边界",
+          "title": "把连接能力放在同一个地方。",
+          "desc": "Gateway 为 xopc 的客户端、渠道与集成提供统一服务层，减少每个入口各自维护状态和认证的成本。",
+          "items": [
+            { "title": "统一服务入口", "body": "让网页、移动端和其他客户端连接同一个本地 runtime，而不是复制一份 Agent 状态。" },
+            { "title": "Gateway API 与流", "body": "为会话、任务、状态与实时更新提供可供客户端调用的服务接口。" },
+            { "title": "渠道运行时", "body": "加载和管理消息渠道运行时，使对话入口与核心 Agent 能力保持连接。" },
+            { "title": "服务生命周期", "body": "围绕启动、状态、重启与系统服务运行方式管理本地 Gateway。" }
+          ]
+        },
+        "scenarios": {
+          "kicker": "从连接需求开始",
+          "title": "适合使用 Gateway 的方式。",
+          "items": [
+            { "eyebrow": "多端", "title": "将同一 runtime 带到更多设备", "body": "让网页、移动端和桌面等入口看到同一份会话、项目和执行状态。" },
+            { "eyebrow": "渠道", "title": "将 Agent 接入消息入口", "body": "让用户在已连接的消息渠道中发起和接收同一套 Agent 工作。" },
+            { "eyebrow": "集成", "title": "为自定义客户端提供后端", "body": "通过 API 与流式接口，将 xopc 能力接入团队已有的产品或内部工具。" },
+            { "eyebrow": "运行", "title": "以服务方式持续运行", "body": "让本地 AI runtime 在可管理的服务生命周期中长期可用。" }
+          ]
+        },
+        "trust": {
+          "kicker": "服务仍在你的控制之下",
+          "title": "连接更多入口，不放弃边界。",
+          "items": [
+            "本地运行：Gateway 服务围绕你自己的设备、配置和运行环境启动。",
+            "统一状态：不同客户端与渠道连接同一 runtime，而非分散副本。",
+            "可运维性：持续查看服务和渠道状态，按需要管理生命周期。"
+          ]
+        },
+        "cross": {
+          "kicker": "同一个 xopc runtime",
+          "title": "需要让 Agent 为你完成具体电脑任务？",
+          "desc": "XOPC Worker 将 Gateway 背后的运行时能力带到可托付、可确认的日常工作流程中。",
+          "cta": "探索 {product}"
+        }
+      }
     },
     "loop": {
       "titleLine1": "一套运行时，",
