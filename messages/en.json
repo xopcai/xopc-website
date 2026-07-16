@@ -433,7 +433,6 @@
         "titleLine1": "Delegate the task.",
         "titleLine2": "Keep the control.",
         "desc": "XOPC Worker understands a goal, plans the work, uses web and connected tools in your environment, asks before consequential actions, and returns a clear record with the result.",
-        "primaryCta": "Watch the demo",
         "secondaryCta": "Get started with xopc",
         "media": {
           "title": "Needed: complete Worker task demo",
@@ -496,7 +495,6 @@
         "titleLine1": "From request to",
         "titleLine2": "reviewable code changes.",
         "desc": "XOPC Code organizes coding work in your local project: understand the repository, make a plan, change code, run verification, and clearly present the diff and result. Built-in Codebase Memory turns the repository into a queryable knowledge graph, so agents do not have to guess context file by file.",
-        "primaryCta": "See the coding flow",
         "secondaryCta": "Get started with xopc",
         "media": {
           "title": "Needed: complete Code delivery demo",
@@ -559,7 +557,6 @@
         "titleLine1": "Make your local runtime",
         "titleLine2": "a connected service.",
         "desc": "XOPC Gateway brings the agents, state, and workflows running in your environment to web, mobile, messaging channels, and APIs. It is a unified entry point—not another isolated backend.",
-        "primaryCta": "Watch the service demo",
         "secondaryCta": "Get started with xopc",
         "media": {
           "title": "Needed: Gateway service connection demo",

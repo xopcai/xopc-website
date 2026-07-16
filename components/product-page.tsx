@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Home, Play, ShieldCheck } from "lucide-react";
+import { ArrowRight, Github, Home, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
@@ -93,11 +93,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
             </h1>
             <p>{P.desc}</p>
             <div className="product-hero-actions">
-              <a href="#demo" className="product-button product-button--primary">
-                <Play aria-hidden />
-                {P.primaryCta}
-              </a>
-              <Link href={`${homeHref}#download`} className="product-button product-button--secondary">
+              <Link href={homeHref} className="product-button product-button--secondary">
                 {P.secondaryCta}
                 <ArrowRight aria-hidden />
               </Link>
