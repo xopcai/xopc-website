@@ -430,16 +430,21 @@
       },
       "operator": {
         "name": "XOPC Worker",
-        "kicker": "XOPC Worker · Computer agent",
-        "metaTitle": "XOPC Worker | A computer agent you can delegate to",
-        "metaDescription": "Plan, act, confirm, and report on everyday computer work in your environment—while you keep control of the data, keys, and runtime.",
-        "titleLine1": "Delegate the task.",
-        "titleLine2": "Keep the control.",
-        "desc": "XOPC Worker understands a goal, plans the work, uses web and connected tools in your environment, asks before consequential actions, and returns a clear record with the result.",
+        "kicker": "XOPC Worker · Electron desktop agent",
+        "metaTitle": "XOPC Worker | A cross-platform desktop agent",
+        "metaDescription": "An Electron desktop agent for Windows, macOS, and Linux that plans, acts, confirms, and delivers work in your local environment.",
+        "titleLine1": "Put desktop work",
+        "titleLine2": "in motion with AI.",
+        "desc": "XOPC Worker is a cross-platform agent app that runs on your desktop. It understands the goal, uses web and tools available on your machine, and returns control before consequential actions.",
         "secondaryCta": "Download Worker",
+        "desktopPoints": [
+          "Electron cross-platform desktop app",
+          "Windows · macOS · Linux",
+          "Runs in your local environment"
+        ],
         "workerDownload": {
           "kicker": "Download Worker",
-          "title": "Download xopc Worker.",
+          "title": "Download the xopc Worker desktop app.",
           "desc": "For Windows, macOS, and Linux. We’ll recommend the installer that matches this device first."
         },
         "quickStart": {
@@ -460,35 +465,35 @@
           "ariaLabel": "XOPC Worker complete task demonstration"
         },
         "flow": {
-          "kicker": "Execution you can see",
-          "title": "Delegate without disappearing from the loop.",
-          "desc": "Worker is more than a few automated clicks. It turns work into a process you can understand, inspect, and resume.",
+          "kicker": "Start from your desktop",
+          "title": "Move work all the way forward in your local environment.",
+          "desc": "Worker is more than a few automated clicks. It turns desktop work into a process you can understand, inspect, and resume.",
           "steps": [
-            { "title": "Set the goal", "body": "Describe what needs to move forward and what a useful result looks like." },
-            { "title": "See the plan", "body": "Review the breakdown before execution, then add context or boundaries when needed." },
-            { "title": "Act and pause", "body": "The agent uses allowed tools to progress, then stops when a decision belongs to you." },
-            { "title": "Deliver and continue", "body": "Receive the result and its record, with a clear next step instead of a one-off chat." }
+            { "title": "Start on the desktop", "body": "Describe what needs to move forward and what a useful result looks like." },
+            { "title": "See the plan", "body": "Review the breakdown in Worker, then add context or boundaries when needed." },
+            { "title": "Use local tools", "body": "The agent uses allowed web and tools to progress, then stops when a decision belongs to you." },
+            { "title": "Confirm and deliver", "body": "Receive the result and its record, with a clear next step instead of a one-off chat." }
           ]
         },
         "capabilities": {
-          "kicker": "Built for real work",
-          "title": "From a goal to work already in motion.",
-          "desc": "Connect web, files, information entry points, and durable workflows to one observable agent runtime.",
+          "kicker": "A desktop app, not another chat window",
+          "title": "One app, connected to your real work environment.",
+          "desc": "Connect web, files, information entry points, and durable workflows from your desktop to one observable agent runtime.",
           "items": [
-            { "title": "Goal decomposition", "body": "Organize a natural-language objective into trackable tasks and steps instead of forcing complex work into one prompt." },
-            { "title": "Cross-tool execution", "body": "Let work move through the browser, files, and connected work entry points." },
-            { "title": "Human in the loop", "body": "Keep decisions, authorizations, and sending actions that matter with you." },
-            { "title": "Durable context", "body": "Use Sessions, Projects, Goals, and Workflows to retain state so follow-up work can continue." }
+            { "title": "Cross-platform desktop app", "body": "Built with Electron for Windows, macOS, and Linux, so every work machine has one consistent entry point." },
+            { "title": "Local environment execution", "body": "Move work from the desktop into web, files, and connected tools available on your machine." },
+            { "title": "Execution you can see", "body": "Organize an objective into trackable steps instead of forcing complex work into one prompt." },
+            { "title": "Human in the loop", "body": "Keep decisions, authorizations, and sending actions that matter with you." }
           ]
         },
         "scenarios": {
           "kicker": "Start with the outcome",
           "title": "Work worth handing to Worker.",
           "items": [
-            { "eyebrow": "Research", "title": "Research and decision preparation", "body": "Gather information from multiple sources and turn it into notes, a table, or grounded next steps." },
-            { "eyebrow": "Operations", "title": "Recurring back-office work", "body": "Turn a fixed process into observable tasks, taking over only at exceptions or key decisions." },
-            { "eyebrow": "Collaboration", "title": "Status synthesis and weekly updates", "body": "Shape scattered progress, source material, and todos into a deliverable that can keep evolving." },
-            { "eyebrow": "Personal", "title": "Cross-app personal tasks", "body": "Let a goal travel through everyday tools instead of being trapped in a chat window." }
+            { "eyebrow": "Desktop research", "title": "Research and decision preparation", "body": "Gather information from multiple sources and turn it into notes, a table, or grounded next steps." },
+            { "eyebrow": "Desktop operations", "title": "Recurring back-office work", "body": "Turn a fixed process into observable tasks, taking over only at exceptions or key decisions." },
+            { "eyebrow": "Desktop collaboration", "title": "Status synthesis and weekly updates", "body": "Shape scattered progress, source material, and todos into a deliverable that can keep evolving." },
+            { "eyebrow": "Personal workspace", "title": "Cross-app personal tasks", "body": "Let a goal travel through everyday tools instead of being trapped in a chat window." }
           ]
         },
         "trust": {
@@ -509,23 +514,28 @@
       },
       "code": {
         "name": "XOPC Code",
-        "kicker": "XOPC Code · Coding agent",
-        "metaTitle": "XOPC Code | Verifiable coding agents in local repositories",
-        "metaDescription": "Connect Codex, Claude Code, and other coding capabilities to a local workspace, with built-in Codebase Memory for reviewable, verifiable code changes.",
-        "titleLine1": "From request to",
-        "titleLine2": "reviewable code changes.",
-        "desc": "XOPC Code organizes coding work in your local project: understand the repository, make a plan, change code, run verification, and clearly present the diff and result. Built-in Codebase Memory turns the repository into a queryable knowledge graph, so agents do not have to guess context file by file.",
-        "secondaryCta": "Start with Code",
+        "kicker": "XOPC Code · Terminal agent workspace",
+        "metaTitle": "XOPC Code | Powerful coding agents from your terminal",
+        "metaDescription": "Run xopc in a project directory to use powerful coding agents and their harness, with built-in Codebase Memory and the freedom to switch to non-coding agents in the terminal.",
+        "titleLine1": "From your terminal.",
+        "titleLine2": "Put agents to work.",
+        "desc": "Run xopc from a project directory to use powerful coding agents and their harness for understanding, changing, and verifying a real codebase. Built-in Codebase Memory makes code queryable; when the task is not coding, switch agents in the same terminal and keep moving.",
+        "secondaryCta": "Use from terminal",
+        "terminalPoints": [
+          "Run xopc in your project directory",
+          "A powerful coding agent harness",
+          "Switch to other agents when needed"
+        ],
         "quickStart": {
           "kicker": "Start with Code",
-          "title": "Connect coding agents to a local project.",
-          "desc": "Install xopc, connect the coding capability you prefer, then begin work from a local workspace.",
+          "title": "Start agent work from your terminal.",
+          "desc": "Install xopc, connect the agent you prefer, then code—or switch to another task—from a local project directory.",
           "copy": "Copy",
           "copied": "Copied",
           "steps": [
             { "label": "Install", "title": "Install the xopc CLI", "body": "For developers who already have a Node.js environment.", "command": "npm install -g @xopcai/xopc" },
             { "label": "Connect", "title": "Complete provider onboarding", "body": "Connect Codex, Claude Code, or the coding capability you choose during setup.", "command": "xopc onboard" },
-            { "label": "Code", "title": "Open a local workspace", "body": "Start a coding task from the local TUI and associate it with a real project.", "command": "xopc" }
+            { "label": "Start", "title": "Run xopc in your terminal", "body": "Invoke a coding agent in the project directory, then switch agents when the task changes.", "command": "xopc" }
           ]
         },
         "media": {
@@ -534,25 +544,25 @@
           "ariaLabel": "XOPC Code complete coding-task demonstration"
         },
         "flow": {
-          "kicker": "Delivery you can verify",
-          "title": "Make the coding process a reviewable loop.",
+          "kicker": "From terminal to delivery",
+          "title": "Make coding-agent work a reviewable loop.",
           "desc": "The point is not how much code appears at once; it is understanding, changing, validating, and handing off a real project responsibly.",
           "steps": [
-            { "title": "Understand the project", "body": "Build task-relevant project context from the request and local workspace." },
+            { "title": "Invoke from the project", "body": "Build task-relevant project context from the terminal, request, and local workspace." },
             { "title": "Propose a plan", "body": "Clarify the implementation path, impact area, and required verification before editing." },
-            { "title": "Make the change", "body": "Use connected coding agents to progress implementation and fixes in the workspace." },
+            { "title": "Advance with the harness", "body": "Use connected coding agents to make changes, repair issues, and call the tools needed in the workspace." },
             { "title": "Review and verify", "body": "Use the diff, commands, and verification results to show what changed and what deserves attention." }
           ]
         },
         "capabilities": {
-          "kicker": "Built around local projects",
-          "title": "Bring coding capability into the work, not another silo.",
-          "desc": "XOPC Code gives Codex, Claude Code, and other coding capabilities project context, task structure, and a reviewable delivery surface; Codebase Memory makes code structure, relationships, and impact scope part of that engineering understanding.",
+          "kicker": "One terminal, many agents",
+          "title": "Powerful for coding—and not limited to it.",
+          "desc": "XOPC Code gives coding agents task structure, project context, and a delivery harness in the terminal. Codebase Memory makes code structure, relationships, and impact scope queryable; switch agents directly when the task is not coding.",
           "items": [
-            { "title": "Use your coding agents", "body": "Connect the coding capability you prefer for the task instead of being locked to one model or tool." },
+            { "title": "A powerful coding-agent harness", "body": "Organize context, plans, tool calls, changes, diffs, and verification around a real codebase, so an agent can drive a complete delivery rather than emit isolated snippets." },
             { "title": "Codebase Memory", "body": "Use a built-in code knowledge graph for functions, types, call chains, routes, and cross-service relationships—then combine semantic search, structural queries, and impact analysis to find relevant code quickly." },
-            { "title": "Trackable changes", "body": "Organize code changes, executed commands, and verification results into a record people can review." },
-            { "title": "From code into workflow", "body": "Let coding tasks continue through xopc Goals, Workflows, and surfaces instead of ending at a terminal." }
+            { "title": "Switch agents in the terminal", "body": "Beyond coding, switch from the same entry point to an agent suited for research, synthesis, operations, or everyday tasks." },
+            { "title": "Trackable changes", "body": "Organize code changes, executed commands, and verification results into a record people can review." }
           ]
         },
         "scenarios": {
@@ -562,7 +572,7 @@
             { "eyebrow": "Build", "title": "From issue to implementation plan", "body": "Understand the request and impact area before receiving a reviewable path to implementation." },
             { "eyebrow": "Fix", "title": "Bug investigation and repair", "body": "Trace a problem in the real repository, make the fix, and return the verification result." },
             { "eyebrow": "Evolve", "title": "Refactoring and test coverage", "body": "Break structural change into verifiable steps to reduce the risk of changing code without checking outcomes." },
-            { "eyebrow": "Understand", "title": "Codebase research and technical proposals", "body": "Query Codebase Memory for architecture, call paths, and impact scope, then turn repository exploration into technical conclusions and a handoff-ready next-step plan." }
+            { "eyebrow": "Switch", "title": "Move from coding to another task", "body": "Switch agents from the same terminal when research, synthesis, or everyday work needs to continue beyond the codebase." }
           ]
         },
         "trust": {
@@ -570,7 +580,7 @@
           "title": "Give every change a basis.",
           "items": [
             "Your workspace: work around local projects and established tools.",
-            "Your choice: connect different coding agents and providers for different tasks.",
+            "Your choice: connect different coding agents—or switch to another agent—for the task.",
             "Your review: use changes and verification records to decide whether to accept delivery."
           ]
         },

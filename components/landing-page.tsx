@@ -86,7 +86,7 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
           </div>
           <ul className="nav-links">
             <li>
-              <Link href={`/${locale}/products/operator`}>{L.products.nav.operator}</Link>
+              <Link href={`/${locale}/products/worker`}>{L.products.nav.operator}</Link>
             </li>
             <li>
               <Link href={`/${locale}/products/code`}>{L.products.nav.code}</Link>
@@ -166,10 +166,14 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
             <p>{L.products.home.desc}</p>
           </div>
           <div className="product-choice-grid">
-            {(["operator", "code", "gateway"] as const).map((product) => {
+            {([
+              ["operator", "worker"],
+              ["code", "code"],
+              ["gateway", "gateway"],
+            ] as const).map(([product, slug]) => {
               const item = L.products.home[product];
               return (
-                <Link href={`/${locale}/products/${product}`} className="product-choice-card" key={product}>
+                <Link href={`/${locale}/products/${slug}`} className="product-choice-card" key={product}>
                   <span className="product-choice-label">{item.label}</span>
                   <h3>{item.name}</h3>
                   <p>{item.desc}</p>
