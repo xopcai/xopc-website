@@ -26,6 +26,6 @@ pnpm build
 - Landing page structure: `components/landing-page.tsx`
 - Landing styles: `app/styles/landing/`
 - Download/release proxy routes: `app/api/download/` and `app/api/github/latest-release/`
-- Pinned Whisper model proxy/cache: `app/api/voice/models/`
+- Pinned Whisper and SenseVoice model proxy/cache: `app/api/voice/models/`
 
 The primary product repository is [xopcai/xopc](https://github.com/xopcai/xopc).
