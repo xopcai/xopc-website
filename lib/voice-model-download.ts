@@ -7,12 +7,7 @@ import { Readable } from "node:stream";
 const UPSTREAM_TIMEOUT_MS = 30 * 60_000;
 const IMMUTABLE_CACHE_CONTROL = "public, max-age=31536000, immutable";
 
-const MODEL_REVISIONS = new Map([
-  ["onnx-community/whisper-tiny", "ff4177021cc41f7db950912b73ea4fdf7d01d8e7"],
-  ["onnx-community/whisper-base", "1846881b6b3a3024392c1eea3ad983695bc23925"],
-  ["onnx-community/whisper-small", "36050c46d777d46dc4b5f43f6d90574fc38f8732"],
-]);
-const ALLOWED_MODEL_FILES = new Set([
+const WHISPER_MODEL_FILES = [
   "config.json",
   "generation_config.json",
   "preprocessor_config.json",
@@ -24,6 +19,37 @@ const ALLOWED_MODEL_FILES = new Set([
   "merges.txt",
   "onnx/encoder_model_quantized.onnx",
   "onnx/decoder_model_merged_quantized.onnx",
+] as const;
+
+const MODEL_MANIFEST = new Map<string, { revision: string; files: ReadonlySet<string> }>([
+  [
+    "onnx-community/whisper-tiny",
+    {
+      revision: "ff4177021cc41f7db950912b73ea4fdf7d01d8e7",
+      files: new Set(WHISPER_MODEL_FILES),
+    },
+  ],
+  [
+    "onnx-community/whisper-base",
+    {
+      revision: "1846881b6b3a3024392c1eea3ad983695bc23925",
+      files: new Set(WHISPER_MODEL_FILES),
+    },
+  ],
+  [
+    "onnx-community/whisper-small",
+    {
+      revision: "36050c46d777d46dc4b5f43f6d90574fc38f8732",
+      files: new Set(WHISPER_MODEL_FILES),
+    },
+  ],
+  [
+    "csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17",
+    {
+      revision: "2365baeacb507f821a0c8120fcee3d484dba7a07",
+      files: new Set(["model.int8.onnx", "tokens.txt", "LICENSE"]),
+    },
+  ],
 ]);
 
 export interface VoiceModelFile {
@@ -46,10 +72,11 @@ export function parseVoiceModelPath(segments: string[]): VoiceModelFile {
   const revision = segments[3] ?? "";
   const fileSegments = segments.slice(4);
   const filePath = fileSegments.join("/");
+  const manifest = MODEL_MANIFEST.get(repository);
   if (
-    MODEL_REVISIONS.get(repository) !== revision
+    manifest?.revision !== revision
     || !filePath
-    || !ALLOWED_MODEL_FILES.has(filePath)
+    || !manifest.files.has(filePath)
     || fileSegments.some((part) => !part || part === "." || part === ".." || !/^[a-zA-Z0-9._-]+$/.test(part))
   ) {
     throw new VoiceModelDownloadError("voice_model_not_found", 404);
@@ -92,12 +119,16 @@ async function fetchUpstream(request: Request, model: VoiceModelFile): Promise<R
     const url = `${base}/${model.repository}/resolve/${model.revision}/${model.filePath}`;
     try {
       const response = await fetch(url, {
+        method: request.method === "HEAD" ? "HEAD" : "GET",
         headers: upstreamHeaders(request),
         redirect: "follow",
         signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
         cache: "no-store",
       });
-      if ((response.ok || response.status === 206) && response.body) return response;
+      if (
+        (response.ok || response.status === 206)
+        && (request.method === "HEAD" || response.body)
+      ) return response;
       if (response.status === 404) throw new VoiceModelDownloadError("voice_model_file_not_found", 404);
       throw new Error(`voice model upstream returned ${response.status}`);
     } catch (error) {
