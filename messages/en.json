@@ -121,8 +121,8 @@
         },
         {
           "icon": "layers",
-          "title": "Durable state, not one context window.",
-          "body": "Sessions, projects, goals, notes, workspaces, and run history have explicit ownership. Resume long-running work without reconstructing it every time."
+          "title": "Unified memory, not one context window.",
+          "body": "Sessions, projects, goals, notes, workspaces, and run history have explicit ownership. User memory, preferences, and connected knowledge accumulate in one place for reuse across agents and conversations, while project and workspace context keep their own boundaries."
         },
         {
           "icon": "target",
@@ -137,7 +137,7 @@
         {
           "icon": "bot",
           "title": "Agent capability boundaries are explicit.",
-          "body": "Give each agent its own identity, responsibilities, model roles, workspace, tool policy, skills, memory, and boundaries."
+          "body": "Give each agent its own identity, responsibilities, model roles, workspace, tool and skill policies, workflows, and runtime boundaries. Rules for confirmation, forbidden actions, and escalation are explicit and reusable through shared settings; memory belongs to the unified user context."
         },
         {
           "icon": "puzzle",
@@ -162,7 +162,7 @@
         },
         {
           "title": "Durable state",
-          "desc": "Important information has a home and long-running work can resume.",
+          "desc": "Unified memory carries across agents while project context keeps clear ownership.",
           "items": [
             1,
             2
