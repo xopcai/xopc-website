@@ -186,6 +186,14 @@
       "placeholderAction": "Add asset",
       "items": [
         {
+          "id": "desktop",
+          "label": "Desktop",
+          "tag": "Electron",
+          "caption": "Native desktop experience across the three major platforms.",
+          "imageAlt": "xopc Electron desktop app on macOS",
+          "placeholderTitle": "Desktop · macOS window"
+        },
+        {
           "id": "tui",
           "label": "TUI",
           "tag": "Terminal",
@@ -200,14 +208,6 @@
           "caption": "Open a browser — full console, ready to go.",
           "imageAlt": "xopc gateway web console",
           "placeholderTitle": "Web UI · gateway console"
-        },
-        {
-          "id": "desktop",
-          "label": "Desktop",
-          "tag": "Electron",
-          "caption": "Native desktop experience across the three major platforms.",
-          "imageAlt": "xopc Electron desktop app on macOS",
-          "placeholderTitle": "Desktop · macOS window"
         },
         {
           "id": "mobile",
