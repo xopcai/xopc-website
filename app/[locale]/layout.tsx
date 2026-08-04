@@ -49,7 +49,7 @@ export async function generateMetadata({
       : {}),
     title: {
       default: m.meta.title,
-      template: "%s · xopc",
+      template: "%s · XOPC",
     },
     description: m.meta.description,
     openGraph: {

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "xopc — A Self-hosted Personal AI Runtime",
+    "title": "XOPC — A Self-hosted Personal AI Runtime",
     "description": "Run AI on your hardware. Connect models, agents, sessions, projects, goals, notes, workflows, and automations across terminal, web, desktop, mobile, and messengers.",
     "ogDescription": "xopc is a self-hosted, local-first personal AI runtime. Own your data, keys, and environment while long-running work stays resumable, executable, and triggerable."
   },
