@@ -73,14 +73,16 @@ main() {
     # 2. 同步文件（包含 .next 构建目录）
     echo ""
     echo_step "步骤 2/3: 同步文件到服务器..."
-    rsync -avz \
+    rsync -avz --delete \
         --include='.env.example' \
         --exclude='.env*' \
         --exclude='node_modules' \
         --exclude='.git' \
         --exclude='.data' \
+        --exclude='.xopc-share-staging' \
         --exclude='.DS_Store' \
         --exclude='*.log' \
+        --exclude='*.tsbuildinfo' \
         --exclude='.npmrc' \
         ./ $SERVER:$REMOTE_DIR/
     echo -e "${GREEN}✓ 同步完成${NC}"
@@ -108,8 +110,7 @@ main() {
         # SQLite 应用数据与发布 / CloakBrowser 缓存目录
         mkdir -p .data .data/cloakbrowser-cache
 
-        # 重启 PM2（使用 ecosystem：避免 pnpm 把 `start -- -p 3000` 变成 `next start -- -p 3000`，
-        # Next.js 16 会把 `-p` 误解析为项目目录）
+        # 重启 PM2（使用 ecosystem，避免 pnpm/Next.js 参数转发歧义）
         echo "重启应用..."
         pm2 startOrReload ecosystem.config.cjs --update-env
         pm2 save
