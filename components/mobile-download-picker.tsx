@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Download, ExternalLink, Mail, QrCode } from "lucide-react";
+import { CheckCircle2, Download, ExternalLink, Mail } from "lucide-react";
 import { type FormEvent, useEffect, useState } from "react";
 
 import type { DownloadResolution } from "@/lib/download-resolution";
@@ -9,33 +9,51 @@ import { trackProductEvent } from "@/lib/product-events";
 
 type D = Messages["landing"]["download"];
 
-function MobilePairingGuide({ d }: { d: D }) {
-  return (
-    <div className="mobile-pairing-guide">
-      <div className="mobile-pairing-guide-icon"><QrCode aria-hidden /></div>
-      <div>
-        <h4>{d.mobilePairingTitle}</h4>
-        <ol>
-          <li><strong>{d.mobilePairingStep1Title}</strong> {d.mobilePairingStep1Body}</li>
-          <li><strong>{d.mobilePairingStep2Title}</strong> {d.mobilePairingStep2Body}</li>
-        </ol>
-      </div>
-    </div>
-  );
+let androidPayloadCache: DownloadResolution | null = null;
+let androidPayloadRequest: Promise<DownloadResolution> | null = null;
+let iosPayloadCache: DownloadResolution | null = null;
+let iosPayloadRequest: Promise<DownloadResolution> | null = null;
+
+function loadAndroidPayload(): Promise<DownloadResolution> {
+  if (androidPayloadCache) return Promise.resolve(androidPayloadCache);
+  androidPayloadRequest ??= fetch("/api/downloads/resolve?platform=android")
+    .then((response) => response.json() as Promise<DownloadResolution>)
+    .catch((): DownloadResolution => ({
+      ok: false,
+      platform: "android",
+      status: "unavailable",
+    }))
+    .then((payload) => {
+      androidPayloadCache = payload;
+      return payload;
+    });
+  return androidPayloadRequest;
+}
+
+function loadIosPayload(): Promise<DownloadResolution> {
+  if (iosPayloadCache) return Promise.resolve(iosPayloadCache);
+  iosPayloadRequest ??= fetch("/api/downloads/resolve?platform=ios")
+    .then((response) => response.json() as Promise<DownloadResolution>)
+    .catch((): DownloadResolution => ({
+      ok: false,
+      platform: "ios",
+      status: "unavailable",
+    }))
+    .then((payload) => {
+      iosPayloadCache = payload;
+      return payload;
+    });
+  return iosPayloadRequest;
 }
 
 export function AndroidDownload({ d }: { d: D }) {
-  const [payload, setPayload] = useState<DownloadResolution | null>(null);
+  const [payload, setPayload] = useState<DownloadResolution | null>(() => androidPayloadCache);
 
   useEffect(() => {
     let cancelled = false;
-    void fetch("/api/downloads/resolve?platform=android")
-      .then((response) => response.json() as Promise<DownloadResolution>)
+    void loadAndroidPayload()
       .then((data) => {
         if (!cancelled) setPayload(data);
-      })
-      .catch(() => {
-        if (!cancelled) setPayload({ ok: false, platform: "android", status: "unavailable" });
       });
     return () => {
       cancelled = true;
@@ -43,7 +61,7 @@ export function AndroidDownload({ d }: { d: D }) {
   }, []);
 
   if (payload === null) {
-    return <div className="mobile-download-status" role="status">{d.loading}</div>;
+    return <div className="mobile-download-status" role="status" aria-live="polite">{d.loading}</div>;
   }
 
   if (!payload.ok || payload.platform !== "android" || payload.status !== "available") {
@@ -51,25 +69,22 @@ export function AndroidDownload({ d }: { d: D }) {
   }
 
   return (
-    <div className="mobile-app-stack">
-      <div className="mobile-app-panel">
-        <div className="mobile-app-panel-copy">
-          <span className="mobile-app-eyebrow">{d.androidEyebrow}</span>
-          <h3>{d.androidTitle}</h3>
-          <p>{d.androidBody}</p>
-          <span className="mobile-app-version">{d.currentVersion}: <strong>{payload.version}</strong></span>
-        </div>
-        <a
-          className="mobile-app-primary-action"
-          href={payload.assets[0].url}
-          download={payload.assets[0].name}
-          onClick={() => trackProductEvent("android_download_clicked", { platform: "android" })}
-        >
-          <Download aria-hidden />
-          {d.androidDownload}
-        </a>
+    <div className="mobile-app-panel">
+      <div className="mobile-app-panel-copy">
+        <span className="mobile-app-eyebrow">{d.androidEyebrow}</span>
+        <h3>{d.androidTitle}</h3>
+        <p>{d.androidBody}</p>
+        <span className="mobile-app-version">{d.currentVersion}: <strong>{payload.version}</strong></span>
       </div>
-      <MobilePairingGuide d={d} />
+      <a
+        className="mobile-app-primary-action"
+        href={payload.assets[0].url}
+        download={payload.assets[0].name}
+        onClick={() => trackProductEvent("android_download_clicked", { platform: "android" })}
+      >
+        <Download aria-hidden />
+        {d.androidDownload}
+      </a>
     </div>
   );
 }
@@ -162,17 +177,13 @@ function IosTestFlightSignup({ d }: { d: D }) {
 }
 
 export function IosDistribution({ d }: { d: D }) {
-  const [payload, setPayload] = useState<DownloadResolution | null>(null);
+  const [payload, setPayload] = useState<DownloadResolution | null>(() => iosPayloadCache);
 
   useEffect(() => {
     let cancelled = false;
-    void fetch("/api/downloads/resolve?platform=ios")
-      .then((response) => response.json() as Promise<DownloadResolution>)
+    void loadIosPayload()
       .then((data) => {
         if (!cancelled) setPayload(data);
-      })
-      .catch(() => {
-        if (!cancelled) setPayload({ ok: false, platform: "ios", status: "unavailable" });
       });
     return () => {
       cancelled = true;
@@ -180,7 +191,7 @@ export function IosDistribution({ d }: { d: D }) {
   }, []);
 
   if (payload === null) {
-    return <div className="mobile-download-status" role="status">{d.loading}</div>;
+    return <div className="mobile-download-status" role="status" aria-live="polite">{d.loading}</div>;
   }
   if (!payload.ok || payload.platform !== "ios") {
     return <div className="mobile-download-status mobile-download-status--error">{d.error}</div>;
@@ -189,43 +200,37 @@ export function IosDistribution({ d }: { d: D }) {
   if (payload.status === "available") {
     const asset = payload.assets[0];
     return (
-      <div className="mobile-app-stack">
-        <div className="mobile-app-panel">
-          <div className="mobile-app-panel-copy">
-            <span className="mobile-app-eyebrow">{d.iosEyebrow}</span>
-            <h3>{d.iosAvailableTitle}</h3>
-            <p>{d.iosAvailableBody}</p>
-          </div>
-          <a
-            className="mobile-app-primary-action"
-            href={asset.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackProductEvent("ios_download_clicked", { platform: "ios" })}
-          >
-            <ExternalLink aria-hidden />
-            {payload.channel === "ios-app-store" ? d.iosOpenAppStore : d.iosOpenTestFlight}
-          </a>
+      <div className="mobile-app-panel">
+        <div className="mobile-app-panel-copy">
+          <span className="mobile-app-eyebrow">{d.iosEyebrow}</span>
+          <h3>{d.iosAvailableTitle}</h3>
+          <p>{d.iosAvailableBody}</p>
         </div>
-        <MobilePairingGuide d={d} />
+        <a
+          className="mobile-app-primary-action"
+          href={asset.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackProductEvent("ios_download_clicked", { platform: "ios" })}
+        >
+          <ExternalLink aria-hidden />
+          {payload.channel === "ios-app-store" ? d.iosOpenAppStore : d.iosOpenTestFlight}
+        </a>
       </div>
     );
   }
 
   return (
-    <div className="mobile-app-stack">
-      {payload.acceptingSignups ? (
-        <IosTestFlightSignup d={d} />
-      ) : (
-        <div className="mobile-app-panel">
-          <div className="mobile-app-panel-copy">
-            <span className="mobile-app-eyebrow">{d.iosEyebrow}</span>
-            <h3>{d.iosPausedTitle}</h3>
-            <p>{d.iosPausedBody}</p>
-          </div>
+    payload.acceptingSignups ? (
+      <IosTestFlightSignup d={d} />
+    ) : (
+      <div className="mobile-app-panel">
+        <div className="mobile-app-panel-copy">
+          <span className="mobile-app-eyebrow">{d.iosEyebrow}</span>
+          <h3>{d.iosPausedTitle}</h3>
+          <p>{d.iosPausedBody}</p>
         </div>
-      )}
-      <MobilePairingGuide d={d} />
-    </div>
+      </div>
+    )
   );
 }

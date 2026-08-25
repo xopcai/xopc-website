@@ -8,6 +8,7 @@ import type { DownloadResolution } from "@/lib/download-resolution";
 import { assetPickers, type ReleaseAsset } from "@/lib/release-assets";
 import { RELEASES_INDEX_URL } from "@/lib/downloads";
 import type { Messages } from "@/lib/i18n/messages";
+import { trackProductEvent } from "@/lib/product-events";
 
 type D = Messages["landing"]["download"];
 type ChoiceId = keyof D["choices"];
@@ -42,6 +43,16 @@ const CHOICE_PLATFORM: Record<ChoiceId, DesktopPlatformId> = {
   "linux-x64-appimage": "linux",
   "linux-x64-deb": "linux",
   "linux-arm64-appimage": "linux",
+};
+
+const CHOICE_ARCHITECTURE: Record<ChoiceId, "arm64" | "x64"> = {
+  "mac-arm64": "arm64",
+  "mac-x64": "x64",
+  "win-x64": "x64",
+  "win-arm64": "arm64",
+  "linux-x64-appimage": "x64",
+  "linux-x64-deb": "x64",
+  "linux-arm64-appimage": "arm64",
 };
 
 function ariaFmt(template: string, label: string) {
@@ -130,9 +141,13 @@ export function DesktopDownloadPicker({
     };
   }, [d.choices, d.platformNames, d.platformSubtitles, payload, suggested]);
 
-  if (payload === null) {
+  if (payload === null || payload.platform !== platform) {
     return (
-      <div className="desktop-download-picker desktop-download-picker--loading" role="status">
+      <div
+        className="desktop-download-picker desktop-download-picker--loading"
+        role="status"
+        aria-live="polite"
+      >
         {d.loading}
       </div>
     );
@@ -184,6 +199,14 @@ export function DesktopDownloadPicker({
             href={recommended.asset.url}
             download={recommended.asset.name}
             aria-label={ariaFmt(d.downloadAria, recommended.label)}
+            onClick={() =>
+              trackProductEvent("desktop_download_clicked", {
+                platform: CHOICE_PLATFORM[recommended.id],
+                architecture: CHOICE_ARCHITECTURE[recommended.id],
+                version: payload.version,
+                recommended: true,
+              })
+            }
           >
             {d.downloadRecommended.replace("{label}", recommended.label)}
             <Download strokeWidth={2} aria-hidden />
@@ -211,6 +234,14 @@ export function DesktopDownloadPicker({
                   href={row.asset.url}
                   download={row.asset.name}
                   aria-label={ariaFmt(d.downloadAria, row.label)}
+                  onClick={() =>
+                    trackProductEvent("desktop_download_clicked", {
+                      platform,
+                      architecture: CHOICE_ARCHITECTURE[row.id],
+                      version: payload.version,
+                      recommended: false,
+                    })
+                  }
                 >
                   <Download strokeWidth={2} className="download-os-item-dl-ic" aria-hidden />
                 </a>

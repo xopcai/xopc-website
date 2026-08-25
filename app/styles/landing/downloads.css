@@ -7,7 +7,6 @@
       border-radius: 10px;
       border: 1px dashed var(--edge-bright);
     }
-
     .landing-page .desktop-download-picker--error p{
       margin: 0 0 12px;
     }
@@ -445,53 +444,6 @@
       height: 28px;
       flex: 0 0 auto;
       color: var(--accent);
-    }
-
-    .landing-page .mobile-pairing-guide{
-      display: flex;
-      gap: 13px;
-      padding: 15px 17px;
-      border: 1px solid var(--edge-bright);
-      border-radius: 12px;
-      background: color-mix(in srgb, var(--bg-card) 82%, transparent);
-    }
-
-    .landing-page .mobile-pairing-guide-icon{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      flex: 0 0 auto;
-      border-radius: 9px;
-      background: color-mix(in srgb, var(--accent) 12%, transparent);
-      color: var(--accent);
-    }
-
-    .landing-page .mobile-pairing-guide-icon svg{
-      width: 18px;
-      height: 18px;
-    }
-
-    .landing-page .mobile-pairing-guide h4{
-      margin: 0 0 7px;
-      color: var(--fg-head);
-      font-size: 13px;
-    }
-
-    .landing-page .mobile-pairing-guide ol{
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin: 0;
-      padding-left: 18px;
-      color: var(--fg-mid);
-      font-size: 11px;
-      line-height: 1.55;
-    }
-
-    .landing-page .mobile-pairing-guide strong{
-      color: var(--fg-body);
     }
 
     @media (max-width: 640px) {

@@ -5,10 +5,15 @@ import { recordProductEvent, type SiteLocale } from "@/lib/site-database.server"
 export const runtime = "nodejs";
 
 const DIMENSION_PATTERN = /^[a-z0-9-]{1,32}$/;
+const VERSION_PATTERN = /^[a-zA-Z0-9._+-]{1,64}$/;
 const MAX_BODY_BYTES = 2_048;
 
 function dimension(value: unknown): string | undefined {
   return typeof value === "string" && DIMENSION_PATTERN.test(value) ? value : undefined;
+}
+
+function versionDimension(value: unknown): string | undefined {
+  return typeof value === "string" && VERSION_PATTERN.test(value) ? value : undefined;
 }
 
 export async function POST(request: Request) {
@@ -47,6 +52,9 @@ export async function POST(request: Request) {
     locale,
     method: dimension(body.method),
     platform: dimension(body.platform),
+    architecture: dimension(body.architecture),
+    version: versionDimension(body.version),
+    recommended: typeof body.recommended === "boolean" ? body.recommended : undefined,
   });
   return new Response(null, { status: 204 });
 }
