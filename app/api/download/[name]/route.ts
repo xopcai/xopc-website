@@ -1,6 +1,6 @@
 import {
   assertAllowedReleaseAssetName,
-  serveCachedLatestReleaseDownload,
+  serveCachedDesktopReleaseDownload,
 } from "@/lib/release-download-cache";
 
 export const runtime = "nodejs";
@@ -14,7 +14,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ name: s
     return Response.json({ error: "not_found" }, { status: 404 });
   }
   try {
-    return await serveCachedLatestReleaseDownload(name);
+    return await serveCachedDesktopReleaseDownload(name);
   } catch (e) {
     const msg = e instanceof Error ? e.message : "";
     if (msg === "release_download_lock_timeout") {

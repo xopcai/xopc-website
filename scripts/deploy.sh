@@ -105,7 +105,7 @@ main() {
             fi
         fi
 
-        # 等待列表与发布 / CloakBrowser 缓存目录
+        # SQLite 应用数据与发布 / CloakBrowser 缓存目录
         mkdir -p .data .data/cloakbrowser-cache
 
         # 重启 PM2（使用 ecosystem：避免 pnpm 把 `start -- -p 3000` 变成 `next start -- -p 3000`，
