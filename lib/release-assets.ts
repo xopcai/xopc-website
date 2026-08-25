@@ -22,8 +22,7 @@ export const assetPickers = {
   macX64: (assets: ReleaseAsset[]) =>
     pickFirstMatching(assets, (n) => /-x64\.(dmg|zip)$/i.test(n), ".dmg"),
   winX64: (assets: ReleaseAsset[]) =>
-    pickFirstMatching(assets, (n) => /-x64\.exe$/i.test(n)) ??
-    pickFirstMatching(assets, (n) => /^xopc\.exe$/i.test(n)),
+    pickFirstMatching(assets, (n) => /-x64\.exe$/i.test(n)),
   winArm64: (assets: ReleaseAsset[]) => pickFirstMatching(assets, (n) => /-arm64\.exe$/i.test(n)),
   linuxX64AppImage: (assets: ReleaseAsset[]) => {
     const hits = assets.filter((a) => /-(x64|x86_64)\.AppImage$/i.test(a.name));

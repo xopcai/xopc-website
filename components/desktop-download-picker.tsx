@@ -3,8 +3,8 @@
 import { Download, ExternalLink } from "lucide-react";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 
-import type { LatestReleasePayload } from "@/lib/github-latest-release";
 import { detectArchAsync, detectOsSync, type ClientArch } from "@/lib/client-platform";
+import type { DownloadResolution } from "@/lib/download-resolution";
 import { assetPickers, type ReleaseAsset } from "@/lib/release-assets";
 import { RELEASES_INDEX_URL } from "@/lib/downloads";
 import type { Messages } from "@/lib/i18n/messages";
@@ -12,6 +12,7 @@ import type { Messages } from "@/lib/i18n/messages";
 type D = Messages["landing"]["download"];
 type ChoiceId = keyof D["choices"];
 export type DesktopPlatformId = "macos" | "windows" | "linux";
+type DesktopResolution = Extract<DownloadResolution, { channel: "desktop-stable" }>;
 
 const CHOICE_ORDER: ChoiceId[] = [
   "mac-arm64",
@@ -47,6 +48,10 @@ function ariaFmt(template: string, label: string) {
   return template.replace(/\{label\}/g, label);
 }
 
+function isDesktopResolution(payload: DownloadResolution): payload is DesktopResolution {
+  return payload.ok && payload.channel === "desktop-stable";
+}
+
 export function DesktopDownloadPicker({
   d,
   platform,
@@ -56,24 +61,24 @@ export function DesktopDownloadPicker({
   platform: DesktopPlatformId;
   platformSelector?: ReactNode;
 }) {
-  const [payload, setPayload] = useState<LatestReleasePayload | null>(null);
+  const [payload, setPayload] = useState<DownloadResolution | null>(null);
   const [arch, setArch] = useState<ClientArch>("unknown");
 
   useEffect(() => {
     let cancelled = false;
     void (async () => {
       try {
-        const res = await fetch("/api/github/latest-release");
-        const data = (await res.json()) as LatestReleasePayload;
+        const res = await fetch(`/api/downloads/resolve?platform=${platform}`);
+        const data = (await res.json()) as DownloadResolution;
         if (!cancelled) setPayload(data);
       } catch {
-        if (!cancelled) setPayload({ ok: false });
+        if (!cancelled) setPayload({ ok: false, platform, status: "unavailable" });
       }
     })();
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [platform]);
 
   useEffect(() => {
     void detectArchAsync().then(setArch);
@@ -100,7 +105,7 @@ export function DesktopDownloadPicker({
   }, [arch]);
 
   const rows = useMemo(() => {
-    const assets = payload?.ok === true ? payload.assets : [];
+    const assets = payload && isDesktopResolution(payload) ? payload.assets : [];
     return CHOICE_ORDER.filter((id) => CHOICE_PLATFORM[id] === platform).map((id) => ({
       id,
       label: d.choices[id],
@@ -112,7 +117,7 @@ export function DesktopDownloadPicker({
   const platformSubtitle = d.platformSubtitles[platform];
 
   const recommended = useMemo(() => {
-    if (!suggested || payload?.ok !== true) return null;
+    if (!suggested || !payload || !isDesktopResolution(payload)) return null;
     const asset = PICKERS[suggested](payload.assets);
     if (!asset) return null;
     const recommendedPlatform = CHOICE_PLATFORM[suggested];
@@ -133,7 +138,7 @@ export function DesktopDownloadPicker({
     );
   }
 
-  if (payload.ok === false) {
+  if (!isDesktopResolution(payload)) {
     return (
       <div className="desktop-download-picker desktop-download-picker--error">
         <p>{d.error}</p>
@@ -154,7 +159,7 @@ export function DesktopDownloadPicker({
     <div className="desktop-download-picker desktop-download-picker--single">
       <div className="desktop-download-meta">
         <span className="desktop-download-version">
-          {d.currentVersion}: <strong>{payload.tag}</strong>
+          {d.currentVersion}: <strong>{payload.version}</strong>
         </span>
         <a
           href={RELEASES_INDEX_URL}
@@ -172,7 +177,7 @@ export function DesktopDownloadPicker({
           <div>
             <span className="desktop-download-recommended-label">{d.recommendedForThisDevice}</span>
             <h3>{recommended.platformName} · {recommended.label}</h3>
-            <p>{recommended.platformSubtitle} · {payload.tag}</p>
+            <p>{recommended.platformSubtitle} · {payload.version}</p>
           </div>
           <a
             className="desktop-download-recommended-cta"

@@ -17,6 +17,13 @@ export const ELECTRON_UPDATE_MANIFEST_NAMES = [
 
 const ELECTRON_UPDATE_MANIFEST_SET = new Set<string>(ELECTRON_UPDATE_MANIFEST_NAMES);
 
+const SEMVER_PATTERN = String.raw`(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?`;
+const XOPC_RELEASE_ASSET_PATTERN = new RegExp(
+  `^xopc-(?<version>${SEMVER_PATTERN})-(?:(?:arm64|x64)\\.(?:dmg|zip|exe)|(?:arm64|x86_64)\\.AppImage|(?:arm64|amd64)\\.deb)(?:\\.blockmap)?$`,
+);
+const DESKTOP_RELEASE_TAG_PATTERN = new RegExp(`^v${SEMVER_PATTERN}$`);
+const ANDROID_RELEASE_ASSET_NAME = "xopc-android.apk";
+
 const UA = "xopc-website-release-cache";
 const LOCK_WAIT_MS = 320_000;
 const LOCK_POLL_MS = 400;
@@ -73,13 +80,18 @@ export function assertAllowedReleaseTag(tag: string): void {
 export function assertAllowedReleaseAssetName(name: string): void {
   if (!name || name.length > 220) throw new Error("invalid name");
   if (/[/\\]/.test(name) || name.includes("..")) throw new Error("invalid name");
-  if (/\.yml$/i.test(name)) {
-    if (!ELECTRON_UPDATE_MANIFEST_SET.has(name)) throw new Error("invalid asset type");
-    return;
+  if (ELECTRON_UPDATE_MANIFEST_SET.has(name)) return;
+  if (name === ANDROID_RELEASE_ASSET_NAME) return;
+  if (!XOPC_RELEASE_ASSET_PATTERN.test(name)) throw new Error("invalid asset type");
+}
+
+export function isAllowedReleaseAssetName(name: string): boolean {
+  try {
+    assertAllowedReleaseAssetName(name);
+    return true;
+  } catch {
+    return false;
   }
-  /** electron-updater differential updates (e.g. `app-1.0.0-arm64.zip.blockmap`) */
-  if (/\.blockmap$/i.test(name)) return;
-  if (!/\.(dmg|zip|exe|AppImage|deb)$/i.test(name)) throw new Error("invalid asset type");
 }
 
 export function isElectronUpdateManifestName(name: string): boolean {
@@ -110,62 +122,65 @@ export async function resolveAssetDownloadUrl(tag: string, name: string): Promis
  * 此时从文件名推断 tag 再查对应 release（仍须与 GitHub 资源名完全一致）。
  */
 function candidateTagsInferredFromXopcAssetName(name: string): string[] {
-  if (isElectronUpdateManifestName(name) || name === "xopc.exe") return [];
-
-  const base = name.endsWith(".blockmap") ? name.slice(0, -".blockmap".length) : name;
-  const m = base.match(/^xopc-(.+)-(arm64|amd64|x64|ia32|universal)\.[^.]+$/i);
-  if (!m) return [];
-  const ver = m[1];
-  if (!/^[\w.+]+$/.test(ver)) return [];
-  if (ver.startsWith("v")) return [ver];
-  return [`v${ver}`, ver];
+  const ver = XOPC_RELEASE_ASSET_PATTERN.exec(name)?.groups?.version;
+  if (!ver) return [];
+  return [`v${ver}`];
 }
 
-export type LatestReleaseMeta = {
+export type DesktopRelease = {
   tag: string;
-  assets: { name: string; browser_download_url: string }[];
+  assets: { name: string; url: string }[];
 };
 
 /** 成功拉取后短时间内复用，减轻 GitHub 匿名限流压力 */
-const LATEST_REFRESH_MS = 60_000;
+const DESKTOP_REFRESH_MS = 60_000;
 /** 内存中最近一次成功结果在 GitHub 失败时最多继续用多久 */
-const LATEST_STALE_MEMORY_MS = 86_400_000;
+const DESKTOP_STALE_MEMORY_MS = 86_400_000;
 /** 磁盘快照在 GitHub 失败时最多继续用多久（跨进程重启） */
-const LATEST_STALE_DISK_MS = 7 * 86_400_000;
+const DESKTOP_STALE_DISK_MS = 7 * 86_400_000;
 
-let latestReleaseMemory: { fetchedAt: number; data: LatestReleaseMeta } | null = null;
+let desktopReleaseMemory: { fetchedAt: number; data: DesktopRelease } | null = null;
 
-function latestReleaseDiskPath(): string {
-  return path.join(/* turbopackIgnore: true */ process.cwd(), ".data", "github-latest-release.json");
+function desktopReleaseDiskPath(): string {
+  return path.join(/* turbopackIgnore: true */ process.cwd(), ".data", "github-desktop-release.json");
 }
 
-async function readLatestReleaseFromDisk(): Promise<{ savedAt: number; data: LatestReleaseMeta } | null> {
+async function readDesktopReleaseFromDisk(): Promise<{ savedAt: number; data: DesktopRelease } | null> {
   try {
-    const raw = await readFile(/* turbopackIgnore: true */ latestReleaseDiskPath(), "utf8");
+    const raw = await readFile(/* turbopackIgnore: true */ desktopReleaseDiskPath(), "utf8");
     const j = JSON.parse(raw) as {
       savedAt: number;
       tag: string;
-      assets: { name: string; browser_download_url: string }[];
+      assets: { name: string; url: string }[];
     };
-    if (typeof j.savedAt !== "number" || !j.tag || !Array.isArray(j.assets)) return null;
-    return { savedAt: j.savedAt, data: { tag: j.tag, assets: j.assets } };
+    if (
+      typeof j.savedAt !== "number" ||
+      !DESKTOP_RELEASE_TAG_PATTERN.test(j.tag) ||
+      !Array.isArray(j.assets)
+    ) return null;
+    const assets = j.assets.filter((asset) => isAllowedReleaseAssetName(asset.name));
+    if (!assets.some((asset) => XOPC_RELEASE_ASSET_PATTERN.test(asset.name))) return null;
+    return {
+      savedAt: j.savedAt,
+      data: { tag: j.tag, assets },
+    };
   } catch {
     return null;
   }
 }
 
-async function writeLatestReleaseToDisk(data: LatestReleaseMeta): Promise<void> {
+async function writeDesktopReleaseToDisk(data: DesktopRelease): Promise<void> {
   try {
-    const dir = path.dirname(latestReleaseDiskPath());
+    const dir = path.dirname(desktopReleaseDiskPath());
     await mkdir(/* turbopackIgnore: true */ dir, { recursive: true });
-    const tmp = `${latestReleaseDiskPath()}.tmp`;
+    const tmp = `${desktopReleaseDiskPath()}.tmp`;
     const payload = JSON.stringify({
       savedAt: Date.now(),
       tag: data.tag,
       assets: data.assets,
     });
     await writeFile(/* turbopackIgnore: true */ tmp, payload, "utf8");
-    await rename(/* turbopackIgnore: true */ tmp, /* turbopackIgnore: true */ latestReleaseDiskPath());
+    await rename(/* turbopackIgnore: true */ tmp, /* turbopackIgnore: true */ desktopReleaseDiskPath());
   } catch {
     /* 只读部署等情况下跳过 */
   }
@@ -200,49 +215,69 @@ async function pruneReleaseCacheExceptTag(keepTag: string): Promise<void> {
     } catch {
       continue;
     }
+    if (!DESKTOP_RELEASE_TAG_PATTERN.test(name)) continue;
     await rm(/* turbopackIgnore: true */ path.join(root, name), { recursive: true, force: true }).catch(() => {});
   }
 }
 
-export async function fetchLatestReleaseForPrefetch(): Promise<LatestReleaseMeta | null> {
+export async function fetchDesktopRelease(): Promise<DesktopRelease | null> {
   const now = Date.now();
-  if (latestReleaseMemory && now - latestReleaseMemory.fetchedAt < LATEST_REFRESH_MS) {
-    return latestReleaseMemory.data;
+  if (desktopReleaseMemory && now - desktopReleaseMemory.fetchedAt < DESKTOP_REFRESH_MS) {
+    return desktopReleaseMemory.data;
   }
 
-  const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/releases/latest`, {
+  const configuredTag = process.env.DESKTOP_RELEASE_TAG?.trim();
+  const url = configuredTag
+    ? `https://api.github.com/repos/${GITHUB_REPO}/releases/tags/${encodeURIComponent(configuredTag)}`
+    : `https://api.github.com/repos/${GITHUB_REPO}/releases?per_page=100`;
+  const res = await fetch(url, {
     headers: githubApiHeaders(),
     cache: "no-store",
   });
 
   if (res.ok) {
-    const data = (await res.json()) as {
+    type GithubRelease = {
       tag_name: string;
+      draft?: boolean;
       assets: { name: string; browser_download_url: string }[];
     };
-    const result: LatestReleaseMeta = {
+    const responseData = (await res.json()) as GithubRelease | GithubRelease[];
+    const data = Array.isArray(responseData)
+      ? responseData.find(
+          (release) =>
+            !release.draft &&
+            DESKTOP_RELEASE_TAG_PATTERN.test(release.tag_name) &&
+            release.assets.some((asset) => XOPC_RELEASE_ASSET_PATTERN.test(asset.name)),
+        )
+      : responseData;
+    if (!data || !DESKTOP_RELEASE_TAG_PATTERN.test(data.tag_name)) {
+      return null;
+    }
+    const result: DesktopRelease = {
       tag: data.tag_name,
-      assets: data.assets.map((a) => ({
-        name: a.name,
-        browser_download_url: a.browser_download_url,
-      })),
+      assets: data.assets
+        .filter((asset) => isAllowedReleaseAssetName(asset.name))
+        .map((asset) => ({
+          name: asset.name,
+          url: asset.browser_download_url,
+        })),
     };
-    const prevTag = latestReleaseMemory?.data?.tag;
-    latestReleaseMemory = { fetchedAt: now, data: result };
-    void writeLatestReleaseToDisk(result);
+    const prevTag = desktopReleaseMemory?.data?.tag;
+    desktopReleaseMemory = { fetchedAt: now, data: result };
+    void writeDesktopReleaseToDisk(result);
     if (prevTag !== result.tag) {
       void pruneReleaseCacheExceptTag(result.tag).catch(() => {});
     }
     return result;
   }
 
-  if (latestReleaseMemory && now - latestReleaseMemory.fetchedAt < LATEST_STALE_MEMORY_MS) {
-    return latestReleaseMemory.data;
+  if (desktopReleaseMemory && now - desktopReleaseMemory.fetchedAt < DESKTOP_STALE_MEMORY_MS) {
+    return desktopReleaseMemory.data;
   }
 
-  const fromDisk = await readLatestReleaseFromDisk();
-  if (fromDisk && now - fromDisk.savedAt < LATEST_STALE_DISK_MS) {
-    latestReleaseMemory = { fetchedAt: fromDisk.savedAt, data: fromDisk.data };
+  const fromDisk = await readDesktopReleaseFromDisk();
+  if (fromDisk && now - fromDisk.savedAt < DESKTOP_STALE_DISK_MS) {
+    desktopReleaseMemory = { fetchedAt: fromDisk.savedAt, data: fromDisk.data };
     return fromDisk.data;
   }
 
@@ -478,22 +513,22 @@ export async function serveCachedReleaseDownload(tag: string, name: string): Pro
 }
 
 /**
- * 始终解析 **当前** GitHub `releases/latest` 中同名资源。
- * 供 `GET /api/download/<name>`（`latest-*.yml`、安装包、`*.blockmap` 等与 Release 资源名一致的路径）使用。
+ * 始终解析当前最新的 **桌面** release 中同名资源（忽略 mobile release）。
+ * 供 `GET /api/download/<name>`（updater manifest 与 xopc 桌面安装资产）使用。
  */
-export async function serveCachedLatestReleaseDownload(name: string): Promise<Response> {
+export async function serveCachedDesktopReleaseDownload(name: string): Promise<Response> {
   try {
     assertAllowedReleaseAssetName(name);
   } catch {
     return Response.json({ error: "bad_request" }, { status: 400 });
   }
-  const meta = await fetchLatestReleaseForPrefetch();
+  const meta = await fetchDesktopRelease();
   if (!meta) {
     return Response.json({ error: "upstream" }, { status: 502 });
   }
   const hit = meta.assets.find((a) => a.name === name);
   if (hit) {
-    return serveWithUpstreamUrl(meta.tag, name, hit.browser_download_url);
+    return serveWithUpstreamUrl(meta.tag, name, hit.url);
   }
 
   for (const tag of candidateTagsInferredFromXopcAssetName(name)) {
@@ -512,10 +547,5 @@ export async function serveCachedLatestReleaseDownload(name: string): Promise<Re
 }
 
 export function isPrefetchCandidateName(name: string): boolean {
-  try {
-    assertAllowedReleaseAssetName(name);
-    return true;
-  } catch {
-    return false;
-  }
+  return isAllowedReleaseAssetName(name);
 }

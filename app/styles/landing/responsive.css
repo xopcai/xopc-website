@@ -25,8 +25,8 @@
       }
 
       .landing-page .quick-start-method-tabs{
-        order: 3;
-        flex: 1 1 100%;
+        order: 2;
+        flex: 1 1 auto;
         overflow-x: auto;
         scrollbar-width: none;
       }
@@ -40,6 +40,7 @@
       }
 
       .landing-page .quick-start-titlebar-actions{
+        order: 3;
         margin-left: 0;
         flex: 1 1 100%;
         justify-content: flex-start;
