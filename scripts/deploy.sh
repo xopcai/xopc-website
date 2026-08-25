@@ -63,20 +63,21 @@ main() {
     echo_step "检查远程服务器..."
     ssh -o ConnectTimeout=10 $SERVER "echo 'SSH OK'" || { echo_error "无法连接到服务器"; exit 1; }
 
-    # 1. 本地构建
+    # 1. 本地构建检查
     echo ""
-    echo_step "步骤 1/3: 本地构建..."
-    pnpm install
+    echo_step "步骤 1/3: 本地构建检查..."
+    pnpm install --frozen-lockfile
     pnpm build
-    echo -e "${GREEN}✓ 构建成功${NC}"
+    echo -e "${GREEN}✓ 本地构建检查通过${NC}"
 
-    # 2. 同步文件（包含 .next 构建目录）
+    # 2. 仅同步源码；.next 含平台相关的原生模块引用，必须在服务器构建
     echo ""
     echo_step "步骤 2/3: 同步文件到服务器..."
     rsync -avz --delete \
         --include='.env.example' \
         --exclude='.env*' \
         --exclude='node_modules' \
+        --exclude='.next' \
         --exclude='.git' \
         --exclude='.data' \
         --exclude='.xopc-share-staging' \
@@ -87,10 +88,11 @@ main() {
         ./ $SERVER:$REMOTE_DIR/
     echo -e "${GREEN}✓ 同步完成${NC}"
 
-    # 3. 重启 PM2
+    # 3. 在目标平台构建并重启 PM2
     echo ""
-    echo_step "步骤 3/3: 重启应用..."
+    echo_step "步骤 3/3: 服务器构建并重启应用..."
     ssh $SERVER << REMOTE_SCRIPT
+        set -e
         cd $REMOTE_DIR
 
         # 安装/更新依赖（与 lockfile 一致）
@@ -107,6 +109,10 @@ main() {
             fi
         fi
 
+        # 原生依赖（如 better-sqlite3）必须在 Linux 上生成 Next.js 构建产物
+        echo "构建应用..."
+        pnpm build
+
         # SQLite 应用数据与发布 / CloakBrowser 缓存目录
         mkdir -p .data .data/cloakbrowser-cache
 
@@ -117,7 +123,7 @@ main() {
 
         echo "✓ 应用已重启"
 REMOTE_SCRIPT
-    echo -e "${GREEN}✓ 重启成功${NC}"
+    echo -e "${GREEN}✓ 服务器构建并重启成功${NC}"
 
     # 4. 验证
     echo ""
