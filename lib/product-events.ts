@@ -1,6 +1,7 @@
 export const PRODUCT_EVENT_NAMES = [
   "quick_start_method_selected",
   "app_platform_selected",
+  "desktop_download_clicked",
   "android_download_clicked",
   "ios_beta_submitted",
   "ios_download_clicked",
@@ -14,7 +15,13 @@ export function isProductEventName(value: unknown): value is ProductEventName {
 
 export function trackProductEvent(
   event: ProductEventName,
-  dimensions: { method?: string; platform?: string } = {},
+  dimensions: {
+    method?: string;
+    platform?: string;
+    architecture?: string;
+    version?: string;
+    recommended?: boolean;
+  } = {},
 ): void {
   if (typeof window === "undefined") return;
   void fetch("/api/events", {

@@ -270,17 +270,28 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      min-height: 260px;
     }
 
     .landing-page .quick-start-desktop .desktop-download-meta{
       margin-bottom: 0;
     }
 
-
     .landing-page .quick-start-desktop-loading{
       font-size: 13px;
       color: var(--fg-mid);
       padding: 8px 0;
+    }
+
+    .landing-page .quick-start-mobile{
+      min-height: 260px;
+    }
+
+    @media (max-width: 520px) {
+      .landing-page .quick-start-desktop,
+      .landing-page .quick-start-mobile{
+        min-height: 340px;
+      }
     }
 
     .landing-page .quick-start-footnote{
