@@ -83,20 +83,12 @@
 .landing-page .hero-headline {
   max-width: min(820px, 94vw);
   margin: 0 0 24px;
+  color: var(--fg-head);
   font-family: var(--display);
+  font-size: clamp(30px, 5vw, 54px);
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: 0;
-}
-
-.landing-page .hero-headline-line1,
-.landing-page .hero-headline-line2 {
-  display: block;
-  font-size: clamp(25px, 4.4vw, 46px);
-  font-weight: 600;
-}
-
-.landing-page .hero-headline-line1 {
-  color: var(--fg-head);
   background: var(--hero-line1-text);
   background-clip: text;
   -webkit-background-clip: text;
@@ -104,18 +96,9 @@
   text-shadow: 0 18px 56px var(--hero-text-glow);
 }
 
-.landing-page .hero-headline-line2 {
-  margin-top: 6px;
-  color: var(--fg-mid);
-  background: var(--hero-line2-text);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .landing-page .hero-desc {
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 0 auto 28px;
   color: var(--fg-mid);
   font-size: 17px;
   font-weight: 400;
@@ -123,11 +106,12 @@
   text-align: center;
 }
 
-.landing-page .hero-quick-start {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto 28px;
-  text-align: left;
+.landing-page .hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .landing-page .btn-primary,

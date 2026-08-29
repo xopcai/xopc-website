@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "XOPC — A Self-hosted Personal AI Runtime",
-    "description": "Run AI on your hardware. Connect models, agents, sessions, projects, goals, notes, workflows, and automations across terminal, web, desktop, mobile, and messengers.",
-    "ogDescription": "xopc is a self-hosted, local-first personal AI runtime. Own your data, keys, and environment while long-running work stays resumable, executable, and triggerable."
+    "title": "xopc — Keep what matters moving.",
+    "description": "A personal AI on your computer that remembers your goals and context—and picks up where you left off.",
+    "ogDescription": "A personal AI on your computer that remembers your goals and context—and picks up where you left off."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -14,68 +14,35 @@
   },
   "landing": {
     "nav": {
-      "products": "Products",
-      "download": "Start",
-      "channels": "Surfaces",
-      "workflows": "Workflows",
+      "why": "Why xopc",
+      "how": "How it works",
+      "docs": "Docs",
+      "download": "Download",
       "github": "GitHub",
-      "loop": "Product model",
-      "system": "Core capabilities"
+      "trust": "Trust"
     },
     "hero": {
       "brandName": "xopc",
-      "headlineLine1": "Turn goals into loops.",
-      "headlineLine2": "Keep what matters moving.",
-      "desc": "A self-hosted, local-first personal AI runtime connecting models, agents, durable state, workflows, automations, and every surface you use. You own the data, keys, and environment."
+      "headline": "Keep what matters moving.",
+      "desc": "A personal AI that runs on your computer, remembers your goals and context, uses tools, and picks up where you left off.",
+      "primaryCta": "Download xopc",
+      "secondaryCta": "Install in terminal"
     },
     "download": {
-      "quickStartHeading": "Quick Start",
-      "methodTabsAria": "Choose install method",
-      "methodOneLiner": "One-liner",
-      "methodNpm": "npm",
-      "methodHackable": "Source",
-      "methodDesktop": "Desktop",
-      "methodMobile": "Mobile",
-      "npmToolTabsAria": "Choose package manager",
-      "npmToolNpm": "npm",
-      "npmToolPnpm": "pnpm",
-      "hackableToolTabsAria": "Choose hackable install tool",
-      "hackableToolInstaller": "installer",
-      "hackableToolPnpm": "pnpm",
-      "appsPlatformTabsAria": "Choose app platform",
-      "mobilePlatformTabsAria": "Choose mobile app platform",
-      "npmQuickComment": "# Node.js 22+ required. Then run onboarding.",
-      "desktopQuickComment": "",
-      "hackableComment": "# Source install — for contributors and deep customization",
-      "hackableUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash -s -- --install-method git",
-      "hackableWindowsCommand": "powershell -c \"& ([scriptblock]::Create((irm https://xopc.ai/install.ps1))) -InstallMethod git\"",
-      "hackablePnpmComment1": "# Source checkouts are pnpm workspaces",
-      "hackablePnpmCloneCommand": "git clone https://github.com/xopcai/xopc.git",
-      "hackablePnpmInstallCommand": "cd xopc && corepack enable && pnpm install",
-      "hackablePnpmComment2": "# Run from source; build then onboard",
-      "hackablePnpmOnboardCommand": "pnpm run build && pnpm exec xopc onboard",
-      "title": "Up and running in 30 seconds.",
-      "subtitle": "One command installs Node.js and xopc, then walks you through onboarding — macOS, Linux, or Windows.",
-      "quickInstallTabsAria": "Choose install platform",
-      "quickInstallUnixTab": "macOS & Linux",
-      "quickInstallWindowsTab": "Windows",
-      "quickInstallComment": "# One command — macOS, Linux, and Windows.",
-      "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
-      "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
-      "quickInstallFootnote": "Desktop is recommended for most users. Terminal users can choose the one-liner or npm; mobile offers direct Android download and iOS TestFlight access.",
-      "pnpmCommand": "pnpm add -g @xopcai/xopc",
-      "advancedHeading": "Install with npm",
-      "advancedSubtitle": "If you already have Node.js 22+ and prefer the package manager route.",
-      "npmBody": "Node.js 22+ required. pnpm is also supported: pnpm add -g @xopcai/xopc. China mirror: npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com. Then chat: xopc",
-      "npmInstallLabel": "1. Install",
-      "npmCommand": "npm install -g @xopcai/xopc",
-      "npmOnboardLabel": "2. Setup",
-      "npmOnboardBody": "Interactive onboarding — pick your model and add API keys. Faster path: xopc onboard --quick",
-      "onboardCommand": "xopc onboard",
-      "copy": "Copy",
-      "copied": "Copied",
-      "desktopHeading": "Desktop apps",
-      "desktopSubtitle": "Download Electron builds for macOS, Windows, or Linux from GitHub Releases.",
+      "desktopSectionKicker": "Run xopc",
+      "desktopSectionTitle": "Start with the desktop app.",
+      "desktopSectionDesc": "Recommended for most people. We prioritize the right macOS, Windows, or Linux installer for this device.",
+      "mobileSectionKicker": "Continue on mobile",
+      "mobileSectionTitle": "Take the same assistant with you.",
+      "mobileSectionDesc": "Android and iOS connect to an existing xopc Runtime. Download the Android app or join the current iOS distribution channel.",
+      "terminalSectionKicker": "Terminal install",
+      "terminalSectionTitle": "Install xopc with one command.",
+      "terminalSectionDesc": "For TUI, CLI, Gateway, server, or source-based workflows.",
+      "terminalUnixLabel": "macOS · Linux · WSL",
+      "terminalWindowsLabel": "Windows PowerShell",
+      "terminalUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
+      "terminalWindowsCommand": "irm https://xopc.ai/install.ps1 | iex",
+      "appsPlatformTabsAria": "Choose desktop platform",
       "loading": "Fetching download info…",
       "error": "We couldn't load download info right now.",
       "openReleases": "Open releases page",
@@ -83,44 +50,12 @@
       "recommendedForThisDevice": "Recommended for this device",
       "downloadRecommended": "Download {label}",
       "otherDownloads": "Other downloads",
-      "hint": "Not sure which build to pick? Check processor type in System Settings or \"About this Mac\".",
-      "thisDevice": "This device",
-      "downloadTitle": "Download",
       "downloadAria": "Download {label}",
       "platformNames": {
         "macos": "macOS",
         "windows": "Windows",
         "linux": "Linux"
       },
-      "appPlatformNames": {
-        "macos": "macOS",
-        "windows": "Windows",
-        "linux": "Linux",
-        "android": "Android",
-        "ios": "iOS"
-      },
-      "androidEyebrow": "ANDROID · APK",
-      "androidTitle": "Install xopc on Android",
-      "androidBody": "Download the official APK and follow the system prompts. Android may ask you to allow installs from your browser the first time.",
-      "androidDownload": "Download Android APK",
-      "iosEyebrow": "IOS · TESTFLIGHT",
-      "iosTitle": "Request iOS beta access",
-      "iosBody": "The iOS app is currently in a limited TestFlight beta. Leave your Apple ID email and we'll send an invitation when capacity opens.",
-      "iosEmailLabel": "Apple ID email",
-      "iosEmailPlaceholder": "you@example.com",
-      "iosSubmit": "Request TestFlight",
-      "iosSubmitting": "Submitting…",
-      "iosSuccessTitle": "Request received",
-      "iosSuccessBody": "We'll send a TestFlight invitation to your email when a spot becomes available.",
-      "iosError": "We couldn't submit your request. Please try again later.",
-      "iosPrivacy": "We'll only use your email for iOS beta access and essential release updates.",
-      "iosPausedTitle": "iOS beta requests are currently full",
-      "iosPausedBody": "This TestFlight batch has reached capacity. Requests will reopen here when the next testing batch is available.",
-      "iosAvailableTitle": "xopc for iOS is available",
-      "iosAvailableBody": "Install xopc from the official distribution page, then connect it to your own xopc Runtime.",
-      "iosOpenTestFlight": "Open TestFlight",
-      "iosOpenAppStore": "Open App Store",
-      "pickerToggleAria": "Choose download options for {platform}",
       "choices": {
         "mac-x64": "Intel (x64)",
         "mac-arm64": "Apple Silicon (ARM64)",
@@ -134,289 +69,108 @@
         "macos": "11 or later",
         "windows": "10 or later",
         "linux": "64-bit / ARM"
-      }
+      },
+      "androidEyebrow": "ANDROID · APK",
+      "androidTitle": "Download xopc for Android",
+      "androidBody": "Install the latest official APK, then connect it to your xopc runtime.",
+      "androidDownload": "Download Android APK",
+      "androidQrHint": "Hover to scan on your phone",
+      "androidQrTitle": "Scan to download",
+      "androidQrDesc": "Open the camera on your Android phone and scan this code.",
+      "androidQrAlt": "QR code for the latest xopc Android APK",
+      "androidQrLoading": "Preparing QR code…",
+      "iosEyebrow": "IOS",
+      "iosTitle": "Request iOS beta access",
+      "iosBody": "The iOS app is currently distributed through a limited TestFlight beta.",
+      "iosEmailLabel": "Apple ID email",
+      "iosEmailPlaceholder": "you@example.com",
+      "iosSubmit": "Request TestFlight",
+      "iosSubmitting": "Submitting…",
+      "iosSuccessTitle": "Request received",
+      "iosSuccessBody": "We’ll send an invitation when a TestFlight place becomes available.",
+      "iosError": "We couldn’t submit your request. Please try again later.",
+      "iosPrivacy": "We’ll only use this email for iOS beta access and essential release updates.",
+      "iosPausedTitle": "iOS beta requests are currently paused",
+      "iosPausedBody": "Requests will reopen here when the next TestFlight batch is available.",
+      "iosAvailableTitle": "xopc for iOS is available",
+      "iosAvailableBody": "Open the official distribution page, install xopc, then connect your runtime.",
+      "iosOpenTestFlight": "Open TestFlight",
+      "iosOpenAppStore": "Open App Store"
     },
-    "features": {
-      "titleLine1": "Chat is a surface.",
-      "titleLine2": "The runtime is the product.",
-      "desc": "xopc puts models, agents, durable state, and execution into an environment you control instead of piling features into another chat window.",
-      "tagFeatured": "LOCAL FIRST",
+    "aha": {
+      "kicker": "Start with one real thing",
+      "title": "It does not need to know everything to start helping.",
+      "desc": "xopc starts with the context you choose to share, explains its understanding, and finds the most credible next step.",
+      "ariaLabel": "Example of xopc turning an unfinished thought into a next step",
+      "userLabel": "You",
+      "userMessage": "I want to launch this project next week, but I have been avoiding it and I am not sure where to restart.",
+      "contextLabel": "Relevant context found",
+      "contextItems": [
+        "The release checklist is unfinished",
+        "Two decisions are still waiting for review",
+        "The last project update was 12 days ago"
+      ],
+      "assistantLabel": "xopc",
+      "assistantMessage": "You do not need to finish everything tonight. The release is blocked by one decision, so that is the smallest credible place to restart.",
+      "nextStepLabel": "Next step",
+      "nextStep": "Review the two open decisions and choose which one must be resolved before the release checklist can continue."
+    },
+    "productProof": {
+      "kicker": "See xopc at work",
+      "title": "One place for work that needs to keep moving.",
+      "desc": "Conversations, projects, tasks, decisions, approvals, and run history stay in one local workspace, ready to continue.",
+      "imageAlt": "xopc desktop app showing current work, projects, tasks, and recent activity",
+      "capabilities": [
+        {
+          "title": "Local-first",
+          "body": "Core state and the Gateway run in your environment."
+        },
+        {
+          "title": "Model freedom",
+          "body": "Connect your provider and choose cloud or local models for each task."
+        },
+        {
+          "title": "Act, then verify",
+          "body": "Use Skills, Workflows, and Automations to move work forward and verify results."
+        },
+        {
+          "title": "Continue anywhere",
+          "body": "Carry the same state across desktop, web, terminal, mobile, and messaging apps."
+        }
+      ]
+    },
+    "trust": {
+      "title": "Visible understanding. Explicit control.",
+      "desc": "See what xopc based a decision on, then decide what it can access and what it can do.",
       "items": [
         {
-          "icon": "key",
-          "title": "Bring your own API keys. Choose any model.",
-          "body": "DeepSeek, OpenAI, Anthropic, Google, Ollama, LM Studio, vLLM, Bedrock, Azure, and 20+ providers are built in. Run fully local inference or mix cloud and local models; switch with one config line and avoid vendor lock-in.",
-          "featured": false
+          "title": "Local-first by default",
+          "body": "Core state lives in your xopc environment. When you use a cloud model, the request context you send is processed by that provider."
         },
         {
-          "icon": "layers",
-          "title": "Unified memory, not one context window.",
-          "body": "Sessions, projects, goals, notes, workspaces, and run history have explicit ownership. User memory, preferences, and connected knowledge accumulate in one place for reuse across agents and conversations, while project and workspace context keep their own boundaries."
+          "title": "Sources stay permissioned",
+          "body": "Connect data sources separately and decide what each agent or task is allowed to use."
         },
         {
-          "icon": "target",
-          "title": "Projects, Goals, and Notes have distinct jobs.",
-          "body": "Projects group context, Goals track status, blockers, and next actions, while Notes capture text, voice, images, and attachments wherever input happens."
+          "title": "Consequential actions pause",
+          "body": "Sending, deleting, purchasing, and other high-impact actions return to you for confirmation."
         },
         {
-          "icon": "git-branch",
-          "title": "Observable workflows. Traceable automations.",
-          "body": "Organize complex execution into phases and subagents, then trigger it on schedules, manually, or from webhooks. Progress, results, failures, and retries stay visible."
-        },
-        {
-          "icon": "bot",
-          "title": "Agent capability boundaries are explicit.",
-          "body": "Give each agent its own identity, responsibilities, model roles, workspace, tool and skill policies, workflows, and runtime boundaries. Rules for confirmation, forbidden actions, and escalation are explicit and reusable through shared settings; memory belongs to the unified user context."
-        },
-        {
-          "icon": "puzzle",
-          "title": "Add capabilities only when needed.",
-          "body": "Skills provide task methods, Extensions add tools, channels, and UI, and Connectors bring in external capabilities while the core stays clear."
-        },
-        {
-          "icon": "hard-drive",
-          "title": "Your machine. Your rules.",
-          "body": "xopc runs on your hardware. Conversations, project context, and local state stay in your xopc runtime. API keys stay in your config. No mandatory cloud. No surprise bills.",
-          "featured": true
+          "title": "Memory remains correctable",
+          "body": "Review, correct, or remove durable understanding when it is wrong, outdated, or no longer useful."
         }
       ],
-      "groups": [
-        {
-          "title": "Runtime and ownership",
-          "desc": "Your hardware, keys, models, and deployment.",
-          "items": [
-            6,
-            0
-          ]
-        },
-        {
-          "title": "Durable state",
-          "desc": "Unified memory carries across agents while project context keeps clear ownership.",
-          "items": [
-            1,
-            2
-          ]
-        },
-        {
-          "title": "Execution and boundaries",
-          "desc": "Complex work is observable, repeated work is triggerable, and capabilities are configurable.",
-          "items": [
-            3,
-            4,
-            5
-          ]
-        }
-      ]
-    },
-    "channels": {
-      "titleLine1": "Every surface.",
-      "titleLine2": "One runtime.",
-      "desc": "Terminal, browser, desktop, mobile, and messengers share agents, sessions, and project state. The surface changes; your runtime and data ownership do not.",
-      "placeholderAction": "Add asset",
-      "items": [
-        {
-          "id": "desktop",
-          "label": "Desktop",
-          "tag": "Electron",
-          "caption": "Native desktop experience across the three major platforms.",
-          "imageAlt": "xopc Electron desktop app on macOS",
-          "placeholderTitle": "Desktop · macOS window"
-        },
-        {
-          "id": "tui",
-          "label": "TUI",
-          "tag": "Terminal",
-          "caption": "Full keyboard control, streaming output, zero perceived latency.",
-          "imageAlt": "xopc full-screen terminal UI",
-          "placeholderTitle": "TUI · full-screen terminal"
-        },
-        {
-          "id": "web",
-          "label": "Web UI",
-          "tag": "Browser",
-          "caption": "Open a browser — full console, ready to go.",
-          "imageAlt": "xopc gateway web console",
-          "placeholderTitle": "Web UI · gateway console"
-        },
-        {
-          "id": "mobile",
-          "label": "Mobile",
-          "tag": "Phone",
-          "caption": "Scan to pair with the agent running on your computer. Capture notes and ideas on the go.",
-          "imageAlt": "xopc mobile pairing and chat",
-          "placeholderTitle": "Mobile · QR pairing"
-        },
-        {
-          "id": "telegram",
-          "label": "Telegram",
-          "tag": "Messenger",
-          "caption": "Chat directly in your favorite messenger.",
-          "imageAlt": "xopc Telegram conversation",
-          "placeholderTitle": "Telegram · chat bubbles"
-        },
-        {
-          "id": "wechat",
-          "label": "WeChat",
-          "tag": "微信",
-          "caption": "Chat with it directly inside WeChat.",
-          "imageAlt": "xopc WeChat conversation",
-          "placeholderTitle": "WeChat · chat bubbles"
-        }
-      ]
-    },
-    "providers": {
-      "titleLine1": "Bring your own keys.",
-      "titleLine2": "Keep the system unlocked.",
-      "desc": "Cloud, local, or hybrid models. Your keys, your data, your deployment rhythm.",
-      "viewProviders": "View all supported providers →",
-      "chips": [
-        {
-          "name": "OpenAI",
-          "dot": "blue"
-        },
-        {
-          "name": "Anthropic",
-          "dot": "purple"
-        },
-        {
-          "name": "Google AI",
-          "dot": "green"
-        },
-        {
-          "name": "DeepSeek",
-          "dot": "amber"
-        },
-        {
-          "name": "Mistral",
-          "dot": "pink"
-        },
-        {
-          "name": "Groq",
-          "dot": "blue"
-        },
-        {
-          "name": "Cohere",
-          "dot": "purple"
-        },
-        {
-          "name": "Together AI",
-          "dot": "green"
-        },
-        {
-          "name": "OpenRouter",
-          "dot": "amber"
-        },
-        {
-          "name": "Ollama",
-          "dot": "pink"
-        },
-        {
-          "name": "Azure OpenAI",
-          "dot": "blue"
-        },
-        {
-          "name": "xAI",
-          "dot": "purple"
-        },
-        {
-          "name": "AWS Bedrock",
-          "dot": "green"
-        },
-        {
-          "name": "Vertex AI",
-          "dot": "amber"
-        },
-        {
-          "name": "SiliconFlow",
-          "dot": "pink"
-        },
-        {
-          "name": "Custom",
-          "dot": "purple"
-        }
-      ]
-    },
-    "workflows": {
-      "titleLine1": "Complex execution,",
-      "titleLine2": "visible at every step.",
-      "desc": "Workflows use explicit phases and parallel subagents for audits, research, and multi-perspective reviews; each run records progress, results, and failures.",
-      "bullets": [
-        "Built-in templates: audit_repo, multi_perspective_review, research",
-        "Kanban board at #/workflows — queued, running, done, needs attention",
-        "Start from chat, gateway UI, an Automation, or REST API",
-        "Save and customize scripts under ~/.xopc/workflows/"
-      ],
-      "viewDocs": "Read workflows docs →",
-      "screenshotPlaceholderTitle": "Workflows · gateway console",
-      "board": {
-        "ariaLabel": "Example workflow runs board: audit_repo in progress with subagent progress, completed review, and a failed research run",
-        "windowTitle": "xopc Gateway",
-        "sceneLabel": "Friday ship review",
-        "sceneHint": "audit_repo · 7/12 subagents · Synthesize phase",
-        "columns": [
-          {
-            "id": "queued",
-            "label": "Queued",
-            "count": "1",
-            "cards": [
-              {
-                "title": "release_notes",
-                "meta": "main · cron 09:00",
-                "status": "queued",
-                "featured": false
-              }
-            ]
-          },
-          {
-            "id": "running",
-            "label": "In progress",
-            "count": "1",
-            "cards": [
-              {
-                "title": "audit_repo",
-                "meta": "Review 4/6 · 2 running",
-                "detail": "style review · docs review",
-                "status": "running",
-                "progress": "58%",
-                "featured": true
-              }
-            ]
-          },
-          {
-            "id": "done",
-            "label": "Done",
-            "count": "3",
-            "cards": [
-              {
-                "title": "multi_perspective_review",
-                "meta": "succeeded · 12m ago",
-                "status": "succeeded",
-                "featured": false
-              }
-            ]
-          },
-          {
-            "id": "attention",
-            "label": "Needs attention",
-            "count": "1",
-            "cards": [
-              {
-                "title": "research",
-                "meta": "timeout · retry available",
-                "status": "failed",
-                "featured": false
-              }
-            ]
-          }
-        ]
-      }
+      "factLabel": "Observed fact",
+      "factExample": "The release checklist has not changed in 12 days.",
+      "inferenceLabel": "Possible inference",
+      "inferenceExample": "You may be blocked by an unresolved product decision.",
+      "correctionNote": "Facts and inferences stay distinct. You can correct either before it becomes durable understanding."
     },
     "cta": {
-      "titleLine1": "Run your own AI system",
-      "titleLine2": "on your own hardware.",
-      "desc": "MIT open source and local-first. Start with one model and agent, then add projects, goals, notes, workflows, and automations when the work becomes durable.",
-      "primary": "Start now →",
-      "mobileApp": "Mobile app"
+      "titleLine1": "Give xopc one thing",
+      "titleLine2": "that matters.",
+      "primary": "Download xopc →",
+      "secondary": "View on GitHub"
     },
     "footer": {
       "github": "GitHub",
@@ -429,205 +183,18 @@
     "products": {
       "nav": {
         "home": "Home",
-        "operator": "Worker",
-        "code": "Code",
-        "gateway": "Gateway"
-      },
-      "home": {
-        "kicker": "XOPC Agents",
-        "titleLine1": "One runtime.",
-        "titleLine2": "Three ways to deliver work.",
-        "desc": "Let agents keep working within the devices, data, identity, and workflows you own—then choose the entry point for the job at hand.",
-        "operator": {
-          "label": "For everyday computer work",
-          "name": "XOPC Worker",
-          "desc": "Hand over a goal. The agent plans, acts, asks at key decision points, and gives the result back to you.",
-          "cta": "Meet the computer agent"
-        },
-        "code": {
-          "label": "For software engineering",
-          "name": "XOPC Code",
-          "desc": "Connect coding agents to a local repository and receive reviewable, verifiable changes.",
-          "cta": "Meet the coding agent"
-        },
-        "gateway": {
-          "label": "As a local gateway service",
-          "name": "XOPC Gateway",
-          "desc": "Connect a local xopc runtime to web, mobile, messaging channels, and APIs as a service.",
-          "cta": "Meet Gateway"
-        }
-      },
-      "operator": {
-        "name": "XOPC Worker",
-        "kicker": "XOPC Worker · Electron desktop agent",
-        "metaTitle": "XOPC Worker | A cross-platform desktop agent",
-        "metaDescription": "An Electron desktop agent for Windows, macOS, and Linux that plans, acts, confirms, and delivers work in your local environment.",
-        "titleLine1": "Put desktop work",
-        "titleLine2": "in motion with AI.",
-        "desc": "XOPC Worker is a cross-platform agent app that runs on your desktop. It understands the goal, uses web and tools available on your machine, and returns control before consequential actions.",
-        "secondaryCta": "Download Worker",
-        "desktopPoints": [
-          "Electron cross-platform desktop app",
-          "Windows · macOS · Linux",
-          "Runs in your local environment"
-        ],
-        "workerDownload": {
-          "kicker": "Download Worker",
-          "title": "Download the xopc Worker desktop app.",
-          "desc": "For Windows, macOS, and Linux. We’ll recommend the installer that matches this device first."
-        },
-        "quickStart": {
-          "kicker": "Start with Worker",
-          "title": "Start your local Worker in three steps.",
-          "desc": "Install xopc, complete one onboarding flow, then hand work to Worker through a local surface.",
-          "copy": "Copy",
-          "copied": "Copied",
-          "steps": [
-            { "label": "Install", "title": "Install xopc", "body": "The cross-platform installer prepares the dependencies required to run it.", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
-            { "label": "Configure", "title": "Complete onboarding", "body": "Choose a model and configure the provider you want to use.", "command": "xopc onboard" },
-            { "label": "Work", "title": "Open a local surface", "body": "Create a task in the local TUI and let Worker start moving it forward.", "command": "xopc" }
-          ]
-        },
-        "media": {
-          "title": "Needed: complete Worker task demo",
-          "action": "Record goal → plan → browser/tool execution → approval → result, then export it to the file below",
-          "ariaLabel": "XOPC Worker complete task demonstration"
-        },
-        "flow": {
-          "kicker": "Start from your desktop",
-          "title": "Move work all the way forward in your local environment.",
-          "desc": "Worker is more than a few automated clicks. It turns desktop work into a process you can understand, inspect, and resume.",
-          "steps": [
-            { "title": "Start on the desktop", "body": "Describe what needs to move forward and what a useful result looks like." },
-            { "title": "See the plan", "body": "Review the breakdown in Worker, then add context or boundaries when needed." },
-            { "title": "Use local tools", "body": "The agent uses allowed web and tools to progress, then stops when a decision belongs to you." },
-            { "title": "Confirm and deliver", "body": "Receive the result and its record, with a clear next step instead of a one-off chat." }
-          ]
-        },
-        "capabilities": {
-          "kicker": "A desktop app, not another chat window",
-          "title": "One app, connected to your real work environment.",
-          "desc": "Connect web, files, information entry points, and durable workflows from your desktop to one observable agent runtime.",
-          "items": [
-            { "title": "Cross-platform desktop app", "body": "Built with Electron for Windows, macOS, and Linux, so every work machine has one consistent entry point." },
-            { "title": "Local environment execution", "body": "Move work from the desktop into web, files, and connected tools available on your machine." },
-            { "title": "Execution you can see", "body": "Organize an objective into trackable steps instead of forcing complex work into one prompt." },
-            { "title": "Human in the loop", "body": "Keep decisions, authorizations, and sending actions that matter with you." }
-          ]
-        },
-        "scenarios": {
-          "kicker": "Start with the outcome",
-          "title": "Work worth handing to Worker.",
-          "items": [
-            { "eyebrow": "Desktop research", "title": "Research and decision preparation", "body": "Gather information from multiple sources and turn it into notes, a table, or grounded next steps." },
-            { "eyebrow": "Desktop operations", "title": "Recurring back-office work", "body": "Turn a fixed process into observable tasks, taking over only at exceptions or key decisions." },
-            { "eyebrow": "Desktop collaboration", "title": "Status synthesis and weekly updates", "body": "Shape scattered progress, source material, and todos into a deliverable that can keep evolving." },
-            { "eyebrow": "Personal workspace", "title": "Cross-app personal tasks", "body": "Let a goal travel through everyday tools instead of being trapped in a chat window." }
-          ]
-        },
-        "trust": {
-          "kicker": "Runs inside your boundary",
-          "title": "Visible, controllable, and yours.",
-          "items": [
-            "Local-first: you control the data, keys, and runtime environment.",
-            "Visible process: know what the agent is doing and where it is waiting.",
-            "Clear boundaries: return high-impact actions to a person for confirmation."
-          ]
-        },
-        "cross": {
-          "kicker": "The same xopc runtime",
-          "title": "Need an agent to change a local codebase?",
-          "desc": "XOPC Code organizes coding agents, project workspaces, change review, and verification records into another complete delivery path.",
-          "cta": "Explore {product}"
-        }
-      },
-      "code": {
-        "name": "XOPC Code",
-        "kicker": "XOPC Code · Terminal agent workspace",
-        "metaTitle": "XOPC Code | Powerful coding agents from your terminal",
-        "metaDescription": "Run xopc in a project directory to use powerful coding agents and their harness, with built-in Codebase Memory and the freedom to switch to non-coding agents in the terminal.",
-        "titleLine1": "From your terminal.",
-        "titleLine2": "Put agents to work.",
-        "desc": "Run xopc from a project directory to use powerful coding agents and their harness for understanding, changing, and verifying a real codebase. Built-in Codebase Memory makes code queryable; when the task is not coding, switch agents in the same terminal and keep moving.",
-        "secondaryCta": "Use from terminal",
-        "terminalPoints": [
-          "Run xopc in your project directory",
-          "A powerful coding agent harness",
-          "Switch to other agents when needed"
-        ],
-        "quickStart": {
-          "kicker": "Start with Code",
-          "title": "Start agent work from your terminal.",
-          "desc": "Install xopc, connect the agent you prefer, then code—or switch to another task—from a local project directory.",
-          "copy": "Copy",
-          "copied": "Copied",
-          "steps": [
-            { "label": "Install", "title": "Install the xopc CLI", "body": "For developers who already have a Node.js environment.", "command": "npm install -g @xopcai/xopc" },
-            { "label": "Connect", "title": "Complete provider onboarding", "body": "Connect Codex, Claude Code, or the coding capability you choose during setup.", "command": "xopc onboard" },
-            { "label": "Start", "title": "Run xopc in your terminal", "body": "Invoke a coding agent in the project directory, then switch agents when the task changes.", "command": "xopc" }
-          ]
-        },
-        "media": {
-          "title": "Needed: complete Code delivery demo",
-          "action": "Record request → repository understanding → change → test/check → diff summary, then export it to the file below",
-          "ariaLabel": "XOPC Code complete coding-task demonstration"
-        },
-        "flow": {
-          "kicker": "From terminal to delivery",
-          "title": "Make coding-agent work a reviewable loop.",
-          "desc": "The point is not how much code appears at once; it is understanding, changing, validating, and handing off a real project responsibly.",
-          "steps": [
-            { "title": "Invoke from the project", "body": "Build task-relevant project context from the terminal, request, and local workspace." },
-            { "title": "Propose a plan", "body": "Clarify the implementation path, impact area, and required verification before editing." },
-            { "title": "Advance with the harness", "body": "Use connected coding agents to make changes, repair issues, and call the tools needed in the workspace." },
-            { "title": "Review and verify", "body": "Use the diff, commands, and verification results to show what changed and what deserves attention." }
-          ]
-        },
-        "capabilities": {
-          "kicker": "One terminal, many agents",
-          "title": "Powerful for coding—and not limited to it.",
-          "desc": "XOPC Code gives coding agents task structure, project context, and a delivery harness in the terminal. Codebase Memory makes code structure, relationships, and impact scope queryable; switch agents directly when the task is not coding.",
-          "items": [
-            { "title": "A powerful coding-agent harness", "body": "Organize context, plans, tool calls, changes, diffs, and verification around a real codebase, so an agent can drive a complete delivery rather than emit isolated snippets." },
-            { "title": "Codebase Memory", "body": "Use a built-in code knowledge graph for functions, types, call chains, routes, and cross-service relationships—then combine semantic search, structural queries, and impact analysis to find relevant code quickly." },
-            { "title": "Switch agents in the terminal", "body": "Beyond coding, switch from the same entry point to an agent suited for research, synthesis, operations, or everyday tasks." },
-            { "title": "Trackable changes", "body": "Organize code changes, executed commands, and verification results into a record people can review." }
-          ]
-        },
-        "scenarios": {
-          "kicker": "Start with an engineering task",
-          "title": "Work worth handing to Code.",
-          "items": [
-            { "eyebrow": "Build", "title": "From issue to implementation plan", "body": "Understand the request and impact area before receiving a reviewable path to implementation." },
-            { "eyebrow": "Fix", "title": "Bug investigation and repair", "body": "Trace a problem in the real repository, make the fix, and return the verification result." },
-            { "eyebrow": "Evolve", "title": "Refactoring and test coverage", "body": "Break structural change into verifiable steps to reduce the risk of changing code without checking outcomes." },
-            { "eyebrow": "Switch", "title": "Move from coding to another task", "body": "Switch agents from the same terminal when research, synthesis, or everyday work needs to continue beyond the codebase." }
-          ]
-        },
-        "trust": {
-          "kicker": "See it before accepting it",
-          "title": "Give every change a basis.",
-          "items": [
-            "Your workspace: work around local projects and established tools.",
-            "Your choice: connect different coding agents—or switch to another agent—for the task.",
-            "Your review: use changes and verification records to decide whether to accept delivery."
-          ]
-        },
-        "cross": {
-          "kicker": "The same xopc runtime",
-          "title": "Need an agent to progress everyday computer work?",
-          "desc": "XOPC Worker organizes goals, tool execution, approvals, and durable state into a delivery path for real-world tasks.",
-          "cta": "Explore {product}"
-        }
+        "gateway": "Gateway",
+        "desktop": "Desktop",
+        "terminal": "Terminal"
       },
       "gateway": {
-        "name": "XOPC Gateway",
-        "kicker": "XOPC Gateway · Local gateway service",
-        "metaTitle": "XOPC Gateway | Make a local AI runtime a connected service",
+        "name": "xopc Gateway",
+        "kicker": "xopc Gateway · Local gateway service",
+        "metaTitle": "xopc Gateway | Make a local AI runtime a connected service",
         "metaDescription": "Connect a local xopc runtime to web, mobile, messaging channels, and APIs while keeping control of configuration, identity, and data boundaries.",
         "titleLine1": "Make your local runtime",
         "titleLine2": "a connected service.",
-        "desc": "XOPC Gateway brings the agents, state, and workflows running in your environment to web, mobile, messaging channels, and APIs. It is a unified entry point—not another isolated backend.",
+        "desc": "xopc Gateway brings the agents, state, and workflows running in your environment to web, mobile, messaging channels, and APIs. It is a unified entry point—not another isolated backend.",
         "secondaryCta": "Start with Gateway",
         "quickStart": {
           "kicker": "Start with Gateway",
@@ -636,25 +203,47 @@
           "copy": "Copy",
           "copied": "Copied",
           "steps": [
-            { "label": "Install", "title": "Install xopc", "body": "The cross-platform installer prepares the dependencies required to run it.", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
-            { "label": "Start", "title": "Start Gateway", "body": "Start the web server and local React console.", "command": "xopc gateway" },
-            { "label": "Serve", "title": "Install the system service", "body": "Let Gateway run continuously through the operating system service lifecycle.", "command": "xopc gateway service install" }
+            {
+              "label": "Install",
+              "title": "Install xopc",
+              "body": "The cross-platform installer prepares the dependencies required to run it.",
+              "command": "curl -fsSL https://xopc.ai/install.sh | bash"
+            },
+            {
+              "label": "Start",
+              "title": "Start Gateway",
+              "body": "Start the web server and local React console.",
+              "command": "xopc gateway"
+            },
+            {
+              "label": "Serve",
+              "title": "Install the system service",
+              "body": "Let Gateway run continuously through the operating system service lifecycle.",
+              "command": "xopc gateway service install"
+            }
           ]
-        },
-        "media": {
-          "title": "Needed: Gateway service connection demo",
-          "action": "Record runtime start → channel or API connection → client response → service status, then export it to the file below",
-          "ariaLabel": "XOPC Gateway service connection demonstration"
         },
         "flow": {
           "kicker": "From local runtime to service entry point",
           "title": "Run once. Connect from many places.",
           "desc": "Gateway exposes a running xopc instance as a controlled entry point, so clients and channels share the same state and execution capability.",
           "steps": [
-            { "title": "Run the runtime", "body": "Start xopc in an environment you own, retaining local configuration, data, and provider choices." },
-            { "title": "Connect surfaces", "body": "Configure web, mobile, messaging channels, or other enabled client entry points." },
-            { "title": "Serve clients", "body": "Use Gateway APIs and streaming connections for clients to access sessions, tasks, and runtime status." },
-            { "title": "Operate continuously", "body": "Observe service and channel status so the local runtime can operate as a durable service." }
+            {
+              "title": "Run the runtime",
+              "body": "Start xopc in an environment you own, retaining local configuration, data, and provider choices."
+            },
+            {
+              "title": "Connect surfaces",
+              "body": "Configure web, mobile, messaging channels, or other enabled client entry points."
+            },
+            {
+              "title": "Serve clients",
+              "body": "Use Gateway APIs and streaming connections for clients to access sessions, tasks, and runtime status."
+            },
+            {
+              "title": "Operate continuously",
+              "body": "Observe service and channel status so the local runtime can operate as a durable service."
+            }
           ]
         },
         "capabilities": {
@@ -662,20 +251,48 @@
           "title": "Put connection capability in one place.",
           "desc": "Gateway provides a unified service layer for xopc clients, channels, and integrations, avoiding separate state and auth maintenance for every surface.",
           "items": [
-            { "title": "One service entry point", "body": "Let web, mobile, and other clients connect to one local runtime instead of duplicating agent state." },
-            { "title": "Gateway APIs and streams", "body": "Expose service interfaces for sessions, tasks, state, and real-time updates." },
-            { "title": "Channel runtimes", "body": "Load and manage messaging channel runtimes while keeping those conversation surfaces connected to core agent capability." },
-            { "title": "Service lifecycle", "body": "Manage the local Gateway around start, status, restart, and system-service operation." }
+            {
+              "title": "One service entry point",
+              "body": "Let web, mobile, and other clients connect to one local runtime instead of duplicating agent state."
+            },
+            {
+              "title": "Gateway APIs and streams",
+              "body": "Expose service interfaces for sessions, tasks, state, and real-time updates."
+            },
+            {
+              "title": "Channel runtimes",
+              "body": "Load and manage messaging channel runtimes while keeping those conversation surfaces connected to core agent capability."
+            },
+            {
+              "title": "Service lifecycle",
+              "body": "Manage the local Gateway around start, status, restart, and system-service operation."
+            }
           ]
         },
         "scenarios": {
           "kicker": "Start with a connection need",
           "title": "Ways to use Gateway.",
           "items": [
-            { "eyebrow": "Multi-device", "title": "Bring one runtime to more devices", "body": "Let web, mobile, desktop, and other surfaces see the same sessions, projects, and execution state." },
-            { "eyebrow": "Channels", "title": "Connect agents to messaging surfaces", "body": "Let people start and receive the same agent work through connected messaging channels." },
-            { "eyebrow": "Integration", "title": "Provide a backend for custom clients", "body": "Use APIs and streaming interfaces to bring xopc capability into existing products or internal tools." },
-            { "eyebrow": "Operations", "title": "Run continuously as a service", "body": "Keep a local AI runtime available over a manageable service lifecycle." }
+            {
+              "eyebrow": "Multi-device",
+              "title": "Bring one runtime to more devices",
+              "body": "Let web, mobile, desktop, and other surfaces see the same sessions, projects, and execution state."
+            },
+            {
+              "eyebrow": "Channels",
+              "title": "Connect agents to messaging surfaces",
+              "body": "Let people start and receive the same agent work through connected messaging channels."
+            },
+            {
+              "eyebrow": "Integration",
+              "title": "Provide a backend for custom clients",
+              "body": "Use APIs and streaming interfaces to bring xopc capability into existing products or internal tools."
+            },
+            {
+              "eyebrow": "Operations",
+              "title": "Run continuously as a service",
+              "body": "Keep a local AI runtime available over a manageable service lifecycle."
+            }
           ]
         },
         "trust": {
@@ -690,32 +307,268 @@
         "cross": {
           "kicker": "The same xopc runtime",
           "title": "Need an agent to complete a concrete computer task?",
-          "desc": "XOPC Worker brings the runtime behind Gateway into everyday work that can be delegated and confirmed.",
+          "desc": "xopc Desktop brings the runtime behind Gateway into everyday work that can be delegated and confirmed.",
+          "cta": "Explore {product}"
+        }
+      },
+      "desktop": {
+        "name": "xopc Desktop",
+        "kicker": "xopc Desktop · Electron desktop agent",
+        "metaTitle": "xopc Desktop | A cross-platform desktop agent",
+        "metaDescription": "An Electron desktop agent for Windows, macOS, and Linux that plans, acts, confirms, and delivers work in your local environment.",
+        "titleLine1": "Put desktop work",
+        "titleLine2": "in motion with AI.",
+        "desc": "xopc Desktop is a cross-platform agent app that runs on your desktop. It understands the goal, uses web and tools available on your machine, and returns control before consequential actions.",
+        "secondaryCta": "Download xopc",
+        "desktopPoints": [
+          "Electron cross-platform desktop app",
+          "Windows · macOS · Linux",
+          "Runs in your local environment"
+        ],
+        "flow": {
+          "kicker": "Start from your desktop",
+          "title": "Move work all the way forward in your local environment.",
+          "desc": "The desktop app is more than a few automated clicks. It turns desktop work into a process you can understand, inspect, and resume.",
+          "steps": [
+            {
+              "title": "Start on the desktop",
+              "body": "Describe what needs to move forward and what a useful result looks like."
+            },
+            {
+              "title": "See the plan",
+              "body": "Review the breakdown in the desktop app, then add context or boundaries when needed."
+            },
+            {
+              "title": "Use local tools",
+              "body": "The agent uses allowed web and tools to progress, then stops when a decision belongs to you."
+            },
+            {
+              "title": "Confirm and deliver",
+              "body": "Receive the result and its record, with a clear next step instead of a one-off chat."
+            }
+          ]
+        },
+        "capabilities": {
+          "kicker": "A desktop app, not another chat window",
+          "title": "One app, connected to your real work environment.",
+          "desc": "Connect web, files, information entry points, and durable workflows from your desktop to one observable agent runtime.",
+          "items": [
+            {
+              "title": "Cross-platform desktop app",
+              "body": "Built with Electron for Windows, macOS, and Linux, so every work machine has one consistent entry point."
+            },
+            {
+              "title": "Local environment execution",
+              "body": "Move work from the desktop into web, files, and connected tools available on your machine."
+            },
+            {
+              "title": "Execution you can see",
+              "body": "Organize an objective into trackable steps instead of forcing complex work into one prompt."
+            },
+            {
+              "title": "Human in the loop",
+              "body": "Keep decisions, authorizations, and sending actions that matter with you."
+            }
+          ]
+        },
+        "scenarios": {
+          "kicker": "Start with the outcome",
+          "title": "Work worth handing to xopc Desktop.",
+          "items": [
+            {
+              "eyebrow": "Desktop research",
+              "title": "Research and decision preparation",
+              "body": "Gather information from multiple sources and turn it into notes, a table, or grounded next steps."
+            },
+            {
+              "eyebrow": "Desktop operations",
+              "title": "Recurring back-office work",
+              "body": "Turn a fixed process into observable tasks, taking over only at exceptions or key decisions."
+            },
+            {
+              "eyebrow": "Desktop collaboration",
+              "title": "Status synthesis and weekly updates",
+              "body": "Shape scattered progress, source material, and todos into a deliverable that can keep evolving."
+            },
+            {
+              "eyebrow": "Personal workspace",
+              "title": "Cross-app personal tasks",
+              "body": "Let a goal travel through everyday tools instead of being trapped in a chat window."
+            }
+          ]
+        },
+        "trust": {
+          "kicker": "Runs inside your boundary",
+          "title": "Visible, controllable, and yours.",
+          "items": [
+            "Local-first: you control the data, keys, and runtime environment.",
+            "Visible process: know what the agent is doing and where it is waiting.",
+            "Clear boundaries: return high-impact actions to a person for confirmation."
+          ]
+        },
+        "cross": {
+          "kicker": "The same xopc runtime",
+          "title": "Need an agent to change a local codebase?",
+          "desc": "xopc Terminal organizes coding agents, project workspaces, change review, and verification records into another complete delivery path.",
+          "cta": "Explore {product}"
+        },
+        "desktopDownload": {
+          "kicker": "Download xopc",
+          "title": "Download xopc for desktop.",
+          "desc": "For Windows, macOS, and Linux. We’ll recommend the installer that matches this device first."
+        }
+      },
+      "terminal": {
+        "name": "xopc Terminal",
+        "kicker": "xopc Terminal · Terminal agent workspace",
+        "metaTitle": "xopc Terminal | Powerful coding agents from your terminal",
+        "metaDescription": "Run xopc in a project directory to use powerful coding agents and their harness, with built-in Codebase Memory and the freedom to switch to non-coding agents in the terminal.",
+        "titleLine1": "From your terminal.",
+        "titleLine2": "Put agents to work.",
+        "desc": "Run xopc from a project directory to use powerful coding agents and their harness for understanding, changing, and verifying a real codebase. Built-in Codebase Memory makes code queryable; when the task is not coding, switch agents in the same terminal and keep moving.",
+        "secondaryCta": "Use from terminal",
+        "terminalPoints": [
+          "Run xopc in your project directory",
+          "A powerful coding agent harness",
+          "Switch to other agents when needed"
+        ],
+        "quickStart": {
+          "kicker": "Start with Terminal",
+          "title": "Start agent work from your terminal.",
+          "desc": "Install xopc, connect the agent you prefer, then code—or switch to another task—from a local project directory.",
+          "copy": "Copy",
+          "copied": "Copied",
+          "steps": [
+            {
+              "label": "Install",
+              "title": "Install the xopc CLI",
+              "body": "For developers who already have a Node.js environment.",
+              "command": "npm install -g @xopcai/xopc"
+            },
+            {
+              "label": "Connect",
+              "title": "Complete provider onboarding",
+              "body": "Connect Codex, Claude Code, or the coding capability you choose during setup.",
+              "command": "xopc onboard"
+            },
+            {
+              "label": "Start",
+              "title": "Run xopc in your terminal",
+              "body": "Invoke a coding agent in the project directory, then switch agents when the task changes.",
+              "command": "xopc"
+            }
+          ]
+        },
+        "flow": {
+          "kicker": "From terminal to delivery",
+          "title": "Make coding-agent work a reviewable loop.",
+          "desc": "The point is not how much code appears at once; it is understanding, changing, validating, and handing off a real project responsibly.",
+          "steps": [
+            {
+              "title": "Invoke from the project",
+              "body": "Build task-relevant project context from the terminal, request, and local workspace."
+            },
+            {
+              "title": "Propose a plan",
+              "body": "Clarify the implementation path, impact area, and required verification before editing."
+            },
+            {
+              "title": "Advance with the harness",
+              "body": "Use connected coding agents to make changes, repair issues, and call the tools needed in the workspace."
+            },
+            {
+              "title": "Review and verify",
+              "body": "Use the diff, commands, and verification results to show what changed and what deserves attention."
+            }
+          ]
+        },
+        "capabilities": {
+          "kicker": "One terminal, many agents",
+          "title": "Powerful for coding—and not limited to it.",
+          "desc": "xopc Terminal gives coding agents task structure, project context, and a delivery harness in the terminal. Codebase Memory makes code structure, relationships, and impact scope queryable; switch agents directly when the task is not coding.",
+          "items": [
+            {
+              "title": "A powerful coding-agent harness",
+              "body": "Organize context, plans, tool calls, changes, diffs, and verification around a real codebase, so an agent can drive a complete delivery rather than emit isolated snippets."
+            },
+            {
+              "title": "Codebase Memory",
+              "body": "Use a built-in code knowledge graph for functions, types, call chains, routes, and cross-service relationships—then combine semantic search, structural queries, and impact analysis to find relevant code quickly."
+            },
+            {
+              "title": "Switch agents in the terminal",
+              "body": "Beyond coding, switch from the same entry point to an agent suited for research, synthesis, operations, or everyday tasks."
+            },
+            {
+              "title": "Trackable changes",
+              "body": "Organize code changes, executed commands, and verification results into a record people can review."
+            }
+          ]
+        },
+        "scenarios": {
+          "kicker": "Start with an engineering task",
+          "title": "Work worth handing to xopc Terminal.",
+          "items": [
+            {
+              "eyebrow": "Build",
+              "title": "From issue to implementation plan",
+              "body": "Understand the request and impact area before receiving a reviewable path to implementation."
+            },
+            {
+              "eyebrow": "Fix",
+              "title": "Bug investigation and repair",
+              "body": "Trace a problem in the real repository, make the fix, and return the verification result."
+            },
+            {
+              "eyebrow": "Evolve",
+              "title": "Refactoring and test coverage",
+              "body": "Break structural change into verifiable steps to reduce the risk of changing code without checking outcomes."
+            },
+            {
+              "eyebrow": "Switch",
+              "title": "Move from coding to another task",
+              "body": "Switch agents from the same terminal when research, synthesis, or everyday work needs to continue beyond the codebase."
+            }
+          ]
+        },
+        "trust": {
+          "kicker": "See it before accepting it",
+          "title": "Give every change a basis.",
+          "items": [
+            "Your workspace: work around local projects and established tools.",
+            "Your choice: connect different coding agents—or switch to another agent—for the task.",
+            "Your review: use changes and verification records to decide whether to accept delivery."
+          ]
+        },
+        "cross": {
+          "kicker": "The same xopc runtime",
+          "title": "Need an agent to progress everyday computer work?",
+          "desc": "xopc Desktop organizes goals, tool execution, approvals, and durable state into a delivery path for real-world tasks.",
           "cta": "Explore {product}"
         }
       }
     },
     "loop": {
-      "titleLine1": "One runtime.",
-      "titleLine2": "Work that has a next step.",
-      "desc": "xopc separates long-running work into explicit state, execution, triggers, and access. It does not assume AI remembers everything; important information has a home, complex execution is observable, and follow-up can start again.",
-      "modelLabel": "xopc continuous work model",
+      "titleLine1": "From an unfinished thought",
+      "titleLine2": "to the next real step.",
+      "desc": "xopc captures the input, connects the relevant context, acts and verifies within your boundaries, then keeps the next step ready.",
+      "modelLabel": "The xopc Task Loop",
       "steps": [
         {
-          "title": "Durable state",
-          "body": "Sessions, Projects, Goals, Notes, and Workspaces retain conversations, progress, source material, and artifacts."
+          "title": "Capture",
+          "body": "Start with text, voice, a file, a link, or an unfinished thought. You do not need to organize it first."
         },
         {
-          "title": "Explicit execution",
-          "body": "Agents use allowed tools and skills; Workflows organize multi-step or parallel work into inspectable runs."
+          "title": "Understand",
+          "body": "Connect the input to the people, projects, decisions, and constraints that matter."
         },
         {
-          "title": "Active triggers",
-          "body": "Automations run agents or workflows on schedules, manually, or from webhooks, with visible success, failure, and retry history."
+          "title": "Act and verify",
+          "body": "Take the smallest capable path, use allowed tools, and keep evidence of what changed."
         },
         {
-          "title": "Access anywhere",
-          "body": "Terminal, web, desktop, mobile, messengers, and HTTP/SSE APIs connect to the same runtime and state."
+          "title": "Continue",
+          "body": "Keep the next action and follow-up together so the work can resume without starting over."
         }
       ]
     }

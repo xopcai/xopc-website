@@ -1,20 +1,20 @@
 /* ─── CONTINUOUS WORK MODEL ─────────────────────────────────────── */
 .landing-page .loop-section {
-  padding: 104px 0;
+  padding: 120px 0;
   background: transparent;
 }
 
 .landing-page .loop-model {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
   border-radius: 20px;
   background: transparent;
 }
 
 .landing-page .loop-step {
-  min-height: 252px;
-  padding: 32px 28px;
+  min-height: 268px;
+  padding: 36px;
   border-radius: 18px;
   background: var(--bg-card);
   box-shadow: var(--rim-light), 0 18px 48px color-mix(in srgb, var(--fg-head) 5%, transparent);
@@ -26,7 +26,7 @@
   justify-content: center;
   min-width: 36px;
   height: 28px;
-  margin-bottom: 52px;
+  margin-bottom: 64px;
   padding: 0 10px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--accent) 10%, transparent);
@@ -36,13 +36,14 @@
 }
 
 .landing-page .loop-step h3 {
-  margin-bottom: 12px;
-  font-size: 18px;
+  margin-bottom: 14px;
+  font-size: 22px;
   letter-spacing: -0.025em;
 }
 
 .landing-page .loop-step p {
+  max-width: 420px;
   color: var(--fg-mid);
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.7;
 }

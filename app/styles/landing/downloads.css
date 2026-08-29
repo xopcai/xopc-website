@@ -1,4 +1,8 @@
     /* ─── DESKTOP DOWNLOAD PICKER ──────────────────────────────────── */
+    .landing-page .product-get-started--desktop .product-kicker{
+      text-transform: none;
+    }
+
     .landing-page .desktop-download-picker--loading,
     .landing-page .desktop-download-picker--error{
       font-size: 14px;
@@ -239,46 +243,50 @@
       }
     }
 
-    /* ─── MOBILE APP DOWNLOADS ─────────────────────────────────────── */
+    .landing-page .mobile-download-section{
+      padding: 72px 0;
+      border-block: 1px solid var(--edge);
+      background: var(--bg-surface);
+    }
+
+    .landing-page .mobile-download-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .landing-page .mobile-download-status,
+    .landing-page .mobile-app-panel{
+      min-height: 230px;
+      padding: 24px;
+      border: 1px solid var(--edge-bright);
+      border-radius: 16px;
+      background: var(--bg-card);
+    }
+
     .landing-page .mobile-download-status{
-      padding: 18px;
-      border: 1px dashed var(--edge-bright);
-      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--fg-mid);
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .landing-page .mobile-download-status--error{
       color: var(--fg-dim);
     }
 
-    .landing-page .mobile-app-stack{
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
     .landing-page .mobile-app-panel{
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 24px;
-      min-height: 168px;
-      padding: 22px;
-      border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--edge-bright));
-      border-radius: 14px;
-      background:
-        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent-glow) 72%, transparent), transparent 48%),
-        var(--code-terminal);
-    }
-
-    .landing-page .mobile-app-panel-copy{
-      max-width: 620px;
     }
 
     .landing-page .mobile-app-eyebrow{
       display: block;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
       color: var(--accent-bright);
       font-family: var(--mono);
       font-size: 11px;
@@ -289,15 +297,14 @@
     .landing-page .mobile-app-panel h3{
       margin: 0;
       color: var(--fg-head);
-      font-size: 18px;
-      line-height: 1.35;
+      font-size: 20px;
     }
 
     .landing-page .mobile-app-panel-copy > p,
     .landing-page .mobile-app-panel--success p{
-      margin: 7px 0 0;
+      margin: 8px 0 0;
       color: var(--fg-mid);
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.6;
     }
 
@@ -325,19 +332,15 @@
       border-radius: 10px;
       background: var(--accent);
       color: var(--on-accent);
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
+      font: 600 13px var(--sans);
       text-decoration: none;
       white-space: nowrap;
       cursor: pointer;
-      transition: background 0.15s ease-out, transform 0.15s ease-out;
     }
 
     .landing-page .mobile-app-primary-action:hover,
     .landing-page .mobile-app-signup button:hover:not(:disabled){
       background: var(--accent-hover);
-      transform: translateY(-1px);
     }
 
     .landing-page .mobile-app-primary-action svg{
@@ -345,16 +348,98 @@
       height: 17px;
     }
 
-    .landing-page .mobile-app-panel--ios{
-      align-items: stretch;
+    .landing-page .android-download-action{
+      position: relative;
+      display: flex;
       flex-direction: column;
-      gap: 18px;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .landing-page .android-download-qr-hint,
+    .landing-page .android-download-qr{
+      display: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .landing-page .android-download-qr-hint{
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--fg-dim);
+        font-size: 11px;
+      }
+
+      .landing-page .android-download-qr-hint svg{
+        width: 14px;
+        height: 14px;
+      }
+
+      .landing-page .android-download-qr{
+        position: absolute;
+        display: block;
+        z-index: 10;
+        bottom: calc(100% + 12px);
+        left: 0;
+        width: 220px;
+        padding: 14px;
+        border: 1px solid var(--edge-bright);
+        border-radius: 14px;
+        background: var(--popover-bg);
+        box-shadow: var(--shadow-video);
+        color: var(--fg-head);
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(6px);
+        pointer-events: none;
+        transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s;
+      }
+
+      .landing-page .android-download-action:hover .android-download-qr,
+      .landing-page .android-download-action:focus-within .android-download-qr{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .landing-page .android-download-qr img,
+      .landing-page .android-download-qr-loading{
+        display: block;
+        width: 184px;
+        height: 184px;
+        margin: 0 auto 10px;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .landing-page .android-download-qr-loading{
+        display: grid;
+        place-items: center;
+        padding: 12px;
+        color: #4b5563;
+        font-size: 12px;
+      }
+
+      .landing-page .android-download-qr strong{
+        display: block;
+        font-size: 14px;
+      }
+
+      .landing-page .android-download-qr p{
+        margin: 5px 0 0;
+        color: var(--fg-mid);
+        font-size: 11px;
+        line-height: 1.45;
+      }
+    }
+
+    .landing-page .mobile-app-panel--ios{
+      justify-content: flex-start;
     }
 
     .landing-page .mobile-app-signup{
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      width: 100%;
     }
 
     .landing-page .mobile-app-signup-trap{
@@ -367,6 +452,8 @@
     }
 
     .landing-page .mobile-app-signup > label{
+      display: block;
+      margin-bottom: 8px;
       color: var(--fg-body);
       font-size: 12px;
       font-weight: 600;
@@ -374,24 +461,24 @@
 
     .landing-page .mobile-app-signup-row{
       display: flex;
-      gap: 9px;
+      gap: 8px;
     }
 
     .landing-page .mobile-app-email-field{
       display: flex;
       flex: 1 1 auto;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
       min-width: 0;
       padding: 0 12px;
       border: 1px solid var(--edge-bright);
       border-radius: 10px;
-      background: var(--bg-card);
+      background: var(--bg-surface);
       color: var(--fg-dim);
     }
 
     .landing-page .mobile-app-email-field:focus-within{
-      border-color: color-mix(in srgb, var(--accent) 72%, var(--edge-bright));
+      border-color: var(--accent);
       box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
     }
 
@@ -410,12 +497,7 @@
       outline: 0;
       background: transparent;
       color: var(--fg-head);
-      font: inherit;
-      font-size: 13px;
-    }
-
-    .landing-page .mobile-app-email-field input::placeholder{
-      color: var(--fg-dim);
+      font: 13px var(--sans);
     }
 
     .landing-page .mobile-app-signup button:disabled{
@@ -425,7 +507,7 @@
 
     .landing-page .mobile-app-form-note,
     .landing-page .mobile-app-form-error{
-      margin: 0;
+      margin: 8px 0 0;
       color: var(--fg-dim);
       font-size: 11px;
       line-height: 1.5;
@@ -436,33 +518,99 @@
     }
 
     .landing-page .mobile-app-panel--success{
+      flex-direction: row;
       justify-content: flex-start;
     }
 
     .landing-page .mobile-app-panel--success > svg{
-      width: 28px;
-      height: 28px;
       flex: 0 0 auto;
       color: var(--accent);
     }
 
-    @media (max-width: 640px) {
-      .landing-page .mobile-app-panel{
-        align-items: stretch;
-        flex-direction: column;
-        gap: 18px;
-        padding: 18px;
+    @media (max-width: 760px) {
+      .landing-page .mobile-download-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .landing-page .mobile-download-section{
+        padding: 56px 0;
       }
 
-      .landing-page .mobile-app-primary-action{
+      .landing-page .mobile-app-primary-action,
+      .landing-page .mobile-app-signup button{
+        width: 100%;
+      }
+
+      .landing-page .android-download-action{
         width: 100%;
       }
 
       .landing-page .mobile-app-signup-row{
         flex-direction: column;
       }
+    }
 
-      .landing-page .mobile-app-signup button{
-        width: 100%;
+    .landing-page .terminal-install-section{
+      padding: 36px 0 88px;
+    }
+
+    .landing-page .terminal-install-inner{
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+      align-items: center;
+      gap: 48px;
+      padding-top: 36px;
+      border-top: 1px solid var(--edge);
+    }
+
+    .landing-page .terminal-install-copy h2{
+      margin: 0 0 12px;
+      font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .landing-page .terminal-install-copy > p:last-child{
+      margin: 0;
+      color: var(--fg-mid);
+      line-height: 1.65;
+    }
+
+    .landing-page .terminal-install-commands{
+      display: grid;
+      gap: 10px;
+    }
+
+    .landing-page .terminal-install-commands > div{
+      display: grid;
+      gap: 7px;
+    }
+
+    .landing-page .terminal-install-commands span{
+      color: var(--fg-dim);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .landing-page .terminal-install-commands code{
+      display: block;
+      overflow-x: auto;
+      padding: 14px 16px;
+      border: 1px solid var(--edge-bright);
+      border-radius: 10px;
+      background: var(--code-terminal);
+      color: var(--fg-body);
+      font-family: var(--mono);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 760px) {
+      .landing-page .terminal-install-inner{
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
     }

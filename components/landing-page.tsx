@@ -1,107 +1,71 @@
 import {
-  ArrowRight,
-  BookOpen,
-  Bot,
-  GitBranch,
+  Download,
   Github,
-  HardDrive,
-  KeyRound,
-  Layers,
-  Puzzle,
-  Smartphone,
-  Target,
-  type LucideIcon,
+  ShieldCheck,
+  Terminal,
 } from "lucide-react";
-import Link from "next/link";
+import Image from "next/image";
 
 import { HeroBrand } from "@/components/hero-brand";
-import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LandingFooter } from "@/components/landing-footer";
+import { LandingAnalytics } from "@/components/landing-analytics";
+import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LandingNavState } from "@/components/landing-nav-state";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
-import { QuickInstallBlock } from "@/components/quick-install-block";
-import { SurfaceGallery } from "@/components/surface-gallery";
-import { WorkflowBoardPreview } from "@/components/workflow-board-preview";
 import { LocaleSwitcher } from "@/components/locale-switcher";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { LogoHomeLink } from "@/components/logo-home-link";
+import { MobileDownloads } from "@/components/mobile-downloads";
+import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
+import { ThemeToggle } from "@/components/theme-toggle";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
-import { LANDING_GITHUB_REPO, LANDING_MOBILE_APP_REPO } from "@/lib/landing-urls";
-import { LANDING_MEDIA, type SurfaceMediaId } from "@/lib/landing-media";
-import { resolveLocaleMediaSrc } from "@/lib/locale-media.server";
-
-const FEATURE_ICON_MAP: Record<string, LucideIcon> = {
-  key: KeyRound,
-  layers: Layers,
-  "git-branch": GitBranch,
-  bot: Bot,
-  puzzle: Puzzle,
-  "hard-drive": HardDrive,
-  target: Target,
-};
-
-function FeatureIcon({ name }: { name: string }) {
-  const Icon = FEATURE_ICON_MAP[name] ?? KeyRound;
-
-  return (
-    <div className="feature-icon">
-      <Icon className="feature-icon-svg" strokeWidth={1.75} aria-hidden />
-    </div>
-  );
-}
+import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
 
 type Props = {
   locale: Locale;
   messages: Messages;
   docHome: string;
-  docWorkflows: string;
 };
 
-function dotClass(dot: string): string {
-  return `dot dot-${dot}`;
-}
-
-export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Props) {
+export function LandingPage({ locale, messages: m, docHome }: Props) {
   const L = m.landing;
-  const surfaceMediaSrcs = Object.fromEntries(
-    Object.entries(LANDING_MEDIA.surfaces).map(([id, media]) => [id, resolveLocaleMediaSrc(media, locale)]),
-  ) as Partial<Record<SurfaceMediaId, string>>;
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "xopc",
+    applicationCategory: "ProductivityApplication",
+    operatingSystem: "macOS, Windows, Linux",
+    description: m.meta.description,
+    downloadUrl: `https://xopc.ai/${locale}#download`,
+    featureList: L.productProof.capabilities.map((item) => item.title),
+    license: "https://opensource.org/license/mit",
+    sameAs: [LANDING_GITHUB_REPO],
+  };
 
   return (
     <div className="landing-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema).replace(/</g, "\\u003c") }}
+      />
+      <LandingAnalytics />
       <LandingLocaleTransition />
       <LandingNavState />
       <LandingScrollReveal />
+
       <nav>
         <div className="container nav-inner">
           <div className="nav-logo">
             <LogoHomeLink locale={locale} ariaLabel="xopc home" />
           </div>
           <ul className="nav-links">
-            <li>
-              <Link href={`/${locale}/products/worker`}>{L.products.nav.operator}</Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/products/code`}>{L.products.nav.code}</Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/products/gateway`}>{L.products.nav.gateway}</Link>
-            </li>
-            <li>
-              <a href="#loop">{L.nav.loop}</a>
-            </li>
-            <li>
-              <a href="#features">{L.nav.system}</a>
-            </li>
-            <li>
-              <a href="#channels">{L.nav.channels}</a>
-            </li>
-            <li>
-              <a href="#workflows">{L.nav.workflows}</a>
-            </li>
+            <li><a href="#why">{L.nav.why}</a></li>
+            <li><a href="#loop">{L.nav.how}</a></li>
+            <li><a href="#trust">{L.nav.trust}</a></li>
+            <li><a href={docHome} target="_blank" rel="noopener noreferrer">{L.nav.docs}</a></li>
           </ul>
           <div className="nav-extra">
+            <a href="#download" className="nav-download-cta" data-product-event="nav_download_clicked">{L.nav.download}</a>
             <div className="nav-extra-tools">
               <LocaleSwitcher
                 locale={locale}
@@ -136,60 +100,76 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         <div className="container hero-inner">
           <HeroBrand
             brandName={L.hero.brandName}
-            headlineLine1={L.hero.headlineLine1}
-            headlineLine2={L.hero.headlineLine2}
+            headline={L.hero.headline}
           />
-
           <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
-
-          <div className="hero-quick-start fade-up delay-3" id="download">
-            <QuickInstallBlock d={L.download} />
+          <div className="hero-actions fade-up delay-3">
+            <a href="#download" className="btn-primary" data-product-event="hero_download_clicked">
+              <Download className="btn-ic" strokeWidth={1.75} aria-hidden />
+              {L.hero.primaryCta}
+            </a>
+            <a href="#terminal-install" className="btn-secondary" data-product-event="terminal_install_clicked">
+              <Terminal className="btn-ic" strokeWidth={1.75} aria-hidden />
+              {L.hero.secondaryCta}
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="product-chooser-section landing-reveal" aria-labelledby="products-title">
+      <section className="aha-section landing-reveal" id="why">
+        <div className="container aha-layout">
+          <div className="aha-copy">
+            <p className="section-kicker">{L.aha.kicker}</p>
+            <h2>{L.aha.title}</h2>
+            <p>{L.aha.desc}</p>
+          </div>
+          <div className="aha-conversation" aria-label={L.aha.ariaLabel}>
+            <div className="aha-user-message">
+              <span>{L.aha.userLabel}</span>
+              <p>{L.aha.userMessage}</p>
+            </div>
+            <div className="aha-context">
+              <span>{L.aha.contextLabel}</span>
+              <ul>
+                {L.aha.contextItems.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+            <div className="aha-assistant-message">
+              <span>{L.aha.assistantLabel}</span>
+              <p>{L.aha.assistantMessage}</p>
+              <div>
+                <strong>{L.aha.nextStepLabel}</strong>
+                {L.aha.nextStep}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="product-proof-section landing-reveal" aria-labelledby="product-proof-title">
         <div className="container">
-          <div className="product-chooser-header">
-            <p className="product-chooser-kicker">{L.products.home.kicker}</p>
-            <h2 id="products-title">
-              {L.products.home.titleLine1}
-              <br />
-              {L.products.home.titleLine2}
-            </h2>
-            <p>{L.products.home.desc}</p>
+          <div className="section-header product-proof-header">
+            <p className="section-kicker">{L.productProof.kicker}</p>
+            <h2 id="product-proof-title">{L.productProof.title}</h2>
+            <p>{L.productProof.desc}</p>
           </div>
-          <div className="product-choice-grid">
-            {([
-              ["operator", "worker"],
-              ["code", "code"],
-              ["gateway", "gateway"],
-            ] as const).map(([product, slug]) => {
-              const item = L.products.home[product];
-              return (
-                <Link href={`/${locale}/products/${slug}`} className="product-choice-card" key={product}>
-                  <span className="product-choice-label">{item.label}</span>
-                  <h3>{item.name}</h3>
-                  <p>{item.desc}</p>
-                  <span className="product-choice-link">
-                    {item.cta}
-                    <ArrowRight aria-hidden />
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
+          <figure className="product-proof-frame">
+            <Image
+              src="/media/product/xopc-desktop.gif"
+              width={1832}
+              height={1132}
+              sizes="(max-width: 760px) calc(100vw - 40px), 1120px"
+              unoptimized
+              alt={L.productProof.imageAlt}
+            />
+          </figure>
         </div>
       </section>
 
       <section className="loop-section landing-reveal" id="loop">
         <div className="container">
           <div className="section-header">
-            <h2>
-              {L.loop.titleLine1}
-              <br />
-              {L.loop.titleLine2}
-            </h2>
+            <h2>{L.loop.titleLine1}<br />{L.loop.titleLine2}</h2>
             <p>{L.loop.desc}</p>
           </div>
           <div className="loop-model" aria-label={L.loop.modelLabel}>
@@ -204,149 +184,82 @@ export function LandingPage({ locale, messages: m, docHome, docWorkflows }: Prop
         </div>
       </section>
 
-      <section className="features-section landing-reveal" id="features">
+      <section className="trust-section landing-reveal" id="trust">
         <div className="container">
           <div className="section-header">
-            <h2>
-              {L.features.titleLine1}
-              <br />
-              {L.features.titleLine2}
-            </h2>
-            <p>{L.features.desc}</p>
+            <h2>{L.trust.title}</h2>
+            <p>{L.trust.desc}</p>
           </div>
-
-          <div className="feature-groups">
-            {L.features.groups.map((group, groupIndex) => (
-              <section className="feature-group" key={group.title} aria-labelledby={`feature-group-${groupIndex}`}>
-                <div className="feature-group-header">
-                  <h3 id={`feature-group-${groupIndex}`}>{group.title}</h3>
-                  <p>{group.desc}</p>
-                </div>
-
-                <div className="features-grid">
-                  {group.items.map((itemIndex) => {
-                    const item = L.features.items[itemIndex];
-
-                    return (
-                      <div
-                        className={`feature-card${item.featured ? " featured" : ""}`}
-                        key={item.title}
-                      >
-                        <FeatureIcon name={item.icon} />
-                        <h3>{item.title}</h3>
-                        <p>{item.body}</p>
-                        {item.featured ? <span className="feature-tag">{L.features.tagFeatured}</span> : null}
-                      </div>
-                    );
-                  })}
-                </div>
-              </section>
-            ))}
+          <div className="trust-layout">
+            <div className="trust-grid">
+              {L.trust.items.map((item) => (
+                <article className="trust-card" key={item.title}>
+                  <ShieldCheck aria-hidden strokeWidth={1.75} />
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="understanding-card">
+              <div>
+                <span>{L.trust.factLabel}</span>
+                <p>{L.trust.factExample}</p>
+              </div>
+              <div>
+                <span>{L.trust.inferenceLabel}</span>
+                <p>{L.trust.inferenceExample}</p>
+              </div>
+              <p className="understanding-note">{L.trust.correctionNote}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <SurfaceGallery
-        locale={locale}
-        titleLine1={L.channels.titleLine1}
-        titleLine2={L.channels.titleLine2}
-        desc={L.channels.desc}
-        items={L.channels.items}
-        placeholderAction={L.channels.placeholderAction}
-        mediaSrcs={surfaceMediaSrcs}
+      <ProductDesktopDownloads
+        id="download"
+        d={L.download}
+        kicker={L.download.desktopSectionKicker}
+        title={L.download.desktopSectionTitle}
+        desc={L.download.desktopSectionDesc}
       />
 
-      <section className="providers-section landing-reveal" id="providers">
-        <div className="container">
-          <div className="section-header">
-            <h2>
-              {L.providers.titleLine1}
-              <br />
-              {L.providers.titleLine2}
-            </h2>
-            <p>{L.providers.desc}</p>
+      <section className="terminal-install-section landing-reveal" id="terminal-install">
+        <div className="container terminal-install-inner">
+          <div className="terminal-install-copy">
+            <p className="section-kicker">{L.download.terminalSectionKicker}</p>
+            <h2>{L.download.terminalSectionTitle}</h2>
+            <p>{L.download.terminalSectionDesc}</p>
           </div>
-        </div>
-
-        <div className="providers-marquee-wrapper">
-          <div className="providers-marquee">
-            {L.providers.chips.map((chip) => (
-              <div className="provider-chip" key={chip.name}>
-                <span className={dotClass(chip.dot)} />
-                {chip.name}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="container">
-          <div className="providers-cta">
-            <a href={docHome} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              {L.providers.viewProviders}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="workflows-section landing-reveal" id="workflows">
-        <div className="container">
-          <div className="workflows-layout">
-            <div className="workflows-content">
-              <h2>
-                {L.workflows.titleLine1}
-                <br />
-                {L.workflows.titleLine2}
-              </h2>
-              <p>{L.workflows.desc}</p>
-
-              <div className="feature-list">
-                {L.workflows.bullets.map((line) => (
-                  <div className="feature-list-item" key={line}>
-                    {line}
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={docWorkflows}
-                className="btn-secondary workflows-docs-cta"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BookOpen className="btn-ic" strokeWidth={1.75} aria-hidden />
-                {L.workflows.viewDocs}
-              </a>
+          <div className="terminal-install-commands">
+            <div>
+              <span>{L.download.terminalUnixLabel}</span>
+              <code>{L.download.terminalUnixCommand}</code>
             </div>
-
-            <div className="workflows-visual">
-              <WorkflowBoardPreview board={L.workflows.board} />
+            <div>
+              <span>{L.download.terminalWindowsLabel}</span>
+              <code>{L.download.terminalWindowsCommand}</code>
             </div>
           </div>
         </div>
       </section>
+
+      <MobileDownloads d={L.download} />
 
       <div className="landing-cta-footer">
         <section className="cta-section landing-reveal">
           <div className="container">
-            <h2>
-              {L.cta.titleLine1}
-              <br />
-              {L.cta.titleLine2}
-            </h2>
-            <p>{L.cta.desc}</p>
-
+            <h2>{L.cta.titleLine1}<br />{L.cta.titleLine2}</h2>
             <div className="cta-actions">
-              <a href="#download" className="btn-primary">
-                {L.cta.primary}
-              </a>
-              <a href={LANDING_MOBILE_APP_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-                <Smartphone className="btn-ic" strokeWidth={1.75} aria-hidden />
-                {L.cta.mobileApp}
+              <a href="#download" className="btn-primary" data-product-event="final_download_clicked">{L.cta.primary}</a>
+              <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
+                {L.cta.secondary}
               </a>
             </div>
           </div>
         </section>
-
         <LandingFooter footer={L.footer} docsHref={docHome} />
       </div>
     </div>
