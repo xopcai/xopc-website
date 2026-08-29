@@ -100,12 +100,9 @@
     }
 
     html[data-theme="dark"] .landing-page .nav-extra-tools,
-    html[data-theme="dark"] .landing-page .quick-start-window,
-    html[data-theme="dark"] .landing-page .feature-card,
-    html[data-theme="dark"] .landing-page .surfaces-tab,
-    html[data-theme="dark"] .landing-page .surfaces-visual,
-    html[data-theme="dark"] .landing-page .provider-chip,
-    html[data-theme="dark"] .landing-page .wf-board-shell,
+    html[data-theme="dark"] .landing-page .aha-conversation,
+    html[data-theme="dark"] .landing-page .trust-card,
+    html[data-theme="dark"] .landing-page .understanding-card,
     html[data-theme="dark"] .landing-page .btn-secondary,
     html[data-theme="dark"] .landing-page .locale-switcher-panel,
     html[data-theme="dark"] .landing-page .theme-toggle-pill-track{
@@ -113,13 +110,10 @@
       backdrop-filter: blur(18px) saturate(165%);
     }
 
-    html[data-theme="dark"] .landing-page .quick-start-window,
     html[data-theme="dark"] .landing-page .loop-step,
-    html[data-theme="dark"] .landing-page .feature-card,
-    html[data-theme="dark"] .landing-page .surfaces-tab,
-    html[data-theme="dark"] .landing-page .surfaces-visual,
-    html[data-theme="dark"] .landing-page .provider-chip,
-    html[data-theme="dark"] .landing-page .wf-board-shell,
+    html[data-theme="dark"] .landing-page .aha-conversation,
+    html[data-theme="dark"] .landing-page .trust-card,
+    html[data-theme="dark"] .landing-page .understanding-card,
     html[data-theme="dark"] .landing-page .btn-secondary{
       background: var(--glass-bg);
     }
@@ -128,9 +122,7 @@
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
     }
 
-    html[data-theme="dark"] .landing-page .quick-start-window,
-    html[data-theme="dark"] .landing-page .surfaces-visual,
-    html[data-theme="dark"] .landing-page .wf-board-shell{
+    html[data-theme="dark"] .landing-page .aha-conversation{
       box-shadow: var(--glass-shadow), 0 0 52px var(--glow-accent);
     }
 
@@ -140,4 +132,10 @@
       padding: 0 32px;
     }
 
-    .landing-page section{ position: relative; }
+    .landing-page section{
+      position: relative;
+    }
+
+    .landing-page section[id]{
+      scroll-margin-top: 76px;
+    }

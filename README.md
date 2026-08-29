@@ -2,7 +2,7 @@
 
 Official landing site for [xopc.ai](https://xopc.ai).
 
-xopc is a self-hosted, local-first personal AI runtime. It connects models, agents, persistent sessions, projects, goals, notes, workflows, and automations across CLI, desktop, web, mobile, and messengers.
+xopc is an open-source, local-first personal AI on your computer that remembers your goals and context—and picks up where you left off. Its runtime connects conversations, projects, tasks, notes, workflows, and automations across desktop, terminal, web, mobile, and messengers.
 
 ## Local development
 

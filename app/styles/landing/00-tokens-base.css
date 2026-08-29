@@ -18,6 +18,7 @@
       --bg-surface: #ebebed;
       --bg-card: #ffffff;
       --bg-card-hover: #e8e8ed;
+      --popover-bg: #ffffff;
       --edge: #ebebed;
       --edge-bright: #d2d2d7;
       --fg-dim: #86868b;
@@ -67,6 +68,7 @@
       --bg-surface: rgba(255, 255, 255, 0.045);
       --bg-card: rgba(255, 255, 255, 0.064);
       --bg-card-hover: rgba(255, 255, 255, 0.1);
+      --popover-bg: #151c25;
       --edge: rgba(255, 255, 255, 0.085);
       --edge-bright: rgba(255, 255, 255, 0.16);
       --fg-dim: #8f9aa8;

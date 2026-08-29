@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "XOPC — 自托管的个人 AI 运行时",
-    "description": "在自己的设备上运行 AI：统一管理模型、Agent、会话、项目、目标、笔记、工作流和自动化，并从终端、网页、桌面、手机与即时通讯接入。",
-    "ogDescription": "xopc 是自托管、本地优先的个人 AI 运行时。你掌控数据、密钥和运行环境，让长期工作可恢复、可执行、可再次触发。"
+    "title": "xopc — 让重要的事持续向前。",
+    "description": "一个运行在你电脑上的个人 AI，记得你的目标和上下文，随时从你停下的地方继续。",
+    "ogDescription": "一个运行在你电脑上的个人 AI，记得你的目标和上下文，随时从你停下的地方继续。"
   },
   "header": {
     "chooseLanguage": "选择语言",
@@ -14,68 +14,35 @@
   },
   "landing": {
     "nav": {
-      "products": "产品",
-      "download": "开始",
-      "channels": "多端",
-      "workflows": "工作流",
+      "why": "为什么用 xopc",
+      "how": "如何工作",
+      "docs": "文档",
+      "download": "下载",
       "github": "GitHub",
-      "loop": "产品模型",
-      "system": "核心能力"
+      "trust": "信任与控制"
     },
     "hero": {
       "brandName": "xopc",
-      "headlineLine1": "把目标变成循环。",
-      "headlineLine2": "让重要的事持续向前。",
-      "desc": "自托管、本地优先的个人 AI 运行时。统一连接模型、Agent、持续状态、工作流、自动化与多端入口；你掌控数据、密钥和运行环境。"
+      "headline": "让重要的事持续向前。",
+      "desc": "一个运行在你电脑上的个人 AI。它记得目标和上下文，调用工具推进工作，并从你停下的地方继续。",
+      "primaryCta": "下载 xopc",
+      "secondaryCta": "使用终端安装"
     },
     "download": {
-      "quickStartHeading": "快速开始",
-      "methodTabsAria": "选择安装方式",
-      "methodOneLiner": "一键安装",
-      "methodNpm": "npm",
-      "methodHackable": "源码安装",
-      "methodDesktop": "桌面版",
-      "methodMobile": "移动端",
-      "npmToolTabsAria": "选择包管理器",
-      "npmToolNpm": "npm",
-      "npmToolPnpm": "pnpm",
-      "hackableToolTabsAria": "选择 Hackable 安装方式",
-      "hackableToolInstaller": "installer",
-      "hackableToolPnpm": "pnpm",
-      "appsPlatformTabsAria": "选择应用平台",
-      "mobilePlatformTabsAria": "选择移动应用平台",
-      "npmQuickComment": "# 需要 Node.js 22+，然后执行 onboard。",
-      "desktopQuickComment": "",
-      "hackableComment": "# 源码安装 — 适合贡献者与深度定制",
-      "hackableUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash -s -- --install-method git",
-      "hackableWindowsCommand": "powershell -c \"& ([scriptblock]::Create((irm https://xopc.ai/install.ps1))) -InstallMethod git\"",
-      "hackablePnpmComment1": "# 源码仓库为 pnpm workspace",
-      "hackablePnpmCloneCommand": "git clone https://github.com/xopcai/xopc.git",
-      "hackablePnpmInstallCommand": "cd xopc && corepack enable && pnpm install",
-      "hackablePnpmComment2": "# 从源码运行；先 build 再 onboard",
-      "hackablePnpmOnboardCommand": "pnpm run build && pnpm exec xopc onboard",
-      "title": "30 秒，立即开始。",
-      "subtitle": "一条命令安装 Node.js 与 xopc，并引导完成 onboard — 支持 macOS、Linux 与 Windows。",
-      "quickInstallTabsAria": "选择安装平台",
-      "quickInstallUnixTab": "macOS & Linux",
-      "quickInstallWindowsTab": "Windows",
-      "quickInstallComment": "# 一条命令，支持 macOS、Linux 与 Windows。",
-      "quickInstallUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
-      "quickInstallWindowsCommand": "powershell -c \"irm https://xopc.ai/install.ps1 | iex\"",
-      "quickInstallFootnote": "推荐大多数用户下载桌面版；终端用户也可选择一键安装或 npm。移动端提供 Android 直接下载与 iOS TestFlight 测试申请。",
-      "pnpmCommand": "pnpm add -g @xopcai/xopc",
-      "advancedHeading": "使用 npm 安装",
-      "advancedSubtitle": "若已安装 Node.js 22+，可直接用包管理器。",
-      "npmBody": "需要 Node.js 22+。亦支持 pnpm：pnpm add -g @xopcai/xopc。国内镜像：npm install -g @xopcai/xopc --registry=https://registry.npmmirror.com。然后开聊：xopc",
-      "npmInstallLabel": "1. 安装",
-      "npmCommand": "npm install -g @xopcai/xopc",
-      "npmOnboardLabel": "2. 配置",
-      "npmOnboardBody": "交互式引导：选模型、填 key。想更快可先执行：xopc onboard --quick",
-      "onboardCommand": "xopc onboard",
-      "copy": "复制",
-      "copied": "已复制",
-      "desktopHeading": "桌面应用",
-      "desktopSubtitle": "从 GitHub Releases 下载 macOS、Windows 或 Linux 的 Electron 构建包。",
+      "desktopSectionKicker": "运行 xopc",
+      "desktopSectionTitle": "从桌面应用开始。",
+      "desktopSectionDesc": "推荐给大多数用户。我们会根据当前设备，优先显示合适的 macOS、Windows 或 Linux 安装包。",
+      "mobileSectionKicker": "在手机上继续",
+      "mobileSectionTitle": "把同一个助手带在身边。",
+      "mobileSectionDesc": "Android 和 iOS 是连接已有 xopc Runtime 的移动入口。直接下载 Android 应用，或加入当前的 iOS 分发渠道。",
+      "terminalSectionKicker": "终端安装",
+      "terminalSectionTitle": "一条命令安装 xopc。",
+      "terminalSectionDesc": "适合需要 TUI、CLI、Gateway、服务器或源码工作方式的用户。",
+      "terminalUnixLabel": "macOS · Linux · WSL",
+      "terminalWindowsLabel": "Windows PowerShell",
+      "terminalUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
+      "terminalWindowsCommand": "irm https://xopc.ai/install.ps1 | iex",
+      "appsPlatformTabsAria": "选择桌面平台",
       "loading": "正在获取下载信息…",
       "error": "暂时无法获取下载信息。",
       "openReleases": "打开下载页",
@@ -83,44 +50,12 @@
       "recommendedForThisDevice": "推荐给此设备",
       "downloadRecommended": "下载 {label}",
       "otherDownloads": "其他下载",
-      "hint": "不确定选哪一项时，可在系统设置或「关于本机」里查看处理器类型。",
-      "thisDevice": "本机",
-      "downloadTitle": "下载",
       "downloadAria": "下载 {label}",
       "platformNames": {
         "macos": "macOS",
         "windows": "Windows",
         "linux": "Linux"
       },
-      "appPlatformNames": {
-        "macos": "macOS",
-        "windows": "Windows",
-        "linux": "Linux",
-        "android": "Android",
-        "ios": "iOS"
-      },
-      "androidEyebrow": "ANDROID · APK",
-      "androidTitle": "在 Android 上安装 xopc",
-      "androidBody": "下载官方 APK 后按系统提示完成安装。首次安装时，Android 可能要求授权浏览器安装未知应用。",
-      "androidDownload": "下载 Android APK",
-      "iosEyebrow": "IOS · TESTFLIGHT",
-      "iosTitle": "申请加入 iOS 测试",
-      "iosBody": "iOS 版本目前通过 TestFlight 小范围测试。留下你的 Apple ID 邮箱，我们会在名额开放后发送邀请。",
-      "iosEmailLabel": "Apple ID 邮箱",
-      "iosEmailPlaceholder": "you@example.com",
-      "iosSubmit": "申请 TestFlight",
-      "iosSubmitting": "正在提交…",
-      "iosSuccessTitle": "申请已收到",
-      "iosSuccessBody": "TestFlight 名额开放后，我们会通过你提交的邮箱发送邀请。",
-      "iosError": "暂时无法提交，请稍后重试。",
-      "iosPrivacy": "邮箱仅用于 iOS 测试邀请与必要的版本通知。",
-      "iosPausedTitle": "iOS 测试申请暂时已满",
-      "iosPausedBody": "当前批次的 TestFlight 名额已满。新的测试批次开放后，这里会重新开放申请。",
-      "iosAvailableTitle": "iOS 版本现已开放",
-      "iosAvailableBody": "通过官方分发页面安装 xopc，然后连接你自己的 xopc Runtime。",
-      "iosOpenTestFlight": "打开 TestFlight",
-      "iosOpenAppStore": "打开 App Store",
-      "pickerToggleAria": "选择 {platform} 的下载选项",
       "choices": {
         "mac-x64": "Intel（x64）",
         "mac-arm64": "Apple Silicon（ARM64）",
@@ -134,289 +69,108 @@
         "macos": "11 或更高",
         "windows": "10 或更高",
         "linux": "64 位 / ARM"
-      }
+      },
+      "androidEyebrow": "ANDROID · APK",
+      "androidTitle": "下载 xopc Android 应用",
+      "androidBody": "安装最新版官方 APK，然后连接到你的 xopc runtime。",
+      "androidDownload": "下载 Android APK",
+      "androidQrHint": "悬停后使用手机扫码",
+      "androidQrTitle": "扫码下载",
+      "androidQrDesc": "打开 Android 手机相机，扫描二维码即可下载。",
+      "androidQrAlt": "最新版 xopc Android APK 下载二维码",
+      "androidQrLoading": "正在生成二维码…",
+      "iosEyebrow": "IOS",
+      "iosTitle": "申请 iOS Beta 资格",
+      "iosBody": "iOS 应用目前通过限量 TestFlight Beta 分发。",
+      "iosEmailLabel": "Apple ID 邮箱",
+      "iosEmailPlaceholder": "you@example.com",
+      "iosSubmit": "申请 TestFlight",
+      "iosSubmitting": "正在提交…",
+      "iosSuccessTitle": "申请已收到",
+      "iosSuccessBody": "TestFlight 有可用名额时，我们会发送邀请。",
+      "iosError": "暂时无法提交申请，请稍后重试。",
+      "iosPrivacy": "该邮箱只用于 iOS Beta 资格和必要的版本通知。",
+      "iosPausedTitle": "iOS Beta 申请暂时关闭",
+      "iosPausedBody": "下一批 TestFlight 开放时，可在这里继续申请。",
+      "iosAvailableTitle": "xopc iOS 应用已开放",
+      "iosAvailableBody": "打开官方分发页面安装 xopc，然后连接你的 runtime。",
+      "iosOpenTestFlight": "打开 TestFlight",
+      "iosOpenAppStore": "打开 App Store"
     },
-    "features": {
-      "titleLine1": "聊天只是入口，",
-      "titleLine2": "运行时才是产品。",
-      "desc": "xopc 把模型、Agent、持久状态和执行能力放进一套由你掌控的环境，而不是把功能堆在另一个聊天窗口里。",
-      "tagFeatured": "LOCAL FIRST",
+    "aha": {
+      "kicker": "从一件真实的事开始",
+      "title": "它不需要先了解你的一切，才能开始帮忙。",
+      "desc": "xopc 从你愿意分享的上下文开始，说明自己的理解，并找到最可信的下一步。",
+      "ariaLabel": "xopc 把一个没想清楚的念头变成下一步的示例",
+      "userLabel": "你",
+      "userMessage": "我想下周发布这个项目，但最近一直在回避它，也不知道应该从哪里重新开始。",
+      "contextLabel": "找到的相关背景",
+      "contextItems": [
+        "发布检查清单还没有完成",
+        "还有两个决定等待确认",
+        "上一次项目更新是在 12 天前"
+      ],
+      "assistantLabel": "xopc",
+      "assistantMessage": "你今晚不需要把所有事情做完。当前发布被一个决定卡住了，所以先处理它，是最可信的重新开始方式。",
+      "nextStepLabel": "下一步",
+      "nextStep": "查看两个待确认的决定，选出发布清单继续推进前必须先解决的那一个。"
+    },
+    "productProof": {
+      "kicker": "看看 xopc 如何工作",
+      "title": "需要持续推进的工作，都在同一个地方。",
+      "desc": "对话、项目、任务、决定、审批与运行记录，都留在同一个本地工作空间，随时可以接着做。",
+      "imageAlt": "xopc 桌面应用中的当前工作、项目、任务和最近活动",
+      "capabilities": [
+        {
+          "title": "本地优先",
+          "body": "核心状态和 Gateway 运行在你自己的环境中。"
+        },
+        {
+          "title": "模型自由",
+          "body": "接入自己的 Provider，按任务选择云端或本地模型。"
+        },
+        {
+          "title": "能执行，也能验证",
+          "body": "通过 Skill、Workflow 和 Automation 推进工作并验证结果。"
+        },
+        {
+          "title": "随处继续",
+          "body": "同一份状态可在桌面、网页、终端、手机和即时通讯中继续。"
+        }
+      ]
+    },
+    "trust": {
+      "title": "理解看得见，控制说得清。",
+      "desc": "你能看到 xopc 依据什么做出判断，并决定它可以访问什么、执行什么。",
       "items": [
         {
-          "icon": "key",
-          "title": "自带 API Key，模型随你选。",
-          "body": "内置 DeepSeek、OpenAI、Anthropic、Google、Ollama、LM Studio、vLLM、Bedrock、Azure 等 20+ 提供商。可纯本地推理，也可云端与本地混合使用；一行配置切换模型，避免厂商绑定。",
-          "featured": false
+          "title": "默认本地优先",
+          "body": "核心状态保存在你的 xopc 环境中；使用云模型时，你发送的请求上下文会由对应模型提供商处理。"
         },
         {
-          "icon": "layers",
-          "title": "统一记忆，不只是一轮上下文。",
-          "body": "会话、项目、目标、笔记、工作区和运行记录都有明确归属。用户记忆、偏好与已连接知识统一沉淀，可跨 Agent、跨会话持续复用；项目与工作区上下文仍保留各自边界。"
+          "title": "数据源分别授权",
+          "body": "逐个连接数据源，并决定每个 Agent 或 Task 可以使用什么。"
         },
         {
-          "icon": "target",
-          "title": "项目、目标与笔记各司其职。",
-          "body": "Project 聚合上下文，Goal 显式记录状态、阻塞和下一步，Notes 用文字、语音、图片与附件接住随时发生的输入。"
+          "title": "重要操作先停下来",
+          "body": "发送、删除、购买及其他高影响操作，会回到你这里确认。"
         },
         {
-          "icon": "git-branch",
-          "title": "工作流可观察，自动化可追踪。",
-          "body": "用阶段和子 Agent 组织复杂执行；再用定时、手动或 webhook 触发。运行进度、结果、失败和重试都有记录。"
-        },
-        {
-          "icon": "bot",
-          "title": "Agent 的能力边界是明确的。",
-          "body": "每个 Agent 可以拥有独立的身份、职责、模型角色、工作区、工具与技能策略、工作流和运行边界。确认、禁止和升级规则可以明确配置，并通过共享设置复用；记忆则统一归入用户上下文。"
-        },
-        {
-          "icon": "puzzle",
-          "title": "需要什么，再增加什么。",
-          "body": "Skills 提供任务方法，Extensions 增加工具、通道和 UI，Connectors 接入外部能力。核心保持清晰，能力按需安装。"
-        },
-        {
-          "icon": "hard-drive",
-          "title": "你的机器，你的规则。",
-          "body": "xopc 运行在你的硬件上。对话、项目上下文和本地状态都留在你的 xopc 运行环境里；密钥保存在你的配置中。没有强制云端，也没有意外账单。",
-          "featured": true
+          "title": "记忆始终可以纠正",
+          "body": "当长期理解错误、过时或不再有用时，你可以查看、修改或删除。"
         }
       ],
-      "groups": [
-        {
-          "title": "运行与所有权",
-          "desc": "你的硬件、密钥、模型与部署方式。",
-          "items": [
-            6,
-            0
-          ]
-        },
-        {
-          "title": "持续状态",
-          "desc": "统一记忆跨 Agent 延续，项目上下文仍各有归属。",
-          "items": [
-            1,
-            2
-          ]
-        },
-        {
-          "title": "执行与边界",
-          "desc": "复杂任务可观察、重复任务可触发、能力范围可配置。",
-          "items": [
-            3,
-            4,
-            5
-          ]
-        }
-      ]
-    },
-    "channels": {
-      "titleLine1": "多端接入，",
-      "titleLine2": "同一套运行时。",
-      "desc": "终端、浏览器、桌面、手机与即时通讯共享 Agent、会话和项目状态；入口可以变化，运行环境和数据所有权不变。",
-      "placeholderAction": "待补充素材",
-      "items": [
-        {
-          "id": "desktop",
-          "label": "Desktop",
-          "tag": "Electron",
-          "caption": "原生桌面体验，覆盖三大桌面平台。",
-          "imageAlt": "xopc Electron 桌面应用",
-          "placeholderTitle": "Desktop · macOS 窗口截图"
-        },
-        {
-          "id": "tui",
-          "label": "TUI",
-          "tag": "Terminal",
-          "caption": "全键盘操作，流式输出，零延迟感。",
-          "imageAlt": "xopc 全屏终端界面",
-          "placeholderTitle": "TUI · 全屏终端截图"
-        },
-        {
-          "id": "web",
-          "label": "Web UI",
-          "tag": "Browser",
-          "caption": "打开浏览器就是完整控制台。",
-          "imageAlt": "xopc 网关 Web 控制台",
-          "placeholderTitle": "Web UI · Gateway Console"
-        },
-        {
-          "id": "mobile",
-          "label": "Mobile",
-          "tag": "Phone",
-          "caption": "扫码连接电脑上的 Agent；随时记录文字、语音、图片和附件。",
-          "imageAlt": "xopc 手机配对与对话",
-          "placeholderTitle": "Mobile · 扫码配对"
-        },
-        {
-          "id": "telegram",
-          "label": "Telegram",
-          "tag": "Messenger",
-          "caption": "在你最常用的 IM 里直接对话。",
-          "imageAlt": "xopc Telegram 对话",
-          "placeholderTitle": "Telegram · 对话气泡截图"
-        },
-        {
-          "id": "wechat",
-          "label": "WeChat",
-          "tag": "微信",
-          "caption": "在微信中直接对话。",
-          "imageAlt": "xopc 微信对话",
-          "placeholderTitle": "微信 · 对话截图"
-        }
-      ]
-    },
-    "providers": {
-      "titleLine1": "自带钥匙，",
-      "titleLine2": "系统不被锁定。",
-      "desc": "支持云端、本地或混合模型。你的密钥、你的数据、你的部署节奏。",
-      "viewProviders": "查看全部支持的提供商 →",
-      "chips": [
-        {
-          "name": "OpenAI",
-          "dot": "blue"
-        },
-        {
-          "name": "Anthropic",
-          "dot": "purple"
-        },
-        {
-          "name": "Google AI",
-          "dot": "green"
-        },
-        {
-          "name": "DeepSeek",
-          "dot": "amber"
-        },
-        {
-          "name": "Mistral",
-          "dot": "pink"
-        },
-        {
-          "name": "Groq",
-          "dot": "blue"
-        },
-        {
-          "name": "Cohere",
-          "dot": "purple"
-        },
-        {
-          "name": "Together AI",
-          "dot": "green"
-        },
-        {
-          "name": "OpenRouter",
-          "dot": "amber"
-        },
-        {
-          "name": "Ollama",
-          "dot": "pink"
-        },
-        {
-          "name": "Azure OpenAI",
-          "dot": "blue"
-        },
-        {
-          "name": "xAI",
-          "dot": "purple"
-        },
-        {
-          "name": "AWS Bedrock",
-          "dot": "green"
-        },
-        {
-          "name": "Vertex AI",
-          "dot": "amber"
-        },
-        {
-          "name": "SiliconFlow",
-          "dot": "pink"
-        },
-        {
-          "name": "自定义",
-          "dot": "purple"
-        }
-      ]
-    },
-    "workflows": {
-      "titleLine1": "复杂执行，",
-      "titleLine2": "每一步都看得见。",
-      "desc": "工作流用明确阶段和并行子 Agent 处理审计、研究与多视角评审；每次运行独立记录进度、结果和失败。",
-      "bullets": [
-        "内置模板：audit_repo、multi_perspective_review、research",
-        "看板 #/workflows — 排队、进行中、已完成、需关注",
-        "可从 Chat、网关 UI、Automation 或 REST API 启动",
-        "脚本可保存到 ~/.xopc/workflows/ 并自定义"
-      ],
-      "viewDocs": "阅读工作流文档 →",
-      "screenshotPlaceholderTitle": "Workflows · 网关控制台",
-      "board": {
-        "ariaLabel": "工作流运行看板示例：audit_repo 进行中并显示子 Agent 进度，另有已完成评审与超时失败的调研任务",
-        "windowTitle": "xopc Gateway",
-        "sceneLabel": "周五发版前审查",
-        "sceneHint": "audit_repo · 7/12 子 Agent · Synthesize 阶段",
-        "columns": [
-          {
-            "id": "queued",
-            "label": "排队中",
-            "count": "1",
-            "cards": [
-              {
-                "title": "release_notes",
-                "meta": "main · cron 09:00",
-                "status": "queued",
-                "featured": false
-              }
-            ]
-          },
-          {
-            "id": "running",
-            "label": "进行中",
-            "count": "1",
-            "cards": [
-              {
-                "title": "audit_repo",
-                "meta": "Review 4/6 · 2 运行中",
-                "detail": "style review · docs review",
-                "status": "running",
-                "progress": "58%",
-                "featured": true
-              }
-            ]
-          },
-          {
-            "id": "done",
-            "label": "已完成",
-            "count": "3",
-            "cards": [
-              {
-                "title": "multi_perspective_review",
-                "meta": "成功 · 12 分钟前",
-                "status": "succeeded",
-                "featured": false
-              }
-            ]
-          },
-          {
-            "id": "attention",
-            "label": "需关注",
-            "count": "1",
-            "cards": [
-              {
-                "title": "research",
-                "meta": "超时 · 可重试",
-                "status": "failed",
-                "featured": false
-              }
-            ]
-          }
-        ]
-      }
+      "factLabel": "亲眼看到的事实",
+      "factExample": "发布检查清单已经 12 天没有变化。",
+      "inferenceLabel": "可能的推断",
+      "inferenceExample": "你可能被一个尚未解决的产品决定卡住了。",
+      "correctionNote": "事实与推断始终分开。它们成为长期理解之前，你都可以纠正。"
     },
     "cta": {
-      "titleLine1": "在自己的设备上，",
-      "titleLine2": "运行自己的 AI 系统。",
-      "desc": "MIT 开源，本地优先。先配置一个模型和 Agent；需要长期推进时，再加入项目、目标、笔记、工作流和自动化。",
-      "primary": "开始使用 →",
-      "mobileApp": "移动端 App"
+      "titleLine1": "把一件重要的事，",
+      "titleLine2": "交给 xopc。",
+      "primary": "下载 xopc →",
+      "secondary": "在 GitHub 查看"
     },
     "footer": {
       "github": "GitHub",
@@ -429,205 +183,18 @@
     "products": {
       "nav": {
         "home": "首页",
-        "operator": "Worker",
-        "code": "Code",
-        "gateway": "Gateway"
-      },
-      "home": {
-        "kicker": "XOPC Agents",
-        "titleLine1": "同一套运行时，",
-        "titleLine2": "三种交付结果。",
-        "desc": "让 Agent 在你拥有的设备、数据、身份和工作流里持续工作；按要完成的工作，选择合适的入口。",
-        "operator": {
-          "label": "面向日常电脑工作",
-          "name": "XOPC Worker",
-          "desc": "把目标交给 AI，让它规划、执行、在关键节点请求确认，并把结果交还给你。",
-          "cta": "了解电脑 Agent"
-        },
-        "code": {
-          "label": "面向软件工程",
-          "name": "XOPC Code",
-          "desc": "在本地代码库中连接编码 Agent，交付可审阅、可验证的改动。",
-          "cta": "了解编码 Agent"
-        },
-        "gateway": {
-          "label": "作为本地 Gateway Service",
-          "name": "XOPC Gateway",
-          "desc": "把本地 xopc runtime 作为服务连接到网页、移动端、消息渠道与 API。",
-          "cta": "了解 Gateway"
-        }
-      },
-      "operator": {
-        "name": "XOPC Worker",
-        "kicker": "XOPC Worker · Electron 桌面 Agent",
-        "metaTitle": "XOPC Worker｜跨平台桌面 Agent",
-        "metaDescription": "一款运行在 Windows、macOS 与 Linux 上的 Electron 桌面 Agent；在你的本机环境中规划、执行、确认并交付工作。",
-        "titleLine1": "把电脑上的任务，",
-        "titleLine2": "交给 AI 推进。",
-        "desc": "XOPC Worker 是运行在你桌面的跨平台 Agent 应用：它理解目标、调用本机可用的网页与工具，并在关键动作前把控制权交还给你。",
-        "secondaryCta": "下载 Worker",
-        "desktopPoints": [
-          "Electron 跨平台桌面应用",
-          "Windows · macOS · Linux",
-          "在你的本机环境中运行"
-        ],
-        "workerDownload": {
-          "kicker": "下载 Worker",
-          "title": "下载 xopc Worker 桌面应用。",
-          "desc": "适用于 Windows、macOS 与 Linux；我们会优先推荐适合当前设备的安装包。"
-        },
-        "quickStart": {
-          "kicker": "开始使用 Worker",
-          "title": "三步启动你的本地 Worker。",
-          "desc": "安装、完成一次引导，然后从本地入口把任务交给 Worker。",
-          "copy": "复制",
-          "copied": "已复制",
-          "steps": [
-            { "label": "安装", "title": "安装 xopc", "body": "跨平台安装脚本会准备运行所需依赖。", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
-            { "label": "配置", "title": "完成引导", "body": "选择模型并配置你要使用的 Provider。", "command": "xopc onboard" },
-            { "label": "工作", "title": "启动本地入口", "body": "在本地 TUI 中创建任务，并让 Worker 开始推进。", "command": "xopc" }
-          ]
-        },
-        "media": {
-          "title": "待补充：Worker 完整任务演示",
-          "action": "请录制“目标 → 计划 → 浏览器/工具执行 → 审批 → 结果”并导出到下方文件",
-          "ariaLabel": "XOPC Worker 完整任务演示视频"
-        },
-        "flow": {
-          "kicker": "从桌面发起",
-          "title": "在本机环境中，把工作推进到底。",
-          "desc": "Worker 不只是替你点几下按钮；它把电脑上的任务组织成可理解、可检查、可继续的执行过程。",
-          "steps": [
-            { "title": "在桌面端发起", "body": "用自然语言说明要推进的事情，以及交付标准。" },
-            { "title": "查看执行计划", "body": "在 Worker 中看到任务拆解，必要时补充背景和边界。" },
-            { "title": "调用本机工具", "body": "Agent 使用被允许的网页与工具推进工作，并在需要你决定时停下来。" },
-            { "title": "确认并交付", "body": "获得结果、记录和可继续推进的下一步，而不只是一次对话。" }
-          ]
-        },
-        "capabilities": {
-          "kicker": "桌面端，而不止聊天框",
-          "title": "一个应用，连接你的真实工作环境。",
-          "desc": "在桌面端连接网页、文件、信息入口与长期工作流，并将它们交给同一个可观察的 Agent 运行时。",
-          "items": [
-            { "title": "跨平台桌面应用", "body": "基于 Electron 构建，覆盖 Windows、macOS 与 Linux，让每台工作电脑都有统一入口。" },
-            { "title": "本机环境执行", "body": "从桌面端将任务带到本机可用的网页、文件和已连接工具中推进。" },
-            { "title": "可见的执行过程", "body": "将目标组织为可追踪的步骤，而不是把复杂工作压进一条提示词。" },
-            { "title": "人在回路", "body": "把需要判断、授权或发送的关键动作保留给你确认。" }
-          ]
-        },
-        "scenarios": {
-          "kicker": "从结果开始",
-          "title": "适合交给 Worker 的工作。",
-          "items": [
-            { "eyebrow": "桌面研究", "title": "资料整理与决策准备", "body": "从多个来源收集信息，整理为带出处的笔记、表格或下一步建议。" },
-            { "eyebrow": "桌面运营", "title": "重复性后台工作", "body": "将固定流程变成可观察的任务，在异常或关键节点让你接管。" },
-            { "eyebrow": "桌面协作", "title": "信息汇总与周报", "body": "把分散的进展、材料和待办整理成可发送、可继续更新的交付物。" },
-            { "eyebrow": "个人工作台", "title": "跨应用的个人事务", "body": "让目标穿过你的日常工具，而不是困在单一聊天窗口中。" }
-          ]
-        },
-        "trust": {
-          "kicker": "运行在你的边界内",
-          "title": "可见、可控、归你所有。",
-          "items": [
-            "本地优先：数据、密钥与运行环境由你掌控。",
-            "过程可见：知道 Agent 正在做什么，以及目前停在哪里。",
-            "明确边界：把需要确认的高影响操作交回给人。"
-          ]
-        },
-        "cross": {
-          "kicker": "同一个 xopc runtime",
-          "title": "需要让 Agent 改动本地代码库？",
-          "desc": "XOPC Code 将编码 Agent、项目工作区、变更审阅和验证记录组织成另一条完整交付路径。",
-          "cta": "探索 {product}"
-        }
-      },
-      "code": {
-        "name": "XOPC Code",
-        "kicker": "XOPC Code · Terminal Agent 工作台",
-        "metaTitle": "XOPC Code｜在 Terminal 中使用强大 Coding Agent",
-        "metaDescription": "在项目目录运行 xopc，唤起强大的 Coding Agent 与 Harness；内置 Codebase Memory，并可在 Terminal 切换到非编码 Agent 完成其他工作。",
-        "titleLine1": "在 Terminal 中，",
-        "titleLine2": "让 Agent 开始工作。",
-        "desc": "在项目目录执行 xopc，即可使用强大的 Coding Agent 与 Harness 完成工程理解、改动和验证。内置 Codebase Memory 提供代码查询能力；需要研究、整理或其他任务时，也可在同一 Terminal 切换 Agent 继续推进。",
-        "secondaryCta": "在 Terminal 中使用",
-        "terminalPoints": [
-          "在项目目录执行 xopc",
-          "强大的 Coding Agent Harness",
-          "可切换到其他 Agent 工作"
-        ],
-        "quickStart": {
-          "kicker": "开始使用 Code",
-          "title": "从 Terminal 启动 Agent 工作。",
-          "desc": "安装 xopc、连接你偏好的 Agent，然后在本地项目目录中开始编码或切换到其他任务。",
-          "copy": "复制",
-          "copied": "已复制",
-          "steps": [
-            { "label": "安装", "title": "安装 xopc CLI", "body": "适合已有 Node.js 环境的开发者。", "command": "npm install -g @xopcai/xopc" },
-            { "label": "连接", "title": "完成 Provider 引导", "body": "在引导中连接 Codex、Claude Code 或你选择的编码能力。", "command": "xopc onboard" },
-            { "label": "启动", "title": "在 Terminal 运行 xopc", "body": "在项目目录唤起 Coding Agent；需要时可切换到其他 Agent。", "command": "xopc" }
-          ]
-        },
-        "media": {
-          "title": "待补充：Code 完整编码交付演示",
-          "action": "请录制“需求 → 工程理解 → 改动 → 测试/检查 → diff 总结”并导出到下方文件",
-          "ariaLabel": "XOPC Code 完整编码任务演示视频"
-        },
-        "flow": {
-          "kicker": "从 Terminal 到交付",
-          "title": "把 Coding Agent 的工作变成可审阅闭环。",
-          "desc": "重点不是一次生成多少代码，而是在真实工程中完成理解、改动、验证和交接。",
-          "steps": [
-            { "title": "在项目目录唤起", "body": "从 Terminal 和本地工作区出发，建立与当前任务相关的工程上下文。" },
-            { "title": "提出计划", "body": "在修改前明确实施路径、影响范围和需要验证的内容。" },
-            { "title": "由 Harness 推进", "body": "调用已连接的 Coding Agent，在工作区中完成实现、修复与必要工具调用。" },
-            { "title": "审阅与验证", "body": "用 diff、命令和验证结果交代做了什么，以及还需要关注什么。" }
-          ]
-        },
-        "capabilities": {
-          "kicker": "一个 Terminal，多个 Agent",
-          "title": "为编码而强，也不止于编码。",
-          "desc": "XOPC Code 在 Terminal 中为 Coding Agent 提供任务组织、工程上下文与交付 Harness；Codebase Memory 将代码结构、关系和影响范围变成可查询的工程认知。需要非编码能力时，可以直接切换 Agent。",
-          "items": [
-            { "title": "强大的 Coding Agent Harness", "body": "围绕真实工程组织上下文、计划、工具调用、变更、diff 与验证，让 Coding Agent 不只生成片段，而是推进完整交付。" },
-            { "title": "Codebase Memory", "body": "内置代码知识图谱，索引函数、类型、调用链、路由与跨服务关系；结合语义检索、结构化查询和影响分析快速定位相关代码。" },
-            { "title": "在 Terminal 切换 Agent", "body": "编码之外，也可在同一个入口切换到适合研究、整理、运营或日常事务的 Agent。" },
-            { "title": "变更可追踪", "body": "将代码改动、执行命令和验证结果组织成能被人审阅的记录。" }
-          ]
-        },
-        "scenarios": {
-          "kicker": "从工程任务开始",
-          "title": "适合交给 Code 的工作。",
-          "items": [
-            { "eyebrow": "实现", "title": "从 issue 到实施计划", "body": "先理解需求和影响范围，再让 Agent 交付可审阅的实现路径。" },
-            { "eyebrow": "修复", "title": "Bug 定位与修复", "body": "围绕真实仓库追踪问题、完成修复，并把验证结果交还给你。" },
-            { "eyebrow": "演进", "title": "重构与测试补全", "body": "把结构性改动拆成可验证步骤，减少只改代码、不看结果的风险。" },
-            { "eyebrow": "切换", "title": "从编码切换到其他任务", "body": "在同一个 Terminal 中按任务切换 Agent，将调研、资料整理或日常工作继续交给 xopc 推进。" }
-          ]
-        },
-        "trust": {
-          "kicker": "交付前看得见",
-          "title": "让每次改动都有依据。",
-          "items": [
-            "你的工作区：围绕本地项目和已有工具习惯工作。",
-            "你的选择：可根据任务接入不同的 Coding Agent，或切换到其他 Agent。",
-            "你的审阅：通过改动与验证记录判断是否接受交付。"
-          ]
-        },
-        "cross": {
-          "kicker": "同一个 xopc runtime",
-          "title": "需要让 Agent 推进日常电脑工作？",
-          "desc": "XOPC Worker 将目标、工具执行、审批和持续状态组织成面向现实任务的交付路径。",
-          "cta": "探索 {product}"
-        }
+        "gateway": "Gateway",
+        "desktop": "桌面",
+        "terminal": "终端"
       },
       "gateway": {
-        "name": "XOPC Gateway",
-        "kicker": "XOPC Gateway · 本地 Gateway Service",
-        "metaTitle": "XOPC Gateway｜让本地 AI runtime 成为可连接的服务",
+        "name": "xopc Gateway",
+        "kicker": "xopc Gateway · 本地 Gateway Service",
+        "metaTitle": "xopc Gateway｜让本地 AI runtime 成为可连接的服务",
         "metaDescription": "将本地 xopc runtime 连接到网页、移动端、消息渠道和 API，同时保留对配置、身份与数据边界的掌控。",
         "titleLine1": "让你的本地 runtime，",
         "titleLine2": "成为可连接的服务。",
-        "desc": "XOPC Gateway 把正在你环境中运行的 Agent、状态与工作流带到网页、移动端、消息渠道和 API；它是统一入口，不是另一套孤立后端。",
+        "desc": "xopc Gateway 把正在你环境中运行的 Agent、状态与工作流带到网页、移动端、消息渠道和 API；它是统一入口，不是另一套孤立后端。",
         "secondaryCta": "开始使用 Gateway",
         "quickStart": {
           "kicker": "开始使用 Gateway",
@@ -636,25 +203,47 @@
           "copy": "复制",
           "copied": "已复制",
           "steps": [
-            { "label": "安装", "title": "安装 xopc", "body": "跨平台安装脚本会准备运行所需依赖。", "command": "curl -fsSL https://xopc.ai/install.sh | bash" },
-            { "label": "启动", "title": "启动 Gateway", "body": "启动网页服务与本地 React 控制台。", "command": "xopc gateway" },
-            { "label": "服务化", "title": "安装系统服务", "body": "让 Gateway 按操作系统服务生命周期持续运行。", "command": "xopc gateway service install" }
+            {
+              "label": "安装",
+              "title": "安装 xopc",
+              "body": "跨平台安装脚本会准备运行所需依赖。",
+              "command": "curl -fsSL https://xopc.ai/install.sh | bash"
+            },
+            {
+              "label": "启动",
+              "title": "启动 Gateway",
+              "body": "启动网页服务与本地 React 控制台。",
+              "command": "xopc gateway"
+            },
+            {
+              "label": "服务化",
+              "title": "安装系统服务",
+              "body": "让 Gateway 按操作系统服务生命周期持续运行。",
+              "command": "xopc gateway service install"
+            }
           ]
-        },
-        "media": {
-          "title": "待补充：Gateway 服务连接演示",
-          "action": "请录制“runtime 启动 → 渠道或 API 接入 → 客户端响应 → 服务状态”并导出到下方文件",
-          "ariaLabel": "XOPC Gateway 服务连接演示视频"
         },
         "flow": {
           "kicker": "从本地运行时到服务入口",
           "title": "一次运行，多处连接。",
           "desc": "Gateway 将运行中的 xopc 统一暴露为受控入口，让不同客户端和渠道接入同一份状态与执行能力。",
           "steps": [
-            { "title": "运行 runtime", "body": "在你拥有的环境中启动 xopc，并保留本地配置、数据和 Provider 选择。" },
-            { "title": "连接入口", "body": "配置网页、移动端、消息渠道或其他已启用的客户端入口。" },
-            { "title": "提供服务", "body": "通过 Gateway API 和流式连接让客户端访问会话、任务与运行状态。" },
-            { "title": "持续运维", "body": "查看服务与渠道状态，使本地 runtime 成为可持续运行的服务。" }
+            {
+              "title": "运行 runtime",
+              "body": "在你拥有的环境中启动 xopc，并保留本地配置、数据和 Provider 选择。"
+            },
+            {
+              "title": "连接入口",
+              "body": "配置网页、移动端、消息渠道或其他已启用的客户端入口。"
+            },
+            {
+              "title": "提供服务",
+              "body": "通过 Gateway API 和流式连接让客户端访问会话、任务与运行状态。"
+            },
+            {
+              "title": "持续运维",
+              "body": "查看服务与渠道状态，使本地 runtime 成为可持续运行的服务。"
+            }
           ]
         },
         "capabilities": {
@@ -662,20 +251,48 @@
           "title": "把连接能力放在同一个地方。",
           "desc": "Gateway 为 xopc 的客户端、渠道与集成提供统一服务层，减少每个入口各自维护状态和认证的成本。",
           "items": [
-            { "title": "统一服务入口", "body": "让网页、移动端和其他客户端连接同一个本地 runtime，而不是复制一份 Agent 状态。" },
-            { "title": "Gateway API 与流", "body": "为会话、任务、状态与实时更新提供可供客户端调用的服务接口。" },
-            { "title": "渠道运行时", "body": "加载和管理消息渠道运行时，使对话入口与核心 Agent 能力保持连接。" },
-            { "title": "服务生命周期", "body": "围绕启动、状态、重启与系统服务运行方式管理本地 Gateway。" }
+            {
+              "title": "统一服务入口",
+              "body": "让网页、移动端和其他客户端连接同一个本地 runtime，而不是复制一份 Agent 状态。"
+            },
+            {
+              "title": "Gateway API 与流",
+              "body": "为会话、任务、状态与实时更新提供可供客户端调用的服务接口。"
+            },
+            {
+              "title": "渠道运行时",
+              "body": "加载和管理消息渠道运行时，使对话入口与核心 Agent 能力保持连接。"
+            },
+            {
+              "title": "服务生命周期",
+              "body": "围绕启动、状态、重启与系统服务运行方式管理本地 Gateway。"
+            }
           ]
         },
         "scenarios": {
           "kicker": "从连接需求开始",
           "title": "适合使用 Gateway 的方式。",
           "items": [
-            { "eyebrow": "多端", "title": "将同一 runtime 带到更多设备", "body": "让网页、移动端和桌面等入口看到同一份会话、项目和执行状态。" },
-            { "eyebrow": "渠道", "title": "将 Agent 接入消息入口", "body": "让用户在已连接的消息渠道中发起和接收同一套 Agent 工作。" },
-            { "eyebrow": "集成", "title": "为自定义客户端提供后端", "body": "通过 API 与流式接口，将 xopc 能力接入团队已有的产品或内部工具。" },
-            { "eyebrow": "运行", "title": "以服务方式持续运行", "body": "让本地 AI runtime 在可管理的服务生命周期中长期可用。" }
+            {
+              "eyebrow": "多端",
+              "title": "将同一 runtime 带到更多设备",
+              "body": "让网页、移动端和桌面等入口看到同一份会话、项目和执行状态。"
+            },
+            {
+              "eyebrow": "渠道",
+              "title": "将 Agent 接入消息入口",
+              "body": "让用户在已连接的消息渠道中发起和接收同一套 Agent 工作。"
+            },
+            {
+              "eyebrow": "集成",
+              "title": "为自定义客户端提供后端",
+              "body": "通过 API 与流式接口，将 xopc 能力接入团队已有的产品或内部工具。"
+            },
+            {
+              "eyebrow": "运行",
+              "title": "以服务方式持续运行",
+              "body": "让本地 AI runtime 在可管理的服务生命周期中长期可用。"
+            }
           ]
         },
         "trust": {
@@ -690,32 +307,268 @@
         "cross": {
           "kicker": "同一个 xopc runtime",
           "title": "需要让 Agent 为你完成具体电脑任务？",
-          "desc": "XOPC Worker 将 Gateway 背后的运行时能力带到可托付、可确认的日常工作流程中。",
+          "desc": "xopc Desktop 将 Gateway 背后的运行时能力带到可托付、可确认的日常工作流程中。",
+          "cta": "探索 {product}"
+        }
+      },
+      "desktop": {
+        "name": "xopc Desktop",
+        "kicker": "xopc Desktop · Electron 桌面 Agent",
+        "metaTitle": "xopc Desktop｜跨平台桌面 Agent",
+        "metaDescription": "一款运行在 Windows、macOS 与 Linux 上的 Electron 桌面 Agent；在你的本机环境中规划、执行、确认并交付工作。",
+        "titleLine1": "把电脑上的任务，",
+        "titleLine2": "交给 AI 推进。",
+        "desc": "xopc Desktop 是运行在你桌面的跨平台 Agent 应用：它理解目标、调用本机可用的网页与工具，并在关键动作前把控制权交还给你。",
+        "secondaryCta": "下载 xopc",
+        "desktopPoints": [
+          "Electron 跨平台桌面应用",
+          "Windows · macOS · Linux",
+          "在你的本机环境中运行"
+        ],
+        "flow": {
+          "kicker": "从桌面发起",
+          "title": "在本机环境中，把工作推进到底。",
+          "desc": "桌面应用不只是替你点几下按钮；它把电脑上的任务组织成可理解、可检查、可继续的执行过程。",
+          "steps": [
+            {
+              "title": "在桌面端发起",
+              "body": "用自然语言说明要推进的事情，以及交付标准。"
+            },
+            {
+              "title": "查看执行计划",
+              "body": "在桌面应用中看到任务拆解，必要时补充背景和边界。"
+            },
+            {
+              "title": "调用本机工具",
+              "body": "Agent 使用被允许的网页与工具推进工作，并在需要你决定时停下来。"
+            },
+            {
+              "title": "确认并交付",
+              "body": "获得结果、记录和可继续推进的下一步，而不只是一次对话。"
+            }
+          ]
+        },
+        "capabilities": {
+          "kicker": "桌面端，而不止聊天框",
+          "title": "一个应用，连接你的真实工作环境。",
+          "desc": "在桌面端连接网页、文件、信息入口与长期工作流，并将它们交给同一个可观察的 Agent 运行时。",
+          "items": [
+            {
+              "title": "跨平台桌面应用",
+              "body": "基于 Electron 构建，覆盖 Windows、macOS 与 Linux，让每台工作电脑都有统一入口。"
+            },
+            {
+              "title": "本机环境执行",
+              "body": "从桌面端将任务带到本机可用的网页、文件和已连接工具中推进。"
+            },
+            {
+              "title": "可见的执行过程",
+              "body": "将目标组织为可追踪的步骤，而不是把复杂工作压进一条提示词。"
+            },
+            {
+              "title": "人在回路",
+              "body": "把需要判断、授权或发送的关键动作保留给你确认。"
+            }
+          ]
+        },
+        "scenarios": {
+          "kicker": "从结果开始",
+          "title": "适合交给 xopc Desktop 的工作。",
+          "items": [
+            {
+              "eyebrow": "桌面研究",
+              "title": "资料整理与决策准备",
+              "body": "从多个来源收集信息，整理为带出处的笔记、表格或下一步建议。"
+            },
+            {
+              "eyebrow": "桌面运营",
+              "title": "重复性后台工作",
+              "body": "将固定流程变成可观察的任务，在异常或关键节点让你接管。"
+            },
+            {
+              "eyebrow": "桌面协作",
+              "title": "信息汇总与周报",
+              "body": "把分散的进展、材料和待办整理成可发送、可继续更新的交付物。"
+            },
+            {
+              "eyebrow": "个人工作台",
+              "title": "跨应用的个人事务",
+              "body": "让目标穿过你的日常工具，而不是困在单一聊天窗口中。"
+            }
+          ]
+        },
+        "trust": {
+          "kicker": "运行在你的边界内",
+          "title": "可见、可控、归你所有。",
+          "items": [
+            "本地优先：数据、密钥与运行环境由你掌控。",
+            "过程可见：知道 Agent 正在做什么，以及目前停在哪里。",
+            "明确边界：把需要确认的高影响操作交回给人。"
+          ]
+        },
+        "cross": {
+          "kicker": "同一个 xopc runtime",
+          "title": "需要让 Agent 改动本地代码库？",
+          "desc": "xopc Terminal 将编码 Agent、项目工作区、变更审阅和验证记录组织成另一条完整交付路径。",
+          "cta": "探索 {product}"
+        },
+        "desktopDownload": {
+          "kicker": "下载 xopc",
+          "title": "下载 xopc 桌面应用。",
+          "desc": "适用于 Windows、macOS 与 Linux；我们会优先推荐适合当前设备的安装包。"
+        }
+      },
+      "terminal": {
+        "name": "xopc Terminal",
+        "kicker": "xopc Terminal · Terminal Agent 工作台",
+        "metaTitle": "xopc Terminal｜在 Terminal 中使用强大 Coding Agent",
+        "metaDescription": "在项目目录运行 xopc，唤起强大的 Coding Agent 与 Harness；内置 Codebase Memory，并可在 Terminal 切换到非编码 Agent 完成其他工作。",
+        "titleLine1": "在 Terminal 中，",
+        "titleLine2": "让 Agent 开始工作。",
+        "desc": "在项目目录执行 xopc，即可使用强大的 Coding Agent 与 Harness 完成工程理解、改动和验证。内置 Codebase Memory 提供代码查询能力；需要研究、整理或其他任务时，也可在同一 Terminal 切换 Agent 继续推进。",
+        "secondaryCta": "在 Terminal 中使用",
+        "terminalPoints": [
+          "在项目目录执行 xopc",
+          "强大的 Coding Agent Harness",
+          "可切换到其他 Agent 工作"
+        ],
+        "quickStart": {
+          "kicker": "从 Terminal 开始",
+          "title": "从 Terminal 启动 Agent 工作。",
+          "desc": "安装 xopc、连接你偏好的 Agent，然后在本地项目目录中开始编码或切换到其他任务。",
+          "copy": "复制",
+          "copied": "已复制",
+          "steps": [
+            {
+              "label": "安装",
+              "title": "安装 xopc CLI",
+              "body": "适合已有 Node.js 环境的开发者。",
+              "command": "npm install -g @xopcai/xopc"
+            },
+            {
+              "label": "连接",
+              "title": "完成 Provider 引导",
+              "body": "在引导中连接 Codex、Claude Code 或你选择的编码能力。",
+              "command": "xopc onboard"
+            },
+            {
+              "label": "启动",
+              "title": "在 Terminal 运行 xopc",
+              "body": "在项目目录唤起 Coding Agent；需要时可切换到其他 Agent。",
+              "command": "xopc"
+            }
+          ]
+        },
+        "flow": {
+          "kicker": "从 Terminal 到交付",
+          "title": "把 Coding Agent 的工作变成可审阅闭环。",
+          "desc": "重点不是一次生成多少代码，而是在真实工程中完成理解、改动、验证和交接。",
+          "steps": [
+            {
+              "title": "在项目目录唤起",
+              "body": "从 Terminal 和本地工作区出发，建立与当前任务相关的工程上下文。"
+            },
+            {
+              "title": "提出计划",
+              "body": "在修改前明确实施路径、影响范围和需要验证的内容。"
+            },
+            {
+              "title": "由 Harness 推进",
+              "body": "调用已连接的 Coding Agent，在工作区中完成实现、修复与必要工具调用。"
+            },
+            {
+              "title": "审阅与验证",
+              "body": "用 diff、命令和验证结果交代做了什么，以及还需要关注什么。"
+            }
+          ]
+        },
+        "capabilities": {
+          "kicker": "一个 Terminal，多个 Agent",
+          "title": "为编码而强，也不止于编码。",
+          "desc": "xopc Terminal 在 Terminal 中为 Coding Agent 提供任务组织、工程上下文与交付 Harness；Codebase Memory 将代码结构、关系和影响范围变成可查询的工程认知。需要非编码能力时，可以直接切换 Agent。",
+          "items": [
+            {
+              "title": "强大的 Coding Agent Harness",
+              "body": "围绕真实工程组织上下文、计划、工具调用、变更、diff 与验证，让 Coding Agent 不只生成片段，而是推进完整交付。"
+            },
+            {
+              "title": "Codebase Memory",
+              "body": "内置代码知识图谱，索引函数、类型、调用链、路由与跨服务关系；结合语义检索、结构化查询和影响分析快速定位相关代码。"
+            },
+            {
+              "title": "在 Terminal 切换 Agent",
+              "body": "编码之外，也可在同一个入口切换到适合研究、整理、运营或日常事务的 Agent。"
+            },
+            {
+              "title": "变更可追踪",
+              "body": "将代码改动、执行命令和验证结果组织成能被人审阅的记录。"
+            }
+          ]
+        },
+        "scenarios": {
+          "kicker": "从工程任务开始",
+          "title": "适合交给 xopc Terminal 的工作。",
+          "items": [
+            {
+              "eyebrow": "实现",
+              "title": "从 issue 到实施计划",
+              "body": "先理解需求和影响范围，再让 Agent 交付可审阅的实现路径。"
+            },
+            {
+              "eyebrow": "修复",
+              "title": "Bug 定位与修复",
+              "body": "围绕真实仓库追踪问题、完成修复，并把验证结果交还给你。"
+            },
+            {
+              "eyebrow": "演进",
+              "title": "重构与测试补全",
+              "body": "把结构性改动拆成可验证步骤，减少只改代码、不看结果的风险。"
+            },
+            {
+              "eyebrow": "切换",
+              "title": "从编码切换到其他任务",
+              "body": "在同一个 Terminal 中按任务切换 Agent，将调研、资料整理或日常工作继续交给 xopc 推进。"
+            }
+          ]
+        },
+        "trust": {
+          "kicker": "交付前看得见",
+          "title": "让每次改动都有依据。",
+          "items": [
+            "你的工作区：围绕本地项目和已有工具习惯工作。",
+            "你的选择：可根据任务接入不同的 Coding Agent，或切换到其他 Agent。",
+            "你的审阅：通过改动与验证记录判断是否接受交付。"
+          ]
+        },
+        "cross": {
+          "kicker": "同一个 xopc runtime",
+          "title": "需要让 Agent 推进日常电脑工作？",
+          "desc": "xopc Desktop 将目标、工具执行、审批和持续状态组织成面向现实任务的交付路径。",
           "cta": "探索 {product}"
         }
       }
     },
     "loop": {
-      "titleLine1": "一套运行时，",
-      "titleLine2": "让工作真正有后续。",
-      "desc": "xopc 把长期工作拆成明确的状态、执行、触发和入口。它不假设 AI 会自动记住一切，而是让重要信息有位置、复杂执行可观察、后续任务能再次启动。",
-      "modelLabel": "xopc 持续工作模型",
+      "titleLine1": "从一个没想清楚的念头，",
+      "titleLine2": "走到真正的下一步。",
+      "desc": "xopc 接住输入，连接相关上下文，在你允许的边界内行动并验证，再把下一步保留下来。",
+      "modelLabel": "xopc Task Loop",
       "steps": [
         {
-          "title": "持续状态",
-          "body": "Session、Project、Goal、Note 与 Workspace 分别保存对话、进度、材料和产物。"
+          "title": "接住",
+          "body": "从文字、语音、文件、链接或一句没想清楚的话开始，不需要先整理。"
         },
         {
-          "title": "明确执行",
-          "body": "Agent 使用被允许的工具和技能；Workflow 把多步骤或并行任务组织成可检查的运行。"
+          "title": "理解",
+          "body": "把输入和真正相关的人、项目、决定与限制连接起来。"
         },
         {
-          "title": "主动触发",
-          "body": "Automation 通过定时、手动或 webhook 运行 Agent 与 Workflow，并保留成功、失败和重试记录。"
+          "title": "行动并验证",
+          "body": "选择足够完成目标的最小路径，调用允许的工具，并保留发生过什么。"
         },
         {
-          "title": "随处接入",
-          "body": "终端、网页、桌面、手机、即时通讯与 HTTP/SSE API 连接同一套运行时和状态。"
+          "title": "继续推进",
+          "body": "把下一步和后续跟进保留在一起，下次不必重新开始。"
         }
       ]
     }

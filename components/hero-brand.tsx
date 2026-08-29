@@ -2,11 +2,10 @@ import { XopcLogoMark } from "@/components/xopc-logo-mark";
 
 type Props = {
   brandName: string;
-  headlineLine1: string;
-  headlineLine2: string;
+  headline: string;
 };
 
-export function HeroBrand({ brandName, headlineLine1, headlineLine2 }: Props) {
+export function HeroBrand({ brandName, headline }: Props) {
   return (
     <div className="hero-brand">
       <div className="hero-brand-logo-wrap">
@@ -19,10 +18,7 @@ export function HeroBrand({ brandName, headlineLine1, headlineLine2 }: Props) {
         {brandName}
       </div>
 
-      <h1 className="hero-headline">
-        <span className="hero-headline-line1">{headlineLine1}</span>
-        <span className="hero-headline-line2">{headlineLine2}</span>
-      </h1>
+      <h1 className="hero-headline">{headline}</h1>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { BRAND_MEDIA } from "@/lib/landing-media";
+import { BRAND_MEDIA } from "@/lib/brand-media";
 
 /** viewBox ~71×71 in source SVGs */
 const LOGO_WH = 71;

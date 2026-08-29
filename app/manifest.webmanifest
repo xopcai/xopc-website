@@ -1,7 +1,7 @@
 {
   "name": "xopc",
   "short_name": "xopc",
-  "description": "A local-first AI system that keeps projects moving.",
+  "description": "A personal AI on your computer that remembers your goals and context—and picks up where you left off.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B0D10",

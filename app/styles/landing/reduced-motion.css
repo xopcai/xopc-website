@@ -7,9 +7,6 @@
         transform: none;
         transition: none;
       }
-      .landing-page .surfaces-panel-enter{
-        animation: none;
-      }
       .landing-page .xopc-logo-mark{
         animation: none;
         transform: none;

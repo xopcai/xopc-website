@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const NAV_SECTION_IDS = ["loop", "features", "channels", "workflows", "download"];
+const NAV_SECTION_IDS = ["why", "loop", "trust", "download"];
 
 export function LandingNavState() {
   useEffect(() => {

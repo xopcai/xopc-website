@@ -12,8 +12,6 @@ import "../globals.css";
 const themeInitScript = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var d=${JSON.stringify(DEFAULT_THEME)};var t=localStorage.getItem(k);if(t!=="light"&&t!=="dark"){t=d;}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme",${JSON.stringify(DEFAULT_THEME)});}})();`;
 const localeTransitionInitScript = `(function(){try{if(sessionStorage.getItem("xopc-locale-transition")==="1"){document.documentElement.classList.add("xopc-locale-transition-in");}}catch(e){}})();`;
 
-const siteUrl = "https://xopc.ai/";
-
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -28,42 +26,33 @@ export async function generateMetadata({
   const m = getMessages(loc);
 
   return {
-    metadataBase: new URL(siteUrl),
     alternates: {
       canonical: `/${loc}`,
-      languages: { zh: "/zh", en: "/en" },
+      languages: { zh: "/zh", en: "/en", "x-default": "/en" },
     },
-    ...(loc === "zh"
-      ? {
-          keywords: [
-            "自托管 AI",
-            "个人 AI 运行时",
-            "本地优先",
-            "开源 AI",
-            "AI Agent",
-            "BYOK",
-            "多 Agent",
-            "AI 自动化",
-          ],
-        }
-      : {}),
+    keywords: loc === "zh"
+      ? ["私人 AI 助手", "本地优先 AI", "个人 AI Agent", "开源 AI", "AI 工作管理"]
+      : ["personal AI assistant", "local-first AI", "personal AI agent", "open source AI", "AI work management"],
     title: {
       default: m.meta.title,
-      template: "%s · XOPC",
+      template: "%s · xopc",
     },
     description: m.meta.description,
     openGraph: {
       title: m.meta.title,
       description: m.meta.ogDescription,
-      url: siteUrl,
+      url: `/${loc}`,
       siteName: "xopc",
       locale: loc === "zh" ? "zh_CN" : "en_US",
+      alternateLocale: loc === "zh" ? "en_US" : "zh_CN",
       type: "website",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "xopc — Keep what matters moving." }],
     },
     twitter: {
       card: "summary_large_image",
       title: m.meta.title,
       description: m.meta.ogDescription,
+      images: ["/opengraph-image"],
     },
   };
 }

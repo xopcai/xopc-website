@@ -33,16 +33,7 @@
     .landing-page .cta-section h2{
       font-size: clamp(32px, 5vw, 56px);
       letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .landing-page .cta-section p{
-      font-size: 17px;
-      color: var(--fg-mid);
-      max-width: 480px;
-      margin: 0 auto 48px;
-      font-weight: 400;
-      line-height: 1.6;
+      margin-bottom: 32px;
     }
 
     .landing-page .cta-actions{

@@ -155,6 +155,27 @@
       flex-shrink: 0;
     }
 
+    .landing-page .nav-download-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .landing-page .nav-download-cta:hover {
+      background: var(--accent-hover);
+      color: var(--on-accent);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
     .landing-page .nav-extra-tools {
       display: flex;
       align-items: center;
