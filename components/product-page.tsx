@@ -240,7 +240,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
         </div>
       </section>
 
-      <LandingFooter footer={m.landing.footer} docsHref={docsHref} />
+      <LandingFooter footer={m.landing.footer} docsHref={docsHref} locale={locale} />
     </div>
   );
 }

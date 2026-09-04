@@ -10,9 +10,10 @@ import {
 type Props = {
   footer: Messages["landing"]["footer"];
   docsHref: string;
+  locale: "zh" | "en";
 };
 
-export function LandingFooter({ footer, docsHref }: Props) {
+export function LandingFooter({ footer, docsHref, locale }: Props) {
   const year = new Date().getFullYear();
 
   return (
@@ -47,6 +48,8 @@ export function LandingFooter({ footer, docsHref }: Props) {
               {footer.issues}
             </a>
           </li>
+          <li><a href={`/${locale}/privacy`}>{footer.privacy}</a></li>
+          <li><a href={`/${locale}/support`}>{footer.support}</a></li>
         </ul>
         <div className="footer-copy">{footer.copyright.replace("{year}", String(year))}</div>
       </div>
