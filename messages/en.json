@@ -178,6 +178,8 @@
       "mobileApp": "Mobile app",
       "license": "License",
       "issues": "Issues",
+      "privacy": "Privacy Policy",
+      "support": "Support",
       "copyright": "© {year} xopcai · MIT License"
     },
     "products": {

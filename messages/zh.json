@@ -178,6 +178,8 @@
       "mobileApp": "移动端",
       "license": "许可证",
       "issues": "问题反馈",
+      "privacy": "隐私政策",
+      "support": "支持与帮助",
       "copyright": "© {year} xopcai · MIT License"
     },
     "products": {

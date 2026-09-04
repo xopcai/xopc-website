@@ -30,5 +30,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...homePages, ...productPages];
+  const legalPages = ["privacy", "support"].flatMap((page) =>
+    locales.map((locale) => ({
+      url: `${origin}/${locale}/${page}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+      alternates: { languages: languageAlternates(`/${page}`) },
+    })),
+  );
+
+  return [...homePages, ...productPages, ...legalPages];
 }

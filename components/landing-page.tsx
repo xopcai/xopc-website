@@ -260,7 +260,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             </div>
           </div>
         </section>
-        <LandingFooter footer={L.footer} docsHref={docHome} />
+        <LandingFooter footer={L.footer} docsHref={docHome} locale={locale} />
       </div>
     </div>
   );
