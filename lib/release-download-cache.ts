@@ -23,6 +23,7 @@ const XOPC_RELEASE_ASSET_PATTERN = new RegExp(
 );
 const DESKTOP_RELEASE_TAG_PATTERN = new RegExp(`^v${SEMVER_PATTERN}$`);
 const ANDROID_RELEASE_ASSET_NAME = "xopc-android.apk";
+const ANDROID_RELEASE_CHECKSUM_NAME = `${ANDROID_RELEASE_ASSET_NAME}.sha256`;
 
 const UA = "xopc-website-release-cache";
 const LOCK_WAIT_MS = 320_000;
@@ -81,7 +82,7 @@ export function assertAllowedReleaseAssetName(name: string): void {
   if (!name || name.length > 220) throw new Error("invalid name");
   if (/[/\\]/.test(name) || name.includes("..")) throw new Error("invalid name");
   if (ELECTRON_UPDATE_MANIFEST_SET.has(name)) return;
-  if (name === ANDROID_RELEASE_ASSET_NAME) return;
+  if (name === ANDROID_RELEASE_ASSET_NAME || name === ANDROID_RELEASE_CHECKSUM_NAME) return;
   if (!XOPC_RELEASE_ASSET_PATTERN.test(name)) throw new Error("invalid asset type");
 }
 

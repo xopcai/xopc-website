@@ -2,10 +2,15 @@ import "server-only";
 
 import { GITHUB_REPO, githubApiHeaders } from "@/lib/release-download-cache";
 
-export type AndroidRelease = { tag: string; asset: { name: string } };
+export type AndroidRelease = {
+  tag: string;
+  asset: { name: string };
+  checksumAsset?: { name: string };
+};
 
 const MOBILE_TAG_PATTERN = /^mobile-expo-v\d+\.\d+\.\d+(?:[-+][\w.-]+)?$/;
 const ANDROID_ASSET_NAME = "xopc-android.apk";
+const ANDROID_CHECKSUM_ASSET_NAME = `${ANDROID_ASSET_NAME}.sha256`;
 
 type GithubRelease = {
   tag_name: string;
@@ -55,5 +60,13 @@ export async function fetchAndroidRelease(): Promise<AndroidRelease | null> {
 
 function toAndroidRelease(release: GithubRelease): AndroidRelease | null {
   const asset = release.assets.find((candidate) => candidate.name === ANDROID_ASSET_NAME);
-  return asset ? { tag: release.tag_name, asset: { name: asset.name } } : null;
+  if (!asset) return null;
+  const checksumAsset = release.assets.find(
+    (candidate) => candidate.name === ANDROID_CHECKSUM_ASSET_NAME,
+  );
+  return {
+    tag: release.tag_name,
+    asset: { name: asset.name },
+    ...(checksumAsset ? { checksumAsset: { name: checksumAsset.name } } : {}),
+  };
 }

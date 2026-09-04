@@ -74,6 +74,8 @@
       "androidTitle": "Download xopc for Android",
       "androidBody": "Install the latest official APK, then connect it to your xopc runtime.",
       "androidDownload": "Download Android APK",
+      "androidInstallNote": "On first install, Android may ask you to let this browser install unknown apps. Download only from xopc.ai. Future APKs can update the installed app without uninstalling it.",
+      "androidChecksum": "Download SHA-256 checksum",
       "androidQrHint": "Hover to scan on your phone",
       "androidQrTitle": "Scan to download",
       "androidQrDesc": "Open the camera on your Android phone and scan this code.",
