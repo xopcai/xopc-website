@@ -109,6 +109,27 @@ main() {
             fi
         fi
 
+        # The small production host can exhaust RAM while Next.js type-checks.
+        # Add temporary swap only for the build and remove it before returning.
+        BUILD_SWAP=""
+        cleanup_build_swap() {
+            if [ -n "\$BUILD_SWAP" ]; then
+                swapoff "\$BUILD_SWAP" || true
+                python3 -c 'import os, sys; os.unlink(sys.argv[1]) if os.path.exists(sys.argv[1]) else None' "\$BUILD_SWAP"
+            fi
+        }
+        trap cleanup_build_swap EXIT
+        available_kb=\$(awk '/MemAvailable:/ {print \$2}' /proc/meminfo)
+        swap_free_kb=\$(awk '/SwapFree:/ {print \$2}' /proc/meminfo)
+        if [ \$((available_kb + swap_free_kb)) -lt 1572864 ]; then
+            BUILD_SWAP=\$(mktemp /var/tmp/xopc-website-build.XXXXXX.swap)
+            fallocate -l 2G "\$BUILD_SWAP"
+            chmod 600 "\$BUILD_SWAP"
+            mkswap "\$BUILD_SWAP" >/dev/null
+            swapon "\$BUILD_SWAP"
+            echo "已启用临时构建 swap"
+        fi
+
         # 原生依赖（如 better-sqlite3）必须在 Linux 上生成 Next.js 构建产物
         echo "构建应用..."
         pnpm build
@@ -120,6 +141,10 @@ main() {
         echo "重启应用..."
         pm2 startOrReload ecosystem.config.cjs --update-env
         pm2 save
+
+        cleanup_build_swap
+        BUILD_SWAP=""
+        trap - EXIT
 
         echo "✓ 应用已重启"
 REMOTE_SCRIPT

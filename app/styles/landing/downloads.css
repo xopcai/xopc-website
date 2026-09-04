@@ -320,6 +320,28 @@
       color: var(--fg-body);
     }
 
+    .landing-page .mobile-app-install-note{
+      max-width: 620px;
+      margin-top: 14px;
+      color: var(--fg-dim);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .landing-page .mobile-app-checksum-link{
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .landing-page .mobile-app-checksum-link:hover{
+      text-decoration: underline;
+    }
+
     .landing-page .mobile-app-primary-action,
     .landing-page .mobile-app-signup button{
       display: inline-flex;

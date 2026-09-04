@@ -66,7 +66,15 @@ export async function resolveDownload(platform: DownloadPlatform): Promise<Downl
       status: "available",
       channel: "android-stable",
       version: release.tag,
-      assets: [{ name: release.asset.name, url: proxyUrl(release.tag, release.asset.name) }],
+      assets: [
+        { name: release.asset.name, url: proxyUrl(release.tag, release.asset.name) },
+        ...(release.checksumAsset
+          ? [{
+              name: release.checksumAsset.name,
+              url: proxyUrl(release.tag, release.checksumAsset.name),
+            }]
+          : []),
+      ],
     };
   }
 

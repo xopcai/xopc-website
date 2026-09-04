@@ -74,6 +74,8 @@
       "androidTitle": "下载 xopc Android 应用",
       "androidBody": "安装最新版官方 APK，然后连接到你的 xopc runtime。",
       "androidDownload": "下载 Android APK",
+      "androidInstallNote": "首次安装时，Android 可能要求允许当前浏览器安装未知应用。请只从 xopc.ai 下载；以后直接安装新版即可覆盖更新，无需先卸载。",
+      "androidChecksum": "下载 SHA-256 校验文件",
       "androidQrHint": "悬停后使用手机扫码",
       "androidQrTitle": "扫码下载",
       "androidQrDesc": "打开 Android 手机相机，扫描二维码即可下载。",

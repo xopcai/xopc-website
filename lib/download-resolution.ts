@@ -15,7 +15,7 @@ export type DownloadResolution =
       status: "available";
       channel: "android-stable";
       version: string;
-      assets: [{ name: string; url: string }];
+      assets: [{ name: string; url: string }, ...{ name: string; url: string }[]];
     }
   | {
       ok: true;

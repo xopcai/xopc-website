@@ -71,6 +71,8 @@ function AndroidDownload({ d }: { d: DownloadMessages }) {
     return <DownloadStatus error>{d.error}</DownloadStatus>;
   }
   const downloadAsset = payload.assets[0];
+  const checksumAsset = payload.assets.find((asset) => asset.name.endsWith(".sha256"));
+  const displayVersion = payload.version.replace(/^mobile-expo-v/, "");
 
   return (
     <article className="mobile-app-panel">
@@ -78,7 +80,13 @@ function AndroidDownload({ d }: { d: DownloadMessages }) {
         <span className="mobile-app-eyebrow">{d.androidEyebrow}</span>
         <h3>{d.androidTitle}</h3>
         <p>{d.androidBody}</p>
-        <span className="mobile-app-version">{d.currentVersion}: <strong>{payload.version}</strong></span>
+        <span className="mobile-app-version">{d.currentVersion}: <strong>{displayVersion}</strong></span>
+        <p className="mobile-app-install-note">{d.androidInstallNote}</p>
+        {checksumAsset ? (
+          <a className="mobile-app-checksum-link" href={checksumAsset.url} download={checksumAsset.name}>
+            {d.androidChecksum}
+          </a>
+        ) : null}
       </div>
       <div className="android-download-action">
         <a
