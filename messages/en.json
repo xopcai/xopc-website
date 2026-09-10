@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "xopc — Keep what matters moving.",
-    "description": "A personal AI on your computer that remembers your goals and context—and picks up where you left off.",
-    "ogDescription": "A personal AI on your computer that remembers your goals and context—and picks up where you left off."
+    "description": "A personal AI on your computer that carries the busywork while keeping direction, judgment, and final decisions with you.",
+    "ogDescription": "Let AI carry the busywork while you keep direction, judgment, and final decisions—so what matters moves forward with less effort."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -24,7 +24,7 @@
     "hero": {
       "brandName": "xopc",
       "headline": "Keep what matters moving.",
-      "desc": "A personal AI that runs on your computer, remembers your goals and context, uses tools, and picks up where you left off.",
+      "desc": "It understands your goals, carries the busywork, and keeps direction, judgment, and final decisions with you—so what matters moves forward with less effort.",
       "primaryCta": "Download xopc",
       "secondaryCta": "Install in terminal"
     },
@@ -99,6 +99,20 @@
       "iosOpenTestFlight": "Open TestFlight",
       "iosOpenAppStore": "Open App Store"
     },
+    "collaboration": {
+      "kicker": "How humans and AI work together",
+      "title": "Let AI carry the execution. Keep the direction human.",
+      "desc": "xopc is not here to live life for you. It carries repeatable, time-consuming, verifiable work while you decide what matters and retain consequential judgment, creativity, and final decisions.",
+      "outcome": "The point of efficiency is not to make people do more. It is to return time to life and what genuinely matters.",
+      "modelLabel": "The xopc 80/20 human–AI collaboration loop",
+      "aiRatio": "80%",
+      "aiLabel": "AI executes",
+      "aiBody": "Organize, research, follow up, use tools, and verify results.",
+      "humanRatio": "20%",
+      "humanLabel": "Human decides",
+      "humanBody": "Set intent, make tradeoffs, and retain creativity and final decisions.",
+      "note": "80/20 expresses a direction for collaboration, not a fixed ratio for every task. Human intent defines the entire loop."
+    },
     "aha": {
       "kicker": "Start with one real thing",
       "title": "It does not need to know everything to start helping.",
@@ -169,8 +183,8 @@
       "correctionNote": "Facts and inferences stay distinct. You can correct either before it becomes durable understanding."
     },
     "cta": {
-      "titleLine1": "Give xopc one thing",
-      "titleLine2": "that matters.",
+      "titleLine1": "Move one important thing",
+      "titleLine2": "forward with xopc.",
       "primary": "Download xopc →",
       "secondary": "View on GitHub"
     },
