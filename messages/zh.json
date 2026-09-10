@@ -99,6 +99,26 @@
       "iosOpenTestFlight": "打开 TestFlight",
       "iosOpenAppStore": "打开 App Store"
     },
+    "mobilePage": {
+      "metaTitle": "下载 xopc 手机 App",
+      "metaDescription": "在 Android 或 iOS 上安装 xopc，然后安全连接到运行在你电脑上的 xopc。",
+      "eyebrow": "XOPC MOBILE",
+      "title": "把同一个助手带在身边。",
+      "description": "安装手机 App，回到电脑生成连接码，然后继续同一段对话、任务和工作。",
+      "detectedAndroid": "已为你选择 Android",
+      "detectedIos": "已为你选择 iOS",
+      "downloadAria": "选择并下载 xopc 手机 App",
+      "tabsAria": "选择手机平台",
+      "androidTab": "Android",
+      "iosTab": "iPhone / iPad",
+      "nextEyebrow": "安装之后",
+      "nextTitle": "回到电脑完成连接",
+      "nextOne": "安装完成后打开 xopc App。",
+      "nextTwo": "在电脑的「连接手机」窗口点击「我已安装，继续连接」。",
+      "nextThree": "用 App 扫描新的配对二维码，并在电脑上确认两端数字一致。",
+      "security": "下载页不会接收电脑地址、访问令牌或配对内容；配对码单独生成，10 分钟有效。",
+      "backHome": "返回 xopc 官网"
+    },
     "collaboration": {
       "kicker": "人与 AI 的协作方式",
       "title": "AI 多做执行，人保留方向。",

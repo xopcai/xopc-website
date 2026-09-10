@@ -99,6 +99,26 @@
       "iosOpenTestFlight": "Open TestFlight",
       "iosOpenAppStore": "Open App Store"
     },
+    "mobilePage": {
+      "metaTitle": "Download the xopc mobile app",
+      "metaDescription": "Install xopc on Android or iOS, then connect securely to xopc running on your computer.",
+      "eyebrow": "XOPC MOBILE",
+      "title": "Take the same assistant with you.",
+      "description": "Install the mobile app, return to your computer for a connection code, and continue the same conversations, tasks, and work.",
+      "detectedAndroid": "Android selected for this device",
+      "detectedIos": "iOS selected for this device",
+      "downloadAria": "Choose and download the xopc mobile app",
+      "tabsAria": "Choose a mobile platform",
+      "androidTab": "Android",
+      "iosTab": "iPhone / iPad",
+      "nextEyebrow": "AFTER INSTALLING",
+      "nextTitle": "Return to your computer to connect",
+      "nextOne": "Open the xopc app after installation.",
+      "nextTwo": "In Connect phone on your computer, choose “I’ve installed it — continue”.",
+      "nextThree": "Scan the new pairing code in the app, then confirm that both devices show the same numbers.",
+      "security": "The download page receives no computer address, access token, or pairing data. Pairing codes are created separately and expire after 10 minutes.",
+      "backHome": "Back to xopc home"
+    },
     "collaboration": {
       "kicker": "How humans and AI work together",
       "title": "Let AI carry the execution. Keep the direction human.",

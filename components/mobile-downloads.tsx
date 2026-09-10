@@ -38,11 +38,19 @@ function DownloadStatus({ children, error = false }: { children: string; error?:
   );
 }
 
-function AndroidDownload({ d }: { d: DownloadMessages }) {
+export function AndroidDownload({
+  d,
+  showQr = true,
+  attributionMethod,
+}: {
+  d: DownloadMessages;
+  showQr?: boolean;
+  attributionMethod?: string;
+}) {
   const payload = useDownloadResolution("android");
   const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | null>(null);
 
-  const qrAsset = payload?.ok && payload.platform === "android" && payload.status === "available"
+  const qrAsset = showQr && payload?.ok && payload.platform === "android" && payload.status === "available"
     ? payload.assets[0]
     : null;
 
@@ -93,31 +101,33 @@ function AndroidDownload({ d }: { d: DownloadMessages }) {
           className="mobile-app-primary-action"
           href={downloadAsset.url}
           download={downloadAsset.name}
-          aria-describedby="android-download-qr-hint"
-          onClick={() => trackProductEvent("android_download_clicked", { platform: "android", version: payload.version })}
+          aria-describedby={showQr ? "android-download-qr-hint" : undefined}
+          onClick={() => trackProductEvent("android_download_clicked", { method: attributionMethod, platform: "android", version: payload.version })}
         >
           <Download aria-hidden />
           {d.androidDownload}
         </a>
-        <span className="android-download-qr-hint" id="android-download-qr-hint">
-          <QrCode aria-hidden />
-          {d.androidQrHint}
-        </span>
-        <div className="android-download-qr" role="tooltip">
-          {qrCodeDataUrl ? (
-            <Image src={qrCodeDataUrl} width={184} height={184} unoptimized alt={d.androidQrAlt} />
-          ) : (
-            <div className="android-download-qr-loading" role="status">{d.androidQrLoading}</div>
-          )}
-          <strong>{d.androidQrTitle}</strong>
-          <p>{d.androidQrDesc}</p>
-        </div>
+        {showQr ? <>
+          <span className="android-download-qr-hint" id="android-download-qr-hint">
+            <QrCode aria-hidden />
+            {d.androidQrHint}
+          </span>
+          <div className="android-download-qr" role="tooltip">
+            {qrCodeDataUrl ? (
+              <Image src={qrCodeDataUrl} width={184} height={184} unoptimized alt={d.androidQrAlt} />
+            ) : (
+              <div className="android-download-qr-loading" role="status">{d.androidQrLoading}</div>
+            )}
+            <strong>{d.androidQrTitle}</strong>
+            <p>{d.androidQrDesc}</p>
+          </div>
+        </> : null}
       </div>
     </article>
   );
 }
 
-function IosSignup({ d }: { d: DownloadMessages }) {
+function IosSignup({ d, attributionMethod }: { d: DownloadMessages; attributionMethod?: string }) {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -134,11 +144,12 @@ function IosSignup({ d }: { d: DownloadMessages }) {
           company,
           program: "ios-testflight",
           locale: document.documentElement.lang === "en" ? "en" : "zh",
+          source: attributionMethod,
         }),
       });
       if (!response.ok) throw new Error("signup_failed");
       setSubmitState("success");
-      trackProductEvent("ios_beta_submitted", { platform: "ios" });
+      trackProductEvent("ios_beta_submitted", { method: attributionMethod, platform: "ios" });
     } catch {
       setSubmitState("error");
     }
@@ -202,14 +213,14 @@ function IosSignup({ d }: { d: DownloadMessages }) {
   );
 }
 
-function IosDownload({ d }: { d: DownloadMessages }) {
+export function IosDownload({ d, attributionMethod }: { d: DownloadMessages; attributionMethod?: string }) {
   const payload = useDownloadResolution("ios");
 
   if (!payload) return <DownloadStatus>{d.loading}</DownloadStatus>;
   if (!payload.ok || payload.platform !== "ios") return <DownloadStatus error>{d.error}</DownloadStatus>;
   if (payload.status === "testflight") {
     return payload.acceptingSignups ? (
-      <IosSignup d={d} />
+      <IosSignup d={d} attributionMethod={attributionMethod} />
     ) : (
       <article className="mobile-app-panel">
         <div className="mobile-app-panel-copy">
@@ -234,7 +245,7 @@ function IosDownload({ d }: { d: DownloadMessages }) {
         href={asset.url}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackProductEvent("ios_download_clicked", { platform: "ios" })}
+        onClick={() => trackProductEvent("ios_download_clicked", { method: attributionMethod, platform: "ios" })}
       >
         <ExternalLink aria-hidden />
         {payload.channel === "ios-app-store" ? d.iosOpenAppStore : d.iosOpenTestFlight}
