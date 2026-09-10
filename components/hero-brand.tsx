@@ -1,4 +1,4 @@
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
+import { AnimatedLoopLogo } from "@/components/animated-loop-logo";
 
 type Props = {
   brandName: string;
@@ -10,7 +10,7 @@ export function HeroBrand({ brandName, headline }: Props) {
     <div className="hero-brand">
       <div className="hero-brand-logo-wrap">
         <div className="hero-brand-logo">
-          <XopcLogoMark priority />
+          <AnimatedLoopLogo />
         </div>
       </div>
 

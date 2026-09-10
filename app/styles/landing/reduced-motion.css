@@ -11,6 +11,20 @@
         animation: none;
         transform: none;
       }
+      .landing-page .xopc-loop-logo__ambient,
+      .landing-page .xopc-loop-logo__origin,
+      .landing-page .xopc-loop-logo__ai,
+      .landing-page .xopc-loop-logo__ai-glow,
+      .landing-page .xopc-loop-logo__human,
+      .landing-page .xopc-loop-logo__liquid-front{
+        animation: none;
+      }
+      .landing-page .xopc-loop-logo__ambient,
+      .landing-page .xopc-loop-logo__origin,
+      .landing-page .xopc-loop-logo__ai-glow,
+      .landing-page .xopc-loop-logo__liquid-front{
+        opacity: 0;
+      }
       html.xopc-locale-transition-in body.landing-body::after,
       html.xopc-locale-transition-out body.landing-body::after,
       html.xopc-theme-transition-active body.landing-body::after{
