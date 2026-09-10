@@ -4,7 +4,6 @@ import {
   ShieldCheck,
   Terminal,
 } from "lucide-react";
-import Image from "next/image";
 
 import { HeroBrand } from "@/components/hero-brand";
 import { LandingFooter } from "@/components/landing-footer";
@@ -154,14 +153,20 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             <p>{L.productProof.desc}</p>
           </div>
           <figure className="product-proof-frame">
-            <Image
-              src="/media/product/xopc-desktop.gif"
-              width={1832}
-              height={1132}
-              sizes="(max-width: 760px) calc(100vw - 40px), 1120px"
-              unoptimized
-              alt={L.productProof.imageAlt}
-            />
+            <video
+              width={1280}
+              height={720}
+              controls
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label={L.productProof.imageAlt}
+            >
+              <source src="/media/product/xopc-desktop.mp4" type="video/mp4" />
+              {L.productProof.imageAlt}
+            </video>
           </figure>
         </div>
       </section>
