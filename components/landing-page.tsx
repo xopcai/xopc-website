@@ -16,6 +16,7 @@ import { LogoHomeLink } from "@/components/logo-home-link";
 import { MobileDownloads } from "@/components/mobile-downloads";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
@@ -115,7 +116,40 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
         </div>
       </section>
 
-      <section className="aha-section landing-reveal" id="why">
+      <section className="collaboration-section landing-reveal" id="why" aria-labelledby="collaboration-title">
+        <div className="container collaboration-layout">
+          <div className="collaboration-copy">
+            <p className="section-kicker">{L.collaboration.kicker}</p>
+            <h2 id="collaboration-title">{L.collaboration.title}</h2>
+            <p>{L.collaboration.desc}</p>
+            <p className="collaboration-outcome">{L.collaboration.outcome}</p>
+          </div>
+          <figure className="collaboration-model" aria-label={L.collaboration.modelLabel}>
+            <div className="collaboration-mark-shell" aria-hidden>
+              <XopcLogoMark className="collaboration-logo" />
+            </div>
+            <figcaption className="collaboration-roles">
+              <div className="collaboration-role collaboration-role-ai">
+                <strong>{L.collaboration.aiRatio}</strong>
+                <div>
+                  <h3>{L.collaboration.aiLabel}</h3>
+                  <p>{L.collaboration.aiBody}</p>
+                </div>
+              </div>
+              <div className="collaboration-role collaboration-role-human">
+                <strong>{L.collaboration.humanRatio}</strong>
+                <div>
+                  <h3>{L.collaboration.humanLabel}</h3>
+                  <p>{L.collaboration.humanBody}</p>
+                </div>
+              </div>
+              <p className="collaboration-note">{L.collaboration.note}</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="aha-section landing-reveal">
         <div className="container aha-layout">
           <div className="aha-copy">
             <p className="section-kicker">{L.aha.kicker}</p>
