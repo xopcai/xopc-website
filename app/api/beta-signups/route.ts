@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 
 const MAX_BODY_BYTES = 2_048;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const SOURCE_PATTERN = /^[a-z0-9-]{1,32}$/;
 
 function isJsonObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -65,11 +66,14 @@ export async function POST(request: Request) {
     return Response.json({ error: "invalid_request" }, { status: 400 });
   }
   const locale: SiteLocale = body.locale === "en" ? "en" : "zh";
+  const source = typeof body.source === "string" && SOURCE_PATTERN.test(body.source)
+    ? body.source
+    : "landing";
 
   const result = createIosBetaSignup({
     email,
     locale,
-    source: "landing",
+    source,
   });
   if (result.created) await notifyIosBetaSignup(email);
 

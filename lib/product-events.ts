@@ -9,6 +9,7 @@ export const PRODUCT_EVENT_NAMES = [
   "desktop_platform_selected",
   "desktop_download_clicked",
   "android_download_clicked",
+  "mobile_download_page_viewed",
   "ios_beta_submitted",
   "ios_download_clicked",
 ] as const;
