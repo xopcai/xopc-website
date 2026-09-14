@@ -33,6 +33,7 @@
         "voice",
         "tasks",
         "projects",
+        "coding",
         "notes",
         "sharing"
       ]
@@ -268,12 +269,27 @@
       "id": "projects",
       "group": "work",
       "related": [
+        "coding",
         "tasks",
         "notes",
         "memory",
         "local-apps"
       ],
       "source": "projects-tasks-notes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "coding",
+      "group": "work",
+      "related": [
+        "projects",
+        "agents",
+        "tools",
+        "terminal",
+        "permissions"
+      ],
+      "source": "tools.md",
       "status": "available",
       "docLocale": "localized"
     },
@@ -378,6 +394,7 @@
       "id": "agents",
       "group": "capability",
       "related": [
+        "coding",
         "models",
         "tools",
         "skills",
@@ -391,6 +408,7 @@
       "id": "tools",
       "group": "capability",
       "related": [
+        "coding",
         "browser",
         "media",
         "permissions",
@@ -535,11 +553,12 @@
       "id": "terminal",
       "group": "access",
       "related": [
+        "coding",
         "onboard",
         "chat",
         "logs"
       ],
-      "source": "first-5-minutes.md",
+      "source": "tui.md",
       "status": "available",
       "docLocale": "localized"
     },
@@ -711,6 +730,17 @@
         "heartbeat",
         "assistant"
       ]
+    },
+    {
+      "id": "journey4",
+      "ids": [
+        "projects",
+        "agents",
+        "tools",
+        "coding",
+        "notes",
+        "terminal"
+      ]
     }
   ],
   "layers": [
@@ -729,6 +759,7 @@
       "understanding",
       "tasks",
       "projects",
+      "coding",
       "assistant"
     ],
     [
