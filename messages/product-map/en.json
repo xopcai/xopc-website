@@ -3,7 +3,7 @@
     "title": "Product map",
     "headline": "Start with one important thing",
     "description": "From your first conversation to ongoing collaboration. Follow a journey or unfold the whole product in a mind map.",
-    "metaDescription": "Explore eight areas and 46 capabilities in xopc, from first-time setup, personal understanding and durable tasks to workflows, automation and local-first trust.",
+    "metaDescription": "Explore eight areas and 47 capabilities in xopc, from setup, personal understanding and durable tasks to coding, terminal access, workflows and automation.",
     "eyebrow": "XOPC · PRODUCT ATLAS",
     "home": "Back to home",
     "all": "Complete product map",
@@ -689,21 +689,21 @@
       "boundary": "Connect to the intended Gateway. Access from another network requires remote-access setup."
     },
     "terminal": {
-      "title": "CLI & TUI",
-      "description": "Start or resume conversations and manage configuration from a terminal.",
+      "title": "Terminal access",
+      "description": "Start work, watch live progress and resume conversations from your terminal. TUI is the full-screen interactive interface; CLI provides individual commands.",
       "features": [
-        "Interactive TUI",
-        "Single Agent instructions",
-        "Resume sessions",
-        "Diagnostic commands"
+        "TUI: full-screen chat and live progress",
+        "CLI: interactive or single requests",
+        "Resume saved conversations",
+        "Local operation or Gateway connection"
       ],
       "steps": [
-        "Initialize configuration",
-        "Run xopc",
-        "Start or resume a session",
-        "Check status when needed"
+        "Install xopc and connect a model with xopc onboard --quick",
+        "Run xopc or xopc tui for full-screen conversation",
+        "Use xopc agent -i for simple interactive chat, or xopc agent -m \"Your request\" for one request",
+        "Resume with xopc resume; use xopc tui --gateway for remote sessions"
       ],
-      "boundary": "The CLI requires a supported Node.js version and can share configuration with the desktop app."
+      "boundary": "The terminal is optional, not a prerequisite for coding. CLI installation needs a supported Node.js version. Remote Gateway connections require authentication; check which configuration and sessions each mode uses."
     },
     "mobile": {
       "title": "Mobile app",
@@ -874,6 +874,24 @@
         "Save results and synchronize progress"
       ],
       "boundary": "Schedules, remote clients and periodic checks depend on Gateway availability."
+    },
+    "coding": {
+      "title": "Coding & development",
+      "description": "Understand a codebase, change code, run checks and deliver reviewable results with the assistant. Start from desktop, the web console or a terminal.",
+      "features": [
+        "Read and search code and project rules",
+        "Edit files in an authorized workspace",
+        "Run tests, builds and type checks",
+        "Review diffs and preserve verification records"
+      ],
+      "steps": [
+        "Set the codebase as the workspace and keep goals and context in a Project",
+        "Configure the Agent with the required model, file and command access",
+        "Describe the bug or feature and define completion criteria",
+        "Run project checks after edits and review the current workspace diff",
+        "Deliver a change summary, verification results and remaining issues"
+      ],
+      "boundary": "Results depend on the model, tool permissions and project dependencies. A successful command does not prove every acceptance criterion passed. Full PTY and broader language services are still evolving; commits, pushes and deployments need explicit authorization."
     }
   },
   "journeys": {
@@ -892,6 +910,10 @@
     "journey3": {
       "title": "Ask the assistant to follow up",
       "description": "Authorize, observe, suggest and decide"
+    },
+    "journey4": {
+      "title": "Complete a code change",
+      "description": "Codebase and Project → Agent and tools → edits and verification → deliverable; continue in the terminal when useful."
     }
   },
   "layers": [
