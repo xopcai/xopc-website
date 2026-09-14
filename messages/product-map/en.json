@@ -1,0 +1,919 @@
+{
+  "ui": {
+    "title": "Product map",
+    "headline": "Start with one important thing",
+    "description": "From your first conversation to ongoing collaboration. Follow a journey or unfold the whole product in a mind map.",
+    "metaDescription": "Explore eight areas and 46 capabilities in xopc, from first-time setup, personal understanding and durable tasks to workflows, automation and local-first trust.",
+    "eyebrow": "XOPC · PRODUCT ATLAS",
+    "home": "Back to home",
+    "all": "Complete product map",
+    "search": "Search features or scenarios…",
+    "searchLabel": "Search product features",
+    "views": "Choose a map view",
+    "map": "Explore",
+    "mindmap": "Mind map",
+    "architecture": "Architecture",
+    "catalog": "All features",
+    "start": "Start a tour",
+    "chooseJourney": "Choose a path to explore",
+    "journeyDescription": "Follow the capabilities that support a real outcome.",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish tour",
+    "end": "End tour",
+    "current": "Now exploring",
+    "step": "Step {current} of {total}",
+    "count": "{count} features",
+    "progress": "Explored {count} of {total}",
+    "capabilities": "What you can do",
+    "path": "A typical path",
+    "boundary": "What to know",
+    "related": "Explore next",
+    "docs": "Read the guide",
+    "englishDocs": "Read the guide in English",
+    "close": "Close details",
+    "detail": "Feature details",
+    "available": "Available",
+    "experimental": "Experimental",
+    "evolving": "Evolving",
+    "empty": "No matching features. Try “task”, “voice” or “permissions”.",
+    "clear": "Clear search",
+    "results": "{count} matching features",
+    "expand": "Expand all",
+    "collapse": "Collapse branches",
+    "fit": "Fit to canvas",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "wide": "Large view",
+    "exitWide": "Exit large view",
+    "mindHint": "Drag to pan · Click a branch to expand · Select a feature for details",
+    "canvasLabel": "Mind map canvas. Arrow keys pan, plus and minus zoom, and zero fits the map.",
+    "root": "Keep what matters moving",
+    "primary": "The user journey",
+    "support": "Capabilities & trust",
+    "video": "Desktop demo",
+    "videoTitle": "xopc desktop product demo",
+    "videoNote": "Official demo footage; the interface may differ from the current release.",
+    "download": "Download xopc",
+    "updated": "Based on September 2026 product documentation. Availability varies by release, platform and configuration.",
+    "architectureNote": "Projects provide context, Tasks carry outcomes, and Sessions retain conversations. Permissions and human judgment apply at every layer.",
+    "back": "Back to map"
+  },
+  "groups": {
+    "start": {
+      "title": "Meet & get started",
+      "description": "Connect first, then bring one real thing you want to move forward."
+    },
+    "understand": {
+      "title": "Understand what matters",
+      "description": "Build shared context you can inspect, confirm and correct."
+    },
+    "work": {
+      "title": "From thought to result",
+      "description": "Chat captures the thought, Tasks carry outcomes, and Projects connect context."
+    },
+    "initiative": {
+      "title": "Keep work moving",
+      "description": "Reuse proven methods and follow up within clear boundaries."
+    },
+    "capability": {
+      "title": "Execution capabilities",
+      "description": "Combine the right assistant, methods and actions for the work."
+    },
+    "connect": {
+      "title": "Connections & extensions",
+      "description": "Connect authorized sources, tools and purpose-built applications."
+    },
+    "access": {
+      "title": "Continue anywhere",
+      "description": "Different surfaces connect to one Gateway and persistent context."
+    },
+    "trust": {
+      "title": "Control & trust",
+      "description": "Permissions, data ownership and inspectable records run through the product."
+    }
+  },
+  "nodes": {
+    "onboard": {
+      "title": "First steps · Onboarding",
+      "description": "Connect one model and bring one real thing you want to move forward.",
+      "features": [
+        "Desktop or terminal setup",
+        "Model credentials",
+        "First conversation check",
+        "Optional work discovery"
+      ],
+      "steps": [
+        "Open xopc",
+        "Connect a working model",
+        "Describe this week's important goal",
+        "Find the smallest credible next step"
+      ],
+      "boundary": "You do not need channels, automations or extra Agents before your first conversation."
+    },
+    "models": {
+      "title": "Models & services",
+      "description": "Choose the model that thinks with you and configure services for different kinds of work.",
+      "features": [
+        "Cloud or local models",
+        "Bring your own API key",
+        "Models by intent",
+        "Image, voice and search services"
+      ],
+      "steps": [
+        "Choose a provider",
+        "Configure credentials or a local endpoint",
+        "Select a model",
+        "Verify with a short conversation"
+      ],
+      "boundary": "Local storage does not imply local inference. Cloud models process the context selected for a request."
+    },
+    "discovery": {
+      "title": "Connect recent work",
+      "description": "Find evidence-backed next steps in the sources you explicitly choose.",
+      "features": [
+        "Selected work folders",
+        "Bounded read-only analysis",
+        "Visible evidence",
+        "Optional macOS sources"
+      ],
+      "steps": [
+        "Choose a work folder",
+        "Review the scan scope",
+        "Inspect evidence-backed suggestions",
+        "Bring one suggestion into Chat"
+      ],
+      "boundary": "Experimental. Apple Notes, Calendar and Reminders each need separate system permission; behavior varies by release."
+    },
+    "home": {
+      "title": "Today · Workbench",
+      "description": "See decisions that need you, prepared results and work progressing in the background.",
+      "features": [
+        "Quick capture",
+        "Pending decisions",
+        "Prepared work",
+        "Background progress and failures"
+      ],
+      "steps": [
+        "Share a new thought",
+        "Review what needs your attention",
+        "Open the related task or follow-up",
+        "Take the next step"
+      ],
+      "boundary": "The workbench reflects your instance's tasks and assistant activity; it is not a separate task-status system."
+    },
+    "portrait": {
+      "title": "Your portrait",
+      "description": "Edit explicit personal details such as your name, role, language and time zone.",
+      "features": [
+        "Name and role",
+        "Language and time zone",
+        "Direct editing",
+        "Separate from inference"
+      ],
+      "steps": [
+        "Open You",
+        "Add useful profile details",
+        "Correct anything inaccurate"
+      ],
+      "boundary": "Explicit profile fields are presented separately from inferred understanding."
+    },
+    "understanding": {
+      "title": "Shared understanding",
+      "description": "Keep the assistant's understanding grounded in evidence and open to correction.",
+      "features": [
+        "Preferences and rhythm",
+        "Relationships and context",
+        "Proposed understanding",
+        "Corrections and conflict review"
+      ],
+      "steps": [
+        "Review a proposed understanding",
+        "Check its source and time horizon",
+        "Confirm or correct it",
+        "Retire it when no longer useful"
+      ],
+      "boundary": "Inference is not fact. Your direct statements carry greater authority."
+    },
+    "memory": {
+      "title": "Work memory",
+      "description": "Retain project facts, decisions, lessons and open questions so you can stop repeating context.",
+      "features": [
+        "Project facts",
+        "Decisions and lessons",
+        "Commitments and questions",
+        "Relevant context retrieval"
+      ],
+      "steps": [
+        "Build context through real work",
+        "Review distilled memory",
+        "Check the evidence",
+        "Correct stale knowledge"
+      ],
+      "boundary": "Raw messages and documents stay in the source index. The complete user model is not sent with every request."
+    },
+    "goals": {
+      "title": "Goals & current priorities",
+      "description": "Distinguish long-term outcomes from what deserves attention right now.",
+      "features": [
+        "Goals and success criteria",
+        "Priority windows",
+        "Validity and review dates",
+        "Relevant execution context"
+      ],
+      "steps": [
+        "State the desired outcome",
+        "Add timing and success criteria",
+        "Use it to guide the work",
+        "Update it when priorities change"
+      ],
+      "boundary": "These are parts of user understanding, not a separate project-management system."
+    },
+    "rules": {
+      "title": "Collaboration rules",
+      "description": "Set expectations for communication, execution and when the assistant should stop and ask.",
+      "features": [
+        "Communication preferences",
+        "Execution boundaries",
+        "Routines",
+        "Proactive rules"
+      ],
+      "steps": [
+        "State a clear rule",
+        "Review the saved wording",
+        "Work within the rule",
+        "Change or disable it when needed"
+      ],
+      "boundary": "Explicit rules take priority over inference but do not replace enforced tool permissions."
+    },
+    "chat": {
+      "title": "Chat · Session",
+      "description": "Start naturally, keep working context and return to the conversation later.",
+      "features": [
+        "Ongoing conversation",
+        "Visible tool progress",
+        "Resume past sessions",
+        "Reset and management"
+      ],
+      "steps": [
+        "Describe a question or goal",
+        "Add relevant files",
+        "Review actions and results",
+        "Continue or create a durable task"
+      ],
+      "boundary": "Not every conversation needs a Task. Reset archives the old transcript; deletion is a separate action."
+    },
+    "capture": {
+      "title": "Capture a thought",
+      "description": "Share text, a file, a link or voice before turning it into a structured action.",
+      "features": [
+        "Text input",
+        "File attachments",
+        "Links and evidence",
+        "Voice input"
+      ],
+      "steps": [
+        "Drop in a thought or material",
+        "Add necessary context",
+        "Clarify a next step",
+        "Create a task when it needs to persist"
+      ],
+      "boundary": "Supported inputs depend on the client and configured model capabilities."
+    },
+    "voice": {
+      "title": "Voice input & calls",
+      "description": "Continue the same Chat by speaking, dictating or listening.",
+      "features": [
+        "Dictation into an editable draft",
+        "Current-assistant calls",
+        "Natural voice mode",
+        "Readout and transcription"
+      ],
+      "steps": [
+        "Configure a voice service",
+        "Test input and playback",
+        "Dictate or start a call",
+        "Continue the same Chat after hanging up"
+      ],
+      "boundary": "Natural voice mode has no tools; current-assistant mode retains Agent tools. Stopping playback does not undo completed actions."
+    },
+    "tasks": {
+      "title": "Task",
+      "description": "Carry a verifiable outcome across time with status, next steps and completion criteria.",
+      "features": [
+        "Outcome and scope",
+        "Work across sessions",
+        "Blockers and decisions",
+        "Run history and evidence"
+      ],
+      "steps": [
+        "Describe the result",
+        "Define what done means",
+        "Execute and preserve evidence",
+        "Review the result before closing"
+      ],
+      "boundary": "An Agent run ending does not mean a Task is complete. Completion depends on a verifiable result."
+    },
+    "projects": {
+      "title": "Project",
+      "description": "Connect related tasks, conversations and materials through shared context.",
+      "features": [
+        "Related tasks",
+        "Shared files and description",
+        "Conversations and activity",
+        "Project notes"
+      ],
+      "steps": [
+        "Create a project",
+        "Add background material",
+        "Link tasks with clear outcomes",
+        "Keep shared context current"
+      ],
+      "boundary": "Projects provide context rather than a competing task-status system."
+    },
+    "notes": {
+      "title": "Notes & workspace files",
+      "description": "Keep source material, decisions and deliverables available for future work.",
+      "features": [
+        "Standalone notes",
+        "Project notes",
+        "Workspace materials",
+        "Deliverable files"
+      ],
+      "steps": [
+        "Save useful information",
+        "Link it to a project",
+        "Let the assistant read or edit it",
+        "Preserve the result"
+      ],
+      "boundary": "Use Notes for durable information and workspace files for material to read, edit or deliver."
+    },
+    "sharing": {
+      "title": "Share a conversation",
+      "description": "Create a reviewed, read-only snapshot for other people to view.",
+      "features": [
+        "Hosted or local snapshots",
+        "Review before sharing",
+        "Expiry and view limits",
+        "Update or revoke a share"
+      ],
+      "steps": [
+        "Choose the conversation content",
+        "Check for sensitive information",
+        "Create a snapshot",
+        "Share with the intended audience"
+      ],
+      "boundary": "A share exposes the reviewed snapshot. Reachability depends on the delivery method and Gateway configuration."
+    },
+    "assistant": {
+      "title": "Assistant work",
+      "description": "See what the assistant is following, what it has prepared and where it needs your judgment.",
+      "features": [
+        "Decisions needed",
+        "Prepared results",
+        "Changes and updates",
+        "Delegations and follow-ups"
+      ],
+      "steps": [
+        "Explain what needs attention",
+        "Review assistant work",
+        "Inspect suggestions or results",
+        "Decide what happens next"
+      ],
+      "boundary": "Proactive capabilities are evolving. An unchanged polling result is not automatically a useful notification."
+    },
+    "followup": {
+      "title": "Ongoing follow-up",
+      "description": "Resurface unfinished commitments or new signals at a useful time.",
+      "features": [
+        "Watched commitments",
+        "Meaningful updates",
+        "Suggestions first",
+        "Adjustable boundaries"
+      ],
+      "steps": [
+        "Define what to watch",
+        "Agree what change matters",
+        "Receive evidence-backed updates",
+        "Continue, adjust or stop"
+      ],
+      "boundary": "Authority grows from observation to reminders and suggestions. External writes require explicit authorization."
+    },
+    "workflows": {
+      "title": "Workflow",
+      "description": "Turn a repeatable method into a sequence you can inspect, publish and run again.",
+      "features": [
+        "Visual editing",
+        "AI tasks and decisions",
+        "Merge and result steps",
+        "Published revisions and run history"
+      ],
+      "steps": [
+        "Describe a process or choose a template",
+        "Edit steps and connections",
+        "Validate and publish",
+        "Test inputs and inspect results"
+      ],
+      "boundary": "A Workflow defines how work happens. Historical runs retain the published revision used at their start."
+    },
+    "automations": {
+      "title": "Automation",
+      "description": "Start defined work at a chosen time or when an event arrives.",
+      "features": [
+        "Manual and one-time triggers",
+        "Intervals and cron",
+        "Webhooks",
+        "Timeouts, retries and run history"
+      ],
+      "steps": [
+        "Choose an Agent, Workflow or browser task",
+        "Set the trigger and time zone",
+        "Test manually",
+        "Enable and review run history"
+      ],
+      "boundary": "An Automation defines when work starts. It does not expand Agent authority, and the Gateway must be running."
+    },
+    "browser-auto": {
+      "title": "Browser automations",
+      "description": "Save a website task you have completed successfully with the assistant so it can run again.",
+      "features": [
+        "Create through conversation",
+        "Parameterized inputs",
+        "Run and stop",
+        "Edit, pause and version history"
+      ],
+      "steps": [
+        "Describe a website task",
+        "Complete it together once",
+        "Save verified steps and inputs",
+        "Run again or add a schedule"
+      ],
+      "boundary": "You must complete login and human verification. Website changes or expired sessions may break saved tasks."
+    },
+    "heartbeat": {
+      "title": "Heartbeat checks",
+      "description": "Periodically review a short checklist and report only useful changes.",
+      "features": [
+        "Per-Agent checks",
+        "Configurable interval",
+        "Small checklists",
+        "Quiet-result suppression"
+      ],
+      "steps": [
+        "Set a short checklist",
+        "Choose a conservative interval",
+        "Verify the notification destination",
+        "Review the first result"
+      ],
+      "boundary": "For lightweight awareness, not exact-time scheduling or critical monitoring."
+    },
+    "agents": {
+      "title": "Agent",
+      "description": "Configure a named assistant's role, models, workspace and capability boundaries.",
+      "features": [
+        "Identity and role",
+        "Workspace choice",
+        "Global capability defaults",
+        "Explicit per-Agent overrides"
+      ],
+      "steps": [
+        "Set global defaults",
+        "Create an Agent when needed",
+        "Choose tools and skills",
+        "Use it in its assigned sessions"
+      ],
+      "boundary": "There are two configuration layers: global defaults and explicit Agent overrides. Existing sessions do not silently change Agent."
+    },
+    "tools": {
+      "title": "Action tools",
+      "description": "Let the assistant read and edit files, search, run commands and perform real work.",
+      "features": [
+        "Files and shell",
+        "Web search and retrieval",
+        "Memory and media",
+        "Delegation and code execution"
+      ],
+      "steps": [
+        "Identify the needed action",
+        "Enable only relevant tools",
+        "Verify a small action first",
+        "Inspect the result"
+      ],
+      "boundary": "Available tools depend on policy, credentials and optional dependencies."
+    },
+    "skills": {
+      "title": "Skill",
+      "description": "Package methods, instructions and reference material for a recurring kind of work.",
+      "features": [
+        "Discovery and installation",
+        "Enable and configure",
+        "Dependency readiness",
+        "Audit and testing"
+      ],
+      "steps": [
+        "Find a relevant Skill",
+        "Read its instructions and requirements",
+        "Enable it for an Agent",
+        "Verify with a matching request"
+      ],
+      "boundary": "Skills describe how to work; tools provide actions. They are different layers of capability."
+    },
+    "browser": {
+      "title": "Browser use",
+      "description": "Let an authorized assistant inspect pages, find information and interact with websites.",
+      "features": [
+        "Page reading",
+        "Website interactions",
+        "Browser runtime",
+        "Site and action permissions"
+      ],
+      "steps": [
+        "Configure a browser",
+        "Enable access for the Agent",
+        "Complete a website task",
+        "Save it for reuse when useful"
+      ],
+      "boundary": "A browser may use signed-in accounts. Site access and sensitive actions need their own boundaries."
+    },
+    "media": {
+      "title": "Image, search & speech",
+      "description": "Add image creation, information retrieval and speech services to the main model.",
+      "features": [
+        "Image generation and multimodal input",
+        "Web search providers",
+        "Speech transcription",
+        "Speech synthesis"
+      ],
+      "steps": [
+        "Choose a capability",
+        "Configure a compatible service",
+        "Try a small sample",
+        "Use it in a task"
+      ],
+      "boundary": "Services require their own credentials and may incur separate usage charges."
+    },
+    "runtimes": {
+      "title": "Tool runtimes",
+      "description": "Supply Node.js and Python for Skills, code tools and local MCP servers.",
+      "features": [
+        "Isolated runtimes",
+        "Install and repair",
+        "Version management",
+        "On-demand provisioning"
+      ],
+      "steps": [
+        "Review runtime status",
+        "Install missing dependencies",
+        "Verify the tool works",
+        "Prune unused versions"
+      ],
+      "boundary": "This is supporting infrastructure. Configure it when a capability requires it."
+    },
+    "connectors": {
+      "title": "Connectors",
+      "description": "Give selected Agents access to authorized sources and external service actions.",
+      "features": [
+        "Service catalog",
+        "Authorization and scopes",
+        "Health and reconnection",
+        "Managed integrations"
+      ],
+      "steps": [
+        "Choose a service",
+        "Review scopes before signing in",
+        "Assign it to the right Agent",
+        "Test a read-only action"
+      ],
+      "boundary": "Removing a connector may not revoke the external grant. Available services depend on your instance's catalog."
+    },
+    "mcp": {
+      "title": "MCP connections",
+      "description": "Connect external tools through MCP and expose xopc to other MCP clients.",
+      "features": [
+        "Outbound MCP servers",
+        "Local or remote transport",
+        "Tool discovery and calls",
+        "Inbound channel bridge"
+      ],
+      "steps": [
+        "Configure a server",
+        "Check its connection and tools",
+        "Allow access for an Agent",
+        "Verify in a conversation"
+      ],
+      "boundary": "A connection supplies capabilities; execution is still subject to Agent policy and server permissions."
+    },
+    "extensions": {
+      "title": "Extensions",
+      "description": "Add channels, tools, providers or interface capabilities to the product.",
+      "features": [
+        "Install and enable",
+        "Configuration panels",
+        "Extension pages",
+        "Diagnostics and updates"
+      ],
+      "steps": [
+        "Choose a trusted extension",
+        "Review capabilities and configuration",
+        "Enable and verify it",
+        "Update or disable when needed"
+      ],
+      "boundary": "Extensions cross a code-trust boundary. Do not treat unknown extension code as ordinary reference material."
+    },
+    "local-apps": {
+      "title": "Local apps",
+      "description": "Open local application workbenches and explore tools built around your own work.",
+      "features": [
+        "Local app list",
+        "App workbench",
+        "Project linkage direction",
+        "Release and permission design"
+      ],
+      "steps": [
+        "Open Local apps",
+        "Select an app",
+        "Inspect its workbench",
+        "Continue building around your project"
+      ],
+      "boundary": "Page entry points exist. Isolated services, releases and rollback must be verified per version; design documents do not imply full delivery."
+    },
+    "platform": {
+      "title": "XOPC Platform",
+      "description": "Optionally connect to hosted services from XOPC Cloud or a private enterprise platform.",
+      "features": [
+        "Platform connection",
+        "Accounts and services",
+        "Hosted capability discovery",
+        "Combine with your own services"
+      ],
+      "steps": [
+        "Choose a platform",
+        "Connect your account",
+        "Inspect available services",
+        "Select them in capability settings"
+      ],
+      "boundary": "Services depend on the platform deployment, account and published routes."
+    },
+    "desktop": {
+      "title": "Desktop app",
+      "description": "Use xopc on your own computer as the primary surface for personal work.",
+      "features": [
+        "Native desktop shell",
+        "Shared local state",
+        "Gateway experience",
+        "macOS work discovery"
+      ],
+      "steps": [
+        "Open the app",
+        "Complete first-time setup",
+        "Start work from Today",
+        "Return to ongoing tasks"
+      ],
+      "boundary": "Local configuration and state use the shared ~/.xopc root by default."
+    },
+    "web": {
+      "title": "Web console",
+      "description": "Use a browser to access the workbench, conversations, projects and settings.",
+      "features": [
+        "Workbench",
+        "Product feature pages",
+        "Realtime progress",
+        "Settings and management"
+      ],
+      "steps": [
+        "Connect to the Gateway",
+        "Authenticate",
+        "Open the workbench",
+        "Continue a saved session"
+      ],
+      "boundary": "Connect to the intended Gateway. Access from another network requires remote-access setup."
+    },
+    "terminal": {
+      "title": "CLI & TUI",
+      "description": "Start or resume conversations and manage configuration from a terminal.",
+      "features": [
+        "Interactive TUI",
+        "Single Agent instructions",
+        "Resume sessions",
+        "Diagnostic commands"
+      ],
+      "steps": [
+        "Initialize configuration",
+        "Run xopc",
+        "Start or resume a session",
+        "Check status when needed"
+      ],
+      "boundary": "The CLI requires a supported Node.js version and can share configuration with the desktop app."
+    },
+    "mobile": {
+      "title": "Mobile app",
+      "description": "Pair with your computer and continue the same work from your phone.",
+      "features": [
+        "QR pairing and desktop approval",
+        "Chat and voice",
+        "Offline pending messages",
+        "Revoke devices and test connectivity"
+      ],
+      "steps": [
+        "Choose Connect phone on the computer",
+        "Scan the QR code",
+        "Compare numbers and approve on the computer",
+        "Test the connection and continue"
+      ],
+      "boundary": "Keep the computer running and online. Pending work is isolated by computer; stale or rejected entries need review."
+    },
+    "channels": {
+      "title": "Messaging channels",
+      "description": "Collaborate with the same assistant through Telegram, Weixin or Feishu / Lark.",
+      "features": [
+        "Channel and account settings",
+        "Direct and group policies",
+        "Inbound routing",
+        "Message and media replies"
+      ],
+      "steps": [
+        "Choose a channel",
+        "Configure account credentials",
+        "Set the allowed audience",
+        "Verify delivery and routing"
+      ],
+      "boundary": "Media support varies by channel. Channels such as Telegram and Weixin load through extensions."
+    },
+    "chrome": {
+      "title": "Chrome extension",
+      "description": "Bring Chat and current-page context into the browser sidebar.",
+      "features": [
+        "Browser sidebar",
+        "Current-page context",
+        "Per-site authorization",
+        "Browser bridge"
+      ],
+      "steps": [
+        "Install the extension",
+        "Connect the Gateway",
+        "Allow the intended site",
+        "Work alongside the page"
+      ],
+      "boundary": "Grant site access only as needed and verify the connection status."
+    },
+    "remote": {
+      "title": "Remote access",
+      "description": "Reach your own xopc installation when you are away from its host.",
+      "features": [
+        "Tailscale Serve",
+        "SSH tunnel",
+        "FRP public tunnel",
+        "Remote Gateway configuration"
+      ],
+      "steps": [
+        "Verify local access",
+        "Choose a connection method",
+        "Keep authentication enabled",
+        "Test from another device"
+      ],
+      "boundary": "The Gateway defaults to loopback. Network access does not grant authority for actions inside the product."
+    },
+    "privacy": {
+      "title": "Local-first privacy",
+      "description": "Own persistent context and understand what selected information reaches a model.",
+      "features": [
+        "Per-source authorization",
+        "Bounded context selection",
+        "Sensitivity and disclosure policy",
+        "Deletion and forgetting"
+      ],
+      "steps": [
+        "Review source scope",
+        "Choose a local or cloud model",
+        "Inspect selected context",
+        "Revoke unnecessary sources"
+      ],
+      "boundary": "Local-first does not mean every request is processed on your device."
+    },
+    "permissions": {
+      "title": "Permissions & human decisions",
+      "description": "Keep goals and judgment with the person while execution stays within explicit authority.",
+      "features": [
+        "Agent tool boundaries",
+        "Connector scopes",
+        "External-action confirmation",
+        "Separate source authorization"
+      ],
+      "steps": [
+        "Define the work's scope",
+        "Grant necessary access",
+        "Review consequential actions",
+        "Inspect results or revoke access"
+      ],
+      "boundary": "Sending, deleting, purchasing, publishing and other high-impact actions need explicit policy or approval."
+    },
+    "storage": {
+      "title": "Local data & backup",
+      "description": "Keep conversations, tasks and personal context available for later recovery and management.",
+      "features": [
+        "Local SQLite state",
+        "Workspace files",
+        "Configuration and data locations",
+        "Backup and integrity diagnostics"
+      ],
+      "steps": [
+        "Locate your state directory",
+        "Choose what to back up",
+        "Save a consistent copy",
+        "Verify recovery and integrity"
+      ],
+      "boundary": "Include both the database and workspace files. Follow the documented backup procedure."
+    },
+    "logs": {
+      "title": "Logs & diagnostics",
+      "description": "Find the first useful cause when a connection, model or tool fails.",
+      "features": [
+        "Log Manager",
+        "Run status and errors",
+        "Doctor diagnostics",
+        "Request correlation"
+      ],
+      "steps": [
+        "Identify the failed action",
+        "Open its logs",
+        "Check credentials, dependencies or permissions",
+        "Fix and verify"
+      ],
+      "boundary": "Logs can contain work context. Review them before sharing."
+    },
+    "settings": {
+      "title": "Preferences & settings",
+      "description": "Manage everyday experience, default capabilities and runtime configuration in their own sections.",
+      "features": [
+        "Language and appearance",
+        "Global Agent defaults",
+        "Session settings",
+        "Services and runtime"
+      ],
+      "steps": [
+        "Open Settings",
+        "Choose the relevant section",
+        "Save and verify",
+        "Check runtime status if needed"
+      ],
+      "boundary": "Explicit per-Agent overrides take precedence over global defaults."
+    },
+    "gateway": {
+      "title": "Gateway",
+      "description": "Connect clients, Agent execution and persistent local state.",
+      "features": [
+        "HTTP API",
+        "Realtime WebSocket",
+        "Agent and channel runtime",
+        "Local state and background services"
+      ],
+      "steps": [
+        "Start the Gateway",
+        "Authenticate a client",
+        "Receive and execute work",
+        "Save results and synchronize progress"
+      ],
+      "boundary": "Schedules, remote clients and periodic checks depend on Gateway availability."
+    }
+  },
+  "journeys": {
+    "journey0": {
+      "title": "Meet xopc",
+      "description": "From setup to ongoing collaboration"
+    },
+    "journey1": {
+      "title": "Prepare a product launch",
+      "description": "From a thought to a verifiable result"
+    },
+    "journey2": {
+      "title": "Build a weekly review",
+      "description": "Reuse a method and schedule it"
+    },
+    "journey3": {
+      "title": "Ask the assistant to follow up",
+      "description": "Authorize, observe, suggest and decide"
+    }
+  },
+  "layers": [
+    {
+      "title": "User entry points",
+      "description": "Start on desktop, then continue in a terminal, on your phone or in a messaging app."
+    },
+    {
+      "title": "The product journey",
+      "description": "Meet, understand, collaborate and follow up. Human intent connects every step."
+    },
+    {
+      "title": "Execution & reuse",
+      "description": "Agents define roles, tools provide actions, Skills teach methods, Workflows define steps and Automations decide when to start."
+    },
+    {
+      "title": "Connections & runtime",
+      "description": "The Gateway connects interfaces and execution. Connectors, MCP and extensions add capabilities as needed."
+    },
+    {
+      "title": "Data & trust",
+      "description": "Local state, evidence and memory support continuity. Authorization bounds every action."
+    }
+  ]
+}

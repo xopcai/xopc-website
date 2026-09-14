@@ -43,6 +43,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
             <LogoHomeLink locale={locale} ariaLabel="xopc home" />
           </div>
           <ul className="nav-links">
+            <li><a href={`/${locale}/product-map`}>{m.landing.nav.productMap}</a></li>
             <li>
               <Link href={homeHref}>{m.landing.products.nav.home}</Link>
             </li>
@@ -63,6 +64,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
             </li>
           </ul>
           <div className="nav-extra">
+            <a href={`/${locale}/product-map`} className="nav-map-mobile">{m.landing.nav.productMap}</a>
             <div className="nav-extra-tools">
               <LocaleSwitcher
                 locale={locale}

@@ -59,12 +59,14 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             <LogoHomeLink locale={locale} ariaLabel="xopc home" />
           </div>
           <ul className="nav-links">
+            <li><a href={`/${locale}/product-map`}>{L.nav.productMap}</a></li>
             <li><a href="#why">{L.nav.why}</a></li>
             <li><a href="#loop">{L.nav.how}</a></li>
             <li><a href="#trust">{L.nav.trust}</a></li>
             <li><a href={docHome} target="_blank" rel="noopener noreferrer">{L.nav.docs}</a></li>
           </ul>
           <div className="nav-extra">
+            <a href={`/${locale}/product-map`} className="nav-map-mobile">{L.nav.productMap}</a>
             <a href="#download" className="nav-download-cta" data-product-event="nav_download_clicked">{L.nav.download}</a>
             <div className="nav-extra-tools">
               <LocaleSwitcher

@@ -41,3 +41,14 @@ file while the service is running, or stop the service before copying only the m
 - Pinned Whisper and SenseVoice model proxy/cache: `app/api/voice/models/`
 
 The primary product repository is [xopcai/xopc](https://github.com/xopcai/xopc).
+
+## Product map
+
+The native product explorer lives at `/zh/product-map` and `/en/product-map`, with desktop and mobile navigation links. It reuses the site's theme, language control and desktop demo video. Locale switching retains `view`, `node`, `q` and `group` URL parameters.
+
+- `lib/product-map/manifest.json`: stable feature IDs, hierarchy, relations, guides and journeys.
+- `messages/product-map/{zh,en}.json`: full localized content and interface copy. Keep the two files structurally identical.
+- `components/product-map/`: React explorer and interactive mind map.
+- `node scripts/check-product-map.mjs`: verify translation parity, placeholders, feature coverage and graph references.
+
+The public map links to localized product guides where available and labels English-only references. Experimental and evolving capabilities are explicitly marked. Update both languages when product capabilities change. Canonical and language-alternate URLs are defined on the route, and both locales are included in the sitemap.

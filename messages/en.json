@@ -19,7 +19,8 @@
       "docs": "Docs",
       "download": "Download",
       "github": "GitHub",
-      "trust": "Trust"
+      "trust": "Trust",
+      "productMap": "Product map"
     },
     "hero": {
       "brandName": "xopc",
