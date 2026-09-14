@@ -23,12 +23,20 @@ export function ProductMap({ locale, copy: c, header, initialView, initialNode, 
   const [tour,setTour]=useState<{index:number;step:number}|null>(null),[tourPicker,setTourPicker]=useState(false);
   const [detailOpen,setDetailOpen]=useState(false),[videoOpen,setVideoOpen]=useState(false);
   const detail=useRef<HTMLDialogElement>(null),video=useRef<HTMLDialogElement>(null);
+  const detailContent=useRef<HTMLDivElement>(null);
   const node=nodeById(selected)!,n=c.nodes[selected];
   const params=new URLSearchParams({view,node:selected});if(query)params.set("q",query);if(group)params.set("group",group);
   const locationSuffix=`?${params.toString()}`;
   useEffect(()=>{window.history.replaceState(null,"",`/${locale}/product-map${locationSuffix}`);},[locale,locationSuffix]);
   useEffect(()=>{if(detailOpen)detail.current?.showModal();else detail.current?.close();},[detailOpen]);
   useEffect(()=>{if(videoOpen)video.current?.showModal();else video.current?.close();},[videoOpen]);
+  useEffect(()=>{
+    if(!detailOpen)return;
+    const overflow=document.body.style.overflow;
+    document.body.style.overflow="hidden";
+    return ()=>{document.body.style.overflow=overflow;};
+  },[detailOpen]);
+  useEffect(()=>{detailContent.current?.scrollTo({top:0,behavior:"instant"});},[selected,detailOpen]);
   const select=(id:NodeId,open=true)=>{setSelected(id);setVisited(current=>new Set([...current,id]));if(open)setDetailOpen(true);};
   const startTour=(index:number)=>{setTour({index,step:0});setTourPicker(false);setView("map");setQuery("");const id=mapJourneys[index].ids[0];setGroup(nodeById(id)!.group);select(id,false);};
   const moveTour=(step:number)=>{if(!tour)return;const journey=mapJourneys[tour.index];if(step>=journey.ids.length){setTour(null);setGroup("");return;}const id=journey.ids[step];setTour({...tour,step});setGroup(nodeById(id)!.group);select(id,false);};
@@ -59,7 +67,11 @@ export function ProductMap({ locale, copy: c, header, initialView, initialNode, 
       </section>:null;})}</>}
       </div></div><footer className="pm-footer"><p>{u.updated}</p><Link href={`/${locale}#download`}>{u.download}<ArrowUpRight size={14}/></Link></footer>
     </main>
-    <dialog className="pm-dialog" ref={detail} onClose={()=>setDetailOpen(false)} aria-labelledby="pm-detail-title"><div className="pm-dialog-head"><span className={`pm-status pm-status-${node.status}`}>{u[node.status]}</span><button aria-label={u.close} onClick={()=>setDetailOpen(false)}><X/></button></div><div className="pm-dialog-scroll"><p className="pm-eyebrow">{c.groups[node.group].title}</p><h2 id="pm-detail-title">{n.title}</h2><p className="pm-detail-description">{n.description}</p><h3>{u.capabilities}</h3><ul className="pm-features">{n.features.map(text=><li key={text}>{text}</li>)}</ul><h3>{u.path}</h3><ol className="pm-steps">{n.steps.map((text,index)=><li key={text}><span>{index+1}</span>{text}</li>)}</ol><section className="pm-boundary"><h3>{u.boundary}</h3><p>{n.boundary}</p></section><h3>{u.related}</h3><div className="pm-chips">{node.related.map(id=><button key={id} onClick={()=>select(id)}>{c.nodes[id].title}<ArrowUpRight size={14}/></button>)}</div></div><div className="pm-dialog-footer"><a href={sourceUrl} target="_blank" rel="noopener noreferrer"><BookOpen size={16}/>{locale==="zh"&&sourceLocale==="en"?u.englishDocs:u.docs}<ArrowUpRight size={14}/></a></div></dialog>
+    <dialog className="pm-dialog pm-detail-drawer" ref={detail} onClick={event=>{
+      if(event.target!==event.currentTarget)return;
+      const rect=event.currentTarget.getBoundingClientRect();
+      if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)setDetailOpen(false);
+    }} onClose={()=>setDetailOpen(false)} aria-labelledby="pm-detail-title"><div className="pm-dialog-head"><span className={`pm-status pm-status-${node.status}`}>{u[node.status]}</span><button aria-label={u.close} onClick={()=>setDetailOpen(false)}><X/></button></div><div className="pm-dialog-scroll" ref={detailContent}><p className="pm-eyebrow">{c.groups[node.group].title}</p><h2 id="pm-detail-title">{n.title}</h2><p className="pm-detail-description">{n.description}</p><h3>{u.capabilities}</h3><ul className="pm-features">{n.features.map(text=><li key={text}>{text}</li>)}</ul><h3>{u.path}</h3><ol className="pm-steps">{n.steps.map((text,index)=><li key={text}><span>{index+1}</span>{text}</li>)}</ol><section className="pm-boundary"><h3>{u.boundary}</h3><p>{n.boundary}</p></section><h3>{u.related}</h3><div className="pm-chips">{node.related.map(id=><button key={id} onClick={()=>select(id)}>{c.nodes[id].title}<ArrowUpRight size={14}/></button>)}</div></div><div className="pm-dialog-footer"><a href={sourceUrl} target="_blank" rel="noopener noreferrer"><BookOpen size={16}/>{locale==="zh"&&sourceLocale==="en"?u.englishDocs:u.docs}<ArrowUpRight size={14}/></a></div></dialog>
     <dialog className="pm-dialog pm-video-dialog" ref={video} aria-labelledby="pm-video-title" onClose={()=>{setVideoOpen(false);video.current?.querySelector("video")?.pause();}}><div className="pm-dialog-head"><h2 id="pm-video-title">{u.videoTitle}</h2><button aria-label={u.close} onClick={()=>setVideoOpen(false)}><X/></button></div><video src="/media/product/xopc-desktop.mp4" controls playsInline preload="none" aria-label={u.videoTitle}/><p>{u.videoNote}</p></dialog>
   </div>;
 }
