@@ -142,6 +142,7 @@ export function LocaleSwitcher({
   labelEn,
   chooseLanguageLabel,
   variant = "default",
+  locationSuffix = "",
 }: {
   locale: Locale;
   labelZh: string;
@@ -149,12 +150,14 @@ export function LocaleSwitcher({
   /** Shown in aria-label for the language control (landing dropdown). */
   chooseLanguageLabel?: string;
   variant?: "default" | "landing";
+  /** Preserve the active map view and selected feature across languages. */
+  locationSuffix?: string;
 }) {
   const pathname = usePathname();
   const suffix = pathWithoutLocale(pathname);
   const pathTail = suffix === "/" ? "" : suffix;
-  const zhHref = `/zh${pathTail}`;
-  const enHref = `/en${pathTail}`;
+  const zhHref = `/zh${pathTail}${locationSuffix}`;
+  const enHref = `/en${pathTail}${locationSuffix}`;
 
   if (variant === "landing") {
     return (

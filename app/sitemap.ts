@@ -46,5 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates("/mobile") },
   }));
 
-  return [...homePages, ...productPages, ...mobilePages, ...legalPages];
+  const mapPages = locales.map((locale) => ({
+    url: `${origin}/${locale}/product-map`,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+    alternates: { languages: languageAlternates("/product-map") },
+  }));
+
+  return [...homePages, ...productPages, ...mapPages, ...mobilePages, ...legalPages];
 }

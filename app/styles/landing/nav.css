@@ -233,3 +233,9 @@
       width: 22px;
       height: 22px;
     }
+
+    .landing-page .nav-map-mobile { display: none; }
+    @media (max-width: 760px) {
+      .landing-page .nav-map-mobile { display: inline-flex; align-items: center; padding: 8px 10px; border: 1px solid var(--edge-bright); border-radius: 8px; color: var(--fg-head); font-size: 13px; white-space: nowrap; }
+      .landing-page .nav-extra { gap: 8px; }
+    }

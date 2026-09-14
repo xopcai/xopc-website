@@ -1,0 +1,759 @@
+{
+  "groups": [
+    {
+      "id": "start",
+      "number": "01",
+      "color": "#4967d9",
+      "ids": [
+        "onboard",
+        "models",
+        "discovery",
+        "home"
+      ]
+    },
+    {
+      "id": "understand",
+      "number": "02",
+      "color": "#9364bb",
+      "ids": [
+        "portrait",
+        "understanding",
+        "memory",
+        "goals",
+        "rules"
+      ]
+    },
+    {
+      "id": "work",
+      "number": "03",
+      "color": "#277f83",
+      "ids": [
+        "chat",
+        "capture",
+        "voice",
+        "tasks",
+        "projects",
+        "notes",
+        "sharing"
+      ]
+    },
+    {
+      "id": "initiative",
+      "number": "04",
+      "color": "#b27b30",
+      "ids": [
+        "assistant",
+        "followup",
+        "workflows",
+        "automations",
+        "browser-auto",
+        "heartbeat"
+      ]
+    },
+    {
+      "id": "capability",
+      "number": "05",
+      "color": "#56759b",
+      "ids": [
+        "agents",
+        "tools",
+        "skills",
+        "browser",
+        "media",
+        "runtimes"
+      ]
+    },
+    {
+      "id": "connect",
+      "number": "06",
+      "color": "#56759b",
+      "ids": [
+        "connectors",
+        "mcp",
+        "extensions",
+        "local-apps",
+        "platform"
+      ]
+    },
+    {
+      "id": "access",
+      "number": "07",
+      "color": "#56759b",
+      "ids": [
+        "desktop",
+        "web",
+        "terminal",
+        "mobile",
+        "channels",
+        "chrome",
+        "remote"
+      ]
+    },
+    {
+      "id": "trust",
+      "number": "08",
+      "color": "#56759b",
+      "ids": [
+        "privacy",
+        "permissions",
+        "storage",
+        "logs",
+        "settings",
+        "gateway"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "onboard",
+      "group": "start",
+      "related": [
+        "models",
+        "discovery",
+        "chat",
+        "home"
+      ],
+      "source": "getting-started.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "models",
+      "group": "start",
+      "related": [
+        "onboard",
+        "agents",
+        "privacy"
+      ],
+      "source": "models.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "discovery",
+      "group": "start",
+      "related": [
+        "understanding",
+        "tasks",
+        "permissions"
+      ],
+      "source": "product.md",
+      "status": "experimental",
+      "docLocale": "localized"
+    },
+    {
+      "id": "home",
+      "group": "start",
+      "related": [
+        "tasks",
+        "assistant",
+        "capture"
+      ],
+      "source": "projects-tasks-notes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "portrait",
+      "group": "understand",
+      "related": [
+        "understanding",
+        "rules"
+      ],
+      "source": "user-understanding.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "understanding",
+      "group": "understand",
+      "related": [
+        "portrait",
+        "memory",
+        "privacy",
+        "goals"
+      ],
+      "source": "user-understanding.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "memory",
+      "group": "understand",
+      "related": [
+        "projects",
+        "notes",
+        "understanding"
+      ],
+      "source": "user-understanding.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "goals",
+      "group": "understand",
+      "related": [
+        "tasks",
+        "home",
+        "rules"
+      ],
+      "source": "user-understanding.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "rules",
+      "group": "understand",
+      "related": [
+        "permissions",
+        "assistant",
+        "agents"
+      ],
+      "source": "user-understanding.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "chat",
+      "group": "work",
+      "related": [
+        "capture",
+        "tasks",
+        "voice",
+        "sharing"
+      ],
+      "source": "session.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "capture",
+      "group": "work",
+      "related": [
+        "chat",
+        "voice",
+        "notes",
+        "tasks"
+      ],
+      "source": "projects-tasks-notes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "voice",
+      "group": "work",
+      "related": [
+        "chat",
+        "models",
+        "channels"
+      ],
+      "source": "voice.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "tasks",
+      "group": "work",
+      "related": [
+        "projects",
+        "chat",
+        "assistant",
+        "workflows"
+      ],
+      "source": "projects-tasks-notes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "projects",
+      "group": "work",
+      "related": [
+        "tasks",
+        "notes",
+        "memory",
+        "local-apps"
+      ],
+      "source": "projects-tasks-notes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "notes",
+      "group": "work",
+      "related": [
+        "projects",
+        "memory",
+        "capture"
+      ],
+      "source": "projects-tasks-notes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "sharing",
+      "group": "work",
+      "related": [
+        "chat",
+        "privacy",
+        "remote"
+      ],
+      "source": "session-sharing.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "assistant",
+      "group": "initiative",
+      "related": [
+        "home",
+        "followup",
+        "permissions"
+      ],
+      "source": "product.md",
+      "status": "evolving",
+      "docLocale": "localized"
+    },
+    {
+      "id": "followup",
+      "group": "initiative",
+      "related": [
+        "assistant",
+        "heartbeat",
+        "automations"
+      ],
+      "source": "product.md",
+      "status": "evolving",
+      "docLocale": "localized"
+    },
+    {
+      "id": "workflows",
+      "group": "initiative",
+      "related": [
+        "automations",
+        "agents",
+        "tasks"
+      ],
+      "source": "workflows.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "automations",
+      "group": "initiative",
+      "related": [
+        "workflows",
+        "browser-auto",
+        "heartbeat",
+        "permissions"
+      ],
+      "source": "automations.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "browser-auto",
+      "group": "initiative",
+      "related": [
+        "browser",
+        "automations",
+        "chrome"
+      ],
+      "source": "browser-automations.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "heartbeat",
+      "group": "initiative",
+      "related": [
+        "followup",
+        "automations",
+        "home"
+      ],
+      "source": "heartbeat.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "agents",
+      "group": "capability",
+      "related": [
+        "models",
+        "tools",
+        "skills",
+        "rules"
+      ],
+      "source": "routing-system.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "tools",
+      "group": "capability",
+      "related": [
+        "browser",
+        "media",
+        "permissions",
+        "runtimes"
+      ],
+      "source": "tools.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "skills",
+      "group": "capability",
+      "related": [
+        "tools",
+        "agents",
+        "runtimes"
+      ],
+      "source": "skills.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "browser",
+      "group": "capability",
+      "related": [
+        "browser-auto",
+        "chrome",
+        "permissions"
+      ],
+      "source": "tools.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "media",
+      "group": "capability",
+      "related": [
+        "models",
+        "voice",
+        "tools"
+      ],
+      "source": "tools.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "runtimes",
+      "group": "capability",
+      "related": [
+        "skills",
+        "mcp",
+        "tools"
+      ],
+      "source": "runtime-tools.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "connectors",
+      "group": "connect",
+      "related": [
+        "mcp",
+        "permissions",
+        "understanding"
+      ],
+      "source": "connectors/index.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "mcp",
+      "group": "connect",
+      "related": [
+        "connectors",
+        "tools",
+        "runtimes"
+      ],
+      "source": "mcp.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "extensions",
+      "group": "connect",
+      "related": [
+        "channels",
+        "connectors",
+        "local-apps"
+      ],
+      "source": "extensions.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "local-apps",
+      "group": "connect",
+      "related": [
+        "projects",
+        "extensions"
+      ],
+      "source": "adr/0002-local-app-platform.md",
+      "status": "evolving",
+      "docLocale": "en"
+    },
+    {
+      "id": "platform",
+      "group": "connect",
+      "related": [
+        "models",
+        "voice",
+        "connectors"
+      ],
+      "source": "platform.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "desktop",
+      "group": "access",
+      "related": [
+        "onboard",
+        "discovery",
+        "gateway"
+      ],
+      "source": "desktop-app.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "web",
+      "group": "access",
+      "related": [
+        "gateway",
+        "remote",
+        "home"
+      ],
+      "source": "gateway.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "terminal",
+      "group": "access",
+      "related": [
+        "onboard",
+        "chat",
+        "logs"
+      ],
+      "source": "first-5-minutes.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "mobile",
+      "group": "access",
+      "related": [
+        "remote",
+        "voice",
+        "chat"
+      ],
+      "source": "mobile-app.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "channels",
+      "group": "access",
+      "related": [
+        "agents",
+        "voice",
+        "permissions"
+      ],
+      "source": "channels/index.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "chrome",
+      "group": "access",
+      "related": [
+        "browser",
+        "web",
+        "capture"
+      ],
+      "source": "browser-extension.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "remote",
+      "group": "access",
+      "related": [
+        "gateway",
+        "mobile",
+        "web"
+      ],
+      "source": "remote-access.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "privacy",
+      "group": "trust",
+      "related": [
+        "storage",
+        "understanding",
+        "models",
+        "permissions"
+      ],
+      "source": "product.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "permissions",
+      "group": "trust",
+      "related": [
+        "rules",
+        "connectors",
+        "automations"
+      ],
+      "source": "product.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "storage",
+      "group": "trust",
+      "related": [
+        "privacy",
+        "gateway",
+        "logs"
+      ],
+      "source": "workspace.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "logs",
+      "group": "trust",
+      "related": [
+        "gateway",
+        "models",
+        "runtimes"
+      ],
+      "source": "getting-started.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "settings",
+      "group": "trust",
+      "related": [
+        "agents",
+        "models",
+        "logs"
+      ],
+      "source": "configuration.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "gateway",
+      "group": "trust",
+      "related": [
+        "web",
+        "storage",
+        "automations",
+        "channels"
+      ],
+      "source": "gateway.md",
+      "status": "available",
+      "docLocale": "localized"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey0",
+      "ids": [
+        "onboard",
+        "models",
+        "chat",
+        "discovery",
+        "understanding",
+        "tasks",
+        "projects",
+        "assistant"
+      ]
+    },
+    {
+      "id": "journey1",
+      "ids": [
+        "capture",
+        "chat",
+        "projects",
+        "tasks",
+        "tools",
+        "notes",
+        "sharing"
+      ]
+    },
+    {
+      "id": "journey2",
+      "ids": [
+        "goals",
+        "memory",
+        "workflows",
+        "automations",
+        "home"
+      ]
+    },
+    {
+      "id": "journey3",
+      "ids": [
+        "connectors",
+        "permissions",
+        "followup",
+        "heartbeat",
+        "assistant"
+      ]
+    }
+  ],
+  "layers": [
+    [
+      "desktop",
+      "web",
+      "terminal",
+      "mobile",
+      "channels",
+      "chrome"
+    ],
+    [
+      "onboard",
+      "home",
+      "chat",
+      "understanding",
+      "tasks",
+      "projects",
+      "assistant"
+    ],
+    [
+      "agents",
+      "models",
+      "tools",
+      "skills",
+      "workflows",
+      "automations",
+      "browser-auto"
+    ],
+    [
+      "gateway",
+      "connectors",
+      "mcp",
+      "extensions",
+      "runtimes",
+      "local-apps"
+    ],
+    [
+      "storage",
+      "memory",
+      "privacy",
+      "permissions",
+      "logs"
+    ]
+  ]
+}
