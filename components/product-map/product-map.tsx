@@ -60,7 +60,9 @@ export function ProductMap({
   const [view, setView] = useState<MapView>(initialView),
     [selected, setSelected] = useState<NodeId>(initialNode);
   const [query, setQuery] = useState(initialQuery),
-    [group, setGroup] = useState<GroupId | "">(initialGroup);
+    [group, setGroup] = useState<GroupId | "">(
+      initialGroup || (initialQuery ? "" : nodeById(initialNode)!.group),
+    );
   const groupIcons = {
     start: Sparkles,
     understand: Layers,
@@ -85,7 +87,6 @@ export function ProductMap({
   const params = new URLSearchParams({ view, node: selected });
   if (query) params.set("q", query);
   if (group) params.set("group", group);
-  else if (view === "map" || view === "catalog") params.set("group", "all");
   const locationSuffix = `?${params.toString()}`;
   useEffect(() => {
     window.history.replaceState(
