@@ -361,6 +361,44 @@
       "poster": "/media/tutorials/settings/v1/zh-CN/poster.jpg",
       "captions": "/media/tutorials/settings/v1/zh-CN/captions.vtt",
       "article": "/media/tutorials/settings/v1/zh-CN/article.json"
+    },
+    {
+      "id": "capture",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把临时想法快速存成笔记",
+      "mapNodeIds": [
+        "capture"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 74.466667,
+      "chapters": [
+        {
+          "title": "随时记下想法",
+          "startSeconds": 0
+        },
+        {
+          "title": "写清背景与状态",
+          "startSeconds": 17.057
+        },
+        {
+          "title": "核对保存内容",
+          "startSeconds": 37.289
+        },
+        {
+          "title": "以后还能找到",
+          "startSeconds": 55.355
+        }
+      ],
+      "video": "/media/tutorials/capture/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/capture/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/capture/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/capture/v1/zh-CN/article.json"
     }
   ]
 }
