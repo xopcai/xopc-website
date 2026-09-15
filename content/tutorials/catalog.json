@@ -1897,6 +1897,337 @@
         "voice": "Cherry",
         "locale": "zh-CN"
       }
+    },
+    {
+      "id": "scenario-project-handoff",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "接手陌生项目，找到下一步",
+      "mapNodeIds": [
+        "projects",
+        "notes"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 341.833333,
+      "chapters": [
+        {
+          "title": "限定交接范围",
+          "startSeconds": 0
+        },
+        {
+          "title": "核对事实与日期",
+          "startSeconds": 61.21
+        },
+        {
+          "title": "澄清描述差异",
+          "startSeconds": 116.26
+        },
+        {
+          "title": "建立项目落点",
+          "startSeconds": 174.11
+        },
+        {
+          "title": "保存修正后的摘要",
+          "startSeconds": 230.6
+        },
+        {
+          "title": "验收下一步",
+          "startSeconds": 281.97
+        }
+      ],
+      "video": "/media/tutorials/scenario-project-handoff/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-project-handoff/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-project-handoff/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-project-handoff/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-project-handoff/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-launch-copy",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "从需求说明完成发布文案",
+      "mapNodeIds": [
+        "chat",
+        "notes"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 338.466667,
+      "chapters": [
+        {
+          "title": "给清楚写作材料",
+          "startSeconds": 0
+        },
+        {
+          "title": "看初稿是否易懂",
+          "startSeconds": 59.13
+        },
+        {
+          "title": "核对能承诺什么",
+          "startSeconds": 116.34
+        },
+        {
+          "title": "按明确方向修订",
+          "startSeconds": 167.87
+        },
+        {
+          "title": "检查定稿与字数",
+          "startSeconds": 226.68
+        },
+        {
+          "title": "打开真实保存的文案",
+          "startSeconds": 283.33
+        }
+      ],
+      "video": "/media/tutorials/scenario-launch-copy/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-launch-copy/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-launch-copy/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-launch-copy/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-launch-copy/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-meeting-actions",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把会议录音变成行动清单",
+      "mapNodeIds": [
+        "voice",
+        "notes"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 340.966667,
+      "chapters": [
+        {
+          "title": "准备会议音频",
+          "startSeconds": 0
+        },
+        {
+          "title": "处理转写失败",
+          "startSeconds": 58.89
+        },
+        {
+          "title": "检查行动项",
+          "startSeconds": 117.3
+        },
+        {
+          "title": "回看转写依据",
+          "startSeconds": 172.35
+        },
+        {
+          "title": "明确最终清单",
+          "startSeconds": 227.24
+        },
+        {
+          "title": "打开保存的纪要",
+          "startSeconds": 285.81
+        }
+      ],
+      "video": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-weekly-report",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把零散工作整理成周报",
+      "mapNodeIds": [
+        "chat",
+        "notes",
+        "tasks"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 337.833333,
+      "chapters": [
+        {
+          "title": "收集一周记录",
+          "startSeconds": 0
+        },
+        {
+          "title": "先看事实来源",
+          "startSeconds": 55.45
+        },
+        {
+          "title": "审阅初稿",
+          "startSeconds": 109.14
+        },
+        {
+          "title": "提出明确修订",
+          "startSeconds": 164.03
+        },
+        {
+          "title": "核对最终结果",
+          "startSeconds": 219.48
+        },
+        {
+          "title": "留下可维护的笔记",
+          "startSeconds": 276.21
+        }
+      ],
+      "video": "/media/tutorials/scenario-weekly-report/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-weekly-report/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-weekly-report/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-weekly-report/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-weekly-report/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-competitor-research",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "收集资料并完成竞品对比",
+      "mapNodeIds": [
+        "browser",
+        "notes"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 335.6,
+      "chapters": [
+        {
+          "title": "先定义研究问题",
+          "startSeconds": 0
+        },
+        {
+          "title": "保留未知项",
+          "startSeconds": 59.85
+        },
+        {
+          "title": "用同一维度对照",
+          "startSeconds": 115.94
+        },
+        {
+          "title": "限定证据范围",
+          "startSeconds": 169.39
+        },
+        {
+          "title": "给出个人优先级",
+          "startSeconds": 226.44
+        },
+        {
+          "title": "保存研究与试用清单",
+          "startSeconds": 279.97
+        }
+      ],
+      "video": "/media/tutorials/scenario-competitor-research/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-competitor-research/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-competitor-research/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-competitor-research/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-competitor-research/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-daily-tool",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "做一个每天能用的小工具",
+      "mapNodeIds": [
+        "local-apps",
+        "coding"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 350.0,
+      "chapters": [
+        {
+          "title": "把想法变成验收条件",
+          "startSeconds": 0
+        },
+        {
+          "title": "区分预览与安装",
+          "startSeconds": 54.25
+        },
+        {
+          "title": "先测试错误输入",
+          "startSeconds": 116.74
+        },
+        {
+          "title": "验证完整操作链",
+          "startSeconds": 169.87
+        },
+        {
+          "title": "刷新确认真实保存",
+          "startSeconds": 221.72
+        },
+        {
+          "title": "验收删除并持续迭代",
+          "startSeconds": 285.01
+        }
+      ],
+      "video": "/media/tutorials/scenario-daily-tool/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-daily-tool/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-daily-tool/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-daily-tool/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-daily-tool/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
     }
   ]
 }
