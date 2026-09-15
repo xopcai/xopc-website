@@ -399,6 +399,140 @@
       "poster": "/media/tutorials/capture/v1/zh-CN/poster.jpg",
       "captions": "/media/tutorials/capture/v1/zh-CN/captions.vtt",
       "article": "/media/tutorials/capture/v1/zh-CN/article.json"
+    },
+    {
+      "id": "automations",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "创建定时自动化并先试运行",
+      "mapNodeIds": [
+        "automations"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 122.4,
+      "chapters": [
+        {
+          "title": "设定何时运行",
+          "startSeconds": 0
+        },
+        {
+          "title": "写清执行内容",
+          "startSeconds": 20.634
+        },
+        {
+          "title": "检查运行方式",
+          "startSeconds": 40.845
+        },
+        {
+          "title": "先手动试运行",
+          "startSeconds": 59.748
+        },
+        {
+          "title": "查看运行结果",
+          "startSeconds": 79.47
+        },
+        {
+          "title": "演示后暂停",
+          "startSeconds": 100.69
+        }
+      ],
+      "video": "/media/tutorials/automations/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/automations/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/automations/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/automations/v1/zh-CN/article.json"
+    },
+    {
+      "id": "skills",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "找到技能并在对话中使用",
+      "mapNodeIds": [
+        "skills"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 74.533333,
+      "chapters": [
+        {
+          "title": "找到合适的技能",
+          "startSeconds": 0
+        },
+        {
+          "title": "先读使用说明",
+          "startSeconds": 18.056
+        },
+        {
+          "title": "补充具体任务",
+          "startSeconds": 36.101
+        },
+        {
+          "title": "检查摘要质量",
+          "startSeconds": 54.004
+        }
+      ],
+      "video": "/media/tutorials/skills/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/skills/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/skills/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/skills/v1/zh-CN/article.json"
+    },
+    {
+      "id": "workflows",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "创建并验证两步工作流",
+      "mapNodeIds": [
+        "workflows"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 136.8,
+      "chapters": [
+        {
+          "title": "描述可复用流程",
+          "startSeconds": 0
+        },
+        {
+          "title": "审阅生成方案",
+          "startSeconds": 19.492
+        },
+        {
+          "title": "检查步骤指令",
+          "startSeconds": 38.591
+        },
+        {
+          "title": "连接真实输出",
+          "startSeconds": 57.339
+        },
+        {
+          "title": "填写运行输入",
+          "startSeconds": 76.659
+        },
+        {
+          "title": "跟踪每步执行",
+          "startSeconds": 97.157
+        },
+        {
+          "title": "验收最终交付",
+          "startSeconds": 115.633
+        }
+      ],
+      "video": "/media/tutorials/workflows/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/workflows/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/workflows/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/workflows/v1/zh-CN/article.json"
     }
   ]
 }
