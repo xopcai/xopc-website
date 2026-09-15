@@ -533,6 +533,168 @@
       "poster": "/media/tutorials/workflows/v1/zh-CN/poster.jpg",
       "captions": "/media/tutorials/workflows/v1/zh-CN/captions.vtt",
       "article": "/media/tutorials/workflows/v1/zh-CN/article.json"
+    },
+    {
+      "id": "agents",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "创建一个专注文案的智能体",
+      "mapNodeIds": [
+        "agents"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15",
+        "frontendVersion": "0.0.277",
+        "frontendCommit": "0b9749612caf"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 90.9,
+      "chapters": [
+        {
+          "title": "创建文案教练",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查配置继承",
+          "startSeconds": 23.699
+        },
+        {
+          "title": "写清工作方式",
+          "startSeconds": 44.348
+        },
+        {
+          "title": "用小任务验证",
+          "startSeconds": 64.31
+        }
+      ],
+      "video": "/media/tutorials/agents/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/agents/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/agents/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/agents/v1/zh-CN/article.json"
+    },
+    {
+      "id": "memory",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "搜索检查与归档工作记忆",
+      "mapNodeIds": [
+        "memory"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 88.366667,
+      "chapters": [
+        {
+          "title": "找到工作记忆",
+          "startSeconds": 0
+        },
+        {
+          "title": "搜索要核对的内容",
+          "startSeconds": 18.811
+        },
+        {
+          "title": "展开阅读全文",
+          "startSeconds": 37.193
+        },
+        {
+          "title": "归档过时记录",
+          "startSeconds": 56.654
+        },
+        {
+          "title": "回看剩余记录",
+          "startSeconds": 71.793
+        }
+      ],
+      "video": "/media/tutorials/memory/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/memory/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/memory/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/memory/v1/zh-CN/article.json"
+    },
+    {
+      "id": "portrait",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "填写并检查你的基本画像",
+      "mapNodeIds": [
+        "portrait"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 75.366667,
+      "chapters": [
+        {
+          "title": "从你开始",
+          "startSeconds": 0
+        },
+        {
+          "title": "填写基本信息",
+          "startSeconds": 17.589
+        },
+        {
+          "title": "保存后再核对",
+          "startSeconds": 35.75
+        },
+        {
+          "title": "区分共同理解",
+          "startSeconds": 55.913
+        }
+      ],
+      "video": "/media/tutorials/portrait/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/portrait/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/portrait/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/portrait/v1/zh-CN/article.json"
+    },
+    {
+      "id": "understanding",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "确认修正与停止使用共同理解",
+      "mapNodeIds": [
+        "understanding"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 93.4,
+      "chapters": [
+        {
+          "title": "先看理解来源",
+          "startSeconds": 0
+        },
+        {
+          "title": "回看确认结果",
+          "startSeconds": 21.635
+        },
+        {
+          "title": "补上适用边界",
+          "startSeconds": 38.47
+        },
+        {
+          "title": "检查新旧表述",
+          "startSeconds": 56.916
+        },
+        {
+          "title": "保留准确理解",
+          "startSeconds": 74.585
+        }
+      ],
+      "video": "/media/tutorials/understanding/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/understanding/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/understanding/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/understanding/v1/zh-CN/article.json"
     }
   ]
 }
