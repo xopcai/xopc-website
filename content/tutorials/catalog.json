@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "tutorials": [
+    {
+      "id": "first-task",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "第一次使用：完成一份周报",
+      "mapNodeIds": [
+        "chat",
+        "notes"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "macOS desktop",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 110.066667,
+      "chapters": [
+        {
+          "title": "从一件小事开始",
+          "startSeconds": 0
+        },
+        {
+          "title": "把要求说清楚",
+          "startSeconds": 17.473
+        },
+        {
+          "title": "先检查，再使用",
+          "startSeconds": 37.353
+        },
+        {
+          "title": "继续追问",
+          "startSeconds": 54.487
+        },
+        {
+          "title": "按用途再改一版",
+          "startSeconds": 71.331
+        },
+        {
+          "title": "把结果留下来",
+          "startSeconds": 90.317
+        }
+      ],
+      "video": "/media/tutorials/first-task/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/first-task/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/first-task/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/first-task/v1/zh-CN/article.json"
+    },
+    {
+      "id": "models",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "模型接入与思考强度",
+      "mapNodeIds": [
+        "models"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "macOS desktop",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 123.1,
+      "chapters": [
+        {
+          "title": "先找到模型入口",
+          "startSeconds": 0
+        },
+        {
+          "title": "调整思考强度",
+          "startSeconds": 18.098
+        },
+        {
+          "title": "选择模型服务商",
+          "startSeconds": 38.121
+        },
+        {
+          "title": "填写自己的凭据",
+          "startSeconds": 55.134
+        },
+        {
+          "title": "查看已接入模型",
+          "startSeconds": 78.215
+        },
+        {
+          "title": "检查其他能力",
+          "startSeconds": 99.561
+        }
+      ],
+      "video": "/media/tutorials/models/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/models/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/models/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/models/v1/zh-CN/article.json"
+    }
+  ]
+}

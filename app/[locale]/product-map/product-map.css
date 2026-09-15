@@ -46,3 +46,13 @@
 @media (prefers-reduced-motion: reduce) {
   .product-atlas .pm-detail-drawer, .product-atlas .pm-detail-drawer::backdrop { transition: none; }
 }
+
+.pm-tutorial{margin:24px 0;padding:18px;border:1px solid var(--pm-border,#dce2eb);border-radius:16px}
+.pm-tutorial video{display:block;width:100%;aspect-ratio:16/9;background:#101828;border-radius:10px;margin:14px 0}
+.pm-tutorial>p{font-size:12px;opacity:.75}
+.pm-tutorial .pm-chips{gap:6px;margin:12px 0}
+.pm-tutorial .pm-chips button{font-size:12px}
+.pm-tutorial summary{cursor:pointer;padding:12px 0;font-weight:600}
+.pm-tutorial details section{padding:14px 0;border-top:1px solid var(--pm-border,#dce2eb)}
+.pm-tutorial details img{display:block;max-width:100%;height:auto;margin:12px auto;border-radius:8px}
+.pm-tutorial h4{margin:8px 0}.pm-tutorial li{margin:6px 0;font-size:14px}
