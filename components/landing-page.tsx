@@ -1,308 +1,275 @@
 import {
-  Download,
-  Github,
+  ArrowRight,
+  Check,
+  FileText,
+  Folder,
+  MessageSquare,
+  Plus,
   ShieldCheck,
-  Terminal,
 } from "lucide-react";
-
-import { HeroBrand } from "@/components/hero-brand";
 import { LandingFooter } from "@/components/landing-footer";
 import { LandingAnalytics } from "@/components/landing-analytics";
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
-import { LandingNavState } from "@/components/landing-nav-state";
-import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { LogoHomeLink } from "@/components/logo-home-link";
-import { MobileDownloads } from "@/components/mobile-downloads";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
+import { SiteHeader } from "@/components/site-header";
+import { courses } from "@/components/learn/courses";
+import catalog from "@/content/tutorials/catalog.json";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
 
-type Props = {
-  locale: Locale;
-  messages: Messages;
-  docHome: string;
-};
-
+type Props = { locale: Locale; messages: Messages; docHome: string };
 export function LandingPage({ locale, messages: m, docHome }: Props) {
-  const L = m.landing;
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "xopc",
-    applicationCategory: "ProductivityApplication",
-    operatingSystem: "macOS, Windows, Linux",
-    description: m.meta.description,
-    downloadUrl: `https://xopc.ai/${locale}#download`,
-    featureList: L.productProof.capabilities.map((item) => item.title),
-    license: "https://opensource.org/license/mit",
-    sameAs: [LANDING_GITHUB_REPO],
-  };
-
+  const zh = locale === "zh",
+    L = m.landing;
+  const steps = zh
+    ? ["带入材料", "一起推进", "留下结果"]
+    : ["Bring the context", "Move it forward", "Keep the result"];
   return (
-    <div className="landing-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema).replace(/</g, "\\u003c") }}
-      />
+    <div className="landing-page site-page site-home">
       <LandingAnalytics />
       <LandingLocaleTransition />
-      <LandingNavState />
-      <LandingScrollReveal />
-
-      <nav>
-        <div className="container nav-inner">
-          <div className="nav-logo">
-            <LogoHomeLink locale={locale} ariaLabel="xopc home" />
-          </div>
-          <ul className="nav-links">
-            <li><a href="#why">{L.nav.why}</a></li>
-            <li><a href="#loop">{L.nav.how}</a></li>
-            <li><a href="#trust">{L.nav.trust}</a></li>
-            <li><a href={`/${locale}/product-map`}>{L.nav.productMap}</a></li>
-            <li><a href={docHome} target="_blank" rel="noopener noreferrer">{L.nav.docs}</a></li>
-          </ul>
-          <div className="nav-extra">
-            <a href={`/${locale}/product-map`} className="nav-map-mobile">{L.nav.productMap}</a>
-            <a href="#download" className="nav-download-cta" data-product-event="nav_download_clicked">{L.nav.download}</a>
-            <div className="nav-extra-tools">
-              <LocaleSwitcher
-                locale={locale}
-                labelZh={m.header.langZh}
-                labelEn={m.header.langEn}
-                chooseLanguageLabel={m.header.chooseLanguage}
-                variant="landing"
-              />
-              <ThemeToggle
-                variant="pill"
-                ariaLight={m.header.themeLight}
-                ariaDark={m.header.themeDark}
-                ariaToggle={m.header.themeToggle}
-              />
-              <a
-                href={LANDING_GITHUB_REPO}
-                className="nav-github-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={L.nav.github}
-              >
-                <Github strokeWidth={1.75} aria-hidden />
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <section className="hero">
-        <div className="hero-glow" aria-hidden />
-        <div className="hero-grid" aria-hidden />
-        <div className="container hero-inner">
-          <HeroBrand
-            brandName={L.hero.brandName}
-            headline={L.hero.headline}
-          />
-          <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
-          <div className="hero-actions fade-up delay-3">
-            <a href="#download" className="btn-primary" data-product-event="hero_download_clicked">
-              <Download className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.primaryCta}
-            </a>
-            <a href="#terminal-install" className="btn-secondary" data-product-event="terminal_install_clicked">
-              <Terminal className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.secondaryCta}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="collaboration-section landing-reveal" id="why" aria-labelledby="collaboration-title">
-        <div className="container collaboration-layout">
-          <div className="collaboration-copy">
-            <p className="section-kicker">{L.collaboration.kicker}</p>
-            <h2 id="collaboration-title">{L.collaboration.title}</h2>
-            <p>{L.collaboration.desc}</p>
-            <p className="collaboration-outcome">{L.collaboration.outcome}</p>
-          </div>
-          <figure className="collaboration-model" aria-label={L.collaboration.modelLabel}>
-            <div className="collaboration-mark-shell" aria-hidden>
-              <XopcLogoMark className="collaboration-logo" />
-            </div>
-            <figcaption className="collaboration-roles">
-              <div className="collaboration-role collaboration-role-ai">
-                <strong>{L.collaboration.aiRatio}</strong>
-                <div>
-                  <h3>{L.collaboration.aiLabel}</h3>
-                  <p>{L.collaboration.aiBody}</p>
-                </div>
-              </div>
-              <div className="collaboration-role collaboration-role-human">
-                <strong>{L.collaboration.humanRatio}</strong>
-                <div>
-                  <h3>{L.collaboration.humanLabel}</h3>
-                  <p>{L.collaboration.humanBody}</p>
-                </div>
-              </div>
-              <p className="collaboration-note">{L.collaboration.note}</p>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section className="aha-section landing-reveal">
-        <div className="container aha-layout">
-          <div className="aha-copy">
-            <p className="section-kicker">{L.aha.kicker}</p>
-            <h2>{L.aha.title}</h2>
-            <p>{L.aha.desc}</p>
-          </div>
-          <div className="aha-conversation" aria-label={L.aha.ariaLabel}>
-            <div className="aha-user-message">
-              <span>{L.aha.userLabel}</span>
-              <p>{L.aha.userMessage}</p>
-            </div>
-            <div className="aha-context">
-              <span>{L.aha.contextLabel}</span>
-              <ul>
-                {L.aha.contextItems.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="aha-assistant-message">
-              <span>{L.aha.assistantLabel}</span>
-              <p>{L.aha.assistantMessage}</p>
-              <div>
-                <strong>{L.aha.nextStepLabel}</strong>
-                {L.aha.nextStep}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="product-proof-section landing-reveal" aria-labelledby="product-proof-title">
-        <div className="container">
-          <div className="section-header product-proof-header">
-            <p className="section-kicker">{L.productProof.kicker}</p>
-            <h2 id="product-proof-title">{L.productProof.title}</h2>
-            <p>{L.productProof.desc}</p>
-          </div>
-          <figure className="product-proof-frame">
-            <video
-              width={1280}
-              height={720}
-              controls
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              aria-label={L.productProof.imageAlt}
-            >
-              <source src="/media/product/xopc-desktop.mp4" type="video/mp4" />
-              {L.productProof.imageAlt}
-            </video>
-          </figure>
-        </div>
-      </section>
-
-      <section className="loop-section landing-reveal" id="loop">
-        <div className="container">
-          <div className="section-header">
-            <h2>{L.loop.titleLine1}<br />{L.loop.titleLine2}</h2>
-            <p>{L.loop.desc}</p>
-          </div>
-          <div className="loop-model" aria-label={L.loop.modelLabel}>
-            {L.loop.steps.map((step, index) => (
-              <div className="loop-step" key={step.title}>
-                <div className="loop-step-index">0{index + 1}</div>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="trust-section landing-reveal" id="trust">
-        <div className="container">
-          <div className="section-header">
-            <h2>{L.trust.title}</h2>
-            <p>{L.trust.desc}</p>
-          </div>
-          <div className="trust-layout">
-            <div className="trust-grid">
-              {L.trust.items.map((item) => (
-                <article className="trust-card" key={item.title}>
-                  <ShieldCheck aria-hidden strokeWidth={1.75} />
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="understanding-card">
-              <div>
-                <span>{L.trust.factLabel}</span>
-                <p>{L.trust.factExample}</p>
-              </div>
-              <div>
-                <span>{L.trust.inferenceLabel}</span>
-                <p>{L.trust.inferenceExample}</p>
-              </div>
-              <p className="understanding-note">{L.trust.correctionNote}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ProductDesktopDownloads
-        id="download"
-        d={L.download}
-        kicker={L.download.desktopSectionKicker}
-        title={L.download.desktopSectionTitle}
-        desc={L.download.desktopSectionDesc}
+      <SiteHeader locale={locale} active="home" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "xopc",
+            applicationCategory: "ProductivityApplication",
+            operatingSystem: "macOS, Windows, Linux",
+            description: m.meta.description,
+            downloadUrl: `https://xopc.ai/${locale}#download`,
+            sameAs: [LANDING_GITHUB_REPO],
+          }).replace(/</g, "\\u003c"),
+        }}
       />
-
-      <section className="terminal-install-section landing-reveal" id="terminal-install">
-        <div className="container terminal-install-inner">
-          <div className="terminal-install-copy">
-            <p className="section-kicker">{L.download.terminalSectionKicker}</p>
-            <h2>{L.download.terminalSectionTitle}</h2>
-            <p>{L.download.terminalSectionDesc}</p>
-          </div>
-          <div className="terminal-install-commands">
-            <div>
-              <span>{L.download.terminalUnixLabel}</span>
-              <code>{L.download.terminalUnixCommand}</code>
-            </div>
-            <div>
-              <span>{L.download.terminalWindowsLabel}</span>
-              <code>{L.download.terminalWindowsCommand}</code>
-            </div>
-          </div>
+      <section className="site-hero" aria-labelledby="site-hero-title">
+        <p className="site-kicker">
+          {zh ? "你的个人 AI 助理" : "Your personal AI assistant"}
+        </p>
+        <h1 id="site-hero-title">
+          {zh ? (
+            <>
+              让重要的事，
+              <br />
+              持续向前。
+            </>
+          ) : (
+            <>
+              Keep what matters
+              <br />
+              moving.
+            </>
+          )}
+        </h1>
+        <p className="site-hero-caption">
+          {zh
+            ? "从一个想法，到可以继续的工作。"
+            : "From a thought to work you can build on."}
+        </p>
+        <div className="site-actions">
+          <a
+            className="site-button"
+            href="#download"
+            data-product-event="hero_download_clicked"
+          >
+            {zh ? "下载 xopc" : "Get xopc"}
+          </a>
+          <a className="site-text-link" href={`/${locale}/learn`}>
+            {zh ? "看看怎么用" : "See it in action"}
+            <ArrowRight size={17} />
+          </a>
+        </div>
+        <figure className="site-product-film">
+          <video
+            width={1620}
+            height={1080}
+            controls
+            playsInline
+            preload="metadata"
+            aria-label={zh ? "xopc 桌面演示" : "xopc desktop demo"}
+            poster="/media/product/xopc-desktop-poster.jpg"
+          >
+            <source src="/media/product/xopc-desktop.mp4" type="video/mp4" />
+          </video>
+          <figcaption>{zh ? "xopc 桌面端" : "xopc for desktop"}</figcaption>
+        </figure>
+      </section>
+      <section
+        className="site-section site-workflow"
+        id="why"
+        aria-labelledby="workflow-title"
+      >
+        <div className="site-section-heading">
+          <p className="site-kicker">
+            {zh ? "工作，自然接着往下走" : "A natural way to work"}
+          </p>
+          <h2 id="workflow-title">
+            {zh ? "不止一次对话。" : "Beyond a single conversation."}
+          </h2>
+        </div>
+        <div className="site-flow" id="loop">
+          {steps.map((title, index) => (
+            <article className="site-flow-step" key={title}>
+              <span className="site-step-number">0{index + 1}</span>
+              <h3>{title}</h3>
+              <div className={`site-flow-visual site-flow-${index}`}>
+                {index === 0 ? (
+                  <>
+                    <div className="site-file">
+                      <Folder size={23} />
+                      <span>{zh ? "新项目" : "New project"}</span>
+                    </div>
+                    <div className="site-file">
+                      <FileText size={23} />
+                      <span>{zh ? "交接说明.md" : "handoff.md"}</span>
+                    </div>
+                    <Plus size={19} />
+                  </>
+                ) : index === 1 ? (
+                  <>
+                    <div className="site-message">
+                      {zh ? "从哪里开始？" : "Where do we start?"}
+                    </div>
+                    <div className="site-reply">
+                      <MessageSquare size={21} />
+                      <span>
+                        {zh
+                          ? "先核对目标，再整理下一步。"
+                          : "Check the goal. Find the next step."}
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="site-result">
+                      <Check size={19} />
+                      {zh ? "项目概览" : "Project overview"}
+                    </div>
+                    <div className="site-result">
+                      <Check size={19} />
+                      {zh ? "交接笔记" : "Handoff note"}
+                    </div>
+                    <div className="site-result">
+                      <span className="site-open-circle" />
+                      {zh ? "下一步行动" : "Next actions"}
+                    </div>
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+        <a
+          className="site-text-link"
+          href={`/${locale}/learn?course=scenario-project-handoff`}
+        >
+          {zh ? "跟着完成一次项目交接" : "Try a project handoff"}
+          <ArrowRight size={17} />
+        </a>
+      </section>
+      <section
+        className="site-section site-scenarios"
+        aria-labelledby="scenario-title"
+      >
+        <div className="site-section-heading site-heading-row">
+          <h2 id="scenario-title">
+            {zh ? "从你的工作开始。" : "Start with your work."}
+          </h2>
+          <a className="site-text-link" href={`/${locale}/learn`}>
+            {zh ? "查看全部场景" : "All workflows"}
+            <ArrowRight size={17} />
+          </a>
+        </div>
+        <div className="site-scenario-grid">
+          {[courses[1], courses[2], courses[4]].map((course) => {
+            const media = catalog.tutorials.find((t) => t.id === course.id)!;
+            return (
+              <a
+                className="site-scenario-card"
+                key={course.id}
+                href={`/${locale}/learn?course=${course.id}`}
+              >
+                <span className="site-kicker">{course[locale].audience}</span>
+                <h3>{course[locale].title}</h3>
+                <div className="site-scenario-image">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={media.poster} alt="" loading="lazy" />
+                </div>
+                <span className="site-card-link">
+                  {zh ? "观看教程" : "Watch tutorial"}
+                  <span className="site-plus">
+                    <Plus size={18} />
+                  </span>
+                </span>
+              </a>
+            );
+          })}
         </div>
       </section>
-
-      <MobileDownloads d={L.download} />
-
-      <div className="landing-cta-footer">
-        <section className="cta-section landing-reveal">
-          <div className="container">
-            <h2>{L.cta.titleLine1}<br />{L.cta.titleLine2}</h2>
-            <div className="cta-actions">
-              <a href="#download" className="btn-primary" data-product-event="final_download_clicked">{L.cta.primary}</a>
-              <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-                <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
-                {L.cta.secondary}
-              </a>
-            </div>
-          </div>
-        </section>
-        <LandingFooter footer={L.footer} docsHref={docHome} locale={locale} />
+      <section className="site-section site-trust" id="trust">
+        <div className="site-section-heading">
+          <h2>{zh ? "由你掌握。" : "You stay in control."}</h2>
+        </div>
+        <div className="site-trust-grid">
+          {(zh
+            ? [
+                ["数据在本地", "工作记录保存在自己的设备。"],
+                ["模型由你选", "按需要连接云端或本地模型。"],
+                ["重要的事，由你决定", "在授权范围内协作。"],
+              ]
+            : [
+                ["Local records", "Keep your work on your device."],
+                ["Your choice of model", "Connect a cloud or local model."],
+                ["Your decisions", "Work within the access you allow."],
+              ]
+          ).map(([title, body]) => (
+            <article key={title}>
+              <ShieldCheck size={26} />
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+        <a
+          className="site-text-link"
+          href={`/${locale}/product-map?group=trust`}
+        >
+          {zh ? "了解数据与权限" : "Explore data and permissions"}
+          <ArrowRight size={17} />
+        </a>
+      </section>
+      <div className="site-download-section">
+        <ProductDesktopDownloads
+          id="download"
+          d={L.download}
+          kicker={zh ? "开始使用" : "Get started"}
+          title={zh ? "下一步，交给 xopc。" : "Take the next step with xopc."}
+          desc="macOS · Windows · Linux"
+        />
       </div>
+      <div className="site-secondary-downloads">
+        <a href={`/${locale}/mobile`}>
+          {zh ? "移动端" : "Mobile"}
+          <ArrowRight size={15} />
+        </a>
+        <details id="terminal-install">
+          <summary>{zh ? "终端安装" : "Install from terminal"}</summary>
+          <div>
+            <span>{L.download.terminalUnixLabel}</span>
+            <code>{L.download.terminalUnixCommand}</code>
+            <span>{L.download.terminalWindowsLabel}</span>
+            <code>{L.download.terminalWindowsCommand}</code>
+          </div>
+        </details>
+        <a href={docHome}>
+          {zh ? "安装帮助" : "Setup help"}
+          <ArrowRight size={15} />
+        </a>
+      </div>
+      <LandingFooter footer={L.footer} docsHref={docHome} locale={locale} />
     </div>
   );
 }

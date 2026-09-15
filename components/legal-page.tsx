@@ -1,14 +1,10 @@
-import { ArrowLeft, Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from "next/link";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
-import { LandingNavState } from "@/components/landing-nav-state";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { LogoHomeLink } from "@/components/logo-home-link";
-import { ThemeToggle } from "@/components/theme-toggle";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
-import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
+import { SiteHeader } from "@/components/site-header";
 
 const contactEmail = "lyxopc.ai@gmail.com";
 
@@ -37,7 +33,8 @@ const privacyContent: Record<Locale, LegalContent> = {
   zh: {
     eyebrow: "xopc 移动端",
     title: "隐私政策",
-    intro: "本政策说明个人开发者徐巧民发行的 xopc 移动端如何处理数据。App 免费提供，不含购买或订阅，仅连接由用户自行运行和管理的网关。",
+    intro:
+      "本政策说明个人开发者徐巧民发行的 xopc 移动端如何处理数据。App 免费提供，不含购买或订阅，仅连接由用户自行运行和管理的网关。",
     effectiveLabel: "生效日期",
     effectiveDate: "2026 年 9 月 4 日",
     publisherLabel: "发布者／运营主体",
@@ -45,7 +42,8 @@ const privacyContent: Record<Locale, LegalContent> = {
     contactLabel: "隐私和删除请求邮箱",
     backHome: "返回 xopc 首页",
     contactTitle: "联系与政策更新",
-    contactBody: "重大政策变更将通过本页面、App 更新说明或 App 内提示发布。请勿在公开问题跟踪系统中提交个人内容或凭据。",
+    contactBody:
+      "重大政策变更将通过本页面、App 更新说明或 App 内提示发布。请勿在公开问题跟踪系统中提交个人内容或凭据。",
     sections: [
       {
         title: "适用范围",
@@ -90,7 +88,8 @@ const privacyContent: Record<Locale, LegalContent> = {
   en: {
     eyebrow: "xopc Mobile",
     title: "Privacy Policy",
-    intro: "This policy explains how the xopc Mobile application distributed by individual developer Qiaomin Xu handles data. The app is free, contains no purchases or subscriptions, and connects only to gateways run and administered by users.",
+    intro:
+      "This policy explains how the xopc Mobile application distributed by individual developer Qiaomin Xu handles data. The app is free, contains no purchases or subscriptions, and connects only to gateways run and administered by users.",
     effectiveLabel: "Effective date",
     effectiveDate: "September 4, 2026",
     publisherLabel: "Publisher / operator",
@@ -98,7 +97,8 @@ const privacyContent: Record<Locale, LegalContent> = {
     contactLabel: "Privacy and deletion contact",
     backHome: "Back to xopc home",
     contactTitle: "Contact and policy updates",
-    contactBody: "Material changes will be announced on this page, in app release notes, or through an in-app notice. Do not post personal content or credentials in public issue trackers.",
+    contactBody:
+      "Material changes will be announced on this page, in app release notes, or through an in-app notice. Do not post personal content or credentials in public issue trackers.",
     sections: [
       {
         title: "Scope",
@@ -146,7 +146,8 @@ const supportContent: Record<Locale, LegalContent> = {
   zh: {
     eyebrow: "xopc 移动端",
     title: "支持与帮助",
-    intro: "xopc 移动端连接你自己运行和管理的 xopc 网关。如果连接、配对或移动端功能遇到问题，请按本页步骤检查。",
+    intro:
+      "xopc 移动端连接你自己运行和管理的 xopc 网关。如果连接、配对或移动端功能遇到问题，请按本页步骤检查。",
     effectiveLabel: "适用版本",
     effectiveDate: "iOS 1.0 及以后版本",
     publisherLabel: "支持方",
@@ -154,7 +155,8 @@ const supportContent: Record<Locale, LegalContent> = {
     contactLabel: "支持邮箱",
     backHome: "返回 xopc 首页",
     contactTitle: "仍然需要帮助？",
-    contactBody: "来信时请说明 iOS 版本、xopc App 版本、网关版本和可复现步骤。请勿发送 API Key、访问令牌、配对链接、密码或私人内容。",
+    contactBody:
+      "来信时请说明 iOS 版本、xopc App 版本、网关版本和可复现步骤。请勿发送 API Key、访问令牌、配对链接、密码或私人内容。",
     sections: [
       {
         title: "开始连接",
@@ -187,7 +189,8 @@ const supportContent: Record<Locale, LegalContent> = {
   en: {
     eyebrow: "xopc Mobile",
     title: "Support",
-    intro: "xopc Mobile connects to an xopc gateway that you run and administer. Follow these checks if you have trouble pairing, connecting, or using mobile features.",
+    intro:
+      "xopc Mobile connects to an xopc gateway that you run and administer. Follow these checks if you have trouble pairing, connecting, or using mobile features.",
     effectiveLabel: "Applies to",
     effectiveDate: "iOS 1.0 and later",
     publisherLabel: "Support provider",
@@ -195,7 +198,8 @@ const supportContent: Record<Locale, LegalContent> = {
     contactLabel: "Support email",
     backHome: "Back to xopc home",
     contactTitle: "Still need help?",
-    contactBody: "Include your iOS version, xopc app version, gateway version, and reproducible steps. Do not send API keys, access tokens, pairing links, passwords, or private content.",
+    contactBody:
+      "Include your iOS version, xopc app version, gateway version, and reproducible steps. Do not send API keys, access tokens, pairing links, passwords, or private content.",
     sections: [
       {
         title: "Connect your device",
@@ -227,33 +231,22 @@ const supportContent: Record<Locale, LegalContent> = {
   },
 };
 
-export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messages: Messages; kind: "privacy" | "support" }) {
-  const content = (kind === "privacy" ? privacyContent : supportContent)[locale];
-  const otherKindHref = `/${locale}/${kind === "privacy" ? "support" : "privacy"}`;
-  const otherKindLabel = kind === "privacy"
-    ? locale === "zh" ? "支持与帮助" : "Support"
-    : locale === "zh" ? "隐私政策" : "Privacy Policy";
+export function LegalPage({
+  locale,
+  kind,
+}: {
+  locale: Locale;
+  messages: Messages;
+  kind: "privacy" | "support";
+}) {
+  const content = (kind === "privacy" ? privacyContent : supportContent)[
+    locale
+  ];
 
   return (
-    <div className="landing-page legal-page">
+    <div className="landing-page site-page legal-page">
       <LandingLocaleTransition />
-      <LandingNavState />
-      <nav>
-        <div className="container nav-inner">
-          <div className="nav-logo"><LogoHomeLink locale={locale} ariaLabel="xopc home" /></div>
-          <div className="legal-nav-links">
-            <Link href={`/${locale}`}><ArrowLeft aria-hidden />{content.backHome}</Link>
-            <Link href={otherKindHref}>{otherKindLabel}</Link>
-          </div>
-          <div className="nav-extra">
-            <div className="nav-extra-tools">
-              <LocaleSwitcher locale={locale} labelZh={m.header.langZh} labelEn={m.header.langEn} chooseLanguageLabel={m.header.chooseLanguage} variant="landing" />
-              <ThemeToggle variant="pill" ariaLight={m.header.themeLight} ariaDark={m.header.themeDark} ariaToggle={m.header.themeToggle} />
-              <a href={LANDING_GITHUB_REPO} className="nav-github-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github strokeWidth={1.75} aria-hidden /></a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader locale={locale} />
 
       <main className="container legal-main">
         <header className="legal-hero">
@@ -261,9 +254,20 @@ export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messa
           <h1>{content.title}</h1>
           <p className="legal-intro">{content.intro}</p>
           <dl className="legal-meta">
-            <div><dt>{content.effectiveLabel}</dt><dd>{content.effectiveDate}</dd></div>
-            <div><dt>{content.publisherLabel}</dt><dd>{content.publisher}</dd></div>
-            <div><dt>{content.contactLabel}</dt><dd><a href={`mailto:${contactEmail}`}>{contactEmail}</a></dd></div>
+            <div>
+              <dt>{content.effectiveLabel}</dt>
+              <dd>{content.effectiveDate}</dd>
+            </div>
+            <div>
+              <dt>{content.publisherLabel}</dt>
+              <dd>{content.publisher}</dd>
+            </div>
+            <div>
+              <dt>{content.contactLabel}</dt>
+              <dd>
+                <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              </dd>
+            </div>
           </dl>
         </header>
 
@@ -271,16 +275,38 @@ export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messa
           {content.sections.map((section) => (
             <section key={section.title}>
               <h2>{section.title}</h2>
-              {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              {section.items ? <ol>{section.items.map((item) => <li key={item}>{item}</li>)}</ol> : null}
-              {kind === "support" && section.title === (locale === "zh" ? "数据与设备管理" : "Data and device management") ? (
-                <p><Link href={`/${locale}/privacy`}>{locale === "zh" ? "阅读隐私政策" : "Read the Privacy Policy"}</Link></p>
+              {section.paragraphs?.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {section.items ? (
+                <ol>
+                  {section.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              ) : null}
+              {kind === "support" &&
+              section.title ===
+                (locale === "zh"
+                  ? "数据与设备管理"
+                  : "Data and device management") ? (
+                <p>
+                  <Link href={`/${locale}/privacy`}>
+                    {locale === "zh"
+                      ? "阅读隐私政策"
+                      : "Read the Privacy Policy"}
+                  </Link>
+                </p>
               ) : null}
             </section>
           ))}
           <section className="legal-contact">
             <Mail aria-hidden />
-            <div><h2>{content.contactTitle}</h2><p>{content.contactBody}</p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></div>
+            <div>
+              <h2>{content.contactTitle}</h2>
+              <p>{content.contactBody}</p>
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </div>
           </section>
         </article>
       </main>
