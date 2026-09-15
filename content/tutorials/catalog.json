@@ -56,7 +56,7 @@
     },
     {
       "id": "models",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "模型接入与思考强度",
       "mapNodeIds": [
@@ -68,7 +68,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 123.7,
+      "durationSeconds": 120.2,
       "chapters": [
         {
           "title": "先找到模型入口",
@@ -76,29 +76,29 @@
         },
         {
           "title": "调整思考强度",
-          "startSeconds": 19.19
+          "startSeconds": 16.07
         },
         {
           "title": "选择模型服务商",
-          "startSeconds": 38.78
+          "startSeconds": 36.38
         },
         {
           "title": "填写自己的凭据",
-          "startSeconds": 56.45
+          "startSeconds": 51.81
         },
         {
           "title": "查看已接入模型",
-          "startSeconds": 78.2
+          "startSeconds": 75.0
         },
         {
           "title": "检查其他能力",
-          "startSeconds": 99.79
+          "startSeconds": 95.07
         }
       ],
-      "video": "/media/tutorials/models/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/models/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/models/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/models/v2/zh-CN/article.json",
+      "video": "/media/tutorials/models/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/models/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/models/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/models/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
