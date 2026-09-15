@@ -226,7 +226,7 @@ export function ProductMap({
             <p className="pm-intro-description">
               {u.description}{" "}
               <Link href={`/${locale}/learn`}>
-                {locale === "zh" ? "观看场景教程" : "Watch a workflow"}
+                {locale === "zh" ? "按场景学习" : "Learn by doing"}
                 <ArrowRight size={15} />
               </Link>
             </p>

@@ -1,7 +1,7 @@
 {
   "ui": {
-    "title": "产品地图",
-    "headline": "产品地图。",
+    "title": "产品探索",
+    "headline": "探索 xopc",
     "description": "从开始，到持续协作。",
     "metaDescription": "探索 xopc 的 8 个功能领域与 47 项能力：从首次设置、个人理解和任务推进，到编程开发、终端使用、工作流与自动化。",
     "eyebrow": "XOPC · 产品探索",
@@ -9,8 +9,8 @@
     "all": "全部功能",
     "search": "搜索功能、场景…",
     "searchLabel": "搜索产品功能",
-    "views": "选择地图视图",
-    "map": "按功能",
+    "views": "选择探索视图",
+    "map": "功能概览",
     "mindmap": "思维导图",
     "architecture": "主从架构",
     "catalog": "功能目录",
