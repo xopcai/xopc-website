@@ -4,8 +4,10 @@ import { ArrowLeft, Check, MonitorSmartphone, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
-import { SiteHeader } from "@/components/site-header";
+import { LocaleSwitcher } from "@/components/locale-switcher";
 import { AndroidDownload, IosDownload } from "@/components/mobile-downloads";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { trackProductEvent } from "@/lib/product-events";
@@ -22,11 +24,7 @@ type Props = {
 function detectBrowserPlatform(fallback: MobilePlatform): MobilePlatform {
   if (typeof navigator === "undefined") return fallback;
   const ua = navigator.userAgent;
-  if (
-    /iPhone|iPad|iPod/i.test(ua) ||
-    (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1)
-  )
-    return "ios";
+  if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1)) return "ios";
   if (/Android/i.test(ua)) return "android";
   return fallback;
 }
@@ -35,19 +33,13 @@ function subscribePlatform(): () => void {
   return () => {};
 }
 
-export function MobileDownloadPage({
-  locale,
-  messages: m,
-  initialPlatform,
-  source,
-}: Props) {
+export function MobileDownloadPage({ locale, messages: m, initialPlatform, source }: Props) {
   const detectedPlatform = useSyncExternalStore(
     subscribePlatform,
     () => detectBrowserPlatform(initialPlatform),
     () => initialPlatform,
   );
-  const [selectedPlatform, setSelectedPlatform] =
-    useState<MobilePlatform | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<MobilePlatform | null>(null);
   const platform = selectedPlatform ?? detectedPlatform;
   const page = m.landing.mobilePage;
 
@@ -59,17 +51,32 @@ export function MobileDownloadPage({
   }, [initialPlatform, source]);
 
   return (
-    <div className="landing-page site-page mobile-download-page">
-      <SiteHeader locale={locale} />
+    <div className="landing-page mobile-download-page">
+      <header className="mobile-page-header">
+        <Link href={`/${locale}`} className="mobile-page-brand" aria-label={page.backHome}>
+          <XopcLogoMark priority />
+          <span>xopc</span>
+        </Link>
+        <div className="mobile-page-tools">
+          <LocaleSwitcher
+            locale={locale}
+            labelZh={m.header.langZh}
+            labelEn={m.header.langEn}
+            chooseLanguageLabel={m.header.chooseLanguage}
+            variant="landing"
+          />
+          <ThemeToggle
+            variant="pill"
+            ariaLight={m.header.themeLight}
+            ariaDark={m.header.themeDark}
+            ariaToggle={m.header.themeToggle}
+          />
+        </div>
+      </header>
 
       <main className="mobile-page-main">
-        <section
-          className="mobile-page-intro"
-          aria-labelledby="mobile-page-title"
-        >
-          <div className="mobile-page-app-icon" aria-hidden>
-            <MonitorSmartphone />
-          </div>
+        <section className="mobile-page-intro" aria-labelledby="mobile-page-title">
+          <div className="mobile-page-app-icon" aria-hidden><MonitorSmartphone /></div>
           <p className="mobile-page-eyebrow">{page.eyebrow}</p>
           <h1 id="mobile-page-title">{page.title}</h1>
           <p className="mobile-page-description">{page.description}</p>
@@ -79,15 +86,8 @@ export function MobileDownloadPage({
           </p>
         </section>
 
-        <section
-          className="mobile-page-download"
-          aria-label={page.downloadAria}
-        >
-          <div
-            className="mobile-page-tabs"
-            role="tablist"
-            aria-label={page.tabsAria}
-          >
+        <section className="mobile-page-download" aria-label={page.downloadAria}>
+          <div className="mobile-page-tabs" role="tablist" aria-label={page.tabsAria}>
             {(["android", "ios"] as const).map((value) => (
               <button
                 key={value}
@@ -102,43 +102,27 @@ export function MobileDownloadPage({
           </div>
           <div className="mobile-page-download-panel">
             {platform === "android" ? (
-              <AndroidDownload
-                d={m.landing.download}
-                showQr={false}
-                attributionMethod={source}
-              />
+              <AndroidDownload d={m.landing.download} showQr={false} attributionMethod={source} />
             ) : (
               <IosDownload d={m.landing.download} attributionMethod={source} />
             )}
           </div>
         </section>
 
-        <section
-          className="mobile-page-next"
-          aria-labelledby="mobile-page-next-title"
-        >
+        <section className="mobile-page-next" aria-labelledby="mobile-page-next-title">
           <div>
             <p className="mobile-page-eyebrow">{page.nextEyebrow}</p>
             <h2 id="mobile-page-next-title">{page.nextTitle}</h2>
           </div>
           <ol>
             {[page.nextOne, page.nextTwo, page.nextThree].map((step, index) => (
-              <li key={step}>
-                <span>{index + 1}</span>
-                <p>{step}</p>
-              </li>
+              <li key={step}><span>{index + 1}</span><p>{step}</p></li>
             ))}
           </ol>
-          <p className="mobile-page-security">
-            <ShieldCheck aria-hidden />
-            {page.security}
-          </p>
+          <p className="mobile-page-security"><ShieldCheck aria-hidden />{page.security}</p>
         </section>
 
-        <Link href={`/${locale}`} className="mobile-page-back">
-          <ArrowLeft aria-hidden />
-          {page.backHome}
-        </Link>
+        <Link href={`/${locale}`} className="mobile-page-back"><ArrowLeft aria-hidden />{page.backHome}</Link>
       </main>
     </div>
   );

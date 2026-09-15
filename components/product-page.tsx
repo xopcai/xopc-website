@@ -1,21 +1,17 @@
-import {
-  ArrowRight,
-  ArrowRightLeft,
-  Code2,
-  HardDrive,
-  Monitor,
-  ShieldCheck,
-  Terminal,
-} from "lucide-react";
+import { ArrowRight, ArrowRightLeft, Code2, Github, HardDrive, Monitor, ShieldCheck, Terminal } from "lucide-react";
 import Link from "next/link";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LandingFooter } from "@/components/landing-footer";
+import { LandingNavState } from "@/components/landing-nav-state";
+import { LocaleSwitcher } from "@/components/locale-switcher";
+import { LogoHomeLink } from "@/components/logo-home-link";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
 import { ProductQuickStart } from "@/components/product-quick-start";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { docBaseUrl, type Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
-import { SiteHeader } from "@/components/site-header";
+import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
 
 export const productSlugs = ["desktop", "terminal", "gateway"] as const;
 export type ProductSlug = (typeof productSlugs)[number];
@@ -32,26 +28,64 @@ type Props = {
 
 export function ProductPage({ locale, messages: m, productSlug }: Props) {
   const P = m.landing.products[productSlug];
-  const otherSlug: ProductSlug =
-    productSlug === "desktop" ? "terminal" : "desktop";
+  const otherSlug: ProductSlug = productSlug === "desktop" ? "terminal" : "desktop";
   const other = m.landing.products[otherSlug];
+  const homeHref = `/${locale}`;
   const docsHref = docBaseUrl(locale);
 
   return (
-    <div className="landing-page site-page product-page">
+    <div className="landing-page product-page">
       <LandingLocaleTransition />
-      <SiteHeader locale={locale} />
-      <div className="site-product-subnav">
-        {productSlugs.map((slug) => (
-          <Link
-            key={slug}
-            href={`/${locale}/products/${slug}`}
-            aria-current={productSlug === slug ? "page" : undefined}
-          >
-            {m.landing.products.nav[slug]}
-          </Link>
-        ))}
-      </div>
+      <LandingNavState />
+      <nav>
+        <div className="container nav-inner">
+          <div className="nav-logo">
+            <LogoHomeLink locale={locale} ariaLabel="xopc home" />
+          </div>
+          <ul className="nav-links">
+            <li><a href={`/${locale}/product-map`}>{m.landing.nav.productMap}</a></li>
+            <li>
+              <Link href={homeHref}>{m.landing.products.nav.home}</Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/products/desktop`} className={productSlug === "desktop" ? "is-active" : undefined}>
+                {m.landing.products.nav.desktop}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/products/terminal`} className={productSlug === "terminal" ? "is-active" : undefined}>
+                {m.landing.products.nav.terminal}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/products/gateway`} className={productSlug === "gateway" ? "is-active" : undefined}>
+                {m.landing.products.nav.gateway}
+              </Link>
+            </li>
+          </ul>
+          <div className="nav-extra">
+            <a href={`/${locale}/product-map`} className="nav-map-mobile">{m.landing.nav.productMap}</a>
+            <div className="nav-extra-tools">
+              <LocaleSwitcher
+                locale={locale}
+                labelZh={m.header.langZh}
+                labelEn={m.header.langEn}
+                chooseLanguageLabel={m.header.chooseLanguage}
+                variant="landing"
+              />
+              <ThemeToggle
+                variant="pill"
+                ariaLight={m.header.themeLight}
+                ariaDark={m.header.themeDark}
+                ariaToggle={m.header.themeToggle}
+              />
+              <a href={LANDING_GITHUB_REPO} className="nav-github-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Github strokeWidth={1.75} aria-hidden />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
       <section className="product-hero">
         <div className="container product-hero-grid">
@@ -63,10 +97,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
             </h1>
             <p>{P.desc}</p>
             <div className="product-hero-actions">
-              <a
-                href="#get-started"
-                className="product-button product-button--secondary"
-              >
+              <a href="#get-started" className="product-button product-button--secondary">
                 {P.secondaryCta}
                 <ArrowRight aria-hidden />
               </a>
@@ -119,10 +150,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
       </section>
 
       {productSlug === "desktop" ? (
-        <ProductDesktopDownloads
-          d={m.landing.download}
-          {...m.landing.products.desktop.desktopDownload}
-        />
+        <ProductDesktopDownloads d={m.landing.download} {...m.landing.products.desktop.desktopDownload} />
       ) : productSlug === "terminal" ? (
         <ProductQuickStart {...m.landing.products.terminal.quickStart} />
       ) : (
@@ -206,10 +234,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
             <p className="product-kicker">{P.cross.kicker}</p>
             <h2>{P.cross.title}</h2>
             <p>{P.cross.desc}</p>
-            <Link
-              href={`/${locale}/products/${otherSlug}`}
-              className="product-cross-link"
-            >
+            <Link href={`/${locale}/products/${otherSlug}`} className="product-cross-link">
               {P.cross.cta.replace("{product}", other.name)}
               <ArrowRight aria-hidden />
             </Link>
@@ -217,11 +242,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
         </div>
       </section>
 
-      <LandingFooter
-        footer={m.landing.footer}
-        docsHref={docsHref}
-        locale={locale}
-      />
+      <LandingFooter footer={m.landing.footer} docsHref={docsHref} locale={locale} />
     </div>
   );
 }

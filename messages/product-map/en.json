@@ -1,20 +1,20 @@
 {
   "ui": {
     "title": "Product map",
-    "headline": "Explore xopc.",
-    "description": "From the first step to ongoing work.",
+    "headline": "Start with one important thing",
+    "description": "From your first conversation to ongoing collaboration. Follow a journey or unfold the whole product in a mind map.",
     "metaDescription": "Explore eight areas and 47 capabilities in xopc, from setup, personal understanding and durable tasks to coding, terminal access, workflows and automation.",
     "eyebrow": "XOPC · PRODUCT ATLAS",
     "home": "Back to home",
-    "all": "All features",
+    "all": "Complete product map",
     "search": "Search features or scenarios…",
     "searchLabel": "Search product features",
     "views": "Choose a map view",
-    "map": "Features",
+    "map": "Explore",
     "mindmap": "Mind map",
     "architecture": "Architecture",
     "catalog": "All features",
-    "start": "Quick tour",
+    "start": "Start a tour",
     "chooseJourney": "Choose a path to explore",
     "journeyDescription": "Follow the capabilities that support a real outcome.",
     "next": "Next",
@@ -51,7 +51,7 @@
     "root": "Keep what matters moving",
     "primary": "The user journey",
     "support": "Capabilities & trust",
-    "video": "Watch demo",
+    "video": "Desktop demo",
     "videoTitle": "xopc desktop product demo",
     "videoNote": "Official demo footage; the interface may differ from the current release.",
     "download": "Download xopc",
@@ -61,35 +61,35 @@
   },
   "groups": {
     "start": {
-      "title": "Start",
+      "title": "Meet & get started",
       "description": "Connect first, then bring one real thing you want to move forward."
     },
     "understand": {
-      "title": "Context",
+      "title": "Understand what matters",
       "description": "Build shared context you can inspect, confirm and correct."
     },
     "work": {
-      "title": "Work",
+      "title": "From thought to result",
       "description": "Chat captures the thought, Tasks carry outcomes, and Projects connect context."
     },
     "initiative": {
-      "title": "Follow-up",
+      "title": "Keep work moving",
       "description": "Reuse proven methods and follow up within clear boundaries."
     },
     "capability": {
-      "title": "Capabilities",
+      "title": "Execution capabilities",
       "description": "Combine the right assistant, methods and actions for the work."
     },
     "connect": {
-      "title": "Connections",
+      "title": "Connections & extensions",
       "description": "Connect authorized sources, tools and purpose-built applications."
     },
     "access": {
-      "title": "Devices",
+      "title": "Continue anywhere",
       "description": "Different surfaces connect to one Gateway and persistent context."
     },
     "trust": {
-      "title": "Privacy",
+      "title": "Control & trust",
       "description": "Permissions, data ownership and inspectable records run through the product."
     }
   },
