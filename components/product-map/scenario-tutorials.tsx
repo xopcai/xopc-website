@@ -5,7 +5,7 @@ import catalog from "@/content/tutorials/catalog.json";
 import type { Locale } from "@/lib/i18n/config";
 
 type Tutorial = (typeof catalog.tutorials)[number];
-type Article = { steps: { id: string; title: string; summary: string; points: string[]; image: string }[] };
+type Article = { boundaries?: string[]; steps: { id: string; title: string; summary: string; points: string[]; image: string }[] };
 
 function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Locale }) {
   const video = useRef<HTMLVideoElement>(null);
@@ -21,7 +21,11 @@ function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Loca
   }, [tutorial.article]);
   return <section className="pm-tutorial">
     <h3>{tutorial.title}</h3>
-    <p>{zh ? "中文配音与字幕 · PC 端真实界面讲解" : "Chinese narration and captions · Desktop walkthrough"} · {Math.round(tutorial.durationSeconds)}{zh ? " 秒" : " sec"}</p>
+    <p>{zh ? "中文配音与字幕 · PC 使用教程" : "Chinese narration and captions · Desktop tutorial"} · {Math.round(tutorial.durationSeconds)}{zh ? " 秒" : " sec"}</p>
+    {!!article?.boundaries?.length && <aside>
+      <h4>{zh ? "本课范围" : "Tutorial scope (Chinese)"}</h4>
+      <ul>{article.boundaries.map(boundary => <li key={boundary}>{boundary}</li>)}</ul>
+    </aside>}
     <video ref={video} controls playsInline preload="none" poster={tutorial.poster} aria-label={tutorial.title}>
       <source src={tutorial.video} type="video/mp4"/>
       <track kind="captions" src={tutorial.captions} srcLang="zh-CN" label="简体中文"/>

@@ -791,6 +791,1112 @@
         "voice": "Cherry",
         "locale": "zh-CN"
       }
+    },
+    {
+      "id": "browser",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "浏览器实操：打开公开页面并核对结果",
+      "mapNodeIds": [
+        "browser",
+        "browser-auto"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 93.666667,
+      "chapters": [
+        {
+          "title": "选择独立浏览器",
+          "startSeconds": 0
+        },
+        {
+          "title": "确认连接测试成功",
+          "startSeconds": 22.31
+        },
+        {
+          "title": "写清目标与操作范围",
+          "startSeconds": 43.82
+        },
+        {
+          "title": "对照实际页面与工具记录",
+          "startSeconds": 66.69
+        }
+      ],
+      "video": "/media/tutorials/browser/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/browser/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/browser/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/browser/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "channels",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "消息渠道：准备账号并检查接入策略",
+      "mapNodeIds": [
+        "channels"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 72.066667,
+      "chapters": [
+        {
+          "title": "先查看渠道状态",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查账号与连接要求",
+          "startSeconds": 22.39
+        },
+        {
+          "title": "决定哪些消息可以进入",
+          "startSeconds": 47.74
+        }
+      ],
+      "video": "/media/tutorials/channels/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/channels/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/channels/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/channels/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "chat",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "对话进阶：追问与分叉探索",
+      "mapNodeIds": [
+        "chat"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 72.633333,
+      "chapters": [
+        {
+          "title": "先建立清楚的上下文",
+          "startSeconds": 0
+        },
+        {
+          "title": "在同一对话继续追问",
+          "startSeconds": 20.63
+        },
+        {
+          "title": "从回答分叉新方向",
+          "startSeconds": 47.82
+        }
+      ],
+      "video": "/media/tutorials/chat/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/chat/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/chat/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/chat/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "coding",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "编程实操：修复函数并执行测试",
+      "mapNodeIds": [
+        "coding"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 102.466667,
+      "chapters": [
+        {
+          "title": "提供缺陷与验收条件",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查修复是否针对根因",
+          "startSeconds": 26.07
+        },
+        {
+          "title": "查看真实工具执行",
+          "startSeconds": 53.1
+        },
+        {
+          "title": "对照每个验收用例",
+          "startSeconds": 77.81
+        }
+      ],
+      "video": "/media/tutorials/coding/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/coding/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/coding/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/coding/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "connectors",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "连接器实操：接入本地演示资料",
+      "mapNodeIds": [
+        "connectors"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 93.566667,
+      "chapters": [
+        {
+          "title": "从用途寻找连接器",
+          "startSeconds": 0
+        },
+        {
+          "title": "限制允许访问的目录",
+          "startSeconds": 23.67
+        },
+        {
+          "title": "确认连接状态",
+          "startSeconds": 47.58
+        },
+        {
+          "title": "查看已经发现的工具",
+          "startSeconds": 67.97
+        }
+      ],
+      "video": "/media/tutorials/connectors/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/connectors/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/connectors/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/connectors/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "desktop",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "桌面入口：导航、搜索与模型设置",
+      "mapNodeIds": [
+        "desktop"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "macOS native desktop application",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 72.3,
+      "chapters": [
+        {
+          "title": "从工作内容进入",
+          "startSeconds": 0
+        },
+        {
+          "title": "使用命令面板找入口",
+          "startSeconds": 24.79
+        },
+        {
+          "title": "确认进入正确的设置",
+          "startSeconds": 47.66
+        }
+      ],
+      "video": "/media/tutorials/desktop/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/desktop/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/desktop/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/desktop/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "devices",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "多端入口：网页、手机与 Chrome 连接准备",
+      "mapNodeIds": [
+        "web",
+        "mobile",
+        "chrome"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 73.2,
+      "chapters": [
+        {
+          "title": "在网页端检查设备",
+          "startSeconds": 0
+        },
+        {
+          "title": "先准备好手机应用",
+          "startSeconds": 20.55
+        },
+        {
+          "title": "分清扩展文件与连接状态",
+          "startSeconds": 44.38
+        }
+      ],
+      "video": "/media/tutorials/devices/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/devices/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/devices/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/devices/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "extensions",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "扩展管理：区分内置、安装与运行",
+      "mapNodeIds": [
+        "extensions"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 95.5,
+      "chapters": [
+        {
+          "title": "先分清三类入口",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查内置扩展状态",
+          "startSeconds": 20.95
+        },
+        {
+          "title": "打开详情看运行边界",
+          "startSeconds": 43.74
+        },
+        {
+          "title": "安装前保留完整性检查",
+          "startSeconds": 69.65
+        }
+      ],
+      "video": "/media/tutorials/extensions/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/extensions/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/extensions/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/extensions/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "followup",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "持续跟进：建立并管理项目安排",
+      "mapNodeIds": [
+        "followup"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 94.466667,
+      "chapters": [
+        {
+          "title": "从明确的工作对象开始",
+          "startSeconds": 0
+        },
+        {
+          "title": "核对创建后的真实状态",
+          "startSeconds": 23.35
+        },
+        {
+          "title": "查看范围与恢复入口",
+          "startSeconds": 44.86
+        },
+        {
+          "title": "让提醒符合工作节奏",
+          "startSeconds": 69.89
+        }
+      ],
+      "video": "/media/tutorials/followup/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/followup/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/followup/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/followup/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "gateway",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "本机服务：检查连接与认证",
+      "mapNodeIds": [
+        "gateway"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 69.666667,
+      "chapters": [
+        {
+          "title": "找到本机服务",
+          "startSeconds": 0
+        },
+        {
+          "title": "理解本机回环",
+          "startSeconds": 23.03
+        },
+        {
+          "title": "检查认证，保护令牌",
+          "startSeconds": 47.26
+        }
+      ],
+      "video": "/media/tutorials/gateway/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/gateway/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/gateway/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/gateway/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "goals",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "目标与优先级：表达目标并核对保存状态",
+      "mapNodeIds": [
+        "goals"
+      ],
+      "product": {
+        "version": "0.0.277–0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 84.466667,
+      "chapters": [
+        {
+          "title": "先看当前优先事项",
+          "startSeconds": 0
+        },
+        {
+          "title": "把保存要求说清楚",
+          "startSeconds": 25.83
+        },
+        {
+          "title": "区分目标表达与对象落地",
+          "startSeconds": 55.18
+        }
+      ],
+      "video": "/media/tutorials/goals/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/goals/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/goals/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/goals/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "heartbeat",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "主动提醒：配置检查清单与手动触发",
+      "mapNodeIds": [
+        "heartbeat"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 110.6,
+      "chapters": [
+        {
+          "title": "设置检查节奏",
+          "startSeconds": 0
+        },
+        {
+          "title": "确认投递范围",
+          "startSeconds": 23.83
+        },
+        {
+          "title": "写出明确的检查清单",
+          "startSeconds": 45.02
+        },
+        {
+          "title": "手动触发与暂停",
+          "startSeconds": 68.93
+        },
+        {
+          "title": "演示结束后停用",
+          "startSeconds": 90.76
+        }
+      ],
+      "video": "/media/tutorials/heartbeat/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/heartbeat/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/heartbeat/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/heartbeat/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "local-apps",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "本地应用：制作、验收并安装计数器",
+      "mapNodeIds": [
+        "local-apps"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 115.333333,
+      "chapters": [
+        {
+          "title": "用具体行为写需求",
+          "startSeconds": 0
+        },
+        {
+          "title": "实际点一遍核心操作",
+          "startSeconds": 23.91
+        },
+        {
+          "title": "等待三条场景通过",
+          "startSeconds": 46.54
+        },
+        {
+          "title": "审阅权限后安装",
+          "startSeconds": 68.77
+        },
+        {
+          "title": "确认已安装版本",
+          "startSeconds": 92.52
+        }
+      ],
+      "video": "/media/tutorials/local-apps/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/local-apps/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/local-apps/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/local-apps/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "logs",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "诊断日志：搜索与缩小排查范围",
+      "mapNodeIds": [
+        "logs"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 73.733333,
+      "chapters": [
+        {
+          "title": "从具体问题开始搜索",
+          "startSeconds": 0
+        },
+        {
+          "title": "使用时间范围与级别",
+          "startSeconds": 22.55
+        },
+        {
+          "title": "解释筛选结果",
+          "startSeconds": 49.26
+        }
+      ],
+      "video": "/media/tutorials/logs/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/logs/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/logs/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/logs/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "mcp",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "MCP 实操：连接并调用本地工具",
+      "mapNodeIds": [
+        "mcp"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 79.9,
+      "chapters": [
+        {
+          "title": "添加一个明确的工具服务",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查工具发现与调用过程",
+          "startSeconds": 27.35
+        },
+        {
+          "title": "对照工具返回结果",
+          "startSeconds": 54.94
+        }
+      ],
+      "video": "/media/tutorials/mcp/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/mcp/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/mcp/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/mcp/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "media",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "媒体与搜索：检查服务是否准备就绪",
+      "mapNodeIds": [
+        "media"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 81.433333,
+      "chapters": [
+        {
+          "title": "先确认能力对应的服务",
+          "startSeconds": 0
+        },
+        {
+          "title": "为搜索选择实际提供方",
+          "startSeconds": 26.71
+        },
+        {
+          "title": "区分识别、朗读和实时通话",
+          "startSeconds": 50.46
+        }
+      ],
+      "video": "/media/tutorials/media/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/media/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/media/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/media/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "onboard",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "首次进入：连接工作资料并开始协作",
+      "mapNodeIds": [
+        "onboard",
+        "discovery"
+      ],
+      "product": {
+        "version": "0.0.277–0.0.278",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 113.233333,
+      "chapters": [
+        {
+          "title": "选择本次工作的起点",
+          "startSeconds": 0
+        },
+        {
+          "title": "阅读前确认资料范围",
+          "startSeconds": 23.75
+        },
+        {
+          "title": "按需连接额外服务",
+          "startSeconds": 45.82
+        },
+        {
+          "title": "确认助理的项目理解",
+          "startSeconds": 65.57
+        },
+        {
+          "title": "进入真实项目对话",
+          "startSeconds": 88.44
+        }
+      ],
+      "video": "/media/tutorials/onboard/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/onboard/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/onboard/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/onboard/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "platform",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "Platform 实操：连接、检查与断开",
+      "mapNodeIds": [
+        "platform"
+      ],
+      "product": {
+        "version": "0.0.278",
+        "platform": "CLI output and documented procedure cards",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 76.066667,
+      "chapters": [
+        {
+          "title": "连接明确的平台地址",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查当前连接模式",
+          "startSeconds": 23.59
+        },
+        {
+          "title": "断开并确认独立模式",
+          "startSeconds": 50.14
+        }
+      ],
+      "video": "/media/tutorials/platform/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/platform/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/platform/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/platform/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "remote",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "远程访问：选择方式与检查前置条件",
+      "mapNodeIds": [
+        "remote"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 74.133333,
+      "chapters": [
+        {
+          "title": "从连接范围选择方式",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查 Tailscale 的前置条件",
+          "startSeconds": 22.79
+        },
+        {
+          "title": "已有 SSH 时检查端口转发",
+          "startSeconds": 47.18
+        }
+      ],
+      "video": "/media/tutorials/remote/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/remote/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/remote/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/remote/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "rules",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "协作规则：检查、停用与恢复",
+      "mapNodeIds": [
+        "rules"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 72.3,
+      "chapters": [
+        {
+          "title": "找到长期协作约定",
+          "startSeconds": 0
+        },
+        {
+          "title": "停用不再合适的规则",
+          "startSeconds": 24.39
+        },
+        {
+          "title": "恢复规则，区分共同理解",
+          "startSeconds": 46.46
+        }
+      ],
+      "video": "/media/tutorials/rules/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/rules/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/rules/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/rules/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "runtimes",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "工具运行环境：安装与策略检查",
+      "mapNodeIds": [
+        "runtimes"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 75.333333,
+      "chapters": [
+        {
+          "title": "找到运行环境",
+          "startSeconds": 0
+        },
+        {
+          "title": "安装并确认就绪",
+          "startSeconds": 25.27
+        },
+        {
+          "title": "理解运行时来源",
+          "startSeconds": 46.22
+        }
+      ],
+      "video": "/media/tutorials/runtimes/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/runtimes/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/runtimes/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/runtimes/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "sharing",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "会话分享：审阅、创建与撤销",
+      "mapNodeIds": [
+        "sharing"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 91.333333,
+      "chapters": [
+        {
+          "title": "选择分享方式",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查将要公开的内容",
+          "startSeconds": 23.59
+        },
+        {
+          "title": "查看生成的只读页面",
+          "startSeconds": 44.78
+        },
+        {
+          "title": "撤销后验证失效",
+          "startSeconds": 67.57
+        }
+      ],
+      "video": "/media/tutorials/sharing/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/sharing/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/sharing/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/sharing/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "storage",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "数据备份：明确范围并验证加密副本",
+      "mapNodeIds": [
+        "storage",
+        "privacy"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 77.1,
+      "chapters": [
+        {
+          "title": "先明确完整备份范围",
+          "startSeconds": 0
+        },
+        {
+          "title": "验证加密副本可读取",
+          "startSeconds": 25.75
+        },
+        {
+          "title": "恢复前保留当前副本",
+          "startSeconds": 51.02
+        }
+      ],
+      "video": "/media/tutorials/storage/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/storage/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/storage/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/storage/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "terminal",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "终端入门：查看命令与完成一次对话",
+      "mapNodeIds": [
+        "terminal"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "xopc CLI and local TUI",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 75.6,
+      "chapters": [
+        {
+          "title": "从帮助命令开始",
+          "startSeconds": 0
+        },
+        {
+          "title": "区分本地和网关模式",
+          "startSeconds": 24.31
+        },
+        {
+          "title": "完成一次真实对话",
+          "startSeconds": 50.14
+        }
+      ],
+      "video": "/media/tutorials/terminal/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/terminal/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/terminal/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/terminal/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "tools",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "行动工具与权限：执行前由你确认",
+      "mapNodeIds": [
+        "tools",
+        "permissions"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 102.766667,
+      "chapters": [
+        {
+          "title": "先找到工具能力",
+          "startSeconds": 0
+        },
+        {
+          "title": "把写文件改为询问",
+          "startSeconds": 23.19
+        },
+        {
+          "title": "检查一次操作的具体内容",
+          "startSeconds": 48.62
+        },
+        {
+          "title": "区分策略与任务验收",
+          "startSeconds": 75.41
+        }
+      ],
+      "video": "/media/tutorials/tools/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/tools/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/tools/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/tools/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "voice",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "语音实操：上传、转写并整理下一步",
+      "mapNodeIds": [
+        "voice"
+      ],
+      "product": {
+        "version": "0.0.277",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 107.166667,
+      "chapters": [
+        {
+          "title": "先区分输入与输出",
+          "startSeconds": 0
+        },
+        {
+          "title": "确认识别服务可用",
+          "startSeconds": 23.27
+        },
+        {
+          "title": "上传一段明确的语音",
+          "startSeconds": 45.02
+        },
+        {
+          "title": "检查实际转写文字",
+          "startSeconds": 63.09
+        },
+        {
+          "title": "把文字整理成行动信息",
+          "startSeconds": 87.16
+        }
+      ],
+      "video": "/media/tutorials/voice/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/voice/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/voice/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/voice/v1/zh-CN/article.json",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
     }
   ]
 }
