@@ -3,7 +3,7 @@
   "tutorials": [
     {
       "id": "first-task",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "第一次使用：完成一份周报",
       "mapNodeIds": [
@@ -16,7 +16,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 109.8,
+      "durationSeconds": 119.233333,
       "chapters": [
         {
           "title": "从一件小事开始",
@@ -24,29 +24,29 @@
         },
         {
           "title": "把要求说清楚",
-          "startSeconds": 17.03
+          "startSeconds": 19.03
         },
         {
           "title": "先检查，再使用",
-          "startSeconds": 36.78
+          "startSeconds": 38.78
         },
         {
           "title": "继续追问",
-          "startSeconds": 54.37
+          "startSeconds": 55.89
         },
         {
           "title": "按用途再改一版",
-          "startSeconds": 70.68
+          "startSeconds": 73.64
         },
         {
           "title": "把结果留下来",
-          "startSeconds": 89.87
+          "startSeconds": 93.87
         }
       ],
-      "video": "/media/tutorials/first-task/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/first-task/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/first-task/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/first-task/v2/zh-CN/article.json",
+      "video": "/media/tutorials/first-task/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/first-task/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/first-task/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/first-task/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -56,7 +56,7 @@
     },
     {
       "id": "models",
-      "revision": "v3",
+      "revision": "v4",
       "locale": "zh-CN",
       "title": "模型接入与思考强度",
       "mapNodeIds": [
@@ -68,7 +68,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 120.2,
+      "durationSeconds": 123.8,
       "chapters": [
         {
           "title": "先找到模型入口",
@@ -76,29 +76,29 @@
         },
         {
           "title": "调整思考强度",
-          "startSeconds": 16.07
+          "startSeconds": 17.43
         },
         {
           "title": "选择模型服务商",
-          "startSeconds": 36.38
+          "startSeconds": 37.82
         },
         {
           "title": "填写自己的凭据",
-          "startSeconds": 51.81
+          "startSeconds": 54.93
         },
         {
           "title": "查看已接入模型",
-          "startSeconds": 75.0
+          "startSeconds": 76.2
         },
         {
           "title": "检查其他能力",
-          "startSeconds": 95.07
+          "startSeconds": 98.67
         }
       ],
-      "video": "/media/tutorials/models/v3/zh-CN/video.mp4",
-      "poster": "/media/tutorials/models/v3/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/models/v3/zh-CN/captions.vtt",
-      "article": "/media/tutorials/models/v3/zh-CN/article.json",
+      "video": "/media/tutorials/models/v4/zh-CN/video.mp4",
+      "poster": "/media/tutorials/models/v4/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/models/v4/zh-CN/captions.vtt",
+      "article": "/media/tutorials/models/v4/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -108,7 +108,7 @@
     },
     {
       "id": "notes",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "把对话整理成可复用笔记",
       "mapNodeIds": [
@@ -120,7 +120,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 112.9,
+      "durationSeconds": 112.433333,
       "chapters": [
         {
           "title": "打开已有笔记",
@@ -128,29 +128,29 @@
         },
         {
           "title": "核对原始内容",
-          "startSeconds": 16.55
+          "startSeconds": 16.79
         },
         {
           "title": "编辑标题和正文",
-          "startSeconds": 36.38
+          "startSeconds": 37.02
         },
         {
           "title": "预览排版结果",
-          "startSeconds": 53.33
+          "startSeconds": 53.65
         },
         {
           "title": "查看历史版本",
-          "startSeconds": 72.84
+          "startSeconds": 72.12
         },
         {
           "title": "收藏并再次找到",
-          "startSeconds": 90.83
+          "startSeconds": 90.43
         }
       ],
-      "video": "/media/tutorials/notes/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/notes/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/notes/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/notes/v2/zh-CN/article.json",
+      "video": "/media/tutorials/notes/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/notes/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/notes/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/notes/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -160,7 +160,7 @@
     },
     {
       "id": "projects",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "用项目组织长期工作",
       "mapNodeIds": [
@@ -172,7 +172,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 116.766667,
+      "durationSeconds": 119.233333,
       "chapters": [
         {
           "title": "给工作一个归属",
@@ -180,29 +180,29 @@
         },
         {
           "title": "看清项目方向",
-          "startSeconds": 20.47
+          "startSeconds": 21.99
         },
         {
           "title": "打开工作材料",
-          "startSeconds": 36.62
+          "startSeconds": 37.1
         },
         {
           "title": "拆出可执行任务",
-          "startSeconds": 55.01
+          "startSeconds": 56.93
         },
         {
           "title": "通过看板跟进",
-          "startSeconds": 74.04
+          "startSeconds": 77.0
         },
         {
           "title": "进入任务详情",
-          "startSeconds": 93.63
+          "startSeconds": 96.91
         }
       ],
-      "video": "/media/tutorials/projects/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/projects/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/projects/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/projects/v2/zh-CN/article.json",
+      "video": "/media/tutorials/projects/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/projects/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/projects/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/projects/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -212,7 +212,7 @@
     },
     {
       "id": "tasks",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "从安排任务到验收完成",
       "mapNodeIds": [
@@ -224,7 +224,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 121.233333,
+      "durationSeconds": 119.866667,
       "chapters": [
         {
           "title": "安排与开始分开",
@@ -232,29 +232,29 @@
         },
         {
           "title": "检查执行结果",
-          "startSeconds": 20.87
+          "startSeconds": 21.59
         },
         {
           "title": "验收前再修订",
-          "startSeconds": 43.26
+          "startSeconds": 43.9
         },
         {
           "title": "核对最终交付",
-          "startSeconds": 61.73
+          "startSeconds": 62.05
         },
         {
           "title": "明确确认完成",
-          "startSeconds": 80.12
+          "startSeconds": 81.0
         },
         {
           "title": "回看工作状态",
-          "startSeconds": 100.43
+          "startSeconds": 98.43
         }
       ],
-      "video": "/media/tutorials/tasks/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/tasks/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/tasks/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/tasks/v2/zh-CN/article.json",
+      "video": "/media/tutorials/tasks/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/tasks/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/tasks/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/tasks/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -264,7 +264,7 @@
     },
     {
       "id": "assistant",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "管理助理的持续跟进",
       "mapNodeIds": [
@@ -276,7 +276,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 112.433333,
+      "durationSeconds": 116.2,
       "chapters": [
         {
           "title": "先确认关注要求",
@@ -284,29 +284,29 @@
         },
         {
           "title": "恢复持续跟进",
-          "startSeconds": 22.71
+          "startSeconds": 23.19
         },
         {
           "title": "需要时立即核对",
-          "startSeconds": 39.9
+          "startSeconds": 40.86
         },
         {
           "title": "回看进展记录",
-          "startSeconds": 57.57
+          "startSeconds": 57.97
         },
         {
           "title": "区分核对与成果",
-          "startSeconds": 76.44
+          "startSeconds": 76.52
         },
         {
-          "title": "演示结束后暂停",
-          "startSeconds": 94.03
+          "title": "按需要暂停跟进",
+          "startSeconds": 97.31
         }
       ],
-      "video": "/media/tutorials/assistant/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/assistant/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/assistant/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/assistant/v2/zh-CN/article.json",
+      "video": "/media/tutorials/assistant/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/assistant/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/assistant/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/assistant/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -316,7 +316,7 @@
     },
     {
       "id": "home",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "从工作台开始一件事",
       "mapNodeIds": [
@@ -328,7 +328,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 79.266667,
+      "durationSeconds": 82.7,
       "chapters": [
         {
           "title": "先看当前状态",
@@ -336,21 +336,21 @@
         },
         {
           "title": "把要求说具体",
-          "startSeconds": 21.11
+          "startSeconds": 22.79
         },
         {
           "title": "检查实际回答",
-          "startSeconds": 38.46
+          "startSeconds": 42.94
         },
         {
           "title": "回到工作台",
-          "startSeconds": 57.41
+          "startSeconds": 62.29
         }
       ],
-      "video": "/media/tutorials/home/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/home/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/home/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/home/v2/zh-CN/article.json",
+      "video": "/media/tutorials/home/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/home/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/home/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/home/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -360,7 +360,7 @@
     },
     {
       "id": "settings",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "调整语言主题与使用偏好",
       "mapNodeIds": [
@@ -372,7 +372,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 106.766667,
+      "durationSeconds": 108.766667,
       "chapters": [
         {
           "title": "找到快捷设置",
@@ -380,29 +380,29 @@
         },
         {
           "title": "切换主题亮暗",
-          "startSeconds": 15.75
+          "startSeconds": 16.07
         },
         {
           "title": "切换界面语言",
-          "startSeconds": 32.94
+          "startSeconds": 34.7
         },
         {
           "title": "选择对话字号",
-          "startSeconds": 49.25
+          "startSeconds": 52.21
         },
         {
           "title": "集中管理偏好",
-          "startSeconds": 67.16
+          "startSeconds": 71.56
         },
         {
           "title": "查看常用快捷键",
-          "startSeconds": 86.67
+          "startSeconds": 91.47
         }
       ],
-      "video": "/media/tutorials/settings/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/settings/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/settings/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/settings/v2/zh-CN/article.json",
+      "video": "/media/tutorials/settings/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/settings/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/settings/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/settings/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -412,7 +412,7 @@
     },
     {
       "id": "capture",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "把临时想法快速存成笔记",
       "mapNodeIds": [
@@ -424,7 +424,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 74.366667,
+      "durationSeconds": 82.766667,
       "chapters": [
         {
           "title": "随时记下想法",
@@ -432,21 +432,21 @@
         },
         {
           "title": "写清背景与状态",
-          "startSeconds": 17.19
+          "startSeconds": 16.47
         },
         {
           "title": "核对保存内容",
-          "startSeconds": 37.98
+          "startSeconds": 41.98
         },
         {
           "title": "以后还能找到",
-          "startSeconds": 55.73
+          "startSeconds": 60.45
         }
       ],
-      "video": "/media/tutorials/capture/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/capture/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/capture/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/capture/v2/zh-CN/article.json",
+      "video": "/media/tutorials/capture/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/capture/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/capture/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/capture/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -456,7 +456,7 @@
     },
     {
       "id": "automations",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "创建定时自动化并先试运行",
       "mapNodeIds": [
@@ -468,7 +468,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 128.2,
+      "durationSeconds": 125.233333,
       "chapters": [
         {
           "title": "设定何时运行",
@@ -476,29 +476,29 @@
         },
         {
           "title": "写清执行内容",
-          "startSeconds": 21.11
+          "startSeconds": 19.91
         },
         {
           "title": "检查运行方式",
-          "startSeconds": 41.42
+          "startSeconds": 41.18
         },
         {
           "title": "先手动试运行",
-          "startSeconds": 61.65
+          "startSeconds": 60.61
         },
         {
           "title": "查看运行结果",
-          "startSeconds": 82.44
+          "startSeconds": 79.8
         },
         {
-          "title": "演示后暂停",
-          "startSeconds": 104.67
+          "title": "暂停与恢复计划",
+          "startSeconds": 103.79
         }
       ],
-      "video": "/media/tutorials/automations/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/automations/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/automations/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/automations/v2/zh-CN/article.json",
+      "video": "/media/tutorials/automations/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/automations/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/automations/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/automations/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -508,7 +508,7 @@
     },
     {
       "id": "skills",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "找到技能并在对话中使用",
       "mapNodeIds": [
@@ -520,7 +520,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 77.166667,
+      "durationSeconds": 79.966667,
       "chapters": [
         {
           "title": "找到合适的技能",
@@ -528,21 +528,21 @@
         },
         {
           "title": "先读使用说明",
-          "startSeconds": 19.35
+          "startSeconds": 18.71
         },
         {
           "title": "补充具体任务",
-          "startSeconds": 37.66
+          "startSeconds": 38.54
         },
         {
           "title": "检查摘要质量",
-          "startSeconds": 56.45
+          "startSeconds": 58.61
         }
       ],
-      "video": "/media/tutorials/skills/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/skills/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/skills/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/skills/v2/zh-CN/article.json",
+      "video": "/media/tutorials/skills/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/skills/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/skills/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/skills/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -552,7 +552,7 @@
     },
     {
       "id": "workflows",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "创建并验证两步工作流",
       "mapNodeIds": [
@@ -564,7 +564,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 142.6,
+      "durationSeconds": 141.8,
       "chapters": [
         {
           "title": "描述可复用流程",
@@ -572,33 +572,33 @@
         },
         {
           "title": "审阅生成方案",
-          "startSeconds": 19.03
+          "startSeconds": 19.19
         },
         {
           "title": "检查步骤指令",
-          "startSeconds": 38.54
+          "startSeconds": 40.06
         },
         {
           "title": "连接真实输出",
-          "startSeconds": 60.69
+          "startSeconds": 59.57
         },
         {
           "title": "填写运行输入",
-          "startSeconds": 81.64
+          "startSeconds": 80.12
         },
         {
           "title": "跟踪每步执行",
-          "startSeconds": 101.87
+          "startSeconds": 101.07
         },
         {
           "title": "验收最终交付",
-          "startSeconds": 119.78
+          "startSeconds": 120.18
         }
       ],
-      "video": "/media/tutorials/workflows/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/workflows/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/workflows/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/workflows/v2/zh-CN/article.json",
+      "video": "/media/tutorials/workflows/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/workflows/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/workflows/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/workflows/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -608,7 +608,7 @@
     },
     {
       "id": "agents",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "创建一个专注文案的智能体",
       "mapNodeIds": [
@@ -622,7 +622,7 @@
         "frontendCommit": "0b9749612caf"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 92.2,
+      "durationSeconds": 95.733333,
       "chapters": [
         {
           "title": "创建文案教练",
@@ -630,21 +630,21 @@
         },
         {
           "title": "检查配置继承",
-          "startSeconds": 23.67
+          "startSeconds": 24.95
         },
         {
           "title": "写清工作方式",
-          "startSeconds": 44.46
+          "startSeconds": 49.58
         },
         {
           "title": "用小任务验证",
-          "startSeconds": 64.29
+          "startSeconds": 68.45
         }
       ],
-      "video": "/media/tutorials/agents/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/agents/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/agents/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/agents/v2/zh-CN/article.json",
+      "video": "/media/tutorials/agents/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/agents/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/agents/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/agents/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -654,7 +654,7 @@
     },
     {
       "id": "memory",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "搜索检查与归档工作记忆",
       "mapNodeIds": [
@@ -666,7 +666,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 95.966667,
+      "durationSeconds": 102.766667,
       "chapters": [
         {
           "title": "找到工作记忆",
@@ -674,25 +674,25 @@
         },
         {
           "title": "搜索要核对的内容",
-          "startSeconds": 19.99
+          "startSeconds": 21.51
         },
         {
           "title": "展开阅读全文",
-          "startSeconds": 38.62
+          "startSeconds": 41.82
         },
         {
           "title": "归档过时记录",
-          "startSeconds": 61.17
+          "startSeconds": 64.93
         },
         {
           "title": "回看剩余记录",
-          "startSeconds": 79.24
+          "startSeconds": 84.84
         }
       ],
-      "video": "/media/tutorials/memory/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/memory/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/memory/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/memory/v2/zh-CN/article.json",
+      "video": "/media/tutorials/memory/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/memory/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/memory/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/memory/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -702,7 +702,7 @@
     },
     {
       "id": "portrait",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "填写并检查你的基本画像",
       "mapNodeIds": [
@@ -714,7 +714,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 75.266667,
+      "durationSeconds": 75.9,
       "chapters": [
         {
           "title": "从你开始",
@@ -722,21 +722,21 @@
         },
         {
           "title": "填写基本信息",
-          "startSeconds": 17.35
+          "startSeconds": 17.75
         },
         {
           "title": "保存后再核对",
-          "startSeconds": 35.26
+          "startSeconds": 36.78
         },
         {
           "title": "区分共同理解",
-          "startSeconds": 55.25
+          "startSeconds": 56.13
         }
       ],
-      "video": "/media/tutorials/portrait/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/portrait/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/portrait/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/portrait/v2/zh-CN/article.json",
+      "video": "/media/tutorials/portrait/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/portrait/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/portrait/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/portrait/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -746,7 +746,7 @@
     },
     {
       "id": "understanding",
-      "revision": "v2",
+      "revision": "v3",
       "locale": "zh-CN",
       "title": "确认修正与停止使用共同理解",
       "mapNodeIds": [
@@ -758,7 +758,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 95.8,
+      "durationSeconds": 97.0,
       "chapters": [
         {
           "title": "先看理解来源",
@@ -766,25 +766,25 @@
         },
         {
           "title": "回看确认结果",
-          "startSeconds": 22.87
+          "startSeconds": 23.27
         },
         {
           "title": "补上适用边界",
-          "startSeconds": 39.82
+          "startSeconds": 40.62
         },
         {
           "title": "检查新旧表述",
-          "startSeconds": 59.17
+          "startSeconds": 60.05
         },
         {
           "title": "保留准确理解",
-          "startSeconds": 77.88
+          "startSeconds": 78.52
         }
       ],
-      "video": "/media/tutorials/understanding/v2/zh-CN/video.mp4",
-      "poster": "/media/tutorials/understanding/v2/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/understanding/v2/zh-CN/captions.vtt",
-      "article": "/media/tutorials/understanding/v2/zh-CN/article.json",
+      "video": "/media/tutorials/understanding/v3/zh-CN/video.mp4",
+      "poster": "/media/tutorials/understanding/v3/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/understanding/v3/zh-CN/captions.vtt",
+      "article": "/media/tutorials/understanding/v3/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -794,7 +794,7 @@
     },
     {
       "id": "browser",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "浏览器实操：打开公开页面并核对结果",
       "mapNodeIds": [
@@ -807,7 +807,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 93.666667,
+      "durationSeconds": 94.7,
       "chapters": [
         {
           "title": "选择独立浏览器",
@@ -815,21 +815,21 @@
         },
         {
           "title": "确认连接测试成功",
-          "startSeconds": 22.31
+          "startSeconds": 21.99
         },
         {
           "title": "写清目标与操作范围",
-          "startSeconds": 43.82
+          "startSeconds": 42.94
         },
         {
           "title": "对照实际页面与工具记录",
-          "startSeconds": 66.69
+          "startSeconds": 67.81
         }
       ],
-      "video": "/media/tutorials/browser/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/browser/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/browser/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/browser/v1/zh-CN/article.json",
+      "video": "/media/tutorials/browser/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/browser/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/browser/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/browser/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -839,7 +839,7 @@
     },
     {
       "id": "channels",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "消息渠道：准备账号并检查接入策略",
       "mapNodeIds": [
@@ -851,7 +851,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 72.066667,
+      "durationSeconds": 69.1,
       "chapters": [
         {
           "title": "先查看渠道状态",
@@ -859,17 +859,17 @@
         },
         {
           "title": "检查账号与连接要求",
-          "startSeconds": 22.39
+          "startSeconds": 21.35
         },
         {
           "title": "决定哪些消息可以进入",
-          "startSeconds": 47.74
+          "startSeconds": 45.82
         }
       ],
-      "video": "/media/tutorials/channels/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/channels/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/channels/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/channels/v1/zh-CN/article.json",
+      "video": "/media/tutorials/channels/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/channels/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/channels/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/channels/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -879,7 +879,7 @@
     },
     {
       "id": "chat",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "对话进阶：追问与分叉探索",
       "mapNodeIds": [
@@ -891,7 +891,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 72.633333,
+      "durationSeconds": 70.3,
       "chapters": [
         {
           "title": "先建立清楚的上下文",
@@ -899,17 +899,17 @@
         },
         {
           "title": "在同一对话继续追问",
-          "startSeconds": 20.63
+          "startSeconds": 20.55
         },
         {
           "title": "从回答分叉新方向",
-          "startSeconds": 47.82
+          "startSeconds": 44.7
         }
       ],
-      "video": "/media/tutorials/chat/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/chat/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/chat/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/chat/v1/zh-CN/article.json",
+      "video": "/media/tutorials/chat/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/chat/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/chat/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/chat/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -919,7 +919,7 @@
     },
     {
       "id": "coding",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "编程实操：修复函数并执行测试",
       "mapNodeIds": [
@@ -931,7 +931,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 102.466667,
+      "durationSeconds": 99.333333,
       "chapters": [
         {
           "title": "提供缺陷与验收条件",
@@ -939,21 +939,21 @@
         },
         {
           "title": "检查修复是否针对根因",
-          "startSeconds": 26.07
+          "startSeconds": 28.07
         },
         {
           "title": "查看真实工具执行",
-          "startSeconds": 53.1
+          "startSeconds": 53.82
         },
         {
           "title": "对照每个验收用例",
-          "startSeconds": 77.81
+          "startSeconds": 77.57
         }
       ],
-      "video": "/media/tutorials/coding/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/coding/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/coding/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/coding/v1/zh-CN/article.json",
+      "video": "/media/tutorials/coding/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/coding/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/coding/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/coding/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -963,7 +963,7 @@
     },
     {
       "id": "connectors",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "连接器实操：接入本地演示资料",
       "mapNodeIds": [
@@ -975,7 +975,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 93.566667,
+      "durationSeconds": 95.966667,
       "chapters": [
         {
           "title": "从用途寻找连接器",
@@ -983,21 +983,21 @@
         },
         {
           "title": "限制允许访问的目录",
-          "startSeconds": 23.67
+          "startSeconds": 22.95
         },
         {
           "title": "确认连接状态",
-          "startSeconds": 47.58
+          "startSeconds": 47.42
         },
         {
           "title": "查看已经发现的工具",
-          "startSeconds": 67.97
+          "startSeconds": 69.73
         }
       ],
-      "video": "/media/tutorials/connectors/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/connectors/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/connectors/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/connectors/v1/zh-CN/article.json",
+      "video": "/media/tutorials/connectors/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/connectors/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/connectors/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/connectors/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1007,7 +1007,7 @@
     },
     {
       "id": "desktop",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "桌面入口：导航、搜索与模型设置",
       "mapNodeIds": [
@@ -1019,7 +1019,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 72.3,
+      "durationSeconds": 70.0,
       "chapters": [
         {
           "title": "从工作内容进入",
@@ -1027,17 +1027,17 @@
         },
         {
           "title": "使用命令面板找入口",
-          "startSeconds": 24.79
+          "startSeconds": 22.55
         },
         {
           "title": "确认进入正确的设置",
-          "startSeconds": 47.66
+          "startSeconds": 45.5
         }
       ],
-      "video": "/media/tutorials/desktop/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/desktop/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/desktop/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/desktop/v1/zh-CN/article.json",
+      "video": "/media/tutorials/desktop/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/desktop/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/desktop/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/desktop/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1047,7 +1047,7 @@
     },
     {
       "id": "devices",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "多端入口：网页、手机与 Chrome 连接准备",
       "mapNodeIds": [
@@ -1061,7 +1061,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 73.2,
+      "durationSeconds": 68.233333,
       "chapters": [
         {
           "title": "在网页端检查设备",
@@ -1069,17 +1069,17 @@
         },
         {
           "title": "先准备好手机应用",
-          "startSeconds": 20.55
+          "startSeconds": 23.59
         },
         {
           "title": "分清扩展文件与连接状态",
-          "startSeconds": 44.38
+          "startSeconds": 43.5
         }
       ],
-      "video": "/media/tutorials/devices/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/devices/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/devices/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/devices/v1/zh-CN/article.json",
+      "video": "/media/tutorials/devices/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/devices/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/devices/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/devices/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1089,7 +1089,7 @@
     },
     {
       "id": "extensions",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "扩展管理：区分内置、安装与运行",
       "mapNodeIds": [
@@ -1101,7 +1101,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 95.5,
+      "durationSeconds": 92.933333,
       "chapters": [
         {
           "title": "先分清三类入口",
@@ -1109,21 +1109,21 @@
         },
         {
           "title": "检查内置扩展状态",
-          "startSeconds": 20.95
+          "startSeconds": 23.59
         },
         {
           "title": "打开详情看运行边界",
-          "startSeconds": 43.74
+          "startSeconds": 45.74
         },
         {
-          "title": "安装前保留完整性检查",
-          "startSeconds": 69.65
+          "title": "处理安装检查提示",
+          "startSeconds": 70.85
         }
       ],
-      "video": "/media/tutorials/extensions/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/extensions/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/extensions/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/extensions/v1/zh-CN/article.json",
+      "video": "/media/tutorials/extensions/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/extensions/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/extensions/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/extensions/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1133,7 +1133,7 @@
     },
     {
       "id": "followup",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "持续跟进：建立并管理项目安排",
       "mapNodeIds": [
@@ -1145,29 +1145,29 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 94.466667,
+      "durationSeconds": 90.933333,
       "chapters": [
         {
           "title": "从明确的工作对象开始",
           "startSeconds": 0
         },
         {
-          "title": "核对创建后的真实状态",
-          "startSeconds": 23.35
+          "title": "检查安排状态",
+          "startSeconds": 22.87
         },
         {
           "title": "查看范围与恢复入口",
-          "startSeconds": 44.86
+          "startSeconds": 46.14
         },
         {
           "title": "让提醒符合工作节奏",
-          "startSeconds": 69.89
+          "startSeconds": 69.73
         }
       ],
-      "video": "/media/tutorials/followup/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/followup/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/followup/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/followup/v1/zh-CN/article.json",
+      "video": "/media/tutorials/followup/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/followup/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/followup/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/followup/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1177,7 +1177,7 @@
     },
     {
       "id": "gateway",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "本机服务：检查连接与认证",
       "mapNodeIds": [
@@ -1189,7 +1189,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 69.666667,
+      "durationSeconds": 65.9,
       "chapters": [
         {
           "title": "找到本机服务",
@@ -1197,17 +1197,17 @@
         },
         {
           "title": "理解本机回环",
-          "startSeconds": 23.03
+          "startSeconds": 20.31
         },
         {
           "title": "检查认证，保护令牌",
-          "startSeconds": 47.26
+          "startSeconds": 42.06
         }
       ],
-      "video": "/media/tutorials/gateway/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/gateway/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/gateway/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/gateway/v1/zh-CN/article.json",
+      "video": "/media/tutorials/gateway/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/gateway/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/gateway/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/gateway/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1217,7 +1217,7 @@
     },
     {
       "id": "goals",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "目标与优先级：表达目标并核对保存状态",
       "mapNodeIds": [
@@ -1229,7 +1229,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 84.466667,
+      "durationSeconds": 76.933333,
       "chapters": [
         {
           "title": "先看当前优先事项",
@@ -1237,17 +1237,17 @@
         },
         {
           "title": "把保存要求说清楚",
-          "startSeconds": 25.83
+          "startSeconds": 25.67
         },
         {
           "title": "区分目标表达与对象落地",
-          "startSeconds": 55.18
+          "startSeconds": 48.78
         }
       ],
-      "video": "/media/tutorials/goals/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/goals/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/goals/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/goals/v1/zh-CN/article.json",
+      "video": "/media/tutorials/goals/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/goals/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/goals/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/goals/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1257,7 +1257,7 @@
     },
     {
       "id": "heartbeat",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "主动提醒：配置检查清单与手动触发",
       "mapNodeIds": [
@@ -1269,7 +1269,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 110.6,
+      "durationSeconds": 112.3,
       "chapters": [
         {
           "title": "设置检查节奏",
@@ -1277,25 +1277,25 @@
         },
         {
           "title": "确认投递范围",
-          "startSeconds": 23.83
+          "startSeconds": 25.19
         },
         {
           "title": "写出明确的检查清单",
-          "startSeconds": 45.02
+          "startSeconds": 46.38
         },
         {
           "title": "手动触发与暂停",
-          "startSeconds": 68.93
+          "startSeconds": 71.89
         },
         {
-          "title": "演示结束后停用",
-          "startSeconds": 90.76
+          "title": "按需要停用检查",
+          "startSeconds": 95.0
         }
       ],
-      "video": "/media/tutorials/heartbeat/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/heartbeat/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/heartbeat/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/heartbeat/v1/zh-CN/article.json",
+      "video": "/media/tutorials/heartbeat/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/heartbeat/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/heartbeat/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/heartbeat/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1305,7 +1305,7 @@
     },
     {
       "id": "local-apps",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "本地应用：制作、验收并安装计数器",
       "mapNodeIds": [
@@ -1317,7 +1317,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 115.333333,
+      "durationSeconds": 119.9,
       "chapters": [
         {
           "title": "用具体行为写需求",
@@ -1329,21 +1329,21 @@
         },
         {
           "title": "等待三条场景通过",
-          "startSeconds": 46.54
+          "startSeconds": 51.82
         },
         {
           "title": "审阅权限后安装",
-          "startSeconds": 68.77
+          "startSeconds": 72.45
         },
         {
           "title": "确认已安装版本",
-          "startSeconds": 92.52
+          "startSeconds": 97.08
         }
       ],
-      "video": "/media/tutorials/local-apps/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/local-apps/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/local-apps/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/local-apps/v1/zh-CN/article.json",
+      "video": "/media/tutorials/local-apps/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/local-apps/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/local-apps/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/local-apps/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1353,7 +1353,7 @@
     },
     {
       "id": "logs",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "诊断日志：搜索与缩小排查范围",
       "mapNodeIds": [
@@ -1365,7 +1365,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 73.733333,
+      "durationSeconds": 78.3,
       "chapters": [
         {
           "title": "从具体问题开始搜索",
@@ -1373,17 +1373,17 @@
         },
         {
           "title": "使用时间范围与级别",
-          "startSeconds": 22.55
+          "startSeconds": 25.67
         },
         {
           "title": "解释筛选结果",
-          "startSeconds": 49.26
+          "startSeconds": 53.58
         }
       ],
-      "video": "/media/tutorials/logs/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/logs/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/logs/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/logs/v1/zh-CN/article.json",
+      "video": "/media/tutorials/logs/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/logs/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/logs/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/logs/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1393,7 +1393,7 @@
     },
     {
       "id": "mcp",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "MCP 实操：连接并调用本地工具",
       "mapNodeIds": [
@@ -1405,7 +1405,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 79.9,
+      "durationSeconds": 79.333333,
       "chapters": [
         {
           "title": "添加一个明确的工具服务",
@@ -1413,17 +1413,17 @@
         },
         {
           "title": "检查工具发现与调用过程",
-          "startSeconds": 27.35
+          "startSeconds": 26.79
         },
         {
           "title": "对照工具返回结果",
-          "startSeconds": 54.94
+          "startSeconds": 53.9
         }
       ],
-      "video": "/media/tutorials/mcp/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/mcp/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/mcp/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/mcp/v1/zh-CN/article.json",
+      "video": "/media/tutorials/mcp/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/mcp/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/mcp/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/mcp/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1433,7 +1433,7 @@
     },
     {
       "id": "media",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "媒体与搜索：检查服务是否准备就绪",
       "mapNodeIds": [
@@ -1445,7 +1445,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 81.433333,
+      "durationSeconds": 74.3,
       "chapters": [
         {
           "title": "先确认能力对应的服务",
@@ -1453,17 +1453,17 @@
         },
         {
           "title": "为搜索选择实际提供方",
-          "startSeconds": 26.71
+          "startSeconds": 24.71
         },
         {
           "title": "区分识别、朗读和实时通话",
-          "startSeconds": 50.46
+          "startSeconds": 49.5
         }
       ],
-      "video": "/media/tutorials/media/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/media/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/media/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/media/v1/zh-CN/article.json",
+      "video": "/media/tutorials/media/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/media/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/media/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/media/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1473,7 +1473,7 @@
     },
     {
       "id": "onboard",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "首次进入：连接工作资料并开始协作",
       "mapNodeIds": [
@@ -1486,7 +1486,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 113.233333,
+      "durationSeconds": 111.9,
       "chapters": [
         {
           "title": "选择本次工作的起点",
@@ -1494,25 +1494,25 @@
         },
         {
           "title": "阅读前确认资料范围",
-          "startSeconds": 23.75
+          "startSeconds": 20.15
         },
         {
           "title": "按需连接额外服务",
-          "startSeconds": 45.82
+          "startSeconds": 42.46
         },
         {
           "title": "确认助理的项目理解",
-          "startSeconds": 65.57
+          "startSeconds": 61.97
         },
         {
           "title": "进入真实项目对话",
-          "startSeconds": 88.44
+          "startSeconds": 87.56
         }
       ],
-      "video": "/media/tutorials/onboard/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/onboard/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/onboard/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/onboard/v1/zh-CN/article.json",
+      "video": "/media/tutorials/onboard/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/onboard/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/onboard/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/onboard/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1522,7 +1522,7 @@
     },
     {
       "id": "platform",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "Platform 实操：连接、检查与断开",
       "mapNodeIds": [
@@ -1534,7 +1534,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 76.066667,
+      "durationSeconds": 70.633333,
       "chapters": [
         {
           "title": "连接明确的平台地址",
@@ -1542,17 +1542,17 @@
         },
         {
           "title": "检查当前连接模式",
-          "startSeconds": 23.59
+          "startSeconds": 20.87
         },
         {
           "title": "断开并确认独立模式",
-          "startSeconds": 50.14
+          "startSeconds": 47.34
         }
       ],
-      "video": "/media/tutorials/platform/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/platform/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/platform/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/platform/v1/zh-CN/article.json",
+      "video": "/media/tutorials/platform/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/platform/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/platform/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/platform/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1562,7 +1562,7 @@
     },
     {
       "id": "remote",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "远程访问：选择方式与检查前置条件",
       "mapNodeIds": [
@@ -1574,7 +1574,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 74.133333,
+      "durationSeconds": 64.466667,
       "chapters": [
         {
           "title": "从连接范围选择方式",
@@ -1582,17 +1582,17 @@
         },
         {
           "title": "检查 Tailscale 的前置条件",
-          "startSeconds": 22.79
+          "startSeconds": 22.47
         },
         {
           "title": "已有 SSH 时检查端口转发",
-          "startSeconds": 47.18
+          "startSeconds": 44.38
         }
       ],
-      "video": "/media/tutorials/remote/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/remote/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/remote/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/remote/v1/zh-CN/article.json",
+      "video": "/media/tutorials/remote/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/remote/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/remote/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/remote/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1602,7 +1602,7 @@
     },
     {
       "id": "rules",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "协作规则：检查、停用与恢复",
       "mapNodeIds": [
@@ -1614,7 +1614,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 72.3,
+      "durationSeconds": 67.033333,
       "chapters": [
         {
           "title": "找到长期协作约定",
@@ -1622,17 +1622,17 @@
         },
         {
           "title": "停用不再合适的规则",
-          "startSeconds": 24.39
+          "startSeconds": 21.67
         },
         {
           "title": "恢复规则，区分共同理解",
-          "startSeconds": 46.46
+          "startSeconds": 42.94
         }
       ],
-      "video": "/media/tutorials/rules/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/rules/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/rules/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/rules/v1/zh-CN/article.json",
+      "video": "/media/tutorials/rules/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/rules/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/rules/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/rules/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1642,7 +1642,7 @@
     },
     {
       "id": "runtimes",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "工具运行环境：安装与策略检查",
       "mapNodeIds": [
@@ -1654,7 +1654,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 75.333333,
+      "durationSeconds": 72.466667,
       "chapters": [
         {
           "title": "找到运行环境",
@@ -1662,17 +1662,17 @@
         },
         {
           "title": "安装并确认就绪",
-          "startSeconds": 25.27
+          "startSeconds": 23.83
         },
         {
           "title": "理解运行时来源",
-          "startSeconds": 46.22
+          "startSeconds": 47.18
         }
       ],
-      "video": "/media/tutorials/runtimes/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/runtimes/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/runtimes/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/runtimes/v1/zh-CN/article.json",
+      "video": "/media/tutorials/runtimes/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/runtimes/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/runtimes/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/runtimes/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1682,7 +1682,7 @@
     },
     {
       "id": "sharing",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "会话分享：审阅、创建与撤销",
       "mapNodeIds": [
@@ -1694,7 +1694,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 91.333333,
+      "durationSeconds": 87.733333,
       "chapters": [
         {
           "title": "选择分享方式",
@@ -1702,21 +1702,21 @@
         },
         {
           "title": "检查将要公开的内容",
-          "startSeconds": 23.59
+          "startSeconds": 21.83
         },
         {
           "title": "查看生成的只读页面",
-          "startSeconds": 44.78
+          "startSeconds": 42.78
         },
         {
           "title": "撤销后验证失效",
-          "startSeconds": 67.57
+          "startSeconds": 64.61
         }
       ],
-      "video": "/media/tutorials/sharing/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/sharing/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/sharing/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/sharing/v1/zh-CN/article.json",
+      "video": "/media/tutorials/sharing/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/sharing/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/sharing/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/sharing/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1726,7 +1726,7 @@
     },
     {
       "id": "storage",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "数据备份：明确范围并验证加密副本",
       "mapNodeIds": [
@@ -1739,7 +1739,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 77.1,
+      "durationSeconds": 73.333333,
       "chapters": [
         {
           "title": "先明确完整备份范围",
@@ -1747,17 +1747,17 @@
         },
         {
           "title": "验证加密副本可读取",
-          "startSeconds": 25.75
+          "startSeconds": 22.79
         },
         {
           "title": "恢复前保留当前副本",
-          "startSeconds": 51.02
+          "startSeconds": 46.54
         }
       ],
-      "video": "/media/tutorials/storage/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/storage/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/storage/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/storage/v1/zh-CN/article.json",
+      "video": "/media/tutorials/storage/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/storage/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/storage/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/storage/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1767,7 +1767,7 @@
     },
     {
       "id": "terminal",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "终端入门：查看命令与完成一次对话",
       "mapNodeIds": [
@@ -1779,7 +1779,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 75.6,
+      "durationSeconds": 71.733333,
       "chapters": [
         {
           "title": "从帮助命令开始",
@@ -1787,17 +1787,17 @@
         },
         {
           "title": "区分本地和网关模式",
-          "startSeconds": 24.31
+          "startSeconds": 24.79
         },
         {
           "title": "完成一次真实对话",
-          "startSeconds": 50.14
+          "startSeconds": 47.74
         }
       ],
-      "video": "/media/tutorials/terminal/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/terminal/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/terminal/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/terminal/v1/zh-CN/article.json",
+      "video": "/media/tutorials/terminal/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/terminal/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/terminal/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/terminal/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1807,7 +1807,7 @@
     },
     {
       "id": "tools",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "行动工具与权限：执行前由你确认",
       "mapNodeIds": [
@@ -1820,7 +1820,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 102.766667,
+      "durationSeconds": 96.533333,
       "chapters": [
         {
           "title": "先找到工具能力",
@@ -1828,21 +1828,21 @@
         },
         {
           "title": "把写文件改为询问",
-          "startSeconds": 23.19
+          "startSeconds": 23.35
         },
         {
           "title": "检查一次操作的具体内容",
-          "startSeconds": 48.62
+          "startSeconds": 47.9
         },
         {
           "title": "区分策略与任务验收",
-          "startSeconds": 75.41
+          "startSeconds": 74.21
         }
       ],
-      "video": "/media/tutorials/tools/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/tools/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/tools/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/tools/v1/zh-CN/article.json",
+      "video": "/media/tutorials/tools/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/tools/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/tools/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/tools/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1852,7 +1852,7 @@
     },
     {
       "id": "voice",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "语音实操：上传、转写并整理下一步",
       "mapNodeIds": [
@@ -1864,7 +1864,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 107.166667,
+      "durationSeconds": 105.9,
       "chapters": [
         {
           "title": "先区分输入与输出",
@@ -1872,25 +1872,25 @@
         },
         {
           "title": "确认识别服务可用",
-          "startSeconds": 23.27
+          "startSeconds": 21.67
         },
         {
           "title": "上传一段明确的语音",
-          "startSeconds": 45.02
+          "startSeconds": 43.34
         },
         {
           "title": "检查实际转写文字",
-          "startSeconds": 63.09
+          "startSeconds": 63.49
         },
         {
           "title": "把文字整理成行动信息",
-          "startSeconds": 87.16
+          "startSeconds": 85.24
         }
       ],
-      "video": "/media/tutorials/voice/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/voice/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/voice/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/voice/v1/zh-CN/article.json",
+      "video": "/media/tutorials/voice/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/voice/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/voice/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/voice/v2/zh-CN/article.json",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
         "model": "qwen3-tts-instruct-flash-2026-01-26",
@@ -1900,7 +1900,7 @@
     },
     {
       "id": "scenario-project-handoff",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "接手陌生项目，找到下一步",
       "mapNodeIds": [
@@ -1913,7 +1913,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 341.833333,
+      "durationSeconds": 334.233333,
       "chapters": [
         {
           "title": "限定交接范围",
@@ -1921,30 +1921,30 @@
         },
         {
           "title": "核对事实与日期",
-          "startSeconds": 61.21
+          "startSeconds": 62.65
         },
         {
           "title": "澄清描述差异",
-          "startSeconds": 116.26
+          "startSeconds": 116.9
         },
         {
           "title": "建立项目落点",
-          "startSeconds": 174.11
+          "startSeconds": 172.27
         },
         {
           "title": "保存修正后的摘要",
-          "startSeconds": 230.6
+          "startSeconds": 227.08
         },
         {
           "title": "验收下一步",
-          "startSeconds": 281.97
+          "startSeconds": 279.01
         }
       ],
-      "video": "/media/tutorials/scenario-project-handoff/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/scenario-project-handoff/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/scenario-project-handoff/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/scenario-project-handoff/v1/zh-CN/article.json",
-      "materials": "/media/tutorials/scenario-project-handoff/v1/zh-CN/materials.zip",
+      "video": "/media/tutorials/scenario-project-handoff/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-project-handoff/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-project-handoff/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-project-handoff/v2/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-project-handoff/v2/zh-CN/materials.zip",
       "kind": "scenario",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
@@ -1955,7 +1955,7 @@
     },
     {
       "id": "scenario-launch-copy",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "从需求说明完成发布文案",
       "mapNodeIds": [
@@ -1968,7 +1968,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 338.466667,
+      "durationSeconds": 343.9,
       "chapters": [
         {
           "title": "给清楚写作材料",
@@ -1976,30 +1976,30 @@
         },
         {
           "title": "看初稿是否易懂",
-          "startSeconds": 59.13
+          "startSeconds": 61.05
         },
         {
           "title": "核对能承诺什么",
-          "startSeconds": 116.34
+          "startSeconds": 118.26
         },
         {
           "title": "按明确方向修订",
-          "startSeconds": 167.87
+          "startSeconds": 171.39
         },
         {
           "title": "检查定稿与字数",
-          "startSeconds": 226.68
+          "startSeconds": 231.88
         },
         {
           "title": "打开真实保存的文案",
-          "startSeconds": 283.33
+          "startSeconds": 287.41
         }
       ],
-      "video": "/media/tutorials/scenario-launch-copy/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/scenario-launch-copy/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/scenario-launch-copy/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/scenario-launch-copy/v1/zh-CN/article.json",
-      "materials": "/media/tutorials/scenario-launch-copy/v1/zh-CN/materials.zip",
+      "video": "/media/tutorials/scenario-launch-copy/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-launch-copy/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-launch-copy/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-launch-copy/v2/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-launch-copy/v2/zh-CN/materials.zip",
       "kind": "scenario",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
@@ -2010,7 +2010,7 @@
     },
     {
       "id": "scenario-meeting-actions",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "把会议录音变成行动清单",
       "mapNodeIds": [
@@ -2023,7 +2023,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 340.966667,
+      "durationSeconds": 335.666667,
       "chapters": [
         {
           "title": "准备会议音频",
@@ -2031,30 +2031,30 @@
         },
         {
           "title": "处理转写失败",
-          "startSeconds": 58.89
+          "startSeconds": 54.57
         },
         {
           "title": "检查行动项",
-          "startSeconds": 117.3
+          "startSeconds": 113.06
         },
         {
           "title": "回看转写依据",
-          "startSeconds": 172.35
+          "startSeconds": 170.51
         },
         {
           "title": "明确最终清单",
-          "startSeconds": 227.24
+          "startSeconds": 224.76
         },
         {
           "title": "打开保存的纪要",
-          "startSeconds": 285.81
+          "startSeconds": 280.21
         }
       ],
-      "video": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/article.json",
-      "materials": "/media/tutorials/scenario-meeting-actions/v1/zh-CN/materials.zip",
+      "video": "/media/tutorials/scenario-meeting-actions/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-meeting-actions/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-meeting-actions/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-meeting-actions/v2/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-meeting-actions/v2/zh-CN/materials.zip",
       "kind": "scenario",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
@@ -2065,7 +2065,7 @@
     },
     {
       "id": "scenario-weekly-report",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "把零散工作整理成周报",
       "mapNodeIds": [
@@ -2079,7 +2079,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 337.833333,
+      "durationSeconds": 318.3,
       "chapters": [
         {
           "title": "收集一周记录",
@@ -2087,30 +2087,30 @@
         },
         {
           "title": "先看事实来源",
-          "startSeconds": 55.45
+          "startSeconds": 52.33
         },
         {
           "title": "审阅初稿",
-          "startSeconds": 109.14
+          "startSeconds": 105.14
         },
         {
           "title": "提出明确修订",
-          "startSeconds": 164.03
+          "startSeconds": 153.79
         },
         {
           "title": "核对最终结果",
-          "startSeconds": 219.48
+          "startSeconds": 211.08
         },
         {
           "title": "留下可维护的笔记",
-          "startSeconds": 276.21
+          "startSeconds": 262.45
         }
       ],
-      "video": "/media/tutorials/scenario-weekly-report/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/scenario-weekly-report/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/scenario-weekly-report/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/scenario-weekly-report/v1/zh-CN/article.json",
-      "materials": "/media/tutorials/scenario-weekly-report/v1/zh-CN/materials.zip",
+      "video": "/media/tutorials/scenario-weekly-report/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-weekly-report/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-weekly-report/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-weekly-report/v2/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-weekly-report/v2/zh-CN/materials.zip",
       "kind": "scenario",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
@@ -2121,7 +2121,7 @@
     },
     {
       "id": "scenario-competitor-research",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "收集资料并完成竞品对比",
       "mapNodeIds": [
@@ -2134,7 +2134,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 335.6,
+      "durationSeconds": 329.366667,
       "chapters": [
         {
           "title": "先定义研究问题",
@@ -2142,30 +2142,30 @@
         },
         {
           "title": "保留未知项",
-          "startSeconds": 59.85
+          "startSeconds": 58.33
         },
         {
           "title": "用同一维度对照",
-          "startSeconds": 115.94
+          "startSeconds": 116.9
         },
         {
           "title": "限定证据范围",
-          "startSeconds": 169.39
+          "startSeconds": 172.51
         },
         {
           "title": "给出个人优先级",
-          "startSeconds": 226.44
+          "startSeconds": 226.92
         },
         {
           "title": "保存研究与试用清单",
           "startSeconds": 279.97
         }
       ],
-      "video": "/media/tutorials/scenario-competitor-research/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/scenario-competitor-research/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/scenario-competitor-research/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/scenario-competitor-research/v1/zh-CN/article.json",
-      "materials": "/media/tutorials/scenario-competitor-research/v1/zh-CN/materials.zip",
+      "video": "/media/tutorials/scenario-competitor-research/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-competitor-research/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-competitor-research/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-competitor-research/v2/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-competitor-research/v2/zh-CN/materials.zip",
       "kind": "scenario",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
@@ -2176,7 +2176,7 @@
     },
     {
       "id": "scenario-daily-tool",
-      "revision": "v1",
+      "revision": "v2",
       "locale": "zh-CN",
       "title": "做一个每天能用的小工具",
       "mapNodeIds": [
@@ -2189,7 +2189,7 @@
         "capturedAt": "2026-09-15"
       },
       "format": "narrated-screenshots",
-      "durationSeconds": 350.0,
+      "durationSeconds": 328.0,
       "chapters": [
         {
           "title": "把想法变成验收条件",
@@ -2197,30 +2197,30 @@
         },
         {
           "title": "区分预览与安装",
-          "startSeconds": 54.25
+          "startSeconds": 55.85
         },
         {
           "title": "先测试错误输入",
-          "startSeconds": 116.74
+          "startSeconds": 112.1
         },
         {
           "title": "验证完整操作链",
-          "startSeconds": 169.87
+          "startSeconds": 164.59
         },
         {
           "title": "刷新确认真实保存",
-          "startSeconds": 221.72
+          "startSeconds": 214.44
         },
         {
           "title": "验收删除并持续迭代",
-          "startSeconds": 285.01
+          "startSeconds": 272.13
         }
       ],
-      "video": "/media/tutorials/scenario-daily-tool/v1/zh-CN/video.mp4",
-      "poster": "/media/tutorials/scenario-daily-tool/v1/zh-CN/poster.jpg",
-      "captions": "/media/tutorials/scenario-daily-tool/v1/zh-CN/captions.vtt",
-      "article": "/media/tutorials/scenario-daily-tool/v1/zh-CN/article.json",
-      "materials": "/media/tutorials/scenario-daily-tool/v1/zh-CN/materials.zip",
+      "video": "/media/tutorials/scenario-daily-tool/v2/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-daily-tool/v2/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-daily-tool/v2/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-daily-tool/v2/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-daily-tool/v2/zh-CN/materials.zip",
       "kind": "scenario",
       "narration": {
         "provider": "Alibaba Cloud DashScope",
