@@ -1,0 +1,438 @@
+.product-atlas.pm-refined {
+  --page-bg: var(--bg-void);
+  background: var(--bg-void);
+  color: var(--fg-body);
+  font-family: var(--sans);
+  isolation: isolate;
+}
+.product-atlas.pm-refined::before,
+.product-atlas.pm-refined::after {
+  display: none !important;
+}
+html[data-theme="light"] .product-atlas.pm-refined {
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-bright: #0066cc;
+  --bg-void: #f5f5f7;
+  --bg-surface: #eeeef0;
+  --edge-bright: #d2d2d7;
+  --fg-mid: #6e6e73;
+}
+html[data-theme="dark"] .product-atlas.pm-refined {
+  --bg-void: #101010;
+  --bg-surface: #1c1c1e;
+  --bg-card: #232325;
+  --popover-bg: #1c1c1e;
+  --fg-body: #f0f0f2;
+  --fg-head: #f5f5f7;
+  --fg-mid: #a1a1a6;
+  --edge-bright: #38383a;
+  --accent: #2997ff;
+  --accent-hover: #4aa7ff;
+}
+
+.product-atlas.pm-refined .pm-main {
+  max-width: 1240px;
+  padding: 70px 28px 0;
+}
+.product-atlas.pm-refined .pm-intro {
+  align-items: end;
+  margin-bottom: 38px;
+}
+.product-atlas.pm-refined h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  font-weight: 650;
+}
+.product-atlas.pm-refined .pm-intro-description {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.product-atlas.pm-refined .pm-intro-description a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-size: 14px;
+}
+.product-atlas.pm-refined .pm-intro-actions {
+  flex-direction: row;
+  gap: 18px;
+}
+.product-atlas.pm-refined .pm-intro-actions > button {
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--accent);
+  border-radius: 0;
+}
+.product-atlas.pm-refined .pm-intro-actions > button.pm-primary {
+  background: none;
+  color: var(--accent);
+}
+.product-atlas.pm-refined .pm-start-path {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: var(--bg-card);
+  border-radius: 22px;
+  margin-bottom: 48px;
+  overflow: hidden;
+}
+.product-atlas.pm-refined .pm-start-path button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  padding: 28px;
+  border-right: 1px solid var(--bg-void);
+}
+.product-atlas.pm-refined .pm-start-path button:hover {
+  background: var(--bg-surface);
+}
+.product-atlas.pm-refined .pm-start-path span {
+  font-size: 12px;
+  color: var(--fg-mid);
+}
+.product-atlas.pm-refined .pm-start-path strong {
+  font-size: 17px;
+  font-weight: 550;
+}
+.product-atlas.pm-refined .pm-start-path svg {
+  margin-left: auto;
+  color: var(--fg-mid);
+}
+.product-atlas.pm-refined .pm-workspace {
+  display: block;
+}
+.product-atlas.pm-refined .pm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.product-atlas.pm-refined .pm-view-switch {
+  margin: 0;
+  width: auto;
+  border: 0;
+  background: var(--bg-surface);
+  border-radius: 999px;
+  padding: 4px;
+  align-items: center;
+}
+.product-atlas.pm-refined .pm-view-switch button {
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+.product-atlas.pm-refined .pm-view-switch button[aria-pressed="true"] {
+  color: var(--fg-head);
+  box-shadow: 0 1px 5px #00000008;
+}
+.product-atlas.pm-refined .pm-search {
+  width: 230px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--bg-surface);
+  padding: 12px 16px;
+}
+.product-atlas.pm-refined .pm-more-views {
+  position: relative;
+  font-size: 13px;
+  color: var(--fg-mid);
+}
+.product-atlas.pm-refined .pm-more-views summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 9px 18px;
+}
+.product-atlas.pm-refined .pm-more-views summary::after {
+  content: "⌄";
+  margin-left: 8px;
+}
+.product-atlas.pm-refined .pm-more-views > div {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  z-index: 5;
+  background: var(--popover-bg);
+  padding: 6px;
+  min-width: 160px;
+  border: 1px solid var(--edge-bright);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px #00000010;
+}
+.product-atlas.pm-refined .pm-more-views button {
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+}
+.product-atlas.pm-refined .pm-category-tabs {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--edge-bright);
+  margin-bottom: 36px;
+  scrollbar-width: thin;
+}
+.product-atlas.pm-refined .pm-category-tabs button {
+  flex-shrink: 0;
+  padding: 0 0 17px;
+  font-size: 14px;
+  color: var(--fg-mid);
+  white-space: nowrap;
+}
+.product-atlas.pm-refined .pm-category-tabs button[aria-pressed="true"] {
+  color: var(--fg-head);
+  box-shadow: inset 0 -2px var(--fg-head);
+}
+.product-atlas.pm-refined .pm-map-group {
+  border: 0;
+  padding: 0;
+  margin-bottom: 52px;
+}
+.product-atlas.pm-refined .pm-group-heading:before,
+.product-atlas.pm-refined .pm-group-heading > span,
+.product-atlas.pm-refined .pm-support-label {
+  display: none;
+}
+.product-atlas.pm-refined .pm-group-heading h2 {
+  font-size: 27px;
+  letter-spacing: -0.03em;
+}
+.product-atlas.pm-refined .pm-group-heading small {
+  font-size: 12px;
+}
+.product-atlas.pm-refined .pm-group-description {
+  font-size: 15px;
+  margin: 8px 0 24px;
+}
+.product-atlas.pm-refined .pm-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.product-atlas.pm-refined .pm-card {
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  min-height: 190px;
+  background: var(--bg-card);
+  position: relative;
+}
+.product-atlas.pm-refined .pm-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--edge-bright);
+}
+.product-atlas.pm-refined .pm-card.is-selected {
+  background: var(--bg-card);
+  border-color: var(--edge-bright);
+}
+.product-atlas.pm-refined .pm-card-icon {
+  margin-bottom: 25px;
+  color: var(--fg-head);
+}
+.product-atlas.pm-refined .pm-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+.product-atlas.pm-refined .pm-card-title svg {
+  color: var(--fg-mid);
+  width: 15px;
+  position: absolute;
+  top: 30px;
+  right: 24px;
+}
+.product-atlas.pm-refined .pm-card p {
+  font-size: 13px;
+  margin: 9px 0 0;
+  line-height: 1.6;
+}
+.product-atlas.pm-refined .pm-card-status {
+  font-size: 11px;
+  color: var(--amber);
+  margin-top: 16px;
+}
+.product-atlas.pm-refined .pm-catalog .pm-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.product-atlas.pm-refined .pm-catalog .pm-card {
+  min-height: 125px;
+  padding: 22px;
+  border-radius: 16px;
+}
+.product-atlas.pm-refined .pm-catalog .pm-card-icon {
+  display: none;
+}
+.product-atlas.pm-refined .pm-catalog .pm-card-title {
+  padding-right: 20px;
+}
+.product-atlas.pm-refined .pm-dialog {
+  background: var(--popover-bg);
+}
+.product-atlas.pm-refined .pm-dialog.pm-detail-drawer {
+  width: min(720px, 100vw);
+  border-radius: 24px 0 0 24px;
+}
+.product-atlas.pm-refined .pm-dialog-scroll {
+  padding: 32px;
+}
+.product-atlas.pm-refined .pm-dialog-head button {
+  border: 0;
+  border-radius: 50%;
+  background: var(--bg-surface);
+}
+.product-atlas.pm-refined .pm-tutorial {
+  border: 0;
+  border-top: 1px solid var(--edge-bright);
+  border-radius: 0;
+  padding: 22px 0;
+  margin-top: 28px;
+}
+.product-atlas.pm-refined .pm-technical {
+  padding: 20px 0;
+  border-top: 1px solid var(--edge-bright);
+}
+.product-atlas.pm-refined .pm-technical summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+.product-atlas.pm-refined .pm-technical .pm-features {
+  margin-top: 18px;
+}
+.product-atlas.pm-refined .pm-chips a {
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.product-atlas.pm-refined .pm-boundary {
+  border: 0;
+  border-radius: 14px;
+}
+.product-atlas.pm-refined .pm-primary {
+  border-radius: 999px;
+}
+.product-atlas.pm-refined .pm-tour-picker,
+.product-atlas.pm-refined .pm-tour {
+  background: var(--bg-card);
+  border: 0;
+  border-radius: 20px;
+}
+.product-atlas.pm-refined .pm-mind {
+  border-radius: 20px;
+}
+.product-atlas.pm-refined .pm-mind-tools > div > span {
+  display: none;
+}
+@media (max-width: 1050px) {
+  .product-atlas.pm-refined .pm-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .product-atlas.pm-refined .pm-intro {
+    align-items: start;
+  }
+  .product-atlas.pm-refined .pm-intro-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+@media (max-width: 760px) {
+  .product-atlas.pm-refined .pm-main {
+    padding: 48px 20px 0;
+  }
+  .product-atlas.pm-refined .pm-intro {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .product-atlas.pm-refined .pm-intro-actions {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .product-atlas.pm-refined .pm-intro-description {
+    font-size: 15px;
+    gap: 7px 15px;
+  }
+  .product-atlas.pm-refined .pm-start-path {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
+  }
+  .product-atlas.pm-refined .pm-start-path button {
+    padding: 19px 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--bg-void);
+  }
+  .product-atlas.pm-refined .pm-start-path strong {
+    font-size: 16px;
+  }
+  .product-atlas.pm-refined .pm-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .product-atlas.pm-refined .pm-view-switch {
+    align-self: start;
+    justify-content: start;
+    flex-wrap: nowrap;
+    width: auto;
+    gap: 0;
+  }
+  .product-atlas.pm-refined .pm-view-switch button {
+    flex: initial;
+    padding: 9px 14px;
+  }
+  .product-atlas.pm-refined .pm-search {
+    width: 100%;
+  }
+  .product-atlas.pm-refined .pm-category-tabs {
+    gap: 25px;
+    margin-bottom: 28px;
+  }
+  .product-atlas.pm-refined .pm-card {
+    padding: 22px;
+    min-height: 170px;
+  }
+  .product-atlas.pm-refined .pm-card-title {
+    font-size: 17px;
+  }
+  .product-atlas.pm-refined .pm-catalog .pm-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .product-atlas.pm-refined .pm-dialog-scroll {
+    padding: 24px;
+  }
+  .product-atlas.pm-refined .pm-dialog.pm-detail-drawer {
+    border-radius: 0;
+    width: 100vw;
+  }
+}
+@media (max-width: 480px) {
+  .product-atlas.pm-refined .pm-card-grid,
+  .product-atlas.pm-refined .pm-catalog .pm-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .product-atlas.pm-refined .pm-card {
+    padding: 20px 16px;
+    min-height: 170px;
+  }
+  .product-atlas.pm-refined .pm-card-title svg {
+    right: 14px;
+    top: 24px;
+  }
+  .product-atlas.pm-refined .pm-card-title {
+    padding-right: 0;
+    font-size: 16px;
+  }
+  .product-atlas.pm-refined .pm-group-heading h2 {
+    font-size: 25px;
+  }
+}
