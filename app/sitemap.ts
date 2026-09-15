@@ -53,5 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates("/product-map") },
   }));
 
-  return [...homePages, ...productPages, ...mapPages, ...mobilePages, ...legalPages];
+  const learnPages: MetadataRoute.Sitemap = locales.map((locale) => ({
+    url: `${origin}/${locale}/learn`,
+    changeFrequency: "monthly",
+    priority: 0.8,
+    alternates: { languages: languageAlternates("/learn") },
+  }));
+
+  return [...homePages, ...productPages, ...mapPages, ...learnPages, ...mobilePages, ...legalPages];
 }

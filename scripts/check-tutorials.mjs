@@ -29,8 +29,14 @@ for (const tutorial of catalog.tutorials) {
     assert.equal(tutorial[key], `${base}/${filename}`);
     assert.ok(release.files[filename], `Missing ${filename}`);
   }
+  if (tutorial.id.startsWith('scenario-')) {
+    assert.equal(tutorial.kind, 'scenario');
+    assert.equal(tutorial.materials, `${base}/materials.zip`);
+    assert.ok(release.files['materials.zip']);
+    assert.equal(release.kind, 'scenario');
+  }
   for (const [name, record] of Object.entries(release.files)) {
-    assert.match(name, /^(?:video\.mp4|poster\.jpg|captions\.vtt|article\.json|images\/step-\d{2}\.png)$/);
+    assert.match(name, /^(?:video\.mp4|poster\.jpg|captions\.vtt|article\.json|materials\.zip|images\/step-\d{2}\.png)$/);
     const file = path.join(root, `public${base}`, name);
     assert.equal((await stat(file)).size, record.bytes, `${identity}: size differs for ${name}`);
     const hash = createHash('sha256').update(await readFile(file)).digest('hex');

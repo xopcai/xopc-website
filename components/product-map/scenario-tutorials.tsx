@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { courses } from "@/components/learn/courses";
 import catalog from "@/content/tutorials/catalog.json";
 import type { Locale } from "@/lib/i18n/config";
 
-type Tutorial = (typeof catalog.tutorials)[number];
-type Article = { boundaries?: string[]; steps: { id: string; title: string; summary: string; points: string[]; image: string }[] };
+type Tutorial = (typeof catalog.tutorials)[number] & { materials?: string };
+type Article = { boundaries?: string[]; steps: { id: string; title: string; summary: string; points: string[]; image: string; instructions?: string[] }[] };
 
-function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Locale }) {
+export function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Locale }) {
   const video = useRef<HTMLVideoElement>(null);
   const [article, setArticle] = useState<Article | null>(null);
   const [failed, setFailed] = useState(false);
@@ -22,10 +24,7 @@ function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Loca
   return <section className="pm-tutorial">
     <h3>{tutorial.title}</h3>
     <p>{zh ? "中文配音与字幕 · PC 使用教程" : "Chinese narration and captions · Desktop tutorial"} · {Math.round(tutorial.durationSeconds)}{zh ? " 秒" : " sec"}</p>
-    {!!article?.boundaries?.length && <aside>
-      <h4>{zh ? "本课范围" : "Tutorial scope (Chinese)"}</h4>
-      <ul>{article.boundaries.map(boundary => <li key={boundary}>{boundary}</li>)}</ul>
-    </aside>}
+    {tutorial.materials && <a className="pm-primary" href={tutorial.materials} download>{zh ? "下载跟做材料（虚构示例）" : "Download practice files (fictional examples)"}</a>}
     <video ref={video} controls playsInline preload="none" poster={tutorial.poster} aria-label={tutorial.title}>
       <source src={tutorial.video} type="video/mp4"/>
       <track kind="captions" src={tutorial.captions} srcLang="zh-CN" label="简体中文"/>
@@ -35,9 +34,14 @@ function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Loca
       video.current.currentTime = chapter.startSeconds;
       void video.current.play().catch(() => {});
     }}>{chapter.title}</button>)}</div>
+    {!!article?.boundaries?.length && <aside>
+      <h4>{zh ? "本课范围" : "Tutorial scope (Chinese)"}</h4>
+      <ul>{article.boundaries.map(boundary => <li key={boundary}>{boundary}</li>)}</ul>
+    </aside>}
     <details><summary>{zh ? "查看图文步骤" : "View illustrated steps (Chinese)"}</summary>
       {article ? article.steps.map(step => <section key={step.id}>
         <h4>{step.title}</h4><p>{step.summary}</p><ul>{step.points.map(point => <li key={point}>{point}</li>)}</ul>
+        {step.instructions?.map((line, index) => <p key={index}>{line}</p>)}
         {/* Reviewed release images retain their original aspect ratio. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img loading="lazy" src={`${tutorial.article.slice(0, tutorial.article.lastIndexOf("/") + 1)}${step.image}`} alt={step.title}/>
@@ -47,6 +51,13 @@ function TutorialPlayer({ tutorial, locale }: { tutorial: Tutorial; locale: Loca
 }
 
 export function ScenarioTutorials({ nodeId, locale }: { nodeId: string; locale: Locale }) {
-  return catalog.tutorials.filter(tutorial => tutorial.mapNodeIds.includes(nodeId)).map(tutorial =>
-    <TutorialPlayer key={`${tutorial.id}-${tutorial.locale}`} tutorial={tutorial} locale={locale}/>);
+  const related = courses.filter(course => course.nodes.some(node => node === nodeId));
+  return <>
+    {catalog.tutorials.filter(tutorial => !tutorial.id.startsWith("scenario-") && tutorial.mapNodeIds.includes(nodeId)).map(tutorial =>
+      <TutorialPlayer key={`${tutorial.id}-${tutorial.locale}`} tutorial={tutorial} locale={locale}/>)}
+    {related.length > 0 && <section className="pm-tutorial">
+      <h3>{locale === "zh" ? "用这个功能完成一件事" : "Put this feature into practice"}</h3>
+      <div className="pm-chips">{related.map(course => <Link key={course.id} href={`/${locale}/learn?course=${course.id}`}>{course[locale].title} →</Link>)}</div>
+    </section>}
+  </>;
 }

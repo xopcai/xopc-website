@@ -56,3 +56,5 @@
 .pm-tutorial details section{padding:14px 0;border-top:1px solid var(--pm-border,#dce2eb)}
 .pm-tutorial details img{display:block;max-width:100%;height:auto;margin:12px auto;border-radius:8px}
 .pm-tutorial h4{margin:8px 0}.pm-tutorial li{margin:6px 0;font-size:14px}
+
+.pm-learn-banner{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #bdcbeb;border-radius:18px;padding:22px 26px;margin:0 0 28px;background:var(--pm-surface,#f0f5ff);text-decoration:none;color:inherit}.pm-learn-banner strong{display:block;font-size:20px;margin-bottom:6px}.pm-learn-banner span span{font-size:14px;opacity:.7}.pm-tutorial>a.pm-primary{display:inline-flex;margin:10px 0 18px}
