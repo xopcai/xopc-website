@@ -93,6 +93,144 @@
       "poster": "/media/tutorials/models/v1/zh-CN/poster.jpg",
       "captions": "/media/tutorials/models/v1/zh-CN/captions.vtt",
       "article": "/media/tutorials/models/v1/zh-CN/article.json"
+    },
+    {
+      "id": "notes",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把对话整理成可复用笔记",
+      "mapNodeIds": [
+        "notes"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 109.366667,
+      "chapters": [
+        {
+          "title": "打开已有笔记",
+          "startSeconds": 0
+        },
+        {
+          "title": "核对原始内容",
+          "startSeconds": 16.581
+        },
+        {
+          "title": "编辑标题和正文",
+          "startSeconds": 35.67
+        },
+        {
+          "title": "预览排版结果",
+          "startSeconds": 52.741
+        },
+        {
+          "title": "查看历史版本",
+          "startSeconds": 71.006
+        },
+        {
+          "title": "收藏并再次找到",
+          "startSeconds": 88.296
+        }
+      ],
+      "video": "/media/tutorials/notes/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/notes/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/notes/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/notes/v1/zh-CN/article.json"
+    },
+    {
+      "id": "projects",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "用项目组织长期工作",
+      "mapNodeIds": [
+        "projects"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 114.966667,
+      "chapters": [
+        {
+          "title": "给工作一个归属",
+          "startSeconds": 0
+        },
+        {
+          "title": "看清项目方向",
+          "startSeconds": 20.659
+        },
+        {
+          "title": "打开工作材料",
+          "startSeconds": 36.037
+        },
+        {
+          "title": "拆出可执行任务",
+          "startSeconds": 54.303
+        },
+        {
+          "title": "通过看板跟进",
+          "startSeconds": 73.08
+        },
+        {
+          "title": "进入任务详情",
+          "startSeconds": 92.768
+        }
+      ],
+      "video": "/media/tutorials/projects/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/projects/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/projects/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/projects/v1/zh-CN/article.json"
+    },
+    {
+      "id": "tasks",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "从安排任务到验收完成",
+      "mapNodeIds": [
+        "tasks"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 115.4,
+      "chapters": [
+        {
+          "title": "安排与开始分开",
+          "startSeconds": 0
+        },
+        {
+          "title": "检查执行结果",
+          "startSeconds": 18.755
+        },
+        {
+          "title": "验收前再修订",
+          "startSeconds": 39.228
+        },
+        {
+          "title": "核对最终交付",
+          "startSeconds": 57.429
+        },
+        {
+          "title": "明确确认完成",
+          "startSeconds": 75.452
+        },
+        {
+          "title": "回看工作状态",
+          "startSeconds": 93.429
+        }
+      ],
+      "video": "/media/tutorials/tasks/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/tasks/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/tasks/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/tasks/v1/zh-CN/article.json"
     }
   ]
 }
