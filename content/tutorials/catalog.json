@@ -231,6 +231,136 @@
       "poster": "/media/tutorials/tasks/v1/zh-CN/poster.jpg",
       "captions": "/media/tutorials/tasks/v1/zh-CN/captions.vtt",
       "article": "/media/tutorials/tasks/v1/zh-CN/article.json"
+    },
+    {
+      "id": "assistant",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "管理助理的持续跟进",
+      "mapNodeIds": [
+        "assistant"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 108.166667,
+      "chapters": [
+        {
+          "title": "先确认关注要求",
+          "startSeconds": 0
+        },
+        {
+          "title": "恢复持续跟进",
+          "startSeconds": 21.424
+        },
+        {
+          "title": "需要时立即核对",
+          "startSeconds": 37.919
+        },
+        {
+          "title": "回看进展记录",
+          "startSeconds": 54.928
+        },
+        {
+          "title": "区分核对与成果",
+          "startSeconds": 73.298
+        },
+        {
+          "title": "演示结束后暂停",
+          "startSeconds": 90.102
+        }
+      ],
+      "video": "/media/tutorials/assistant/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/assistant/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/assistant/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/assistant/v1/zh-CN/article.json"
+    },
+    {
+      "id": "home",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "从工作台开始一件事",
+      "mapNodeIds": [
+        "home"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 77.633333,
+      "chapters": [
+        {
+          "title": "先看当前状态",
+          "startSeconds": 0
+        },
+        {
+          "title": "把要求说具体",
+          "startSeconds": 19.428
+        },
+        {
+          "title": "检查实际回答",
+          "startSeconds": 37.739
+        },
+        {
+          "title": "回到工作台",
+          "startSeconds": 56.789
+        }
+      ],
+      "video": "/media/tutorials/home/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/home/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/home/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/home/v1/zh-CN/article.json"
+    },
+    {
+      "id": "settings",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "调整语言主题与使用偏好",
+      "mapNodeIds": [
+        "settings"
+      ],
+      "product": {
+        "version": "0.0.276",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-15"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 102.2,
+      "chapters": [
+        {
+          "title": "找到快捷设置",
+          "startSeconds": 0
+        },
+        {
+          "title": "切换主题亮暗",
+          "startSeconds": 15.494
+        },
+        {
+          "title": "切换界面语言",
+          "startSeconds": 32.099
+        },
+        {
+          "title": "选择对话字号",
+          "startSeconds": 46.906
+        },
+        {
+          "title": "集中管理偏好",
+          "startSeconds": 65.078
+        },
+        {
+          "title": "查看常用快捷键",
+          "startSeconds": 83.74
+        }
+      ],
+      "video": "/media/tutorials/settings/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/settings/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/settings/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/settings/v1/zh-CN/article.json"
     }
   ]
 }
