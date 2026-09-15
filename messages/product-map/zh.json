@@ -1,20 +1,20 @@
 {
   "ui": {
     "title": "产品地图",
-    "headline": "产品地图。",
-    "description": "从开始，到持续协作。",
+    "headline": "从一件重要的事，走进 xopc",
+    "description": "从第一次相遇，到持续协作。沿着用户旅程探索，或展开整个产品的思维导图。",
     "metaDescription": "探索 xopc 的 8 个功能领域与 47 项能力：从首次设置、个人理解和任务推进，到编程开发、终端使用、工作流与自动化。",
     "eyebrow": "XOPC · 产品探索",
     "home": "返回首页",
-    "all": "全部功能",
+    "all": "完整产品地图",
     "search": "搜索功能、场景…",
     "searchLabel": "搜索产品功能",
     "views": "选择地图视图",
-    "map": "按功能",
+    "map": "探索地图",
     "mindmap": "思维导图",
     "architecture": "主从架构",
     "catalog": "功能目录",
-    "start": "新手路线",
+    "start": "开始导览",
     "chooseJourney": "选择一条探索路线",
     "journeyDescription": "围绕一个真实目的，依次了解相关功能。",
     "next": "下一步",
@@ -61,35 +61,35 @@
   },
   "groups": {
     "start": {
-      "title": "开始",
+      "title": "相遇与开始",
       "description": "先建立连接，再带入一件真实的事。"
     },
     "understand": {
-      "title": "理解",
+      "title": "理解与你有关的事",
       "description": "把了解变成可确认、可纠正的共同上下文。"
     },
     "work": {
-      "title": "工作",
+      "title": "从想法到结果",
       "description": "对话接住想法，任务承载结果，项目连接上下文。"
     },
     "initiative": {
-      "title": "跟进",
+      "title": "让重要的事继续",
       "description": "从一次执行，走向有边界的复用与跟进。"
     },
     "capability": {
-      "title": "能力",
+      "title": "执行能力",
       "description": "为每类工作组合合适的助理、方法和行动能力。"
     },
     "connect": {
-      "title": "连接",
+      "title": "连接与扩展",
       "description": "按需接入来源、外部工具和专属应用。"
     },
     "access": {
-      "title": "设备",
+      "title": "随处继续",
       "description": "不同入口连接同一个 Gateway 与持久上下文。"
     },
     "trust": {
-      "title": "隐私",
+      "title": "控制与信任",
       "description": "权限、数据、可追溯记录和运行保障贯穿整个产品。"
     }
   },

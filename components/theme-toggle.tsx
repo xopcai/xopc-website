@@ -63,7 +63,7 @@ export function ThemeToggle({
   ariaToggle: string;
   variant?: "icon" | "pill";
 }) {
-  const theme = useSyncExternalStore(subscribeTheme, readTheme, () => DEFAULT_THEME);
+  const theme = useSyncExternalStore(subscribeTheme, readTheme, () => "dark" as Theme);
 
   const toggle = useCallback(() => {
     const next: Theme = theme === "dark" ? "light" : "dark";
