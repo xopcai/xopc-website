@@ -40,7 +40,7 @@ const DOWNLOAD_CLICK_EVENTS = [
 ] as const;
 
 function periodStart(days: number): string {
-  return `-${days - 1} days`;
+  return new Date(Date.now() - (days - 1) * 86_400_000).toISOString();
 }
 
 export function getAnalyticsSummary(days = 30): AnalyticsSummary {
@@ -56,7 +56,7 @@ export function getAnalyticsSummary(days = 30): AnalyticsSummary {
       SUM(event = 'download_started') AS downloadStarts,
       SUM(event = 'ios_beta_signup_succeeded') AS signups
     FROM product_events
-    WHERE created_at >= datetime('now', ?)
+    WHERE created_at >= ?
   `).get(...DOWNLOAD_CLICK_EVENTS, start) as Record<string, number | null>;
 
   const dailyRows = database.prepare(`
@@ -68,7 +68,7 @@ export function getAnalyticsSummary(days = 30): AnalyticsSummary {
       SUM(event = 'download_started') AS downloadStarts,
       SUM(event = 'ios_beta_signup_succeeded') AS signups
     FROM product_events
-    WHERE created_at >= datetime('now', ?)
+    WHERE created_at >= ?
     GROUP BY date(created_at, 'localtime')
     ORDER BY date
   `).all(...DOWNLOAD_CLICK_EVENTS, start) as Array<Record<string, string | number>>;
@@ -77,7 +77,7 @@ export function getAnalyticsSummary(days = 30): AnalyticsSummary {
     database.prepare(`
       SELECT ${expression} AS label, COUNT(*) AS value
       FROM product_events
-      WHERE event = ? AND created_at >= datetime('now', ?)
+      WHERE event = ? AND created_at >= ?
       GROUP BY label
       ORDER BY value DESC, label
       LIMIT 8

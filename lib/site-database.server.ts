@@ -121,7 +121,9 @@ export function getSiteDatabase(): Database.Database {
     CREATE INDEX IF NOT EXISTS product_events_event_created_at ON product_events(event, created_at);
     CREATE INDEX IF NOT EXISTS product_events_session_id ON product_events(session_id) WHERE session_id IS NOT NULL;
   `);
-  database.prepare("DELETE FROM product_events WHERE created_at < datetime('now', '-180 days')").run();
+  database.prepare("DELETE FROM product_events WHERE created_at < ?").run(
+    new Date(Date.now() - 180 * 86_400_000).toISOString(),
+  );
   return database;
 }
 

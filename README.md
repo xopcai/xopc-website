@@ -43,6 +43,10 @@ Client events capture page path, external referrer domain, UTM attribution, loca
 type. Successful iOS beta signups and installation-package requests are recorded on the server. Raw
 events are retained for 180 days.
 
+The production deploy script installs a user crontab that sends a Telegram summary every day at
+09:00 Asia/Shanghai. It reuses `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; preview the message without
+sending it with `pnpm analytics:report:dry-run`, or send immediately with `pnpm analytics:report`.
+
 ## Content map
 
 - Landing page copy: `messages/en.json` and `messages/zh.json`

@@ -137,6 +137,20 @@ main() {
         # SQLite 应用数据与发布 / CloakBrowser 缓存目录
         mkdir -p .data .data/cloakbrowser-cache
 
+        # 每天北京时间 09:00 发送官网数据日报；标记区块便于重复部署时幂等更新。
+        NODE_BIN=\$(command -v node)
+        CRON_BEGIN="# BEGIN xopc-website analytics report"
+        CRON_END="# END xopc-website analytics report"
+        EXISTING_CRON=\$(crontab -l 2>/dev/null || true)
+        FILTERED_CRON=\$(printf '%s\n' "\$EXISTING_CRON" | sed "/^\$CRON_BEGIN\$/,/^\$CRON_END\$/d")
+        {
+            printf '%s\n' "\$FILTERED_CRON"
+            printf '%s\n' "\$CRON_BEGIN"
+            printf '%s\n' "CRON_TZ=Asia/Shanghai"
+            printf '%s\n' "0 9 * * * cd $REMOTE_DIR && \$NODE_BIN scripts/send-analytics-report.mjs >> .data/analytics-report.log 2>&1"
+            printf '%s\n' "\$CRON_END"
+        } | crontab -
+
         # 重启 PM2（使用 ecosystem，避免 pnpm/Next.js 参数转发歧义）
         echo "重启应用..."
         pm2 startOrReload ecosystem.config.cjs --update-env
