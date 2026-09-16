@@ -15,12 +15,12 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
   const [selected, setSelected] = useState(courses.some(c => c.id === initialCourse) ? initialCourse : "");
   const [category, setCategory] = useState("all");
   const visibleCourses = courses.filter(c => category === "all" || c.category === category);
-  const drawer = useRef<HTMLDialogElement>(null);
+  const modal = useRef<HTMLDialogElement>(null);
   const course = courses.find(c => c.id === selected);
   const tutorial = catalog.tutorials.find(t => t.id === selected);
   const other = zh ? "en" : "zh";
   useEffect(() => {
-    const dialog = drawer.current;
+    const dialog = modal.current;
     if (selected) dialog?.showModal(); else dialog?.close();
     const previous = document.body.style.overflow;
     if (selected) document.body.style.overflow = "hidden";
@@ -41,9 +41,9 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
         <h2>{copy.title}</h2><p>{copy.outcome}</p><div className="learn-result">{copy.result}</div><div className="learn-card-bottom"><span>{zh ? "观看并跟做" : "Watch and practice"}</span><ArrowRight size={18}/></div>
       </button>;
     })}</section><section className="learn-guide"><h2>{zh ? "怎样跟着做" : "How to follow along"}</h2><ol><li>{zh ? "先完成模型接入，下载课程中的虚构练习材料。" : "Connect a model and download the fictional practice files."}</li><li>{zh ? "观看章节，暂停视频，在自己的 xopc 中执行同一步骤。" : "Watch a chapter, pause and try the steps in your own xopc."}</li><li>{zh ? "核对来源、日期与实际保存结果，再换成自己的授权资料。" : "Check sources, dates and saved results before using your own authorized materials."}</li></ol><Link href={`/${locale}/product-map?node=models`}>{zh ? "回到功能地图，补齐基础操作" : "Review the basics in the product map"}<ArrowRight size={16}/></Link><p>{zh ? "视频结合真实 PC 界面截图与实际交付文件预览。示例人物和业务材料为虚构；英文页面的视频与详细教程仍为中文。" : "Videos combine real desktop screenshots with previews of actual deliverables. People and business materials are fictional. Videos and detailed guides are currently in Chinese."}</p></section></main>
-    <dialog className="pm-dialog pm-detail-drawer learn-drawer" ref={drawer} onClose={() => setSelected("")} aria-labelledby="learn-course-title" onClick={event => {if (event.target === event.currentTarget) {const r = event.currentTarget.getBoundingClientRect();if(event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) setSelected("");}}}>
-      <div className="pm-dialog-head"><span>{zh ? "场景实战" : "Practical workflow"}</span><button onClick={() => setSelected("")} aria-label={zh ? "关闭课程" : "Close course"}><X/></button></div>
-      <div className="pm-dialog-scroll" key={selected}>{course && <><p className="pm-eyebrow">{course[locale].audience}</p><h2 id="learn-course-title">{course[locale].title}</h2><p>{course[locale].outcome}</p>{tutorial && <TutorialPlayer tutorial={tutorial} locale={locale}/>}<h3>{zh ? "相关功能" : "Related features"}</h3><div className="pm-chips">{course.nodes.map(node => <Link key={node} href={`/${locale}/product-map?node=${node}`}>{getProductMapMessages(locale).nodes[node as NodeId].title}<ArrowRight size={14}/></Link>)}</div><p className="learn-download-note"><Download size={15}/>{zh ? "材料是独立示例，可重复解压练习；不要覆盖自己的正式资料。" : "Practice files are standalone examples. Extract a fresh copy for another attempt."}</p></>}</div>
+    <dialog className="pm-dialog learn-modal" ref={modal} onClose={() => setSelected("")} aria-labelledby="learn-course-title" onClick={event => {if (event.target === event.currentTarget) {const r = event.currentTarget.getBoundingClientRect();if(event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) setSelected("");}}}>
+      <div className="pm-dialog-head"><h2 id="learn-course-title">{course?.[locale].title}</h2><button autoFocus onClick={() => setSelected("")} aria-label={zh ? "关闭课程" : "Close course"}><X/></button></div>
+      <div className="pm-dialog-scroll" key={selected}>{course && <>{tutorial && <TutorialPlayer tutorial={tutorial} locale={locale} focused/>}<h3>{zh ? "相关功能" : "Related features"}</h3><div className="pm-chips">{course.nodes.map(node => <Link key={node} href={`/${locale}/product-map?node=${node}`}>{getProductMapMessages(locale).nodes[node as NodeId].title}<ArrowRight size={14}/></Link>)}</div><p className="learn-download-note"><Download size={15}/>{zh ? "材料是独立示例，可重复解压练习；不要覆盖自己的正式资料。" : "Practice files are standalone examples. Extract a fresh copy for another attempt."}</p></>}</div>
     </dialog>
   </div>;
 }
