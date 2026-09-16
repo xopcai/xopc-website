@@ -2228,6 +2228,446 @@
         "voice": "Cherry",
         "locale": "zh-CN"
       }
+    },
+    {
+      "id": "scenario-business-ppt",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把业务资料做成汇报 PPT",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 161.5,
+      "chapters": [
+        {
+          "title": "从报表到汇报",
+          "startSeconds": 0
+        },
+        {
+          "title": "给出汇报的边界",
+          "startSeconds": 23.85
+        },
+        {
+          "title": "先搭好故事顺序",
+          "startSeconds": 52.74
+        },
+        {
+          "title": "把一页讲清楚",
+          "startSeconds": 79.07
+        },
+        {
+          "title": "把事实和判断分开",
+          "startSeconds": 105.64
+        },
+        {
+          "title": "检查成品能否交付",
+          "startSeconds": 133.33
+        }
+      ],
+      "video": "/media/tutorials/scenario-business-ppt/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-business-ppt/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-business-ppt/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-business-ppt/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-business-ppt/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-campaign-review",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把活动数据整理成复盘报告",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 173.366667,
+      "chapters": [
+        {
+          "title": "让数据带出下一步",
+          "startSeconds": 0
+        },
+        {
+          "title": "先给定义，再做分析",
+          "startSeconds": 26.17
+        },
+        {
+          "title": "看总体，别平均百分比",
+          "startSeconds": 56.58
+        },
+        {
+          "title": "把现象与原因分开",
+          "startSeconds": 88.67
+        },
+        {
+          "title": "让复盘落到行动",
+          "startSeconds": 114.44
+        },
+        {
+          "title": "交付前做交叉检查",
+          "startSeconds": 145.89
+        }
+      ],
+      "video": "/media/tutorials/scenario-campaign-review/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-campaign-review/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-campaign-review/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-campaign-review/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-campaign-review/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-client-brief",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "准备客户拜访资料包",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 156.566667,
+      "chapters": [
+        {
+          "title": "带着问题去见客户",
+          "startSeconds": 0
+        },
+        {
+          "title": "先提供已知信息",
+          "startSeconds": 23.53
+        },
+        {
+          "title": "核对客户背景",
+          "startSeconds": 50.5
+        },
+        {
+          "title": "问题要适合会议时长",
+          "startSeconds": 76.99
+        },
+        {
+          "title": "把边界带到现场",
+          "startSeconds": 104.04
+        },
+        {
+          "title": "出发前再检查一次",
+          "startSeconds": 130.29
+        }
+      ],
+      "video": "/media/tutorials/scenario-client-brief/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-client-brief/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-client-brief/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-client-brief/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-client-brief/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-client-proposal",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把零散材料整理成客户方案",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 161.433333,
+      "chapters": [
+        {
+          "title": "把需求变成方案",
+          "startSeconds": 0
+        },
+        {
+          "title": "给齐三类材料",
+          "startSeconds": 24.73
+        },
+        {
+          "title": "先定范围",
+          "startSeconds": 51.94
+        },
+        {
+          "title": "让费用一眼能对上",
+          "startSeconds": 78.03
+        },
+        {
+          "title": "把未决事项留下",
+          "startSeconds": 104.2
+        },
+        {
+          "title": "交付前看一遍版面",
+          "startSeconds": 132.53
+        }
+      ],
+      "video": "/media/tutorials/scenario-client-proposal/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-client-proposal/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-client-proposal/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-client-proposal/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-client-proposal/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-feedback-analysis",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "从用户反馈中找到改进重点",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 157.766667,
+      "chapters": [
+        {
+          "title": "从反馈到改进方向",
+          "startSeconds": 0
+        },
+        {
+          "title": "先约定统计口径",
+          "startSeconds": 24.97
+        },
+        {
+          "title": "先看几条明细",
+          "startSeconds": 53.86
+        },
+        {
+          "title": "再看整体分布",
+          "startSeconds": 79.07
+        },
+        {
+          "title": "把建议连回证据",
+          "startSeconds": 103.64
+        },
+        {
+          "title": "持续更新这份清单",
+          "startSeconds": 131.17
+        }
+      ],
+      "video": "/media/tutorials/scenario-feedback-analysis/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-feedback-analysis/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-feedback-analysis/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-feedback-analysis/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-feedback-analysis/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-monthly-refresh",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "换一批数据更新月度报表",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 156.166667,
+      "chapters": [
+        {
+          "title": "下个月，不必从头开始",
+          "startSeconds": 0
+        },
+        {
+          "title": "给出旧报表和新数据",
+          "startSeconds": 23.37
+        },
+        {
+          "title": "先核对历史结果",
+          "startSeconds": 49.3
+        },
+        {
+          "title": "再核对新增月份",
+          "startSeconds": 74.43
+        },
+        {
+          "title": "看变化，也保留未知",
+          "startSeconds": 102.36
+        },
+        {
+          "title": "保留版本，方便下次接着做",
+          "startSeconds": 130.61
+        }
+      ],
+      "video": "/media/tutorials/scenario-monthly-refresh/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-monthly-refresh/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-monthly-refresh/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-monthly-refresh/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-monthly-refresh/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-sales-excel",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "把三张销售表整理成经营报表",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 182.066667,
+      "chapters": [
+        {
+          "title": "三张表，一份报表",
+          "startSeconds": 0
+        },
+        {
+          "title": "先说清楚任务",
+          "startSeconds": 27.77
+        },
+        {
+          "title": "先检查，再汇总",
+          "startSeconds": 62.5
+        },
+        {
+          "title": "核对关键数字",
+          "startSeconds": 90.35
+        },
+        {
+          "title": "把异常单独留下",
+          "startSeconds": 122.76
+        },
+        {
+          "title": "拿到文件，再复用",
+          "startSeconds": 152.45
+        }
+      ],
+      "video": "/media/tutorials/scenario-sales-excel/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-sales-excel/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-sales-excel/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-sales-excel/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-sales-excel/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
+    },
+    {
+      "id": "scenario-supplier-quotes",
+      "revision": "v1",
+      "locale": "zh-CN",
+      "title": "比较三份供应商报价",
+      "mapNodeIds": [
+        "chat",
+        "tools"
+      ],
+      "product": {
+        "version": "0.0.284",
+        "platform": "PC web console connected to local desktop gateway",
+        "capturedAt": "2026-09-16"
+      },
+      "format": "narrated-screenshots",
+      "durationSeconds": 153.766667,
+      "chapters": [
+        {
+          "title": "先统一，再比较",
+          "startSeconds": 0
+        },
+        {
+          "title": "说清采购要求",
+          "startSeconds": 24.25
+        },
+        {
+          "title": "核对计算口径",
+          "startSeconds": 46.74
+        },
+        {
+          "title": "低价不等于合适",
+          "startSeconds": 72.59
+        },
+        {
+          "title": "让建议可复核",
+          "startSeconds": 98.04
+        },
+        {
+          "title": "把比较过程保存下来",
+          "startSeconds": 126.77
+        }
+      ],
+      "video": "/media/tutorials/scenario-supplier-quotes/v1/zh-CN/video.mp4",
+      "poster": "/media/tutorials/scenario-supplier-quotes/v1/zh-CN/poster.jpg",
+      "captions": "/media/tutorials/scenario-supplier-quotes/v1/zh-CN/captions.vtt",
+      "article": "/media/tutorials/scenario-supplier-quotes/v1/zh-CN/article.json",
+      "materials": "/media/tutorials/scenario-supplier-quotes/v1/zh-CN/materials.zip",
+      "kind": "scenario",
+      "narration": {
+        "provider": "Alibaba Cloud DashScope",
+        "model": "qwen3-tts-instruct-flash-2026-01-26",
+        "voice": "Cherry",
+        "locale": "zh-CN"
+      }
     }
   ]
 }
