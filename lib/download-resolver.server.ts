@@ -1,17 +1,13 @@
 import "server-only";
 
-import { iosDistribution, releasePublicBaseUrl } from "@/lib/distribution-config.server";
+import { iosDistribution } from "@/lib/distribution-config.server";
 import type { DownloadPlatform, DownloadResolution } from "@/lib/download-resolution";
 import { fetchAndroidRelease } from "@/lib/github-mobile-release";
 import { assetPickers, type ReleaseAsset } from "@/lib/release-assets";
 import { fetchDesktopRelease } from "@/lib/release-download-cache";
 
-function proxyUrl(tag: string, name: string): string {
-  const publicBaseUrl = releasePublicBaseUrl();
-  if (publicBaseUrl) {
-    return `${publicBaseUrl}/${encodeURIComponent(tag)}/${encodeURIComponent(name)}`;
-  }
-  return `/api/download/release?tag=${encodeURIComponent(tag)}&name=${encodeURIComponent(name)}`;
+function proxyUrl(tag: string, name: string, locale: "zh" | "en"): string {
+  return `/api/download/release?tag=${encodeURIComponent(tag)}&name=${encodeURIComponent(name)}&locale=${locale}`;
 }
 
 function assetsForDesktopPlatform(
@@ -33,7 +29,7 @@ function assetsForDesktopPlatform(
   });
 }
 
-export async function resolveDownload(platform: DownloadPlatform): Promise<DownloadResolution> {
+export async function resolveDownload(platform: DownloadPlatform, locale: "zh" | "en"): Promise<DownloadResolution> {
   if (platform === "ios") {
     const distribution = iosDistribution();
     if (distribution.status === "public" || distribution.status === "released") {
@@ -67,11 +63,11 @@ export async function resolveDownload(platform: DownloadPlatform): Promise<Downl
       channel: "android-stable",
       version: release.tag,
       assets: [
-        { name: release.asset.name, url: proxyUrl(release.tag, release.asset.name) },
+        { name: release.asset.name, url: proxyUrl(release.tag, release.asset.name, locale) },
         ...(release.checksumAsset
           ? [{
               name: release.checksumAsset.name,
-              url: proxyUrl(release.tag, release.checksumAsset.name),
+              url: proxyUrl(release.tag, release.checksumAsset.name, locale),
             }]
           : []),
       ],
@@ -88,7 +84,7 @@ export async function resolveDownload(platform: DownloadPlatform): Promise<Downl
     version: release.tag,
     assets: assetsForDesktopPlatform(platform, release.assets).map((asset) => ({
       name: asset.name,
-      url: proxyUrl(release.tag, asset.name),
+      url: proxyUrl(release.tag, asset.name, locale),
     })),
   };
 }

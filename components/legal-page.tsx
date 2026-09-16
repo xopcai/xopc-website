@@ -35,11 +35,11 @@ type LegalContent = {
 
 const privacyContent: Record<Locale, LegalContent> = {
   zh: {
-    eyebrow: "xopc 移动端",
+    eyebrow: "xopc 移动端与官网",
     title: "隐私政策",
-    intro: "本政策说明个人开发者徐巧民发行的 xopc 移动端如何处理数据。App 免费提供，不含购买或订阅，仅连接由用户自行运行和管理的网关。",
+    intro: "本政策说明个人开发者徐巧民发行的 xopc 移动端及运营的 xopc 官网如何处理数据。App 免费提供，不含购买或订阅，仅连接由用户自行运行和管理的网关。",
     effectiveLabel: "生效日期",
-    effectiveDate: "2026 年 9 月 4 日",
+    effectiveDate: "2026 年 9 月 16 日",
     publisherLabel: "发布者／运营主体",
     publisher: "徐巧民",
     contactLabel: "隐私和删除请求邮箱",
@@ -61,6 +61,7 @@ const privacyContent: Record<Locale, LegalContent> = {
           "相机、照片、麦克风和联系人权限仅用于相关功能。联系人工具请求批准后返回选中或匹配的姓名、电话和邮箱。剪贴板建议默认关闭；开启后，App 会在打开或返回前台时读取剪贴板文本。主动选择“粘贴配对链接”会为该操作读取剪贴板。",
           "开启通知后，App 向网关注册 Expo 推送令牌、平台和语言。通知通过 Expo Push Service 及相应平台的 Apple 推送通知服务或 Google Firebase Cloud Messaging 发送，可能包含网关配置的内容预览。",
           "App 在设备上保存偏好设置、工作区缓存、待提交内容、授权选择及最多 200 条使用或性能事件。发行包不包含远程分析、广告或第三方崩溃上报 SDK；通过 TestFlight 或 Google Play 测试或分发时，相应平台可能向开发者提供其收集的崩溃、无响应和测试诊断信息。",
+          "访问 xopc 官网时，官网以第一方方式记录匿名页面访问和下载转化，包括随机的标签页级会话标识、页面路径、外部来源域名、UTM 活动参数、语言、粗粒度设备类型及下载或报名结果。官网不设置长期分析 Cookie，不保存完整来源网址、消息或文件，也不将内测报名邮箱与行为事件关联。",
         ],
       },
       {
@@ -74,7 +75,7 @@ const privacyContent: Record<Locale, LegalContent> = {
       {
         title: "保存期限与训练",
         paragraphs: [
-          "发布者不在自有后端保存用户的消息、笔记、文件、语音、网关凭据或 AI 内容，也不使用这些内容训练模型。设备本地数据保留至用户在 App 中删除、移除连接、清除 App 数据或卸载 App。配对网页不保存配对载荷；必要的运维错误日志按站点安全和故障处理所需期限保留。",
+          "发布者不在自有后端保存用户的消息、笔记、文件、语音、网关凭据或 AI 内容，也不使用这些内容训练模型。设备本地数据保留至用户在 App 中删除、移除连接、清除 App 数据或卸载 App。官网匿名产品事件最多保存 180 天；标签页级会话标识在标签页关闭后由浏览器清除。配对网页不保存配对载荷；必要的运维错误日志按站点安全和故障处理所需期限保留。",
           "对于独立运营的网关及服务商，请向相关运营者了解其保存与训练规则。本 App 不对所有可配置服务商作出“不保存数据”或“不用于训练”的统一承诺。",
         ],
       },
@@ -88,11 +89,11 @@ const privacyContent: Record<Locale, LegalContent> = {
     ],
   },
   en: {
-    eyebrow: "xopc Mobile",
+    eyebrow: "xopc Mobile and website",
     title: "Privacy Policy",
-    intro: "This policy explains how the xopc Mobile application distributed by individual developer Qiaomin Xu handles data. The app is free, contains no purchases or subscriptions, and connects only to gateways run and administered by users.",
+    intro: "This policy explains how the xopc Mobile application distributed by individual developer Qiaomin Xu and the xopc website operated by the same publisher handle data. The app is free, contains no purchases or subscriptions, and connects only to gateways run and administered by users.",
     effectiveLabel: "Effective date",
-    effectiveDate: "September 4, 2026",
+    effectiveDate: "September 16, 2026",
     publisherLabel: "Publisher / operator",
     publisher: "Qiaomin Xu",
     contactLabel: "Privacy and deletion contact",
@@ -114,6 +115,7 @@ const privacyContent: Record<Locale, LegalContent> = {
           "Camera, photo, microphone, and contact access are used for the associated features. Contact tools ask for approval and return selected or matching names, phone numbers, and email addresses. Clipboard suggestions are disabled by default; enabling them permits reading clipboard text when the app opens or returns to the foreground. Explicitly choosing “Paste pairing link” reads the clipboard for that action.",
           "If notifications are enabled, the app registers an Expo push token, platform, and language with the gateway. Notifications pass through Expo Push Service and the platform's Apple Push Notification service or Google Firebase Cloud Messaging, and may contain previews configured by the gateway.",
           "The app keeps preferences, cached workspace content, pending submissions, consent choices, and up to 200 usage or performance events locally. The distribution build contains no remote analytics, advertising, or third-party crash-reporting SDK. When distributed through TestFlight or Google Play testing or production, the platform may provide the developer with crash, application-not-responding, and testing diagnostics it collects.",
+          "When you visit the xopc website, it records first-party anonymous page and download-conversion events, including a random tab-scoped session ID, page path, external referrer domain, UTM campaign parameters, language, coarse device type, and download or signup outcomes. The website sets no persistent analytics cookie, stores no full referrer URL, messages, or files, and does not associate beta-signup email addresses with behavior events.",
         ],
       },
       {
@@ -127,7 +129,7 @@ const privacyContent: Record<Locale, LegalContent> = {
       {
         title: "Retention and training",
         paragraphs: [
-          "The publisher does not store users' messages, notes, files, audio, gateway credentials, or AI content on a publisher backend and does not use that content to train models. On-device data remains until the user deletes it in the app, removes a connection, clears app data, or uninstalls the app. The pairing page does not retain pairing payloads; necessary operational error logs are retained only as needed for site security and troubleshooting.",
+          "The publisher does not store users' messages, notes, files, audio, gateway credentials, or AI content on a publisher backend and does not use that content to train models. On-device data remains until the user deletes it in the app, removes a connection, clears app data, or uninstalls the app. Anonymous website product events are retained for no more than 180 days; the browser clears the tab-scoped session ID when the tab closes. The pairing page does not retain pairing payloads; necessary operational error logs are retained only as needed for site security and troubleshooting.",
           "For independently operated gateways and providers, contact the relevant operator for their retention and training practices. This application does not make a blanket promise that all configurable providers retain no data or never train on it.",
         ],
       },

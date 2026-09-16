@@ -3,6 +3,9 @@ import {
   assertAllowedReleaseTag,
   serveCachedReleaseDownload,
 } from "@/lib/release-download-cache";
+import { downloadEventDimensions } from "@/lib/download-event.server";
+import { releasePublicBaseUrl } from "@/lib/distribution-config.server";
+import { recordProductEvent, type SiteLocale } from "@/lib/site-database.server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,7 +23,16 @@ export async function GET(req: Request) {
   }
 
   try {
-    return await serveCachedReleaseDownload(tag, name);
+    const publicBaseUrl = releasePublicBaseUrl();
+    const response = publicBaseUrl
+      ? Response.redirect(`${publicBaseUrl}/${encodeURIComponent(tag)}/${encodeURIComponent(name)}`, 307)
+      : await serveCachedReleaseDownload(tag, name);
+    const dimensions = response.status < 400 ? downloadEventDimensions(tag, name) : null;
+    if (dimensions) {
+      const locale: SiteLocale = searchParams.get("locale") === "en" ? "en" : "zh";
+      recordProductEvent({ event: "download_started", locale, ...dimensions });
+    }
+    return response;
   } catch (e) {
     const msg = e instanceof Error ? e.message : "";
     if (msg === "release_download_lock_timeout") {

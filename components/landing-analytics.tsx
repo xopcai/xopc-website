@@ -6,8 +6,6 @@ import { isProductEventName, trackProductEvent } from "@/lib/product-events";
 
 export function LandingAnalytics() {
   useEffect(() => {
-    trackProductEvent("landing_viewed");
-
     const onClick = (event: MouseEvent) => {
       const target = event.target;
       if (!(target instanceof Element)) return;

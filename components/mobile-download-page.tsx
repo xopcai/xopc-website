@@ -2,7 +2,7 @@
 
 import { ArrowLeft, Check, MonitorSmartphone, ShieldCheck } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { AndroidDownload, IosDownload } from "@/components/mobile-downloads";
@@ -10,7 +10,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
-import { trackProductEvent } from "@/lib/product-events";
 
 export type MobilePlatform = "android" | "ios";
 
@@ -42,13 +41,6 @@ export function MobileDownloadPage({ locale, messages: m, initialPlatform, sourc
   const [selectedPlatform, setSelectedPlatform] = useState<MobilePlatform | null>(null);
   const platform = selectedPlatform ?? detectedPlatform;
   const page = m.landing.mobilePage;
-
-  useEffect(() => {
-    trackProductEvent("mobile_download_page_viewed", {
-      method: source,
-      platform: detectBrowserPlatform(initialPlatform),
-    });
-  }, [initialPlatform, source]);
 
   return (
     <div className="landing-page mobile-download-page">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ThemeDocumentSync } from "@/components/theme-document-sync";
+import { SiteAnalytics } from "@/components/site-analytics";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { landingDisplayFont } from "@/lib/landing-fonts";
@@ -75,6 +76,7 @@ export default async function LocaleLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: localeTransitionInitScript }} />
         <ThemeDocumentSync />
+        <SiteAnalytics />
         {children}
       </body>
     </html>

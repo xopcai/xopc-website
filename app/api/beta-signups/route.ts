@@ -1,5 +1,5 @@
 import { requestIp, takeRateLimit } from "@/lib/request-rate-limit";
-import { createIosBetaSignup, type SiteLocale } from "@/lib/site-database.server";
+import { createIosBetaSignup, recordProductEvent, type SiteLocale } from "@/lib/site-database.server";
 import { notifyIosBetaSignup } from "@/lib/telegram-beta-notify";
 import { iosDistribution } from "@/lib/distribution-config.server";
 
@@ -75,7 +75,15 @@ export async function POST(request: Request) {
     locale,
     source,
   });
-  if (result.created) await notifyIosBetaSignup(email);
+  if (result.created) {
+    recordProductEvent({
+      event: "ios_beta_signup_succeeded",
+      locale,
+      method: source,
+      platform: "ios",
+    });
+    await notifyIosBetaSignup(email);
+  }
 
   return Response.json(
     { success: true, created: result.created },

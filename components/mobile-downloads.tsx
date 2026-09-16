@@ -16,7 +16,8 @@ function useDownloadResolution(platform: Extract<DownloadPlatform, "android" | "
 
   useEffect(() => {
     let cancelled = false;
-    void fetch(`/api/downloads/resolve?platform=${platform}`)
+    const locale = document.documentElement.lang === "en" ? "en" : "zh";
+    void fetch(`/api/downloads/resolve?platform=${platform}&locale=${locale}`)
       .then((response) => response.json() as Promise<DownloadResolution>)
       .catch((): DownloadResolution => ({ ok: false, platform, status: "unavailable" }))
       .then((result) => {
@@ -149,7 +150,6 @@ function IosSignup({ d, attributionMethod }: { d: DownloadMessages; attributionM
       });
       if (!response.ok) throw new Error("signup_failed");
       setSubmitState("success");
-      trackProductEvent("ios_beta_submitted", { method: attributionMethod, platform: "ios" });
     } catch {
       setSubmitState("error");
     }

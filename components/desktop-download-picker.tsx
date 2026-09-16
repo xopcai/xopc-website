@@ -79,7 +79,8 @@ export function DesktopDownloadPicker({
     let cancelled = false;
     void (async () => {
       try {
-        const res = await fetch(`/api/downloads/resolve?platform=${platform}`);
+        const locale = document.documentElement.lang === "en" ? "en" : "zh";
+        const res = await fetch(`/api/downloads/resolve?platform=${platform}&locale=${locale}`);
         const data = (await res.json()) as DownloadResolution;
         if (!cancelled) setPayload(data);
       } catch {
