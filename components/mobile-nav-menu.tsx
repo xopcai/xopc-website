@@ -68,10 +68,10 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
 
   const close = () => setOpen(false);
   const items = [
-    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}`, direction: "back" as const },
-    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map`, direction: "forward" as const },
-    { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases`, direction: "forward" as const },
-    { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn`, direction: "forward" as const },
+    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}` },
+    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map` },
+    { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
+    { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
   ];
 
   return (
@@ -110,7 +110,6 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
                   href={item.href}
                   className={item.active ? "is-active" : undefined}
                   aria-current={item.active ? "page" : undefined}
-                  direction={item.direction}
                   onClick={close}
                   key={item.href}
                 >
@@ -144,7 +143,7 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
                 />
               </div>
             </div>
-            <Link className="mobile-nav-download" href={`/${locale}#download`} transitionTypes={["nav-back"]} onClick={close}><Download aria-hidden />{text.download}</Link>
+            <Link className="mobile-nav-download" href={`/${locale}#download`} onClick={close}><Download aria-hidden />{text.download}</Link>
             <a className="mobile-nav-github" href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer" onClick={close}><Github aria-hidden />{text.github}</a>
           </footer>
         </div>

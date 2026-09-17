@@ -5,132 +5,19 @@ html {
   scroll-behavior: smooth;
 }
 
-::view-transition-group(site-header) {
-  z-index: 100;
-  animation: none;
-}
-
-::view-transition-old(site-header) {
-  display: none;
-}
-
-::view-transition-new(site-header) {
-  animation: none;
-}
-
-::view-transition-group(.route-forward),
-::view-transition-group(.route-back) {
-  overflow: clip;
-  animation-duration: 420ms;
-}
-
-::view-transition-old(.route-forward) {
-  animation: 160ms cubic-bezier(.32,0,.67,0) both route-exit-left;
-}
-
-::view-transition-new(.route-forward) {
-  z-index: 2;
-  animation: 400ms cubic-bezier(.22,1,.36,1) both route-enter-right;
-}
-
-::view-transition-old(.route-back) {
-  animation: 160ms cubic-bezier(.32,0,.67,0) both route-exit-right;
-}
-
-::view-transition-new(.route-back) {
-  z-index: 2;
-  animation: 400ms cubic-bezier(.22,1,.36,1) both route-enter-left;
-}
-
-@keyframes route-exit-left {
-  to {
-    opacity: .72;
-    transform: translate3d(-18px, 0, 0) scale(.995);
-  }
-}
-
-@keyframes route-exit-right {
-  to {
-    opacity: .72;
-    transform: translate3d(18px, 0, 0) scale(.995);
-  }
-}
-
-@keyframes route-enter-right {
-  from {
-    opacity: .68;
-    transform: translate3d(34px, 0, 0) scale(.992);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
-@keyframes route-enter-left {
-  from {
-    opacity: .68;
-    transform: translate3d(-34px, 0, 0) scale(.992);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
 html.xopc-route-transition-out .landing-page > main {
   pointer-events: none;
-  animation: xopc-route-manual-exit 140ms cubic-bezier(.32,0,.67,0) both;
+  opacity: .92;
+  transition: opacity 90ms ease-out;
 }
 
-html.xopc-route-transition-in[data-xopc-route-direction="forward"] .landing-page > main {
-  animation: xopc-route-manual-enter-right 400ms cubic-bezier(.22,1,.36,1) both;
+html.xopc-route-transition-in .landing-page > main {
+  animation: xopc-route-fade-in 160ms ease-out both;
 }
 
-html.xopc-route-transition-in[data-xopc-route-direction="back"] .landing-page > main {
-  animation: xopc-route-manual-enter-left 400ms cubic-bezier(.22,1,.36,1) both;
-}
-
-@keyframes xopc-route-manual-exit {
-  to {
-    opacity: .76;
-    transform: translate3d(-14px, 0, 0) scale(.996);
-  }
-}
-
-@keyframes xopc-route-manual-enter-right {
+@keyframes xopc-route-fade-in {
   from {
-    opacity: .7;
-    transform: translate3d(32px, 0, 0) scale(.992);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
-@keyframes xopc-route-manual-enter-left {
-  from {
-    opacity: .7;
-    transform: translate3d(-32px, 0, 0) scale(.992);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
-/* Browsers without native view transitions still get a clear SPA entrance. */
-@supports not (view-transition-name: none) {
-  .landing-page {
-    animation: route-fallback-enter 480ms cubic-bezier(.16,1,.3,1) both;
-  }
-
-  @keyframes route-fallback-enter {
-    from {
-      opacity: 0;
-      transform: translate3d(24px, 0, 0);
-    }
+    opacity: .92;
   }
 }
 
@@ -139,16 +26,11 @@ html.xopc-route-transition-in[data-xopc-route-direction="back"] .landing-page > 
     scroll-behavior: auto;
   }
 
-  ::view-transition-old(*),
-  ::view-transition-new(*),
-  ::view-transition-group(*) {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-  }
-
   html.xopc-route-transition-out .landing-page > main,
   html.xopc-route-transition-in .landing-page > main {
-    animation-duration: 0s !important;
+    animation: none;
+    opacity: 1;
+    transition: none;
   }
 }
 

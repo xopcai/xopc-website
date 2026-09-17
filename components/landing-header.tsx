@@ -35,7 +35,6 @@ export function LandingHeader({
     <>
       <nav
         aria-label={locale === "zh" ? "主导航" : "Main navigation"}
-        style={{ viewTransitionName: "site-header" }}
       >
         <div className="container nav-inner">
           <div className="nav-leading">
@@ -44,20 +43,18 @@ export function LandingHeader({
               <LogoHomeLink
                 locale={locale}
                 ariaLabel="xopc home"
-                transitionTypes={activePage ? ["nav-back"] : undefined}
               />
             </div>
           </div>
           <ul className="nav-links">
-            <li><Link href={activePage ? `${home}#why` : "#why"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.why}</Link></li>
-            <li><Link href={activePage ? `${home}#loop` : "#loop"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.how}</Link></li>
-            <li><Link href={activePage ? `${home}#trust` : "#trust"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.trust}</Link></li>
+            <li><Link href={activePage ? `${home}#why` : "#why"}>{nav.why}</Link></li>
+            <li><Link href={activePage ? `${home}#loop` : "#loop"}>{nav.how}</Link></li>
+            <li><Link href={activePage ? `${home}#trust` : "#trust"}>{nav.trust}</Link></li>
             <li>
               <AnimatedRouteLink
                 href={`${home}/use-cases`}
                 className={activePage === "use-cases" ? "is-active" : undefined}
                 aria-current={activePage === "use-cases" ? "page" : undefined}
-                direction={activePage === "product-map" ? "back" : "forward"}
               >
                 {nav.useCases}
               </AnimatedRouteLink>
@@ -67,7 +64,6 @@ export function LandingHeader({
                 href={`${home}/product-map`}
                 className={activePage === "product-map" ? "is-active" : undefined}
                 aria-current={activePage === "product-map" ? "page" : undefined}
-                direction="forward"
               >
                 {nav.productMap}
               </AnimatedRouteLink>
@@ -75,12 +71,11 @@ export function LandingHeader({
             <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
           </ul>
           <div className="nav-extra">
-            <AnimatedRouteLink href={`${home}/product-map`} className="nav-map-mobile" direction="forward">{nav.productMap}</AnimatedRouteLink>
+            <AnimatedRouteLink href={`${home}/product-map`} className="nav-map-mobile">{nav.productMap}</AnimatedRouteLink>
             <Link
               href={activePage ? `${home}#download` : "#download"}
               className="nav-download-cta"
               data-product-event="nav_download_clicked"
-              transitionTypes={activePage ? ["nav-back"] : undefined}
             >
               {nav.download}
             </Link>

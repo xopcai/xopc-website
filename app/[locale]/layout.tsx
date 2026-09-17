@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ViewTransition } from "react";
 
 import { ThemeDocumentSync } from "@/components/theme-document-sync";
 import { RouteTransitionController } from "@/components/route-transition-controller";
@@ -84,21 +83,7 @@ export default async function LocaleLayout({
         <ThemeDocumentSync />
         <RouteTransitionController />
         <SiteAnalytics />
-        <ViewTransition
-          enter={{
-            "nav-forward": "route-forward",
-            "nav-back": "route-back",
-            default: "none",
-          }}
-          exit={{
-            "nav-forward": "route-forward",
-            "nav-back": "route-back",
-            default: "none",
-          }}
-          default="none"
-        >
-          {children}
-        </ViewTransition>
+        {children}
       </body>
     </html>
   );
