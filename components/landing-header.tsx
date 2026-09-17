@@ -1,0 +1,117 @@
+import { Github } from "lucide-react";
+import Link from "next/link";
+
+import { LocaleSwitcher } from "@/components/locale-switcher";
+import { LogoHomeLink } from "@/components/logo-home-link";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
+import type { Locale } from "@/lib/i18n/config";
+import type { Messages } from "@/lib/i18n/messages";
+import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
+
+type Props = {
+  locale: Locale;
+  header: Messages["header"];
+  nav: Messages["landing"]["nav"];
+  docHome: string;
+  activePage?: "use-cases" | "product-map";
+  locationSuffix?: string;
+  reserveSpace?: boolean;
+};
+
+export function LandingHeader({
+  locale,
+  header,
+  nav,
+  docHome,
+  activePage,
+  locationSuffix = "",
+  reserveSpace = false,
+}: Props) {
+  const home = `/${locale}`;
+
+  return (
+    <>
+      <nav
+        aria-label={locale === "zh" ? "主导航" : "Main navigation"}
+        style={{ viewTransitionName: "site-header" }}
+      >
+        <div className="container nav-inner">
+          <div className="nav-leading">
+            <MobileNavMenu locale={locale} />
+            <div className="nav-logo">
+              <LogoHomeLink
+                locale={locale}
+                ariaLabel="xopc home"
+                transitionTypes={activePage ? ["nav-back"] : undefined}
+              />
+            </div>
+          </div>
+          <ul className="nav-links">
+            <li><Link href={activePage ? `${home}#why` : "#why"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.why}</Link></li>
+            <li><Link href={activePage ? `${home}#loop` : "#loop"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.how}</Link></li>
+            <li><Link href={activePage ? `${home}#trust` : "#trust"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.trust}</Link></li>
+            <li>
+              <Link
+                href={`${home}/use-cases`}
+                className={activePage === "use-cases" ? "is-active" : undefined}
+                aria-current={activePage === "use-cases" ? "page" : undefined}
+                transitionTypes={activePage === "use-cases" ? undefined : ["nav-forward"]}
+              >
+                {nav.useCases}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`${home}/product-map`}
+                className={activePage === "product-map" ? "is-active" : undefined}
+                aria-current={activePage === "product-map" ? "page" : undefined}
+                transitionTypes={activePage === "product-map" ? undefined : ["nav-forward"]}
+              >
+                {nav.productMap}
+              </Link>
+            </li>
+            <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
+          </ul>
+          <div className="nav-extra">
+            <Link href={`${home}/product-map`} className="nav-map-mobile" transitionTypes={["nav-forward"]}>{nav.productMap}</Link>
+            <Link
+              href={activePage ? `${home}#download` : "#download"}
+              className="nav-download-cta"
+              data-product-event="nav_download_clicked"
+              transitionTypes={activePage ? ["nav-back"] : undefined}
+            >
+              {nav.download}
+            </Link>
+            <div className="nav-extra-tools">
+              <LocaleSwitcher
+                locale={locale}
+                labelZh={header.langZh}
+                labelEn={header.langEn}
+                chooseLanguageLabel={header.chooseLanguage}
+                variant="landing"
+                locationSuffix={locationSuffix}
+              />
+              <ThemeToggle
+                variant="pill"
+                ariaLight={header.themeLight}
+                ariaDark={header.themeDark}
+                ariaToggle={header.themeToggle}
+              />
+              <a
+                href={LANDING_GITHUB_REPO}
+                className="nav-github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={nav.github}
+              >
+                <Github strokeWidth={1.75} aria-hidden />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {reserveSpace ? <div className="site-header-spacer" aria-hidden /> : null}
+    </>
+  );
+}

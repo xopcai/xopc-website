@@ -11,6 +11,7 @@ const projectRoot = dirname(fileURLToPath(import.meta.url));
 const nextConfig: NextConfig = {
   experimental: {
     cpus: 1,
+    viewTransition: true,
   },
   turbopack: {
     root: projectRoot,

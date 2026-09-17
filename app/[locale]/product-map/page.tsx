@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ProductMap } from "@/components/product-map/product-map";
-import { isLocale, locales } from "@/lib/i18n/config";
+import { docBaseUrl, isLocale, locales } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { getProductMapMessages } from "@/lib/product-map/messages";
 import { mapGroups, nodeById, type MapView } from "@/lib/product-map/model";
@@ -71,11 +71,14 @@ export default async function ProductMapRoute({ params, searchParams }: Props) {
       ? ""
       : nodeById(initialNode)!.group);
   const initialQuery = value("q").slice(0, 200);
+  const messages = getMessages(locale);
   return (
     <ProductMap
       locale={locale}
       copy={getProductMapMessages(locale)}
-      header={getMessages(locale).header}
+      header={messages.header}
+      nav={messages.landing.nav}
+      docHome={docBaseUrl(locale)}
       initialView={initialQuery ? "catalog" : initialView}
       initialNode={initialNode}
       initialQuery={initialQuery}

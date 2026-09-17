@@ -8,15 +8,12 @@ import {
 import { HeroBrand } from "@/components/hero-brand";
 import { LandingFooter } from "@/components/landing-footer";
 import { LandingAnalytics } from "@/components/landing-analytics";
+import { LandingHeader } from "@/components/landing-header";
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LandingNavState } from "@/components/landing-nav-state";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { LogoHomeLink } from "@/components/logo-home-link";
 import { MobileDownloads } from "@/components/mobile-downloads";
-import { MobileNavMenu } from "@/components/mobile-nav-menu";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -54,52 +51,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
       <LandingNavState />
       <LandingScrollReveal />
 
-      <nav>
-        <div className="container nav-inner">
-          <div className="nav-leading">
-            <MobileNavMenu locale={locale} />
-            <div className="nav-logo">
-              <LogoHomeLink locale={locale} ariaLabel="xopc home" />
-            </div>
-          </div>
-          <ul className="nav-links">
-            <li><a href="#why">{L.nav.why}</a></li>
-            <li><a href="#loop">{L.nav.how}</a></li>
-            <li><a href="#trust">{L.nav.trust}</a></li>
-            <li><a href={`/${locale}/use-cases`}>{L.nav.useCases}</a></li>
-            <li><a href={`/${locale}/product-map`}>{L.nav.productMap}</a></li>
-            <li><a href={docHome} target="_blank" rel="noopener noreferrer">{L.nav.docs}</a></li>
-          </ul>
-          <div className="nav-extra">
-            <a href={`/${locale}/product-map`} className="nav-map-mobile">{L.nav.productMap}</a>
-            <a href="#download" className="nav-download-cta" data-product-event="nav_download_clicked">{L.nav.download}</a>
-            <div className="nav-extra-tools">
-              <LocaleSwitcher
-                locale={locale}
-                labelZh={m.header.langZh}
-                labelEn={m.header.langEn}
-                chooseLanguageLabel={m.header.chooseLanguage}
-                variant="landing"
-              />
-              <ThemeToggle
-                variant="pill"
-                ariaLight={m.header.themeLight}
-                ariaDark={m.header.themeDark}
-                ariaToggle={m.header.themeToggle}
-              />
-              <a
-                href={LANDING_GITHUB_REPO}
-                className="nav-github-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={L.nav.github}
-              >
-                <Github strokeWidth={1.75} aria-hidden />
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <LandingHeader locale={locale} header={m.header} nav={L.nav} docHome={docHome} />
 
       <section className="hero">
         <div className="hero-glow" aria-hidden />

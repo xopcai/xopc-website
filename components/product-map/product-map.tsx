@@ -21,10 +21,7 @@ import {
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { MobileNavMenu } from "@/components/mobile-nav-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
+import { LandingHeader } from "@/components/landing-header";
 import { docUrl, type Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import type { ProductMapMessages } from "@/lib/product-map/messages";
@@ -46,6 +43,8 @@ type Props = {
   locale: Locale;
   copy: ProductMapMessages;
   header: Messages["header"];
+  nav: Messages["landing"]["nav"];
+  docHome: string;
   initialView: MapView;
   initialNode: NodeId;
   initialQuery: string;
@@ -55,6 +54,8 @@ export function ProductMap({
   locale,
   copy: c,
   header,
+  nav,
+  docHome,
   initialView,
   initialNode,
   initialQuery,
@@ -189,37 +190,15 @@ export function ProductMap({
   return (
     <div className="landing-page product-atlas pm-refined">
       <LandingLocaleTransition />
-      <header className="pm-header">
-        <MobileNavMenu locale={locale} />
-        <Link href={`/${locale}`} className="pm-brand" aria-label={u.home}>
-          <XopcLogoMark />
-          <b>xopc</b>
-        </Link>
-        <Link href={`/${locale}`} className="pm-home">
-          <ArrowLeft size={14} />
-          {u.home}
-        </Link>
-        <span className="pm-header-title">{u.title}</span>
-        <div className="pm-header-tools">
-          <LocaleSwitcher
-            locale={locale}
-            labelZh={header.langZh}
-            labelEn={header.langEn}
-            chooseLanguageLabel={header.chooseLanguage}
-            variant="landing"
-            locationSuffix={locationSuffix}
-          />
-          <ThemeToggle
-            variant="pill"
-            ariaLight={header.themeLight}
-            ariaDark={header.themeDark}
-            ariaToggle={header.themeToggle}
-          />
-          <Link className="pm-primary" href={`/${locale}#download`}>
-            {u.download}
-          </Link>
-        </div>
-      </header>
+      <LandingHeader
+        locale={locale}
+        header={header}
+        nav={nav}
+        docHome={docHome}
+        activePage="product-map"
+        locationSuffix={locationSuffix}
+        reserveSpace
+      />
 
       <main className="pm-main">
         <div className="pm-intro">

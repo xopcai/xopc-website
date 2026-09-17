@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { UseCaseExplorer } from "@/components/use-cases/use-case-explorer";
-import { isLocale, locales } from "@/lib/i18n/config";
+import { docBaseUrl, isLocale, locales } from "@/lib/i18n/config";
+import { getMessages } from "@/lib/i18n/messages";
 
 import "../product-map/product-map.css";
 import "./use-cases.css";
@@ -34,5 +35,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function UseCasesPage({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <UseCaseExplorer locale={locale} />;
+  return <UseCaseExplorer locale={locale} messages={getMessages(locale)} docHome={docBaseUrl(locale)} />;
 }

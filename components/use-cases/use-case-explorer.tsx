@@ -16,11 +16,9 @@ import {
   X,
 } from "lucide-react";
 
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { MobileNavMenu } from "@/components/mobile-nav-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { LandingHeader } from "@/components/landing-header";
 import type { Locale } from "@/lib/i18n/config";
+import type { Messages } from "@/lib/i18n/messages";
 import { localized, useCaseCategories, useCases, type UseCaseCategory } from "@/lib/use-cases";
 
 const copy = {
@@ -114,11 +112,16 @@ const copy = {
   },
 } as const;
 
-export function UseCaseExplorer({ locale }: { locale: Locale }) {
+export function UseCaseExplorer({
+  locale,
+  messages,
+  docHome,
+}: {
+  locale: Locale;
+  messages: Messages;
+  docHome: string;
+}) {
   const text = copy[locale];
-  const header = locale === "zh"
-    ? { choose: "选择语言", zh: "简体中文", en: "English", light: "切换到浅色主题", dark: "切换到深色主题", toggle: "切换浅色 / 深色主题" }
-    : { choose: "Choose language", zh: "简体中文", en: "English", light: "Switch to light theme", dark: "Switch to dark theme", toggle: "Toggle light or dark theme" };
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<UseCaseCategory | "all">("all");
   const [openId, setOpenId] = useState<string | null>(null);
@@ -168,22 +171,14 @@ export function UseCaseExplorer({ locale }: { locale: Locale }) {
 
   return (
     <div className="landing-page product-atlas use-cases-page">
-      <header className="pm-header use-cases-header">
-        <MobileNavMenu locale={locale} />
-        <Link className="pm-brand" href={`/${locale}`} aria-label="xopc">
-          <XopcLogoMark />
-          <b>xopc</b>
-        </Link>
-        <Link className="pm-home" href={`/${locale}`}>
-          <ArrowRight className="use-cases-back-icon" size={16} />
-          {text.back}
-        </Link>
-        <div className="pm-header-tools">
-          <LocaleSwitcher locale={locale} labelZh={header.zh} labelEn={header.en} chooseLanguageLabel={header.choose} variant="landing" />
-          <ThemeToggle ariaLight={header.light} ariaDark={header.dark} ariaToggle={header.toggle} variant="pill" />
-          <Link className="pm-primary" href={`/${locale}#download`}>{text.download}</Link>
-        </div>
-      </header>
+      <LandingHeader
+        locale={locale}
+        header={messages.header}
+        nav={messages.landing.nav}
+        docHome={docHome}
+        activePage="use-cases"
+        reserveSpace
+      />
 
       <main>
         <section className="use-cases-hero">

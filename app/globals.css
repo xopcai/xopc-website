@@ -5,9 +5,67 @@ html {
   scroll-behavior: smooth;
 }
 
+::view-transition-group(site-header) {
+  z-index: 100;
+  animation: none;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+::view-transition-old(.route-forward) {
+  animation: 180ms ease-in both route-fade-out, 420ms cubic-bezier(.22,.61,.36,1) both route-slide-left;
+}
+
+::view-transition-new(.route-forward) {
+  animation: 360ms cubic-bezier(.22,.61,.36,1) 70ms both route-enter-right;
+}
+
+::view-transition-old(.route-back) {
+  animation: 180ms ease-in both route-fade-out, 420ms cubic-bezier(.22,.61,.36,1) both route-slide-right;
+}
+
+::view-transition-new(.route-back) {
+  animation: 360ms cubic-bezier(.22,.61,.36,1) 70ms both route-enter-left;
+}
+
+@keyframes route-fade-out {
+  to { opacity: .55; filter: blur(2px); }
+}
+
+@keyframes route-slide-left {
+  to { translate: -42px 0; }
+}
+
+@keyframes route-slide-right {
+  to { translate: 42px 0; }
+}
+
+@keyframes route-enter-right {
+  from { opacity: 0; translate: min(12vw, 110px) 0; filter: blur(5px); }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
+}
+
+@keyframes route-enter-left {
+  from { opacity: 0; translate: max(-12vw, -110px) 0; filter: blur(5px); }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }
 

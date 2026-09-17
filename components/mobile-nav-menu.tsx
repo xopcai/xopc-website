@@ -63,10 +63,10 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
 
   const close = () => setOpen(false);
   const items = [
-    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}` },
-    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map` },
-    { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
-    { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
+    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}`, transitionTypes: ["nav-back"] },
+    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map`, transitionTypes: ["nav-forward"] },
+    { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases`, transitionTypes: ["nav-forward"] },
+    { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn`, transitionTypes: ["nav-forward"] },
   ];
 
   return (
@@ -101,7 +101,14 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
             {items.map((item) => {
               const Icon = item.icon;
               return (
-                <Link href={item.href} className={item.active ? "is-active" : undefined} aria-current={item.active ? "page" : undefined} onClick={close} key={item.href}>
+                <Link
+                  href={item.href}
+                  className={item.active ? "is-active" : undefined}
+                  aria-current={item.active ? "page" : undefined}
+                  transitionTypes={item.active ? undefined : item.transitionTypes}
+                  onClick={close}
+                  key={item.href}
+                >
                   <Icon strokeWidth={1.7} aria-hidden />
                   <span><strong>{item.label}</strong><small>{item.hint}</small></span>
                 </Link>
@@ -114,7 +121,7 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
           </div>
 
           <footer className="mobile-nav-panel-footer">
-            <Link className="mobile-nav-download" href={`/${locale}#download`} onClick={close}><Download aria-hidden />{text.download}</Link>
+            <Link className="mobile-nav-download" href={`/${locale}#download`} transitionTypes={["nav-back"]} onClick={close}><Download aria-hidden />{text.download}</Link>
             <a className="mobile-nav-github" href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer" onClick={close}><Github aria-hidden />{text.github}</a>
           </footer>
         </div>

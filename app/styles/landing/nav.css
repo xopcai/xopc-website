@@ -387,11 +387,12 @@
     }
 
     .landing-page .nav-map-mobile { display: none; }
+    .landing-page .site-header-spacer { height: 68px; }
     @media (max-width: 760px) {
       .landing-page .mobile-nav-menu { display: block; }
       .landing-page .nav-map-mobile { display: none; }
       .landing-page .nav-extra { gap: 8px; }
-      .landing-page.product-atlas .pm-home{ display: none; }
+      .landing-page .site-header-spacer { height: 64px; }
     }
 
     @media (max-width: 390px) {

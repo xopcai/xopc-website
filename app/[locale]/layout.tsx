@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ViewTransition } from "react";
 
 import { ThemeDocumentSync } from "@/components/theme-document-sync";
 import { SiteAnalytics } from "@/components/site-analytics";
@@ -70,14 +71,32 @@ export default async function LocaleLayout({
   const locale = loc as Locale;
 
   return (
-    <html lang={locale === "zh" ? "zh-CN" : "en"} suppressHydrationWarning>
+    <html
+      lang={locale === "zh" ? "zh-CN" : "en"}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body className={`${landingDisplayFont.variable} min-h-full flex flex-col landing-body`}>
         {/* Apply stored or system theme before paint to reduce flash */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: localeTransitionInitScript }} />
         <ThemeDocumentSync />
         <SiteAnalytics />
-        {children}
+        <ViewTransition
+          enter={{
+            "nav-forward": "route-forward",
+            "nav-back": "route-back",
+            default: "none",
+          }}
+          exit={{
+            "nav-forward": "route-forward",
+            "nav-back": "route-back",
+            default: "none",
+          }}
+          default="none"
+        >
+          {children}
+        </ViewTransition>
       </body>
     </html>
   );
