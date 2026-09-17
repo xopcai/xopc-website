@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { BookOpen, Download, Github, Home, Map, Menu, Sparkles, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
+import { AnimatedRouteLink } from "@/components/animated-route-link";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import { docBaseUrl, type Locale } from "@/lib/i18n/config";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
@@ -63,10 +64,10 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
 
   const close = () => setOpen(false);
   const items = [
-    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}`, transitionTypes: ["nav-back"] },
-    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map`, transitionTypes: ["nav-forward"] },
-    { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases`, transitionTypes: ["nav-forward"] },
-    { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn`, transitionTypes: ["nav-forward"] },
+    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}`, direction: "back" as const },
+    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map`, direction: "forward" as const },
+    { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases`, direction: "forward" as const },
+    { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn`, direction: "forward" as const },
   ];
 
   return (
@@ -101,17 +102,17 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
             {items.map((item) => {
               const Icon = item.icon;
               return (
-                <Link
+                <AnimatedRouteLink
                   href={item.href}
                   className={item.active ? "is-active" : undefined}
                   aria-current={item.active ? "page" : undefined}
-                  transitionTypes={item.active ? undefined : item.transitionTypes}
+                  direction={item.direction}
                   onClick={close}
                   key={item.href}
                 >
                   <Icon strokeWidth={1.7} aria-hidden />
                   <span><strong>{item.label}</strong><small>{item.hint}</small></span>
-                </Link>
+                </AnimatedRouteLink>
               );
             })}
             <a href={docBaseUrl(locale)} target="_blank" rel="noopener noreferrer" onClick={close}>

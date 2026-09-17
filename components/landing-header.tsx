@@ -1,6 +1,7 @@
 import { Github } from "lucide-react";
 import Link from "next/link";
 
+import { AnimatedRouteLink } from "@/components/animated-route-link";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { LogoHomeLink } from "@/components/logo-home-link";
 import { MobileNavMenu } from "@/components/mobile-nav-menu";
@@ -52,29 +53,29 @@ export function LandingHeader({
             <li><Link href={activePage ? `${home}#loop` : "#loop"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.how}</Link></li>
             <li><Link href={activePage ? `${home}#trust` : "#trust"} transitionTypes={activePage ? ["nav-back"] : undefined}>{nav.trust}</Link></li>
             <li>
-              <Link
+              <AnimatedRouteLink
                 href={`${home}/use-cases`}
                 className={activePage === "use-cases" ? "is-active" : undefined}
                 aria-current={activePage === "use-cases" ? "page" : undefined}
-                transitionTypes={activePage === "use-cases" ? undefined : ["nav-forward"]}
+                direction="forward"
               >
                 {nav.useCases}
-              </Link>
+              </AnimatedRouteLink>
             </li>
             <li>
-              <Link
+              <AnimatedRouteLink
                 href={`${home}/product-map`}
                 className={activePage === "product-map" ? "is-active" : undefined}
                 aria-current={activePage === "product-map" ? "page" : undefined}
-                transitionTypes={activePage === "product-map" ? undefined : ["nav-forward"]}
+                direction="forward"
               >
                 {nav.productMap}
-              </Link>
+              </AnimatedRouteLink>
             </li>
             <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
           </ul>
           <div className="nav-extra">
-            <Link href={`${home}/product-map`} className="nav-map-mobile" transitionTypes={["nav-forward"]}>{nav.productMap}</Link>
+            <AnimatedRouteLink href={`${home}/product-map`} className="nav-map-mobile" direction="forward">{nav.productMap}</AnimatedRouteLink>
             <Link
               href={activePage ? `${home}#download` : "#download"}
               className="nav-download-cta"

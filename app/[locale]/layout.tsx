@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ViewTransition } from "react";
 
 import { ThemeDocumentSync } from "@/components/theme-document-sync";
+import { RouteTransitionController } from "@/components/route-transition-controller";
 import { SiteAnalytics } from "@/components/site-analytics";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
@@ -81,6 +82,7 @@ export default async function LocaleLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: localeTransitionInitScript }} />
         <ThemeDocumentSync />
+        <RouteTransitionController />
         <SiteAnalytics />
         <ViewTransition
           enter={{
