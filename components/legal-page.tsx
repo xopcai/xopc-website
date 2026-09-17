@@ -5,6 +5,7 @@ import { LandingLocaleTransition } from "@/components/landing-locale-transition"
 import { LandingNavState } from "@/components/landing-nav-state";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { LogoHomeLink } from "@/components/logo-home-link";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -242,7 +243,7 @@ export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messa
       <LandingNavState />
       <nav>
         <div className="container nav-inner">
-          <div className="nav-logo"><LogoHomeLink locale={locale} ariaLabel="xopc home" /></div>
+          <div className="nav-leading"><MobileNavMenu locale={locale} /><div className="nav-logo"><LogoHomeLink locale={locale} ariaLabel="xopc home" /></div></div>
           <div className="legal-nav-links">
             <Link href={`/${locale}`}><ArrowLeft aria-hidden />{content.backHome}</Link>
             <Link href={otherKindHref}>{otherKindLabel}</Link>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useSyncExternalStore } from "react";
 
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
 import { AndroidDownload, IosDownload } from "@/components/mobile-downloads";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
@@ -45,6 +46,7 @@ export function MobileDownloadPage({ locale, messages: m, initialPlatform, sourc
   return (
     <div className="landing-page mobile-download-page">
       <header className="mobile-page-header">
+        <MobileNavMenu locale={locale} />
         <Link href={`/${locale}`} className="mobile-page-brand" aria-label={page.backHome}>
           <XopcLogoMark priority />
           <span>xopc</span>

@@ -18,6 +18,7 @@ import {
 
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import type { Locale } from "@/lib/i18n/config";
 import { localized, useCaseCategories, useCases, type UseCaseCategory } from "@/lib/use-cases";
@@ -168,6 +169,7 @@ export function UseCaseExplorer({ locale }: { locale: Locale }) {
   return (
     <div className="landing-page product-atlas use-cases-page">
       <header className="pm-header use-cases-header">
+        <MobileNavMenu locale={locale} />
         <Link className="pm-brand" href={`/${locale}`} aria-label="xopc">
           <XopcLogoMark />
           <b>xopc</b>

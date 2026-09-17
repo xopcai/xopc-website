@@ -22,6 +22,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import { docUrl, type Locale } from "@/lib/i18n/config";
@@ -189,6 +190,7 @@ export function ProductMap({
     <div className="landing-page product-atlas pm-refined">
       <LandingLocaleTransition />
       <header className="pm-header">
+        <MobileNavMenu locale={locale} />
         <Link href={`/${locale}`} className="pm-brand" aria-label={u.home}>
           <XopcLogoMark />
           <b>xopc</b>

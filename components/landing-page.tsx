@@ -14,6 +14,7 @@ import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { LogoHomeLink } from "@/components/logo-home-link";
 import { MobileDownloads } from "@/components/mobile-downloads";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
@@ -55,8 +56,11 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
 
       <nav>
         <div className="container nav-inner">
-          <div className="nav-logo">
-            <LogoHomeLink locale={locale} ariaLabel="xopc home" />
+          <div className="nav-leading">
+            <MobileNavMenu locale={locale} />
+            <div className="nav-logo">
+              <LogoHomeLink locale={locale} ariaLabel="xopc home" />
+            </div>
           </div>
           <ul className="nav-links">
             <li><a href="#why">{L.nav.why}</a></li>
