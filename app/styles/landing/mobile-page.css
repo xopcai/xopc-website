@@ -251,6 +251,19 @@
     }
 
     @media (max-width: 760px) {
+      .mobile-download-page .mobile-page-header .mobile-nav-menu {
+        order: 3;
+        margin-left: auto;
+      }
+
+      .mobile-download-page .mobile-page-brand {
+        order: 1;
+      }
+
+      .mobile-download-page .mobile-page-tools {
+        display: none;
+      }
+
       .mobile-download-page .mobile-page-header,
       .mobile-download-page .mobile-page-main {
         width: min(100% - 28px, 620px);

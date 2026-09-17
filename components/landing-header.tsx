@@ -15,7 +15,7 @@ type Props = {
   header: Messages["header"];
   nav: Messages["landing"]["nav"];
   docHome: string;
-  activePage?: "use-cases" | "product-map";
+  activePage?: "use-cases" | "product-map" | "learn";
   locationSuffix?: string;
   reserveSpace?: boolean;
 };

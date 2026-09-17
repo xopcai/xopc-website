@@ -6,8 +6,11 @@ import { BookOpen, Download, Github, Home, Map, Menu, Sparkles, X } from "lucide
 import { usePathname } from "next/navigation";
 
 import { AnimatedRouteLink } from "@/components/animated-route-link";
+import { LocaleSwitcher } from "@/components/locale-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import { docBaseUrl, type Locale } from "@/lib/i18n/config";
+import { getMessages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
 
 const menuCopy = {
@@ -54,6 +57,7 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const pathname = usePathname();
   const text = menuCopy[locale];
+  const messages = getMessages(locale);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -122,6 +126,24 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
           </div>
 
           <footer className="mobile-nav-panel-footer">
+            <div className="mobile-nav-preferences">
+              <span>{locale === "zh" ? "语言与外观" : "Language & appearance"}</span>
+              <div>
+                <LocaleSwitcher
+                  locale={locale}
+                  labelZh={messages.header.langZh}
+                  labelEn={messages.header.langEn}
+                  chooseLanguageLabel={messages.header.chooseLanguage}
+                  variant="landing"
+                />
+                <ThemeToggle
+                  variant="pill"
+                  ariaLight={messages.header.themeLight}
+                  ariaDark={messages.header.themeDark}
+                  ariaToggle={messages.header.themeToggle}
+                />
+              </div>
+            </div>
             <Link className="mobile-nav-download" href={`/${locale}#download`} transitionTypes={["nav-back"]} onClick={close}><Download aria-hidden />{text.download}</Link>
             <a className="mobile-nav-github" href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer" onClick={close}><Github aria-hidden />{text.github}</a>
           </footer>

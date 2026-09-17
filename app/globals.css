@@ -314,7 +314,7 @@ body.landing-body :focus-visible {
     padding-bottom: 64px;
   }
 
-  .legal-nav-links a:first-child {
+  .legal-nav-links {
     display: none;
   }
 

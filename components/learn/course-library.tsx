@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Play, X, Download } from "lucide-react";
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
-import { MobileNavMenu } from "@/components/mobile-nav-menu";
+import { ArrowRight, Play, X, Download } from "lucide-react";
+import { LandingHeader } from "@/components/landing-header";
 import { TutorialPlayer } from "@/components/product-map/scenario-tutorials";
 import { courses } from "./courses";
 import catalog from "@/content/tutorials/catalog.json";
 import { getProductMapMessages } from "@/lib/product-map/messages";
 import type { NodeId } from "@/lib/product-map/model";
-import type { Locale } from "@/lib/i18n/config";
+import { docBaseUrl, type Locale } from "@/lib/i18n/config";
+import { getMessages } from "@/lib/i18n/messages";
 
 export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initialCourse: string }) {
   const zh = locale === "zh";
@@ -19,7 +19,7 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
   const modal = useRef<HTMLDialogElement>(null);
   const course = courses.find(c => c.id === selected);
   const tutorial = catalog.tutorials.find(t => t.id === selected);
-  const other = zh ? "en" : "zh";
+  const messages = getMessages(locale);
   useEffect(() => {
     const dialog = modal.current;
     if (selected) dialog?.showModal(); else dialog?.close();
@@ -29,7 +29,15 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
     return () => { document.body.style.overflow = previous; };
   }, [selected, locale]);
   return <div className="landing-page product-atlas learn-page">
-    <header className="pm-header"><MobileNavMenu locale={locale}/><Link className="pm-brand" href={`/${locale}`} aria-label="xopc"><XopcLogoMark/><b>xopc</b></Link><Link className="pm-home" href={`/${locale}/product-map`}><ArrowLeft size={16}/>{zh ? "产品探索" : "Explore"}</Link><div className="pm-header-tools"><a href={`/${other}/learn${selected ? `?course=${selected}` : ""}`} lang={other}>{zh ? "English" : "中文"}</a><Link className="pm-primary" href={`/${locale}#download`}>{zh ? "下载 xopc" : "Get xopc"}</Link></div></header>
+    <LandingHeader
+      locale={locale}
+      header={messages.header}
+      nav={messages.landing.nav}
+      docHome={docBaseUrl(locale)}
+      activePage="learn"
+      locationSuffix={selected ? `?course=${selected}` : ""}
+      reserveSpace
+    />
     <main className="learn-main"><section className="learn-intro"><p className="pm-eyebrow">{zh ? "场景实战 · PC 端" : "PRACTICAL WORKFLOWS · DESKTOP"}</p><h1>{zh ? "从一件真实的事开始。" : "Start with something you need to do."}</h1><p>{zh ? "带着材料进入 xopc，核对过程，带走一份能继续使用的结果。" : "Bring your materials into xopc, review the work and leave with a useful result."}</p><div className="learn-tags"><span>{zh ? `${courses.length} 个完整场景` : `${courses.length} complete workflows`}</span><span>{zh ? "中文配音与字幕" : "Chinese narration & captions"}</span><span>{zh ? "可下载跟做材料" : "Downloadable practice files"}</span></div></section>
     <div role="group" className="learn-filters" aria-label={zh ? "课程分类" : "Course categories"}>{[{id:"all", zh:"全部", en:"All"},{id:"office", zh:"办公文件", en:"Office files"},{id:"everyday", zh:"日常协作", en:"Everyday workflows"}].map(item => <button key={item.id} type="button" aria-pressed={category === item.id} onClick={() => setCategory(item.id)}>{item[locale]}<span>{item.id === "all" ? courses.length : courses.filter(c => c.category === item.id).length}</span></button>)}</div>
     <section className="learn-grid" aria-label={zh ? "选择场景课程" : "Choose a course"}>{visibleCourses.map(c => {
