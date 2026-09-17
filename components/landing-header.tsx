@@ -57,7 +57,7 @@ export function LandingHeader({
                 href={`${home}/use-cases`}
                 className={activePage === "use-cases" ? "is-active" : undefined}
                 aria-current={activePage === "use-cases" ? "page" : undefined}
-                direction="forward"
+                direction={activePage === "product-map" ? "back" : "forward"}
               >
                 {nav.useCases}
               </AnimatedRouteLink>

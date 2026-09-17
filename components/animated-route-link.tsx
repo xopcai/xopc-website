@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { type ComponentProps, type MouseEvent } from "react";
+import { type ComponentProps, type MouseEvent, useEffect } from "react";
 
 type Props = Omit<ComponentProps<typeof Link>, "href"> & {
   href: string;
@@ -10,6 +10,7 @@ type Props = Omit<ComponentProps<typeof Link>, "href"> & {
 };
 
 const OUT_CLASS = "xopc-route-transition-out";
+const IN_CLASS = "xopc-route-transition-in";
 
 export function AnimatedRouteLink({
   href,
@@ -18,6 +19,10 @@ export function AnimatedRouteLink({
   ...props
 }: Props) {
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch(href);
+  }, [href, router]);
 
   const navigate = (event: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(event);
@@ -41,17 +46,20 @@ export function AnimatedRouteLink({
     if (root.classList.contains(OUT_CLASS)) return;
 
     root.dataset.xopcRouteDirection = direction;
+    root.classList.remove(IN_CLASS);
     root.classList.add(OUT_CLASS);
 
-    window.setTimeout(() => {
+    // Let the pressed state and exit motion paint, then navigate immediately.
+    // A single frame keeps the interaction responsive without delaying the route.
+    window.requestAnimationFrame(() => {
       router.push(`${target.pathname}${target.search}${target.hash}`);
-    }, 190);
+    });
 
     // Recover if a route request fails before the pathname changes.
     window.setTimeout(() => {
       root.classList.remove(OUT_CLASS, "xopc-route-transition-in");
       delete root.dataset.xopcRouteDirection;
-    }, 5000);
+    }, 3000);
   };
 
   return <Link href={href} onClick={navigate} {...props} />;

@@ -19,7 +19,7 @@ export function RouteTransitionController() {
     const timeoutId = window.setTimeout(() => {
       root.classList.remove(IN_CLASS);
       delete root.dataset.xopcRouteDirection;
-    }, 620);
+    }, 440);
 
     return () => window.clearTimeout(timeoutId);
   }, [pathname]);
