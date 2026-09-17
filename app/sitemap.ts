@@ -60,5 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates("/learn") },
   }));
 
-  return [...homePages, ...productPages, ...mapPages, ...learnPages, ...mobilePages, ...legalPages];
+  const useCasePages: MetadataRoute.Sitemap = locales.map((locale) => ({
+    url: `${origin}/${locale}/use-cases`,
+    changeFrequency: "monthly",
+    priority: 0.9,
+    alternates: { languages: languageAlternates("/use-cases") },
+  }));
+
+  return [...homePages, ...useCasePages, ...productPages, ...mapPages, ...learnPages, ...mobilePages, ...legalPages];
 }
