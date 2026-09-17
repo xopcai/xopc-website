@@ -11,6 +11,7 @@ import {
   FileCheck2,
   Search,
   ShieldCheck,
+  Shuffle,
   Sparkles,
   X,
 } from "lucide-react";
@@ -39,6 +40,8 @@ const copy = {
     searchLabel: "搜索使用场景",
     all: "全部",
     count: (n: number) => `${n} 个场景`,
+    libraryIntro: "浏览全部案例，展开即可复制可直接运行的开始指令。",
+    surprise: "随便看看",
     emptyTitle: "没有找到匹配场景",
     emptyBody: "换个关键词，或清除筛选继续浏览。",
     clear: "清除筛选",
@@ -49,8 +52,8 @@ const copy = {
     outcome: "你会得到",
     evidence: "如何核验",
     related: "查看相关能力",
-    openPrompt: "查看开始指令",
-    closePrompt: "收起开始指令",
+    openPrompt: "展开使用方式",
+    closePrompt: "收起详情",
     copyPrompt: "复制指令",
     copied: "已复制",
     promptNote: "把方括号中的内容换成你的实际情况，然后发给 xopc。权限规则仍然有效。",
@@ -81,6 +84,8 @@ const copy = {
     searchLabel: "Search use cases",
     all: "All",
     count: (n: number) => `${n} ${n === 1 ? "scenario" : "scenarios"}`,
+    libraryIntro: "Browse every scenario, then expand one for a ready-to-run starter prompt.",
+    surprise: "Surprise me",
     emptyTitle: "No matching scenarios",
     emptyBody: "Try another term or clear the filters to keep browsing.",
     clear: "Clear filters",
@@ -91,8 +96,8 @@ const copy = {
     outcome: "What you get",
     evidence: "How to verify it",
     related: "Explore capabilities",
-    openPrompt: "View starter prompt",
-    closePrompt: "Hide starter prompt",
+    openPrompt: "Open the playbook",
+    closePrompt: "Hide details",
     copyPrompt: "Copy prompt",
     copied: "Copied",
     promptNote: "Replace the brackets with your situation, then send it to xopc. Your permission rules still apply.",
@@ -133,6 +138,9 @@ export function UseCaseExplorer({ locale }: { locale: Locale }) {
         ...item.setup.map((entry) => localized(entry, locale)),
       ].join(" ").toLocaleLowerCase(locale);
       return haystack.includes(normalized);
+    }).sort((left, right) => {
+      return useCaseCategories.findIndex((entry) => entry.id === left.category)
+        - useCaseCategories.findIndex((entry) => entry.id === right.category);
     });
   }, [category, locale, query]);
 
@@ -145,6 +153,16 @@ export function UseCaseExplorer({ locale }: { locale: Locale }) {
   const reset = () => {
     setQuery("");
     setCategory("all");
+  };
+
+  const surpriseMe = () => {
+    if (!visibleCases.length) return;
+    const next = visibleCases[Math.floor(Math.random() * visibleCases.length)];
+    setOpenId(next.id);
+    window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById(`use-case-${next.id}`)?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    });
   };
 
   return (
@@ -193,17 +211,24 @@ export function UseCaseExplorer({ locale }: { locale: Locale }) {
             <div>
               <p className="use-cases-eyebrow"><Clipboard size={15} aria-hidden />{locale === "zh" ? "场景库" : "SCENARIO LIBRARY"}</p>
               <h2 id="use-cases-library-title">{locale === "zh" ? "找到与你今天最接近的一件事。" : "Find the closest thing to your work today."}</h2>
+              <p className="use-cases-library-intro">{text.libraryIntro}</p>
             </div>
-            <span aria-live="polite">{text.count(visibleCases.length)}</span>
+            <button className="use-cases-surprise" type="button" onClick={surpriseMe} disabled={!visibleCases.length}>
+              <Shuffle size={16} aria-hidden />
+              {text.surprise}
+            </button>
           </div>
 
           <div className="use-cases-controls">
-            <label className="use-cases-search">
-              <Search size={19} aria-hidden />
-              <span className="sr-only">{text.searchLabel}</span>
-              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={text.searchPlaceholder} type="search" />
-              {query ? <button type="button" onClick={() => setQuery("")} aria-label={text.clear}><X size={17} /></button> : null}
-            </label>
+            <div className="use-cases-search-row">
+              <label className="use-cases-search">
+                <Search size={19} aria-hidden />
+                <span className="sr-only">{text.searchLabel}</span>
+                <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={text.searchPlaceholder} type="search" />
+                {query ? <button type="button" onClick={() => setQuery("")} aria-label={text.clear}><X size={17} /></button> : null}
+              </label>
+              <span className="use-cases-result-count" aria-live="polite">{text.count(visibleCases.length)}</span>
+            </div>
             <div className="use-cases-filters" role="group" aria-label={locale === "zh" ? "场景分类" : "Scenario categories"}>
               <button type="button" aria-pressed={category === "all"} onClick={() => setCategory("all")}>{text.all}<span>{useCases.length}</span></button>
               {useCaseCategories.map((item) => (
@@ -216,59 +241,48 @@ export function UseCaseExplorer({ locale }: { locale: Locale }) {
           </div>
 
           {visibleCases.length ? (
-            <div className="use-cases-grid">
+            <div className="use-cases-list">
               {visibleCases.map((item, index) => {
                 const categoryCopy = useCaseCategories.find((entry) => entry.id === item.category)!;
                 const open = openId === item.id;
                 const copied = copiedId === item.id;
                 return (
-                  <article className="use-case-card" key={item.id}>
-                    <div className="use-case-card-top">
-                      <span className="use-case-index">{String(index + 1).padStart(2, "0")}</span>
-                      <span className={`use-case-readiness ${item.setup.length ? "needs-setup" : "is-ready"}`}>
-                        {item.setup.length ? text.setup : text.ready}
-                      </span>
-                    </div>
-                    <p className="use-case-category">{localized(categoryCopy.label, locale)}</p>
-                    <h3>{localized(item.title, locale)}</h3>
-                    <p className="use-case-summary">{localized(item.summary, locale)}</p>
-
-                    <div className="use-case-facts">
-                      {item.setup.length ? (
-                        <div>
-                          <Sparkles size={16} aria-hidden />
-                          <div><strong>{text.needs}</strong><ul>{item.setup.map((entry) => <li key={localized(entry, locale)}>{localized(entry, locale)}</li>)}</ul></div>
-                        </div>
-                      ) : null}
-                      <div>
-                        <ShieldCheck size={16} aria-hidden />
-                        <div><strong>{text.approval}</strong><p>{localized(item.approval, locale)}</p></div>
+                  <article className={`use-case-row ${open ? "is-open" : ""}`} id={`use-case-${item.id}`} key={item.id}>
+                    <span className="use-case-index">{String(index + 1).padStart(2, "0")}</span>
+                    <div className="use-case-identity">
+                      <div className="use-case-meta">
+                        <span className="use-case-category">{localized(categoryCopy.label, locale)}</span>
+                        <span className={`use-case-readiness ${item.setup.length ? "needs-setup" : "is-ready"}`}>
+                          {item.setup.length ? text.setup : text.ready}
+                        </span>
                       </div>
-                      <div>
-                        <CheckCircle2 size={16} aria-hidden />
-                        <div><strong>{text.outcome}</strong><p>{localized(item.outcome, locale)}</p></div>
-                      </div>
-                      <div>
-                        <FileCheck2 size={16} aria-hidden />
-                        <div><strong>{text.evidence}</strong><ul>{item.evidence.map((entry) => <li key={localized(entry, locale)}>{localized(entry, locale)}</li>)}</ul></div>
+                      <h3>{localized(item.title, locale)}</h3>
+                      <div className="use-case-links">
+                        {item.productNodes.slice(0, 3).map((node) => (
+                          <Link href={`/${locale}/product-map?node=${node}`} key={node}>{node}<ArrowRight size={12} /></Link>
+                        ))}
                       </div>
                     </div>
-
-                    <div className="use-case-links">
-                      {item.productNodes.slice(0, 3).map((node) => (
-                        <Link href={`/${locale}/product-map?node=${node}`} key={node}>{node}<ArrowRight size={13} /></Link>
-                      ))}
+                    <div className="use-case-overview">
+                      <p className="use-case-summary">{localized(item.summary, locale)}</p>
+                      <p className="use-case-outcome"><CheckCircle2 size={15} aria-hidden /><span><strong>{text.outcome}</strong>{localized(item.outcome, locale)}</span></p>
+                      <button className="use-case-prompt-toggle" type="button" aria-expanded={open} aria-controls={`use-case-details-${item.id}`} onClick={() => setOpenId(open ? null : item.id)}>
+                        {open ? text.closePrompt : text.openPrompt}
+                        <ArrowRight size={15} aria-hidden />
+                      </button>
                     </div>
-
-                    <button className="use-case-prompt-toggle" type="button" aria-expanded={open} onClick={() => setOpenId(open ? null : item.id)}>
-                      {open ? text.closePrompt : text.openPrompt}
-                      <ArrowRight size={16} aria-hidden />
-                    </button>
                     {open ? (
-                      <div className="use-case-prompt">
-                        <div className="use-case-prompt-head"><span>{locale === "zh" ? "发给 xopc" : "SEND TO XOPC"}</span><button type="button" onClick={() => void copyPrompt(item.id, localized(item.prompt, locale))}>{copied ? <Check size={15} /> : <Copy size={15} />}{copied ? text.copied : text.copyPrompt}</button></div>
-                        <p>{localized(item.prompt, locale)}</p>
-                        <small>{text.promptNote}</small>
+                      <div className="use-case-details" id={`use-case-details-${item.id}`}>
+                        <div className="use-case-facts">
+                          {item.setup.length ? <div><Sparkles size={16} aria-hidden /><div><strong>{text.needs}</strong><ul>{item.setup.map((entry) => <li key={localized(entry, locale)}>{localized(entry, locale)}</li>)}</ul></div></div> : null}
+                          <div><ShieldCheck size={16} aria-hidden /><div><strong>{text.approval}</strong><p>{localized(item.approval, locale)}</p></div></div>
+                          <div><FileCheck2 size={16} aria-hidden /><div><strong>{text.evidence}</strong><ul>{item.evidence.map((entry) => <li key={localized(entry, locale)}>{localized(entry, locale)}</li>)}</ul></div></div>
+                        </div>
+                        <div className="use-case-prompt">
+                          <div className="use-case-prompt-head"><span>{locale === "zh" ? "发给 xopc" : "SEND TO XOPC"}</span><button type="button" onClick={() => void copyPrompt(item.id, localized(item.prompt, locale))}>{copied ? <Check size={15} /> : <Copy size={15} />}{copied ? text.copied : text.copyPrompt}</button></div>
+                          <p>{localized(item.prompt, locale)}</p>
+                          <small>{text.promptNote}</small>
+                        </div>
                       </div>
                     ) : null}
                   </article>
