@@ -55,9 +55,7 @@ const ScenarioTutorials = dynamic(
   },
 );
 
-type Props = {
-  locale: Locale;
-  copy: ProductMapMessages;
+export type ProductMapRuntimeProps = {
   header: Messages["header"];
   nav: Messages["landing"]["nav"];
   docHome: string;
@@ -65,6 +63,11 @@ type Props = {
   initialNode: NodeId;
   initialQuery: string;
   initialGroup: GroupId | "";
+};
+
+type Props = ProductMapRuntimeProps & {
+  locale: Locale;
+  copy: ProductMapMessages;
 };
 export function ProductMap({
   locale,

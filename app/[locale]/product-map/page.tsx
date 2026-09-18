@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { ProductMap } from "@/components/product-map/product-map";
+import { LocalizedProductMap } from "@/components/product-map/localized-product-map";
 import { docBaseUrl, isLocale, locales } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { getProductMapMessages } from "@/lib/product-map/messages";
@@ -73,9 +73,8 @@ export default async function ProductMapRoute({ params, searchParams }: Props) {
   const initialQuery = value("q").slice(0, 200);
   const messages = getMessages(locale);
   return (
-    <ProductMap
+    <LocalizedProductMap
       locale={locale}
-      copy={getProductMapMessages(locale)}
       header={messages.header}
       nav={messages.landing.nav}
       docHome={docBaseUrl(locale)}
