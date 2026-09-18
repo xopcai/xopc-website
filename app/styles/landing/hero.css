@@ -223,7 +223,7 @@ html[data-theme="dark"] .landing-page .hero-brand-logo .xopc-loop-logo {
   margin: 0 0 24px;
   color: var(--fg-head);
   font-family: var(--display);
-  font-size: clamp(30px, 5vw, 54px);
+  font-size: clamp(30px, 4.4vw, 50px);
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: 0;
