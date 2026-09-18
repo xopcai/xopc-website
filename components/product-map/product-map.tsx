@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -36,8 +37,23 @@ import {
   type MapView,
   type NodeId,
 } from "@/lib/product-map/model";
-import { ScenarioTutorials } from "./scenario-tutorials";
-import { MindMap } from "./mind-map";
+
+const MindMap = dynamic(
+  () => import("./mind-map").then((module) => module.MindMap),
+  {
+    loading: () => <div className="pm-lazy-panel" aria-label="Loading mind map" />,
+  },
+);
+
+const ScenarioTutorials = dynamic(
+  () =>
+    import("./scenario-tutorials").then(
+      (module) => module.ScenarioTutorials,
+    ),
+  {
+    loading: () => <p className="pm-lazy-inline" role="status">Loading…</p>,
+  },
+);
 
 type Props = {
   locale: Locale;

@@ -197,6 +197,23 @@ html[data-theme="dark"] .product-atlas.pm-refined {
   border: 0;
   padding: 0;
   margin-bottom: 52px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+
+.product-atlas.pm-refined .pm-lazy-panel {
+  min-height: clamp(480px, 67vh, 850px);
+  border: 1px solid var(--edge-bright);
+  border-radius: 10px;
+  background: var(--bg-void);
+}
+
+.product-atlas.pm-refined .pm-lazy-inline {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--fg-mid);
+  font-size: 13px;
 }
 .product-atlas.pm-refined .pm-group-heading:before,
 .product-atlas.pm-refined .pm-group-heading > span,

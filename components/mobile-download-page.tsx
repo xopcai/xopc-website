@@ -46,7 +46,7 @@ export function MobileDownloadPage({ locale, messages: m, initialPlatform, sourc
   return (
     <div className="landing-page mobile-download-page">
       <header className="mobile-page-header">
-        <MobileNavMenu locale={locale} />
+        <MobileNavMenu locale={locale} header={m.header} />
         <Link href={`/${locale}`} className="mobile-page-brand" aria-label={page.backHome}>
           <XopcLogoMark priority />
           <span>xopc</span>

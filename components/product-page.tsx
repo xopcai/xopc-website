@@ -41,7 +41,7 @@ export function ProductPage({ locale, messages: m, productSlug }: Props) {
       <nav>
         <div className="container nav-inner">
           <div className="nav-leading">
-            <MobileNavMenu locale={locale} />
+            <MobileNavMenu locale={locale} header={m.header} />
             <div className="nav-logo">
               <LogoHomeLink locale={locale} ariaLabel="xopc home" />
             </div>

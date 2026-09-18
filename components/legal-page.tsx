@@ -243,7 +243,7 @@ export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messa
       <LandingNavState />
       <nav>
         <div className="container nav-inner">
-          <div className="nav-leading"><MobileNavMenu locale={locale} /><div className="nav-logo"><LogoHomeLink locale={locale} ariaLabel="xopc home" /></div></div>
+          <div className="nav-leading"><MobileNavMenu locale={locale} header={m.header} /><div className="nav-logo"><LogoHomeLink locale={locale} ariaLabel="xopc home" /></div></div>
           <div className="legal-nav-links">
             <Link href={`/${locale}`}><ArrowLeft aria-hidden />{content.backHome}</Link>
             <Link href={otherKindHref}>{otherKindLabel}</Link>

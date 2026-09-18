@@ -38,7 +38,7 @@ export function LandingHeader({
       >
         <div className="container nav-inner">
           <div className="nav-leading">
-            <MobileNavMenu locale={locale} />
+            <MobileNavMenu locale={locale} header={header} />
             <div className="nav-logo">
               <LogoHomeLink
                 locale={locale}

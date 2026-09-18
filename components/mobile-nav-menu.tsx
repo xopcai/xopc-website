@@ -10,7 +10,7 @@ import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import { docBaseUrl, type Locale } from "@/lib/i18n/config";
-import { getMessages } from "@/lib/i18n/messages";
+import type { Messages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
 
 const menuCopy = {
@@ -52,12 +52,17 @@ const menuCopy = {
   },
 } as const;
 
-export function MobileNavMenu({ locale }: { locale: Locale }) {
+export function MobileNavMenu({
+  locale,
+  header,
+}: {
+  locale: Locale;
+  header: Messages["header"];
+}) {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const pathname = usePathname();
   const text = menuCopy[locale];
-  const messages = getMessages(locale);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -130,16 +135,16 @@ export function MobileNavMenu({ locale }: { locale: Locale }) {
               <div>
                 <LocaleSwitcher
                   locale={locale}
-                  labelZh={messages.header.langZh}
-                  labelEn={messages.header.langEn}
-                  chooseLanguageLabel={messages.header.chooseLanguage}
+                  labelZh={header.langZh}
+                  labelEn={header.langEn}
+                  chooseLanguageLabel={header.chooseLanguage}
                   variant="landing"
                 />
                 <ThemeToggle
                   variant="pill"
-                  ariaLight={messages.header.themeLight}
-                  ariaDark={messages.header.themeDark}
-                  ariaToggle={messages.header.themeToggle}
+                  ariaLight={header.themeLight}
+                  ariaDark={header.themeDark}
+                  ariaToggle={header.themeToggle}
                 />
               </div>
             </div>
