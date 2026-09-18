@@ -33,8 +33,8 @@ export async function generateMetadata({
       languages: { zh: "/zh", en: "/en", "x-default": "/en" },
     },
     keywords: loc === "zh"
-      ? ["私人 AI 助手", "本地优先 AI", "个人 AI Agent", "开源 AI", "AI 工作管理"]
-      : ["personal AI assistant", "local-first AI", "personal AI agent", "open source AI", "AI work management"],
+      ? ["超级个体", "个人 AI", "本地优先 AI", "个人 AI Agent", "开源 AI"]
+      : ["one-person company", "personal AI", "local-first AI", "personal AI agent", "open source AI"],
     title: {
       default: m.meta.title,
       template: "%s · xopc",
@@ -48,7 +48,7 @@ export async function generateMetadata({
       locale: loc === "zh" ? "zh_CN" : "en_US",
       alternateLocale: loc === "zh" ? "en_US" : "zh_CN",
       type: "website",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "xopc — Keep what matters moving." }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "xopc — Personal AI for the one-person company." }],
     },
     twitter: {
       card: "summary_large_image",

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — Keep what matters moving.",
-    "description": "A personal AI on your computer that carries the busywork while keeping direction, judgment, and final decisions with you.",
-    "ogDescription": "Let AI carry the busywork while you keep direction, judgment, and final decisions—so what matters moves forward with less effort."
+    "title": "xopc — Personal AI for the one-person company.",
+    "description": "A personal AI that remembers your goals and context, takes action across your tools, and picks up where you left off.",
+    "ogDescription": "Personal AI for the one-person company. Your context, carried forward across conversations, tools, and time."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -25,8 +25,8 @@
     },
     "hero": {
       "brandName": "xopc",
-      "headline": "Keep what matters moving.",
-      "desc": "It understands your goals, carries the busywork, and keeps direction, judgment, and final decisions with you—so what matters moves forward with less effort.",
+      "headline": "Personal AI for the one-person company.",
+      "desc": "A personal AI that remembers your goals and context, takes action across your tools, and picks up where you left off.",
       "primaryCta": "Download xopc",
       "secondaryCta": "Install in terminal"
     },
@@ -122,10 +122,10 @@
       "backHome": "Back to xopc home"
     },
     "collaboration": {
-      "kicker": "How humans and AI work together",
-      "title": "Let AI carry the execution. Keep the direction human.",
-      "desc": "xopc is not here to live life for you. It carries repeatable, time-consuming, verifiable work while you decide what matters and retain consequential judgment, creativity, and final decisions.",
-      "outcome": "The point of efficiency is not to make people do more. It is to return time to life and what genuinely matters.",
+      "kicker": "Built for independent work",
+      "title": "Working independently shouldn’t mean working alone.",
+      "desc": "xopc brings memory, context, and intelligence into everything you do. It carries repeatable, time-consuming, verifiable work while you keep direction, judgment, creativity, and final decisions.",
+      "outcome": "It remembers what matters, understands what you’re building, and keeps moving with you.",
       "modelLabel": "The xopc 80/20 human–AI collaboration loop",
       "aiRatio": "80%",
       "aiLabel": "AI executes",
@@ -137,8 +137,8 @@
     },
     "aha": {
       "kicker": "Start with one real thing",
-      "title": "It does not need to know everything to start helping.",
-      "desc": "xopc starts with the context you choose to share, explains its understanding, and finds the most credible next step.",
+      "title": "Start once. Never start over.",
+      "desc": "xopc starts with the context you choose to share, explains its understanding, and carries the next credible step forward.",
       "ariaLabel": "Example of xopc turning an unfinished thought into a next step",
       "userLabel": "You",
       "userMessage": "I want to launch this project next week, but I have been avoiding it and I am not sure where to restart.",
@@ -205,8 +205,8 @@
       "correctionNote": "Facts and inferences stay distinct. You can correct either before it becomes durable understanding."
     },
     "cta": {
-      "titleLine1": "Move one important thing",
-      "titleLine2": "forward with xopc.",
+      "titleLine1": "One person. One AI.",
+      "titleLine2": "A new kind of company.",
       "primary": "Download xopc →",
       "secondary": "View on GitHub"
     },

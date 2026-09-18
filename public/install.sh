@@ -33,13 +33,13 @@ ORIGINAL_PATH="${PATH:-}"
 
 # ─── Taglines ───
 TAGLINES=(
-    "Your terminal just grew smarter — type something and let xopc handle the rest."
-    "One CLI to run them all. Gateway online."
-    "Personal AI workstation: CLI, gateway, multi-channel. You're welcome."
-    "Automation with taste: minimal fuss, maximal output."
-    "If it's repetitive, xopc automates it. If it's hard, xopc brings a rollback plan."
+    "Personal AI for the one-person company."
+    "Your context, carried forward."
+    "Start once. Never start over."
+    "It remembers. You keep moving."
+    "Built for one. Capable of more."
 )
-DEFAULT_TAGLINE="Personal AI workstation that grows with you."
+DEFAULT_TAGLINE="Personal AI for the one-person company."
 
 pick_tagline() {
     local count=${#TAGLINES[@]}
