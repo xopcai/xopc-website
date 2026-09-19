@@ -68,3 +68,14 @@ The native product explorer lives at `/zh/product-map` and `/en/product-map`, wi
 - `node scripts/check-product-map.mjs`: verify translation parity, placeholders, feature coverage and graph references.
 
 The public map links to localized product guides where available and labels English-only references. Experimental and evolving capabilities are explicitly marked. Update both languages when product capabilities change. Canonical and language-alternate URLs are defined on the route, and both locales are included in the sitemap.
+
+## Short product films
+
+The learn page features the 45-second portrait office overview at
+`/zh/learn?course=office-overview` (and `/en/learn?course=office-overview`).
+Published assets live in `public/media/promos/office-overview/v1/zh-CN/`:
+`video.mp4`, `poster.jpg`, and `captions.vtt`, tracked with Git LFS.
+The editable composition, narration and source manifest remain in the sibling
+`xopc-tutorials/videos/xopc-office-promo/` project. Publish revisions in a new
+version directory and update `promoMedia` in `components/learn/course-library.tsx`.
+Both locales use Chinese narration, explicitly labeled in the player.

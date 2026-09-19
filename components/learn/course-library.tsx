@@ -13,9 +13,12 @@ import { getMessages } from "@/lib/i18n/messages";
 
 export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initialCourse: string }) {
   const zh = locale === "zh";
-  const [selected, setSelected] = useState(courses.some(c => c.id === initialCourse) ? initialCourse : "");
+  const [selected, setSelected] = useState((initialCourse === "office-overview" || courses.some(c => c.id === initialCourse)) ? initialCourse : "");
   const [category, setCategory] = useState("all");
   const visibleCourses = courses.filter(c => category === "all" || c.category === category);
+  const promo = selected === "office-overview";
+  const promoTitle = zh ? "下班前，汇报突然来了。" : "A last-minute report. A place to start.";
+  const promoMedia = "/media/promos/office-overview/v1/zh-CN";
   const modal = useRef<HTMLDialogElement>(null);
   const course = courses.find(c => c.id === selected);
   const tutorial = catalog.tutorials.find(t => t.id === selected);
@@ -39,6 +42,11 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
       reserveSpace
     />
     <main className="learn-main"><section className="learn-intro"><p className="pm-eyebrow">{zh ? "场景实战 · PC 端" : "PRACTICAL WORKFLOWS · DESKTOP"}</p><h1>{zh ? "从一件真实的事开始。" : "Start with something you need to do."}</h1><p>{zh ? "带着材料进入 xopc，核对过程，带走一份能继续使用的结果。" : "Bring your materials into xopc, review the work and leave with a useful result."}</p><div className="learn-tags"><span>{zh ? `${courses.length} 个完整场景` : `${courses.length} complete workflows`}</span><span>{zh ? "中文配音与字幕" : "Chinese narration & captions"}</span><span>{zh ? "可下载跟做材料" : "Downloadable practice files"}</span></div></section>
+    <button className="learn-promo" onClick={() => setSelected("office-overview")}>
+      <span className="learn-promo-copy"><span className="pm-eyebrow">{zh ? "45 秒 · 场景预览" : "45 SECONDS · WORKFLOW PREVIEW"}</span><strong>{promoTitle}</strong><span>{zh ? "从零散材料，到 Excel 与 PPT。" : "From scattered files to Excel and PowerPoint."}</span><span className="learn-promo-play"><Play size={18}/>{zh ? "观看短片" : "Watch the film"}</span></span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={`${promoMedia}/poster.jpg`} alt="" width={1080} height={1920}/>
+    </button>
     <div role="group" className="learn-filters" aria-label={zh ? "课程分类" : "Course categories"}>{[{id:"all", zh:"全部", en:"All"},{id:"office", zh:"办公文件", en:"Office files"},{id:"everyday", zh:"日常协作", en:"Everyday workflows"}].map(item => <button key={item.id} type="button" aria-pressed={category === item.id} onClick={() => setCategory(item.id)}>{item[locale]}<span>{item.id === "all" ? courses.length : courses.filter(c => c.category === item.id).length}</span></button>)}</div>
     <section className="learn-grid" aria-label={zh ? "选择场景课程" : "Choose a course"}>{visibleCourses.map(c => {
       const copy = c[locale]; const media = catalog.tutorials.find(t => t.id === c.id);
@@ -51,8 +59,11 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
       </button>;
     })}</section><section className="learn-guide"><h2>{zh ? "怎样跟着做" : "How to follow along"}</h2><ol><li>{zh ? "先完成模型接入，下载课程中的虚构练习材料。" : "Connect a model and download the fictional practice files."}</li><li>{zh ? "观看章节，暂停视频，在自己的 xopc 中执行同一步骤。" : "Watch a chapter, pause and try the steps in your own xopc."}</li><li>{zh ? "核对来源、日期与实际保存结果，再换成自己的授权资料。" : "Check sources, dates and saved results before using your own authorized materials."}</li></ol><Link href={`/${locale}/product-map?node=models`}>{zh ? "回到功能地图，补齐基础操作" : "Review the basics in the product map"}<ArrowRight size={16}/></Link><p>{zh ? "视频结合真实 PC 界面截图与实际交付文件预览。示例人物和业务材料为虚构；英文页面的视频与详细教程仍为中文。" : "Videos combine real desktop screenshots with previews of actual deliverables. People and business materials are fictional. Videos and detailed guides are currently in Chinese."}</p></section></main>
     <dialog className="pm-dialog learn-modal" ref={modal} onClose={() => setSelected("")} aria-labelledby="learn-course-title" onClick={event => {if (event.target === event.currentTarget) {const r = event.currentTarget.getBoundingClientRect();if(event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) setSelected("");}}}>
-      <div className="pm-dialog-head"><h2 id="learn-course-title">{course?.[locale].title}</h2><button autoFocus onClick={() => setSelected("")} aria-label={zh ? "关闭课程" : "Close course"}><X/></button></div>
-      <div className="pm-dialog-scroll" key={selected}>{course && <>{tutorial && <TutorialPlayer tutorial={tutorial} locale={locale} focused/>}<h3>{zh ? "相关功能" : "Related features"}</h3><div className="pm-chips">{course.nodes.map(node => <Link key={node} href={`/${locale}/product-map?node=${node}`}>{getProductMapMessages(locale).nodes[node as NodeId].title}<ArrowRight size={14}/></Link>)}</div><p className="learn-download-note"><Download size={15}/>{zh ? "材料是独立示例，可重复解压练习；不要覆盖自己的正式资料。" : "Practice files are standalone examples. Extract a fresh copy for another attempt."}</p></>}</div>
+      <div className="pm-dialog-head"><h2 id="learn-course-title">{promo ? promoTitle : course?.[locale].title}</h2><button autoFocus onClick={() => setSelected("")} aria-label={zh ? "关闭课程" : "Close course"}><X/></button></div>
+      <div className="pm-dialog-scroll" key={selected}>{promo && <div className="learn-promo-view">
+        <video controls playsInline preload="metadata" poster={`${promoMedia}/poster.jpg`} aria-label={promoTitle}><source src={`${promoMedia}/video.mp4`} type="video/mp4"/><track kind="captions" src={`${promoMedia}/captions.vtt`} srcLang="zh" label="中文"/></video>
+        <div><p>{zh ? "三张销售表，一份业务说明。整理数据，生成汇报，再继续修改。" : "Three sales sheets and a business brief. Organize the data, build a report and refine it."}</p><p className="learn-download-note">{zh ? "虚构业务材料；真实产品界面与生成文件预览。中文 AI 配音与字幕。" : "Fictional business data with real product screens and generated files. Chinese AI narration and captions."}</p><h3>{zh ? "动手试一次" : "Try it yourself"}</h3><div className="pm-chips"><button onClick={() => setSelected("scenario-sales-excel")}>{zh ? "整理 Excel" : "Work with Excel"}<ArrowRight size={14}/></button><button onClick={() => setSelected("scenario-business-ppt")}>{zh ? "制作汇报 PPT" : "Build a presentation"}<ArrowRight size={14}/></button></div></div>
+      </div>}{course && <>{tutorial && <TutorialPlayer tutorial={tutorial} locale={locale} focused/>}<h3>{zh ? "相关功能" : "Related features"}</h3><div className="pm-chips">{course.nodes.map(node => <Link key={node} href={`/${locale}/product-map?node=${node}`}>{getProductMapMessages(locale).nodes[node as NodeId].title}<ArrowRight size={14}/></Link>)}</div><p className="learn-download-note"><Download size={15}/>{zh ? "材料是独立示例，可重复解压练习；不要覆盖自己的正式资料。" : "Practice files are standalone examples. Extract a fresh copy for another attempt."}</p></>}</div>
     </dialog>
   </div>;
 }
