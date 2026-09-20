@@ -13,38 +13,22 @@
 @media(max-width:520px){.product-atlas .pm-main{padding:24px 15px 0}.product-atlas .pm-card-grid{grid-template-columns:1fr}.product-atlas .pm-card{min-height:0}.product-atlas .pm-card p{font-size:16px}.product-atlas .pm-map-group{padding-left:17px}.product-atlas .pm-group-heading h2{font-size:17px}.product-atlas .pm-group-heading small{display:none}.product-atlas .pm-tour-picker>div{grid-template-columns:1fr}.product-atlas .pm-view-switch{flex-wrap:wrap;gap:5px}.product-atlas .pm-view-switch button{flex:1 1 40%;font-size:14px}.product-atlas .pm-dialog-scroll{padding:20px}.product-atlas .pm-features{grid-template-columns:1fr}.product-atlas .pm-dialog h2{font-size:24px}.product-atlas .pm-mind-tools .pm-buttons{gap:5px}.product-atlas .pm-mind-tools .pm-buttons button{padding:7px 9px}.product-atlas .pm-mind-bottom{flex-wrap:wrap}.product-atlas .pm-mind-bottom .pm-buttons{margin-left:auto}.product-atlas .pm-footer{align-items:start}.product-atlas .pm-tour>div:first-child{flex-wrap:wrap}.product-atlas .pm-tour>div:first-child span{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.product-atlas *{transition:none!important;scroll-behavior:auto!important}}
 
-/* Keep the map visible while feature details slide in from the right. */
-.product-atlas .pm-detail-drawer {
-  inset: 0 0 0 auto;
-  margin: 0;
-  width: min(580px, 100vw);
-  max-width: 100vw;
-  height: 100dvh;
-  max-height: 100dvh;
-  border-radius: 16px 0 0 16px;
-  border-width: 0 0 0 1px;
-  transform: translateX(100%);
-  transition: transform 240ms ease, display 240ms allow-discrete, overlay 240ms allow-discrete;
+/* Feature details open as a centered modal on every map view. */
+.product-atlas .pm-detail-modal {
+  width: min(840px, calc(100vw - 48px));
+  height: min(880px, calc(100dvh - 48px));
+  max-width: none;
+  max-height: none;
+  box-shadow: 0 24px 100px rgb(0 0 0 / 35%);
 }
-.product-atlas .pm-detail-drawer[open] { transform: translateX(0); }
-.product-atlas .pm-detail-drawer::backdrop {
-  background: rgb(10 18 35 / 32%);
-  backdrop-filter: none;
-  opacity: 0;
-  transition: opacity 240ms ease, display 240ms allow-discrete, overlay 240ms allow-discrete;
-}
-.product-atlas .pm-detail-drawer[open]::backdrop { opacity: 1; }
-.product-atlas .pm-detail-drawer .pm-dialog-scroll { overscroll-behavior: contain; }
-.product-atlas .pm-detail-drawer .pm-dialog-footer { padding-bottom: max(17px, env(safe-area-inset-bottom)); }
-@starting-style {
-  .product-atlas .pm-detail-drawer[open] { transform: translateX(100%); }
-  .product-atlas .pm-detail-drawer[open]::backdrop { opacity: 0; }
-}
+.product-atlas .pm-detail-modal .pm-dialog-scroll { overscroll-behavior: contain; }
+.product-atlas .pm-detail-modal .pm-dialog-footer { padding-bottom: max(17px, env(safe-area-inset-bottom)); }
 @media (max-width: 520px) {
-  .product-atlas .pm-detail-drawer { width: calc(100vw - 12px); border-radius: 12px 0 0 12px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .product-atlas .pm-detail-drawer, .product-atlas .pm-detail-drawer::backdrop { transition: none; }
+  .product-atlas .pm-detail-modal {
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 24px);
+    border-radius: 16px;
+  }
 }
 
 .pm-tutorial{margin:24px 0;padding:18px;border:1px solid var(--pm-border,#dce2eb);border-radius:16px}

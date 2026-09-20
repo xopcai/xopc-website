@@ -3,7 +3,7 @@
 
 .learn-filters{display:flex;gap:10px;flex-wrap:wrap;margin:-8px 0 28px}.learn-filters button{display:inline-flex;align-items:center;gap:9px;border:1px solid #8795b340;border-radius:30px;padding:10px 17px;background:transparent;color:inherit;cursor:pointer;font-size:14px}.learn-filters button[aria-pressed=true]{background:#315ee8;color:#fff;border-color:#315ee8}.learn-filters button:focus-visible{outline:3px solid #668ce0;outline-offset:3px}.learn-filters button span{font-size:12px;opacity:.7}
 
-/* Course viewing stays centered; feature details retain their drawer. */
+/* Course and feature detail dialogs stay centered. */
 .product-atlas .learn-modal{inset:0;margin:auto;width:min(1160px,calc(100vw - 48px));max-width:none;height:min(960px,calc(100dvh - 48px));max-height:none;border-radius:20px;box-shadow:0 24px 100px #0005}
 .product-atlas .learn-modal .pm-dialog-head h2{font-size:20px;line-height:1.4;margin:0}
 .product-atlas .learn-modal .pm-dialog-scroll{padding:20px 28px 28px;overscroll-behavior:contain;scrollbar-gutter:stable}

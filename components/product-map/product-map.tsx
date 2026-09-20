@@ -501,7 +501,7 @@ export function ProductMap({
         </footer>
       </main>
       <dialog
-        className="pm-dialog pm-detail-drawer"
+        className="pm-dialog pm-detail-modal"
         ref={detail}
         onClick={(event) => {
           if (event.target !== event.currentTarget) return;
