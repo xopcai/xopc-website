@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { memoryArticle, memoryArticlePath } from "@/lib/blog";
 import { productSlugs } from "@/components/product-page";
 import { locales } from "@/lib/i18n/config";
 
@@ -67,5 +68,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates("/use-cases") },
   }));
 
-  return [...homePages, ...useCasePages, ...productPages, ...mapPages, ...learnPages, ...mobilePages, ...legalPages];
+  const blogPages: MetadataRoute.Sitemap = [
+    ...locales.map((locale) => ({ url: `${origin}/${locale}/blog`, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: languageAlternates("/blog") } })),
+    { url: `${origin}${memoryArticlePath}`, lastModified: memoryArticle.date, changeFrequency: "monthly", priority: 0.8, alternates: { languages: { zh: `${origin}${memoryArticlePath}` } } },
+  ];
+
+  return [...blogPages, ...homePages, ...useCasePages, ...productPages, ...mapPages, ...learnPages, ...mobilePages, ...legalPages];
 }

@@ -81,3 +81,13 @@ The editable composition, narration and source manifest remain in the sibling
 `xopc-tutorials/videos/xopc-office-promo/` project. Publish revisions in a new
 version directory and update `promoMedia` in `components/learn/course-library.tsx`.
 Both locales use Chinese narration, explicitly labeled in the player.
+
+## Inside xopc engineering blog
+
+The blog lives at `/zh/blog` and `/en/blog`. Article bodies are authored in
+`content/blog/`, with metadata in `lib/blog.ts` and responsive, accessible diagrams
+in `components/blog/`. The first article is Chinese-only; the English index labels
+that explicitly, and its English article URL redirects to the Chinese original.
+Do not add an English article language alternate until a translation is published.
+Source links are pinned to the xopc revision reviewed for the article. Add published
+article URLs to `app/sitemap.ts`; social artwork lives in `public/media/blog/`.

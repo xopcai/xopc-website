@@ -48,6 +48,7 @@ export function LandingFooter({ footer, docsHref, locale }: Props) {
               {footer.issues}
             </a>
           </li>
+          <li><a href={`/${locale}/blog`}>{locale === "zh" ? "技术博客" : "Blog"}</a></li>
           <li><a href={`/${locale}/privacy`}>{footer.privacy}</a></li>
           <li><a href={`/${locale}/support`}>{footer.support}</a></li>
         </ul>

@@ -27,6 +27,8 @@ const menuCopy = {
     casesHint: "从真实任务找到开始方式",
     learn: "实战教程",
     learnHint: "跟着案例跑通第一次",
+    blog: "技术博客",
+    blogHint: "实现、取舍与工程经验",
     docs: "产品文档",
     docsHint: "安装、配置与开发参考",
     download: "下载 xopc",
@@ -45,6 +47,8 @@ const menuCopy = {
     casesHint: "Find a starting point from real work",
     learn: "Guided tutorials",
     learnHint: "Complete your first workflow step by step",
+    blog: "Engineering blog",
+    blogHint: "Implementation, trade-offs and lessons",
     docs: "Documentation",
     docsHint: "Installation, configuration, and developer reference",
     download: "Download xopc",
@@ -77,6 +81,7 @@ export function MobileNavMenu({
     { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map` },
     { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
     { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
+    { href: `/${locale}/blog`, label: text.blog, hint: text.blogHint, icon: BookOpen, active: pathname.startsWith(`/${locale}/blog`) },
   ];
 
   return (

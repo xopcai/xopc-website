@@ -15,7 +15,7 @@ type Props = {
   header: Messages["header"];
   nav: Messages["landing"]["nav"];
   docHome: string;
-  activePage?: "use-cases" | "product-map" | "learn";
+  activePage?: "use-cases" | "product-map" | "learn" | "blog";
   locationSuffix?: string;
   reserveSpace?: boolean;
 };
@@ -68,6 +68,7 @@ export function LandingHeader({
                 {nav.productMap}
               </AnimatedRouteLink>
             </li>
+            <li><AnimatedRouteLink href={`${home}/blog`} className={activePage === "blog" ? "is-active" : undefined} aria-current={activePage === "blog" ? "page" : undefined}>{locale === "zh" ? "博客" : "Blog"}</AnimatedRouteLink></li>
             <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
           </ul>
           <div className="nav-extra">
