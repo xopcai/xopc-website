@@ -22,6 +22,8 @@ import {
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
+import { ProductIntroVideo } from "@/components/product-intro-video";
+import { productIntro } from "@/lib/product-intro";
 import { LandingHeader } from "@/components/landing-header";
 import { docUrl, type Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -81,6 +83,7 @@ export function ProductMap({
   initialGroup,
 }: Props) {
   const u = c.ui;
+  const film = productIntro(locale);
   const [view, setView] = useState<MapView>(initialView),
     [selected, setSelected] = useState<NodeId>(initialNode);
   const [query, setQuery] = useState(initialQuery),
@@ -234,7 +237,7 @@ export function ProductMap({
           <div className="pm-intro-actions">
             <button onClick={() => setVideoOpen(true)}>
               <Play size={16} />
-              {u.video}
+              {film.title}
             </button>
             <button
               className="pm-primary"
@@ -483,7 +486,16 @@ export function ProductMap({
                           <p className="pm-group-description">
                             {c.groups[g.id].description}
                           </p>
-                          <div className="pm-card-grid">{ids.map(card)}</div>
+                          <div className="pm-card-grid">
+                            {ids.includes("onboard") && !query && (
+                              <button className="pm-card" onClick={() => setVideoOpen(true)}>
+                                <Play className="pm-card-icon" size={25} strokeWidth={1.5} />
+                                <span className="pm-card-title">{film.title}<span>{film.duration}</span></span>
+                                <p>{film.description}</p>
+                              </button>
+                            )}
+                            {ids.map(card)}
+                          </div>
                         </section>
                       ) : null;
                     })
@@ -585,19 +597,13 @@ export function ProductMap({
         }}
       >
         <div className="pm-dialog-head">
-          <h2 id="pm-video-title">{u.videoTitle}</h2>
+          <h2 id="pm-video-title">{film.title}</h2>
           <button aria-label={u.close} onClick={() => setVideoOpen(false)}>
             <X />
           </button>
         </div>
-        <video
-          src="/media/product/xopc-desktop.mp4"
-          controls
-          playsInline
-          preload="none"
-          aria-label={u.videoTitle}
-        />
-        <p>{u.videoNote}</p>
+        {videoOpen && <ProductIntroVideo locale={locale} />}
+        <p>{film.description}</p>
       </dialog>
     </div>
   );

@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 
 import { HeroBrand } from "@/components/hero-brand";
+import { ProductIntroVideo } from "@/components/product-intro-video";
 import { LandingFooter } from "@/components/landing-footer";
 import { LandingAnalytics } from "@/components/landing-analytics";
 import { LandingHeader } from "@/components/landing-header";
@@ -146,20 +147,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             <p>{L.productProof.desc}</p>
           </div>
           <figure className="product-proof-frame">
-            <video
-              width={1280}
-              height={720}
-              controls
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              aria-label={L.productProof.imageAlt}
-            >
-              <source src="/media/product/xopc-desktop.mp4" type="video/mp4" />
-              {L.productProof.imageAlt}
-            </video>
+            <ProductIntroVideo locale={locale} preload="metadata" />
           </figure>
         </div>
       </section>
