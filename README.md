@@ -90,6 +90,6 @@ under the adjacent `images/` directory. A shared Markdown renderer handles
 typography, captions, tables and responsive light/dark diagrams. See
 [the authoring guide](content/blog/README.md). Each article has Chinese and English Markdown, localized illustrations and
 share artwork, reciprocal language links, and a canonical URL for each language.
-Source links are pinned to the xopc revision reviewed for the article. The published registry in
+Articles focus on concrete problems, design decisions, and trade-offs. The published registry in
 `lib/blog.ts` drives the index, article routes and sitemap. New social artwork
 lives beside each article in `content/blog/<slug>/images/`.

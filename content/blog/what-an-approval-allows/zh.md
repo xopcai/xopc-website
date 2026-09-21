@@ -8,7 +8,6 @@ language: "zh-CN"
 readingTime: "约 10 分钟"
 number: "03"
 category: "执行与授权"
-sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977"
 cover: "/blog/what-an-approval-allows/images/cover.png"
 anchors:
   "先看一封改过收件人的邮件": "changed-recipient"
@@ -17,8 +16,7 @@ anchors:
   "给人看的预览，与给代码的校验": "preview-and-hash"
   "一次批准怎样走到执行": "approval-lifecycle"
   "已使用，不等于已发送": "execution-gap"
-  "我们检查哪些边界": "verification"
-  "实现与测试": "sources"
+  "批准要回答的问题": "verification"
 ---
 
 ## 先看一封改过收件人的邮件
@@ -121,37 +119,11 @@ xopc 的预览函数会对名称命中 password、token、authorization 等模�
 
 连接器执行审计也因此区分策略决定与结果状态：等待确认或被策略拒绝，可以记录为未执行；进入外部调用后，再记录成功或错误及相关耗时。查问题时，需要把批准记录、执行审计和外部事实一起看。只看到一个绿色“已批准”，还不足以向用户报告“邮件已发送”。
 
-## 我们检查哪些边界
-
-与其只演示一次顺利发送，更有用的是故意改变批准周围的条件。
-
-| 改变什么 | 需要守住的规则 |
-| --- | --- |
-| 交换对象字段顺序 | 参数指纹不变 |
-| 修改实际参数 | 不能使用原参数指纹对应的批准 |
-| 换一个 Agent 或账户 | 本地策略或批准身份检查拒绝 |
-| 需要 write，但上限只有 read | 用户确认不能绕过权限上限 |
-| 第二次使用同一个批准 | 已使用记录不再被消费 |
-| 批准已过期 | 即使先前同意过，也不再有效 |
-
-现有单元测试直接覆盖了指纹的确定性、预览遮盖、策略层拒绝，以及“错误指纹不能使用、正确指纹只能用一次”。有效期、身份与等待恢复还有明确的执行检查，但这些检查的存在，不应被包装成所有并发、网络和第三方行为都已经被测试穷尽。
+## 批准要回答的问题
 
 这个设计最终要回答的是一个很普通的问题：**用户刚才同意的，和 Agent 现在准备做的，还是不是同一件事？**
 
 账户、动作、参数、任务范围和有效期，把这个问题拆成代码可以核对的条件。外部执行是否成功，则继续交给执行结果和可查询的事实回答。两边都说清楚，批准才不会变成一个看起来令人放心、实际含义却很模糊的按钮。
-
-## 实现与测试
-
-本文核对于 2026 年 9 月 21 日。以下链接固定到同一公开快照，范围限定为 Composio 连接器的本地执行与批准路径，不是完整的安全审计报告。
-
-- [连接器执行、账户选择和批准绑定](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/external-tools/composio-provider.ts)
-- [本地执行策略](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/policy.ts)
-- [参数指纹与参数预览](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/approval.ts)
-- [批准状态与一次性消费](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/storage/sqlite/connector-repository.ts)
-- [当前目标范围与等待记录](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/storage/sqlite/connection-wait-repository.ts)
-- [批准后的等待恢复检查](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/approval-resume.ts)
-- [外部调用与执行审计](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/composio-sessions.ts)
-- [策略测试](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/__tests__/policy.test.ts) · [指纹与预览测试](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/__tests__/approval.test.ts) · [批准消费测试](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/__tests__/connector-repository.test.ts)
 
 [上一篇：聊天记录还在，为什么不能原样交给模型？](/zh/blog/history-is-not-context)
 

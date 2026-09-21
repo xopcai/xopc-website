@@ -8,7 +8,6 @@ language: "en-US"
 readingTime: "8 min read"
 number: "02"
 category: "Context"
-sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977"
 cover: "/blog/history-is-not-context/images/en/cover.png"
 anchors:
   "An interrupted tool call": "interrupted-call"
@@ -16,8 +15,7 @@ anchors:
   "Pair calls with their results": "tool-pairs"
   "How many old screenshots should stay?": "browser-images"
   "Where to resume after compaction": "compaction-boundary"
-  "How we check these rules": "verification"
-  "Implementation and tests": "sources"
+  "Records, context, and actual state": "verification"
 ---
 
 ## An interrupted tool call
@@ -119,33 +117,11 @@ The name “compaction summary” alone does not determine the behavior. A `comp
 
 This keeps the reading rule consistent across repeated compactions. It does not solve every problem with summaries. A summary can omit a critical constraint, and a structurally valid checkpoint can still be incomplete in meaning. Source and audit information help with investigation. We still need to check whether the resulting context preserves what the task requires.
 
-## How we check these rules
-
-“Continue chatting for two turns and see if it looks fine” is a weak test for these problems. A fluent answer may simply have avoided using the missing information. We inspect the conversion output itself.
-
-| Constructed history | Expected result |
-| --- | --- |
-| A context record follows an ordinary message | The context record does not appear in model messages |
-| One assistant message contains paired and orphan calls | Retain the pair and ordinary text; remove the orphan call |
-| A tool result has no earlier matching call | Exclude the result from model input |
-| Two browser observations contain images | Keep earlier text, omit older images, and retain images from the newest result |
-| New messages follow a compaction checkpoint | Use the checkpoint snapshot, then append the new messages |
-| The history contains two compactions | Use the later checkpoint as the new starting point |
-
-The session-context tests linked below contain checks for these cases. They validate deterministic conversion rules, not the model’s understanding of the task or the reliability of tool execution.
+## Records, context, and actual state
 
 The first article explained why a fact’s presence in long-term memory does not mean it should affect an answer now. Conversation history has a similar boundary: **a saved record is not necessarily ready to enter the next request unchanged.**
 
 When history is still present but the agent cannot continue properly, we inspect the stored records, the generated model messages, and the tools’ actual state separately. Looking at all three helps distinguish lost information, broken message structure, and an action that happened without reporting back. The next article follows that last problem: when a user approves an external action, what has to happen before we can call it complete?
-
-## Implementation and tests
-
-Reviewed against the public code snapshot on September 21, 2026. This article focuses on the projection of conversation history, not the compaction planner or every provider-specific adaptation.
-
-- [History conversion, tool pairing, and browser-image rules](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/session/session-context-for-llm.ts)
-- [Tests for these conversion rules](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/session/__tests__/session-context-for-llm.test.ts)
-- [Provider-aware transcript preparation](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/transcript/transcript-hygiene.ts)
-- [Choosing model-facing transcript policies](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/transcript/transcript-policy.ts)
 
 [Previous: When you change your mind: how a personal agent updates its memory](/en/blog/when-memory-changes)
 

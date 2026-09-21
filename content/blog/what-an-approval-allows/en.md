@@ -8,7 +8,6 @@ language: "en-US"
 readingTime: "9 min read"
 number: "03"
 category: "Execution and permissions"
-sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977"
 cover: "/blog/what-an-approval-allows/images/en/cover.png"
 anchors:
   "Start with a changed recipient": "changed-recipient"
@@ -17,8 +16,7 @@ anchors:
   "A preview for people, a check for code": "preview-and-hash"
   "From approval to execution": "approval-lifecycle"
   "Consumed does not mean sent": "execution-gap"
-  "The boundaries we check": "verification"
-  "Implementation and tests": "sources"
+  "What approval needs to establish": "verification"
 ---
 
 ## Start with a changed recipient
@@ -121,37 +119,11 @@ Reducing duplicate actions further depends on the service: does it accept an ide
 
 Connector execution auditing therefore distinguishes a policy decision from an execution result. Waiting for confirmation or being denied by policy can be recorded as not executed. The external-call path then records success or error, with associated timing information. Investigating a failure requires the approval record, the execution audit, and the external facts. A green “Approved” status is not enough to tell the user, “Your email was sent.”
 
-## The boundaries we check
-
-Deliberately changing the conditions around an approval is more informative than demonstrating one successful send.
-
-| What changes | The boundary to preserve |
-| --- | --- |
-| Object keys are reordered | The argument fingerprint stays the same |
-| Actual arguments change | The original fingerprint cannot authorize the changed request |
-| A different agent or account is used | Local policy or approval identity checks reject the request |
-| The action needs write access but the ceiling is read | Confirmation cannot bypass the scope ceiling |
-| The same approval is used a second time | A consumed record cannot be consumed again |
-| Approval has expired | Earlier consent no longer makes the record valid |
-
-Existing unit tests directly cover deterministic hashing, preview redaction, policy denials, and the rule that a wrong fingerprint cannot consume approval while the correct one can do so only once. Expiry, identity, and wait resumption also have explicit execution checks. The presence of those checks should not be presented as exhaustive testing of every race, network failure, or third-party behavior.
+## What approval needs to establish
 
 The design comes back to a plain question: **is the action the agent is about to take still the one the user approved?**
 
 Account, action, arguments, objective scope, and expiry turn that question into conditions code can check. Whether the external operation succeeded remains a question for execution results and verifiable facts. Being precise about both keeps approval from becoming a reassuring button with an unclear meaning.
-
-## Implementation and tests
-
-Reviewed against the public code snapshot on September 21, 2026. These links cover the local execution and approval path for Composio connectors. This article is not a comprehensive security audit.
-
-- [Connector execution, account selection, and approval binding](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/external-tools/composio-provider.ts)
-- [Local execution policy](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/policy.ts)
-- [Argument fingerprints and previews](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/approval.ts)
-- [Approval states and one-time consumption](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/storage/sqlite/connector-repository.ts)
-- [Objective scope and wait records](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/storage/sqlite/connection-wait-repository.ts)
-- [Wait-resumption checks after approval](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/approval-resume.ts)
-- [External calls and execution auditing](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/composio-sessions.ts)
-- [Policy tests](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/__tests__/policy.test.ts) · [Fingerprint and preview tests](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/__tests__/approval.test.ts) · [Approval-consumption tests](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/connectors/__tests__/connector-repository.test.ts)
 
 [Previous: Why chat history isn’t the same as model context](/en/blog/history-is-not-context)
 

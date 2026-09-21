@@ -8,7 +8,6 @@ language: "zh-CN"
 readingTime: "约 10 分钟"
 number: "02"
 category: "上下文"
-sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977"
 cover: "/blog/history-is-not-context/images/cover.png"
 anchors:
   "一次被打断的工具调用": "interrupted-call"
@@ -16,8 +15,7 @@ anchors:
   "先把调用与结果配起来": "tool-pairs"
   "旧截图该留下多少": "browser-images"
   "压缩之后，从哪里继续": "compaction-boundary"
-  "这些规则如何检查": "verification"
-  "实现与测试": "sources"
+  "记录、上下文与实际状态": "verification"
 ---
 
 ## 一次被打断的工具调用
@@ -119,33 +117,11 @@ xopc 的压缩记录中保存了当时的 `messages` 快照，以及摘要、来
 
 这个做法让多次压缩的读取规则保持一致，却没有解决摘要本身的所有问题。摘要可能漏掉关键约束；检查点结构正确，也不代表内容没有遗漏。来源和审计信息有助于追查，最终仍要检查压缩后的上下文是否保留了任务需要的东西。
 
-## 这些规则如何检查
-
-这类问题不适合只靠“继续聊两轮，看起来没事”来验证。一次流畅回答，可能恰好没有用到丢失的信息。我们更关心转换结果本身。
-
-| 构造的历史 | 应当得到的结果 |
-| --- | --- |
-| 普通消息后插入 context 记录 | 模型消息中不出现这条记录 |
-| 一条 assistant 消息含完整调用和孤立调用 | 完整配对保留，孤立调用移除，普通文字仍在 |
-| 一个工具结果找不到之前的调用 | 这个结果不进入模型输入 |
-| 两次浏览器观察都有图片 | 早期文字保留，旧图片移除，最新结果的图片保留 |
-| 压缩检查点后又出现新消息 | 使用检查点快照，再接新消息 |
-| 同一历史出现两次压缩 | 后一个检查点成为新的起点 |
-
-这些用例在文末的会话上下文测试中都有对应检查。它们验证的是确定性的转换规则，不是模型理解任务的质量，也不是工具执行的可靠性。
+## 记录、上下文与实际状态
 
 第一篇谈到，长期记忆里存着一条事实，不等于它现在应该影响回答。会话历史也有类似的边界：**记录已经保存，不等于它适合原样进入下一次请求。**
 
 遇到“历史明明还在，Agent 却接不上”的问题时，我们会分别看保存的记录、生成的模型消息，以及工具的真实状态。把这三处放在一起，才容易分清是信息丢了、结构断了，还是动作发生了却没有回报。下一篇会继续讨论最后一种情况：用户批准了一次外部操作，执行到哪一步才算完成？
-
-## 实现与测试
-
-本文核对于 2026 年 9 月 21 日，链接固定到同一公开代码快照。本文重点是会话历史投影，不覆盖压缩规划器或所有模型提供方的适配细节。
-
-- [历史到模型上下文的转换、调用配对和浏览器图片规则](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/session/session-context-for-llm.ts)
-- [上述转换规则的测试](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/session/__tests__/session-context-for-llm.test.ts)
-- [按模型策略执行的历史整理](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/transcript/transcript-hygiene.ts)
-- [模型侧历史策略的选择](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/transcript/transcript-policy.ts)
 
 [上一篇：当用户改变主意，个人 Agent 如何更新自己的记忆？](/zh/blog/when-memory-changes)
 

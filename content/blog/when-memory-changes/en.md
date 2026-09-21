@@ -8,7 +8,6 @@ language: "en-US"
 readingTime: "10 min read"
 number: "01"
 category: "Memory"
-sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977"
 cover: "/blog/when-memory-changes/images/en/cover.png"
 anchors:
   "Start with a correction": "a-small-correction"
@@ -17,8 +16,7 @@ anchors:
   "How new information replaces old information": "correction"
   "When a memory stops being usable": "time"
   "Select again before answering": "before-answering"
-  "What we test, and what can still go wrong": "verification"
-  "Implementation and tests": "sources"
+  "What can still go wrong": "verification"
 ---
 
 ## Start with a correction
@@ -31,7 +29,7 @@ Adding long-term memory to a personal agent often starts with storing informatio
 
 This article examines part of xopc’s implementation for these cases. We will use a smaller example: you used to prefer short answers, but now explicitly ask to change that preference and show the reasoning in detail. Where should the old preference stop applying, and how should the new one take over?
 
-> The conversations and times in this article are illustrative examples. The implementation notes refer to the code snapshot linked below. The tests check data and context rules; they do not establish that a model can identify user intent correctly in every conversation.
+> The conversations and times in this article are illustrative examples.
 
 ## Different kinds of things to remember
 
@@ -110,7 +108,7 @@ Background maintenance handles expired, stale, and review-due records. But a rec
 
 *Figure 3 · The upper timeline shows validity before and after an explicit correction. The lower timeline shows the gap between expiry and background maintenance. The records and times are illustrative.*
 
-This closes an easy-to-miss gap. If a memory expires at 10:00 and maintenance runs at 11:00, an answer at 10:30 should already exclude it. An existing test specifically checks expiry before maintenance has run.
+This closes an easy-to-miss gap. If a memory expires at 10:00 and maintenance runs at 11:00, an answer at 10:30 should already exclude it.
 
 Stopping use and deleting information serve different purposes. A record that should no longer affect an answer may remain available as history. When the user explicitly deletes information, xopc also handles correction chains and records suppression information to keep automatic extraction from readily rebuilding the deleted understanding. That mechanism governs the memory writes it manages. It does not imply that historical conversations, backups, or external sources have all been erased.
 
@@ -134,39 +132,12 @@ The 0.7 value is an implementation policy threshold, not a statistically calibra
 
 These controls also have different strengths. Code can directly decide whether a record enters the context. Whether the model consistently treats a labeled assumption with enough caution still depends on the model. Restrictions on tool calls need corresponding execution checks; a reminder to “be careful” inside memory is not enough.
 
-## What we test, and what can still go wrong
+## What can still go wrong
 
-We use small tests to inspect record status, validity periods, replacement links, and eligibility for context. They do not need a demonstration answer that merely sounds convincing.
-
-| Input or change | What the test checks |
-| --- | --- |
-| The same preference is repeated | Reuse the record without increasing the slot count |
-| An existing preference is explicitly corrected | Link the new record to the old one and close the old validity period |
-| An inference contradicts an explicit preference | Mark the inference as conflicting and retain the explicit preference |
-| Two records have non-overlapping validity periods | Resolve by query time without treating historical change as a conflict |
-| A record has expired before maintenance runs | Reject it at the use check |
-| An automatically activated inference becomes riskier | Still enforce confidence, consequence, and sensitivity checks |
-| Automatic extraction runs after deletion | Suppress automatic recreation while preserving an explicit restoration path |
-
-These tests establish that the rules behave as intended. They do not establish that memory is a solved problem. Extracting the right attribute, distinguishing a current request from a lasting preference, and finding the correct correction target can still fail. Lexical relevance can miss information expressed in different words. Useful information can also lose out under a limited context budget.
+Extracting the right attribute, distinguishing a current request from a lasting preference, and finding the correct correction target can still fail. Lexical relevance can miss information expressed in different words. Useful information can also lose out under a limited context budget.
 
 We treat memory as a record that can be revised, traced to a source, and used under stated conditions. An assistant needs to remember you and allow you to change your mind. One practical check is this: after you say, “That earlier preference was wrong; use this one from now on,” does the old understanding actually stop influencing the next answer?
 
-**See this information in xopc**
-
-Explore the product’s user-understanding and memory capabilities, or inspect the implementation below. To check a correction, look both at the updated record and at what subsequent answers actually use.
-
 [Explore xopc’s capabilities →](/en/product-map)
-
-## Implementation and tests
-
-Reviewed against the code snapshot on September 21, 2026. The links are pinned to the same revision so the implementation can be read alongside the article. Later releases may behave differently.
-
-- [Fact slots, deduplication, corrections, and conflict reconciliation](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/user-model/repository.ts)
-- [Working assumptions and use eligibility](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/user-model/usage-policy.ts)
-- [Context selection, ranking, and budgets](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/context/execution-context.ts)
-- [Correction, conflict, history, and deletion tests](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/user-model/__tests__/user-model.test.ts)
-- [Expiry and inference-risk tests](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/user-model/__tests__/usage-policy.test.ts)
-- [Execution-context tests](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/context/__tests__/execution-context.test.ts)
 
 [Next: Why chat history isn’t the same as model context](/en/blog/history-is-not-context)

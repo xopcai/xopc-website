@@ -10,7 +10,7 @@ export type BlogFigure = { width: number; height: number; mobileWidth: number; m
 export type BlogArticle = {
   locale: Locale; slug: string; title: string; description: string; date: string; author: string;
   language: string; readingTime: string; number: string; category: string;
-  sourceRevision: string; cover: string; content: string; path: string; assetBase: string;
+  cover: string; content: string; path: string; assetBase: string;
   sections: readonly (readonly [string, string])[];
   figures: Record<string, BlogFigure>;
 };
@@ -40,7 +40,7 @@ function readArticle(slug: string, locale: Locale): BlogArticle {
   return {
     locale, slug, title: field("title"), description: field("description"), date: field("date"),
     author: field("author"), language: field("language"), readingTime: field("readingTime"),
-    number: field("number"), category: field("category"), sourceRevision: field("sourceRevision"),
+    number: field("number"), category: field("category"),
     cover: field("cover"), content, path: `/${locale}/blog/${slug}`, assetBase: `/blog/${slug}`,
     sections, figures: JSON.parse(readFileSync(path.join(directory, locale === "en" ? "images/en/manifest.json" : "images/manifest.json"), "utf8")),
   };

@@ -16,7 +16,7 @@ Each article keeps its content and illustrations together:
 
 Write paragraphs, headings, lists, fenced code and GFM tables in Markdown.
 Do not embed HTML or React components. Frontmatter holds title, description,
-date, author, language, readingTime, number, category, cover, sourceRevision and stable heading
+date, author, language, readingTime, number, category, cover and stable heading
 anchors. Preserve anchors when changing headings so existing links keep working.
 
 Use ordinary relative image links with descriptive alt text. An italic paragraph
@@ -28,7 +28,11 @@ immediately after a standalone image becomes its caption on the website:
 
 Keep diagrams focused on one idea. Use separate mobile layouts when shrinking a
 desktop diagram would make its labels unreadable. Include assumptions and scope
-in the caption; technical claims should match the pinned source revision.
+in the caption. Verify technical claims against the implementation before publication.
+
+Start with a concrete problem, explain the design, and discuss its trade-offs.
+Keep the prose concise. Do not publish source-code link lists, revision notes,
+or test inventories; keep implementation verification in the editorial workflow.
 
 The first article's drawings are generated from
 `scripts/generate-blog-figures.mjs`; articles 02 and 03 use
@@ -51,7 +55,7 @@ For a new article, add its slug to the published registry in `lib/blog.ts`.
 The index, static params, metadata and sitemap all read that registry.
 Add an image manifest with desktop/mobile dimensions for every responsive figure.
 Each published slug currently requires both `zh.md` and `en.md`. Keep the same
-section IDs and pinned implementation links across translations. English Markdown
+section IDs across translations. English Markdown
 uses ordinary relative links such as `./images/en/tool-pairs.svg`. The loader selects
 the matching language, image manifest, cover, and reading time. Both language routes
 are prebuilt, have self-canonical URLs, and reference each other through hreflang.
@@ -59,4 +63,4 @@ are prebuilt, have self-canonical URLs, and reference each other through hreflan
 With a dev or production server running, use
 `BLOG_BASE_URL=http://localhost:3000 pnpm blog:check` to verify article routing,
 metadata, reciprocal language links, sitemap, figure variants, Markdown downloads
-and 404 behavior. The check also compares section IDs and source links across languages.
+and 404 behavior. The check also compares section IDs across languages.
