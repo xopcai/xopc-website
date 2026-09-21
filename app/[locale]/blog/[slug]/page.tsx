@@ -9,7 +9,8 @@ import { isLocale } from "@/lib/i18n/config";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 export function generateStaticParams() {
-  return blogArticles.map(({ slug }) => ({ locale: "zh", slug }));
+  // Prebuild untranslated redirects too, avoiding a cold dynamic redirect response.
+  return blogArticles.flatMap(({ slug }) => [{ locale: "zh", slug }, { locale: "en", slug }]);
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
