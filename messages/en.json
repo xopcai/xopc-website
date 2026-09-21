@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — Personal AI for the one-person company.",
-    "description": "A personal AI that remembers your goals and context, takes action across your tools, and picks up where you left off.",
-    "ogDescription": "Personal AI for the one-person company. Your context, carried forward across conversations, tools, and time."
+    "title": "xopc — Keep what matters moving.",
+    "description": "Personal AI for the one-person company. It remembers your goals and context, acts across your tools, and picks up where you left off.",
+    "ogDescription": "Keep what matters moving. Personal AI for the one-person company."
   },
   "header": {
     "chooseLanguage": "Choose language",
@@ -25,8 +25,8 @@
     },
     "hero": {
       "brandName": "xopc",
-      "headline": "Personal AI for the one-person company.",
-      "desc": "Remembers your goals and context, takes action across your tools, and picks up where you left off.",
+      "headline": "Keep what matters moving.",
+      "desc": "Personal AI for the one-person company. It remembers your goals and context, acts across your tools, and picks up where you left off.",
       "primaryCta": "Download xopc",
       "secondaryCta": "Install in terminal"
     },

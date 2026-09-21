@@ -48,7 +48,7 @@ export async function generateMetadata({
       locale: loc === "zh" ? "zh_CN" : "en_US",
       alternateLocale: loc === "zh" ? "en_US" : "zh_CN",
       type: "website",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "xopc — Personal AI for the one-person company." }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "xopc — Keep what matters moving." }],
     },
     twitter: {
       card: "summary_large_image",

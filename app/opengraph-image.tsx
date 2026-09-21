@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "xopc — Personal AI for the one-person company.";
+export const alt = "xopc — Keep what matters moving.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,10 +40,10 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 940 }}>
           <div style={{ fontSize: 72, lineHeight: 1.08, letterSpacing: "-3px", fontWeight: 700 }}>
-            Personal AI for the one-person company.
+            Keep what matters moving.
           </div>
           <div style={{ color: "#a7b0bf", fontSize: 28, lineHeight: 1.35 }}>
-            Your context, carried forward across conversations, tools, and time.
+            Personal AI for the one-person company.
           </div>
         </div>
       </div>
