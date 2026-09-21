@@ -5,7 +5,7 @@ export const memoryArticle = {
   date: "2026-09-21",
   author: "xopc",
   readingTime: "约 12 分钟",
-  sourceRevision: "abf0e54361724c784cd693c591f5843449db93ef",
+  sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977",
 } as const;
 export const memoryArticlePath = `/zh/blog/${memoryArticle.slug}`;
 export const memoryArticleSections = [
