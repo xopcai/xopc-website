@@ -1,4 +1,17 @@
 .landing-page.blog-page { background: var(--bg-void); min-height: 100vh; }
+/* Long-form content must not show through the fixed reading navigation. */
+.landing-page.blog-page > nav {
+  background: var(--bg-void);
+  border-bottom: 1px solid var(--edge);
+}
+.landing-page.blog-page > nav::before { content: none; }
+.landing-page.blog-page > nav .nav-extra-tools,
+.landing-page.blog-page > nav .mobile-nav-trigger,
+.landing-page.blog-page > nav .theme-toggle-pill-track {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.landing-page.blog-page > nav .nav-extra-tools { transition: none; }
 .blog-page #blog-main { max-width: 1120px; margin: 0 auto; padding: 64px 32px 100px; }
 .blog-page .blog-eyebrow { font: 500 12px/1.5 var(--mono); letter-spacing: .12em; color: var(--fg-mid); }
 .blog-page .blog-index-header { max-width: 720px; margin-bottom: 48px; }
