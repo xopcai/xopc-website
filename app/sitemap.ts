@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { blogArticles } from "@/lib/blog";
+import { blogArticles, blogAlternates } from "@/lib/blog";
 import { productSlugs } from "@/components/product-page";
 import { locales } from "@/lib/i18n/config";
 
@@ -70,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = [
     ...locales.map((locale) => ({ url: `${origin}/${locale}/blog`, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: languageAlternates("/blog") } })),
-    ...blogArticles.map((article) => ({ url: `${origin}${article.path}`, lastModified: article.date, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: { zh: `${origin}${article.path}` } } })),
+    ...blogArticles.map((article) => ({ url: `${origin}${article.path}`, lastModified: article.date, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: Object.fromEntries(Object.entries(blogAlternates(article.slug)).map(([locale, path]) => [locale, `${origin}${path}`])) } })),
   ];
 
   return [...blogPages, ...homePages, ...useCasePages, ...productPages, ...mapPages, ...learnPages, ...mobilePages, ...legalPages];

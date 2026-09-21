@@ -88,9 +88,8 @@ The blog lives at `/zh/blog` and `/en/blog`. Article bodies are authored in
 `content/blog/<slug>/zh.md`, with metadata in frontmatter and portable illustrations
 under the adjacent `images/` directory. A shared Markdown renderer handles
 typography, captions, tables and responsive light/dark diagrams. See
-[the authoring guide](content/blog/README.md). The published articles are Chinese-only; the English index labels
-that explicitly, and each English article URL redirects to the Chinese original.
-Do not add an English article language alternate until a translation is published.
+[the authoring guide](content/blog/README.md). Each article has Chinese and English Markdown, localized illustrations and
+share artwork, reciprocal language links, and a canonical URL for each language.
 Source links are pinned to the xopc revision reviewed for the article. The published registry in
 `lib/blog.ts` drives the index, article routes and sitemap. New social artwork
 lives beside each article in `content/blog/<slug>/images/`.

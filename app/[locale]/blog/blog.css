@@ -82,3 +82,6 @@
   .blog-page .blog-index-card h2 { text-wrap: balance; font-size: 24px; }
 }
 .blog-page .blog-index-card + .blog-index-card { border-top: 0; }
+.blog-page article[lang="en-US"] .blog-prose { line-height: 1.8; }
+.blog-page article[lang="en-US"] .blog-prose h2 { letter-spacing: -.015em; }
+.blog-page .blog-meta > a { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }

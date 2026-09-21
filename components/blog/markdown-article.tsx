@@ -4,8 +4,10 @@ import remarkGfm from "remark-gfm";
 import type { Root } from "mdast";
 import type { Plugin } from "unified";
 import type { BlogFigure } from "@/lib/blog";
+import type { Locale } from "@/lib/i18n/config";
 
 type Props = {
+  locale: Locale;
   content: string;
   figures: Record<string, BlogFigure>;
   assetBase: string;
@@ -28,7 +30,8 @@ const remarkFigures: Plugin<[], Root> = () => (tree) => {
   }
 };
 
-export function MarkdownArticle({ content, assetBase, sections, figures }: Props) {
+export function MarkdownArticle({ content, assetBase, sections, figures, locale }: Props) {
+  const zh = locale === "zh";
   const remarkHeadings: Plugin<[], Root> = () => (tree) => {
     let index = 0;
     for (const node of tree.children) {
@@ -38,22 +41,23 @@ export function MarkdownArticle({ content, assetBase, sections, figures }: Props
   };
   return <div className="blog-prose">
     <Markdown skipHtml remarkPlugins={[remarkGfm, remarkFigures, remarkHeadings]} components={{
-      table: ({ children }) => <div className="blog-table-wrap" tabIndex={0} role="region" aria-label="文章表格，可横向滚动"><table>{children}</table></div>,
+      table: ({ children }) => <div className="blog-table-wrap" tabIndex={0} role="region" aria-label={zh ? "文章表格，可横向滚动" : "Article table; scroll horizontally"}><table>{children}</table></div>,
       img: ({ src, alt }) => {
         if (typeof src !== "string") return null;
-        const name = src.match(/^\.\/images\/([a-z-]+)\.svg$/)?.[1];
+        const name = src.match(/^\.\/images\/(?:en\/)?([a-z-]+)\.svg$/)?.[1];
         const size = name && Object.hasOwn(figures, name) ? figures[name as keyof typeof figures] : undefined;
         const resolved = src.startsWith("./") ? `${assetBase}/${src.slice(2)}` : src;
+        const imageDirectory = resolved.slice(0, resolved.lastIndexOf("/"));
         if (!size || !name) return <Image src={resolved} alt={alt ?? ""} width={1200} height={630} unoptimized />;
-        return <a className="article-figure-link" href={resolved} target="_blank" rel="noopener noreferrer" aria-label={`查看大图：${alt ?? "文章配图"}`}>
+        return <a className="article-figure-link" href={resolved} target="_blank" rel="noopener noreferrer" aria-label={`${zh ? "查看大图：" : "View full-size diagram: "}${alt ?? ""}`}>
           {(["light", "dark"] as const).map((theme) => {
             const suffix = theme === "dark" ? "-dark" : "";
             return <picture key={theme} className={`article-picture article-picture-${theme}`}>
-              <source media="(max-width: 600px)" srcSet={`${assetBase}/images/${name}-mobile${suffix}.svg`} width={size.mobileWidth} height={size.mobileHeight} />
-              <Image src={`${assetBase}/images/${name}${suffix}.svg`} alt={alt ?? ""} width={size.width} height={size.height} unoptimized />
+              <source media="(max-width: 600px)" srcSet={`${imageDirectory}/${name}-mobile${suffix}.svg`} width={size.mobileWidth} height={size.mobileHeight} />
+              <Image src={`${imageDirectory}/${name}${suffix}.svg`} alt={alt ?? ""} width={size.width} height={size.height} unoptimized />
             </picture>;
           })}
-          <span className="figure-open">查看大图 ↗</span>
+          <span className="figure-open">{zh ? "查看大图 ↗" : "View full size ↗"}</span>
         </a>;
       },
     }}>{content}</Markdown>
