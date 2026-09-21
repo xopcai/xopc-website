@@ -276,9 +276,9 @@ html[data-theme="dark"] .landing-page .collaboration-model {
   margin-top: 38px;
   overflow: hidden;
   border: 1px solid var(--edge-bright);
-  border-radius: 22px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow-screenshot);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(20, 30, 45, 0.06);
 }
 
 .landing-page .product-proof-frame video {

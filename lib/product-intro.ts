@@ -3,7 +3,7 @@ import type { Locale } from "@/lib/i18n/config";
 export function productIntro(locale: Locale) {
   const zh = locale === "zh";
   const language = zh ? "zh-CN" : "en-US";
-  const base = `/media/product/official-intro/v2/${language}`;
+  const base = `/media/product/official-intro/v3/${language}`;
   return {
     video: `${base}/video.mp4`,
     poster: `${base}/poster.jpg`,
