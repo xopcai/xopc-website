@@ -44,6 +44,8 @@
       "terminalWindowsLabel": "Windows PowerShell",
       "terminalUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
       "terminalWindowsCommand": "irm https://xopc.ai/install.ps1 | iex",
+      "terminalCopy": "复制",
+      "terminalCopied": "已复制",
       "appsPlatformTabsAria": "选择桌面平台",
       "loading": "正在获取下载信息…",
       "error": "暂时无法获取下载信息。",

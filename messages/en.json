@@ -44,6 +44,8 @@
       "terminalWindowsLabel": "Windows PowerShell",
       "terminalUnixCommand": "curl -fsSL https://xopc.ai/install.sh | bash",
       "terminalWindowsCommand": "irm https://xopc.ai/install.ps1 | iex",
+      "terminalCopy": "Copy",
+      "terminalCopied": "Copied",
       "appsPlatformTabsAria": "Choose desktop platform",
       "loading": "Fetching download info…",
       "error": "We couldn't load download info right now.",

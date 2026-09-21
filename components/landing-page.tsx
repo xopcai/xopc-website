@@ -15,6 +15,7 @@ import { LandingNavState } from "@/components/landing-nav-state";
 import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { MobileDownloads } from "@/components/mobile-downloads";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
+import { TerminalInstallCommands } from "@/components/terminal-install-commands";
 import { XopcLogoMark } from "@/components/xopc-logo-mark";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -218,16 +219,14 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             <h2>{L.download.terminalSectionTitle}</h2>
             <p>{L.download.terminalSectionDesc}</p>
           </div>
-          <div className="terminal-install-commands">
-            <div>
-              <span>{L.download.terminalUnixLabel}</span>
-              <code>{L.download.terminalUnixCommand}</code>
-            </div>
-            <div>
-              <span>{L.download.terminalWindowsLabel}</span>
-              <code>{L.download.terminalWindowsCommand}</code>
-            </div>
-          </div>
+          <TerminalInstallCommands
+            commands={[
+              { label: L.download.terminalUnixLabel, value: L.download.terminalUnixCommand },
+              { label: L.download.terminalWindowsLabel, value: L.download.terminalWindowsCommand },
+            ]}
+            copyLabel={L.download.terminalCopy}
+            copiedLabel={L.download.terminalCopied}
+          />
         </div>
       </section>
 

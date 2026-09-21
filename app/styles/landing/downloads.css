@@ -603,12 +603,12 @@
       gap: 10px;
     }
 
-    .landing-page .terminal-install-commands > div{
+    .landing-page .terminal-install-command{
       display: grid;
       gap: 7px;
     }
 
-    .landing-page .terminal-install-commands span{
+    .landing-page .terminal-install-command-label{
       color: var(--fg-dim);
       font-family: var(--mono);
       font-size: 11px;
@@ -617,22 +617,78 @@
       text-transform: uppercase;
     }
 
-    .landing-page .terminal-install-commands code{
-      display: block;
-      overflow-x: auto;
-      padding: 14px 16px;
+    .landing-page .terminal-install-command-shell{
+      display: flex;
+      align-items: center;
+      min-width: 0;
       border: 1px solid var(--edge-bright);
       border-radius: 10px;
       background: var(--code-terminal);
+      overflow: hidden;
+    }
+
+    .landing-page .terminal-install-commands code{
+      display: block;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      padding: 14px 16px;
       color: var(--fg-body);
       font-family: var(--mono);
       font-size: 12px;
       white-space: nowrap;
     }
 
+    .landing-page .terminal-install-copy{
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-width: 82px;
+      min-height: 34px;
+      margin-right: 7px;
+      padding: 7px 10px;
+      border: 1px solid var(--edge-bright);
+      border-radius: 7px;
+      background: var(--bg-card);
+      color: var(--fg-mid);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: background 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .landing-page .terminal-install-copy:hover{
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--edge-bright));
+      background: var(--bg-card-hover);
+      color: var(--fg-head);
+      transform: translateY(-1px);
+    }
+
+    .landing-page .terminal-install-copy:active{
+      transform: translateY(0) scale(0.98);
+    }
+
+    .landing-page .terminal-install-copy[data-copied]{
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--edge-bright));
+      color: var(--accent);
+    }
+
+    .landing-page .terminal-install-copy svg{
+      width: 15px;
+      height: 15px;
+    }
+
     @media (max-width: 760px) {
       .landing-page .terminal-install-inner{
         grid-template-columns: 1fr;
         gap: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .landing-page .terminal-install-copy{
+        transition: none;
       }
     }
