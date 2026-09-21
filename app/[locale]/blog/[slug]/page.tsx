@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { BlogShell } from "@/components/blog/blog-shell";
-import { MemoryCover } from "@/components/blog/memory-figures";
-import { MemoryArticleBody } from "@/content/blog/when-memory-changes.zh";
-import { memoryArticle, memoryArticlePath, memoryArticleSections } from "@/lib/blog";
+import Image from "next/image";
+import { MarkdownArticle } from "@/components/blog/markdown-article";
+import { memoryArticle, memoryArticlePath, memoryArticleSections, memoryArticleContent, memoryArticleAssetBase } from "@/lib/blog";
 import { isLocale } from "@/lib/i18n/config";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -23,8 +23,8 @@ export default async function BlogArticle({ params }: Props) {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
     <article>
       <header className="blog-article-header"><Link className="blog-back" href="/zh/blog">← 全部文章</Link><p className="blog-eyebrow">INSIDE XOPC / 01 · 记忆</p><h1>{memoryArticle.title}</h1><p className="blog-intro">{memoryArticle.description}</p><div className="blog-meta"><span>{memoryArticle.author}</span><time dateTime={memoryArticle.date}>2026 年 9 月 21 日</time><span>{memoryArticle.readingTime}</span><span>中文首发</span></div></header>
-      <div className="blog-hero"><MemoryCover /></div>
-      <div className="blog-article-layout"><MemoryArticleBody /><aside className="blog-toc" aria-label="文章目录"><p>本文内容</p>{memoryArticleSections.map(([id, title]) => <a key={id} href={`#${id}`}>{title}</a>)}<a href="#sources">实现与测试 ↗</a></aside></div>
+      <div className="blog-hero"><Image src={memoryArticle.cover} alt="当用户改变主意：让新记忆接续生效，保留旧记忆的历史" width={1200} height={630} priority /></div>
+      <div className="blog-article-layout"><MarkdownArticle content={memoryArticleContent} assetBase={memoryArticleAssetBase} sections={memoryArticleSections} /><aside className="blog-toc" aria-label="文章目录"><p>本文内容</p>{memoryArticleSections.map(([id, title]) => <a key={id} href={`#${id}`}>{title}</a>)}<a className="blog-download" href={memoryArticleAssetBase + "/zh.md"} download>下载 Markdown ↓</a></aside></div>
     </article>
   </BlogShell>;
 }

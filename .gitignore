@@ -51,3 +51,6 @@ next-env.d.ts
 
 .docs
 .xopc-share-staging/
+
+# Generated from content/blog by blog:prepare
+/public/blog/

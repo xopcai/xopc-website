@@ -85,8 +85,10 @@ Both locales use Chinese narration, explicitly labeled in the player.
 ## Inside xopc engineering blog
 
 The blog lives at `/zh/blog` and `/en/blog`. Article bodies are authored in
-`content/blog/`, with metadata in `lib/blog.ts` and responsive, accessible diagrams
-in `components/blog/`. The first article is Chinese-only; the English index labels
+`content/blog/<slug>/zh.md`, with metadata in frontmatter and portable illustrations
+under the adjacent `images/` directory. A shared Markdown renderer handles
+typography, captions, tables and responsive light/dark diagrams. See
+[the authoring guide](content/blog/README.md). The first article is Chinese-only; the English index labels
 that explicitly, and its English article URL redirects to the Chinese original.
 Do not add an English article language alternate until a translation is published.
 Source links are pinned to the xopc revision reviewed for the article. Add published

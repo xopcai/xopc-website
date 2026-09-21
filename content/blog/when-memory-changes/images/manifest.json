@@ -1,0 +1,20 @@
+{
+  "memory-relationships": {
+    "width": 840,
+    "height": 670,
+    "mobileWidth": 440,
+    "mobileHeight": 940
+  },
+  "correction-flow": {
+    "width": 840,
+    "height": 690,
+    "mobileWidth": 440,
+    "mobileHeight": 1050
+  },
+  "memory-validity": {
+    "width": 840,
+    "height": 670,
+    "mobileWidth": 440,
+    "mobileHeight": 850
+  }
+}
