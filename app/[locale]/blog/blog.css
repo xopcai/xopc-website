@@ -93,3 +93,8 @@
   .blog-page .memory-pipeline-step p { grid-column: 2; }
   .blog-page th, .blog-page td { padding: 12px 8px; }
 }
+.blog-page .blog-index-card h2 a { color: var(--fg-head); }
+.blog-page .blog-index-card .memory-cover { padding: 24px; }
+.blog-page .blog-index-card .memory-cover-track { gap: 12px; }
+.blog-page .blog-index-card .memory-cover-track > div { padding: 16px; }
+.blog-page .blog-index-card .memory-cover-track strong { font-size: 18px; }
