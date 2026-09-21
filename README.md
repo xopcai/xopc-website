@@ -2,6 +2,8 @@
 
 Official landing site for [xopc.ai](https://xopc.ai).
 
+**Keep what matters moving.**
+
 xopc is personal AI for the one-person company. It runs in your environment, remembers your goals and context, and helps move work forward across conversations, tools, and time. Its runtime connects projects, tasks, notes, workflows, and automations across desktop, terminal, web, mobile, and messengers.
 
 ## Local development
