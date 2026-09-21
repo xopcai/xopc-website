@@ -6,6 +6,8 @@ date: "2026-09-21"
 author: "xopc"
 language: "zh-CN"
 readingTime: "约 12 分钟"
+number: "01"
+category: "记忆"
 sourceRevision: "a2a1fb40af4dc42fc35416ded195b573ab5b8977"
 cover: "/media/blog/when-memory-changes.png"
 anchors: {"从一句纠正开始": "a-small-correction", "先分清记住的是什么": "different-kinds", "给事实一个稳定的位置": "identity", "新信息怎样替代旧信息": "correction", "过期的记忆在哪里停下来": "time", "回答前，还要再选一次": "before-answering", "如何验证，哪里仍会出错": "verification", "实现与测试": "sources"}
@@ -161,3 +163,5 @@ xopc 先给这类事实确定一个稳定的位置，代码里称为 slot。它�
 - [过期与推测风险限制测试](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/user-model/__tests__/usage-policy.test.ts)
 
 - [执行上下文测试](https://github.com/xopcai/xopc/blob/a2a1fb40af4dc42fc35416ded195b573ab5b8977/src/agent/context/__tests__/execution-context.test.ts)
+
+[下一篇：聊天记录还在，为什么不能原样交给模型？](/zh/blog/history-is-not-context)

@@ -19,7 +19,7 @@
 .blog-page h1 { color: var(--fg-head); font-size: clamp(30px,4vw,44px); line-height: 1.4; letter-spacing: -.025em; font-weight: 600; margin: 18px 0 24px; text-wrap: balance; }
 .blog-page .blog-intro { font-size: 18px; color: var(--fg-mid); line-height: 1.85; }
 .blog-page .blog-index-card { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding: 32px 0; border-block: 1px solid var(--edge-bright); }
-.blog-page .blog-index-card h2 { font-size: 28px; line-height: 1.5; margin: 16px 0; font-weight: 600; }
+.blog-page .blog-index-card h2 { text-wrap: balance; font-size: 28px; line-height: 1.5; margin: 16px 0; font-weight: 600; }
 .blog-page .blog-index-card h2 a { color: var(--fg-head); }
 .blog-page .blog-index-card p { color: var(--fg-mid); line-height: 1.85; }
 .blog-page .blog-index-card img, .blog-page .blog-hero img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--edge); }
@@ -79,5 +79,6 @@
   .blog-page .blog-prose pre { padding: 18px; }
   .blog-page .blog-prose figure { margin-inline: -4px; }
   .blog-page .blog-prose figcaption { font-size: 13px; }
-  .blog-page .blog-index-card h2 { font-size: 24px; }
+  .blog-page .blog-index-card h2 { text-wrap: balance; font-size: 24px; }
 }
+.blog-page .blog-index-card + .blog-index-card { border-top: 0; }

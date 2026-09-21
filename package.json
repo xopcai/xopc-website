@@ -15,7 +15,8 @@
     "generate-favicon": "node scripts/generate-favicon.mjs",
     "tutorials:check": "node scripts/check-tutorials.mjs",
     "blog:prepare": "node scripts/prepare-blog.mjs",
-    "blog:figures": "node scripts/generate-blog-figures.mjs"
+    "blog:figures": "node scripts/generate-blog-figures.mjs && node scripts/generate-engineering-figures.mjs",
+    "blog:check": "node scripts/check-blog.mjs"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

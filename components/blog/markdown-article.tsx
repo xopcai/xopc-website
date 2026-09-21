@@ -3,10 +3,11 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { Root } from "mdast";
 import type { Plugin } from "unified";
-import figures from "@/content/blog/when-memory-changes/images/manifest.json";
+import type { BlogFigure } from "@/lib/blog";
 
 type Props = {
   content: string;
+  figures: Record<string, BlogFigure>;
   assetBase: string;
   sections: readonly (readonly [string, string])[];
 };
@@ -27,7 +28,7 @@ const remarkFigures: Plugin<[], Root> = () => (tree) => {
   }
 };
 
-export function MarkdownArticle({ content, assetBase, sections }: Props) {
+export function MarkdownArticle({ content, assetBase, sections, figures }: Props) {
   const remarkHeadings: Plugin<[], Root> = () => (tree) => {
     let index = 0;
     for (const node of tree.children) {

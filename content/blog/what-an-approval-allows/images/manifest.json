@@ -1,0 +1,20 @@
+{
+  "policy-gates": {
+    "width": 840,
+    "height": 690,
+    "mobileWidth": 440,
+    "mobileHeight": 930
+  },
+  "approval-binding": {
+    "width": 840,
+    "height": 670,
+    "mobileWidth": 440,
+    "mobileHeight": 890
+  },
+  "approval-lifecycle": {
+    "width": 840,
+    "height": 735,
+    "mobileWidth": 440,
+    "mobileHeight": 1040
+  }
+}
