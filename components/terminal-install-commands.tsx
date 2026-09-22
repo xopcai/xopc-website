@@ -56,7 +56,9 @@ export function TerminalInstallCommands({ commands, copyLabel, copiedLabel }: Pr
                 aria-label={`${isCopied ? copiedLabel : copyLabel}: ${value}`}
               >
                 {isCopied ? <Check aria-hidden /> : <Copy aria-hidden />}
-                <span aria-live="polite">{isCopied ? copiedLabel : copyLabel}</span>
+                <span className="terminal-install-copy-status" aria-live="polite">
+                  {isCopied ? copiedLabel : copyLabel}
+                </span>
               </button>
             </div>
           </div>

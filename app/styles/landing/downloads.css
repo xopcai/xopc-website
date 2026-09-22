@@ -644,25 +644,23 @@
       flex: 0 0 auto;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      min-width: 82px;
-      min-height: 34px;
-      margin-right: 7px;
-      padding: 7px 10px;
-      border: 1px solid var(--edge-bright);
-      border-radius: 7px;
-      background: var(--bg-card);
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
       color: var(--fg-mid);
       cursor: pointer;
-      font-size: 12px;
-      font-weight: 600;
-      transition: background 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out, transform 0.15s ease-out;
+      opacity: 0.62;
+      transition: background 0.15s ease-out, color 0.15s ease-out, opacity 0.15s ease-out, transform 0.15s ease-out;
     }
 
     .landing-page .terminal-install-copy:hover{
-      border-color: color-mix(in srgb, var(--accent) 42%, var(--edge-bright));
       background: var(--bg-card-hover);
       color: var(--fg-head);
+      opacity: 1;
       transform: translateY(-1px);
     }
 
@@ -671,13 +669,25 @@
     }
 
     .landing-page .terminal-install-copy[data-copied]{
-      border-color: color-mix(in srgb, var(--accent) 42%, var(--edge-bright));
       color: var(--accent);
+      opacity: 1;
     }
 
     .landing-page .terminal-install-copy svg{
       width: 15px;
       height: 15px;
+    }
+
+    .landing-page .terminal-install-copy-status{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     @media (max-width: 760px) {
