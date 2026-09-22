@@ -50,7 +50,7 @@ export function TerminalInstallCommands({ commands, copyLabel, copiedLabel }: Pr
               <code>{value}</code>
               <button
                 type="button"
-                className="terminal-install-copy"
+                className="terminal-install-copy-button"
                 data-copied={isCopied || undefined}
                 onClick={() => void copyCommand(value)}
                 aria-label={`${isCopied ? copiedLabel : copyLabel}: ${value}`}

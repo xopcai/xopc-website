@@ -639,7 +639,7 @@
       white-space: nowrap;
     }
 
-    .landing-page .terminal-install-copy{
+    .landing-page .terminal-install-copy-button{
       display: inline-flex;
       flex: 0 0 auto;
       align-items: center;
@@ -657,23 +657,23 @@
       transition: background 0.15s ease-out, color 0.15s ease-out, opacity 0.15s ease-out, transform 0.15s ease-out;
     }
 
-    .landing-page .terminal-install-copy:hover{
+    .landing-page .terminal-install-copy-button:hover{
       background: var(--bg-card-hover);
       color: var(--fg-head);
       opacity: 1;
       transform: translateY(-1px);
     }
 
-    .landing-page .terminal-install-copy:active{
+    .landing-page .terminal-install-copy-button:active{
       transform: translateY(0) scale(0.98);
     }
 
-    .landing-page .terminal-install-copy[data-copied]{
+    .landing-page .terminal-install-copy-button[data-copied]{
       color: var(--accent);
       opacity: 1;
     }
 
-    .landing-page .terminal-install-copy svg{
+    .landing-page .terminal-install-copy-button svg{
       width: 15px;
       height: 15px;
     }
@@ -698,7 +698,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .landing-page .terminal-install-copy{
+      .landing-page .terminal-install-copy-button{
         transition: none;
       }
     }
