@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type MouseEvent } from "react";
 import {
   ArrowRight,
   Check,
@@ -19,7 +19,14 @@ import {
 import { LandingHeader } from "@/components/landing-header";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
+import { trackProductEvent } from "@/lib/product-events";
 import { localized, useCaseCategories, useCases, type UseCaseCategory } from "@/lib/use-cases";
+
+const readyCases = useCases.filter((item) => item.setup.length === 0);
+
+function promptDeepLink(prompt: string): string {
+  return `xopc://chat/new?${new URLSearchParams({ draft: prompt }).toString()}`;
+}
 
 const copy = {
   zh: {
@@ -34,12 +41,17 @@ const copy = {
       ["100%", "明确确认边界"],
     ],
     howTitle: "四步开始",
-    how: ["选择一个结果", "补齐所需能力", "复制开始指令", "核对证据回执"],
+    how: ["选择一个结果", "在 xopc 中打开", "补充你的实际情况", "确认后发送"],
     searchPlaceholder: "搜索邮件、研究、文件、代码、自动化…",
     searchLabel: "搜索使用场景",
     all: "全部",
     count: (n: number) => `${n} 个场景`,
-    libraryIntro: "浏览全部案例，展开即可复制可直接运行的开始指令。",
+    libraryIntro: "先按目标找到最接近的场景，再直接带着指令进入 xopc。",
+    goalsEyebrow: "按目标浏览",
+    goalsTitle: "你今天想推进哪一类工作？",
+    featuredEyebrow: "无需额外配置",
+    featuredTitle: "从一个可以立即开始的场景入手。",
+    featuredBody: "这些场景安装后即可使用，适合先跑通第一次。",
     surprise: "随便看看",
     emptyTitle: "没有找到匹配场景",
     emptyBody: "换个关键词，或清除筛选继续浏览。",
@@ -55,6 +67,8 @@ const copy = {
     closePrompt: "收起详情",
     copyPrompt: "复制指令",
     copied: "已复制",
+    openInXopc: "在 xopc 中开始",
+    launchHelp: "没有打开？请复制指令，或下载最新版本。",
     promptNote: "把方括号中的内容换成你的实际情况，然后发给 xopc。权限规则仍然有效。",
     trustTitle: "提示词不是权限。",
     trustBody: "即使一句话要求“全自动”，发送、删除、购买、发布和账户变更仍会服从你的工具策略和确认规则。外部网站发生变化时，xopc 应停下来报告，而不是猜着继续。",
@@ -78,12 +92,17 @@ const copy = {
       ["100%", "explicit approval boundaries"],
     ],
     howTitle: "Start in four steps",
-    how: ["Choose an outcome", "Prepare capabilities", "Copy the starter", "Review the evidence"],
+    how: ["Choose an outcome", "Open it in xopc", "Add your situation", "Review and send"],
     searchPlaceholder: "Search email, research, files, code, automation…",
     searchLabel: "Search use cases",
     all: "All",
     count: (n: number) => `${n} ${n === 1 ? "scenario" : "scenarios"}`,
-    libraryIntro: "Browse every scenario, then expand one for a ready-to-run starter prompt.",
+    libraryIntro: "Start with the closest outcome, then carry its prompt straight into xopc.",
+    goalsEyebrow: "BROWSE BY OUTCOME",
+    goalsTitle: "What kind of work do you want to move today?",
+    featuredEyebrow: "NO EXTRA SETUP",
+    featuredTitle: "Start with something you can use right away.",
+    featuredBody: "These scenarios work after installation and are good first runs.",
     surprise: "Surprise me",
     emptyTitle: "No matching scenarios",
     emptyBody: "Try another term or clear the filters to keep browsing.",
@@ -99,6 +118,8 @@ const copy = {
     closePrompt: "Hide details",
     copyPrompt: "Copy prompt",
     copied: "Copied",
+    openInXopc: "Start in xopc",
+    launchHelp: "Didn't open? Copy the prompt or download the latest version.",
     promptNote: "Replace the brackets with your situation, then send it to xopc. Your permission rules still apply.",
     trustTitle: "A prompt is not permission.",
     trustBody: "Even when a request says “fully automate this,” sending, deleting, purchasing, publishing, and account changes still follow your tool policy and confirmation rules. If an external site changes, xopc should stop and report rather than guess.",
@@ -126,6 +147,25 @@ export function UseCaseExplorer({
   const [category, setCategory] = useState<UseCaseCategory | "all">("all");
   const [openId, setOpenId] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [launchingId, setLaunchingId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const openFromHash = () => {
+      const id = window.location.hash.replace(/^#use-case-/, "");
+      if (!useCases.some((item) => item.id === id)) {
+        setOpenId(null);
+        return;
+      }
+      setOpenId(id);
+      window.requestAnimationFrame(() => {
+        document.getElementById(`use-case-${id}`)?.scrollIntoView({ block: "center" });
+      });
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
 
   const visibleCases = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase(locale);
@@ -150,8 +190,19 @@ export function UseCaseExplorer({
 
   const copyPrompt = async (id: string, prompt: string) => {
     await navigator.clipboard.writeText(prompt);
+    trackProductEvent("use_case_prompt_copied", { method: id });
     setCopiedId(id);
     window.setTimeout(() => setCopiedId((current) => current === id ? null : current), 1800);
+  };
+
+  const openPrompt = (event: MouseEvent<HTMLAnchorElement>, id: string, prompt: string) => {
+    setLaunchingId(id);
+    if (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
+      event.preventDefault();
+      void copyPrompt(id, prompt);
+      return;
+    }
+    trackProductEvent("use_case_open_clicked", { method: id });
   };
 
   const reset = () => {
@@ -159,15 +210,32 @@ export function UseCaseExplorer({
     setCategory("all");
   };
 
+  const setCaseDetails = (id: string | null) => {
+    setOpenId(id);
+    window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.search}${id ? `#use-case-${id}` : ""}`);
+  };
+
   const surpriseMe = () => {
     if (!visibleCases.length) return;
     const next = visibleCases[Math.floor(Math.random() * visibleCases.length)];
-    setOpenId(next.id);
+    setCaseDetails(next.id);
     window.requestAnimationFrame(() => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       document.getElementById(`use-case-${next.id}`)?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
     });
   };
+
+  const selectCategory = (next: UseCaseCategory | "all") => {
+    setCategory(next);
+    window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById("scenario-library")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    });
+  };
+
+  const visibleGroups = useCaseCategories
+    .map((group) => ({ group, items: visibleCases.filter((item) => item.category === group.id) }))
+    .filter(({ items }) => items.length > 0);
 
   return (
     <div className="landing-page product-atlas use-cases-page">
@@ -203,7 +271,46 @@ export function UseCaseExplorer({
           </div>
         </section>
 
-        <section className="use-cases-library use-cases-shell" aria-labelledby="use-cases-library-title">
+        <section className="use-cases-goals use-cases-shell" aria-labelledby="use-cases-goals-title">
+          <p className="use-cases-eyebrow"><Clipboard size={15} aria-hidden />{text.goalsEyebrow}</p>
+          <div className="use-cases-section-heading">
+            <h2 id="use-cases-goals-title">{text.goalsTitle}</h2>
+            <button type="button" aria-pressed={category === "all"} onClick={() => selectCategory("all")}>{text.all}<span>{useCases.length}</span></button>
+          </div>
+          <div className="use-cases-goal-grid">
+            {useCaseCategories.map((item) => (
+              <button key={item.id} type="button" aria-pressed={category === item.id} onClick={() => selectCategory(item.id)}>
+                <span><strong>{localized(item.label, locale)}</strong><b>{useCases.filter((entry) => entry.category === item.id).length}</b></span>
+                <p>{localized(item.description, locale)}</p>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className="use-cases-featured use-cases-shell" aria-labelledby="use-cases-featured-title">
+          <div className="use-cases-featured-heading">
+            <div>
+              <p className="use-cases-eyebrow"><Sparkles size={15} aria-hidden />{text.featuredEyebrow}</p>
+              <h2 id="use-cases-featured-title">{text.featuredTitle}</h2>
+            </div>
+            <p>{text.featuredBody}</p>
+          </div>
+          <div className="use-cases-featured-grid">
+            {readyCases.map((item) => (
+              <article key={item.id}>
+                <span>{localized(useCaseCategories.find((entry) => entry.id === item.category)!.label, locale)}</span>
+                <h3>{localized(item.title, locale)}</h3>
+                <p>{localized(item.outcome, locale)}</p>
+                <a href={promptDeepLink(localized(item.prompt, locale))} onClick={(event) => openPrompt(event, item.id, localized(item.prompt, locale))}>
+                  {text.openInXopc}<ArrowRight size={15} aria-hidden />
+                </a>
+                {launchingId === item.id ? <small>{text.launchHelp} <Link href={`/${locale}#download`}>{text.download}</Link></small> : null}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="use-cases-library use-cases-shell" id="scenario-library" aria-labelledby="use-cases-library-title">
           <div className="use-cases-library-heading">
             <div>
               <p className="use-cases-eyebrow"><Clipboard size={15} aria-hidden />{locale === "zh" ? "场景库" : "SCENARIO LIBRARY"}</p>
@@ -226,26 +333,23 @@ export function UseCaseExplorer({
               </label>
               <span className="use-cases-result-count" aria-live="polite">{text.count(visibleCases.length)}</span>
             </div>
-            <div className="use-cases-filters" role="group" aria-label={locale === "zh" ? "场景分类" : "Scenario categories"}>
-              <button type="button" aria-pressed={category === "all"} onClick={() => setCategory("all")}>{text.all}<span>{useCases.length}</span></button>
-              {useCaseCategories.map((item) => (
-                <button key={item.id} type="button" aria-pressed={category === item.id} onClick={() => setCategory(item.id)}>
-                  {localized(item.label, locale)}
-                  <span>{useCases.filter((entry) => entry.category === item.id).length}</span>
-                </button>
-              ))}
-            </div>
+            {category !== "all" ? <button className="use-cases-clear-category" type="button" onClick={() => setCategory("all")}>{text.clear}</button> : null}
           </div>
 
           {visibleCases.length ? (
-            <div className="use-cases-list">
-              {visibleCases.map((item, index) => {
+            <div className="use-cases-groups">
+              {visibleGroups.map(({ group, items }) => <section className="use-cases-group" key={group.id} aria-labelledby={`use-case-group-${group.id}`}>
+                <div className="use-cases-group-heading">
+                  <div><h3 id={`use-case-group-${group.id}`}>{localized(group.label, locale)}</h3><p>{localized(group.description, locale)}</p></div>
+                  <span>{text.count(items.length)}</span>
+                </div>
+                <div className="use-cases-list">
+              {items.map((item) => {
                 const categoryCopy = useCaseCategories.find((entry) => entry.id === item.category)!;
                 const open = openId === item.id;
                 const copied = copiedId === item.id;
                 return (
                   <article className={`use-case-row ${open ? "is-open" : ""}`} id={`use-case-${item.id}`} key={item.id}>
-                    <span className="use-case-index">{String(index + 1).padStart(2, "0")}</span>
                     <div className="use-case-identity">
                       <div className="use-case-meta">
                         <span className="use-case-category">{localized(categoryCopy.label, locale)}</span>
@@ -254,19 +358,18 @@ export function UseCaseExplorer({
                         </span>
                       </div>
                       <h3>{localized(item.title, locale)}</h3>
-                      <div className="use-case-links">
-                        {item.productNodes.slice(0, 3).map((node) => (
-                          <Link href={`/${locale}/product-map?node=${node}`} key={node}>{node}<ArrowRight size={12} /></Link>
-                        ))}
-                      </div>
                     </div>
                     <div className="use-case-overview">
                       <p className="use-case-summary">{localized(item.summary, locale)}</p>
                       <p className="use-case-outcome"><CheckCircle2 size={15} aria-hidden /><span><strong>{text.outcome}</strong>{localized(item.outcome, locale)}</span></p>
-                      <button className="use-case-prompt-toggle" type="button" aria-expanded={open} aria-controls={`use-case-details-${item.id}`} onClick={() => setOpenId(open ? null : item.id)}>
-                        {open ? text.closePrompt : text.openPrompt}
-                        <ArrowRight size={15} aria-hidden />
-                      </button>
+                      <div className="use-case-actions">
+                        <a className="use-case-open" href={promptDeepLink(localized(item.prompt, locale))} onClick={(event) => openPrompt(event, item.id, localized(item.prompt, locale))}>{text.openInXopc}<ArrowRight size={15} aria-hidden /></a>
+                        <button className="use-case-prompt-toggle" type="button" aria-expanded={open} aria-controls={`use-case-details-${item.id}`} onClick={() => setCaseDetails(open ? null : item.id)}>
+                          {open ? text.closePrompt : text.openPrompt}
+                          <ArrowRight size={15} aria-hidden />
+                        </button>
+                      </div>
+                      {launchingId === item.id ? <small className="use-case-launch-help">{text.launchHelp} <Link href={`/${locale}#download`}>{text.download}</Link></small> : null}
                     </div>
                     {open ? (
                       <div className="use-case-details" id={`use-case-details-${item.id}`}>
@@ -274,9 +377,10 @@ export function UseCaseExplorer({
                           {item.setup.length ? <div><Sparkles size={16} aria-hidden /><div><strong>{text.needs}</strong><ul>{item.setup.map((entry) => <li key={localized(entry, locale)}>{localized(entry, locale)}</li>)}</ul></div></div> : null}
                           <div><ShieldCheck size={16} aria-hidden /><div><strong>{text.approval}</strong><p>{localized(item.approval, locale)}</p></div></div>
                           <div><FileCheck2 size={16} aria-hidden /><div><strong>{text.evidence}</strong><ul>{item.evidence.map((entry) => <li key={localized(entry, locale)}>{localized(entry, locale)}</li>)}</ul></div></div>
+                          <div><ArrowRight size={16} aria-hidden /><div><strong>{text.related}</strong><div className="use-case-links">{item.productNodes.slice(0, 3).map((node) => <Link href={`/${locale}/product-map?node=${node}`} key={node}>{node}</Link>)}</div></div></div>
                         </div>
                         <div className="use-case-prompt">
-                          <div className="use-case-prompt-head"><span>{locale === "zh" ? "发给 xopc" : "SEND TO XOPC"}</span><button type="button" onClick={() => void copyPrompt(item.id, localized(item.prompt, locale))}>{copied ? <Check size={15} /> : <Copy size={15} />}{copied ? text.copied : text.copyPrompt}</button></div>
+                          <div className="use-case-prompt-head"><span>{locale === "zh" ? "发给 xopc" : "SEND TO XOPC"}</span><div><a href={promptDeepLink(localized(item.prompt, locale))} onClick={(event) => openPrompt(event, item.id, localized(item.prompt, locale))}>{text.openInXopc}<ArrowRight size={14} /></a><button type="button" onClick={() => void copyPrompt(item.id, localized(item.prompt, locale))}>{copied ? <Check size={15} /> : <Copy size={15} />}{copied ? text.copied : text.copyPrompt}</button></div></div>
                           <p>{localized(item.prompt, locale)}</p>
                           <small>{text.promptNote}</small>
                         </div>
@@ -285,6 +389,8 @@ export function UseCaseExplorer({
                   </article>
                 );
               })}
+                </div>
+              </section>)}
             </div>
           ) : (
             <div className="use-cases-empty">

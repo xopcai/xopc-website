@@ -12,6 +12,8 @@ export const PRODUCT_EVENT_NAMES = [
   "ios_beta_signup_succeeded",
   "ios_download_clicked",
   "download_started",
+  "use_case_open_clicked",
+  "use_case_prompt_copied",
 ] as const;
 
 export type ProductEventName = (typeof PRODUCT_EVENT_NAMES)[number];

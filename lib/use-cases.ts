@@ -20,12 +20,12 @@ export type UseCase = {
 const t = (zh: string, en: string): LocalizedText => ({ zh, en });
 
 export const useCaseCategories: Array<{ id: UseCaseCategory; label: LocalizedText; description: LocalizedText }> = [
-  { id: "start", label: t("从这里开始", "Start here"), description: t("把模糊想法变成可继续推进的工作。", "Turn an incomplete thought into work that can keep moving.") },
-  { id: "organize", label: t("整理事务", "Organize"), description: t("从邮件、日程和本地材料中找出真正要做的事。", "Find the real work hidden in email, calendars, and local material.") },
-  { id: "research", label: t("研究与比较", "Research"), description: t("查找来源、比较选项，留下可核验的结论。", "Find sources, compare options, and leave a verifiable conclusion.") },
+  { id: "start", label: t("开始与规划", "Plan and start"), description: t("把想法、决定和项目状态变成清楚的下一步。", "Turn ideas, decisions, and project state into a clear next step.") },
+  { id: "organize", label: t("整理与跟进", "Organize and follow up"), description: t("从邮件、日程、语音和文件中找出真正要处理的事。", "Find the real work hidden in email, calendars, recordings, and files.") },
+  { id: "research", label: t("研究与决策", "Research and decide"), description: t("查找来源、比较选项，留下可核验的决策依据。", "Find sources, compare options, and leave verifiable decision support.") },
   { id: "create", label: t("创作与交付", "Create"), description: t("从已有材料生成可以继续使用的内容与文件。", "Turn source material into content and files you can keep using.") },
   { id: "build", label: t("开发与构建", "Build"), description: t("在本地项目中编码、验证并交付结果。", "Code, verify, and deliver inside local projects.") },
-  { id: "automate", label: t("持续运行", "Keep it moving"), description: t("把做过一次的工作变成定时或持续检查。", "Turn one completed task into scheduled or continuing work.") },
+  { id: "automate", label: t("自动化与监测", "Automate and monitor"), description: t("把做过一次的工作变成定时执行或低噪音监测。", "Turn completed work into scheduled runs or low-noise monitoring.") },
 ];
 
 export const useCases: UseCase[] = [
@@ -55,7 +55,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: "voice-capture",
-    category: "start",
+    category: "organize",
     title: t("把一段语音变成可执行计划", "Turn a voice note into an actionable plan"),
     summary: t("口述想法或会议复盘，让 xopc 转写、提取决定与行动项，并放进任务或笔记。", "Speak an idea or meeting recap, then let xopc transcribe it, extract decisions and actions, and place them in tasks or notes."),
     prompt: t("转写这段语音，区分决定、行动项、问题和背景。把有明确负责人与截止时间的内容整理成任务，其余内容保存为笔记；先给我预览。", "Transcribe this recording and separate decisions, actions, questions, and context. Turn items with clear owners and deadlines into tasks, save the rest as a note, and show me a preview first."),
@@ -139,7 +139,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: "account-admin",
-    category: "research",
+    category: "organize",
     title: t("在网站里完成一项账户事务", "Handle an account task in the browser"),
     summary: t("让 xopc 在已连接的浏览器中查找设置、准备表单或客服信息，并在真正提交前停下。", "Let xopc use a connected browser to find settings, prepare forms, or gather support information, then stop before the real submission."),
     prompt: t("在 [网站] 中处理 [账户事务]。先确认当前状态和可行路径，填写或准备所需内容，但在发送消息、取消服务、修改账户或付款前停下来让我确认。完成后给出页面状态和确认信息。", "Handle [account task] on [website]. First verify the current state and available path, prepare the required content, but pause before sending messages, canceling services, changing the account, or paying. When complete, report the final page state and confirmation information."),
@@ -175,7 +175,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: "publish-local-app",
-    category: "create",
+    category: "build",
     title: t("把一个想法做成本地小工具", "Turn an idea into a local tool"),
     summary: t("从目标和输入输出开始，让 xopc 构建一个在本机运行、可继续迭代的小应用。", "Start with the objective and inputs/outputs, then let xopc build a local app that can run on your machine and keep evolving."),
     prompt: t("为 [用户/场景] 做一个本地小工具，解决 [问题]。输入是 [输入]，需要输出 [输出]。先给最小版本和验收标准，再实现、运行检查并给我使用入口。未经确认不要部署到公网。", "Build a local tool for [user/scenario] that solves [problem]. Its input is [input] and output is [output]. Define the smallest version and acceptance criteria, implement it, verify it runs, and give me the local entry point. Do not deploy it publicly without confirmation."),
@@ -247,7 +247,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: "continue-on-phone",
-    category: "automate",
+    category: "start",
     title: t("离开电脑后继续同一件事", "Continue the same work away from your desk"),
     summary: t("通过移动端或消息渠道回到同一个 Runtime，继续查看任务、做决定和接收结果。", "Return to the same Runtime from mobile or a messaging channel to review tasks, make decisions, and receive results."),
     prompt: t("继续处理任务 [任务名]。先给我当前状态、刚完成的结果和现在需要我决定的唯一事项；不要重复已经完成的工作。", "Continue task [task name]. First show the current state, the latest completed result, and the single decision needed from me now; do not repeat work that is already complete."),
@@ -343,7 +343,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: "policy-change-monitor",
-    category: "research",
+    category: "automate",
     title: t("监测官方政策页面的实质变化", "Monitor official policy pages for material changes"),
     summary: t("定期比较指定官方来源，只在条款、日期或要求真正变化时提醒你。", "Periodically compare specified official sources and alert only when terms, dates, or requirements materially change."),
     prompt: t("监测这些官方页面：[链接]。每次运行与上次记录比较，只在资格、截止日期、费用或办理要求发生实质变化时提醒我。附新旧差异、页面时间和来源；页面不可访问时报告失败，不要猜测。", "Monitor these official pages: [links]. Compare each run with the previous record and alert me only when eligibility, deadlines, fees, or process requirements materially change. Include the before/after difference, page date, and source; report access failures rather than guessing."),
