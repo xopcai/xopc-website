@@ -125,17 +125,14 @@
     },
     "collaboration": {
       "kicker": "Built for independent work",
-      "title": "Working independently shouldn’t mean working alone.",
-      "desc": "xopc brings memory, context, and intelligence into everything you do. It carries repeatable, time-consuming, verifiable work while you keep direction, judgment, creativity, and final decisions.",
-      "outcome": "It remembers what matters, understands what you’re building, and keeps moving with you.",
-      "modelLabel": "The xopc 80/20 human–AI collaboration loop",
-      "aiRatio": "80%",
-      "aiLabel": "AI executes",
-      "aiBody": "Organize, research, follow up, use tools, and verify results.",
-      "humanRatio": "20%",
-      "humanLabel": "Human decides",
-      "humanBody": "Set intent, make tradeoffs, and retain creativity and final decisions.",
-      "note": "80/20 expresses a direction for collaboration, not a fixed ratio for every task. Human intent defines the entire loop."
+      "title": "Work independently, without doing everything yourself.",
+      "desc": "xopc remembers project progress and helps organize information, research, follow up on tasks, and use tools. You can review what it does and confirm consequential actions.",
+      "outcome": "Come back and pick up where you left off.",
+      "modelLabel": "How xopc works with you",
+      "aiLabel": "xopc moves work forward",
+      "aiBody": "Organize information, follow up on tasks, use tools, and show the results.",
+      "humanLabel": "You decide",
+      "humanBody": "Set goals, change direction, and confirm consequential actions and final results."
     },
     "aha": {
       "kicker": "Start with one real thing",

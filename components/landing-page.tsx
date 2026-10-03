@@ -91,20 +91,17 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             </div>
             <figcaption className="collaboration-roles">
               <div className="collaboration-role collaboration-role-ai">
-                <strong>{L.collaboration.aiRatio}</strong>
                 <div>
                   <h3>{L.collaboration.aiLabel}</h3>
                   <p>{L.collaboration.aiBody}</p>
                 </div>
               </div>
               <div className="collaboration-role collaboration-role-human">
-                <strong>{L.collaboration.humanRatio}</strong>
                 <div>
                   <h3>{L.collaboration.humanLabel}</h3>
                   <p>{L.collaboration.humanBody}</p>
                 </div>
               </div>
-              <p className="collaboration-note">{L.collaboration.note}</p>
             </figcaption>
           </figure>
         </div>

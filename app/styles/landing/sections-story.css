@@ -96,24 +96,12 @@
 }
 
 .landing-page .collaboration-role {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 14px;
   padding: 17px;
   border: 1px solid var(--edge);
   border-radius: 16px;
   background: color-mix(in srgb, var(--bg-card) 80%, transparent);
 }
 
-.landing-page .collaboration-role > strong {
-  padding-top: 1px;
-  color: var(--fg-head);
-  font-family: var(--mono);
-  font-size: 20px;
-  letter-spacing: -0.04em;
-}
-
-.landing-page .collaboration-role-human > strong,
 .landing-page .collaboration-role-human h3 {
   color: var(--accent);
 }
@@ -123,15 +111,10 @@
   font-size: 16px;
 }
 
-.landing-page .collaboration-role p,
-.landing-page .collaboration-note {
+.landing-page .collaboration-role p {
   color: var(--fg-mid);
   font-size: 13px;
   line-height: 1.6;
-}
-
-.landing-page .collaboration-note {
-  padding: 8px 4px 0;
 }
 
 html[data-theme="dark"] .landing-page .collaboration-model,
