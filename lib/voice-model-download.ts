@@ -93,7 +93,9 @@ function cacheRoot(): string | null {
 
 function cacheFile(model: VoiceModelFile): string | null {
   const root = cacheRoot();
-  return root ? path.join(root, model.repository, model.revision, ...model.filePath.split("/")) : null;
+  if (!root) return null;
+  const segments = [root, model.repository, model.revision, ...model.filePath.split("/")];
+  return path.join(...segments);
 }
 
 function upstreamBases(): string[] {
