@@ -48,6 +48,27 @@ html[data-theme] body.landing-body {
 }
 .landing-page.use-cases-page .use-cases-hero h1 span:last-child { color: var(--blue); }
 .landing-page.use-cases-page .use-cases-intro { font-size: 17px; line-height: 1.85; }
+/* Link defaults must not override the foreground of filled actions. */
+.landing-page.use-cases-page :is(.use-case-open, .use-cases-primary) {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.landing-page.use-cases-page :is(.use-case-open, .use-cases-primary):hover,
+.landing-page.use-cases-page :is(.use-case-open, .use-cases-primary):focus-visible {
+  background: color-mix(in srgb, var(--ink) 88%, var(--paper));
+  color: var(--paper);
+  text-decoration: none;
+}
+.landing-page.use-cases-page :is(.use-case-open, .use-cases-primary):active {
+  background: color-mix(in srgb, var(--ink) 80%, var(--paper));
+  color: var(--paper);
+}
 .landing-page.use-cases-page .use-cases-section-heading h2,
 .landing-page.use-cases-page .use-cases-featured-heading h2 { font-weight: 500; line-height: 1.3; }
 .landing-page.blog-page .blog-index-header h1,

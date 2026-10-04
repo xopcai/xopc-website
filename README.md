@@ -96,6 +96,12 @@ Run `node --test scripts/test-mobile-release.mjs` for isolated cache/failure-pat
 
 ## Product map
 
+The default explorer is prerendered for both languages and can be prefetched as a
+static route. Query-string initialization lives in `product-map-query.tsx` behind
+Suspense; its fallback is the complete default explorer, not a blank loading screen.
+Search, group, view and node links initialize in the browser without forcing a new
+server render. Without JavaScript, the default overview remains readable.
+
 The native product explorer lives at `/zh/product-map` and `/en/product-map`, with desktop and mobile navigation links. It reuses the site's theme, language control and desktop demo video. Locale switching retains `view`, `node`, `q` and `group` URL parameters.
 
 - `lib/product-map/manifest.json`: stable feature IDs, hierarchy, relations, guides and journeys.

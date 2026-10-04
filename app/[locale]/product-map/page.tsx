@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { ProductMapQuery } from "@/components/product-map/product-map-query";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -5,13 +7,11 @@ import { LocalizedProductMap } from "@/components/product-map/localized-product-
 import { docBaseUrl, isLocale, locales } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { getProductMapMessages } from "@/lib/product-map/messages";
-import { mapGroups, nodeById, type MapView } from "@/lib/product-map/model";
 import "./product-map.css";
 import "./refinement.css";
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 export async function generateMetadata({
   params,
@@ -49,39 +49,19 @@ export async function generateMetadata({
     },
   };
 }
-export default async function ProductMapRoute({ params, searchParams }: Props) {
+export default async function ProductMapRoute({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const search = await searchParams;
-  const value = (key: string) =>
-    typeof search[key] === "string" ? (search[key] as string) : "";
-  const requestedView = value("view");
-  const initialView: MapView = [
-    "map",
-    "mindmap",
-    "architecture",
-    "catalog",
-  ].includes(requestedView)
-    ? (requestedView as MapView)
-    : "map";
-  const initialNode = nodeById(value("node"))?.id ?? "onboard";
-  const initialGroup =
-    mapGroups.find((group) => group.id === value("group"))?.id ??
-    (value("group") === "all" || initialView !== "map" || value("q")
-      ? ""
-      : nodeById(initialNode)!.group);
-  const initialQuery = value("q").slice(0, 200);
   const messages = getMessages(locale);
+  const props = {
+    locale,
+    header: messages.header,
+    nav: messages.landing.nav,
+    docHome: docBaseUrl(locale),
+  };
   return (
-    <LocalizedProductMap
-      locale={locale}
-      header={messages.header}
-      nav={messages.landing.nav}
-      docHome={docBaseUrl(locale)}
-      initialView={initialQuery ? "catalog" : initialView}
-      initialNode={initialNode}
-      initialQuery={initialQuery}
-      initialGroup={initialGroup}
-    />
+    <Suspense fallback={<LocalizedProductMap {...props} initialView="map" initialNode="onboard" initialQuery="" initialGroup="start" />}>
+      <ProductMapQuery {...props} />
+    </Suspense>
   );
 }
