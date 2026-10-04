@@ -117,6 +117,39 @@
   line-height: 1.6;
 }
 
+.collaboration-motion .collaboration-flow { animation: collaborationFlow 9s ease-in-out infinite; opacity: 0; }
+.collaboration-motion .collaboration-human-light { animation: collaborationHumanLight 9s ease-in-out infinite; }
+.collaboration-motion .collaboration-role-ai { animation: collaborationAiCard 9s ease-in-out infinite; }
+.collaboration-motion .collaboration-role-human { animation: collaborationHumanCard 9s ease-in-out infinite; }
+.collaboration-motion .collaboration-mark-shell { animation: collaborationFloat 9s ease-in-out infinite; }
+.collaboration-motion[data-running="false"] :is(.collaboration-flow, .collaboration-human-light, .collaboration-role, .collaboration-mark-shell) { animation-play-state: paused; }
+@keyframes collaborationFlow {
+  0%, 6% { stroke-dashoffset: 100; opacity: 0; }
+  12% { opacity: .75; }
+  45% { stroke-dashoffset: -1350; opacity: .65; }
+  53%, 100% { stroke-dashoffset: -1500; opacity: 0; }
+}
+@keyframes collaborationHumanLight {
+  0%, 48%, 91%, 100% { opacity: 0; }
+  63%, 76% { opacity: .45; }
+}
+@keyframes collaborationAiCard {
+  0%, 52%, 100% { transform: translateY(0); border-color: var(--edge); }
+  15%, 40% { transform: translateY(-3px); border-color: color-mix(in srgb, var(--fg-head) 30%, var(--edge)); }
+}
+@keyframes collaborationHumanCard {
+  0%, 48%, 96%, 100% { transform: translateY(0); border-color: var(--edge); }
+  63%, 78% { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 55%, var(--edge)); }
+}
+@keyframes collaborationFloat {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-4px); }
+  73% { transform: translateY(-1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collaboration-motion :is(.collaboration-flow, .collaboration-human-light, .collaboration-role, .collaboration-mark-shell) { animation: none; }
+}
+
 html[data-theme="dark"] .landing-page .collaboration-model,
 html[data-theme="dark"] .landing-page .collaboration-role,
 html[data-theme="dark"] .landing-page .collaboration-mark-shell {

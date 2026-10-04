@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 
 import { HeroBrand } from "@/components/hero-brand";
+import { Loopi } from "@/components/brand/loopi";
 import { ProductIntroVideo } from "@/components/product-intro-video";
 import { LandingFooter } from "@/components/landing-footer";
 import { LandingAnalytics } from "@/components/landing-analytics";
@@ -16,7 +17,7 @@ import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
 import { MobileDownloads } from "@/components/mobile-downloads";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
 import { TerminalInstallCommands } from "@/components/terminal-install-commands";
-import { XopcLogoMark } from "@/components/xopc-logo-mark";
+import { CollaborationMotion } from "@/components/collaboration-motion";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
@@ -60,6 +61,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
         <div className="hero-grid" aria-hidden />
         <div className="container hero-inner">
           <HeroBrand
+            locale={locale}
             brandName={L.hero.brandName}
             headline={L.hero.headline}
           />
@@ -85,10 +87,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
             <p>{L.collaboration.desc}</p>
             <p className="collaboration-outcome">{L.collaboration.outcome}</p>
           </div>
-          <figure className="collaboration-model" aria-label={L.collaboration.modelLabel}>
-            <div className="collaboration-mark-shell" aria-hidden>
-              <XopcLogoMark className="collaboration-logo" />
-            </div>
+          <CollaborationMotion label={L.collaboration.modelLabel}>
             <figcaption className="collaboration-roles">
               <div className="collaboration-role collaboration-role-ai">
                 <div>
@@ -103,7 +102,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
                 </div>
               </div>
             </figcaption>
-          </figure>
+          </CollaborationMotion>
         </div>
       </section>
 
@@ -126,7 +125,7 @@ export function LandingPage({ locale, messages: m, docHome }: Props) {
               </ul>
             </div>
             <div className="aha-assistant-message">
-              <span>{L.aha.assistantLabel}</span>
+              <span className="aha-companion-label"><Loopi variant="avatar" className="aha-companion" mood="listen" />{L.aha.assistantLabel}</span>
               <p>{L.aha.assistantMessage}</p>
               <div>
                 <strong>{L.aha.nextStepLabel}</strong>
