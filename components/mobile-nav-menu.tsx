@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, Download, Github, Home, Map, Menu, Sparkles, X } from "lucide-react";
+import { BookOpen, Download, Github, Home, Menu, Sparkles, ShieldCheck, Workflow, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { AnimatedRouteLink } from "@/components/animated-route-link";
@@ -25,7 +25,7 @@ const menuCopy = {
     exploreHint: "查看完整能力地图",
     cases: "使用场景",
     casesHint: "从真实任务找到开始方式",
-    learn: "实战教程",
+    learn: "探索与学习",
     learnHint: "跟着案例跑通第一次",
     blog: "技术博客",
     blogHint: "实现、取舍与工程经验",
@@ -45,7 +45,7 @@ const menuCopy = {
     exploreHint: "Browse the complete capability map",
     cases: "Use cases",
     casesHint: "Find a starting point from real work",
-    learn: "Guided tutorials",
+    learn: "Explore & learn",
     learnHint: "Complete your first workflow step by step",
     blog: "Engineering blog",
     blogHint: "Implementation, trade-offs and lessons",
@@ -78,7 +78,9 @@ export function MobileNavMenu({
   const close = () => setOpen(false);
   const items = [
     { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}` },
-    { href: `/${locale}/product-map`, label: text.explore, hint: text.exploreHint, icon: Map, active: pathname === `/${locale}/product-map` },
+    { href: `/${locale}#why`, label: locale === "zh" ? "为何 xopc" : "Why xopc", icon: Sparkles, active: false },
+    { href: `/${locale}#loop`, label: locale === "zh" ? "如何运作" : "How it works", icon: Workflow, active: false },
+    { href: `/${locale}#trust`, label: locale === "zh" ? "信任" : "Trust", icon: ShieldCheck, active: false },
     { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
     { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
     { href: `/${locale}/blog`, label: text.blog, hint: text.blogHint, icon: BookOpen, active: pathname.startsWith(`/${locale}/blog`) },

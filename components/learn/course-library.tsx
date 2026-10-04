@@ -41,7 +41,13 @@ export function CourseLibrary({ locale, initialCourse }: { locale: Locale; initi
       locationSuffix={selected ? `?course=${selected}` : ""}
       reserveSpace
     />
-    <main className="learn-main"><section className="learn-intro"><p className="pm-eyebrow">{zh ? "场景实战 · PC 端" : "PRACTICAL WORKFLOWS · DESKTOP"}</p><h1>{zh ? "从一件真实的事开始。" : "Start with something you need to do."}</h1><p>{zh ? "带着材料进入 xopc，核对过程，带走一份能继续使用的结果。" : "Bring your materials into xopc, review the work and leave with a useful result."}</p><div className="learn-tags"><span>{zh ? `${courses.length} 个完整场景` : `${courses.length} complete workflows`}</span><span>{zh ? "中文配音与字幕" : "Chinese narration & captions"}</span><span>{zh ? "可下载跟做材料" : "Downloadable practice files"}</span></div></section>
+    <main className="learn-main"><section className="learn-intro"><p className="pm-eyebrow">{zh ? "探索与学习" : "EXPLORE & LEARN"}</p><h1>{zh ? "了解它，再动手试试。" : "Explore what’s possible. Then try it."}</h1><p>{zh ? "看看 xopc 能做什么，或跟着一个真实场景开始。" : "Discover what xopc can do, or start with a practical tutorial."}</p>
+      <div className="learn-entry-links">
+        <Link href={`/${locale}/product-map`}><strong>{zh ? "产品探索" : "Product explorer"}</strong><span>{zh ? "了解能力与使用方式" : "Discover features and how they work"}</span><ArrowRight size={18} aria-hidden /></Link>
+        <a href="#tutorials"><strong>{zh ? "实战教程" : "Tutorials"}</strong><span>{zh ? "看演示，跟着做一次" : "Watch a walkthrough and try it"}</span><ArrowRight size={18} aria-hidden /></a>
+      </div>
+    </section>
+    <h2 id="tutorials" className="learn-tutorial-heading">{zh ? "实战教程" : "Tutorials"}</h2>
     <button className="learn-promo" onClick={() => setSelected("office-overview")}>
       <span className="learn-promo-copy"><span className="pm-eyebrow">{zh ? "45 秒 · 场景预览" : "45 SECONDS · WORKFLOW PREVIEW"}</span><strong>{promoTitle}</strong><span>{zh ? "从零散材料，到 Excel 与 PPT。" : "From scattered files to Excel and PowerPoint."}</span><span className="learn-promo-play"><Play size={18}/>{zh ? "观看短片" : "Watch the film"}</span></span>
       {/* eslint-disable-next-line @next/next/no-img-element */}
