@@ -1,248 +1,76 @@
-import {
-  Download,
-  Github,
-  ShieldCheck,
-  Terminal,
-} from "lucide-react";
-
-import { HeroBrand } from "@/components/hero-brand";
+import { ArrowDown, ArrowUpRight, Github, Play, Terminal } from "lucide-react";
 import { Loopi } from "@/components/brand/loopi";
-import { ProductIntroVideo } from "@/components/product-intro-video";
 import { LandingFooter } from "@/components/landing-footer";
 import { LandingAnalytics } from "@/components/landing-analytics";
 import { LandingHeader } from "@/components/landing-header";
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LandingNavState } from "@/components/landing-nav-state";
-import { LandingScrollReveal } from "@/components/landing-scroll-reveal";
-import { MobileDownloads } from "@/components/mobile-downloads";
+import { ProductIntroVideo } from "@/components/product-intro-video";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
+import { MobileDownloads } from "@/components/mobile-downloads";
 import { TerminalInstallCommands } from "@/components/terminal-install-commands";
-import { CollaborationMotion } from "@/components/collaboration-motion";
+import { LandingStory } from "@/components/landing-story";
+import { storyCopy } from "@/lib/landing-story-copy";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
+import styles from "./landing-story.module.css";
 
-type Props = {
-  locale: Locale;
-  messages: Messages;
-  docHome: string;
-};
-
-export function LandingPage({ locale, messages: m, docHome }: Props) {
+export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; messages: Messages; docHome: string }) {
+  const c = storyCopy[locale];
   const L = m.landing;
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "xopc",
-    applicationCategory: "ProductivityApplication",
-    operatingSystem: "macOS, Windows, Linux",
-    description: m.meta.description,
-    downloadUrl: `https://xopc.ai/${locale}#download`,
-    featureList: L.productProof.capabilities.map((item) => item.title),
-    license: "https://opensource.org/license/mit",
-    sameAs: [LANDING_GITHUB_REPO],
-  };
-
-  return (
-    <div className="landing-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema).replace(/</g, "\\u003c") }}
-      />
-      <LandingAnalytics />
-      <LandingLocaleTransition />
-      <LandingNavState />
-      <LandingScrollReveal />
-
-      <LandingHeader locale={locale} header={m.header} nav={L.nav} docHome={docHome} />
-
-      <section className="hero">
-        <div className="hero-glow" aria-hidden />
-        <div className="hero-grid" aria-hidden />
-        <div className="container hero-inner">
-          <HeroBrand
-            locale={locale}
-            brandName={L.hero.brandName}
-            headline={L.hero.headline}
-          />
-          <p className="hero-desc fade-up delay-2">{L.hero.desc}</p>
-          <div className="hero-actions fade-up delay-3">
-            <a href="#download" className="btn-primary" data-product-event="hero_download_clicked">
-              <Download className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.primaryCta}
-            </a>
-            <a href="#terminal-install" className="btn-secondary" data-product-event="terminal_install_clicked">
-              <Terminal className="btn-ic" strokeWidth={1.75} aria-hidden />
-              {L.hero.secondaryCta}
-            </a>
-          </div>
+  const schema = { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "xopc", applicationCategory: "ProductivityApplication", operatingSystem: "macOS, Windows, Linux", description: m.meta.description, downloadUrl: `https://xopc.ai/${locale}#download`, featureList: L.productProof.capabilities.map(item => item.title), license: "https://opensource.org/license/mit", sameAs: [LANDING_GITHUB_REPO] };
+  return <div className={`landing-page ${styles.page}`}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+    <LandingAnalytics /><LandingLocaleTransition /><LandingNavState />
+    <LandingHeader locale={locale} header={m.header} nav={L.nav} docHome={docHome} compact />
+    <section className={styles.hero} aria-labelledby="story-headline">
+      <div className={styles.heroCopy}>
+        <p className={styles.brandSlogan}>Keep what matters <span>moving.</span></p>
+        <h1 id="story-headline">{c.headline[0]}<br /><span>{c.headline[1]}</span></h1>
+        <p className={styles.heroDesc}>{c.description}</p>
+        <div className={styles.actions}>
+          <a className={styles.primary} href="#download" data-product-event="hero_download_clicked">{c.download}<ArrowUpRight size={18} /></a>
+          <a className={styles.textLink} href="#why">{c.begin}<ArrowDown size={16} /></a>
         </div>
-      </section>
-
-      <section className="collaboration-section landing-reveal" id="why" aria-labelledby="collaboration-title">
-        <div className="container collaboration-layout">
-          <div className="collaboration-copy">
-            <p className="section-kicker">{L.collaboration.kicker}</p>
-            <h2 id="collaboration-title">{L.collaboration.title}</h2>
-            <p>{L.collaboration.desc}</p>
-            <p className="collaboration-outcome">{L.collaboration.outcome}</p>
-          </div>
-          <CollaborationMotion label={L.collaboration.modelLabel}>
-            <figcaption className="collaboration-roles">
-              <div className="collaboration-role collaboration-role-ai">
-                <div>
-                  <h3>{L.collaboration.aiLabel}</h3>
-                  <p>{L.collaboration.aiBody}</p>
-                </div>
-              </div>
-              <div className="collaboration-role collaboration-role-human">
-                <div>
-                  <h3>{L.collaboration.humanLabel}</h3>
-                  <p>{L.collaboration.humanBody}</p>
-                </div>
-              </div>
-            </figcaption>
-          </CollaborationMotion>
-        </div>
-      </section>
-
-      <section className="aha-section landing-reveal">
-        <div className="container aha-layout">
-          <div className="aha-copy">
-            <p className="section-kicker">{L.aha.kicker}</p>
-            <h2>{L.aha.title}</h2>
-            <p>{L.aha.desc}</p>
-          </div>
-          <div className="aha-conversation" aria-label={L.aha.ariaLabel}>
-            <div className="aha-user-message">
-              <span>{L.aha.userLabel}</span>
-              <p>{L.aha.userMessage}</p>
-            </div>
-            <div className="aha-context">
-              <span>{L.aha.contextLabel}</span>
-              <ul>
-                {L.aha.contextItems.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="aha-assistant-message">
-              <span className="aha-companion-label"><Loopi variant="avatar" className="aha-companion" mood="listen" />{L.aha.assistantLabel}</span>
-              <p>{L.aha.assistantMessage}</p>
-              <div>
-                <strong>{L.aha.nextStepLabel}</strong>
-                {L.aha.nextStep}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="product-proof-section landing-reveal" aria-labelledby="product-proof-title">
-        <div className="container">
-          <div className="section-header product-proof-header">
-            <p className="section-kicker">{L.productProof.kicker}</p>
-            <h2 id="product-proof-title">{L.productProof.title}</h2>
-            <p>{L.productProof.desc}</p>
-          </div>
-          <figure className="product-proof-frame">
-            <ProductIntroVideo locale={locale} preload="metadata" />
-          </figure>
-        </div>
-      </section>
-
-      <section className="loop-section landing-reveal" id="loop">
-        <div className="container">
-          <div className="section-header">
-            <h2>{L.loop.titleLine1}<br />{L.loop.titleLine2}</h2>
-            <p>{L.loop.desc}</p>
-          </div>
-          <div className="loop-model" aria-label={L.loop.modelLabel}>
-            {L.loop.steps.map((step, index) => (
-              <div className="loop-step" key={step.title}>
-                <div className="loop-step-index">0{index + 1}</div>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="trust-section landing-reveal" id="trust">
-        <div className="container">
-          <div className="section-header">
-            <h2>{L.trust.title}</h2>
-            <p>{L.trust.desc}</p>
-          </div>
-          <div className="trust-layout">
-            <div className="trust-grid">
-              {L.trust.items.map((item) => (
-                <article className="trust-card" key={item.title}>
-                  <ShieldCheck aria-hidden strokeWidth={1.75} />
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="understanding-card">
-              <div>
-                <span>{L.trust.factLabel}</span>
-                <p>{L.trust.factExample}</p>
-              </div>
-              <div>
-                <span>{L.trust.inferenceLabel}</span>
-                <p>{L.trust.inferenceExample}</p>
-              </div>
-              <p className="understanding-note">{L.trust.correctionNote}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ProductDesktopDownloads
-        id="download"
-        d={L.download}
-        kicker={L.download.desktopSectionKicker}
-        title={L.download.desktopSectionTitle}
-        desc={L.download.desktopSectionDesc}
-      />
-
-      <section className="terminal-install-section landing-reveal" id="terminal-install">
-        <div className="container terminal-install-inner">
-          <div className="terminal-install-copy">
-            <p className="section-kicker">{L.download.terminalSectionKicker}</p>
-            <h2>{L.download.terminalSectionTitle}</h2>
-            <p>{L.download.terminalSectionDesc}</p>
-          </div>
-          <TerminalInstallCommands
-            commands={[
-              { label: L.download.terminalUnixLabel, value: L.download.terminalUnixCommand },
-              { label: L.download.terminalWindowsLabel, value: L.download.terminalWindowsCommand },
-            ]}
-            copyLabel={L.download.terminalCopy}
-            copiedLabel={L.download.terminalCopied}
-          />
-        </div>
-      </section>
-
-      <MobileDownloads d={L.download} />
-
-      <div className="landing-cta-footer">
-        <section className="cta-section landing-reveal">
-          <div className="container">
-            <h2>{L.cta.titleLine1}<br />{L.cta.titleLine2}</h2>
-            <div className="cta-actions">
-              <a href="#download" className="btn-primary" data-product-event="final_download_clicked">{L.cta.primary}</a>
-              <a href={LANDING_GITHUB_REPO} className="btn-secondary" target="_blank" rel="noopener noreferrer">
-                <Github className="btn-ic" strokeWidth={1.75} aria-hidden />
-                {L.cta.secondary}
-              </a>
-            </div>
-          </div>
-        </section>
-        <LandingFooter footer={L.footer} docsHref={docHome} locale={locale} />
       </div>
+      <div className={styles.desk} aria-label={c.deskLabel}>
+        <div className={`${styles.note} ${styles.noteOne}`}><span className={styles.noteLabel}>PROJECT / 01</span><strong>{c.notes[0]}</strong><div className={styles.paperLines}><i /><i /><i /></div><small>{c.stalled}</small></div>
+        <div className={`${styles.note} ${styles.noteTwo}`}><span className={styles.noteLabel}>{c.notes[1]}</span><strong>{c.notes[2]}</strong><span className={styles.handLine} /></div>
+        <div className={`${styles.note} ${styles.noteThree}`}><span className={styles.noteLabel}>{c.notes[3]}</span><div className={styles.checkline}><i />{c.notes[4]}</div><div className={styles.checkline}><i />{c.notes[5]}</div></div>
+        <svg className={styles.thread} viewBox="0 0 900 300" fill="none" aria-hidden="true"><path d="M55 145 C180 5 250 285 390 165 S560 40 620 175 S770 260 845 90" /></svg>
+        <div className={styles.heroLoopi}><Loopi interactive language={locale} mood="care" /></div>
+        <div className={styles.hello}>{c.hello}<span /></div>
+        <p className={styles.loopiHint}>{c.loopiHint}</p>
+      </div>
+    </section>
+    <LandingStory locale={locale} />
+    <section className={styles.filmSection} id="film">
+      <div className={styles.sectionTop}><p className={styles.eyebrow}>XOPC, IN REAL LIFE</p><span>{c.filmLength}</span></div>
+      <div className={styles.filmHeading}><h2>{c.filmTitle}</h2><p>{c.filmDesc}</p></div>
+      <div className={styles.film}><ProductIntroVideo locale={locale} /></div>
+      <a className={styles.textLink} href={`/${locale}/learn`}><Play size={14} />{c.moreFilms}<ArrowUpRight size={14} /></a>
+    </section>
+    <section className={styles.trust} id="trust">
+      <p className={styles.eyebrow}>{c.trustLabel}</p>
+      <h2>{c.trustTitle}</h2>
+      <div className={styles.trustItems}>{c.trust.map((item, i) => <div key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
+      <a className={styles.textLink} href={`/${locale}/privacy`}>{c.privacy}<ArrowUpRight size={15} /></a>
+    </section>
+    <section className={styles.brandClosing}>
+      <Loopi mood="done" />
+      <p>Keep what matters <span>moving.</span></p>
+      <h2>{c.closingLine}</h2>
+    </section>
+    <div className={styles.downloads}>
+      <ProductDesktopDownloads id="download" d={L.download} kicker={c.downloadKicker} title={c.downloadTitle} desc={c.downloadDesc} />
+      <div className={styles.otherWays}>
+        <a className={styles.textLink} href="#mobile-download">{c.mobileDownload}<ArrowDown size={15} /></a>
+        <a className={styles.textLink} href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer"><Github size={16} />GitHub<ArrowUpRight size={15} /></a>
+      </div>
+      <details className={styles.terminal} id="terminal-install"><summary><Terminal size={16} />{L.download.terminalSectionTitle}</summary><TerminalInstallCommands commands={[{ label: L.download.terminalUnixLabel, value: L.download.terminalUnixCommand }, { label: L.download.terminalWindowsLabel, value: L.download.terminalWindowsCommand }]} copyLabel={L.download.terminalCopy} copiedLabel={L.download.terminalCopied} /></details>
     </div>
-  );
+    <MobileDownloads d={L.download} locale={locale} />
+    <LandingFooter footer={L.footer} docsHref={docHome} locale={locale} />
+  </div>;
 }

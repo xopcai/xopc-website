@@ -15,12 +15,12 @@ export async function GET(request: Request) {
     const result = await resolveDownload(platform, locale);
     return Response.json(result, {
       status: result.ok ? 200 : 503,
-      headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" },
+      headers: { "Cache-Control": result.ok ? "public, max-age=60, stale-while-revalidate=300" : "no-store" },
     });
   } catch {
     return Response.json(
       { ok: false, platform, status: "unavailable" },
-      { status: 503 },
+      { status: 503, headers: { "Cache-Control": "no-store" } },
     );
   }
 }

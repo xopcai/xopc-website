@@ -9,6 +9,20 @@ loadEnvFiles();
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:locale(zh|en)/mobile",
+        destination: "/:locale#mobile-download",
+        permanent: true,
+      },
+      {
+        source: "/:locale(zh|en)/products/:product(desktop|terminal|gateway|operator|worker|code|work)",
+        destination: "/:locale#download",
+        permanent: true,
+      },
+    ];
+  },
   experimental: {
     cpus: 1,
   },

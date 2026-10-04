@@ -4,7 +4,6 @@ import {
   LANDING_GITHUB_ISSUES,
   LANDING_GITHUB_LICENSE,
   LANDING_GITHUB_REPO,
-  LANDING_MOBILE_APP_REPO,
 } from "@/lib/landing-urls";
 
 type Props = {
@@ -34,7 +33,7 @@ export function LandingFooter({ footer, docsHref, locale }: Props) {
             </a>
           </li>
           <li>
-            <a href={LANDING_MOBILE_APP_REPO} target="_blank" rel="noopener noreferrer">
+            <a href={`/${locale}#mobile-download`}>
               {footer.mobileApp}
             </a>
           </li>
@@ -48,6 +47,7 @@ export function LandingFooter({ footer, docsHref, locale }: Props) {
               {footer.issues}
             </a>
           </li>
+          <li><a href={`/${locale}/product-map`}>{locale === "zh" ? "产品探索" : "Product explorer"}</a></li>
           <li><a href={`/${locale}/blog`}>{locale === "zh" ? "技术博客" : "Blog"}</a></li>
           <li><a href={`/${locale}/privacy`}>{footer.privacy}</a></li>
           <li><a href={`/${locale}/support`}>{footer.support}</a></li>

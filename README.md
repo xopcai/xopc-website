@@ -51,14 +51,48 @@ sending it with `pnpm analytics:report:dry-run`, or send immediately with `pnpm 
 
 ## Content map
 
-- Landing page copy: `messages/en.json` and `messages/zh.json`
+- Homepage story copy (Chinese and English): `lib/landing-story-copy.ts`
+- Shared navigation, downloads, and product copy: `messages/en.json` and `messages/zh.json`
 - Landing page structure: `components/landing-page.tsx`
+- Interactive four-chapter story: `components/landing-story.tsx`
+- Homepage-specific styles: `components/landing-story.module.css`
 - Landing styles: `app/styles/landing/`
 - Product-aware download resolution: `app/api/downloads/resolve/`
 - Release download proxy routes: `app/api/download/`
 - Pinned Whisper and SenseVoice model proxy/cache: `app/api/voice/models/`
 
 The primary product repository is [xopcai/xopc](https://github.com/xopcai/xopc).
+
+## Homepage story
+
+The homepage follows one illustrative project through context recovery, a human decision,
+visible progress, and continuing on a phone. Passive readers see a complete example,
+explicitly labeled as an outcome after approval. Optional confirmation demonstrates
+feedback without executing any live task; confirming again goes to the result rather
+than silently undoing the decision. Desktop scenes stay mounted and crossfade within
+one workspace, with a persistent launch-plan summary linking the chapters.
+The hero leads with the brand slogan, paper notes and interactive Loopi. Its existing
+SVG motion responds to pointer/tap input and pauses offscreen or for reduced motion.
+The full localized walkthrough remains available below the story; product imagery does
+not displace the warm, companion-led brand introduction.
+
+On wide, tall viewports, the workspace stays in view while scrolling through the four
+chapters. Phones, short viewports, and pages without JavaScript use an inline scene per
+chapter. Reduced-motion preferences disable decorative motion and smooth chapter jumps.
+The device mockup is drawn in CSS/SVG; Loopi reuses the existing brand component.
+Desktop downloads retain device detection and platform
+selection; Android downloads, iOS access and terminal installation remain available below.
+The standalone mobile and product pages have been removed. Their legacy URLs redirect
+to the homepage download sections; they are no longer listed in the sitemap.
+
+Android release discovery persists verified metadata to `.data/github-mobile-release.json`.
+Requests are deduplicated, timed out after eight seconds, and backed off for one minute
+after a failed attempt. A verified snapshot may be used for up to seven days during an
+upstream outage, including after a server restart. An explicitly pinned tag never uses
+a different cached release. Cold-cache failures retain platform context, a retry button
+and an official fallback link. Error responses are not HTTP-cached; client requests time
+out after twelve seconds. QR codes use a keyboard/touch-accessible disclosure.
+Run `node --test scripts/test-mobile-release.mjs` for isolated cache/failure-path tests.
 
 ## Product map
 

@@ -234,9 +234,10 @@ export async function fetchDesktopRelease(): Promise<DesktopRelease | null> {
   const res = await fetch(url, {
     headers: githubApiHeaders(),
     cache: "no-store",
-  });
+    signal: AbortSignal.timeout(8_000),
+  }).catch(() => null);
 
-  if (res.ok) {
+  if (res?.ok) {
     type GithubRelease = {
       tag_name: string;
       draft?: boolean;

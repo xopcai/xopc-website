@@ -74,23 +74,30 @@ export function DesktopDownloadPicker({
 }) {
   const [payload, setPayload] = useState<DownloadResolution | null>(null);
   const [arch, setArch] = useState<ClientArch>("unknown");
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 12_000);
     void (async () => {
       try {
         const locale = document.documentElement.lang === "en" ? "en" : "zh";
-        const res = await fetch(`/api/downloads/resolve?platform=${platform}&locale=${locale}`);
+        const res = await fetch(`/api/downloads/resolve?platform=${platform}&locale=${locale}`, { signal: controller.signal, cache: "no-store" });
         const data = (await res.json()) as DownloadResolution;
         if (!cancelled) setPayload(data);
       } catch {
         if (!cancelled) setPayload({ ok: false, platform, status: "unavailable" });
+      } finally {
+        window.clearTimeout(timeout);
       }
     })();
     return () => {
       cancelled = true;
+      controller.abort();
+      window.clearTimeout(timeout);
     };
-  }, [platform]);
+  }, [platform, attempt]);
 
   useEffect(() => {
     void detectArchAsync().then(setArch);
@@ -157,7 +164,8 @@ export function DesktopDownloadPicker({
   if (!isDesktopResolution(payload)) {
     return (
       <div className="desktop-download-picker desktop-download-picker--error">
-        <p>{d.error}</p>
+        <p role="status">{d.downloadUnavailable}</p>
+        <button type="button" className="btn-secondary desktop-download-fallback" onClick={() => { setPayload(null); setAttempt(n => n + 1); }}>{d.retry}</button>
         <a
           className="btn-secondary desktop-download-fallback"
           href={RELEASES_INDEX_URL}

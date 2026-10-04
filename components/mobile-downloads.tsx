@@ -2,7 +2,8 @@
 
 import { CheckCircle2, Download, ExternalLink, Mail, QrCode } from "lucide-react";
 import Image from "next/image";
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useEffect, useId, useState } from "react";
+import type { Locale } from "@/lib/i18n/config";
 
 import type { DownloadPlatform, DownloadResolution } from "@/lib/download-resolution";
 import type { Messages } from "@/lib/i18n/messages";
@@ -13,29 +14,43 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 
 function useDownloadResolution(platform: Extract<DownloadPlatform, "android" | "ios">) {
   const [payload, setPayload] = useState<DownloadResolution | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 12_000);
     const locale = document.documentElement.lang === "en" ? "en" : "zh";
-    void fetch(`/api/downloads/resolve?platform=${platform}&locale=${locale}`)
+    void fetch(`/api/downloads/resolve?platform=${platform}&locale=${locale}`, { signal: controller.signal, cache: "no-store" })
       .then((response) => response.json() as Promise<DownloadResolution>)
       .catch((): DownloadResolution => ({ ok: false, platform, status: "unavailable" }))
       .then((result) => {
+        window.clearTimeout(timeout);
         if (!cancelled) setPayload(result);
       });
     return () => {
       cancelled = true;
+      controller.abort();
+      window.clearTimeout(timeout);
     };
-  }, [platform]);
+  }, [platform, attempt]);
 
-  return payload;
+  return { payload, retry: () => { setPayload(null); setAttempt(n => n + 1); } };
 }
 
-function DownloadStatus({ children, error = false }: { children: string; error?: boolean }) {
+function DownloadStatus({ d, platform, retry, error = false, locale }: { d: DownloadMessages; platform: "android" | "ios"; retry: () => void; error?: boolean; locale: Locale }) {
   return (
-    <div className={`mobile-download-status${error ? " mobile-download-status--error" : ""}`} role="status">
-      {children}
-    </div>
+    <article className="mobile-app-panel" aria-busy={!error}>
+      <div className="mobile-app-panel-copy">
+        <span className="mobile-app-eyebrow">{platform === "android" ? d.androidEyebrow : d.iosEyebrow}</span>
+        <h3>{platform === "android" ? d.androidTitle : d.iosTitle}</h3>
+        <p role="status">{error ? (platform === "android" ? d.downloadUnavailable : d.iosUnavailable) : d.loading}</p>
+      </div>
+      {error && <div className="download-recovery">
+        <button className="mobile-app-primary-action" type="button" onClick={retry}>{d.retry}</button>
+        <a href={platform === "android" ? "https://github.com/xopcai/xopc/releases" : `/${locale}/support`}>{platform === "android" ? d.releaseFallback : d.mobileSetup}<ExternalLink size={15} aria-hidden /></a>
+      </div>}
+    </article>
   );
 }
 
@@ -43,12 +58,15 @@ export function AndroidDownload({
   d,
   showQr = true,
   attributionMethod,
+  locale = "zh",
 }: {
   d: DownloadMessages;
   showQr?: boolean;
   attributionMethod?: string;
+  locale?: Locale;
 }) {
-  const payload = useDownloadResolution("android");
+  const { payload, retry } = useDownloadResolution("android");
+  const qrId = useId();
   const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | null>(null);
 
   const qrAsset = showQr && payload?.ok && payload.platform === "android" && payload.status === "available"
@@ -75,9 +93,9 @@ export function AndroidDownload({
     };
   }, [qrAsset]);
 
-  if (!payload) return <DownloadStatus>{d.loading}</DownloadStatus>;
+  if (!payload) return <DownloadStatus d={d} platform="android" retry={retry} locale={locale} />;
   if (!payload.ok || payload.platform !== "android" || payload.status !== "available") {
-    return <DownloadStatus error>{d.error}</DownloadStatus>;
+    return <DownloadStatus d={d} platform="android" retry={retry} locale={locale} error />;
   }
   const downloadAsset = payload.assets[0];
   const checksumAsset = payload.assets.find((asset) => asset.name.endsWith(".sha256"));
@@ -102,18 +120,17 @@ export function AndroidDownload({
           className="mobile-app-primary-action"
           href={downloadAsset.url}
           download={downloadAsset.name}
-          aria-describedby={showQr ? "android-download-qr-hint" : undefined}
           onClick={() => trackProductEvent("android_download_clicked", { method: attributionMethod, platform: "android", version: payload.version })}
         >
           <Download aria-hidden />
           {d.androidDownload}
         </a>
-        {showQr ? <>
-          <span className="android-download-qr-hint" id="android-download-qr-hint">
+        {showQr ? <details className="download-qr-disclosure">
+          <summary aria-controls={qrId}>
             <QrCode aria-hidden />
             {d.androidQrHint}
-          </span>
-          <div className="android-download-qr" role="tooltip">
+          </summary>
+          <div className="download-qr-content" id={qrId}>
             {qrCodeDataUrl ? (
               <Image src={qrCodeDataUrl} width={184} height={184} unoptimized alt={d.androidQrAlt} />
             ) : (
@@ -122,7 +139,7 @@ export function AndroidDownload({
             <strong>{d.androidQrTitle}</strong>
             <p>{d.androidQrDesc}</p>
           </div>
-        </> : null}
+        </details> : null}
       </div>
     </article>
   );
@@ -213,11 +230,11 @@ function IosSignup({ d, attributionMethod }: { d: DownloadMessages; attributionM
   );
 }
 
-export function IosDownload({ d, attributionMethod }: { d: DownloadMessages; attributionMethod?: string }) {
-  const payload = useDownloadResolution("ios");
+export function IosDownload({ d, attributionMethod, locale = "zh" }: { d: DownloadMessages; attributionMethod?: string; locale?: Locale }) {
+  const { payload, retry } = useDownloadResolution("ios");
 
-  if (!payload) return <DownloadStatus>{d.loading}</DownloadStatus>;
-  if (!payload.ok || payload.platform !== "ios") return <DownloadStatus error>{d.error}</DownloadStatus>;
+  if (!payload) return <DownloadStatus d={d} platform="ios" retry={retry} locale={locale} />;
+  if (!payload.ok || payload.platform !== "ios") return <DownloadStatus d={d} platform="ios" retry={retry} locale={locale} error />;
   if (payload.status === "testflight") {
     return payload.acceptingSignups ? (
       <IosSignup d={d} attributionMethod={attributionMethod} />
@@ -254,18 +271,19 @@ export function IosDownload({ d, attributionMethod }: { d: DownloadMessages; att
   );
 }
 
-export function MobileDownloads({ d }: { d: DownloadMessages }) {
+export function MobileDownloads({ d, locale = "zh" }: { d: DownloadMessages; locale?: Locale }) {
   return (
-    <section className="mobile-download-section landing-reveal" id="mobile-download">
+    <section className="mobile-download-section" id="mobile-download">
       <div className="container">
         <div className="section-header">
           <p className="section-kicker">{d.mobileSectionKicker}</p>
           <h2>{d.mobileSectionTitle}</h2>
           <p>{d.mobileSectionDesc}</p>
+          <a className="mobile-setup-link" href={`/${locale}/support`}>{d.mobileSetup} ↗</a>
         </div>
         <div className="mobile-download-grid">
-          <AndroidDownload d={d} />
-          <IosDownload d={d} />
+          <AndroidDownload d={d} locale={locale} />
+          <IosDownload d={d} locale={locale} />
         </div>
       </div>
     </section>
