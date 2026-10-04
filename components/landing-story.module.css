@@ -190,9 +190,6 @@
 .heroLoopi { position: absolute; width: 265px; height: 265px; left: calc(50% - 132px); top: -10px; z-index: 2; }.heroLoopi > span { width: 100%; height: 100%; }
 .hello { position: absolute; top: 235px; left: 29%; padding: 12px 18px; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 16px 16px 16px 2px; z-index: 3; transform: rotate(-3deg); }
 .page .loopiHint { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--muted); }
-.brandClosing { text-align: center; padding: 60px 24px 0; }.brandClosing > span { width: 95px; height: 95px; }
-.page .brandClosing > p { margin-top: 10px; font-size: clamp(21px, 3vw, 34px); letter-spacing: -.025em; color: var(--ink); }.brandClosing > p > span { color: var(--blue); }
-.page .brandClosing h2 { font-size: 15px; font-weight: 400; color: var(--muted); margin-top: 18px; letter-spacing: 0; line-height: 1.8; }
 @media (max-width: 999px) and (min-width: 850px) {
   .page .heroCopy h1 { font-size: 54px; }
 }
@@ -204,7 +201,7 @@
   .hero { padding: 96px 20px 0; }.page .brandSlogan { font-size: 13px; letter-spacing: .02em; }.page .heroCopy h1 { font-size: clamp(27px, 8vw, 43px); margin-top: 18px; line-height: 1.3; }.page .heroDesc { max-width: 310px; margin-top: 18px; }
   .page .actions { gap: 18px; margin-top: 22px; }.desk { height: 325px; margin-top: 30px; }.note { padding: 12px; }.noteOne { top: 4px; left: -8px; width: 135px; }.noteTwo { right: -5px; width: 135px; top: 5px; }.noteThree { right: -5px; top: 182px; width: 153px; }
   .page .note strong { font-size: 13px; }.noteLabel { font-size: 10px; }.page .note small { font-size: 10px; }.paperLines { gap: 6px; }.checkline { font-size: 11px; gap: 5px; }.heroLoopi { width: 188px; height: 188px; left: calc(50% - 101px); top: 91px; }
-  .hello { top: 255px; left: 1%; font-size: 11px; padding: 10px 13px; }.page .loopiHint { font-size: 11px; bottom: 0; }.brandClosing { padding-top: 40px; }
+  .hello { top: 255px; left: 1%; font-size: 11px; padding: 10px 13px; }.page .loopiHint { font-size: 11px; bottom: 0; }
 }
 @supports (animation-timeline: view()) {
   .desk { view-timeline-name: --desk; view-timeline-axis: block; }

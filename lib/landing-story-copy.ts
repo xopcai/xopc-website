@@ -3,7 +3,7 @@ export const storyCopy = {
     eyebrow: "为一个人，也为你的每一个想法。", headline: ["一个人，", "也能让想法走得更远。"],
     description: "记住来时的路，接住未完成的事。xopc 是与你一起把工作向前推进的个人 AI。",
     download: "下载 xopc", begin: "从一个故事开始", hello: "没关系，我们接着来。",
-    deskLabel: "未完成的项目、想法和待办围绕着小环", notes: ["那个一直想发布的项目", "灵感 · 昨晚 23:41", "如果，这次真的做出来呢？", "发布之前…", "整理用户反馈", "决定第一版的范围"], stalled: "上次打开，12 天前", loopiHint: "点点小环，和它打个招呼。", closingLine: "今晚，不必做完所有事。又向前一点，就很好。",
+    deskLabel: "未完成的项目、想法和待办围绕着小环", notes: ["那个一直想发布的项目", "灵感 · 昨晚 23:41", "如果，这次真的做出来呢？", "发布之前…", "整理用户反馈", "决定第一版的范围"], stalled: "上次打开，12 天前", loopiHint: "点点小环，和它打个招呼。",
     introLabel: "你也有这样一个项目吗？", intro: ["不是不想做。", "只是每次回来，都像重新开始。"],
     introDesc: "散在聊天里的决定，忘在文件里的灵感，还有那个迟迟没有划掉的待办。我们从一个小小的发布计划，接着来。",
     chapterLabel: "从用户反馈到首版发布计划", demoLabel: "情境演示 · 非真实执行", project: "记事应用 · 首版发布", steps: ["接回上下文", "确认范围", "得到发布计划", "手机接着看"],
@@ -29,7 +29,7 @@ export const storyCopy = {
     eyebrow: "For you. And everything you want to make.", headline: ["On your own.", "Further, together."],
     description: "A little less to carry. A little more momentum. Meet the personal AI that remembers where you left off and helps you move forward.",
     download: "Download xopc", begin: "Follow the story", hello: "It's okay. Let's pick it back up.",
-    deskLabel: "Unfinished projects, ideas and to-dos surrounding Loopi", notes: ["That project I keep coming back to", "A THOUGHT · 11:41 PM", "What if I actually made it?", "BEFORE THE LAUNCH…", "Read the user feedback", "Decide what belongs in v1"], stalled: "Last opened 12 days ago", loopiHint: "Give Loopi a little tap. Say hello.", closingLine: "Not everything needs finishing tonight. A little further is enough.",
+    deskLabel: "Unfinished projects, ideas and to-dos surrounding Loopi", notes: ["That project I keep coming back to", "A THOUGHT · 11:41 PM", "What if I actually made it?", "BEFORE THE LAUNCH…", "Read the user feedback", "Decide what belongs in v1"], stalled: "Last opened 12 days ago", loopiHint: "Give Loopi a little tap. Say hello.",
     introLabel: "SOUND FAMILIAR?", intro: ["The idea is still there.", "So why does it feel like starting over?"], introDesc: "Decisions buried in chats. Ideas tucked into files. That one task you never quite get to. Let's pick up a little launch plan together.",
     chapterLabel: "From user feedback to a launch plan", demoLabel: "Illustrative scenario · no real actions", project: "Notes app · first release", steps: ["Find the context", "Choose the scope", "Get a launch plan", "Take it with you"],
     chapters: [

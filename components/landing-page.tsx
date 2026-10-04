@@ -57,11 +57,6 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
       <div className={styles.trustItems}>{c.trust.map((item, i) => <div key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
       <a className={styles.textLink} href={`/${locale}/privacy`}>{c.privacy}<ArrowUpRight size={15} /></a>
     </section>
-    <section className={styles.brandClosing}>
-      <Loopi mood="done" />
-      <p>Keep what matters <span>moving.</span></p>
-      <h2>{c.closingLine}</h2>
-    </section>
     <div className={styles.downloads}>
       <ProductDesktopDownloads id="download" d={L.download} kicker={c.downloadKicker} title={c.downloadTitle} desc={c.downloadDesc} />
       <div className={styles.otherWays}>
