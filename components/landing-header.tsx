@@ -18,7 +18,6 @@ type Props = {
   activePage?: "use-cases" | "product-map" | "learn" | "blog";
   locationSuffix?: string;
   reserveSpace?: boolean;
-  compact?: boolean;
 };
 
 export function LandingHeader({
@@ -29,7 +28,6 @@ export function LandingHeader({
   activePage,
   locationSuffix = "",
   reserveSpace = false,
-  compact = false,
 }: Props) {
   const home = `/${locale}`;
 
@@ -49,9 +47,9 @@ export function LandingHeader({
             </div>
           </div>
           <ul className="nav-links">
-            {!compact && <li><Link href={activePage ? `${home}#why` : "#why"}>{nav.why}</Link></li>}
+            <li><Link href={activePage ? `${home}#why` : "#why"}>{nav.why}</Link></li>
             <li><Link href={activePage ? `${home}#loop` : "#loop"}>{nav.how}</Link></li>
-            {!compact && <li><Link href={activePage ? `${home}#trust` : "#trust"}>{nav.trust}</Link></li>}
+            <li><Link href={activePage ? `${home}#trust` : "#trust"}>{nav.trust}</Link></li>
             <li>
               <AnimatedRouteLink
                 href={`${home}/use-cases`}
@@ -61,7 +59,7 @@ export function LandingHeader({
                 {nav.useCases}
               </AnimatedRouteLink>
             </li>
-            {!compact && <li>
+            <li>
               <AnimatedRouteLink
                 href={`${home}/product-map`}
                 className={activePage === "product-map" ? "is-active" : undefined}
@@ -69,12 +67,12 @@ export function LandingHeader({
               >
                 {nav.productMap}
               </AnimatedRouteLink>
-            </li>}
-            {!compact && <li><AnimatedRouteLink href={`${home}/blog`} className={activePage === "blog" ? "is-active" : undefined} aria-current={activePage === "blog" ? "page" : undefined}>{locale === "zh" ? "博客" : "Blog"}</AnimatedRouteLink></li>}
+            </li>
+            <li><AnimatedRouteLink href={`${home}/blog`} className={activePage === "blog" ? "is-active" : undefined} aria-current={activePage === "blog" ? "page" : undefined}>{locale === "zh" ? "博客" : "Blog"}</AnimatedRouteLink></li>
+            <li><AnimatedRouteLink href={`${home}/learn`} className={activePage === "learn" ? "is-active" : undefined} aria-current={activePage === "learn" ? "page" : undefined}>{locale === "zh" ? "教程" : "Learn"}</AnimatedRouteLink></li>
             <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
           </ul>
           <div className="nav-extra">
-            {!compact && <AnimatedRouteLink href={`${home}/product-map`} className="nav-map-mobile">{nav.productMap}</AnimatedRouteLink>}
             <Link
               href={activePage ? `${home}#download` : "#download"}
               className="nav-download-cta"

@@ -276,7 +276,6 @@ export function MobileDownloads({ d, locale = "zh" }: { d: DownloadMessages; loc
     <section className="mobile-download-section" id="mobile-download">
       <div className="container">
         <div className="section-header">
-          <p className="section-kicker">{d.mobileSectionKicker}</p>
           <h2>{d.mobileSectionTitle}</h2>
           <p>{d.mobileSectionDesc}</p>
           <a className="mobile-setup-link" href={`/${locale}/support`}>{d.mobileSetup} ↗</a>

@@ -1,0 +1,78 @@
+/* Shared paper-and-ink identity for every public page. */
+html[data-theme="light"] body.landing-body {
+  --paper: #f7f5f0; --surface: #fffefa; --ink: #282d2b; --muted: #6b706b;
+  --line: #dcded5; --blue: #315fd3; --blue-soft: #e9eefb; --sage: #e6eadf; --note: #f0e9d8;
+  --accent-hover: #244caf; --on-accent: #fff;
+}
+html[data-theme="dark"] body.landing-body {
+  --paper: #191e1d; --surface: #242b28; --ink: #efeee5; --muted: #b2b8ae;
+  --line: #3e4942; --blue: #a5c0ff; --blue-soft: #2b3850; --sage: #26322b; --note: #3d3b30;
+  --accent-hover: #c2d3ff; --on-accent: #182335;
+}
+html[data-theme] body.landing-body {
+  --bg-void: var(--paper); --bg-card: var(--surface); --bg-surface: var(--sage);
+  --bg-card-hover: var(--sage); --popover-bg: var(--surface);
+  --fg-head: var(--ink); --fg-body: var(--ink); --fg-mid: var(--muted); --fg-dim: var(--muted);
+  --edge: var(--line); --edge-bright: var(--line);
+  --accent: var(--blue); --accent-bright: var(--blue); --accent-glow: var(--blue-soft);
+  --page-bg: var(--paper); --nav-bg: color-mix(in srgb, var(--paper) 95%, transparent);
+  --featured-start: var(--blue-soft); --featured-end: var(--surface);
+  --code-terminal: var(--surface); --placeholder-end: var(--sage);
+  --glass-bg: var(--surface); --glass-bg-strong: var(--surface);
+  --pm-surface: var(--surface); --pm-border: var(--line);
+}
+.landing-page::before { display: none; }
+.landing-page > nav { background: var(--nav-bg); border-bottom: 1px solid var(--line); }
+.landing-page > nav::before { display: none; }
+.landing-page .nav-inner { max-width: 1320px; gap: 20px; }
+.landing-page .nav-links { gap: 0; }
+.landing-page .nav-links a { font-size: 13px; padding-inline: 9px; min-height: 44px; }
+.landing-page .nav-extra-tools { background: transparent; border: 0; box-shadow: none; }
+.landing-page .nav-download-cta { border-radius: 999px; background: var(--ink); color: var(--paper); }
+.landing-page .mobile-nav-trigger, .landing-page .mobile-nav-panel-head > button { width: 44px; height: 44px; box-shadow: none; }
+.landing-page .mobile-nav-panel { background: var(--paper); }
+.landing-page .mobile-nav-links small { font-size: 12px; }
+.landing-page :is(a, button, input, summary):focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+
+/* Keep all destinations reachable before the full navigation becomes cramped. */
+@media (min-width: 761px) and (max-width: 1199px) {
+  .landing-page .nav-links { display: none; }
+  .landing-page .mobile-nav-menu { display: block; }
+}
+
+/* Quiet introductory hierarchy; content-heavy screens keep their own layouts. */
+.landing-page.use-cases-page .use-cases-hero::before,
+.landing-page.use-cases-page .use-cases-hero-glow { display: none; }
+.landing-page.use-cases-page .use-cases-hero h1 {
+  font-size: clamp(40px, 5vw, 64px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em;
+}
+.landing-page.use-cases-page .use-cases-hero h1 span:last-child { color: var(--blue); }
+.landing-page.use-cases-page .use-cases-intro { font-size: 17px; line-height: 1.85; }
+.landing-page.use-cases-page .use-cases-section-heading h2,
+.landing-page.use-cases-page .use-cases-featured-heading h2 { font-weight: 500; line-height: 1.3; }
+.landing-page.blog-page .blog-index-header h1,
+.landing-page.product-atlas.pm-refined h1,
+.landing-page.learn-page .learn-intro h1 {
+  font-size: clamp(36px, 5vw, 60px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em; text-wrap: balance;
+}
+.landing-page.blog-page .blog-index-card {
+  border: 1px solid var(--line); border-radius: 22px; background: var(--surface);
+  padding: 28px; margin-bottom: 20px; gap: 32px;
+}
+.landing-page.blog-page .blog-index-card h2 { font-weight: 500; }
+.landing-page.product-atlas .pm-learn-banner { border-color: var(--line); background: var(--sage); }
+.landing-page.product-atlas .pm-start-path { border: 1px solid var(--line); }
+.landing-page.product-atlas .pm-primary { border-radius: 999px; }
+.landing-page.learn-page .learn-card { background: var(--surface); border-color: var(--line); }
+.landing-page.learn-page .learn-card h2 { font-weight: 500; }
+.landing-page.learn-page .learn-result,
+.landing-page.learn-page .learn-card-top > span:first-child,
+.landing-page.learn-page .learn-guide > a,
+.landing-page.learn-page .learn-promo-play { color: var(--blue); }
+.landing-page.learn-page .learn-promo { background: var(--sage); color: var(--ink); border-color: var(--line); }
+.landing-page.learn-page .learn-filters button[aria-pressed=true] { background: var(--blue); color: var(--on-accent); border-color: var(--blue); }
+.landing-page.learn-page .learn-intro > p:not(.pm-eyebrow),
+.landing-page.learn-page .learn-card > p { opacity: 1; color: var(--muted); }
+@media (max-width: 650px) {
+  .landing-page.blog-page .blog-index-card { padding: 20px; gap: 20px; }
+}

@@ -80,10 +80,10 @@ export function LandingStory({ locale }: { locale: Locale }) {
   </div>;
 
   return <div ref={root} className={styles.storyRoot}>
-    <section className={styles.intro} id="why"><p className={styles.eyebrow}>{c.introLabel}</p><h2><span>{c.intro[0]}</span><br />{c.intro[1]}</h2><p>{c.introDesc}</p><span className={styles.introLine} /></section>
+    <section className={styles.intro} id="why"><h2><span>{c.intro[0]}</span><br />{c.intro[1]}</h2><p>{c.introDesc}</p><span className={styles.introLine} /></section>
     <section className={styles.journey} id="loop" aria-label={c.chapterLabel}>
       <div className={styles.chapters}>{c.chapters.map((chapter, i) => <article data-chapter={i} key={chapter.time} className={styles.chapter}>
-        <div className={styles.chapterCopy}><p className={styles.eyebrow}><span className={styles.chapterNumber}>0{i + 1}</span>{chapter.time}</p><h2>{chapter.title}</h2><p>{chapter.body}</p><span className={styles.chapterAside}>{chapter.aside}</span></div>
+        <div className={styles.chapterCopy}><p className={styles.eyebrow}><span className={styles.chapterNumber}>0{i + 1}</span>{chapter.time}</p><h2>{chapter.title}</h2><p>{chapter.body}</p></div>
         <div className={styles.inlineScene}><p className={styles.demoLabel}>{c.demoLabel}</p>{scene(i)}{i === 1 && approved && <button type="button" className={styles.nextStory} onClick={() => setApproved(false)}><RotateCcw size={14} aria-hidden />{c.reset}</button>}</div>
       </article>)}</div>
       <div className={styles.stageColumn}><div className={styles.stickyStage}>
@@ -94,6 +94,5 @@ export function LandingStory({ locale }: { locale: Locale }) {
         <div className={styles.chapterNav} aria-label={c.chapterLabel}>{c.steps.map((step, i) => <button type="button" key={step} onClick={() => goTo(i)} aria-current={active === i ? "step" : undefined}><span>0{i + 1}</span>{step}</button>)}</div>
       </div></div>
     </section>
-    <div className={styles.recap}><span /><p>{c.recap}</p><span /></div>
   </div>;
 }

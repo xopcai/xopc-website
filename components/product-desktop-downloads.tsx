@@ -13,7 +13,7 @@ type DownloadMessages = Messages["landing"]["download"];
 type Props = {
   id?: string;
   d: DownloadMessages;
-  kicker: string;
+  kicker?: string;
   title: string;
   desc: string;
 };
@@ -46,7 +46,7 @@ export function ProductDesktopDownloads({ id = "get-started", d, kicker, title, 
     <section className="product-get-started product-get-started--desktop" id={id}>
       <div className="container">
         <div className="product-section-header product-section-header--centered">
-          <p className="product-kicker">{kicker}</p>
+          {kicker && <p className="product-kicker">{kicker}</p>}
           <h2>{title}</h2>
           <p>{desc}</p>
         </div>

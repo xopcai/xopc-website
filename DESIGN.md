@@ -1,5 +1,20 @@
 # xopc · Design Language
 
+## Public website identity · October 2026
+
+The public website uses the warm, companion-led homepage as its visual reference.
+`app/styles/landing/brand-system.css` is the shared source for paper, surface, ink,
+muted text, sage and blue tokens in both themes. It supersedes the older palette
+examples below for public website pages. Do not introduce route-specific theme
+palettes: the homepage, use cases, explorer, blog, tutorials and legal pages share
+these tokens while retaining their own content layouts.
+
+Keep the complete primary navigation consistent between pages. Below 1200px,
+use the accessible menu instead of squeezing or silently removing destinations.
+Loopi and the slogan belong in the homepage introduction; do not repeat a brand
+interlude before downloads. Use calm surfaces, fine borders, balanced headings,
+visible keyboard focus, and reduced-motion-safe interaction feedback.
+
 ## 1. Visual theme & atmosphere
 
 xopc 是**为超级个体打造的个人 AI**。它运行在用户的环境中，记住目标和上下文，连接工具采取行动，并能从上次停下之处继续。底层包含 CLI、REST/WebSocket Gateway 与 **React Gateway 控制台**。界面气质 **克制、清晰、以内容为中心**——不是营销噱头，而是可持续使用的工具面。

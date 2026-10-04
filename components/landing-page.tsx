@@ -23,7 +23,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
   return <div className={`landing-page ${styles.page}`}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <LandingAnalytics /><LandingLocaleTransition /><LandingNavState />
-    <LandingHeader locale={locale} header={m.header} nav={L.nav} docHome={docHome} compact />
+    <LandingHeader locale={locale} header={m.header} nav={L.nav} docHome={docHome} />
     <section className={styles.hero} aria-labelledby="story-headline">
       <div className={styles.heroCopy}>
         <p className={styles.brandSlogan}>Keep what matters <span>moving.</span></p>
@@ -41,24 +41,21 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         <svg className={styles.thread} viewBox="0 0 900 300" fill="none" aria-hidden="true"><path d="M55 145 C180 5 250 285 390 165 S560 40 620 175 S770 260 845 90" /></svg>
         <div className={styles.heroLoopi}><Loopi interactive language={locale} mood="care" /></div>
         <div className={styles.hello}>{c.hello}<span /></div>
-        <p className={styles.loopiHint}>{c.loopiHint}</p>
       </div>
     </section>
     <LandingStory locale={locale} />
     <section className={styles.filmSection} id="film">
-      <div className={styles.sectionTop}><p className={styles.eyebrow}>XOPC, IN REAL LIFE</p><span>{c.filmLength}</span></div>
       <div className={styles.filmHeading}><h2>{c.filmTitle}</h2><p>{c.filmDesc}</p></div>
       <div className={styles.film}><ProductIntroVideo locale={locale} /></div>
       <a className={styles.textLink} href={`/${locale}/learn`}><Play size={14} />{c.moreFilms}<ArrowUpRight size={14} /></a>
     </section>
     <section className={styles.trust} id="trust">
-      <p className={styles.eyebrow}>{c.trustLabel}</p>
       <h2>{c.trustTitle}</h2>
       <div className={styles.trustItems}>{c.trust.map((item, i) => <div key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
       <a className={styles.textLink} href={`/${locale}/privacy`}>{c.privacy}<ArrowUpRight size={15} /></a>
     </section>
     <div className={styles.downloads}>
-      <ProductDesktopDownloads id="download" d={L.download} kicker={c.downloadKicker} title={c.downloadTitle} desc={c.downloadDesc} />
+      <ProductDesktopDownloads id="download" d={L.download} title={c.downloadTitle} desc={c.downloadDesc} />
       <div className={styles.otherWays}>
         <a className={styles.textLink} href="#mobile-download">{c.mobileDownload}<ArrowDown size={15} /></a>
         <a className={styles.textLink} href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer"><Github size={16} />GitHub<ArrowUpRight size={15} /></a>
