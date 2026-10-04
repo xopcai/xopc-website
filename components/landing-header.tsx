@@ -5,6 +5,7 @@ import { AnimatedRouteLink } from "@/components/animated-route-link";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { LogoHomeLink } from "@/components/logo-home-link";
 import { MobileNavMenu } from "@/components/mobile-nav-menu";
+import { NavDropdown } from "@/components/nav-dropdown";
 import { ThemeToggle } from "@/components/theme-toggle";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -47,9 +48,12 @@ export function LandingHeader({
             </div>
           </div>
           <ul className="nav-links">
-            <li><Link href={activePage ? `${home}#why` : "#why"}>{nav.why}</Link></li>
-            <li><Link href={activePage ? `${home}#loop` : "#loop"}>{nav.how}</Link></li>
-            <li><Link href={activePage ? `${home}#trust` : "#trust"}>{nav.trust}</Link></li>
+            <li><NavDropdown label={locale === "zh" ? "产品" : "Product"} active={activePage === "product-map"}>
+              <Link href={`${home}#why`}>{nav.why}</Link>
+              <Link href={`${home}#loop`}>{nav.how}</Link>
+              <Link href={`${home}#trust`}>{nav.trust}</Link>
+              <AnimatedRouteLink href={`${home}/product-map`} aria-current={activePage === "product-map" ? "page" : undefined}>{nav.productMap}</AnimatedRouteLink>
+            </NavDropdown></li>
             <li>
               <AnimatedRouteLink
                 href={`${home}/use-cases`}
@@ -59,18 +63,11 @@ export function LandingHeader({
                 {nav.useCases}
               </AnimatedRouteLink>
             </li>
-            <li>
-              <AnimatedRouteLink
-                href={`${home}/product-map`}
-                className={activePage === "product-map" ? "is-active" : undefined}
-                aria-current={activePage === "product-map" ? "page" : undefined}
-              >
-                {nav.productMap}
-              </AnimatedRouteLink>
-            </li>
-            <li><AnimatedRouteLink href={`${home}/blog`} className={activePage === "blog" ? "is-active" : undefined} aria-current={activePage === "blog" ? "page" : undefined}>{locale === "zh" ? "博客" : "Blog"}</AnimatedRouteLink></li>
-            <li><AnimatedRouteLink href={`${home}/learn`} className={activePage === "learn" ? "is-active" : undefined} aria-current={activePage === "learn" ? "page" : undefined}>{locale === "zh" ? "教程" : "Learn"}</AnimatedRouteLink></li>
-            <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
+            <li><NavDropdown label={locale === "zh" ? "资源" : "Resources"} active={activePage === "blog" || activePage === "learn"}>
+              <AnimatedRouteLink href={`${home}/blog`} aria-current={activePage === "blog" ? "page" : undefined}>{locale === "zh" ? "博客" : "Blog"}</AnimatedRouteLink>
+              <AnimatedRouteLink href={`${home}/learn`} aria-current={activePage === "learn" ? "page" : undefined}>{locale === "zh" ? "教程" : "Learn"}</AnimatedRouteLink>
+              <a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a>
+            </NavDropdown></li>
           </ul>
           <div className="nav-extra">
             <Link

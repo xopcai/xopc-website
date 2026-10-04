@@ -106,12 +106,11 @@ export function MobileNavMenu({
           <header className="mobile-nav-panel-head">
             <Link href={`/${locale}`} className="mobile-nav-brand" onClick={close}>
               <XopcLogoMark />
-              <span><strong>xopc</strong><small>{text.subtitle}</small></span>
+              <span><strong>xopc</strong></span>
             </Link>
             <button type="button" aria-label={text.close} onClick={close}><X aria-hidden /></button>
           </header>
 
-          <p className="mobile-nav-title">{text.title}</p>
           <div className="mobile-nav-links">
             {items.map((item) => {
               const Icon = item.icon;
@@ -124,13 +123,13 @@ export function MobileNavMenu({
                   key={item.href}
                 >
                   <Icon strokeWidth={1.7} aria-hidden />
-                  <span><strong>{item.label}</strong><small>{item.hint}</small></span>
+                  <span><strong>{item.label}</strong></span>
                 </AnimatedRouteLink>
               );
             })}
             <a href={docBaseUrl(locale)} target="_blank" rel="noopener noreferrer" onClick={close}>
               <BookOpen strokeWidth={1.7} aria-hidden />
-              <span><strong>{text.docs}</strong><small>{text.docsHint}</small></span>
+              <span><strong>{text.docs}</strong></span>
             </a>
           </div>
 
