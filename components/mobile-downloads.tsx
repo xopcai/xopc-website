@@ -107,12 +107,14 @@ export function AndroidDownload({
         <span className="mobile-app-eyebrow">{d.androidEyebrow}</span>
         <h3>{d.androidTitle}</h3>
         <p>{d.androidBody}</p>
-        <span className="mobile-app-version">{d.currentVersion}: <strong>{displayVersion}</strong></span>
-        {checksumAsset ? (
-          <a className="mobile-app-checksum-link" href={checksumAsset.url} download={checksumAsset.name}>
-            {d.androidChecksum}
-          </a>
-        ) : null}
+        <div className="mobile-app-meta">
+          <span className="mobile-app-version">{d.currentVersion}: <strong>{displayVersion}</strong></span>
+          {checksumAsset ? (
+            <a className="mobile-app-checksum-link" href={checksumAsset.url} download={checksumAsset.name}>
+              {d.androidChecksum}
+            </a>
+          ) : null}
+        </div>
       </div>
       <div className="android-download-action">
         <a
@@ -124,25 +126,27 @@ export function AndroidDownload({
           <Download aria-hidden />
           {d.androidDownload}
         </a>
-        <details className="download-qr-disclosure">
-          <summary>{d.androidInstallHint}</summary>
-          <p className="mobile-app-install-note">{d.androidInstallNote}</p>
-        </details>
-        {showQr ? <details className="download-qr-disclosure">
-          <summary aria-controls={qrId}>
-            <QrCode aria-hidden />
-            {d.androidQrHint}
-          </summary>
-          <div className="download-qr-content" id={qrId}>
-            {qrCodeDataUrl ? (
-              <Image src={qrCodeDataUrl} width={184} height={184} unoptimized alt={d.androidQrAlt} />
-            ) : (
-              <div className="android-download-qr-loading" role="status">{d.androidQrLoading}</div>
-            )}
-            <strong>{d.androidQrTitle}</strong>
-            <p>{d.androidQrDesc}</p>
-          </div>
-        </details> : null}
+        <div className="android-download-help">
+          <details className="download-qr-disclosure">
+            <summary>{d.androidInstallHint}</summary>
+            <p className="mobile-app-install-note">{d.androidInstallNote}</p>
+          </details>
+          {showQr ? <details className="download-qr-disclosure">
+            <summary aria-controls={qrId}>
+              <QrCode aria-hidden />
+              {d.androidQrHint}
+            </summary>
+            <div className="download-qr-content" id={qrId}>
+              {qrCodeDataUrl ? (
+                <Image src={qrCodeDataUrl} width={184} height={184} unoptimized alt={d.androidQrAlt} />
+              ) : (
+                <div className="android-download-qr-loading" role="status">{d.androidQrLoading}</div>
+              )}
+              <strong>{d.androidQrTitle}</strong>
+              <p>{d.androidQrDesc}</p>
+            </div>
+          </details> : null}
+        </div>
       </div>
     </article>
   );

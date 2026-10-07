@@ -251,7 +251,7 @@
 
     .landing-page .mobile-download-grid{
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -308,9 +308,15 @@
       line-height: 1.6;
     }
 
-    .landing-page .mobile-app-version{
-      display: block;
+    .landing-page .mobile-app-meta{
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px 18px;
       margin-top: 14px;
+    }
+
+    .landing-page .mobile-app-version{
       color: var(--fg-dim);
       font-family: var(--mono);
       font-size: 11px;
@@ -330,9 +336,8 @@
     .landing-page .mobile-app-checksum-link{
       display: inline-flex;
       width: fit-content;
-      margin-top: 8px;
       color: var(--accent);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 650;
       text-decoration: none;
     }
@@ -375,6 +380,12 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 8px;
+    }
+
+    .landing-page .android-download-help{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 24px;
     }
 
     .landing-page .android-download-qr-hint,
@@ -458,9 +469,9 @@
     .landing-page .download-recovery { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
     .landing-page .download-recovery > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; }
     .landing-page .mobile-setup-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; font-size: 14px; }
-    .landing-page .download-qr-disclosure { width: 100%; }
+    .landing-page .download-qr-disclosure { min-width: 0; }
     .landing-page .download-qr-disclosure summary { display: flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; color: var(--fg-mid); font-size: 13px; }
-    .landing-page .download-qr-disclosure summary::after { content: "+"; margin-left: auto; }
+    .landing-page .download-qr-disclosure summary::after { content: "+"; margin-left: 4px; }
     .landing-page .download-qr-disclosure[open] summary::after { content: "−"; }
     .landing-page .download-qr-disclosure summary svg { width: 16px; height: 16px; }
     .landing-page .download-qr-content { margin-top: 8px; padding: 16px; border: 1px solid var(--edge); border-radius: 12px; text-align: center; max-width: 245px; background: var(--bg-card); }
@@ -468,7 +479,32 @@
     .landing-page .download-qr-content strong { display: block; font-size: 14px; }
     .landing-page .download-qr-content p { margin-top: 8px; font-size: 13px; color: var(--fg-mid); }
     .landing-page .mobile-app-panel--ios{
-      justify-content: flex-start;
+      justify-content: space-between;
+    }
+
+    .landing-page .mobile-app-panel--harmony{
+      grid-column: 1 / -1;
+      min-height: 0;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+    }
+
+    .landing-page .mobile-app-panel--harmony .mobile-app-panel-copy{
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0 16px;
+    }
+
+    .landing-page .mobile-app-panel--harmony .mobile-app-eyebrow{
+      flex-basis: 100%;
+      margin-bottom: 4px;
+    }
+
+    .landing-page .mobile-app-panel--harmony .mobile-app-panel-copy > p{
+      margin: 0;
     }
 
     .landing-page .mobile-app-signup{
@@ -494,13 +530,11 @@
 
     .landing-page .mobile-app-signup-row{
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
       gap: 8px;
     }
 
     .landing-page .mobile-app-signup-row .mobile-app-email-field{
-      width: 100%;
+      width: auto;
     }
 
     .landing-page .mobile-app-status-badge{
@@ -578,14 +612,14 @@
       color: var(--accent);
     }
 
-    @media (max-width: 1100px) {
-      .landing-page .mobile-download-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media (max-width: 1000px) {
+      .landing-page .mobile-app-signup-row{
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .landing-page .mobile-app-panel--harmony{
-        grid-column: 1 / -1;
-        min-height: 150px;
+      .landing-page .mobile-app-signup-row .mobile-app-email-field{
+        width: 100%;
       }
     }
 
@@ -614,6 +648,11 @@
       }
 
       .landing-page .mobile-app-signup-row{
+        flex-direction: column;
+      }
+
+      .landing-page .mobile-app-panel--harmony{
+        align-items: flex-start;
         flex-direction: column;
       }
     }
