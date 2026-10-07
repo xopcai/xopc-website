@@ -251,7 +251,7 @@
 
     .landing-page .mobile-download-grid{
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -321,11 +321,10 @@
     }
 
     .landing-page .mobile-app-install-note{
-      max-width: 620px;
-      margin-top: 14px;
+      margin: 0 0 8px;
       color: var(--fg-dim);
-      font-size: 13px;
-      line-height: 1.65;
+      font-size: 11px;
+      line-height: 1.5;
     }
 
     .landing-page .mobile-app-checksum-link{
@@ -495,7 +494,25 @@
 
     .landing-page .mobile-app-signup-row{
       display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 8px;
+    }
+
+    .landing-page .mobile-app-signup-row .mobile-app-email-field{
+      width: 100%;
+    }
+
+    .landing-page .mobile-app-status-badge{
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--edge-bright);
+      border-radius: 999px;
+      color: var(--fg-mid);
+      font-size: 12px;
+      font-weight: 600;
     }
 
     .landing-page .mobile-app-email-field{
@@ -561,9 +578,24 @@
       color: var(--accent);
     }
 
+    @media (max-width: 1100px) {
+      .landing-page .mobile-download-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .landing-page .mobile-app-panel--harmony{
+        grid-column: 1 / -1;
+        min-height: 150px;
+      }
+    }
+
     @media (max-width: 760px) {
       .landing-page .mobile-download-grid{
         grid-template-columns: 1fr;
+      }
+
+      .landing-page .mobile-app-panel--harmony{
+        grid-column: auto;
       }
     }
 

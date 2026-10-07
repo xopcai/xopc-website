@@ -108,7 +108,6 @@ export function AndroidDownload({
         <h3>{d.androidTitle}</h3>
         <p>{d.androidBody}</p>
         <span className="mobile-app-version">{d.currentVersion}: <strong>{displayVersion}</strong></span>
-        <p className="mobile-app-install-note">{d.androidInstallNote}</p>
         {checksumAsset ? (
           <a className="mobile-app-checksum-link" href={checksumAsset.url} download={checksumAsset.name}>
             {d.androidChecksum}
@@ -125,6 +124,10 @@ export function AndroidDownload({
           <Download aria-hidden />
           {d.androidDownload}
         </a>
+        <details className="download-qr-disclosure">
+          <summary>{d.androidInstallHint}</summary>
+          <p className="mobile-app-install-note">{d.androidInstallNote}</p>
+        </details>
         {showQr ? <details className="download-qr-disclosure">
           <summary aria-controls={qrId}>
             <QrCode aria-hidden />
@@ -141,6 +144,19 @@ export function AndroidDownload({
           </div>
         </details> : null}
       </div>
+    </article>
+  );
+}
+
+function HarmonyDownload({ d }: { d: DownloadMessages }) {
+  return (
+    <article className="mobile-app-panel mobile-app-panel--harmony">
+      <div className="mobile-app-panel-copy">
+        <span className="mobile-app-eyebrow">{d.harmonyEyebrow}</span>
+        <h3>{d.harmonyTitle}</h3>
+        <p>{d.harmonyBody}</p>
+      </div>
+      <span className="mobile-app-status-badge">{d.harmonyStatus}</span>
     </article>
   );
 }
@@ -283,6 +299,7 @@ export function MobileDownloads({ d, locale = "zh" }: { d: DownloadMessages; loc
         <div className="mobile-download-grid">
           <AndroidDownload d={d} locale={locale} />
           <IosDownload d={d} locale={locale} />
+          <HarmonyDownload d={d} />
         </div>
       </div>
     </section>
