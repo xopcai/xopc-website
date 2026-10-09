@@ -47,9 +47,8 @@ export function LandingHeader({
             </div>
           </div>
           <ul className="nav-links">
-            <li><Link href={activePage ? `${home}#why` : "#why"}>{locale === "zh" ? "为何 xopc" : "Why xopc"}</Link></li>
-            <li><Link href={activePage ? `${home}#loop` : "#loop"}>{locale === "zh" ? "如何运作" : "How it works"}</Link></li>
-            <li><Link href={activePage ? `${home}#trust` : "#trust"}>{locale === "zh" ? "信任" : "Trust"}</Link></li>
+            <li><Link href={activePage ? `${home}#personal-ai` : "#personal-ai"}>Personal AI</Link></li>
+            <li><Link href={activePage ? `${home}#work` : "#work"}>Work</Link></li>
             <li>
               <AnimatedRouteLink
                 href={`${home}/use-cases`}
@@ -60,7 +59,6 @@ export function LandingHeader({
               </AnimatedRouteLink>
             </li>
             <li><AnimatedRouteLink href={`${home}/learn`} className={activePage === "learn" || activePage === "product-map" ? "is-active" : undefined} aria-current={activePage === "learn" ? "page" : undefined}>{locale === "zh" ? "探索与学习" : "Explore & learn"}</AnimatedRouteLink></li>
-            <li><AnimatedRouteLink href={`${home}/blog`} className={activePage === "blog" ? "is-active" : undefined} aria-current={activePage === "blog" ? "page" : undefined}>{locale === "zh" ? "博客" : "Blog"}</AnimatedRouteLink></li>
             <li><a href={docHome} target="_blank" rel="noopener noreferrer">{nav.docs}</a></li>
           </ul>
           <div className="nav-extra">

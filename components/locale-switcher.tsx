@@ -27,6 +27,11 @@ function startLocaleNavigation(event: ReactMouseEvent<HTMLAnchorElement>, locale
   setLocaleCookie(locale);
 
   const target = new URL(href, window.location.href);
+  const homePath = /^\/(zh|en)\/?$/;
+  if (homePath.test(target.pathname) && homePath.test(window.location.pathname) && !target.hash &&
+      /^#(personal-ai|work|why|loop|trust|download|mobile-download|terminal-install)$/.test(window.location.hash)) {
+    target.hash = window.location.hash;
+  }
   if (target.pathname === window.location.pathname) {
     return;
   }
@@ -43,7 +48,7 @@ function startLocaleNavigation(event: ReactMouseEvent<HTMLAnchorElement>, locale
     document.documentElement.classList.add("xopc-locale-transition-out");
   }
   window.setTimeout(() => {
-    window.location.assign(href);
+    window.location.assign(target.href);
   }, reducedMotion ? 0 : 180);
 }
 

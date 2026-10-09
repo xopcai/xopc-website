@@ -1,0 +1,70 @@
+{
+  "version": "v2",
+  "base": "/media/product/experiences/v2",
+  "captures": {
+    "personal-zh": {
+      "source": "videos/xopc-personal-agent-intro/zh-CN/assets/images/context.png",
+      "src": "/media/product/experiences/v2/zh-CN/personal-context.webp",
+      "width": 1740,
+      "height": 720,
+      "bytes": 93394,
+      "sha256": "b7e0479ae2d462e34c3638ce32ff0d0cad0b6817a474e281ff0c4e57afefe318"
+    },
+    "slides-zh": {
+      "source": "videos/xopc-work-intro/zh-CN/assets/images/chart.png",
+      "src": "/media/product/experiences/v2/zh-CN/slides.webp",
+      "width": 1650,
+      "height": 860,
+      "bytes": 29000,
+      "sha256": "d8be9f4d70b2af9448c14b97e54dcb1417598237b0238b8cb90d1b9eb8aa3d41"
+    },
+    "spreadsheet-zh": {
+      "source": "videos/xopc-work-intro/zh-CN/assets/images/spreadsheet.png",
+      "src": "/media/product/experiences/v2/zh-CN/spreadsheet.webp",
+      "width": 910,
+      "height": 355,
+      "bytes": 24832,
+      "sha256": "be6e5264c87d8347e722260b3a0e3986881e86408e29c0ccaf46c4bf7eea7d7b"
+    },
+    "revision-zh": {
+      "source": "videos/xopc-work-intro/zh-CN/assets/images/revision.png",
+      "src": "/media/product/experiences/v2/zh-CN/revision.webp",
+      "width": 1740,
+      "height": 528,
+      "bytes": 47706,
+      "sha256": "882e52d290900ca1e3a04bc413a7d04e940a42aaabef7089692cb6226fe76e8d"
+    },
+    "personal-en": {
+      "source": "videos/xopc-personal-agent-intro/en-US/assets/images/context.png",
+      "src": "/media/product/experiences/v2/en-US/personal-context.webp",
+      "width": 1740,
+      "height": 890,
+      "bytes": 122194,
+      "sha256": "7f11e538b242dd8b1910c8e53e9e820507f044963099b38f79abb193fa48f015"
+    },
+    "slides-en": {
+      "source": "videos/xopc-work-intro/en-US/assets/images/chart.png",
+      "src": "/media/product/experiences/v2/en-US/slides.webp",
+      "width": 1650,
+      "height": 860,
+      "bytes": 25952,
+      "sha256": "78a4ef385cb53bb7f59044c00823d02deac5c819c544dafd6e7d44e156211768"
+    },
+    "spreadsheet-en": {
+      "source": "videos/xopc-work-intro/en-US/assets/images/spreadsheet.png",
+      "src": "/media/product/experiences/v2/en-US/spreadsheet.webp",
+      "width": 910,
+      "height": 355,
+      "bytes": 22030,
+      "sha256": "f7753f4d60b45b20aa3bb29a45ddf03c19403f146de24e70d1ab1acb4f7c81e8"
+    },
+    "revision-en": {
+      "source": "videos/xopc-work-intro/en-US/assets/images/revision.png",
+      "src": "/media/product/experiences/v2/en-US/revision.webp",
+      "width": 1740,
+      "height": 528,
+      "bytes": 57376,
+      "sha256": "198e3e3662325cf10b7b618a136d74bcdac76a882a41a0069f3def402783c45a"
+    }
+  }
+}

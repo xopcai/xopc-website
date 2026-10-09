@@ -113,25 +113,37 @@ The public map links to localized product guides where available and labels Engl
 
 ## Short product films
 
-The homepage introduces Personal AI just below the hero at `/zh#personal-ai` and
-`/en#personal-ai`. The localized film follows a desktop brand-proposal workflow:
-share context, delegate production, keep discussing, and refine the delivered file.
-The three chapter controls seek within the same player. Video loads on demand;
-switching the website language selects matching footage, narration, poster and captions.
+The homepage presents one product through two experiences: Personal AI for ongoing
+conversation and delegation, and Work for working directly with files and projects.
+`lib/experience-copy.ts` owns the bilingual positioning. Preview images are genuine
+captures, not simulated UI. Each video opens in `ProductFilmButton`'s centered,
+keyboard-accessible modal and loads only after a click. Closing removes the player
+and returns focus. Work output cards seek to locale-specific chapters.
 
-- Copy and media selection: `lib/personal-ai.ts`
-- Homepage section: `components/personal-ai-section.tsx` and its CSS module
-- Verified release metadata: `content/personal-ai/manifest.json`
-- Published files: `public/media/product/personal-ai/v2/{zh-CN,en-US}/`
-- Editable source and private QA: sibling `xopc-tutorials/videos/xopc-personal-ai/`
+The home page has focused one-minute introductions at `/zh#personal-ai`,
+`/en#personal-ai`, `/zh#work` and `/en#work`. Personal AI covers a weekly plan;
+Work covers a sales CSV, editable spreadsheet, presentation and real revision.
+Each language has its own dialogue, outputs, narration, poster and captions.
+The full product walkthrough remains in learning and product exploration.
 
-Synchronize an approved bilingual package with
-`node scripts/sync-personal-ai.mjs ../xopc-tutorials/videos/xopc-personal-ai/delivery/v2`.
-The script verifies all six media hashes before copying only MP4, JPG and VTT files,
-then generates the website manifest. An existing version cannot be overwritten with
-different bytes: create a new release version for revisions. Public media uses Git LFS.
-Both films already have visible captions; the optional caption track is not enabled
-by default, to avoid duplicate text. The original full product film remains available.
+- Copy: `lib/experience-copy.ts`; narrative and provenance: `content/marketing/personal-ai-work.md`
+- Media resolvers: `lib/personal-ai.ts`, `lib/work-film.ts`
+- Release manifests: `content/personal-ai/manifest.json`, `content/work/manifest.json`
+- Media: `public/media/product/personal-ai/v3/{zh-CN,en-US}/`, `public/media/product/work/v1/{zh-CN,en-US}/`
+- Editable source: sibling `xopc-tutorials/videos/xopc-personal-agent-intro/` and `videos/xopc-work-intro/`, with bilingual scripts, narration, crops, manifests and QA.
+
+Synchronize a verified package with `node scripts/sync-personal-ai.mjs
+../xopc-tutorials/videos/xopc-personal-agent-intro/delivery/v3` or
+`node scripts/sync-work-film.mjs ../xopc-tutorials/videos/xopc-work-intro/delivery/v1`.
+The scripts check all media hashes before copying only MP4, JPG and VTT. Published
+versions cannot be overwritten with different bytes. Old v2 Personal AI and v3
+full-introduction URLs stay intact. Public media uses Git LFS. Visible captions are
+embedded; optional tracks are off by default to avoid duplicate text.
+
+Sync eight reviewed, localized homepage crops with
+`node scripts/sync-experience-previews.mjs`. Raw captures stay private. Provenance,
+dimensions and hashes are recorded in `content/marketing/experience-previews.json`.
+Use a new preview version for changes. Work cards seek using release chapter times.
 
 The learn page features the 45-second portrait office overview at
 `/zh/learn?course=office-overview` (and `/en/learn?course=office-overview`).

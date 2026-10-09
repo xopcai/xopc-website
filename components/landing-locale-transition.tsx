@@ -20,7 +20,10 @@ export function LandingLocaleTransition() {
       history.scrollRestoration = "manual";
 
       requestAnimationFrame(() => {
-        if (Number.isFinite(scrollY)) {
+        const anchor = document.getElementById(window.location.hash.slice(1));
+        if (anchor) {
+          anchor.scrollIntoView({ block: "start", behavior: "instant" });
+        } else if (Number.isFinite(scrollY)) {
           window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
         }
 

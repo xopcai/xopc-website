@@ -1,0 +1,106 @@
+{
+  "version": "v1",
+  "base": "/media/product/work/v1",
+  "locales": {
+    "zh": {
+      "id": "work",
+      "version": "v1",
+      "locale": "zh-CN",
+      "title": "从一份表格，到一次清楚的汇报。",
+      "durationSeconds": 60.466667,
+      "width": 3840,
+      "height": 2160,
+      "fps": 30,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "从一份表格，到一次清楚的汇报。"
+        },
+        {
+          "start": 10.41,
+          "title": "带入资料，说清目标。"
+        },
+        {
+          "start": 20.02,
+          "title": "先看清数据。"
+        },
+        {
+          "start": 29.23,
+          "title": "做成可以继续编辑的文件。"
+        },
+        {
+          "start": 38.52,
+          "title": "看结果，再提修改。"
+        },
+        {
+          "start": 46.85,
+          "title": "下载 xopc，把一件事做出来。"
+        }
+      ],
+      "files": {
+        "video.mp4": {
+          "sha256": "970d95596a06ac25b5a6d0d647762bbb77d1dd6feb1230588fe2ffa74d7baa81",
+          "bytes": 9248413
+        },
+        "poster.jpg": {
+          "sha256": "ac1a25df24915af973c41562b3bb9c59152d71e8933be83afc6c60a8ffe7f666",
+          "bytes": 275783
+        },
+        "captions.vtt": {
+          "sha256": "7023cba50ae53fdfd8241df050010e398658595cfcaeafd011003a95b797a603",
+          "bytes": 1027
+        }
+      }
+    },
+    "en": {
+      "id": "work",
+      "version": "v1",
+      "locale": "en-US",
+      "title": "From spreadsheet to clear presentation.",
+      "durationSeconds": 64.033333,
+      "width": 3840,
+      "height": 2160,
+      "fps": 30,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "From spreadsheet to clear presentation."
+        },
+        {
+          "start": 10.81,
+          "title": "Bring your files. Set the goal."
+        },
+        {
+          "start": 21.14,
+          "title": "See what the data says."
+        },
+        {
+          "start": 28.91,
+          "title": "Make something you can keep editing."
+        },
+        {
+          "start": 39.48,
+          "title": "Review the result. Ask for a change."
+        },
+        {
+          "start": 49.81,
+          "title": "Download xopc. Make something happen."
+        }
+      ],
+      "files": {
+        "video.mp4": {
+          "sha256": "17b893a2ddb88d0e0b6e4d09a663625c57317dfb014d9593d1e2897b4186bd18",
+          "bytes": 10012738
+        },
+        "poster.jpg": {
+          "sha256": "427e25f1cdf8cc2d3f378038a9fbdae320ad2507568275cc99b3d10563021e13",
+          "bytes": 294372
+        },
+        "captions.vtt": {
+          "sha256": "c18dd99abe7a63ad0b2089896f73d4c9a3de52a4772e421d1388c52ca9fe60e2",
+          "bytes": 1131
+        }
+      }
+    }
+  }
+}

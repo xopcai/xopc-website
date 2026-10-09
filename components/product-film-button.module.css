@@ -1,0 +1,14 @@
+.watch { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface); color: var(--ink); cursor: pointer; font-size: 13px; }
+.watch:hover { border-color: var(--blue); }
+.duration { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.dialog { position: fixed; inset: 0; margin: auto; width: min(1120px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); color: var(--ink); overflow: hidden; box-shadow: 0 30px 100px #0003; }
+.dialog::backdrop { background: #10151ac7; backdrop-filter: blur(8px); }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 18px 12px 24px; }
+.header h2 { margin: 0 !important; font-size: 15px !important; font-weight: 500; line-height: 1.5 !important; letter-spacing: 0 !important; }
+.header button { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; }
+.header button:hover { background: var(--sage); }
+.body { max-height: calc(100dvh - 116px); overflow-y: auto; }
+.body video { display: block; width: 100%; max-height: calc(100dvh - 116px); aspect-ratio: 16 / 9; object-fit: contain; background: var(--paper); }
+.body p { margin: 16px 24px; font-size: 14px; }
+.watch:focus-visible, .header button:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 600px) { .dialog { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); border-radius: 14px; } .header { padding: 6px 10px 6px 16px; } .header h2 { font-size: 13px !important; } }

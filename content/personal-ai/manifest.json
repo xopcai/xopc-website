@@ -1,104 +1,104 @@
 {
-  "version": "v2",
-  "base": "/media/product/personal-ai/v2",
+  "version": "v3",
+  "base": "/media/product/personal-ai/v3",
   "locales": {
     "zh": {
       "id": "personal-ai",
-      "version": "v2",
+      "version": "v3",
       "locale": "zh-CN",
-      "title": "一件事，接着往前。",
-      "durationSeconds": 102.166667,
-      "width": 1920,
-      "height": 1080,
+      "title": "先从你开始。",
+      "durationSeconds": 60.466667,
+      "width": 3840,
+      "height": 2160,
       "fps": 30,
       "chapters": [
         {
           "start": 0,
-          "title": "一件事，接着往前。"
+          "title": "先从你开始。"
         },
         {
-          "start": 16.44,
-          "title": "先让它了解你。"
+          "start": 9.05,
+          "title": "让建议，从你的近况出发。"
         },
         {
-          "start": 33.32,
-          "title": "把一件事交给它。"
+          "start": 21.62,
+          "title": "边聊，边理清。"
         },
         {
-          "start": 49.28,
-          "title": "工作在推进，讨论也继续。"
+          "start": 30.91,
+          "title": "需要帮忙，就交给它。"
         },
         {
-          "start": 66.32,
-          "title": "成果回来，继续打磨。"
+          "start": 39.4,
+          "title": "结果回来，继续打磨。"
         },
         {
-          "start": 87.28,
-          "title": "了解你。一起做下去。"
+          "start": 49.85,
+          "title": "下载 xopc，试试你的个人 Agent。"
         }
       ],
       "files": {
         "video.mp4": {
-          "sha256": "415ff76ed2153029454498eddb5d9eb18fca080a7e3e74e22e541bd5a2b6a97e",
-          "bytes": 14769391
+          "sha256": "138eb7386c47a025e7cc6865f8ecc8e46f3895da0d647e339943f6a4f0d0dfdc",
+          "bytes": 9614977
         },
         "poster.jpg": {
-          "sha256": "1291822a6b30049b8549b8f82a8697d04e485c854c11fbac421821bd10dce92b",
-          "bytes": 100033
+          "sha256": "d40ac3981d72f05ff803bc3fc5e399f107aa521d409880ca9652f9ee750fea45",
+          "bytes": 131359
         },
         "captions.vtt": {
-          "sha256": "4441d24941823ce046df939770fea5ed4fbcc0754b84c1ed379ac86e2e5de8f7",
-          "bytes": 1755
+          "sha256": "41d80dd04cddebbf3e0a69208858333b2d7ecd7274c1752285e6d4e79ccff642",
+          "bytes": 1052
         }
       }
     },
     "en": {
       "id": "personal-ai",
-      "version": "v2",
+      "version": "v3",
       "locale": "en-US",
-      "title": "Keep your work moving.",
-      "durationSeconds": 116.4,
-      "width": 1920,
-      "height": 1080,
+      "title": "Start with you.",
+      "durationSeconds": 64.433333,
+      "width": 3840,
+      "height": 2160,
       "fps": 30,
       "chapters": [
         {
           "start": 0,
-          "title": "Keep your work moving."
-        },
-        {
-          "start": 19.24,
           "title": "Start with you."
         },
         {
-          "start": 38.52,
-          "title": "Give it a clear goal."
+          "start": 10.41,
+          "title": "Advice that starts with your situation."
         },
         {
-          "start": 58.72,
-          "title": "Keep the conversation going."
+          "start": 24.58,
+          "title": "Think it through together."
         },
         {
-          "start": 78.72,
-          "title": "Review it. Refine it."
+          "start": 33.55,
+          "title": "Give it something to do."
         },
         {
-          "start": 101.28,
-          "title": "Your AI. Working with you."
+          "start": 42.68,
+          "title": "Review it. Make it yours."
+        },
+        {
+          "start": 53.05,
+          "title": "Download xopc. Meet your personal Agent."
         }
       ],
       "files": {
         "video.mp4": {
-          "sha256": "f0956631af4be777f9ff2198ef227684f1a15b30a5b2b2696a93194605e14395",
-          "bytes": 15634228
+          "sha256": "c13ea4f927450f0fc6c19c3e778be9d5bbf3c49e72ecf071d2e8d308a9b8e23c",
+          "bytes": 11161014
         },
         "poster.jpg": {
-          "sha256": "0d8a509d1d5e310c669c5e498aaaa8fa369d7c6c8e1e7b6dacdeb78a5c6998ae",
-          "bytes": 122035
+          "sha256": "f29fd48c7d875802055e35f423a9a2131fb2a9509021afd4aed56980f5a0fff4",
+          "bytes": 141237
         },
         "captions.vtt": {
-          "sha256": "a93ce834105edec30d74320be8b24bbce702dfcbfba10330219db47f88922513",
-          "bytes": 2008
+          "sha256": "6fe69406b3bdc362db5d4dfa5833a16b2af796c9747c0c5d76f7de43c8f693e0",
+          "bytes": 1205
         }
       }
     }
