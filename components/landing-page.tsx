@@ -6,6 +6,7 @@ import { LandingHeader } from "@/components/landing-header";
 import { LandingLocaleTransition } from "@/components/landing-locale-transition";
 import { LandingNavState } from "@/components/landing-nav-state";
 import { ProductIntroVideo } from "@/components/product-intro-video";
+import { PersonalAiSection } from "@/components/personal-ai-section";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
 import { MobileDownloads } from "@/components/mobile-downloads";
 import { TerminalInstallCommands } from "@/components/terminal-install-commands";
@@ -43,6 +44,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         <div className={styles.hello}>{c.hello}<span /></div>
       </div>
     </section>
+    <PersonalAiSection locale={locale} />
     <LandingStory locale={locale} />
     <section className={styles.filmSection} id="film">
       <div className={styles.filmHeading}><h2>{c.filmTitle}</h2><p>{c.filmDesc}</p></div>

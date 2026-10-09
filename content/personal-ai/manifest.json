@@ -1,0 +1,106 @@
+{
+  "version": "v2",
+  "base": "/media/product/personal-ai/v2",
+  "locales": {
+    "zh": {
+      "id": "personal-ai",
+      "version": "v2",
+      "locale": "zh-CN",
+      "title": "一件事，接着往前。",
+      "durationSeconds": 102.166667,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "一件事，接着往前。"
+        },
+        {
+          "start": 16.44,
+          "title": "先让它了解你。"
+        },
+        {
+          "start": 33.32,
+          "title": "把一件事交给它。"
+        },
+        {
+          "start": 49.28,
+          "title": "工作在推进，讨论也继续。"
+        },
+        {
+          "start": 66.32,
+          "title": "成果回来，继续打磨。"
+        },
+        {
+          "start": 87.28,
+          "title": "了解你。一起做下去。"
+        }
+      ],
+      "files": {
+        "video.mp4": {
+          "sha256": "415ff76ed2153029454498eddb5d9eb18fca080a7e3e74e22e541bd5a2b6a97e",
+          "bytes": 14769391
+        },
+        "poster.jpg": {
+          "sha256": "1291822a6b30049b8549b8f82a8697d04e485c854c11fbac421821bd10dce92b",
+          "bytes": 100033
+        },
+        "captions.vtt": {
+          "sha256": "4441d24941823ce046df939770fea5ed4fbcc0754b84c1ed379ac86e2e5de8f7",
+          "bytes": 1755
+        }
+      }
+    },
+    "en": {
+      "id": "personal-ai",
+      "version": "v2",
+      "locale": "en-US",
+      "title": "Keep your work moving.",
+      "durationSeconds": 116.4,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Keep your work moving."
+        },
+        {
+          "start": 19.24,
+          "title": "Start with you."
+        },
+        {
+          "start": 38.52,
+          "title": "Give it a clear goal."
+        },
+        {
+          "start": 58.72,
+          "title": "Keep the conversation going."
+        },
+        {
+          "start": 78.72,
+          "title": "Review it. Refine it."
+        },
+        {
+          "start": 101.28,
+          "title": "Your AI. Working with you."
+        }
+      ],
+      "files": {
+        "video.mp4": {
+          "sha256": "f0956631af4be777f9ff2198ef227684f1a15b30a5b2b2696a93194605e14395",
+          "bytes": 15634228
+        },
+        "poster.jpg": {
+          "sha256": "0d8a509d1d5e310c669c5e498aaaa8fa369d7c6c8e1e7b6dacdeb78a5c6998ae",
+          "bytes": 122035
+        },
+        "captions.vtt": {
+          "sha256": "a93ce834105edec30d74320be8b24bbce702dfcbfba10330219db47f88922513",
+          "bytes": 2008
+        }
+      }
+    }
+  }
+}

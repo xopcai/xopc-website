@@ -113,6 +113,26 @@ The public map links to localized product guides where available and labels Engl
 
 ## Short product films
 
+The homepage introduces Personal AI just below the hero at `/zh#personal-ai` and
+`/en#personal-ai`. The localized film follows a desktop brand-proposal workflow:
+share context, delegate production, keep discussing, and refine the delivered file.
+The three chapter controls seek within the same player. Video loads on demand;
+switching the website language selects matching footage, narration, poster and captions.
+
+- Copy and media selection: `lib/personal-ai.ts`
+- Homepage section: `components/personal-ai-section.tsx` and its CSS module
+- Verified release metadata: `content/personal-ai/manifest.json`
+- Published files: `public/media/product/personal-ai/v2/{zh-CN,en-US}/`
+- Editable source and private QA: sibling `xopc-tutorials/videos/xopc-personal-ai/`
+
+Synchronize an approved bilingual package with
+`node scripts/sync-personal-ai.mjs ../xopc-tutorials/videos/xopc-personal-ai/delivery/v2`.
+The script verifies all six media hashes before copying only MP4, JPG and VTT files,
+then generates the website manifest. An existing version cannot be overwritten with
+different bytes: create a new release version for revisions. Public media uses Git LFS.
+Both films already have visible captions; the optional caption track is not enabled
+by default, to avoid duplicate text. The original full product film remains available.
+
 The learn page features the 45-second portrait office overview at
 `/zh/learn?course=office-overview` (and `/en/learn?course=office-overview`).
 Published assets live in `public/media/promos/office-overview/v1/zh-CN/`:
