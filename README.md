@@ -113,37 +113,34 @@ The public map links to localized product guides where available and labels Engl
 
 ## Short product films
 
-The homepage presents one product through two experiences: Personal AI for ongoing
-conversation and delegation, and Work for working directly with files and projects.
-`lib/experience-copy.ts` owns the bilingual positioning. Preview images are genuine
-captures, not simulated UI. Each video opens in `ProductFilmButton`'s centered,
-keyboard-accessible modal and loads only after a click. Closing removes the player
-and returns focus. Work output cards seek to locale-specific chapters.
+The homepage retains its work-focused story and full localized product walkthrough.
+Ada is xopc's personal Agent, introduced through a dedicated menu and `/zh/ada`
+and `/en/ada`. It starts with personal context, then discussion, delegation and an
+inspectable result. Ada belongs to xopc and shares its download and controls.
 
-The home page has focused one-minute introductions at `/zh#personal-ai`,
-`/en#personal-ai`, `/zh#work` and `/en#work`. Personal AI covers a weekly plan;
-Work covers a sales CSV, editable spreadsheet, presentation and real revision.
-Each language has its own dialogue, outputs, narration, poster and captions.
-The full product walkthrough remains in learning and product exploration.
+- Ada page and bilingual copy: `components/ada-page.tsx`, `lib/ada-copy.ts`
+- Ada media resolver and release: `lib/ada.ts`, `content/ada/manifest.json`
+- Video: `public/media/product/ada/v1/{zh-CN,en-US}/`
+- Reviewed localized previews and provenance: `content/ada/previews.json`
+- Narrative and maintenance: `content/marketing/ada.md`
+- Editable source: sibling `xopc-tutorials/videos/xopc-personal-agent-intro/`
 
-- Copy: `lib/experience-copy.ts`; narrative and provenance: `content/marketing/personal-ai-work.md`
-- Media resolvers: `lib/personal-ai.ts`, `lib/work-film.ts`
-- Release manifests: `content/personal-ai/manifest.json`, `content/work/manifest.json`
-- Media: `public/media/product/personal-ai/v3/{zh-CN,en-US}/`, `public/media/product/work/v1/{zh-CN,en-US}/`
-- Editable source: sibling `xopc-tutorials/videos/xopc-personal-agent-intro/` and `videos/xopc-work-intro/`, with bilingual scripts, narration, crops, manifests and QA.
+Synchronize verified Ada deliveries with `node scripts/sync-ada.mjs
+../xopc-tutorials/videos/xopc-personal-agent-intro/delivery/ada/v1`.
+Use `node scripts/sync-ada-previews.mjs` for reviewed previews. Both scripts
+verify hashes and preserve immutable published versions. Raw captures, credentials,
+fonts and logs remain private. Media uses Git LFS.
 
-Synchronize a verified package with `node scripts/sync-personal-ai.mjs
-../xopc-tutorials/videos/xopc-personal-agent-intro/delivery/v3` or
-`node scripts/sync-work-film.mjs ../xopc-tutorials/videos/xopc-work-intro/delivery/v1`.
-The scripts check all media hashes before copying only MP4, JPG and VTT. Published
-versions cannot be overwritten with different bytes. Old v2 Personal AI and v3
-full-introduction URLs stay intact. Public media uses Git LFS. Visible captions are
+Ada videos open only after a click in the centered, keyboard-accessible
+`ProductFilmButton` modal. Closing removes the player and returns focus. Each
+locale selects its own real conversation, narration, captions and previews;
+section buttons seek to corresponding release chapters. Visible subtitles are
 embedded; optional tracks are off by default to avoid duplicate text.
 
-Sync eight reviewed, localized homepage crops with
-`node scripts/sync-experience-previews.mjs`. Raw captures stay private. Provenance,
-dimensions and hashes are recorded in `content/marketing/experience-previews.json`.
-Use a new preview version for changes. Work cards seek using release chapter times.
+Previous Personal AI and Work releases remain available at their original URLs.
+Their former homepage narrative is documented in
+`content/marketing/personal-ai-work.md`. Legacy `#personal-ai` links redirect to
+the localized Ada page; `#work` links redirect to the restored homepage film.
 
 The learn page features the 45-second portrait office overview at
 `/zh/learn?course=office-overview` (and `/en/learn?course=office-overview`).

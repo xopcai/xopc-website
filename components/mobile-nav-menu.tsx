@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, Download, Github, Home, Menu, Sparkles, Workflow, X } from "lucide-react";
+import { BookOpen, Download, Github, Home, Menu, Sparkles, ShieldCheck, Workflow, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { AnimatedRouteLink } from "@/components/animated-route-link";
@@ -78,10 +78,13 @@ export function MobileNavMenu({
   const close = () => setOpen(false);
   const items = [
     { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}` },
-    { href: `/${locale}#personal-ai`, label: "Personal AI", icon: Sparkles, active: false },
-    { href: `/${locale}#work`, label: "Work", icon: Workflow, active: false },
+    { href: `/${locale}#why`, label: locale === "zh" ? "为何 xopc" : "Why xopc", icon: Sparkles, active: false },
+    { href: `/${locale}#loop`, label: locale === "zh" ? "如何运作" : "How it works", icon: Workflow, active: false },
+    { href: `/${locale}#trust`, label: locale === "zh" ? "信任" : "Trust", icon: ShieldCheck, active: false },
+    { href: `/${locale}/ada`, label: "Ada", hint: locale === "zh" ? "认识你的个人 Agent" : "Meet your personal Agent", icon: Sparkles, active: pathname === `/${locale}/ada` },
     { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
     { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
+    { href: `/${locale}/blog`, label: text.blog, hint: text.blogHint, icon: BookOpen, active: pathname.startsWith(`/${locale}/blog`) },
   ];
 
   return (

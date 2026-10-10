@@ -1,0 +1,46 @@
+export const adaCopy = {
+  zh: {
+    meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中属于你的个人 Agent。聊聊近况，交办一件事，检查结果，再一起打磨。" },
+    eyebrow: "xopc 的个人 Agent", headline: ["认识 Ada。", "从你开始，向前一步。"],
+    description: "聊聊近况，交代事情。让 Ada 了解你，也帮你把想法落到实处。",
+    download: "下载 xopc，认识 Ada", watch: "观看 Ada 介绍", film: "Ada · 从近况到周计划",
+    included: "Ada 已包含在 xopc 桌面应用中。", demo: "真实桌面对话 · 一周的工作与摄影计划",
+    introduction: "不用准备好一切。\n先聊聊你。", introductionBody: "你的背景、习惯，或一件还没想清楚的事。Ada 从这里开始。",
+    stages: [
+      { image: "discussion", title: "按你的方式，\n一起想清楚。", body: "说说目标，补充细节。下一步，在对话中慢慢清晰。", chapter: 2, watch: "看看如何讨论", alt: "真实 xopc 对话：补充听众与优先级，继续讨论周计划" },
+      { image: "delegate", title: "有件事，\n交给 Ada。", body: "把周计划整理成一页文件。Ada 去执行，你也可以继续聊。", chapter: 3, watch: "看看如何交办", alt: "真实 xopc 委托：把本周安排交给个人 Agent，整理成可查看的文件" },
+      { image: "revision", title: "结果回来，\n继续打磨。", body: "打开文件，看清结果。想调整哪里，再和 Ada 说。", chapter: 4, watch: "看看结果与修改", alt: "真实 xopc 产出：按用户要求调整后的工作与摄影周计划" },
+    ],
+    contextAlt: "真实 xopc 对话：介绍工作背景、摄影目标和交流偏好",
+    relationship: "Ada，住在 xopc 里。", relationshipBody: "想先聊聊，让 Ada 帮你理清和交办。想直接处理文件，就打开工作空间。用的都是同一个 xopc。",
+    workspace: "了解 xopc 如何工作", learn: "探索与学习",
+    faqTitle: "开始之前。", faqs: [
+      { question: "Ada 和 xopc 是什么关系？", answer: "Ada 是 xopc 中的个人 Agent。你可以和 Ada 聊天、讨论目标、委托任务；也可以直接进入 xopc 工作空间处理文件和项目，无需另外安装。" },
+      { question: "怎么开始使用 Ada？", answer: "下载 xopc 桌面应用，连接模型服务，再进入个人 Agent。先告诉 Ada 你的背景和回复偏好，然后试着交办一件小事。" },
+      { question: "我的资料在哪里？", answer: "xopc 的核心状态本地保存。使用云模型时，对应提供商会处理请求上下文。你可以查看、纠正和删除记忆，也可以决定使用哪些模型与工具。" },
+    ],
+    privacy: "查看隐私与数据边界", closing: "下一件事，\n和 Ada 一起开始。", closingBody: "下载 xopc，认识你的个人 Agent。",
+  },
+  en: {
+    meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc. Share what is on your mind, delegate a task, review the result, and refine it together." },
+    eyebrow: "Your personal Agent in xopc", headline: ["Meet Ada.", "Start with you. Move forward."],
+    description: "Talk things through. Give it something to do. Ada gets to know you and helps turn your ideas into something real.",
+    download: "Download xopc. Meet Ada.", watch: "Watch the Ada film", film: "Ada · From context to a weekly plan",
+    included: "Ada is included in the xopc desktop app.", demo: "Real desktop conversation · A weekly plan for work and photography",
+    introduction: "You do not need a perfect brief.\nStart with you.", introductionBody: "Your background, your habits, or an idea you are still figuring out. That is where Ada begins.",
+    stages: [
+      { image: "discussion", title: "Think it through.\nYour way.", body: "Share the goal. Add a little context. Find the next step together.", chapter: 2, watch: "See the conversation", alt: "Real xopc conversation: adding an audience and priorities to a weekly plan" },
+      { image: "delegate", title: "Give Ada\nsomething to do.", body: "Ask for your weekly plan as a one-page file. While Ada works, you can keep talking.", chapter: 3, watch: "See a task being delegated", alt: "Real xopc task: delegating a one-page weekly plan to the personal Agent" },
+      { image: "revision", title: "Review the result.\nMake it yours.", body: "Open the file. Take a look. Tell Ada what you want to change.", chapter: 4, watch: "See the result and revision", alt: "Real xopc output: a weekly plan revised to match the user's work and photography goals" },
+    ],
+    contextAlt: "Real xopc conversation: sharing work context, photography goals and communication preferences",
+    relationship: "Ada lives in xopc.", relationshipBody: "Talk with Ada to find a direction and delegate a task. Open the workspace to work directly with files. It is all in the same xopc app.",
+    workspace: "See how xopc works", learn: "Explore & learn",
+    faqTitle: "Before you begin.", faqs: [
+      { question: "How do Ada and xopc fit together?", answer: "Ada is your personal Agent in xopc. Talk through goals and delegate tasks with Ada, or work directly with files and projects in the xopc workspace. There is no separate app to install." },
+      { question: "How do I get started?", answer: "Download the xopc desktop app, connect a model provider, and open the personal Agent. Share a little about yourself and how you like replies, then give Ada a small task." },
+      { question: "Where does my data go?", answer: "Core xopc state stays local. When you use a cloud model, its provider processes the request context. You can review, correct or delete memory, and choose which models and tools to use." },
+    ],
+    privacy: "Explore privacy and data boundaries", closing: "Your next idea.\nA little help from Ada.", closingBody: "Download xopc. Meet your personal Agent.",
+  },
+} as const;

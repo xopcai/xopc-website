@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "xopc — 让重要的事持续向前。",
-    "description": "你的个人 Agent，也是你的工作空间。通过 Personal AI 交流与委托，通过 Work 处理文件、推进项目和检查成果。",
-    "ogDescription": "一个 xopc，两种使用方式。Personal AI 与 Work，一起把事情向前推进。"
+    "description": "为超级个体打造的个人 AI。记住你的目标与上下文，连接工具采取行动，并随时从上次停下的地方继续。",
+    "ogDescription": "让重要的事持续向前。为超级个体打造的个人 AI。"
   },
   "header": {
     "chooseLanguage": "选择语言",

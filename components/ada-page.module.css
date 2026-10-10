@@ -1,0 +1,58 @@
+.page { min-height: 100vh; }
+.hero { max-width: 1184px; margin: auto; padding: 136px 32px 0; text-align: center; }
+.eyebrow { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.page .hero h1 { font-size: clamp(56px, 7vw, 94px); line-height: 1.13; margin: 24px 0; letter-spacing: -.055em; }
+.hero h1 span { display: block; font-size: clamp(25px, 3.1vw, 40px); line-height: 1.3; margin-top: 18px; letter-spacing: -.03em; }
+.description { max-width: 560px; margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.85; text-wrap: pretty; }
+.actions { display: flex; align-items: center; justify-content: center; gap: 26px; flex-wrap: wrap; margin-top: 30px; }
+.page .primary { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; border-radius: 99px; background: var(--ink); color: var(--paper); padding: 0 24px; font-size: 14px; }
+.page .primary:hover { background: var(--blue); color: white; text-decoration: none; }
+.included { color: var(--muted); font-size: 12px; margin-top: 16px; }
+.heroPreview { margin: 56px 0 0; padding: clamp(16px, 4vw, 48px); border-radius: 30px; background: var(--sage); }
+.screen { border-radius: 16px; overflow-x: auto; overscroll-behavior-x: contain; background: #f5f6f8; }
+.screen img { width: 100%; height: auto; display: block; }
+.screen:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
+.heroPreview figcaption { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20px; }
+.introduction { max-width: 760px; padding: 104px 24px 80px; margin: auto; text-align: center; }
+.page .introduction h2 { font-size: clamp(31px, 4vw, 48px); }
+.introduction p { max-width: 480px; margin: 24px auto 0; font-size: 16px; line-height: 1.85; color: var(--muted); }
+.stages { max-width: 1184px; margin: auto; padding: 0 32px; }
+.stage { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); align-items: center; gap: 64px; padding: 64px 0; border-top: 1px solid var(--line); }
+.stage:nth-child(even) { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); }
+.stage:nth-child(even) .stageCopy { order: 2; }
+.number { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+.page .stage h2 { font-size: clamp(28px, 3.5vw, 42px); }
+.stageCopy > p:not(.number) { font-size: 15px; color: var(--muted); line-height: 1.85; margin: 20px 0 24px; max-width: 340px; }
+.stagePreview { min-width: 0; padding: 24px; background: var(--sage); border-radius: 24px; }
+.relationship { max-width: 1184px; padding: 72px 32px; margin: 72px auto; background: var(--sage); border-radius: 30px; text-align: center; }
+.relationship h2 { margin-top: 18px; }
+.relationship > p:not(.eyebrow) { max-width: 550px; margin: 24px auto; line-height: 1.85; color: var(--muted); font-size: 16px; }
+.links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.links a, .faq > a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; }
+.faq { max-width: 800px; padding: 32px 24px; margin: auto; }
+.faq h2 { text-align: center; margin-bottom: 36px; }
+.faq details { border-top: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 78px; font-size: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary span { font-size: 22px; font-weight: 300; }
+.faq details[open] summary span { transform: rotate(45deg); }
+.faq details p { margin-bottom: 28px; max-width: 670px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+.faq > a { margin-top: 20px; }
+.closing { text-align: center; padding: 104px 24px 120px; }
+.closing p { color: var(--muted); margin: 22px 0 28px; font-size: 16px; }
+@media (max-width: 720px) {
+  .hero { padding: 112px 20px 0; }
+  .description { font-size: 15px; }
+  .heroPreview { margin-top: 36px; border-radius: 20px; padding: 16px; }
+  .screen img { min-width: 600px; }
+  .heroPreview .screen img { min-width: 640px; }
+  .screen { border-radius: 10px; }
+  .introduction { padding: 76px 24px 52px; }
+  .stages { padding: 0 20px; }
+  .stage, .stage:nth-child(even) { grid-template-columns: minmax(0,1fr); gap: 30px; padding: 42px 0; }
+  .stage:nth-child(even) .stageCopy { order: 0; }
+  .number { margin-bottom: 16px; }
+  .stagePreview { padding: 16px; border-radius: 18px; }
+  .relationship { margin: 44px 20px; padding: 48px 24px; border-radius: 20px; }
+  .closing { padding: 76px 24px 88px; }
+}

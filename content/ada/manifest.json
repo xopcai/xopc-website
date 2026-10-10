@@ -1,0 +1,106 @@
+{
+  "version": "v1",
+  "base": "/media/product/ada/v1",
+  "locales": {
+    "zh": {
+      "id": "ada",
+      "version": "v1",
+      "locale": "zh-CN",
+      "title": "认识 Ada。",
+      "durationSeconds": 62.7,
+      "width": 3840,
+      "height": 2160,
+      "fps": 30,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "认识 Ada。"
+        },
+        {
+          "start": 10.25,
+          "title": "让建议，从你的近况出发。"
+        },
+        {
+          "start": 21.86,
+          "title": "边聊，边理清。"
+        },
+        {
+          "start": 31.15,
+          "title": "需要帮忙，就交给它。"
+        },
+        {
+          "start": 39.64,
+          "title": "结果回来，继续打磨。"
+        },
+        {
+          "start": 50.09,
+          "title": "下载 xopc，认识你的 Ada。"
+        }
+      ],
+      "files": {
+        "video.mp4": {
+          "sha256": "cd384ee759b2e70b2c190d44fcf5a8b7f2d74e818f80aed4cf4ff022956dbf41",
+          "bytes": 9546173
+        },
+        "poster.jpg": {
+          "sha256": "96ab04a4db9508404020fa0f9ed565cce71de69ca36424906d8734c52bcbfe4d",
+          "bytes": 116674
+        },
+        "captions.vtt": {
+          "sha256": "436b65c59e9c94354951e0177ba2e2d84d411cca9d5585b524c8a725b44bf732",
+          "bytes": 1065
+        }
+      }
+    },
+    "en": {
+      "id": "ada",
+      "version": "v1",
+      "locale": "en-US",
+      "title": "Meet Ada.",
+      "durationSeconds": 66.833333,
+      "width": 3840,
+      "height": 2160,
+      "fps": 30,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Meet Ada."
+        },
+        {
+          "start": 13.13,
+          "title": "Advice that starts with your situation."
+        },
+        {
+          "start": 26.18,
+          "title": "Think it through together."
+        },
+        {
+          "start": 35.15,
+          "title": "Give it something to do."
+        },
+        {
+          "start": 44.28,
+          "title": "Review it. Make it yours."
+        },
+        {
+          "start": 54.65,
+          "title": "Download xopc. Meet your Ada."
+        }
+      ],
+      "files": {
+        "video.mp4": {
+          "sha256": "61219a10f9feb44ff97c728f66fb14578ff7dbb62ef8a01cc6696667cb4297e8",
+          "bytes": 11047622
+        },
+        "poster.jpg": {
+          "sha256": "9786d3204476846acf9520998cd2974f1409342693c5d8490b8d8fec42a17846",
+          "bytes": 129746
+        },
+        "captions.vtt": {
+          "sha256": "a6ce132ef1bdcbb1a5cf3a69567508faaf9af86040f3195c9a73b76eb0478033",
+          "bytes": 1229
+        }
+      }
+    }
+  }
+}

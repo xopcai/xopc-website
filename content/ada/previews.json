@@ -1,0 +1,74 @@
+{
+  "version": "v1",
+  "base": "/media/product/ada/previews/v1",
+  "locales": {
+    "zh": {
+      "context": {
+        "src": "/media/product/ada/previews/v1/zh-CN/context.webp",
+        "width": 1740,
+        "height": 720,
+        "bytes": 93394,
+        "sha256": "b7e0479ae2d462e34c3638ce32ff0d0cad0b6817a474e281ff0c4e57afefe318",
+        "sourceSha256": "10824d303838c00ed097bda000160ec3e3f31fa840c1d195466a3dbdd3f405e7"
+      },
+      "discussion": {
+        "src": "/media/product/ada/previews/v1/zh-CN/discussion.webp",
+        "width": 1740,
+        "height": 460,
+        "bytes": 40502,
+        "sha256": "944e5616b7fa2f214ce0b36d5cdba008053a5ab9f3b6dba8821c3e856a4cb79e",
+        "sourceSha256": "ea68a284f78265ff0f4c8bcef003bab49fb1e72c0c56fa3d89e635bb45f65df1"
+      },
+      "delegate": {
+        "src": "/media/product/ada/previews/v1/zh-CN/delegate.webp",
+        "width": 1740,
+        "height": 890,
+        "bytes": 110922,
+        "sha256": "5a127385884428123b6bb1b4eede3d9903a14bfbaa81981499528074e839515b",
+        "sourceSha256": "f82106d39b410c09f637f892be7a9bc98c60b7f3e5c2d9c4f7a78a646b8b5712"
+      },
+      "revision": {
+        "src": "/media/product/ada/previews/v1/zh-CN/revision.webp",
+        "width": 1440,
+        "height": 440,
+        "bytes": 39592,
+        "sha256": "e1dd62b9689059e7e5e246bec323ffae7bf5b6da803175b1a3778609a5e885e6",
+        "sourceSha256": "6b3efe57ad71d84ac0b4e53ce0b722dbfdd65669a326f5b345c46b8d7f0eae04"
+      }
+    },
+    "en": {
+      "context": {
+        "src": "/media/product/ada/previews/v1/en-US/context.webp",
+        "width": 1740,
+        "height": 890,
+        "bytes": 122194,
+        "sha256": "7f11e538b242dd8b1910c8e53e9e820507f044963099b38f79abb193fa48f015",
+        "sourceSha256": "f7111ca9271e234912f1111ab551fa61647a2ec584b2decf8ec1b0ac14b4cfeb"
+      },
+      "discussion": {
+        "src": "/media/product/ada/previews/v1/en-US/discussion.webp",
+        "width": 1740,
+        "height": 580,
+        "bytes": 70316,
+        "sha256": "3dd56bcedbfe0af9e9310b617ec4e4c4bca6991f16b889b9d19ddaaff29f7212",
+        "sourceSha256": "71205ca03ae111dd53d5e2451b9d2835e675f2f53dc8bb4558a0b98a7c56293a"
+      },
+      "delegate": {
+        "src": "/media/product/ada/previews/v1/en-US/delegate.webp",
+        "width": 1740,
+        "height": 790,
+        "bytes": 85736,
+        "sha256": "138e7cccfceda1126270282ccd26da1217a459cf3f27e61796e99a68474decfd",
+        "sourceSha256": "0f95626e02c571f58f1c2dcb6f68cb08570b931e91d4fe2ae27628f2555a8c52"
+      },
+      "revision": {
+        "src": "/media/product/ada/previews/v1/en-US/revision.webp",
+        "width": 1440,
+        "height": 685,
+        "bytes": 68964,
+        "sha256": "8eefa9a291e20b6597f3fcf9c7735fb60cdb194d75ca16ca3053daf2d6aea1fc",
+        "sourceSha256": "84a72c9dd6a0521913473eaabd9f3ef8b9799d0f409b7973555dc99c4e82f29f"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # One xopc, two ways to begin
 
-Status: homepage implemented; two bilingual films produced for publication. The release allowlists and QA evidence live in the maintained tutorial repository.
+Status: historical homepage design, superseded by the restored work homepage and dedicated Ada pages. See `content/marketing/ada.md` for the current architecture. These published media versions remain immutable and available; the release allowlists and QA evidence live in the maintained tutorial repository.
 
 ## Narrative
 

@@ -25,6 +25,7 @@ export function LandingFooter({ footer, docsHref, locale }: Props) {
         <section className="footer-link-group" aria-label={locale === "zh" ? "探索与学习" : "Explore & learn"}>
           <h2>{locale === "zh" ? "探索与学习" : "Explore & learn"}</h2>
           <ul className="footer-links">
+            <li><a href={`/${locale}/ada`}>Ada</a></li>
             <li><a href={`/${locale}/product-map`}>{locale === "zh" ? "产品探索" : "Product explorer"}</a></li>
             <li><a href={`/${locale}/learn`}>{locale === "zh" ? "实战教程" : "Tutorials"}</a></li>
             <li><a href={docsHref} target="_blank" rel="noopener noreferrer">{footer.docs}</a></li>
