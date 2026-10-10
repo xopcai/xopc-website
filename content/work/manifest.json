@@ -1,13 +1,13 @@
 {
-  "version": "v1",
-  "base": "/media/product/work/v1",
+  "version": "v2",
+  "base": "/media/product/work/v2",
   "locales": {
     "zh": {
       "id": "work",
-      "version": "v1",
+      "version": "v2",
       "locale": "zh-CN",
       "title": "从一份表格，到一次清楚的汇报。",
-      "durationSeconds": 60.466667,
+      "durationSeconds": 63.1,
       "width": 3840,
       "height": 2160,
       "fps": 30,
@@ -17,47 +17,47 @@
           "title": "从一份表格，到一次清楚的汇报。"
         },
         {
-          "start": 10.41,
+          "start": 12.17,
           "title": "带入资料，说清目标。"
         },
         {
-          "start": 20.02,
+          "start": 21.78,
           "title": "先看清数据。"
         },
         {
-          "start": 29.23,
+          "start": 30.99,
           "title": "做成可以继续编辑的文件。"
         },
         {
-          "start": 38.52,
+          "start": 40.28,
           "title": "看结果，再提修改。"
         },
         {
-          "start": 46.85,
+          "start": 48.61,
           "title": "下载 xopc，把一件事做出来。"
         }
       ],
       "files": {
         "video.mp4": {
-          "sha256": "970d95596a06ac25b5a6d0d647762bbb77d1dd6feb1230588fe2ffa74d7baa81",
-          "bytes": 9248413
+          "sha256": "ca757fc933d74eb538c8b0fbfd36aa8b196142a9ecf4372c9e0a73bbd21ce2bc",
+          "bytes": 9219133
         },
         "poster.jpg": {
-          "sha256": "ac1a25df24915af973c41562b3bb9c59152d71e8933be83afc6c60a8ffe7f666",
-          "bytes": 275783
+          "sha256": "d04a196bfdaef2b16f74affdbe63955ee6f79cba76262d466265c1664c46deac",
+          "bytes": 275300
         },
         "captions.vtt": {
-          "sha256": "7023cba50ae53fdfd8241df050010e398658595cfcaeafd011003a95b797a603",
-          "bytes": 1027
+          "sha256": "5b4b93af43507c503d67e84562f6305d2f73f8af17855d86a02da9c4ee6e2acc",
+          "bytes": 1075
         }
       }
     },
     "en": {
       "id": "work",
-      "version": "v1",
+      "version": "v2",
       "locale": "en-US",
       "title": "From spreadsheet to clear presentation.",
-      "durationSeconds": 64.033333,
+      "durationSeconds": 67.5,
       "width": 3840,
       "height": 2160,
       "fps": 30,
@@ -67,38 +67,38 @@
           "title": "From spreadsheet to clear presentation."
         },
         {
-          "start": 10.81,
+          "start": 12.73,
           "title": "Bring your files. Set the goal."
         },
         {
-          "start": 21.14,
+          "start": 23.06,
           "title": "See what the data says."
         },
         {
-          "start": 28.91,
+          "start": 30.83,
           "title": "Make something you can keep editing."
         },
         {
-          "start": 39.48,
+          "start": 41.4,
           "title": "Review the result. Ask for a change."
         },
         {
-          "start": 49.81,
+          "start": 51.73,
           "title": "Download xopc. Make something happen."
         }
       ],
       "files": {
         "video.mp4": {
-          "sha256": "17b893a2ddb88d0e0b6e4d09a663625c57317dfb014d9593d1e2897b4186bd18",
-          "bytes": 10012738
+          "sha256": "b5ac894233b1b44c77938108949c121e48b886121db462c808d6a3a004d6a65a",
+          "bytes": 10297638
         },
         "poster.jpg": {
-          "sha256": "427e25f1cdf8cc2d3f378038a9fbdae320ad2507568275cc99b3d10563021e13",
-          "bytes": 294372
+          "sha256": "de4f31f6bdc6dc0b27c9e107824ee3156fca3fd6889dd765b6a563edc13a140d",
+          "bytes": 294919
         },
         "captions.vtt": {
-          "sha256": "c18dd99abe7a63ad0b2089896f73d4c9a3de52a4772e421d1388c52ca9fe60e2",
-          "bytes": 1131
+          "sha256": "65f38e8be06ad7e013b673c5029735f03f84c25e953e8cb03939cf106a8b70af",
+          "bytes": 1145
         }
       }
     }

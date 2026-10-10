@@ -3,11 +3,12 @@
 import { useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import { productIntro } from "@/lib/product-intro";
+import { workFilm } from "@/lib/work-film";
 import styles from "./product-intro-video.module.css";
 
-export function ProductIntroVideo({ locale, preload = "none" }: { locale: Locale; preload?: "none" | "metadata" }) {
-  const film = productIntro(locale);
+export function ProductIntroVideo({ locale, preload = "none", overview = false }: { locale: Locale; preload?: "none" | "metadata"; overview?: boolean }) {
   const zh = locale === "zh";
+  const film = overview ? { ...workFilm(locale), language: zh ? "zh-CN" : "en-US", captionLabel: zh ? "简体中文" : "English", title: zh ? "认识 xopc · 从资料到成果" : "Meet xopc · From files to results" } : productIntro(locale);
   const [error, setError] = useState(false);
 
   return (

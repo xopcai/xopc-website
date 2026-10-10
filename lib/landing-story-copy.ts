@@ -17,7 +17,7 @@ export const storyCopy = {
     decision: "第一版，先做好记录与搜索？", decisionBody: "保留：快速记录、全文搜索。\n暂缓：多人协作、共享空间。", confirm: "试一下：确认这个范围", confirmed: "已确认 · 查看结果", reset: "重新体验", approved: "由你决定", approvalNote: "这里只演示确认流程，不会操作你的项目。",
     result: "首版发布计划已更新", exampleResult: "示例中，确认后得到的结果", tasks: ["用户反馈整理为 3 个重点", "首版范围：快速记录 + 全文搜索", "发布清单：补充搜索验收任务"], ready: "可查看", file: "首版发布计划", fileBody: "范围已明确 · 下一步可执行", artifactBefore: "等待确认范围", artifactAfter: "范围确认 → 清单更新", artifactPhone: "同一份计划 · 手机可查看",
     phoneTime: "18:06", phoneAsk: "记事应用，接下来先做什么？", phoneReply: "首版保留记录和搜索。发布清单已补充搜索验收任务，下次从这里继续。", connected: "连接电脑上的 xopc", continuity: "同一个项目，同一份结果。", continue: "查看发布计划",
-    filmTitle: "看看真正的 xopc，\n如何接住手头的事。", filmDesc: "从带入资料到检查结果。完整演示保留每一步，让你看清它如何工作。", moreFilms: "查看实战教程",
+    filmTitle: "把手头的资料，\n做成真正的成果。", filmDesc: "整理资料、分析表格、制作汇报，再按你的要求修改。用一分钟，看看真实的 xopc。", moreFilms: "查看实战教程",
     trustTitle: "事情在向前。\n决定仍在你手里。", trust: [
       { title: "资料放在哪里，说清楚", body: "核心状态本地保存。使用云模型时，请求上下文由对应提供商处理。" },
       { title: "重要操作，先确认", body: "发送、删除和其他高影响操作，先停下来，等你决定。" },
@@ -42,7 +42,7 @@ export const storyCopy = {
     decision: "Focus v1 on capture and search?", decisionBody: "Keep: quick capture, full-text search.\nLater: collaboration, shared spaces.", confirm: "Try it: confirm this scope", confirmed: "Confirmed · see the result", reset: "Try again", approved: "Your decision", approvalNote: "This demonstrates approval. It won't change your projects.",
     result: "Launch plan updated", exampleResult: "Example result after approval", tasks: ["Feedback distilled into 3 priorities", "V1 scope: quick capture + full-text search", "Search acceptance task added to checklist"], ready: "Ready to review", file: "Version one · launch plan", fileBody: "A clear scope. An actionable next step.", artifactBefore: "Scope awaiting approval", artifactAfter: "Scope agreed → checklist updated", artifactPhone: "Same plan · available on your phone",
     phoneTime: "18:06", phoneAsk: "What's next for the notes app?", phoneReply: "V1 keeps capture and search. The checklist now includes search acceptance testing. We can pick up there next time.", connected: "Connected to xopc on your computer", continuity: "Same project. Same result.", continue: "View the launch plan",
-    filmTitle: "The real workspace.\nThe work behind the story.", filmDesc: "From bringing in material to checking results. Watch the full workflow, with each step in view.", moreFilms: "Explore guided tutorials",
+    filmTitle: "Your files.\nSomething you can use.", filmDesc: "Organize files, analyze a spreadsheet, build slides, and ask for a revision. See the real xopc in about a minute.", moreFilms: "Explore guided tutorials",
     trustTitle: "Work moves forward.\nThe direction stays yours.", trust: [
       { title: "Know where your data goes", body: "Core state stays local. When you use cloud models, their providers process the request context." },
       { title: "Important actions need approval", body: "Sending, deleting and other high-impact actions pause for your confirmation." },

@@ -12,9 +12,9 @@ const human = 'M229.437 73.667 A120 120 0 0 1 316.333 160.563';
 const core = 'M130 190 C130 153 156 131 200 131 C244 131 270 153 270 190 C270 229 244 250 200 250 C156 250 130 229 130 190Z';
 
 /** Loopi is a companion, not a replacement for a person's profile image. */
-export function Loopi({ mood = 'idle', variant = 'hero', interactive = false, cycle = false, language = 'en', className = '' }: {
+export function Loopi({ mood = 'idle', variant = 'hero', interactive = false, cycle = false, language = 'en', className = '', ariaLabel, onHello }: {
   mood?: LoopiMood; variant?: 'hero' | 'avatar'; interactive?: boolean;
-  cycle?: boolean; language?: 'en' | 'zh'; className?: string;
+  cycle?: boolean; language?: 'en' | 'zh'; className?: string; ariaLabel?: string; onHello?: () => void;
 }) {
   const id = useId().replace(/:/g, '');
   const host = useRef<HTMLSpanElement>(null);
@@ -59,6 +59,6 @@ export function Loopi({ mood = 'idle', variant = 'hero', interactive = false, cy
     </svg>
   );
   return <span ref={host} className={`loopi loopi--${variant} ${className}`}>
-    {interactive ? <button className="loopi-touch" type="button" aria-label={language === 'zh' ? '和小环打个招呼' : 'Say hello to Loopi'}>{drawing}</button> : drawing}
+    {interactive ? <button className="loopi-touch" type="button" onClick={onHello} aria-label={ariaLabel ?? (language === 'zh' ? '和小环打个招呼' : 'Say hello to Loopi')}>{drawing}</button> : drawing}
   </span>;
 }

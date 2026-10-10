@@ -1,8 +1,8 @@
 export const adaCopy = {
   zh: {
     meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中属于你的个人 Agent。聊聊近况，交办一件事，检查结果，再一起打磨。" },
-    eyebrow: "xopc 的个人 Agent", headline: ["认识 Ada。", "从你开始，向前一步。"],
-    description: "聊聊近况，交代事情。让 Ada 了解你，也帮你把想法落到实处。",
+    eyebrow: "xopc 的个人 Agent", headline: ["认识 Ada。", "慢慢说，我在听。"],
+    description: "忙碌的日子，没想好的事，还有突然冒出的灵感。和 Ada 聊聊，再一起往前走。",
     download: "下载 xopc，认识 Ada", watch: "观看 Ada 介绍", film: "Ada · 从近况到周计划",
     included: "Ada 已包含在 xopc 桌面应用中。", demo: "真实桌面对话 · 一周的工作与摄影计划",
     introduction: "不用准备好一切。\n先聊聊你。", introductionBody: "你的背景、习惯，或一件还没想清楚的事。Ada 从这里开始。",
@@ -23,8 +23,8 @@ export const adaCopy = {
   },
   en: {
     meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc. Share what is on your mind, delegate a task, review the result, and refine it together." },
-    eyebrow: "Your personal Agent in xopc", headline: ["Meet Ada.", "Start with you. Move forward."],
-    description: "Talk things through. Give it something to do. Ada gets to know you and helps turn your ideas into something real.",
+    eyebrow: "Your personal Agent in xopc", headline: ["Meet Ada.", "Take your time. I’m listening."],
+    description: "Busy days. Unfinished thoughts. A little spark of an idea. Talk with Ada, then take the next step together.",
     download: "Download xopc. Meet Ada.", watch: "Watch the Ada film", film: "Ada · From context to a weekly plan",
     included: "Ada is included in the xopc desktop app.", demo: "Real desktop conversation · A weekly plan for work and photography",
     introduction: "You do not need a perfect brief.\nStart with you.", introductionBody: "Your background, your habits, or an idea you are still figuring out. That is where Ada begins.",

@@ -46,7 +46,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
     <LandingStory locale={locale} />
     <section className={styles.filmSection} id="film">
       <div className={styles.filmHeading}><h2>{c.filmTitle}</h2><p>{c.filmDesc}</p></div>
-      <div className={styles.film}><ProductIntroVideo locale={locale} /></div>
+      <div className={styles.film}><ProductIntroVideo locale={locale} overview /></div>
       <a className={styles.textLink} href={`/${locale}/learn`}><Play size={14} />{c.moreFilms}<ArrowUpRight size={14} /></a>
     </section>
     <section className={styles.trust} id="trust">

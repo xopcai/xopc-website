@@ -2,7 +2,12 @@
 
 `lib/product-intro.ts` selects the localized full introduction. The product exploration
 introduction card precedes Onboarding; the learning page preserves the walkthrough.
-The restored homepage also presents this full introduction below its work story.
+The homepage instead uses the focused Work v2 introduction (`lib/work-film.ts`):
+real files, editable Excel and PowerPoint results, then a revision. It uses separate
+Chinese and English captures, narration and timing (about one minute).
+Source: `xopc-tutorials/videos/xopc-work-intro/`; verified delivery: `delivery/v2/`.
+Sync with `scripts/sync-work-film.mjs`. The default `ProductIntroVideo` resolver
+still selects the full introduction; only the homepage passes `overview`.
 Ada has a separate localized introduction at `/zh/ada` and `/en/ada`.
 
 Published assets: `public/media/product/official-intro/v3/{zh-CN,en-US}/`.

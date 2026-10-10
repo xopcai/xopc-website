@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AdaCompanion } from "@/components/ada-companion";
 import { ArrowUpRight } from "lucide-react";
 import { LandingFooter } from "@/components/landing-footer";
 import { LandingHeader } from "@/components/landing-header";
@@ -27,6 +28,7 @@ export function AdaPage({ locale, messages, docHome }: Props) {
       <p className={styles.eyebrow}>{c.eyebrow}</p>
       <h1 id="ada-title">{c.headline[0]}<span>{c.headline[1]}</span></h1>
       <p className={styles.description}>{c.description}</p>
+      <AdaCompanion locale={locale} />
       <div className={styles.actions}>
         <a className={styles.primary} href={download} data-product-event="ada_download_clicked">{c.download}<ArrowUpRight size={17} aria-hidden /></a>
         <ProductFilmButton locale={locale} film={film} title={c.film} label={c.watch} />

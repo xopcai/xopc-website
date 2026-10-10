@@ -73,8 +73,8 @@ than silently undoing the decision. Desktop scenes stay mounted and crossfade wi
 one workspace, with a persistent launch-plan summary linking the chapters.
 The hero leads with the brand slogan, paper notes and interactive Loopi. Its existing
 SVG motion responds to pointer/tap input and pauses offscreen or for reduced motion.
-The full localized walkthrough remains available below the story; product imagery does
-not displace the warm, companion-led brand introduction.
+A concise bilingual Work v2 film follows the story: files → editable spreadsheet and
+presentation → revision. The full onboarding walkthrough remains on learning pages.
 
 On wide, tall viewports, the workspace stays in view while scrolling through the four
 chapters. Phones, short viewports, and pages without JavaScript use an inline scene per
@@ -113,12 +113,14 @@ The public map links to localized product guides where available and labels Engl
 
 ## Short product films
 
-The homepage retains its work-focused story and full localized product walkthrough.
+The homepage retains its work-focused story and the concise bilingual Work v2 introduction.
 Ada is xopc's personal Agent, introduced through a dedicated menu and `/zh/ada`
 and `/en/ada`. It starts with personal context, then discussion, delegation and an
 inspectable result. Ada belongs to xopc and shares its download and controls.
 
 - Ada page and bilingual copy: `components/ada-page.tsx`, `lib/ada-copy.ts`
+- Interactive companion: `components/ada-companion.tsx`, reusing animated Loopi
+- Homepage Work film: `lib/work-film.ts`, `content/work/manifest.json`, `public/media/product/work/v2/`
 - Ada media resolver and release: `lib/ada.ts`, `content/ada/manifest.json`
 - Video: `public/media/product/ada/v1/{zh-CN,en-US}/`
 - Reviewed localized previews and provenance: `content/ada/previews.json`
