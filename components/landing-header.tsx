@@ -47,10 +47,7 @@ export function LandingHeader({
             </div>
           </div>
           <ul className="nav-links">
-            <li><Link href={activePage ? `${home}#why` : "#why"}>{locale === "zh" ? "为何 xopc" : "Why xopc"}</Link></li>
-            <li><Link href={activePage ? `${home}#loop` : "#loop"}>{locale === "zh" ? "如何运作" : "How it works"}</Link></li>
             <li><AnimatedRouteLink href={`${home}/ada`} className={activePage === "ada" ? "is-active" : undefined} aria-current={activePage === "ada" ? "page" : undefined}>Ada</AnimatedRouteLink></li>
-            <li><Link href={activePage ? `${home}#trust` : "#trust"}>{locale === "zh" ? "信任" : "Trust"}</Link></li>
             <li>
               <AnimatedRouteLink
                 href={`${home}/use-cases`}

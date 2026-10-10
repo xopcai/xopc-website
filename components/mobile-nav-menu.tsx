@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, Download, Github, Home, Menu, Sparkles, ShieldCheck, Workflow, X } from "lucide-react";
+import { BookOpen, Download, Github, Menu, Sparkles, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { AnimatedRouteLink } from "@/components/animated-route-link";
@@ -27,9 +27,9 @@ const menuCopy = {
     casesHint: "从真实任务找到开始方式",
     learn: "探索与学习",
     learnHint: "跟着案例跑通第一次",
-    blog: "技术博客",
+    blog: "博客",
     blogHint: "实现、取舍与工程经验",
-    docs: "产品文档",
+    docs: "文档",
     docsHint: "安装、配置与开发参考",
     download: "下载 xopc",
     github: "在 GitHub 查看源码",
@@ -47,9 +47,9 @@ const menuCopy = {
     casesHint: "Find a starting point from real work",
     learn: "Explore & learn",
     learnHint: "Complete your first workflow step by step",
-    blog: "Engineering blog",
+    blog: "Blog",
     blogHint: "Implementation, trade-offs and lessons",
-    docs: "Documentation",
+    docs: "Docs",
     docsHint: "Installation, configuration, and developer reference",
     download: "Download xopc",
     github: "View source on GitHub",
@@ -77,10 +77,6 @@ export function MobileNavMenu({
 
   const close = () => setOpen(false);
   const items = [
-    { href: `/${locale}`, label: text.home, hint: text.homeHint, icon: Home, active: pathname === `/${locale}` },
-    { href: `/${locale}#why`, label: locale === "zh" ? "为何 xopc" : "Why xopc", icon: Sparkles, active: false },
-    { href: `/${locale}#loop`, label: locale === "zh" ? "如何运作" : "How it works", icon: Workflow, active: false },
-    { href: `/${locale}#trust`, label: locale === "zh" ? "信任" : "Trust", icon: ShieldCheck, active: false },
     { href: `/${locale}/ada`, label: "Ada", hint: locale === "zh" ? "认识你的个人 Agent" : "Meet your personal Agent", icon: Sparkles, active: pathname === `/${locale}/ada` },
     { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
     { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
