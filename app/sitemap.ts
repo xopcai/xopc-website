@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates("/ada") },
   }));
 
-  const legalPages = ["privacy", "support"].flatMap((page) =>
+  const legalPages = ["privacy", "support", "terms"].flatMap((page) =>
     locales.map((locale) => ({
       url: `${origin}/${locale}/${page}`,
       changeFrequency: "monthly" as const,

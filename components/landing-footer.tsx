@@ -56,6 +56,7 @@ export function LandingFooter({ footer, docsHref, locale }: Props) {
             </a>
           </li>
           <li><a href={`/${locale}/privacy`}>{footer.privacy}</a></li>
+          <li><a href={`/${locale}/terms`}>{locale === "zh" ? "鸿蒙测试用户协议" : "HarmonyOS test terms"}</a></li>
           <li><a href={`/${locale}/support`}>{footer.support}</a></li>
         </ul>
         </section>

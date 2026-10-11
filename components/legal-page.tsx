@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
 import { LANDING_GITHUB_REPO } from "@/lib/landing-urls";
+import { harmonyTermsContent, harmonyPrivacyUrl } from "@/lib/harmony-terms";
 
 const contactEmail = "lyxopc.ai@gmail.com";
 
@@ -230,9 +231,9 @@ const supportContent: Record<Locale, LegalContent> = {
   },
 };
 
-export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messages: Messages; kind: "privacy" | "support" }) {
-  const content = (kind === "privacy" ? privacyContent : supportContent)[locale];
-  const otherKindHref = `/${locale}/${kind === "privacy" ? "support" : "privacy"}`;
+export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messages: Messages; kind: "privacy" | "support" | "terms" }) {
+  const content: LegalContent = (kind === "terms" ? harmonyTermsContent : kind === "privacy" ? privacyContent : supportContent)[locale];
+  const otherKindHref = kind === "terms" ? harmonyPrivacyUrl : `/${locale}/${kind === "privacy" ? "support" : "privacy"}`;
   const otherKindLabel = kind === "privacy"
     ? locale === "zh" ? "支持与帮助" : "Support"
     : locale === "zh" ? "隐私政策" : "Privacy Policy";
@@ -271,6 +272,7 @@ export function LegalPage({ locale, messages: m, kind }: { locale: Locale; messa
         </header>
 
         <article className="legal-article">
+          {kind === "terms" ? <p><a href={harmonyPrivacyUrl}>{locale === "zh" ? "阅读鸿蒙测试版隐私政策" : "Read the HarmonyOS test privacy policy"}</a></p> : null}
           {content.sections.map((section) => (
             <section key={section.title}>
               <h2>{section.title}</h2>
