@@ -33,7 +33,7 @@ function reportData() {
         COUNT(DISTINCT CASE WHEN event = 'download_section_viewed' THEN session_id END) AS downloadSectionSessions,
         COUNT(DISTINCT CASE WHEN event IN (${placeholders}) THEN session_id END) AS downloadClickSessions,
         SUM(event = 'download_started') AS downloadStarts,
-        SUM(event = 'ios_beta_signup_succeeded') AS signups
+        SUM(event IN ('ios_beta_signup_succeeded', 'harmony_beta_signup_succeeded')) AS signups
       FROM product_events
       WHERE created_at >= ?
     `).get(...DOWNLOAD_CLICK_EVENTS, start);
@@ -92,7 +92,7 @@ function formatReport(data) {
     `下载区曝光：${number(totals.downloadSectionSessions)} 会话`,
     `下载点击：${number(totals.downloadClickSessions)} 会话（转化率 ${percentage(totals.downloadClickSessions, totals.sessions)}）`,
     `真实安装包请求：${number(totals.downloadStarts)}`,
-    `iOS 新报名：${number(totals.signups)}`,
+    `内测新报名（iOS / 鸿蒙）：${number(totals.signups)}`,
     "",
     breakdown("主要来源", sources),
     breakdown("下载平台", platforms),

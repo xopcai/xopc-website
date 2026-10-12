@@ -1,8 +1,9 @@
 "use client";
 
-import { CheckCircle2, Download, ExternalLink, Mail, QrCode } from "lucide-react";
+import { CheckCircle2, Download, ExternalLink, Mail, Phone, QrCode } from "lucide-react";
 import Image from "next/image";
 import { type FormEvent, useEffect, useId, useState } from "react";
+import { normalizeHarmonyPhone } from "@/lib/beta-signup-validation";
 import type { Locale } from "@/lib/i18n/config";
 
 import type { DownloadPlatform, DownloadResolution } from "@/lib/download-resolution";
@@ -152,15 +153,76 @@ export function AndroidDownload({
   );
 }
 
-function HarmonyDownload({ d }: { d: DownloadMessages }) {
+function HarmonyDownload({ d, locale }: { d: DownloadMessages; locale: Locale }) {
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [error, setError] = useState("");
+  const id = useId();
+
+  function validatePhone() {
+    const valid = normalizeHarmonyPhone(phone) !== null;
+    setError(valid ? "" : d.harmonyInvalidPhone);
+    return valid;
+  }
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitState === "submitting" || !validatePhone()) return;
+    setSubmitState("submitting");
+    try {
+      const response = await fetch("/api/beta-signups", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(12_000),
+        body: JSON.stringify({ phone, company, program: "harmony-invited-test", locale, source: "landing" }),
+      });
+      if (!response.ok) {
+        setError(response.status === 429 ? d.harmonyRateLimited : response.status === 400 ? d.harmonyInvalidPhone : d.harmonyError);
+        setSubmitState("error");
+        return;
+      }
+      setSubmitState("success");
+    } catch {
+      setError(d.harmonyError);
+      setSubmitState("error");
+    }
+  }
+
+  if (submitState === "success") {
+    return (
+      <article id="harmony-beta" className="mobile-app-panel mobile-app-panel--harmony mobile-app-panel--success" role="status">
+        <CheckCircle2 aria-hidden />
+        <div><h3>{d.harmonySuccessTitle}</h3><p>{d.harmonySuccessBody}</p></div>
+      </article>
+    );
+  }
+
   return (
-    <article className="mobile-app-panel mobile-app-panel--harmony">
+    <article id="harmony-beta" className="mobile-app-panel mobile-app-panel--harmony">
       <div className="mobile-app-panel-copy">
         <span className="mobile-app-eyebrow">{d.harmonyEyebrow}</span>
         <h3>{d.harmonyTitle}</h3>
         <p>{d.harmonyBody}</p>
+        <span className="mobile-app-status-badge">{d.harmonyStatus}</span>
       </div>
-      <span className="mobile-app-status-badge">{d.harmonyStatus}</span>
+      <form className="mobile-app-signup" onSubmit={submit} aria-busy={submitState === "submitting"}>
+        <input className="mobile-app-signup-trap" type="text" name="company" value={company} onChange={event => setCompany(event.target.value)} autoComplete="off" tabIndex={-1} aria-hidden="true" />
+        <label htmlFor={id}>{d.harmonyPhoneLabel}</label>
+        <div className="mobile-app-signup-row">
+          <div className="mobile-app-email-field">
+            <Phone aria-hidden />
+            <input id={id} name="phone" type="tel" inputMode="tel" autoComplete="tel" maxLength={32} required
+              value={phone} placeholder={d.harmonyPhonePlaceholder} disabled={submitState === "submitting"}
+              aria-invalid={error === d.harmonyInvalidPhone} aria-describedby={`${id}-note${error ? ` ${id}-error` : ""}`}
+              onBlur={() => { if (phone) validatePhone(); }}
+              onChange={event => { setPhone(event.target.value); setError(""); setSubmitState("idle"); }} />
+          </div>
+          <button type="submit" disabled={submitState === "submitting"}>{submitState === "submitting" ? d.harmonySubmitting : d.harmonySubmit}</button>
+        </div>
+        {error ? <p id={`${id}-error`} className="mobile-app-form-error" role="alert">{error}</p> : null}
+        <p id={`${id}-note`} className="mobile-app-form-note">{d.harmonyPrivacy} <a href={`/${locale}/privacy`}>{d.harmonyPrivacyLink}</a></p>
+      </form>
     </article>
   );
 }
@@ -303,7 +365,7 @@ export function MobileDownloads({ d, locale = "zh" }: { d: DownloadMessages; loc
         <div className="mobile-download-grid">
           <AndroidDownload d={d} locale={locale} />
           <IosDownload d={d} locale={locale} />
-          <HarmonyDownload d={d} />
+          <HarmonyDownload d={d} locale={locale} />
         </div>
       </div>
     </section>

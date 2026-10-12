@@ -45,7 +45,7 @@ export default async function AnalyticsPage() {
     ["下载区会话", summary.totals.downloadSectionSessions],
     ["下载点击会话", summary.totals.downloadClickSessions],
     ["安装包请求", summary.totals.downloadStarts],
-    ["iOS 新报名", summary.totals.signups],
+    ["内测新报名（iOS / 鸿蒙）", summary.totals.signups],
   ] as const;
 
   return (

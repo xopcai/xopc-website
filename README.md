@@ -28,7 +28,7 @@ pnpm build
 - `IOS_DISTRIBUTION_STATUS` controls iOS distribution: `accepting`, `paused`, `public`, or `released`.
 - `IOS_DISTRIBUTION_URL` is required for `public` and `released` iOS states.
 - `RELEASE_DOWNLOAD_PUBLIC_BASE_URL` switches release links to a mirrored CDN using `<base>/<tag>/<filename>`.
-- `SITE_DATABASE_PATH` sets the SQLite file used for iOS beta signups and anonymous product events.
+- `SITE_DATABASE_PATH` sets the SQLite file used for iOS and HarmonyOS beta signups and anonymous product events.
 - `ANALYTICS_ADMIN_USER` and `ANALYTICS_ADMIN_PASSWORD` protect `/admin/analytics` with HTTP Basic Auth.
 
 The default SQLite path is `.data/xopc-website.sqlite3`. Back up that file together with its `-wal`
@@ -42,7 +42,7 @@ is stored. The dashboard shows the latest 30 days at `/admin/analytics` and is u
 admin credentials are configured.
 
 Client events capture page path, external referrer domain, UTM attribution, locale and coarse device
-type. Successful iOS beta signups and installation-package requests are recorded on the server. Raw
+type. Successful iOS and HarmonyOS beta signups and installation-package requests are recorded on the server. Raw
 events are retained for 180 days.
 
 The production deploy script installs a user crontab that sends a Telegram summary every day at
@@ -164,3 +164,14 @@ share artwork, reciprocal language links, and a canonical URL for each language.
 Articles focus on concrete problems, design decisions, and trade-offs. The published registry in
 `lib/blog.ts` drives the index, article routes and sitemap. New social artwork
 lives beside each article in `content/blog/<slug>/images/`.
+
+## HarmonyOS invited beta
+
+The homepage mobile-download section (`#harmony-beta`) accepts mainland China mobile numbers
+linked to Huawei accounts, including optional `+86` or `0086` prefixes. `/api/beta-signups`
+accepts `program: "harmony-invited-test"` with `phone`, `locale`, and `source`.
+Requests are deduplicated in `harmony_beta_signups`, leaving existing iOS records untouched.
+The existing `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` send the phone number to the team
+for manual addition to the Huawei testing group. A failed notification returns a retryable
+error; resubmitting a saved, unnotified number retries delivery. Notified requests do not
+send another notification on later submissions. Run `node --test scripts/test-beta-signups.mjs`.

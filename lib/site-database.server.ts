@@ -65,6 +65,16 @@ export function getSiteDatabase(): Database.Database {
       invited_at TEXT,
       UNIQUE(email, program)
     );
+    CREATE TABLE IF NOT EXISTS harmony_beta_signups (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      phone TEXT NOT NULL UNIQUE,
+      locale TEXT NOT NULL CHECK (locale IN ('zh', 'en')),
+      status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'invited', 'accepted', 'removed')),
+      source TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      invited_at TEXT,
+      notified_at TEXT
+    );
     CREATE TABLE IF NOT EXISTS product_events (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       event TEXT NOT NULL,
@@ -136,6 +146,22 @@ export function createIosBetaSignup(input: SignupInput): { created: boolean } {
     `)
     .run({ ...input, createdAt: new Date().toISOString() });
   return { created: result.changes === 1 };
+}
+
+export function createHarmonyBetaSignup(input: { phone: string; locale: SiteLocale; source: string }): { created: boolean; notified: boolean } {
+  const db = getSiteDatabase();
+  const result = db.prepare(`
+    INSERT INTO harmony_beta_signups (phone, locale, source, created_at)
+    VALUES (@phone, @locale, @source, @createdAt)
+    ON CONFLICT(phone) DO NOTHING
+  `).run({ ...input, createdAt: new Date().toISOString() });
+  const row = db.prepare("SELECT notified_at FROM harmony_beta_signups WHERE phone = ?").get(input.phone) as { notified_at: string | null };
+  return { created: result.changes === 1, notified: row.notified_at !== null };
+}
+
+export function markHarmonyBetaSignupNotified(phone: string): void {
+  getSiteDatabase().prepare("UPDATE harmony_beta_signups SET notified_at = ? WHERE phone = ?")
+    .run(new Date().toISOString(), phone);
 }
 
 export function recordProductEvent(input: ProductEventInput): void {

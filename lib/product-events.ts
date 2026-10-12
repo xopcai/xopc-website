@@ -10,6 +10,7 @@ export const PRODUCT_EVENT_NAMES = [
   "desktop_download_clicked",
   "android_download_clicked",
   "ios_beta_signup_succeeded",
+  "harmony_beta_signup_succeeded",
   "ios_download_clicked",
   "download_started",
   "use_case_open_clicked",

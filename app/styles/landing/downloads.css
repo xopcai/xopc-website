@@ -492,10 +492,8 @@
     }
 
     .landing-page .mobile-app-panel--harmony .mobile-app-panel-copy{
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0 16px;
+      flex: 1 1 45%;
+      min-width: 0;
     }
 
     .landing-page .mobile-app-panel--harmony .mobile-app-eyebrow{
@@ -505,6 +503,19 @@
 
     .landing-page .mobile-app-panel--harmony .mobile-app-panel-copy > p{
       margin: 0;
+    }
+
+    .landing-page .mobile-app-panel--harmony .mobile-app-signup{
+      flex: 1 1 55%;
+      min-width: 0;
+    }
+
+    .landing-page .mobile-app-panel--harmony .mobile-app-status-badge{
+      margin-top: 12px;
+    }
+
+    .landing-page .mobile-app-form-note a{
+      text-decoration: underline;
     }
 
     .landing-page .mobile-app-signup{

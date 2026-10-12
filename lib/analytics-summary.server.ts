@@ -54,7 +54,7 @@ export function getAnalyticsSummary(days = 30): AnalyticsSummary {
       COUNT(DISTINCT CASE WHEN event = 'download_section_viewed' THEN session_id END) AS downloadSectionSessions,
       COUNT(DISTINCT CASE WHEN event IN (${clickPlaceholders}) THEN session_id END) AS downloadClickSessions,
       SUM(event = 'download_started') AS downloadStarts,
-      SUM(event = 'ios_beta_signup_succeeded') AS signups
+      SUM(event IN ('ios_beta_signup_succeeded', 'harmony_beta_signup_succeeded')) AS signups
     FROM product_events
     WHERE created_at >= ?
   `).get(...DOWNLOAD_CLICK_EVENTS, start) as Record<string, number | null>;
@@ -66,7 +66,7 @@ export function getAnalyticsSummary(days = 30): AnalyticsSummary {
       COUNT(DISTINCT CASE WHEN event = 'page_viewed' THEN session_id END) AS sessions,
       SUM(event IN (${clickPlaceholders})) AS downloadClicks,
       SUM(event = 'download_started') AS downloadStarts,
-      SUM(event = 'ios_beta_signup_succeeded') AS signups
+      SUM(event IN ('ios_beta_signup_succeeded', 'harmony_beta_signup_succeeded')) AS signups
     FROM product_events
     WHERE created_at >= ?
     GROUP BY date(created_at, 'localtime')
