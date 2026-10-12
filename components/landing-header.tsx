@@ -15,7 +15,7 @@ type Props = {
   header: Messages["header"];
   nav: Messages["landing"]["nav"];
   docHome: string;
-  activePage?: "use-cases" | "product-map" | "learn" | "blog" | "ada";
+  activePage?: "xopc" | "use-cases" | "product-map" | "learn" | "blog" | "ada";
   locationSuffix?: string;
   reserveSpace?: boolean;
 };
@@ -25,7 +25,7 @@ export function LandingHeader({
   header,
   nav,
   docHome,
-  activePage,
+  activePage = "xopc",
   locationSuffix = "",
   reserveSpace = false,
 }: Props) {
@@ -47,6 +47,7 @@ export function LandingHeader({
             </div>
           </div>
           <ul className="nav-links">
+            <li><AnimatedRouteLink href={home} className={activePage === "xopc" ? "is-active" : undefined} aria-current={activePage === "xopc" ? "page" : undefined}>xopc</AnimatedRouteLink></li>
             <li><AnimatedRouteLink href={`${home}/ada`} className={activePage === "ada" ? "is-active" : undefined} aria-current={activePage === "ada" ? "page" : undefined}>Ada</AnimatedRouteLink></li>
             <li>
               <AnimatedRouteLink
@@ -63,7 +64,7 @@ export function LandingHeader({
           </ul>
           <div className="nav-extra">
             <Link
-              href={activePage ? `${home}#download` : "#download"}
+              href={activePage === "xopc" ? "#download" : `${home}#download`}
               className="nav-download-cta"
               data-product-event="nav_download_clicked"
             >
