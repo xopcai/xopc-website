@@ -25,7 +25,7 @@ pnpm build
 ## Distribution configuration
 
 - `DESKTOP_RELEASE_TAG` and `MOBILE_RELEASE_TAG` optionally pin each independent release channel.
-- `IOS_DISTRIBUTION_STATUS` controls iOS distribution: `accepting`, `paused`, `public`, or `released`.
+- `IOS_DISTRIBUTION_STATUS` controls iOS distribution: `accepting`, `paused`, `public`, or `released`. When unset, the website uses the public TestFlight invitation at https://testflight.apple.com/join/mGu7DU1T. Mobile visitors can join directly; desktop visitors also see a QR code for their iPhone or iPad.
 - `IOS_DISTRIBUTION_URL` is required for `public` and `released` iOS states.
 - `RELEASE_DOWNLOAD_PUBLIC_BASE_URL` switches release links to a mirrored CDN using `<base>/<tag>/<filename>`.
 - `SITE_DATABASE_PATH` sets the SQLite file used for iOS and HarmonyOS beta signups and anonymous product events.

@@ -121,8 +121,17 @@
       "iosPausedBody": "下一批 TestFlight 开放时，可在这里继续申请。",
       "iosAvailableTitle": "xopc iOS 应用已开放",
       "iosAvailableBody": "打开官方分发页面安装 xopc，然后连接你的 runtime。",
-      "iosOpenTestFlight": "打开 TestFlight",
-      "iosOpenAppStore": "打开 App Store"
+      "iosOpenTestFlight": "加入 TestFlight 测试",
+      "iosOpenAppStore": "打开 App Store",
+      "iosTestFlightTitle": "iOS 公开测试已开放",
+      "iosTestFlightBody": "在 iPhone / iPad 上点击下方按钮加入测试；在电脑上浏览时，可用手机相机扫描二维码。",
+      "iosInstallBefore": "首次安装？先",
+      "iosInstallTestFlight": "安装 TestFlight",
+      "iosInstallAfter": "，再返回点击加入测试，接受邀请并安装 xopc。",
+      "iosQrAlt": "xopc iOS TestFlight 公开测试邀请二维码",
+      "iosQrTitle": "用 iPhone / iPad 扫码加入测试",
+      "iosQrLoading": "正在生成二维码…",
+      "iosQrUnavailable": "二维码暂时不可用，请在 iPhone / iPad 上打开加入测试链接。"
     },
     "mobilePage": {
       "metaTitle": "下载 xopc 手机 App",

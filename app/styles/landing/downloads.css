@@ -482,6 +482,59 @@
       justify-content: space-between;
     }
 
+    .landing-page .ios-download-actions{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .landing-page .ios-download-direct{
+      flex: 1 1 180px;
+      min-width: 0;
+    }
+    .landing-page .ios-install-note{
+      margin: 12px 0 0;
+      color: var(--fg-mid);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .landing-page .ios-install-note a{
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .landing-page .ios-download-qr{
+      display: none;
+      flex: 0 0 184px;
+      margin: 0;
+      text-align: center;
+    }
+    .landing-page .ios-download-qr img{
+      display: block;
+      border-radius: 8px;
+    }
+    .landing-page .ios-download-qr-status{
+      display: grid;
+      place-items: center;
+      width: 184px;
+      height: 184px;
+      padding: 16px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--fg-mid);
+    }
+    .landing-page .ios-download-qr figcaption{
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--fg-mid);
+    }
+    @media (min-width: 761px) and (hover: hover) and (pointer: fine) {
+      .landing-page .ios-download-qr{
+        display: block;
+      }
+    }
+
     .landing-page .mobile-app-panel--harmony{
       grid-column: 1 / -1;
       min-height: 0;

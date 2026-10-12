@@ -331,24 +331,68 @@ export function IosDownload({ d, attributionMethod, locale = "zh" }: { d: Downlo
     );
   }
 
-  const asset = payload.assets[0];
+  return <IosPublicDownload d={d} url={payload.assets[0].url} channel={payload.channel} attributionMethod={attributionMethod} />;
+}
+
+function IosPublicDownload({ d, url, channel, attributionMethod }: {
+  d: DownloadMessages;
+  url: string;
+  channel: "ios-testflight" | "ios-app-store";
+  attributionMethod?: string;
+}) {
+  const isTestFlight = channel === "ios-testflight";
+  const [qr, setQr] = useState<{ url: string; dataUrl: string | null } | null>(null);
+
+  useEffect(() => {
+    if (!isTestFlight) return;
+    let cancelled = false;
+    void import("qrcode")
+      .then((qrCode) => qrCode.toDataURL(url, {
+        width: 184,
+        margin: 4,
+        errorCorrectionLevel: "M",
+        color: { dark: "#0b0d10", light: "#ffffff" },
+      }))
+      .then((dataUrl) => { if (!cancelled) setQr({ url, dataUrl }); })
+      .catch(() => { if (!cancelled) setQr({ url, dataUrl: null }); });
+    return () => { cancelled = true; };
+  }, [url, isTestFlight]);
+
+  const currentQr = qr?.url === url ? qr : null;
   return (
-    <article className="mobile-app-panel">
+    <article className="mobile-app-panel mobile-app-panel--ios">
       <div className="mobile-app-panel-copy">
         <span className="mobile-app-eyebrow">{d.iosEyebrow}</span>
-        <h3>{d.iosAvailableTitle}</h3>
-        <p>{d.iosAvailableBody}</p>
+        <h3>{isTestFlight ? d.iosTestFlightTitle : d.iosAvailableTitle}</h3>
+        <p>{isTestFlight ? d.iosTestFlightBody : d.iosAvailableBody}</p>
       </div>
-      <a
-        className="mobile-app-primary-action"
-        href={asset.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => trackProductEvent("ios_download_clicked", { method: attributionMethod, platform: "ios" })}
-      >
-        <ExternalLink aria-hidden />
-        {payload.channel === "ios-app-store" ? d.iosOpenAppStore : d.iosOpenTestFlight}
-      </a>
+      <div className="ios-download-actions">
+        <div className="ios-download-direct">
+          <a
+            className="mobile-app-primary-action"
+            href={url}
+            onClick={() => trackProductEvent("ios_download_clicked", { method: attributionMethod, platform: "ios" })}
+          >
+            <ExternalLink aria-hidden />
+            {isTestFlight ? d.iosOpenTestFlight : d.iosOpenAppStore}
+          </a>
+          {isTestFlight ? (
+            <p className="ios-install-note">
+              {d.iosInstallBefore} <a href="https://apps.apple.com/app/testflight/id899247664">{d.iosInstallTestFlight}</a>{d.iosInstallAfter}
+            </p>
+          ) : null}
+        </div>
+        {isTestFlight ? (
+          <figure className="ios-download-qr">
+            {currentQr?.dataUrl ? (
+              <Image src={currentQr.dataUrl} width={184} height={184} unoptimized alt={d.iosQrAlt} />
+            ) : (
+              <div className="ios-download-qr-status" role="status">{currentQr ? d.iosQrUnavailable : d.iosQrLoading}</div>
+            )}
+            <figcaption>{d.iosQrTitle}</figcaption>
+          </figure>
+        ) : null}
+      </div>
     </article>
   );
 }

@@ -17,7 +17,7 @@ function httpUrl(value: string | undefined): string | null {
 
 export function iosDistribution(): IosDistribution {
   const configured = process.env.IOS_DISTRIBUTION_STATUS?.trim().toLowerCase();
-  if (!configured) return { status: "accepting" };
+  if (!configured) return { status: "public", url: "https://testflight.apple.com/join/mGu7DU1T" };
   const status = configured;
   if (status === "paused") return { status };
   if (status === "public" || status === "released") {

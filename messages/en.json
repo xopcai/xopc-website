@@ -121,8 +121,17 @@
       "iosPausedBody": "Requests will reopen here when the next TestFlight batch is available.",
       "iosAvailableTitle": "xopc for iOS is available",
       "iosAvailableBody": "Open the official distribution page, install xopc, then connect your runtime.",
-      "iosOpenTestFlight": "Open TestFlight",
-      "iosOpenAppStore": "Open App Store"
+      "iosOpenTestFlight": "Join the TestFlight beta",
+      "iosOpenAppStore": "Open App Store",
+      "iosTestFlightTitle": "Join the iOS public beta",
+      "iosTestFlightBody": "On iPhone or iPad, tap the button below to join. On a computer, scan the QR code with your device’s camera.",
+      "iosInstallBefore": "First time? ",
+      "iosInstallTestFlight": "Install TestFlight",
+      "iosInstallAfter": ", then return here to join the beta, accept the invitation, and install xopc.",
+      "iosQrAlt": "QR code for the xopc iOS public TestFlight invitation",
+      "iosQrTitle": "Scan with iPhone or iPad to join",
+      "iosQrLoading": "Generating QR code…",
+      "iosQrUnavailable": "QR code unavailable. Open the beta invitation link on your iPhone or iPad."
     },
     "mobilePage": {
       "metaTitle": "Download the xopc mobile app",
