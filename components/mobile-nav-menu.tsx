@@ -78,7 +78,7 @@ export function MobileNavMenu({
   const close = () => setOpen(false);
   const items = [
     { href: `/${locale}`, label: "xopc", hint: text.homeHint, icon: Home, active: pathname === `/${locale}` },
-    { href: `/${locale}/loopi`, label: "Loopi", hint: locale === "zh" ? "认识你的个人 Agent" : "Meet your personal Agent", icon: Sparkles, active: pathname === `/${locale}/loopi` },
+    { href: `/${locale}/ada`, label: "Ada", hint: locale === "zh" ? "认识你的个人 Agent" : "Meet your personal Agent", icon: Sparkles, active: pathname === `/${locale}/ada` },
     { href: `/${locale}/use-cases`, label: text.cases, hint: text.casesHint, icon: Sparkles, active: pathname === `/${locale}/use-cases` },
     { href: `/${locale}/learn`, label: text.learn, hint: text.learnHint, icon: BookOpen, active: pathname === `/${locale}/learn` },
     { href: `/${locale}/blog`, label: text.blog, hint: text.blogHint, icon: BookOpen, active: pathname.startsWith(`/${locale}/blog`) },

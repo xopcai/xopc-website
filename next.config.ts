@@ -12,8 +12,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/:locale(zh|en)/ada",
-        destination: "/:locale/loopi",
+        source: "/:locale(zh|en)/loopi",
+        destination: "/:locale/ada",
         permanent: true,
       },
       {

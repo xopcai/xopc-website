@@ -21,11 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: languageAlternates() },
   }));
 
-  const loopiPages: MetadataRoute.Sitemap = locales.map((locale) => ({
-    url: `${origin}/${locale}/loopi`,
+  const adaPages: MetadataRoute.Sitemap = locales.map((locale) => ({
+    url: `${origin}/${locale}/ada`,
     changeFrequency: "monthly",
     priority: 0.9,
-    alternates: { languages: languageAlternates("/loopi") },
+    alternates: { languages: languageAlternates("/ada") },
   }));
 
   const legalPages = ["privacy", "support", "terms"].flatMap((page) =>
@@ -63,5 +63,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogArticles.map((article) => ({ url: `${origin}${article.path}`, lastModified: article.date, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: Object.fromEntries(Object.entries(blogAlternates(article.slug)).map(([locale, path]) => [locale, `${origin}${path}`])) } })),
   ];
 
-  return [...blogPages, ...homePages, ...loopiPages, ...useCasePages, ...mapPages, ...learnPages, ...legalPages];
+  return [...blogPages, ...homePages, ...adaPages, ...useCasePages, ...mapPages, ...learnPages, ...legalPages];
 }

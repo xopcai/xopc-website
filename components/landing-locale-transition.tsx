@@ -11,7 +11,7 @@ export function LandingLocaleTransition() {
 
     const home = window.location.pathname.match(/^\/(zh|en)\/?$/);
     if (home && window.location.hash === "#personal-ai") {
-      window.location.replace(`/${home[1]}/loopi`);
+      window.location.replace(`/${home[1]}/ada`);
       return;
     }
     if (home && window.location.hash === "#work") {
