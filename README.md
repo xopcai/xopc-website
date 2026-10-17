@@ -114,26 +114,26 @@ The public map links to localized product guides where available and labels Engl
 ## Short product films
 
 The homepage retains its work-focused story and the concise bilingual Work v2 introduction.
-Ada is xopc's personal Agent, introduced through a dedicated menu and `/zh/ada`
-and `/en/ada`. It starts with personal context, then discussion, delegation and an
-inspectable result. Ada belongs to xopc and shares its download and controls.
+Loopi is xopc's personal Agent, introduced through a dedicated menu and `/zh/loopi`
+and `/en/loopi`. It starts with personal context, then discussion, delegation and an
+inspectable result. Loopi belongs to xopc and shares its download and controls.
 
-- Ada page and bilingual copy: `components/ada-page.tsx`, `lib/ada-copy.ts`
-- Interactive companion: `components/ada-companion.tsx`, reusing animated Loopi
+- Loopi page and bilingual copy: `components/loopi-page.tsx`, `lib/loopi-copy.ts`
+- Interactive companion: `components/loopi-companion.tsx`, reusing animated Loopi
 - Homepage Work film: `lib/work-film.ts`, `content/work/manifest.json`, `public/media/product/work/v2/`
-- Ada media resolver and release: `lib/ada.ts`, `content/ada/manifest.json`
+- Loopi media resolver and release: `lib/loopi-film.ts`, `content/ada/manifest.json`
 - Video: `public/media/product/ada/v1/{zh-CN,en-US}/`
 - Reviewed localized previews and provenance: `content/ada/previews.json`
-- Narrative and maintenance: `content/marketing/ada.md`
+- Narrative and maintenance: `content/marketing/loopi.md`
 - Editable source: sibling `xopc-tutorials/videos/xopc-personal-agent-intro/`
 
-Synchronize verified Ada deliveries with `node scripts/sync-ada.mjs
+Synchronize the historical Ada recordings with `node scripts/sync-ada.mjs
 ../xopc-tutorials/videos/xopc-personal-agent-intro/delivery/ada/v1`.
 Use `node scripts/sync-ada-previews.mjs` for reviewed previews. Both scripts
 verify hashes and preserve immutable published versions. Raw captures, credentials,
 fonts and logs remain private. Media uses Git LFS.
 
-Ada videos open only after a click in the centered, keyboard-accessible
+Personal Agent videos open only after a click in the centered, keyboard-accessible
 `ProductFilmButton` modal. Closing removes the player and returns focus. Each
 locale selects its own real conversation, narration, captions and previews;
 section buttons seek to corresponding release chapters. Visible subtitles are
@@ -142,7 +142,7 @@ embedded; optional tracks are off by default to avoid duplicate text.
 Previous Personal AI and Work releases remain available at their original URLs.
 Their former homepage narrative is documented in
 `content/marketing/personal-ai-work.md`. Legacy `#personal-ai` links redirect to
-the localized Ada page; `#work` links redirect to the restored homepage film.
+the localized Loopi page; `#work` links redirect to the restored homepage film.
 
 The learn page features the 45-second portrait office overview at
 `/zh/learn?course=office-overview` (and `/en/learn?course=office-overview`).
@@ -175,3 +175,5 @@ The existing `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` send the phone number t
 for manual addition to the Huawei testing group. A failed notification returns a retryable
 error; resubmitting a saved, unnotified number retries delivery. Notified requests do not
 send another notification on later submissions. Run `node --test scripts/test-beta-signups.mjs`.
+
+The former `/zh/ada` and `/en/ada` routes permanently redirect to the Loopi pages. Historical media under `public/media/product/ada/` and its integrity manifests remain unchanged. The page explains that these recordings predate the rename.

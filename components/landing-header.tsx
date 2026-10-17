@@ -15,7 +15,7 @@ type Props = {
   header: Messages["header"];
   nav: Messages["landing"]["nav"];
   docHome: string;
-  activePage?: "xopc" | "use-cases" | "product-map" | "learn" | "blog" | "ada";
+  activePage?: "xopc" | "use-cases" | "product-map" | "learn" | "blog" | "loopi";
   locationSuffix?: string;
   reserveSpace?: boolean;
 };
@@ -48,7 +48,7 @@ export function LandingHeader({
           </div>
           <ul className="nav-links">
             <li><AnimatedRouteLink href={home} className={activePage === "xopc" ? "is-active" : undefined} aria-current={activePage === "xopc" ? "page" : undefined}>xopc</AnimatedRouteLink></li>
-            <li><AnimatedRouteLink href={`${home}/ada`} className={activePage === "ada" ? "is-active" : undefined} aria-current={activePage === "ada" ? "page" : undefined}>Ada</AnimatedRouteLink></li>
+            <li><AnimatedRouteLink href={`${home}/loopi`} className={activePage === "loopi" ? "is-active" : undefined} aria-current={activePage === "loopi" ? "page" : undefined}>Loopi</AnimatedRouteLink></li>
             <li>
               <AnimatedRouteLink
                 href={`${home}/use-cases`}
