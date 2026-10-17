@@ -9,13 +9,11 @@ loadEnvFiles();
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [{ source: "/:locale(zh|en)/loopi", destination: "/:locale/ada" }];
+  },
   async redirects() {
     return [
-      {
-        source: "/:locale(zh|en)/loopi",
-        destination: "/:locale/ada",
-        permanent: true,
-      },
       {
         source: "/:locale(zh|en)/mobile",
         destination: "/:locale#mobile-download",
