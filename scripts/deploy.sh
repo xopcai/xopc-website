@@ -79,6 +79,8 @@ main() {
         --exclude='node_modules' \
         --exclude='.next' \
         --exclude='.git' \
+        --exclude='.docs' \
+        --exclude='.zshrc.local' \
         --exclude='.data' \
         --exclude='.xopc-share-staging' \
         --exclude='.DS_Store' \

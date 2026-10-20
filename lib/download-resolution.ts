@@ -31,7 +31,7 @@ export type DownloadResolution =
       channel: "ios-testflight" | "ios-app-store";
       assets: [{ name: string; url: string }];
     }
-  | { ok: false; platform: DownloadPlatform; status: "unavailable" };
+  | { ok: false; platform: DownloadPlatform; status: "unavailable"; reason?: "assets-pending" };
 
 export const DOWNLOAD_PLATFORMS: DownloadPlatform[] = [
   "macos",

@@ -1,7 +1,8 @@
 export const storyCopy = {
   zh: {
     eyebrow: "为一个人，也为你的每一个想法。", headline: ["一个人，", "也能让想法走得更远。"],
-    description: "记住来时的路，接住未完成的事。xopc 是与你一起把工作向前推进的个人 AI。",
+    description: "记住来时的路，接住未完成的事。一个运行在你电脑上、与你一起把工作向前推进的个人 AI。",
+    watch: "观看真实演示",
     download: "下载 xopc", begin: "从一个故事开始", hello: "没关系，我们接着来。",
     deskLabel: "未完成的项目、想法和待办围绕着Loopi", notes: ["那个一直想发布的项目", "灵感 · 昨晚 23:41", "如果，这次真的做出来呢？", "发布之前…", "整理用户反馈", "决定第一版的范围"], stalled: "上次打开，12 天前",
     intro: ["不是不想做。", "只是每次回来，都像重新开始。"],
@@ -27,7 +28,8 @@ export const storyCopy = {
   },
   en: {
     eyebrow: "For you. And everything you want to make.", headline: ["On your own.", "Further, together."],
-    description: "A little less to carry. A little more momentum. Meet the personal AI that remembers where you left off and helps you move forward.",
+    description: "A little less to carry. A little more momentum. Meet the personal AI on your computer that remembers where you left off and helps you move forward.",
+    watch: "Watch the real demo",
     download: "Download xopc", begin: "Follow the story", hello: "It's okay. Let's pick it back up.",
     deskLabel: "Unfinished projects, ideas and to-dos surrounding Loopi", notes: ["That project I keep coming back to", "A THOUGHT · 11:41 PM", "What if I actually made it?", "BEFORE THE LAUNCH…", "Read the user feedback", "Decide what belongs in v1"], stalled: "Last opened 12 days ago",
     intro: ["The idea is still there.", "So why does it feel like starting over?"], introDesc: "Decisions buried in chats. Ideas tucked into files. That one task you never quite get to. Let's pick up a little launch plan together.",

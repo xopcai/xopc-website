@@ -48,7 +48,7 @@ export function AdaPage({ locale, messages, docHome }: Props) {
       const image = images[stage.image];
       return <section className={styles.stage} key={stage.image} aria-labelledby={`ada-step-${index}`}>
         <div className={styles.stageCopy}><p className={styles.number}>0{index + 1}</p><h2 id={`ada-step-${index}`}>{stage.title}</h2><p>{stage.body}</p>
-          <ProductFilmButton locale={locale} film={film} title={c.film} label={stage.watch} start={film.chapters[stage.chapter].start} />
+          <ProductFilmButton locale={locale} film={film} title={c.film} label={stage.watch} start={film.chapters[stage.chapter].start} analyticsMethod={`ada-chapter-${index + 1}`} />
         </div>
         <div className={styles.stagePreview}><div className={styles.screen} tabIndex={0} role="region" aria-label={stage.alt}>
           <Image src={image.src} width={image.width} height={image.height} alt={stage.alt} sizes="(max-width: 720px) 600px, 720px" />

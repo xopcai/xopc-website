@@ -2,23 +2,10 @@
 
 import { useEffect } from "react";
 
-import { isProductEventName, trackProductEvent } from "@/lib/product-events";
+import { trackProductEvent } from "@/lib/product-events";
 
 export function LandingAnalytics() {
   useEffect(() => {
-    const onClick = (event: MouseEvent) => {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-      const tracked = target.closest<HTMLElement>("[data-product-event]");
-      if (!tracked) return;
-
-      const eventName = tracked.dataset.productEvent;
-      if (!isProductEventName(eventName)) return;
-      trackProductEvent(eventName, { method: tracked.dataset.productMethod });
-    };
-
-    document.addEventListener("click", onClick);
-
     const downloadSection = document.getElementById("download");
     const observer = downloadSection && "IntersectionObserver" in window
       ? new IntersectionObserver(
@@ -34,7 +21,6 @@ export function LandingAnalytics() {
     if (downloadSection && observer) observer.observe(downloadSection);
 
     return () => {
-      document.removeEventListener("click", onClick);
       observer?.disconnect();
     };
   }, []);

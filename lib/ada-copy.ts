@@ -2,9 +2,9 @@ export const adaCopy = {
   zh: {
     meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中属于你的个人 Agent。聊聊近况，交办一件事，检查结果，再一起打磨。" },
     eyebrow: "xopc 的个人 Agent", headline: ["认识 Ada。", "慢慢说，我在听。"],
-    description: "忙碌的日子，没想好的事，还有突然冒出的灵感。和 Ada 聊聊，再一起往前走。",
+    description: "Ada 是 xopc 里的个人 Agent。和你理清目标，接下任务，把可检查、可修改的结果带回来。",
     download: "下载 xopc，认识 Ada", watch: "观看 Ada 介绍", film: "Ada · 从近况到周计划",
-    included: "Ada 已包含在 xopc 桌面应用中。", demo: "真实桌面对话 · 一周的工作与摄影计划",
+    included: "与工作空间在同一个 xopc 应用里，无需另外安装。", demo: "真实桌面对话 · 一周的工作与摄影计划",
     introduction: "不用准备好一切。\n先聊聊你。", introductionBody: "你的背景、习惯，或一件还没想清楚的事。Ada 从这里开始。",
     stages: [
       { image: "discussion", title: "按你的方式，\n一起想清楚。", body: "说说目标，补充细节。下一步，在对话中慢慢清晰。", chapter: 2, watch: "看看如何讨论", alt: "真实 xopc 对话：补充听众与优先级，继续讨论周计划" },
@@ -24,9 +24,9 @@ export const adaCopy = {
   en: {
     meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc. Share what is on your mind, delegate a task, review the result, and refine it together." },
     eyebrow: "Your personal Agent in xopc", headline: ["Meet Ada.", "Take your time. I’m listening."],
-    description: "Busy days. Unfinished thoughts. A little spark of an idea. Talk with Ada, then take the next step together.",
+    description: "Ada is your personal Agent in xopc. Think through your goals, hand over a task, and get work back to review and refine.",
     download: "Download xopc. Meet Ada.", watch: "Watch the Ada film", film: "Ada · From context to a weekly plan",
-    included: "Ada is included in the xopc desktop app.", demo: "Real desktop conversation · A weekly plan for work and photography",
+    included: "Ada and the workspace live in the same xopc app. No separate installation.", demo: "Real desktop conversation · A weekly plan for work and photography",
     introduction: "You do not need a perfect brief.\nStart with you.", introductionBody: "Your background, your habits, or an idea you are still figuring out. That is where Ada begins.",
     stages: [
       { image: "discussion", title: "Think it through.\nYour way.", body: "Share the goal. Add a little context. Find the next step together.", chapter: 2, watch: "See the conversation", alt: "Real xopc conversation: adding an audience and priorities to a weekly plan" },

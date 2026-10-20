@@ -51,6 +51,7 @@
       "error": "暂时无法获取下载信息。",
       "retry": "重新尝试",
       "releaseFallback": "前往官方发布页",
+      "desktopAssetsPending": "当前版本的 {platform} 安装包暂未就绪。可稍后重试、切换平台，或前往官方发布页查看可用版本。",
       "downloadUnavailable": "暂时无法检查最新版本。你可以重试，或前往官方发布页查看可用下载。",
       "iosUnavailable": "暂时无法确认 iOS 分发状态。请重试，或查看连接与安装帮助。",
       "mobileSetup": "连接与安装帮助",

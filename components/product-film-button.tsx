@@ -3,19 +3,22 @@
 import { Play, X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { Locale } from "@/lib/i18n/config";
+import { createFilmAnalytics } from "@/lib/film-analytics";
+import { trackProductEvent } from "@/lib/product-events";
 import styles from "./product-film-button.module.css";
 
 type Film = { video: string; poster: string; captions: string; duration: string };
-type Props = { locale: Locale; film: Film; title: string; label: string; start?: number; children?: ReactNode; className?: string };
+type Props = { locale: Locale; film: Film; title: string; label: string; start?: number; children?: ReactNode; className?: string; analyticsMethod?: string };
 
 export function ProductFilmButton(props: Props) {
   return <FilmButton key={`${props.locale}:${props.film.video}`} {...props} />;
 }
 
-function FilmButton({ locale, film, title, label, start = 0, children, className }: Props) {
+function FilmButton({ locale, film, title, label, start = 0, children, className, analyticsMethod = "ada-intro" }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const analytics = useRef(createFilmAnalytics(analyticsMethod));
   const [open, setOpen] = useState(false);
   const [failed, setFailed] = useState(false);
   const id = useId();
@@ -26,6 +29,9 @@ function FilmButton({ locale, film, title, label, start = 0, children, className
     const player = dialog.current;
     const opener = trigger.current;
     const overflow = document.body.style.overflow;
+    document.querySelectorAll<HTMLVideoElement>("video").forEach(player => {
+      if (player !== video.current) player.pause();
+    });
     document.body.style.overflow = "hidden";
     player?.showModal();
     return () => {
@@ -41,7 +47,7 @@ function FilmButton({ locale, film, title, label, start = 0, children, className
   }
 
   return <>
-    <button ref={trigger} className={className ?? styles.watch} type="button" aria-label={label} aria-haspopup="dialog" aria-controls={id} onClick={() => { setFailed(false); setOpen(true); }}>
+    <button ref={trigger} className={className ?? styles.watch} type="button" aria-label={label} aria-haspopup="dialog" aria-controls={id} onClick={() => { analytics.current = createFilmAnalytics(analyticsMethod); trackProductEvent("film_opened", { method: analyticsMethod }); setFailed(false); setOpen(true); }}>
       {children ?? <><Play size={15} aria-hidden="true" />{label}<span className={styles.duration}>{film.duration}</span></>}
     </button>
     <dialog id={id} className={styles.dialog} ref={dialog} aria-labelledby={`${id}-title`} onClose={close} onCancel={event => { event.preventDefault(); close(); }} onClick={event => {
@@ -53,6 +59,7 @@ function FilmButton({ locale, film, title, label, start = 0, children, className
         <header className={styles.header}><h2 id={`${id}-title`}>{title}</h2><button type="button" autoFocus onClick={close} aria-label={zh ? "关闭视频" : "Close video"}><X size={20} aria-hidden="true" /></button></header>
         <div className={styles.body}>
           <video ref={video} controls autoPlay playsInline preload="metadata" poster={film.poster} aria-label={title}
+            onPlaying={() => analytics.current.started()} onEnded={event => analytics.current.ended(event.currentTarget)}
             onError={() => setFailed(true)} onLoadedMetadata={() => { if (video.current) video.current.currentTime = start; }}>
             <source src={film.video} type="video/mp4" />
             <track kind="captions" src={film.captions} srcLang={zh ? "zh-CN" : "en-US"} label={zh ? "简体中文" : "English"} />

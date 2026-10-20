@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 type Command = {
   label: string;
   value: string;
+  method: "unix" | "windows";
 };
 
 type Props = {
@@ -40,7 +41,7 @@ export function TerminalInstallCommands({ commands, copyLabel, copiedLabel }: Pr
 
   return (
     <div className="terminal-install-commands">
-      {commands.map(({ label, value }) => {
+      {commands.map(({ label, value, method }) => {
         const isCopied = copiedCommand === value;
 
         return (
@@ -51,6 +52,8 @@ export function TerminalInstallCommands({ commands, copyLabel, copiedLabel }: Pr
               <button
                 type="button"
                 className="terminal-install-copy-button"
+                data-product-event="terminal_install_clicked"
+                data-product-method={method}
                 data-copied={isCopied || undefined}
                 onClick={() => void copyCommand(value)}
                 aria-label={`${isCopied ? copiedLabel : copyLabel}: ${value}`}

@@ -197,6 +197,9 @@
   .page .note strong { font-size: 13px; }.noteLabel { font-size: 10px; }.page .note small { font-size: 10px; }.paperLines { gap: 6px; }.checkline { font-size: 11px; gap: 5px; }.heroLoopi { width: 188px; height: 188px; left: calc(50% - 101px); top: 91px; }
   .hello { top: 255px; left: 1%; font-size: 11px; padding: 10px 13px; }
 }
+.demoShortcut { margin-top: 10px; }
+.page .demoShortcut button { background: transparent; border: 0; padding: 0; color: var(--muted); font-size: 12px; cursor: pointer; }
+.page .demoShortcut button:hover { color: var(--blue); }
 @supports (animation-timeline: view()) {
   .desk { view-timeline-name: --desk; view-timeline-axis: block; }
   .note { animation: carry-thread linear both; animation-timeline: --desk; animation-range: exit 0% exit 100%; }

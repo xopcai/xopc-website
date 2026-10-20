@@ -45,6 +45,18 @@ Client events capture page path, external referrer domain, UTM attribution, loca
 type. Successful iOS and HarmonyOS beta signups and installation-package requests are recorded on the server. Raw
 events are retained for 180 days.
 
+Declarative CTA clicks are handled once in `SiteAnalytics`, including direct visits to Ada.
+`ada_download_clicked` measures download intent, separately from installation-package requests.
+Films record `film_opened` for modal opens, `film_started` on actual playback, and `film_completed`
+only when playback ends with at least 90% of the duration present in the browser's played ranges.
+Seeking to the end does not count as completion. `method` distinguishes the Work hero, inline
+overview, Ada introduction and chapter entries. Pause/resume is deduplicated
+within a mounted player; reopening a modal starts a new viewing. Locale changes reset the player.
+Run `node --test scripts/test-website-analytics.mjs` to verify CTA routing, playback counting and
+server acceptance. Website events do not prove successful installation or product activation.
+Mobile-menu download intents and terminal copy clicks use the same delegated listener.
+HEAD probes and failed installation-package responses do not record `download_started`.
+
 The production deploy script installs a user crontab that sends a Telegram summary every day at
 09:00 Asia/Shanghai. It reuses `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; preview the message without
 sending it with `pnpm analytics:report:dry-run`, or send immediately with `pnpm analytics:report`.
@@ -64,6 +76,10 @@ sending it with `pnpm analytics:report:dry-run`, or send immediately with `pnpm 
 The primary product repository is [xopcai/xopc](https://github.com/xopcai/xopc).
 
 ## Homepage story
+
+The homepage retains its companion-led introduction and continuous story. A quiet real-demo
+button below the hero actions opens Work v2 directly, while the inline film remains after the
+story to preserve the reading flow. Ada’s page clarifies task delegation within the same app.
 
 The homepage follows one illustrative project through context recovery, a human decision,
 visible progress, and continuing on a phone. Passive readers see a complete example,
@@ -93,6 +109,11 @@ a different cached release. Cold-cache failures retain platform context, a retry
 and an official fallback link. Error responses are not HTTP-cached; client requests time
 out after twelve seconds. QR codes use a keyboard/touch-accessible disclosure.
 Run `node --test scripts/test-mobile-release.mjs` for isolated cache/failure-path tests.
+
+Desktop resolution reports `assets-pending` when the selected release has no installer for
+that platform, rather than returning an empty successful response during a partial upload.
+Loading and error states retain platform switching, and errors provide retry and official
+release-page links. Run `node --test scripts/test-desktop-downloads.mjs` for this regression.
 
 ## Product map
 

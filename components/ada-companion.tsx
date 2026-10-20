@@ -6,8 +6,8 @@ import type { Locale } from "@/lib/i18n/config";
 import styles from "./ada-page.module.css";
 
 const copy = {
-  zh: { hello: "和 Ada 打个招呼", greeting: "嗨，我是 Ada。慢慢说，我在听。", hint: "点点 Ada，打个招呼。", prompts: ["今天有点忙", "有个新想法", "想聊一会儿"], replies: ["先别急。挑一件重要的事，我们一起理清。", "不必一下子想好。从你最期待的部分开始。", "好呀。今天有什么事，让你一直惦记着？"], helloReply: "很高兴见到你。下一件事，我们一起开始。" },
-  en: { hello: "Say hello to Ada", greeting: "Hi, I’m Ada. Take your time. I’m listening.", hint: "Tap Ada to say hello.", prompts: ["A busy day", "A new idea", "Let’s talk"], replies: ["One thing at a time. Let’s find what matters most.", "It doesn’t have to be perfect. Start with what excites you.", "Of course. What’s been on your mind today?"], helloReply: "Good to see you. Let’s start your next thing together." },
+  zh: { hello: "和 Ada 打个招呼", greeting: "嗨，我是 Ada。慢慢说，我们一起把事情往前推。", hint: "互动示例 · 在 xopc 中交办真实任务。", prompts: ["理清这周重点", "把想法变成计划", "继续上次的事"], replies: ["先把固定安排和最重要的目标放在一起，再留些余地。", "从想做成什么开始，一起拆出可以交办的第一步。", "接回项目里的决定和结果，找到值得继续的一步。"], helloReply: "很高兴见到你。下一件事，我们一起开始。" },
+  en: { hello: "Say hello to Ada", greeting: "Hi, I’m Ada. Take your time. Let’s move something forward.", hint: "Interactive example · Delegate real tasks in xopc.", prompts: ["Find this week’s priorities", "Turn an idea into a plan", "Pick up where I left off"], replies: ["Start with your commitments and most important goal. Leave some breathing room.", "Tell me what you want to make. Let’s find a first step you can hand over.", "Bring back the project’s decisions and results, then find what comes next."], helloReply: "Good to see you. Let’s start your next thing together." },
 } as const;
 const moods: LoopiMood[] = ["care", "curious", "listen"];
 

@@ -63,7 +63,7 @@
 .companionBubble { position: relative; max-width: 440px; min-height: 64px; display: flex; align-items: center; justify-content: center; margin: -12px auto 0; padding: 16px 22px; border: 1px solid var(--line); border-radius: 24px; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.7; text-wrap: pretty; }
 .companionBubble::before { content: ""; position: absolute; width: 12px; height: 12px; top: -7px; left: calc(50% - 6px); background: var(--paper); border-top: 1px solid var(--line); border-left: 1px solid var(--line); transform: rotate(45deg); }
 .companionPrompts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 16px auto 0; }
-.companionPrompts button { min-height: 40px; padding: 8px 15px; border: 1px solid var(--line); border-radius: 99px; font-size: 12px; color: var(--muted); background: transparent; cursor: pointer; transition: background .2s, color .2s; }
+.companionPrompts button { min-height: 44px; padding: 8px 15px; border: 1px solid var(--line); border-radius: 99px; font-size: 12px; color: var(--muted); background: transparent; cursor: pointer; transition: background .2s, color .2s; }
 .companionPrompts button:hover, .companionPrompts button[aria-pressed="true"] { background: var(--sage); color: var(--ink); }
 .companionPrompts button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .companionHint { margin-top: 12px; color: var(--muted); font-size: 11px; }

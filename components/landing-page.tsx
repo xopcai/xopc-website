@@ -10,6 +10,8 @@ import { ProductDesktopDownloads } from "@/components/product-desktop-downloads"
 import { MobileDownloads } from "@/components/mobile-downloads";
 import { TerminalInstallCommands } from "@/components/terminal-install-commands";
 import { LandingStory } from "@/components/landing-story";
+import { ProductFilmButton } from "@/components/product-film-button";
+import { workFilm } from "@/lib/work-film";
 import { storyCopy } from "@/lib/landing-story-copy";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -33,6 +35,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
           <a className={styles.primary} href="#download" data-product-event="hero_download_clicked">{c.download}<ArrowUpRight size={18} /></a>
           <a className={styles.textLink} href="#why">{c.begin}<ArrowDown size={16} /></a>
         </div>
+        <div className={styles.demoShortcut}><ProductFilmButton locale={locale} film={workFilm(locale)} title={c.filmTitle.replace("\n", " ")} label={c.watch} className={styles.textLink} analyticsMethod="work-hero" /></div>
       </div>
       <div className={styles.desk} aria-label={c.deskLabel}>
         <div className={`${styles.note} ${styles.noteOne}`}><span className={styles.noteLabel}>PROJECT / 01</span><strong>{c.notes[0]}</strong><div className={styles.paperLines}><i /><i /><i /></div><small>{c.stalled}</small></div>
@@ -60,7 +63,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         <a className={styles.textLink} href="#mobile-download">{c.mobileDownload}<ArrowDown size={15} /></a>
         <a className={styles.textLink} href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer"><Github size={16} />GitHub<ArrowUpRight size={15} /></a>
       </div>
-      <details className={styles.terminal} id="terminal-install"><summary><Terminal size={16} />{L.download.terminalSectionTitle}</summary><TerminalInstallCommands commands={[{ label: L.download.terminalUnixLabel, value: L.download.terminalUnixCommand }, { label: L.download.terminalWindowsLabel, value: L.download.terminalWindowsCommand }]} copyLabel={L.download.terminalCopy} copiedLabel={L.download.terminalCopied} /></details>
+      <details className={styles.terminal} id="terminal-install"><summary><Terminal size={16} />{L.download.terminalSectionTitle}</summary><TerminalInstallCommands commands={[{ label: L.download.terminalUnixLabel, value: L.download.terminalUnixCommand, method: "unix" }, { label: L.download.terminalWindowsLabel, value: L.download.terminalWindowsCommand, method: "windows" }]} copyLabel={L.download.terminalCopy} copiedLabel={L.download.terminalCopied} /></details>
     </div>
     <MobileDownloads d={L.download} locale={locale} />
     <LandingFooter footer={L.footer} docsHref={docHome} locale={locale} />

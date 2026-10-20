@@ -51,6 +51,7 @@
       "error": "We couldn't load download info right now.",
       "retry": "Try again",
       "releaseFallback": "View official releases",
+      "desktopAssetsPending": "The {platform} installer for the current release is not ready yet. Retry later, switch platforms, or check available versions on the official releases page.",
       "downloadUnavailable": "We couldn't check the latest version. Try again or visit the official releases for available downloads.",
       "iosUnavailable": "We couldn't check iOS availability. Try again or see the connection and installation guide.",
       "mobileSetup": "Connection and installation help",

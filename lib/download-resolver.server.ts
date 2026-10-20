@@ -76,13 +76,15 @@ export async function resolveDownload(platform: DownloadPlatform, locale: "zh" |
 
   const release = await fetchDesktopRelease();
   if (!release) return { ok: false, platform, status: "unavailable" };
+  const assets = assetsForDesktopPlatform(platform, release.assets);
+  if (!assets.length) return { ok: false, platform, status: "unavailable", reason: "assets-pending" };
   return {
     ok: true,
     platform,
     status: "available",
     channel: "desktop-stable",
     version: release.tag,
-    assets: assetsForDesktopPlatform(platform, release.assets).map((asset) => ({
+    assets: assets.map((asset) => ({
       name: asset.name,
       url: proxyUrl(release.tag, asset.name, locale),
     })),

@@ -14,6 +14,10 @@
     .landing-page .desktop-download-picker--error p{
       margin: 0 0 12px;
     }
+    .landing-page .desktop-download-picker--error .product-desktop-platforms,
+    .landing-page .desktop-download-picker--loading .product-desktop-platforms{
+      margin-bottom: 16px;
+    }
 
     .landing-page .desktop-download-fallback{
       margin-top: 4px;

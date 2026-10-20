@@ -152,7 +152,7 @@ export function MobileNavMenu({
                 />
               </div>
             </div>
-            <Link className="mobile-nav-download" href={`/${locale}#download`} onClick={close}><Download aria-hidden />{text.download}</Link>
+            <Link className="mobile-nav-download" href={`/${locale}#download`} onClick={close} data-product-event="nav_download_clicked" data-product-method="mobile-menu"><Download aria-hidden />{text.download}</Link>
             <a className="mobile-nav-github" href={LANDING_GITHUB_REPO} target="_blank" rel="noopener noreferrer" onClick={close}><Github aria-hidden />{text.github}</a>
           </footer>
         </div>

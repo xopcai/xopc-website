@@ -27,7 +27,7 @@ export async function GET(req: Request) {
     const response = publicBaseUrl
       ? Response.redirect(`${publicBaseUrl}/${encodeURIComponent(tag)}/${encodeURIComponent(name)}`, 307)
       : await serveCachedReleaseDownload(tag, name);
-    const dimensions = response.status < 400 ? downloadEventDimensions(tag, name) : null;
+    const dimensions = req.method === "GET" && response.status < 400 ? downloadEventDimensions(tag, name) : null;
     if (dimensions) {
       const locale: SiteLocale = searchParams.get("locale") === "en" ? "en" : "zh";
       recordProductEvent({ event: "download_started", locale, ...dimensions });

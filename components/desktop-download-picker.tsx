@@ -153,10 +153,9 @@ export function DesktopDownloadPicker({
     return (
       <div
         className="desktop-download-picker desktop-download-picker--loading"
-        role="status"
-        aria-live="polite"
       >
-        {d.loading}
+        {platformSelector}
+        <p role="status" aria-live="polite" id="desktop-download-options">{d.loading}</p>
       </div>
     );
   }
@@ -164,7 +163,8 @@ export function DesktopDownloadPicker({
   if (!isDesktopResolution(payload)) {
     return (
       <div className="desktop-download-picker desktop-download-picker--error">
-        <p role="status">{d.downloadUnavailable}</p>
+        {platformSelector}
+        <p role="status" id="desktop-download-options">{!payload.ok && payload.reason === "assets-pending" ? d.desktopAssetsPending.replace("{platform}", platformName) : d.downloadUnavailable}</p>
         <button type="button" className="btn-secondary desktop-download-fallback" onClick={() => { setPayload(null); setAttempt(n => n + 1); }}>{d.retry}</button>
         <a
           className="btn-secondary desktop-download-fallback"
