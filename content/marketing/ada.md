@@ -25,3 +25,9 @@ Ada's overview shows the authentic weekly-plan workflow already recorded in both
 ## Companion revision
 
 Ada’s introduction pairs the existing Loopi ceramic brand character with a warm bilingual greeting and three clearly scripted conversation prompts. Tap and keyboard activation share the same response. Animation retains Loopi’s reduced-motion, offscreen and hidden-tab suspension. The actual localized dialogue, delegation and output screenshots remain below the greeting; this interaction does not send a model request or collect user input. Homepage uses the updated Work v2 film to explain xopc through real editable spreadsheet and presentation results; learning retains the full onboarding walkthrough.
+
+## Lifestyle film v2 · 2026-10-22
+
+Current release: 64-second, 1080p music-led “把周末，还给自己”. Both locales share the authentic Chinese-interface recording, with optional localized captions and an explicit English-page language label. Chapter entries now follow the new film; page previews are extracted from it. Published v1 bytes remain available.
+
+Source: local `XOPC-Promo/Ada-生活场景-V1`, editable `xopc-ada-life` project. Official Loopi; two MiniMax-generated lifestyle clips and score; actual XOPC input, file generation, 90→30-minute revision and checklist actions. Nature insert: Amit Batra, Pexels 7097977, https://www.pexels.com/video/sunlight-filtering-through-green-leaves-7097977/ under https://www.pexels.com/license/. Automatic task QA reported partial; the real file and interactions were checked. No claim that all task checks passed. Final encode: H.264/AAC, 64s, 30fps, -17.4LUFS, -1.1dBTP. Signal and visual checks completed; subjective audio listening remains outstanding. Raw captures, logs and editable source stay outside the website repository.

@@ -1,104 +1,113 @@
 {
-  "version": "v1",
-  "base": "/media/product/ada/v1",
+  "version": "v2",
+  "base": "/media/product/ada/v2",
+  "sourceLanguage": "zh-CN",
   "locales": {
     "zh": {
       "id": "ada",
-      "version": "v1",
+      "version": "v2",
       "locale": "zh-CN",
-      "title": "认识 Ada。",
-      "durationSeconds": 62.7,
-      "width": 3840,
-      "height": 2160,
+      "title": "Ada · 把周末，还给自己。",
+      "durationSeconds": 64,
+      "width": 1920,
+      "height": 1080,
       "fps": 30,
       "chapters": [
         {
           "start": 0,
-          "title": "认识 Ada。"
+          "title": "相机，也该放放风了。"
         },
         {
-          "start": 10.25,
-          "title": "让建议，从你的近况出发。"
+          "start": 8.5,
+          "title": "先说说，你想怎么过。"
         },
         {
-          "start": 21.86,
-          "title": "边聊，边理清。"
+          "start": 12.566667,
+          "title": "Ada 听你说。"
         },
         {
-          "start": 31.15,
-          "title": "需要帮忙，就交给它。"
+          "start": 16.133333,
+          "title": "把想法，变成小计划。"
         },
         {
-          "start": 39.64,
-          "title": "结果回来，继续打磨。"
+          "start": 27.866667,
+          "title": "按你的节奏，再轻一点。"
         },
         {
-          "start": 50.09,
-          "title": "下载 xopc，认识你的 Ada。"
+          "start": 46.166667,
+          "title": "把周末，还给自己。"
         }
       ],
       "files": {
-        "video.mp4": {
-          "sha256": "cd384ee759b2e70b2c190d44fcf5a8b7f2d74e818f80aed4cf4ff022956dbf41",
-          "bytes": 9546173
+        "en.vtt": {
+          "sha256": "2589403be39912cf782647fbcb1694ce500bf06679e0ab158c771065eb9f4a80",
+          "bytes": 1015
         },
         "poster.jpg": {
-          "sha256": "96ab04a4db9508404020fa0f9ed565cce71de69ca36424906d8734c52bcbfe4d",
-          "bytes": 116674
+          "sha256": "d688f9fe7bf1ea4225b4585166157028fd90616c22d722685782c19be8e1ed07",
+          "bytes": 136968
         },
-        "captions.vtt": {
-          "sha256": "436b65c59e9c94354951e0177ba2e2d84d411cca9d5585b524c8a725b44bf732",
-          "bytes": 1065
+        "zh.vtt": {
+          "sha256": "64c826e10050e5006d91f81976ff6f5327cb9450126f6233ec621e0620f592bf",
+          "bytes": 1000
+        },
+        "video.mp4": {
+          "sha256": "81043769bb17ea2c5e272a3ace19f466304d146c11e3421de4dd373c91adeb80",
+          "bytes": 37938069
         }
       }
     },
     "en": {
       "id": "ada",
-      "version": "v1",
-      "locale": "en-US",
-      "title": "Meet Ada.",
-      "durationSeconds": 66.833333,
-      "width": 3840,
-      "height": 2160,
+      "version": "v2",
+      "locale": "zh-CN",
+      "title": "Ada · A little more weekend for you",
+      "durationSeconds": 64,
+      "width": 1920,
+      "height": 1080,
       "fps": 30,
       "chapters": [
         {
           "start": 0,
-          "title": "Meet Ada."
+          "title": "A little fresh air"
         },
         {
-          "start": 13.13,
-          "title": "Advice that starts with your situation."
+          "start": 8.5,
+          "title": "Start with what you want"
         },
         {
-          "start": 26.18,
-          "title": "Think it through together."
+          "start": 12.566667,
+          "title": "Ada is listening"
         },
         {
-          "start": 35.15,
-          "title": "Give it something to do."
+          "start": 16.133333,
+          "title": "Turn a thought into a plan"
         },
         {
-          "start": 44.28,
-          "title": "Review it. Make it yours."
+          "start": 27.866667,
+          "title": "Make it fit your pace"
         },
         {
-          "start": 54.65,
-          "title": "Download xopc. Meet your Ada."
+          "start": 46.166667,
+          "title": "A little more weekend for you"
         }
       ],
       "files": {
-        "video.mp4": {
-          "sha256": "61219a10f9feb44ff97c728f66fb14578ff7dbb62ef8a01cc6696667cb4297e8",
-          "bytes": 11047622
+        "en.vtt": {
+          "sha256": "2589403be39912cf782647fbcb1694ce500bf06679e0ab158c771065eb9f4a80",
+          "bytes": 1015
         },
         "poster.jpg": {
-          "sha256": "9786d3204476846acf9520998cd2974f1409342693c5d8490b8d8fec42a17846",
-          "bytes": 129746
+          "sha256": "d688f9fe7bf1ea4225b4585166157028fd90616c22d722685782c19be8e1ed07",
+          "bytes": 136968
         },
-        "captions.vtt": {
-          "sha256": "a6ce132ef1bdcbb1a5cf3a69567508faaf9af86040f3195c9a73b76eb0478033",
-          "bytes": 1229
+        "zh.vtt": {
+          "sha256": "64c826e10050e5006d91f81976ff6f5327cb9450126f6233ec621e0620f592bf",
+          "bytes": 1000
+        },
+        "video.mp4": {
+          "sha256": "81043769bb17ea2c5e272a3ace19f466304d146c11e3421de4dd373c91adeb80",
+          "bytes": 37938069
         }
       }
     }

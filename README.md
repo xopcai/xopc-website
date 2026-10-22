@@ -148,7 +148,7 @@ inspectable result. Ada belongs to xopc and shares its download and controls.
 - Release provenance and maintenance: `content/marketing/launch-film.md`
 - Previous Work film: `lib/work-film.ts`, `content/work/manifest.json`, `public/media/product/work/v2/`
 - Ada media resolver and release: `lib/ada.ts`, `content/ada/manifest.json`
-- Video: `public/media/product/ada/v1/{zh-CN,en-US}/`
+- Current lifestyle video: `public/media/product/ada/v2/` (v1 preserved)
 - Reviewed localized previews and provenance: `content/ada/previews.json`
 - Narrative and maintenance: `content/marketing/ada.md`
 - Editable source: sibling `xopc-tutorials/videos/xopc-personal-agent-intro/`
@@ -160,9 +160,9 @@ verify hashes and preserve immutable published versions. Raw captures, credentia
 fonts and logs remain private. Media uses Git LFS.
 
 Ada videos open only after a click in the centered, keyboard-accessible
-`ProductFilmButton` modal. Closing removes the player and returns focus. Each
-locale selects its own real conversation, narration, captions and previews;
-section buttons seek to corresponding release chapters. Visible subtitles are
+`ProductFilmButton` modal. Closing removes the player and returns focus. Both
+locales now share the v2 Chinese-interface lifestyle film with localized optional captions;
+section buttons seek to corresponding release chapters. Visible titles are
 embedded; optional tracks are off by default to avoid duplicate text.
 
 Previous Personal AI and Work releases remain available at their original URLs.
