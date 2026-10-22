@@ -2,9 +2,19 @@
 
 Official landing site for [xopc.ai](https://xopc.ai).
 
-**Keep what matters moving.**
+**A better life, with AI.** / **AI，让生活更美好。**
 
-xopc is personal AI for the one-person company. It runs in your environment, remembers your goals and context, and helps move work forward across conversations, tools, and time. Its runtime connects projects, tasks, notes, workflows, and automations across desktop, terminal, web, mobile, and messengers.
+xopc is an open-source, local-first personal AI assistant for work and everyday life. It remembers relevant context and works with authorized tools to help you think things through and get things done—with more time to create and enjoy life.
+
+Our vision is a future where everyone has their own AI assistant, with more time to create, be with the people who matter, and enjoy the world around them. Our mission is to build AI that learns each person’s habits, goals, and circumstances and takes on more tedious, repetitive, and time-consuming tasks. How people spend the time is up to them.
+
+愿景：让每个人都能拥有自己的 AI 助理，在工作与生活中获得持续的帮助，有更多时间去创造、陪伴重要的人，体验和享受生活。
+
+使命：让 AI 逐渐理解每个人的习惯、目标与处境，承担更多繁琐、重复和耗时的事务，帮助人们把想法付诸行动，也把时间和精力留给自己在意的事。
+
+The same xopc supports conversations with Ada and direct work with files and projects. It runs on a computer the user chooses, with access across desktop, terminal, web, mobile, and messengers. Available capabilities depend on configured models, tools, and permissions.
+
+Canonical vision and mission: [中文](https://xopcai.github.io/xopc/zh/product) · [English](https://xopcai.github.io/xopc/product).
 
 ## Local development
 

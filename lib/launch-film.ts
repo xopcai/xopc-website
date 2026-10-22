@@ -9,7 +9,7 @@ export function launchFilm(locale: Locale) {
     captions: `${release.base}/${locale}.vtt`,
     language: zh ? "zh-CN" : "en-US",
     captionLabel: zh ? "简体中文" : "English",
-    title: zh ? "XOPC · 接着向前" : "XOPC · Keep what matters moving",
+    title: zh ? "XOPC · 从想法到成果" : "XOPC · From idea to result",
     duration: "0:52",
     width: release.width,
     height: release.height,

@@ -1,7 +1,7 @@
 {
   "name": "xopc",
   "short_name": "xopc",
-  "description": "Personal AI for the one-person company. Remember your context and pick up where you left off.",
+  "description": "A better life, with AI. Your personal AI assistant for work and everyday life, with more time to create and enjoy life.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B0D10",

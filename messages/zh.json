@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "xopc — 让重要的事持续向前。",
-    "description": "为超级个体打造的个人 AI。记住你的目标与上下文，连接工具采取行动，并随时从上次停下的地方继续。",
-    "ogDescription": "让重要的事持续向前。为超级个体打造的个人 AI。"
+    "title": "xopc — AI，让生活更美好。",
+    "description": "你的个人 AI 助理，帮你处理工作与生活中的事务，把更多时间留给创造和享受生活。",
+    "ogDescription": "AI，让生活更美好。服务于工作与生活的个人 AI 助理。"
   },
   "header": {
     "chooseLanguage": "选择语言",
@@ -25,8 +25,8 @@
     },
     "hero": {
       "brandName": "xopc",
-      "headline": "让重要的事持续向前。",
-      "desc": "为超级个体打造的个人 AI。记住你的目标与上下文，连接工具采取行动，并随时从上次停下的地方继续。",
+      "headline": "AI，让生活更美好。",
+      "desc": "你的个人 AI 助理，帮你处理工作与生活中的事务，把更多时间留给创造和享受生活。",
       "primaryCta": "下载 xopc",
       "secondaryCta": "使用终端安装"
     },
@@ -235,8 +235,8 @@
       "correctionNote": "事实与推断始终分开。它们成为长期理解之前，你都可以纠正。"
     },
     "cta": {
-      "titleLine1": "一个人，一个 AI，",
-      "titleLine2": "一种全新的组织方式。",
+      "titleLine1": "更多时间，",
+      "titleLine2": "留给创造和享受生活。",
       "primary": "下载 xopc →",
       "secondary": "在 GitHub 查看"
     },

@@ -30,7 +30,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
     <LandingHeader locale={locale} header={m.header} nav={L.nav} docHome={docHome} />
     <section className={styles.hero} aria-labelledby="story-headline">
       <div className={styles.heroCopy}>
-        <p className={styles.brandSlogan}>Keep what matters <span>moving.</span></p>
+        <p className={styles.brandSlogan}>{c.eyebrow}</p>
         <h1 id="story-headline">{c.headline[0]}<br /><span>{c.headline[1]}</span></h1>
         <p className={styles.heroDesc}>{c.description}</p>
         <div className={styles.actions}>
@@ -60,6 +60,11 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
       <a className={styles.textLink} href={`/${locale}/learn`}><Play size={14} />{c.moreFilms}<ArrowUpRight size={14} /></a>
     </section>
     <LandingStory locale={locale} />
+    <section className={styles.intro} id="vision" aria-labelledby="vision-title">
+      <h2 id="vision-title">{c.visionTitle}</h2>
+      <p>{c.visionBody}</p>
+      <a className={styles.textLink} href={`${docHome}product`}>{c.visionLink}<ArrowUpRight size={15} /></a>
+    </section>
     <section className={styles.trust} id="trust">
       <h2>{c.trustTitle}</h2>
       <div className={styles.trustItems}>{c.trust.map((item, i) => <div key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>

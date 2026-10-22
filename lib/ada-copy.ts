@@ -1,8 +1,8 @@
 export const adaCopy = {
   zh: {
-    meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中属于你的个人 Agent。聊聊近况，交办一件事，检查结果，再一起打磨。" },
+    meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中服务于工作与生活的个人 Agent。聊聊近况、交办事务，把更多时间留给创造和享受生活。" },
     eyebrow: "xopc 的个人 Agent", headline: ["认识 Ada。", "慢慢说，我在听。"],
-    description: "Ada 是 xopc 里的个人 Agent。和你理清目标，接下任务，把可检查、可修改的结果带回来。",
+    description: "Ada 是 xopc 里的个人 Agent，和你理清想法，帮你处理工作与生活中的事务，把更多时间留给创造和享受生活。",
     download: "下载 xopc，认识 Ada", watch: "观看 Ada 介绍", film: "Ada · 把周末，还给自己。",
     included: "与工作空间在同一个 xopc 应用里，无需另外安装。", demo: "真实客户端演示 · 按自己的节奏，出去透口气",
     introduction: "不用准备好一切。\n先聊聊你。", introductionBody: "你的背景、习惯，或一件还没想清楚的事。Ada 从这里开始。",
@@ -22,9 +22,9 @@ export const adaCopy = {
     privacy: "查看隐私与数据边界", closing: "下一件事，\n和 Ada 一起开始。", closingBody: "下载 xopc，认识你的个人 Agent。",
   },
   en: {
-    meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc. Share what is on your mind, delegate a task, review the result, and refine it together." },
+    meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc for work and everyday life, with more time to create and enjoy life." },
     eyebrow: "Your personal Agent in xopc", headline: ["Meet Ada.", "Take your time. I’m listening."],
-    description: "Ada is your personal Agent in xopc. Think through your goals, hand over a task, and get work back to review and refine.",
+    description: "Ada is your personal Agent in xopc. Think things through and get help with work and everyday tasks, with more time to create and enjoy life.",
     download: "Download xopc. Meet Ada.", watch: "Watch the Ada film", film: "Ada · A little more weekend for you",
     included: "Ada and the workspace live in the same xopc app. No separate installation.", demo: "Real desktop demo · Chinese interface · Optional English captions",
     introduction: "You do not need a perfect brief.\nStart with you.", introductionBody: "Your background, your habits, or an idea you are still figuring out. That is where Ada begins.",
