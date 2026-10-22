@@ -121,9 +121,9 @@ main() {
         set -e
         cd $REMOTE_DIR
 
-        # 安装/更新依赖（与 lockfile 一致）
-        echo "安装依赖..."
-        pnpm install --frozen-lockfile
+        # Install only production dependencies; all compilation happens locally.
+        echo "安装生产依赖..."
+        CI=true pnpm install --prod --frozen-lockfile
 
         # 确保 .env 存在（首次部署时从 .env.example 复制）
         if [ ! -f ".env" ]; then

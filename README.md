@@ -34,7 +34,7 @@ pnpm build
 
 ## Production deployment
 
-Run `bash scripts/deploy.sh` with `XOPC_SERVER` configured and a local Docker engine running. The script builds on the client in a Linux container, uploads the production `.next` output, installs runtime dependencies on the server, and reloads PM2. It never runs a server-side build. Existing server secrets and `.data` are preserved.
+Run `bash scripts/deploy.sh` with `XOPC_SERVER` configured and a local Docker engine running. The script builds on the client in a Linux container, uploads the production `.next` output, installs only production dependencies on the server, and reloads PM2. It never runs a server-side build. Existing server secrets and `.data` are preserved.
 
 The default build target is `linux/amd64` with Node 24.14.1, matching production. Override `XOPC_BUILD_PLATFORM` and `XOPC_BUILD_IMAGE` when the server platform or Node version changes. The container uses the production path so native dependency references resolve on the server.
 
