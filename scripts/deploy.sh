@@ -10,6 +10,16 @@ set -e
 SERVER="${XOPC_SERVER}"
 REMOTE_DIR="${XOPC_REMOTE_DIR:-/var/www/xopc-website}"
 DOMAINS_ARRAY=(${XOPC_DOMAINS:-xopc.ai xopc.io})
+BUILD_IMAGE="${XOPC_BUILD_IMAGE:-node:24.14.1-bookworm-slim}"
+BUILD_PLATFORM="${XOPC_BUILD_PLATFORM:-linux/amd64}"
+LOCAL_BUILD_DIR=""
+
+cleanup_local_build() {
+    if [ -n "$LOCAL_BUILD_DIR" ]; then
+        rm -rf "$LOCAL_BUILD_DIR"
+    fi
+}
+trap cleanup_local_build EXIT
 
 # 检查必需的环境变量
 if [ -z "$SERVER" ]; then
@@ -58,19 +68,30 @@ main() {
     echo_step "检查本地环境..."
     check_command "rsync"
     check_command "ssh"
-    check_command "pnpm"
+    check_command "docker"
     
     echo_step "检查远程服务器..."
     ssh -o ConnectTimeout=10 $SERVER "echo 'SSH OK'" || { echo_error "无法连接到服务器"; exit 1; }
 
-    # 1. 本地构建检查
+    # Build locally for the production platform and path, including native dependencies.
     echo ""
-    echo_step "步骤 1/3: 本地构建检查..."
-    pnpm install --frozen-lockfile
-    pnpm build
-    echo -e "${GREEN}✓ 本地构建检查通过${NC}"
+    echo_step "步骤 1/3: 本地 Linux 构建..."
+    LOCAL_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/xopc-website-build.XXXXXX")
+    rsync -az \
+        --include='.env.example' --exclude='.env*' \
+        --exclude='node_modules' --exclude='.next' --exclude='.git' \
+        --exclude='.docs' --exclude='.data' --exclude='.xopc-share-staging' \
+        --exclude='.zshrc.local' --exclude='.DS_Store' --exclude='*.log' \
+        --exclude='*.tsbuildinfo' --exclude='.npmrc' --exclude='build' \
+        ./ "$LOCAL_BUILD_DIR/"
+    docker run --rm --platform "$BUILD_PLATFORM" \
+        -e NEXT_TELEMETRY_DISABLED=1 \
+        -v "$LOCAL_BUILD_DIR:$REMOTE_DIR" -w "$REMOTE_DIR" \
+        "$BUILD_IMAGE" sh -ec 'corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --frozen-lockfile && pnpm build'
+    test -f "$LOCAL_BUILD_DIR/.next/BUILD_ID"
+    echo -e "${GREEN}✓ 本地 Linux 构建通过${NC}"
 
-    # 2. 仅同步源码；.next 含平台相关的原生模块引用，必须在服务器构建
+    # Sync source and the matching local Linux build; server state stays in place.
     echo ""
     echo_step "步骤 2/3: 同步文件到服务器..."
     rsync -avz --delete \
@@ -88,11 +109,14 @@ main() {
         --exclude='*.tsbuildinfo' \
         --exclude='.npmrc' \
         ./ $SERVER:$REMOTE_DIR/
-    echo -e "${GREEN}✓ 同步完成${NC}"
+    rsync -az --delete --exclude='cache' \
+        "$LOCAL_BUILD_DIR/.next/" "$SERVER:$REMOTE_DIR/.next/"
+    rsync -az --delete "$LOCAL_BUILD_DIR/public/blog/" "$SERVER:$REMOTE_DIR/public/blog/"
+    echo -e "${GREEN}✓ 源码与本地构建产物同步完成${NC}"
 
-    # 3. 在目标平台构建并重启 PM2
+    # 3. Install runtime dependencies and restart PM2 without building on the server.
     echo ""
-    echo_step "步骤 3/3: 服务器构建并重启应用..."
+    echo_step "步骤 3/3: 更新运行依赖并重启应用..."
     ssh $SERVER << REMOTE_SCRIPT
         set -e
         cd $REMOTE_DIR
@@ -111,30 +135,8 @@ main() {
             fi
         fi
 
-        # The small production host can exhaust RAM while Next.js type-checks.
-        # Add temporary swap only for the build and remove it before returning.
-        BUILD_SWAP=""
-        cleanup_build_swap() {
-            if [ -n "\$BUILD_SWAP" ]; then
-                swapoff "\$BUILD_SWAP" || true
-                python3 -c 'import os, sys; os.unlink(sys.argv[1]) if os.path.exists(sys.argv[1]) else None' "\$BUILD_SWAP"
-            fi
-        }
-        trap cleanup_build_swap EXIT
-        available_kb=\$(awk '/MemAvailable:/ {print \$2}' /proc/meminfo)
-        swap_free_kb=\$(awk '/SwapFree:/ {print \$2}' /proc/meminfo)
-        if [ \$((available_kb + swap_free_kb)) -lt 1572864 ]; then
-            BUILD_SWAP=\$(mktemp /var/tmp/xopc-website-build.XXXXXX.swap)
-            fallocate -l 2G "\$BUILD_SWAP"
-            chmod 600 "\$BUILD_SWAP"
-            mkswap "\$BUILD_SWAP" >/dev/null
-            swapon "\$BUILD_SWAP"
-            echo "已启用临时构建 swap"
-        fi
-
-        # 原生依赖（如 better-sqlite3）必须在 Linux 上生成 Next.js 构建产物
-        echo "构建应用..."
-        pnpm build
+        # Only use the uploaded client build. Never compile on the server.
+        test -f .next/BUILD_ID
 
         # SQLite 应用数据与发布 / CloakBrowser 缓存目录
         mkdir -p .data .data/cloakbrowser-cache
@@ -158,13 +160,9 @@ main() {
         pm2 startOrReload ecosystem.config.cjs --update-env
         pm2 save
 
-        cleanup_build_swap
-        BUILD_SWAP=""
-        trap - EXIT
-
         echo "✓ 应用已重启"
 REMOTE_SCRIPT
-    echo -e "${GREEN}✓ 服务器构建并重启成功${NC}"
+    echo -e "${GREEN}✓ 本地构建产物已启用，应用重启成功${NC}"
 
     # 4. 验证
     echo ""
