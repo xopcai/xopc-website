@@ -10,7 +10,7 @@ set -e
 SERVER="${XOPC_SERVER}"
 REMOTE_DIR="${XOPC_REMOTE_DIR:-/var/www/xopc-website}"
 DOMAINS_ARRAY=(${XOPC_DOMAINS:-xopc.ai xopc.io})
-BUILD_IMAGE="${XOPC_BUILD_IMAGE:-node:24.14.1-bookworm-slim}"
+BUILD_IMAGE="${XOPC_BUILD_IMAGE:-node:24.14.1-bookworm}"
 BUILD_PLATFORM="${XOPC_BUILD_PLATFORM:-linux/amd64}"
 LOCAL_BUILD_DIR=""
 
@@ -85,7 +85,7 @@ main() {
         --exclude='*.tsbuildinfo' --exclude='.npmrc' --exclude='build' \
         ./ "$LOCAL_BUILD_DIR/"
     docker run --rm --platform "$BUILD_PLATFORM" \
-        -e NEXT_TELEMETRY_DISABLED=1 \
+        -e NEXT_TELEMETRY_DISABLED=1 -e npm_config_nodedir=/usr/local \
         -v "$LOCAL_BUILD_DIR:$REMOTE_DIR" -w "$REMOTE_DIR" \
         "$BUILD_IMAGE" sh -ec 'corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --frozen-lockfile && pnpm build'
     test -f "$LOCAL_BUILD_DIR/.next/BUILD_ID"
