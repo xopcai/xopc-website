@@ -1,0 +1,69 @@
+{
+  "version": "v5",
+  "base": "/media/product/launch/v5",
+  "durationSeconds": 52,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "sourceLanguage": "zh-CN",
+  "chapters": [
+    {
+      "start": 8,
+      "thumbnail": "chapter-1.jpg",
+      "zh": "一句话开始",
+      "en": "Give it a goal"
+    },
+    {
+      "start": 20,
+      "thumbnail": "chapter-2.jpg",
+      "zh": "看见成果",
+      "en": "See the result"
+    },
+    {
+      "start": 30,
+      "thumbnail": "chapter-3.jpg",
+      "zh": "第二天继续",
+      "en": "Pick it back up"
+    },
+    {
+      "start": 40,
+      "thumbnail": "chapter-4.jpg",
+      "zh": "宣传素材就绪",
+      "en": "A launch kit, ready"
+    }
+  ],
+  "files": {
+    "chapter-1.jpg": {
+      "sha256": "4bff2608d1cdbbd9c3ef88b00c54f11347b9f98a9f9651ec82e28032dd8e091f",
+      "bytes": 9881
+    },
+    "chapter-2.jpg": {
+      "sha256": "c71ac7caa91715c3347af38c304201a18e67aedb45a1063c4d2288fee98a2c02",
+      "bytes": 13556
+    },
+    "chapter-3.jpg": {
+      "sha256": "c489c4f5aae4e83a56738a16f27e4fdf2709b8f873b114be027d5a64044e77f2",
+      "bytes": 18526
+    },
+    "chapter-4.jpg": {
+      "sha256": "f6e4d2ac3c10b61430e8d34cbb2536808b25b751a5b6142437c40d98d08f5966",
+      "bytes": 10427
+    },
+    "en.vtt": {
+      "sha256": "5a0574bb2546de1a816235247e9f71ce27a25e7c4370aab3837954cb348e0d0b",
+      "bytes": 831
+    },
+    "poster.jpg": {
+      "sha256": "68f5fe1651ace681afb1e83cec5ad4e57bbaa49b30ade04ba6576d60eabbf8c2",
+      "bytes": 108711
+    },
+    "video.mp4": {
+      "sha256": "84a233cbc0ace8ce07a67fc5024f4eef71d84a7f1eb4e56c2ad6ecea7958eb4d",
+      "bytes": 24594844
+    },
+    "zh.vtt": {
+      "sha256": "354d4910bbf41a38e078fe6357bc6f508b03a39c81d07d65bcac72893f47c49f",
+      "bytes": 810
+    }
+  }
+}

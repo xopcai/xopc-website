@@ -134,14 +134,19 @@ The public map links to localized product guides where available and labels Engl
 
 ## Short product films
 
-The homepage retains its work-focused story and the concise bilingual Work v2 introduction.
+The homepage leads with the 52-second Loopi launch film, followed by the interactive
+launch-plan story. The hero, inline player and four chapter shortcuts share one
+versioned release. Both locales use the same Chinese-UI, music-led film with localized
+optional caption tracks; the English page labels the source language.
 Ada is xopc's personal Agent, introduced through a dedicated menu and `/zh/ada`
 and `/en/ada`. It starts with personal context, then discussion, delegation and an
 inspectable result. Ada belongs to xopc and shares its download and controls.
 
 - Ada page and bilingual copy: `components/ada-page.tsx`, `lib/ada-copy.ts`
 - Interactive companion: `components/ada-companion.tsx`, reusing animated Loopi
-- Homepage Work film: `lib/work-film.ts`, `content/work/manifest.json`, `public/media/product/work/v2/`
+- Homepage launch film: `lib/launch-film.ts`, `content/launch/manifest.json`, `public/media/product/launch/v5/`
+- Release provenance and maintenance: `content/marketing/launch-film.md`
+- Previous Work film: `lib/work-film.ts`, `content/work/manifest.json`, `public/media/product/work/v2/`
 - Ada media resolver and release: `lib/ada.ts`, `content/ada/manifest.json`
 - Video: `public/media/product/ada/v1/{zh-CN,en-US}/`
 - Reviewed localized previews and provenance: `content/ada/previews.json`

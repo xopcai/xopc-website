@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Github, Play, Terminal } from "lucide-react";
 import { Loopi } from "@/components/brand/loopi";
 import { LandingFooter } from "@/components/landing-footer";
@@ -11,7 +12,7 @@ import { MobileDownloads } from "@/components/mobile-downloads";
 import { TerminalInstallCommands } from "@/components/terminal-install-commands";
 import { LandingStory } from "@/components/landing-story";
 import { ProductFilmButton } from "@/components/product-film-button";
-import { workFilm } from "@/lib/work-film";
+import { launchFilm } from "@/lib/launch-film";
 import { storyCopy } from "@/lib/landing-story-copy";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -21,6 +22,7 @@ import styles from "./landing-story.module.css";
 export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; messages: Messages; docHome: string }) {
   const c = storyCopy[locale];
   const L = m.landing;
+  const film = launchFilm(locale);
   const schema = { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "xopc", applicationCategory: "ProductivityApplication", operatingSystem: "macOS, Windows, Linux", description: m.meta.description, downloadUrl: `https://xopc.ai/${locale}#download`, featureList: L.productProof.capabilities.map(item => item.title), license: "https://opensource.org/license/mit", sameAs: [LANDING_GITHUB_REPO] };
   return <div className={`landing-page ${styles.page}`}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
@@ -33,9 +35,8 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         <p className={styles.heroDesc}>{c.description}</p>
         <div className={styles.actions}>
           <a className={styles.primary} href="#download" data-product-event="hero_download_clicked">{c.download}<ArrowUpRight size={18} /></a>
-          <a className={styles.textLink} href="#why">{c.begin}<ArrowDown size={16} /></a>
+          <ProductFilmButton locale={locale} film={film} title={film.title} label={c.watch} className={styles.watchFilm} analyticsMethod="launch-hero" />
         </div>
-        <div className={styles.demoShortcut}><ProductFilmButton locale={locale} film={workFilm(locale)} title={c.filmTitle.replace("\n", " ")} label={c.watch} className={styles.textLink} analyticsMethod="work-hero" /></div>
       </div>
       <div className={styles.desk} aria-label={c.deskLabel}>
         <div className={`${styles.note} ${styles.noteOne}`}><span className={styles.noteLabel}>PROJECT / 01</span><strong>{c.notes[0]}</strong><div className={styles.paperLines}><i /><i /><i /></div><small>{c.stalled}</small></div>
@@ -46,12 +47,19 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         <div className={styles.hello}>{c.hello}<span /></div>
       </div>
     </section>
-    <LandingStory locale={locale} />
-    <section className={styles.filmSection} id="film">
-      <div className={styles.filmHeading}><h2>{c.filmTitle}</h2><p>{c.filmDesc}</p></div>
+    <section className={styles.filmSection} id="film" aria-labelledby="launch-film-title">
+      <div className={styles.filmHeading}><div><p className={styles.filmEyebrow}>{c.filmEyebrow}</p><h2 id="launch-film-title">{c.filmTitle}</h2></div><p>{c.filmDesc}</p></div>
       <div className={styles.film}><ProductIntroVideo locale={locale} overview /></div>
+      <div className={styles.filmChapters} aria-label={c.filmChaptersLabel}>
+        {film.chapters.map((chapter, index) => <ProductFilmButton key={chapter.start} locale={locale} film={film} title={film.title} label={`${chapter.title} · 0:${chapter.start.toString().padStart(2, "0")}`} start={chapter.start} className={styles.filmChapter} analyticsMethod={`launch-chapter-${index + 1}`}>
+          <div className={styles.chapterPreview}><Image src={chapter.thumbnail} alt="" width={480} height={270} sizes="(max-width: 600px) 44vw, 240px" /><span><Play size={16} aria-hidden="true" /></span></div>
+          <span className={styles.chapterCaption}><span>0:{chapter.start.toString().padStart(2, "0")}</span><strong>{chapter.title}</strong></span>
+        </ProductFilmButton>)}
+      </div>
+      <p className={styles.filmNote}>{c.filmNote}</p>
       <a className={styles.textLink} href={`/${locale}/learn`}><Play size={14} />{c.moreFilms}<ArrowUpRight size={14} /></a>
     </section>
+    <LandingStory locale={locale} />
     <section className={styles.trust} id="trust">
       <h2>{c.trustTitle}</h2>
       <div className={styles.trustItems}>{c.trust.map((item, i) => <div key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
