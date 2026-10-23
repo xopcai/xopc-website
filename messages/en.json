@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "xopc — A better life, with AI.",
-    "description": "Your personal AI assistant for work and everyday life, with more time to create and enjoy life.",
+    "description": "An assistant that gets to know your habits and goals, helps you think things through, and handles tasks across work and everyday life. More time and energy to create, be with the people who matter, and enjoy life.",
     "ogDescription": "A better life, with AI. Personal AI for work and everyday life."
   },
   "header": {
@@ -26,7 +26,7 @@
     "hero": {
       "brandName": "xopc",
       "headline": "A better life, with AI.",
-      "desc": "Your personal AI assistant for work and everyday life, with more time to create and enjoy life.",
+      "desc": "An assistant that gets to know your habits and goals, helps you think things through, and handles tasks across work and everyday life. More time and energy to create, be with the people who matter, and enjoy life.",
       "primaryCta": "Download xopc",
       "secondaryCta": "Install in terminal"
     },

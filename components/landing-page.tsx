@@ -31,12 +31,13 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
     <section className={styles.hero} aria-labelledby="story-headline">
       <div className={styles.heroCopy}>
         <p className={styles.brandSlogan}>{c.eyebrow}</p>
-        <h1 id="story-headline">{c.headline[0]}<br /><span>{c.headline[1]}</span></h1>
+        <h1 id="story-headline"><span className={styles.headlineLead}>{c.headline[0]}</span><wbr /><span>{c.headline[1]}</span></h1>
         <p className={styles.heroDesc}>{c.description}</p>
         <div className={styles.actions}>
           <a className={styles.primary} href="#download" data-product-event="hero_download_clicked">{c.download}<ArrowUpRight size={18} /></a>
           <ProductFilmButton locale={locale} film={film} title={film.title} label={c.watch} className={styles.watchFilm} analyticsMethod="launch-hero" />
         </div>
+        <p className={styles.heroSupport}>{c.supporting}</p>
       </div>
       <div className={styles.desk} aria-label={c.deskLabel}>
         <div className={`${styles.note} ${styles.noteOne}`}><span className={styles.noteLabel}>PROJECT / 01</span><strong>{c.notes[0]}</strong><div className={styles.paperLines}><i /><i /><i /></div><small>{c.stalled}</small></div>

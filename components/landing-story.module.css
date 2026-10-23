@@ -21,6 +21,8 @@
 .heroCopy .eyebrow { justify-content: center; }
 .page .heroCopy h1 { font-size: clamp(43px, 5vw, 66px); line-height: 1.2; margin-top: 24px; }
 .heroCopy h1 > span { color: var(--blue); }
+.heroCopy h1 > .headlineLead { color: var(--ink); white-space: nowrap; }
+.page .heroSupport { margin: 16px auto 0; font-size: 13px; line-height: 1.7; color: var(--muted); }
 .page .heroDesc { max-width: 475px; margin: 18px auto 0; font-size: 16px; line-height: 1.85; color: var(--muted); text-wrap: pretty; }
 .page .actions { display: flex; align-items: center; justify-content: center; gap: 25px; margin-top: 24px; flex-wrap: wrap; }
 .page .primary, .confirm { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 48px; padding: 0 23px; border-radius: 99px; border: 0; background: var(--ink); color: var(--paper); font-size: 14px; font-weight: 500; cursor: pointer; transition: transform .22s, background .22s; }
