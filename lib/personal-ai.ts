@@ -3,7 +3,7 @@ import type { Locale } from "@/lib/i18n/config";
 
 const copy = {
   zh: {
-    headline: "属于你的个人 Agent。",
+    headline: "先和助理聊聊。",
     description: "告诉它你的背景和目标，从讨论到文件，沿着同一件事继续。",
     watch: "观看介绍", try: "开始使用 xopc", example: "桌面演示 · 一周的工作与摄影计划",
     videoLabel: "xopc Personal AI：了解近况、交办周计划、检查与修改",
@@ -12,7 +12,7 @@ const copy = {
     unavailable: "暂时无法播放。", open: "打开视频",
   },
   en: {
-    headline: "Your way of working.\nMore work, done.",
+    headline: "Start with a conversation.",
     description: "Share your context and your goal. Keep the conversation going, from the first idea to a finished file.",
     watch: "Watch the film", try: "Get started with xopc", example: "Desktop walkthrough · A weekly plan for work and photography",
     videoLabel: "xopc Personal AI: share context, delegate a weekly plan, review and refine",

@@ -1,7 +1,7 @@
 export const storyCopy = {
   zh: {
-    eyebrow: "XOPC · 你的个人 AI 助理", headline: ["AI，让生活", "更美好。"],
-    description: "逐渐了解你的习惯与目标，和你理清想法，帮你处理工作与生活中的事务。把更多时间和精力，留给创造、陪伴和享受生活。",
+    eyebrow: "XOPC · 工作与生活中的 AI 助理", headline: ["理清想法，", "也帮你把事情做好。"],
+    description: "从整理工作资料到安排周末计划，XOPC 逐渐了解你的习惯与目标，记住相关背景，使用你授权的工具帮忙处理。让你少一些反复操作，多一些时间做自己在意的事。",
     supporting: "开源、本地优先，运行在你选择的电脑上。",
     watch: "看看它如何帮忙",
     download: "下载 XOPC", begin: "从一个故事开始", hello: "没关系，我们接着来。",
@@ -20,17 +20,17 @@ export const storyCopy = {
     result: "首版发布计划已更新", exampleResult: "示例中，确认后得到的结果", tasks: ["用户反馈整理为 3 个重点", "首版范围：快速记录 + 全文搜索", "发布清单：补充搜索验收任务"], ready: "可查看", file: "首版发布计划", fileBody: "范围已明确 · 下一步可执行", artifactBefore: "等待确认范围", artifactAfter: "范围确认 → 清单更新", artifactPhone: "同一份计划 · 手机可查看",
     phoneTime: "18:06", phoneAsk: "记事应用，接下来先做什么？", phoneReply: "首版保留记录和搜索。发布清单已补充搜索验收任务，下次从这里继续。", connected: "连接电脑上的 xopc", continuity: "同一个项目，同一份结果。", continue: "查看发布计划",
     filmEyebrow: "52 秒 · 一次产品发布", filmTitle: "把想法做出来。\n也有时间享受生活。", filmDesc: "一句指令，准备发布页和宣传卡。看见成果，再提修改。第二天，接着原来的项目继续。", filmChaptersLabel: "选择短片片段", filmNote: "真实客户端录屏 · 情境演绎 · 演示资料与成果经过设计", moreFilms: "查看实战教程",
-    visionTitle: "更多时间，\n留给创造和享受生活。", visionBody: "我们希望每个人都能拥有自己的 AI 助理，在工作与生活中获得持续的帮助，有更多时间去创造、陪伴重要的人，体验和享受生活。怎样使用这些时间，由你决定。", visionLink: "了解我们的产品理念",
+    visionTitle: "留出时间，\n做自己在意的事。", visionBody: "我们希望每个人都能拥有自己的 AI 助理，在工作和生活中获得持续的帮助。省下的时间，可以用来创造、陪伴家人，也可以只是好好休息。怎样使用这些时间，由你决定。", visionLink: "了解我们的产品理念", everydayLink: "看看 Ada 如何帮忙安排周末",
     trustTitle: "事情在向前。\n决定仍在你手里。", trust: [
       { title: "资料放在哪里，说清楚", body: "核心状态本地保存。使用云模型时，请求上下文由对应提供商处理。" },
       { title: "重要操作，先确认", body: "发送、删除和其他高影响操作，先停下来，等你决定。" },
       { title: "记住什么，你可以修改", body: "查看、纠正或删除它记住的内容。你的上下文，由你掌握。" },
     ], privacy: "查看隐私与数据边界",
-    downloadTitle: "把 xopc 带到你的桌面。", downloadDesc: "让 AI 帮你处理更多繁琐事务，留出时间去创造、陪伴重要的人，按自己的方式享受生活。安装后连接模型服务，从一件小事开始。", mobileDownload: "在手机上继续",
+    downloadTitle: "把 xopc 带到你的桌面。", downloadDesc: "让 AI 帮你理清想法，处理工作与生活中的事务，留出时间做自己在意的事。安装后连接模型服务，从一件小事开始。", mobileDownload: "在手机上继续",
   },
   en: {
-    eyebrow: "XOPC · Your personal AI assistant", headline: ["A better life,", " with AI."],
-    description: "An assistant that gets to know your habits and goals, helps you think things through, and handles tasks across work and everyday life. More time and energy to create, be with the people who matter, and enjoy life.",
+    eyebrow: "XOPC · Your AI assistant for work and everyday life", headline: ["Think it through.", " Get things done."],
+    description: "From organizing work files to planning a weekend, XOPC gets to know your habits and goals, remembers relevant context, and uses tools you authorize to help. Spend less time on repetitive tasks and more on what matters to you.",
     supporting: "Open-source. Local-first. Runs on a computer you choose.",
     watch: "See it in action",
     download: "Download XOPC", begin: "Follow the story", hello: "It's okay. Let's pick it back up.",
@@ -48,12 +48,12 @@ export const storyCopy = {
     result: "Launch plan updated", exampleResult: "Example result after approval", tasks: ["Feedback distilled into 3 priorities", "V1 scope: quick capture + full-text search", "Search acceptance task added to checklist"], ready: "Ready to review", file: "Version one · launch plan", fileBody: "A clear scope. An actionable next step.", artifactBefore: "Scope awaiting approval", artifactAfter: "Scope agreed → checklist updated", artifactPhone: "Same plan · available on your phone",
     phoneTime: "18:06", phoneAsk: "What's next for the notes app?", phoneReply: "V1 keeps capture and search. The checklist now includes search acceptance testing. We can pick up there next time.", connected: "Connected to xopc on your computer", continuity: "Same project. Same result.", continue: "View the launch plan",
     filmEyebrow: "52 SECONDS · ONE PRODUCT LAUNCH", filmTitle: "Move your idea forward.\nMake room for life.", filmDesc: "Prepare a launch page and promo cards. Review the result, ask for a change, then return to the same project the next day.", filmChaptersLabel: "Choose a film chapter", filmNote: "Real desktop capture · Staged scenario · Chinese UI with optional English captions", moreFilms: "Explore guided tutorials",
-    visionTitle: "More time to create.\nMore time to enjoy life.", visionBody: "We envision a future where everyone has their own AI assistant, helping across work and everyday life, with more time to create, be with the people who matter, and enjoy the world around them. How you spend that time is up to you.", visionLink: "Read our philosophy",
+    visionTitle: "Make time\nfor what matters to you.", visionBody: "We want everyone to have their own AI assistant, with ongoing help across work and everyday life. Use the time saved to create, be with family, or simply rest. How you spend that time is up to you.", visionLink: "Read our philosophy", everydayLink: "See Ada help plan a weekend",
     trustTitle: "Work moves forward.\nThe direction stays yours.", trust: [
       { title: "Know where your data goes", body: "Core state stays local. When you use cloud models, their providers process the request context." },
       { title: "Important actions need approval", body: "Sending, deleting and other high-impact actions pause for your confirmation." },
       { title: "Memory you can change", body: "See, correct or delete what it remembers. Your context stays in your control." },
     ], privacy: "Explore privacy and data boundaries",
-    downloadTitle: "Make room for xopc.", downloadDesc: "Let AI help with tedious tasks, making more time to create, be with the people who matter, and enjoy life your way. Install, connect a model, and start with one small task.", mobileDownload: "Continue on mobile",
+    downloadTitle: "Make room for xopc.", downloadDesc: "Get help thinking things through and handling work and everyday tasks. Make time for what matters to you. Install, connect a model, and start with one small task.", mobileDownload: "Continue on mobile",
   },
 };

@@ -65,6 +65,7 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
       <h2 id="vision-title">{c.visionTitle}</h2>
       <p>{c.visionBody}</p>
       <a className={styles.textLink} href={`${docHome}product`}>{c.visionLink}<ArrowUpRight size={15} /></a>
+      <div><a className={styles.textLink} href={`/${locale}/ada`}>{c.everydayLink}<ArrowUpRight size={15} /></a></div>
     </section>
     <section className={styles.trust} id="trust">
       <h2>{c.trustTitle}</h2>

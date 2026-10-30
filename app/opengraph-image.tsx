@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "xopc — A better life, with AI.";
+export const alt = "xopc · Your AI assistant for work and everyday life";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,10 +40,10 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 940 }}>
           <div style={{ fontSize: 72, lineHeight: 1.08, letterSpacing: "-3px", fontWeight: 700 }}>
-            A better life, with AI.
+            Your AI assistant for work and everyday life.
           </div>
           <div style={{ color: "#a7b0bf", fontSize: 28, lineHeight: 1.35 }}>
-            Your personal AI. More time to create and enjoy life.
+            Think things through. Get help with tasks. Make time for what matters to you.
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 export const adaCopy = {
   zh: {
-    meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中服务于工作与生活的个人 Agent。聊聊近况、交办事务，把更多时间留给创造和享受生活。" },
+    meta: { title: "Ada — 你的个人 Agent", description: "认识 Ada，xopc 中的个人 Agent。聊聊近况、理清想法，也能交办工作与生活中的事务。" },
     eyebrow: "xopc 的个人 Agent", headline: ["认识 Ada。", "慢慢说，我在听。"],
-    description: "Ada 是 xopc 里的个人 Agent，和你理清想法，帮你处理工作与生活中的事务，把更多时间留给创造和享受生活。",
+    description: "Ada 是 xopc 里的个人 Agent。和它理清想法，交办工作与生活中的事务，留出时间做自己在意的事。",
     download: "下载 xopc，认识 Ada", watch: "观看 Ada 介绍", film: "Ada · 把周末，还给自己。",
     included: "与工作空间在同一个 xopc 应用里，无需另外安装。", demo: "真实客户端演示 · 按自己的节奏，出去透口气",
     introduction: "不用准备好一切。\n先聊聊你。", introductionBody: "你的背景、习惯，或一件还没想清楚的事。Ada 从这里开始。",
@@ -12,7 +12,7 @@ export const adaCopy = {
       { image: "revision", title: "结果回来，\n继续打磨。", body: "打开文件，看清结果。想调整哪里，再和 Ada 说。", chapter: 4, watch: "看看结果与修改", alt: "真实 xopc 产出：把90分钟出行改成30分钟的轻松路线" },
     ],
     contextAlt: "真实 xopc 对话：告诉 Ada 今天只想轻松出门",
-    relationship: "Ada，住在 xopc 里。", relationshipBody: "想先聊聊，让 Ada 帮你理清和交办。想直接处理文件，就打开工作空间。用的都是同一个 xopc。",
+    relationship: "Ada，住在 xopc 里。", relationshipBody: "你可以先和 Ada 聊聊，也可以带上文件直接进入工作空间。两种开始方式，都可以处理工作与生活中的事情。",
     workspace: "了解 xopc 如何工作", learn: "探索与学习",
     faqTitle: "开始之前。", faqs: [
       { question: "Ada 和 xopc 是什么关系？", answer: "Ada 是 xopc 中的个人 Agent。你可以和 Ada 聊天、讨论目标、委托任务；也可以直接进入 xopc 工作空间处理文件和项目，无需另外安装。" },
@@ -22,9 +22,9 @@ export const adaCopy = {
     privacy: "查看隐私与数据边界", closing: "下一件事，\n和 Ada 一起开始。", closingBody: "下载 xopc，认识你的个人 Agent。",
   },
   en: {
-    meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc for work and everyday life, with more time to create and enjoy life." },
+    meta: { title: "Ada — Your personal Agent", description: "Meet Ada, your personal Agent in xopc. Talk things through and get help with work and everyday tasks." },
     eyebrow: "Your personal Agent in xopc", headline: ["Meet Ada.", "Take your time. I’m listening."],
-    description: "Ada is your personal Agent in xopc. Think things through and get help with work and everyday tasks, with more time to create and enjoy life.",
+    description: "Ada is your personal Agent in xopc. Think things through, hand over work and everyday tasks, and make time for what matters to you.",
     download: "Download xopc. Meet Ada.", watch: "Watch the Ada film", film: "Ada · A little more weekend for you",
     included: "Ada and the workspace live in the same xopc app. No separate installation.", demo: "Real desktop demo · Chinese interface · Optional English captions",
     introduction: "You do not need a perfect brief.\nStart with you.", introductionBody: "Your background, your habits, or an idea you are still figuring out. That is where Ada begins.",
@@ -34,7 +34,7 @@ export const adaCopy = {
       { image: "revision", title: "Review the result.\nMake it yours.", body: "Open the file. Take a look. Tell Ada what you want to change.", chapter: 4, watch: "See the result and revision", alt: "Real xopc output: a 90-minute outing revised into a relaxed 30-minute route" },
     ],
     contextAlt: "Real xopc conversation: telling Ada you want an easy outing today",
-    relationship: "Ada lives in xopc.", relationshipBody: "Talk with Ada to find a direction and delegate a task. Open the workspace to work directly with files. It is all in the same xopc app.",
+    relationship: "Ada lives in xopc.", relationshipBody: "Talk with Ada or bring files straight to the workspace. These are two ways to begin in the same xopc, and both can help with work and everyday life.",
     workspace: "See how xopc works", learn: "Explore & learn",
     faqTitle: "Before you begin.", faqs: [
       { question: "How do Ada and xopc fit together?", answer: "Ada is your personal Agent in xopc. Talk through goals and delegate tasks with Ada, or work directly with files and projects in the xopc workspace. There is no separate app to install." },

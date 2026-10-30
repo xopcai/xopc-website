@@ -1,7 +1,7 @@
 {
   "name": "xopc",
   "short_name": "xopc",
-  "description": "A better life, with AI. Your personal AI assistant for work and everyday life, with more time to create and enjoy life.",
+  "description": "Your AI assistant for work and everyday life. Think things through, get help with tasks, and make time for what matters to you.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B0D10",
