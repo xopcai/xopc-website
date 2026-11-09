@@ -99,8 +99,8 @@ export function AndroidDownload({
     return <DownloadStatus d={d} platform="android" retry={retry} locale={locale} error />;
   }
   const downloadAsset = payload.assets[0];
-  const checksumAsset = payload.assets.find((asset) => asset.name.endsWith(".sha256"));
-  const displayVersion = payload.version.replace(/^mobile-expo-v/, "");
+  const checksumAsset = payload.assets.find((asset) => asset.name.endsWith(".sha256") || asset.name === "SHA256SUMS");
+  const displayVersion = payload.version.replace(/^mobile-(?:android|expo)-v/, "");
 
   return (
     <article className="mobile-app-panel">

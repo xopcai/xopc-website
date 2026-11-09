@@ -12,6 +12,7 @@ const compiled = ts.transpileModule(source, {
 }).outputText;
 const release = { tag_name: "mobile-expo-v1.2.3", draft: false, assets: [{ name: "xopc-android.apk" }, { name: "xopc-android.apk.sha256" }] };
 const epoch = 1_800_000_000_000;
+const androidRelease = { tag_name: "mobile-android-v0.0.116", draft: false, assets: [{ name: "SHA256SUMS" }, { name: "xopc-android.aab" }, { name: "xopc-android.apk" }] };
 function load({ disk = new Map(), fetcher = async () => ({ ok: false }), tag } = {}) {
   let now = epoch;
   let calls = 0;
@@ -45,6 +46,30 @@ test("successful release persists and survives a restart plus GitHub rate limiti
   restarted.advance(120_000);
   assert.equal((await restarted.get()).checksumAsset.name, "xopc-android.apk.sha256");
   assert.equal(restarted.calls(), 1);
+});
+
+test("current Android tags resolve the APK and SHA256SUMS, including after restart", async () => {
+  const first = load({ fetcher: async () => ({ ok: true, json: async () => [
+    { ...release, tag_name: "v0.0.457" },
+    { ...release, tag_name: "mobile-ios-v0.0.117" },
+    androidRelease,
+    release,
+  ] }) });
+  const result = await first.get();
+  assert.equal(result.tag, androidRelease.tag_name);
+  assert.equal(result.asset.name, "xopc-android.apk");
+  assert.equal(result.checksumAsset.name, "SHA256SUMS");
+  const restarted = load({ disk: first.disk });
+  restarted.advance(120_000);
+  assert.equal((await restarted.get()).tag, androidRelease.tag_name);
+});
+
+test("a pinned current Android tag uses its release endpoint", async () => {
+  const resolver = load({ tag: androidRelease.tag_name, fetcher: async url => {
+    assert.equal(url, `https://api.github.com/repos/xopcai/xopc/releases/tags/${androidRelease.tag_name}`);
+    return { ok: true, json: async () => androidRelease };
+  } });
+  assert.equal((await resolver.get()).tag, androidRelease.tag_name);
 });
 
 test("network exceptions use the verified snapshot, but expired snapshots do not", async () => {

@@ -10,7 +10,7 @@ export type AndroidRelease = {
   checksumAsset?: { name: string };
 };
 
-const MOBILE_TAG_PATTERN = /^mobile-expo-v\d+\.\d+\.\d+(?:[-+][\w.-]+)?$/;
+const MOBILE_TAG_PATTERN = /^mobile-(?:android|expo)-v\d+\.\d+\.\d+(?:[-+][\w.-]+)?$/;
 const ANDROID_ASSET_NAME = "xopc-android.apk";
 const ANDROID_CHECKSUM_ASSET_NAME = `${ANDROID_ASSET_NAME}.sha256`;
 
@@ -107,7 +107,7 @@ function toAndroidRelease(release: GithubRelease): AndroidRelease | null {
   if (!asset) return null;
   const checksumAsset = release.assets.find(
     (candidate) => candidate.name === ANDROID_CHECKSUM_ASSET_NAME,
-  );
+  ) ?? release.assets.find((candidate) => candidate.name === "SHA256SUMS");
   return {
     tag: release.tag_name,
     asset: { name: asset.name },
