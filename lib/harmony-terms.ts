@@ -4,9 +4,9 @@ export const harmonyTermsContent = {
   zh: {
     eyebrow: "xopc 鸿蒙受邀测试版 · ai.xopc.xopc",
     title: "用户协议",
-    intro: "本协议适用于徐巧民提供的 xopc 鸿蒙受邀测试版。请在使用前阅读本协议及鸿蒙测试版隐私政策；不同意相关条款时，可停止使用并通过联系邮箱反馈。",
+    intro: "本协议适用于 xopc 提供的鸿蒙受邀测试版。请在使用前阅读本协议及鸿蒙测试版隐私政策；不同意相关条款时，可停止使用并通过联系邮箱反馈。",
     effectiveLabel: "生效日期", effectiveDate: "2026 年 10 月 11 日",
-    publisherLabel: "运营者", publisher: "徐巧民", contactLabel: "联系邮箱",
+    publisherLabel: "运营者", publisher: "xopc", contactLabel: "联系邮箱",
     backHome: "返回 xopc 首页", contactTitle: "变更与联系",
     contactBody: "重大条款或数据处理变化将通过协议页面、测试说明或应用内可用通知方式告知。涉及依法需要重新取得同意的处理时，应重新取得同意。疑问可通过邮箱沟通，争议可依法通过有管辖权的机构处理。",
     sections: [
@@ -21,9 +21,9 @@ export const harmonyTermsContent = {
   },
   en: {
     eyebrow: "xopc HarmonyOS invited test · ai.xopc.xopc", title: "User Agreement",
-    intro: "This agreement applies to the xopc HarmonyOS invited test provided by Qiaomin Xu. Read it together with the HarmonyOS test privacy policy before use. If you disagree, you may stop using the app and contact the operator.",
+    intro: "This agreement applies to the HarmonyOS invited test provided by xopc. Read it together with the HarmonyOS test privacy policy before use. If you disagree, you may stop using the app and contact the operator.",
     effectiveLabel: "Effective date", effectiveDate: "October 11, 2026",
-    publisherLabel: "Operator", publisher: "Qiaomin Xu", contactLabel: "Contact email",
+    publisherLabel: "Operator", publisher: "xopc", contactLabel: "Contact email",
     backHome: "Back to xopc home", contactTitle: "Changes and contact",
     contactBody: "Material changes will be announced on this page, in test notes, or through available in-app notices. Consent will be requested again where required by law. Contact us by email; disputes may be addressed through the competent authorities under applicable law.",
     sections: [
