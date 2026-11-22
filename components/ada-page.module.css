@@ -24,6 +24,14 @@
 .page .stage h2 { font-size: clamp(28px, 3.5vw, 42px); }
 .stageCopy > p:not(.number) { font-size: 15px; color: var(--muted); line-height: 1.85; margin: 20px 0 24px; max-width: 340px; }
 .stagePreview { min-width: 0; padding: 24px; background: var(--sage); border-radius: 24px; }
+.capabilities { max-width: 1184px; margin: 48px auto 0; padding: 64px 32px 0; border-top: 1px solid var(--line); }
+.capabilitiesHead { max-width: 620px; margin: 0 auto 40px; text-align: center; }
+.capabilitiesHead p { margin: 16px auto 0; font-size: 15.5px; line-height: 1.8; color: var(--muted); }
+.capabilitiesGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.capabilityCard { padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
+.capabilityCard > span { font: 11px var(--mono); color: var(--blue); letter-spacing: .06em; }
+.page .capabilityCard h3 { margin: 12px 0 10px; font-size: 18px; font-weight: 500; color: var(--ink); }
+.capabilityCard p { margin: 0; font-size: 14.5px; line-height: 1.8; color: var(--muted); }
 .relationship { max-width: 1184px; padding: 72px 32px; margin: 72px auto; background: var(--sage); border-radius: 30px; text-align: center; }
 .relationship h2 { margin-top: 18px; }
 .relationship > p:not(.eyebrow) { max-width: 550px; margin: 24px auto; line-height: 1.85; color: var(--muted); font-size: 16px; }
@@ -53,6 +61,8 @@
   .stage:nth-child(even) .stageCopy { order: 0; }
   .number { margin-bottom: 16px; }
   .stagePreview { padding: 16px; border-radius: 18px; }
+  .capabilities { padding: 48px 20px 0; }
+  .capabilitiesGrid { grid-template-columns: 1fr; }
   .relationship { margin: 44px 20px; padding: 48px 24px; border-radius: 20px; }
   .closing { padding: 76px 24px 88px; }
 }

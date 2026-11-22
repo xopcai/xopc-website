@@ -146,21 +146,21 @@
       "boundary": "Experimental. Apple Notes, Calendar and Reminders each need separate system permission; behavior varies by release."
     },
     "home": {
-      "title": "Today · Workbench",
-      "description": "See decisions that need you, prepared results and work progressing in the background.",
+      "title": "Home & task drafts",
+      "description": "Surface repeated requests as concrete task drafts and keep continuing goals and priorities calm and clear.",
       "features": [
-        "Quick capture",
-        "Pending decisions",
-        "Prepared work",
-        "Background progress and failures"
+        "Turns repeated requests into actionable task drafts",
+        "Bounded continuing goals with step-by-step review",
+        "Clear view of open approvals and active progress",
+        "One click into Ada or any active project workspace"
       ],
       "steps": [
-        "Share a new thought",
-        "Review what needs your attention",
-        "Open the related task or follow-up",
-        "Take the next step"
+        "Open Home to review priorities and suggested drafts",
+        "Inspect a draft's scope before starting it",
+        "Review next steps for continuing goals",
+        "Jump straight back into paused projects"
       ],
-      "boundary": "The workbench reflects your instance's tasks and assistant activity; it is not a separate task-status system."
+      "boundary": "Home proposes drafts for review and never launches high-impact work without your confirmation."
     },
     "portrait": {
       "title": "Your portrait",
@@ -298,21 +298,21 @@
       "boundary": "Natural voice mode has no tools; current-assistant mode retains Agent tools. Stopping playback does not undo completed actions."
     },
     "tasks": {
-      "title": "Task",
-      "description": "Carry a verifiable outcome across time with status, next steps and completion criteria.",
+      "title": "Task delegation & acceptance",
+      "description": "Delegate work to background specialist Agents, steer mid-run, and review results against clear criteria.",
       "features": [
-        "Outcome and scope",
-        "Work across sessions",
-        "Blockers and decisions",
-        "Run history and evidence"
+        "Background Task Router assigns the right specialist Agent",
+        "Steer running tasks mid-flight or queue follow-ups",
+        "Result capsules with automatic or manual acceptance",
+        "Atomic revisions in the same task while preserving prior versions"
       ],
       "steps": [
-        "Describe the result",
-        "Define what done means",
-        "Execute and preserve evidence",
-        "Review the result before closing"
+        "Describe the deliverable and check criteria to Ada or workspace",
+        "Keep chatting while the task runs in the background",
+        "Steer the direction immediately if priorities shift",
+        "Inspect the delivered result and accept or request a revision"
       ],
-      "boundary": "An Agent run ending does not mean a Task is complete. Completion depends on a verifiable result."
+      "boundary": "Eligible tasks can auto-accept when checks pass; specify manual review whenever you want final sign-off."
     },
     "projects": {
       "title": "Project",
@@ -332,21 +332,21 @@
       "boundary": "Projects provide context rather than a competing task-status system."
     },
     "notes": {
-      "title": "Notes & workspace files",
-      "description": "Keep source material, decisions and deliverables available for future work.",
+      "title": "Notes & meeting records",
+      "description": "Keep ideas, meeting notes, and decisions in structured documents with outlines and contextual AI chat.",
       "features": [
-        "Standalone notes",
-        "Project notes",
-        "Workspace materials",
-        "Deliverable files"
+        "Document outline navigation and conflict draft recovery",
+        "Meeting notes with embedded contextual AI chat",
+        "Global notes synced across desktop, web, and mobile",
+        "Interactive Markdown charts and project linking"
       ],
       "steps": [
-        "Save useful information",
-        "Link it to a project",
-        "Let the assistant read or edit it",
-        "Preserve the result"
+        "Capture a quick note or transcribe a meeting recording",
+        "Organize with the outline and ask contextual AI beside it",
+        "Link notes to a Project for durable future recall",
+        "Read and refine notes anytime from your phone"
       ],
-      "boundary": "Use Notes for durable information and workspace files for material to read, edit or deliver."
+      "boundary": "Notes hold durable knowledge and decisions; versioned deliverable files live in the Library."
     },
     "sharing": {
       "title": "Share a conversation",
@@ -434,21 +434,21 @@
       "boundary": "An Automation defines when work starts. It does not expand Agent authority, and the Gateway must be running."
     },
     "browser-auto": {
-      "title": "Browser automations",
-      "description": "Save a website task you have completed successfully with the assistant so it can run again.",
+      "title": "Live browser view & takeover",
+      "description": "Watch managed Chromium or personal Chrome activity live and take over logins or key steps in one click.",
       "features": [
-        "Create through conversation",
-        "Parameterized inputs",
-        "Run and stop",
-        "Edit, pause and version history"
+        "Live view for managed Chromium sessions",
+        "Personal Chrome preview streamed to desktop and Android",
+        "Instant pause and one-click human takeover",
+        "Clear site boundaries and execution receipts"
       ],
       "steps": [
-        "Describe a website task",
-        "Complete it together once",
-        "Save verified steps and inputs",
-        "Run again or add a schedule"
+        "Use managed Chromium or connect the personal Chrome extension",
+        "Watch web actions live inside the workspace",
+        "Take over manually for logins, CAPTCHAs, or confirmations",
+        "Hand control back so the Agent can finish"
       ],
-      "boundary": "You must complete login and human verification. Website changes or expired sessions may break saved tasks."
+      "boundary": "Legacy browser flow recording and replay were removed in Nov 2026. Browser control does not prompt on every click—set scope first and take over anytime."
     },
     "heartbeat": {
       "title": "Heartbeat checks",
@@ -519,38 +519,38 @@
       "boundary": "Skills describe how to work; tools provide actions. They are different layers of capability."
     },
     "browser": {
-      "title": "Browser use",
-      "description": "Let an authorized assistant inspect pages, find information and interact with websites.",
+      "title": "Browser control",
+      "description": "Let your assistant inspect web pages, stream live previews, gather evidence, and interact within authorized sites.",
       "features": [
-        "Page reading",
-        "Website interactions",
-        "Browser runtime",
-        "Site and action permissions"
+        "Page reading and structured extraction",
+        "Managed Chromium and personal Chrome live previews",
+        "One-click human takeover for sensitive steps",
+        "Explicit site scope and action guardrails"
       ],
       "steps": [
-        "Configure a browser",
-        "Enable access for the Agent",
-        "Complete a website task",
-        "Save it for reuse when useful"
+        "Choose managed Chromium or connect personal Chrome",
+        "Enable browser access for the Agent",
+        "Observe live progress and take over whenever needed",
+        "Verify gathered facts and final page outcomes"
       ],
-      "boundary": "A browser may use signed-in accounts. Site access and sensitive actions need their own boundaries."
+      "boundary": "Personal Chrome may hold signed-in sessions; keep submission, publishing, and account changes under explicit approval."
     },
     "media": {
-      "title": "Image, search & speech",
-      "description": "Add image creation, information retrieval and speech services to the main model.",
+      "title": "Image, music, video & search",
+      "description": "Extend chat with image generation, conversational music and video drafts, inline charts, search, and voice.",
       "features": [
-        "Image generation and multimodal input",
-        "Web search providers",
-        "Speech transcription",
-        "Speech synthesis"
+        "Conversational music and video drafts with persistent playback",
+        "Image generation, multimodal vision, and quick screenshots",
+        "Validated interactive charts rendered inline in chat",
+        "Web search, speech-to-text, and text-to-speech"
       ],
       "steps": [
-        "Choose a capability",
-        "Configure a compatible service",
-        "Try a small sample",
-        "Use it in a task"
+        "Connect XOPC Cloud or compatible media providers",
+        "Ask for images, music, video drafts, or charts in chat",
+        "Track progress and play results inline from result cards",
+        "Archive outputs in Library or ask for revisions"
       ],
-      "boundary": "Services require their own credentials and may incur separate usage charges."
+      "boundary": "Media generation relies on configured providers; longer jobs continue asynchronously and deliver to the result card."
     },
     "runtimes": {
       "title": "Tool runtimes",
@@ -587,21 +587,21 @@
       "boundary": "Removing a connector may not revoke the external grant. Available services depend on your instance's catalog."
     },
     "mcp": {
-      "title": "MCP connections",
-      "description": "Connect external tools through MCP and expose xopc to other MCP clients.",
+      "title": "MCP tools & Gateway server",
+      "description": "Connect outbound MCP tool servers, or expose your xopc Gateway as an MCP server with OAuth 2.1.",
       "features": [
-        "Outbound MCP servers",
-        "Local or remote transport",
-        "Tool discovery and calls",
-        "Inbound channel bridge"
+        "Conversational MCP discovery and guided setup",
+        "Gateway MCP Server (local stdio & remote Streamable HTTP + OAuth 2.1)",
+        "Scoped workspace search and Agent delegation for external MCP clients",
+        "Network policy controls and mobile MCP configuration"
       ],
       "steps": [
-        "Configure a server",
-        "Check its connection and tools",
-        "Allow access for an Agent",
-        "Verify in a conversation"
+        "Ask xopc to connect an MCP server or add it in Settings",
+        "Inspect discovered tools and assign them to specialist Agents",
+        "Optionally enable Gateway MCP Server for external clients",
+        "Monitor connections and scopes in the console"
       ],
-      "boundary": "A connection supplies capabilities; execution is still subject to Agent policy and server permissions."
+      "boundary": "MCP supplies capability paths; actual execution still follows Agent policies, OAuth scopes, and your approval rules."
     },
     "extensions": {
       "title": "Extensions",
@@ -656,20 +656,20 @@
     },
     "desktop": {
       "title": "Desktop app",
-      "description": "Use xopc on your own computer as the primary surface for personal work.",
+      "description": "Native macOS, Windows, and Linux app with bundled Gateway, quick screenshot suite, and Loopi desktop pet.",
       "features": [
-        "Native desktop shell",
-        "Shared local state",
-        "Gateway experience",
-        "macOS work discovery"
+        "Built-in local Gateway ready out of the box",
+        "Cross-platform screenshot suite with custom shortcuts",
+        "Interactive animated Loopi desktop companion",
+        "Connect to remote Gateways or run preview desktop control"
       ],
       "steps": [
-        "Open the app",
-        "Complete first-time setup",
-        "Start work from Today",
-        "Return to ongoing tasks"
+        "Download and open the installer for your OS",
+        "Connect a model via guided setup or plain conversation",
+        "Start with Ada or jump straight into your workspace",
+        "Optionally enable screenshot shortcuts, Loopi, or mobile pairing"
       ],
-      "boundary": "Local configuration and state use the shared ~/.xopc root by default."
+      "boundary": "Core configuration and state live locally in ~/.xopc/ by default; remote Gateway connections stay explicit."
     },
     "web": {
       "title": "Web console",
@@ -706,38 +706,38 @@
       "boundary": "The terminal is optional, not a prerequisite for coding. CLI installation needs a supported Node.js version. Remote Gateway connections require authentication; check which configuration and sessions each mode uses."
     },
     "mobile": {
-      "title": "Mobile app",
-      "description": "Pair with your computer and continue the same work from your phone.",
+      "title": "Mobile apps (iOS / Android / HarmonyOS)",
+      "description": "Pair with your computer by QR code to continue chats, tasks, notes, voice, and generated media anywhere.",
       "features": [
-        "QR pairing and desktop approval",
-        "Chat and voice",
-        "Offline pending messages",
-        "Revoke devices and test connectivity"
+        "Public iOS TestFlight, Android APK, and HarmonyOS invited beta",
+        "Unified push notifications via APNs, FCM, and Huawei Push",
+        "Global notes, voice notes, inline media playback, and charts",
+        "Configure models and custom MCP connections right from mobile"
       ],
       "steps": [
-        "Choose Connect phone on the computer",
-        "Scan the QR code",
-        "Compare numbers and approve on the computer",
-        "Test the connection and continue"
+        "Install xopc on iOS, Android, or HarmonyOS",
+        "Scan the pairing QR code on your computer and confirm",
+        "Check progress, steer tasks, or capture voice notes on the go",
+        "Review finished deliverables when push alerts arrive"
       ],
-      "boundary": "Keep the computer running and online. Pending work is isolated by computer; stale or rejected entries need review."
+      "boundary": "Agents execute on your connected computer or server; keep that Gateway online for live access."
     },
     "channels": {
       "title": "Messaging channels",
-      "description": "Collaborate with the same assistant through Telegram, Weixin or Feishu / Lark.",
+      "description": "Collaborate with the same assistant from Weixin, Feishu / Lark, Telegram, Slack, Discord, DingTalk, and WeCom.",
       "features": [
-        "Channel and account settings",
-        "Direct and group policies",
-        "Inbound routing",
-        "Message and media replies"
+        "Seven personal and workplace messaging platforms",
+        "Guided conversational setup and secure pairing",
+        "DM pairing and public-channel allowlist controls",
+        "Two-way text, image, and file result delivery"
       ],
       "steps": [
-        "Choose a channel",
-        "Configure account credentials",
-        "Set the allowed audience",
-        "Verify delivery and routing"
+        "Choose a platform in Settings or ask the assistant to guide setup",
+        "Connect bot credentials and approve DM pairing",
+        "Specify who can invoke xopc in shared channels",
+        "Continue work on your computer right from chat"
       ],
-      "boundary": "Media support varies by channel. Channels such as Telegram and Weixin load through extensions."
+      "boundary": "External chat messages are treated as untrusted input; use pairing or allowlists and keep high-impact approvals active."
     },
     "chrome": {
       "title": "Chrome extension",
@@ -842,21 +842,21 @@
       "boundary": "Logs can contain work context. Review them before sharing."
     },
     "settings": {
-      "title": "Preferences & settings",
-      "description": "Manage everyday experience, default capabilities and runtime configuration in their own sections.",
+      "title": "Conversational setup & preferences",
+      "description": "Skip dense config forms—configure models, channels, MCP, and preferences through plain conversation.",
       "features": [
-        "Language and appearance",
-        "Global Agent defaults",
-        "Session settings",
-        "Services and runtime"
+        "Tiered conversational self-configuration with rollback",
+        "Language, light/dark themes, and custom shortcuts",
+        "Customize Ada's name, avatar, tone, and response style",
+        "Centralized model, proxy, and permission controls"
       ],
       "steps": [
-        "Open Settings",
-        "Choose the relevant section",
-        "Save and verify",
-        "Check runtime status if needed"
+        "Tell xopc which model, channel, or MCP you want to set up",
+        "Review the proposed configuration plan and confirm",
+        "Fine-tune appearance, shortcuts, or defaults in Settings",
+        "Roll back cleanly if a configuration change causes issues"
       ],
-      "boundary": "Explicit per-Agent overrides take precedence over global defaults."
+      "boundary": "Credential and security changes always ask for explicit confirmation and never widen permissions silently."
     },
     "gateway": {
       "title": "Gateway",
@@ -892,6 +892,74 @@
         "Deliver a change summary, verification results and remaining issues"
       ],
       "boundary": "Results depend on the model, tool permissions and project dependencies. A successful command does not prove every acceptance criterion passed. Full PTY and broader language services are still evolving; commits, pushes and deployments need explicit authorization."
+    },
+    "space": {
+      "title": "Library & editable workbooks",
+      "description": "Store uploads and generated deliverables with version history, plus built-in collaborative spreadsheets.",
+      "features": [
+        "Versioned deliverable storage and search",
+        "Import Excel, CSV, or TSV into editable workbooks",
+        "Ask about selected cells and review batch formula edits",
+        "Inspect version history and export standard Excel files"
+      ],
+      "steps": [
+        "Open or import a file in the Library",
+        "Edit cells directly or ask questions about a selection",
+        "Review proposed batch cell or formula changes",
+        "Save as a new version or export to Excel"
+      ],
+      "boundary": "Editable workbooks preserve core data and supported formulas; Excel macros, pivot tables, and full styling are outside scope."
+    },
+    "computer-use": {
+      "title": "Computer Use (desktop preview)",
+      "description": "Authorize specific app windows on macOS or Windows x64 so an Agent can observe and act safely.",
+      "features": [
+        "Per-application authorization with instant stop",
+        "Programmable UI and guarded background execution",
+        "Native control verification and per-action receipts",
+        "Works with dedicated GUI models or visual main models"
+      ],
+      "steps": [
+        "Enable Computer Use in Settings and select a model",
+        "Authorize a single target application window",
+        "Start with a small bounded goal and watch progress",
+        "Pause, take over manually, or revoke access anytime"
+      ],
+      "boundary": "Desktop preview on macOS and Windows x64. Password fields, read-only controls, and elevated system prompts stay protected."
+    },
+    "phone-use": {
+      "title": "Phone Use (Android preview)",
+      "description": "Connect local USB phones, Android 11+ wireless LAN devices, or cloud phones for bounded Agent tasks.",
+      "features": [
+        "Android 11+ wireless QR or pairing-code LAN setup",
+        "Per-app access allowlists using native app names",
+        "Live screen preview, pause, and human takeover",
+        "Guarded temporary location sharing for cloud phones"
+      ],
+      "steps": [
+        "Enable Phone Use and configure a compatible phone model",
+        "Pair a device via USB, LAN QR code, or cloud ADB",
+        "Choose which installed apps the Agent may access",
+        "Run a bounded goal and pause or take over anytime"
+      ],
+      "boundary": "Android preview only (iOS control is not included). Passwords, payments, and high-risk actions require manual takeover."
+    },
+    "devices": {
+      "title": "Device connections & federation",
+      "description": "View every desktop and mobile client connected to your Gateway alongside its reported capabilities.",
+      "features": [
+        "Live status across desktop and mobile clients",
+        "Capability federation across connected devices",
+        "Authorized remote Gateway execution on desktop",
+        "One-click revocation for unused devices"
+      ],
+      "steps": [
+        "Keep xopc Gateway running on your chosen computer",
+        "Pair additional desktop or mobile clients securely",
+        "Inspect online status and capabilities under Devices",
+        "Revoke access for any device whenever needed"
+      ],
+      "boundary": "Connected clients share one Gateway state; separate computers never sync memory or permissions automatically."
     }
   },
   "journeys": {

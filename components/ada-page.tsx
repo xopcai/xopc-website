@@ -55,6 +55,21 @@ export function AdaPage({ locale, messages, docHome }: Props) {
         </div></div>
       </section>;
     })}</div>
+    <section className={styles.capabilities} aria-labelledby="ada-capabilities">
+      <div className={styles.capabilitiesHead}>
+        <h2 id="ada-capabilities">{c.capabilitiesTitle}</h2>
+        <p>{c.capabilitiesDesc}</p>
+      </div>
+      <div className={styles.capabilitiesGrid}>
+        {c.capabilities.map((item) => (
+          <article key={item.title} className={styles.capabilityCard}>
+            <span>{item.tag}</span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
     <section className={styles.relationship} aria-labelledby="ada-xopc">
       <p className={styles.eyebrow}>Ada + xopc</p><h2 id="ada-xopc">{c.relationship}</h2><p>{c.relationshipBody}</p>
       <div className={styles.links}><a href={`/${locale}#loop`}>{c.workspace}<ArrowUpRight size={16} aria-hidden /></a><a href={`/${locale}/learn`}>{c.learn}<ArrowUpRight size={16} aria-hidden /></a></div>

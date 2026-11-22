@@ -35,7 +35,8 @@
         "projects",
         "coding",
         "notes",
-        "sharing"
+        "sharing",
+        "space"
       ]
     },
     {
@@ -61,7 +62,9 @@
         "skills",
         "browser",
         "media",
-        "runtimes"
+        "runtimes",
+        "computer-use",
+        "phone-use"
       ]
     },
     {
@@ -87,7 +90,8 @@
         "mobile",
         "channels",
         "chrome",
-        "remote"
+        "remote",
+        "devices"
       ]
     },
     {
@@ -299,7 +303,8 @@
       "related": [
         "projects",
         "memory",
-        "capture"
+        "capture",
+        "space"
       ],
       "source": "projects-tasks-notes.md",
       "status": "available",
@@ -374,7 +379,7 @@
         "automations",
         "chrome"
       ],
-      "source": "browser-automations.md",
+      "source": "browser-extension.md",
       "status": "available",
       "docLocale": "localized"
     },
@@ -531,7 +536,8 @@
       "related": [
         "onboard",
         "discovery",
-        "gateway"
+        "gateway",
+        "computer-use"
       ],
       "source": "desktop-app.md",
       "status": "available",
@@ -568,7 +574,8 @@
       "related": [
         "remote",
         "voice",
-        "chat"
+        "chat",
+        "devices"
       ],
       "source": "mobile-app.md",
       "status": "available",
@@ -683,6 +690,58 @@
       "source": "gateway.md",
       "status": "available",
       "docLocale": "localized"
+    },
+    {
+      "id": "space",
+      "group": "work",
+      "related": [
+        "notes",
+        "projects",
+        "tasks",
+        "chat"
+      ],
+      "source": "workspace-guide.md",
+      "status": "available",
+      "docLocale": "localized"
+    },
+    {
+      "id": "computer-use",
+      "group": "capability",
+      "related": [
+        "browser",
+        "permissions",
+        "desktop",
+        "phone-use"
+      ],
+      "source": "computer-use.md",
+      "status": "experimental",
+      "docLocale": "localized"
+    },
+    {
+      "id": "phone-use",
+      "group": "capability",
+      "related": [
+        "computer-use",
+        "permissions",
+        "mobile",
+        "devices"
+      ],
+      "source": "phone-use.md",
+      "status": "experimental",
+      "docLocale": "localized"
+    },
+    {
+      "id": "devices",
+      "group": "access",
+      "related": [
+        "desktop",
+        "mobile",
+        "gateway",
+        "phone-use"
+      ],
+      "source": "desktop-app.md",
+      "status": "available",
+      "docLocale": "localized"
     }
   ],
   "journeys": [
@@ -750,7 +809,8 @@
       "terminal",
       "mobile",
       "channels",
-      "chrome"
+      "chrome",
+      "devices"
     ],
     [
       "onboard",
@@ -760,7 +820,8 @@
       "tasks",
       "projects",
       "coding",
-      "assistant"
+      "assistant",
+      "space"
     ],
     [
       "agents",
@@ -769,7 +830,9 @@
       "skills",
       "workflows",
       "automations",
-      "browser-auto"
+      "browser-auto",
+      "computer-use",
+      "phone-use"
     ],
     [
       "gateway",
