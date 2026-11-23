@@ -103,37 +103,6 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         <div className={styles.film}>
           <ProductIntroVideo locale={locale} overview />
         </div>
-        <div className={styles.filmChapters} aria-label={c.filmChaptersLabel}>
-          {film.chapters.map((chapter, index) => (
-            <ProductFilmButton
-              key={chapter.start}
-              locale={locale}
-              film={film}
-              title={film.title}
-              label={`${chapter.title} · 0:${chapter.start.toString().padStart(2, "0")}`}
-              start={chapter.start}
-              className={styles.filmChapter}
-              analyticsMethod={`launch-chapter-${index + 1}`}
-            >
-              <div className={styles.chapterPreview}>
-                <Image
-                  src={chapter.thumbnail}
-                  alt=""
-                  width={480}
-                  height={270}
-                  sizes="(max-width: 600px) 44vw, 240px"
-                />
-                <span>
-                  <Play size={15} aria-hidden="true" />
-                </span>
-              </div>
-              <span className={styles.chapterCaption}>
-                <span>0:{chapter.start.toString().padStart(2, "0")}</span>
-                <strong>{chapter.title}</strong>
-              </span>
-            </ProductFilmButton>
-          ))}
-        </div>
         <p className={styles.filmNote}>{c.filmNote}</p>
         <Link className={styles.textLink} href={`/${locale}/learn`}>
           <Play size={14} aria-hidden="true" />

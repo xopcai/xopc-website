@@ -9,7 +9,6 @@ export const storyCopy = {
     filmEyebrow: "52 秒 · 真实客户端实录",
     filmTitle: "把想法做出来。\n也有时间享受生活。",
     filmDesc: "一句指令，准备发布页和宣传卡。看见成果，再提修改。第二天，接着原来的项目继续。",
-    filmChaptersLabel: "选择短片片段",
     filmNote: "真实桌面端录屏 · 情境演绎",
     moreFilms: "查看全部实战教程",
     // Restored 4-chapter scroll-driven interactive story
@@ -118,7 +117,6 @@ export const storyCopy = {
     filmEyebrow: "52 SECONDS · REAL DESKTOP CAPTURE",
     filmTitle: "Move your idea forward.\nMake room for life.",
     filmDesc: "Prepare a launch page and promo cards. Review the result, ask for a change, then return to the same project the next day.",
-    filmChaptersLabel: "Choose a film chapter",
     filmNote: "Real desktop capture · Staged scenario · Chinese UI with optional English captions",
     moreFilms: "Explore guided tutorials",
     intro: ["The idea is still there.", "So why does it feel like starting over?"],

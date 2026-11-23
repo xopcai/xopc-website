@@ -69,7 +69,7 @@ export const adaCopy = {
     relationship: "Ada，住在 xopc 里。",
     relationshipBody:
       "你可以先和 Ada 聊聊，也可以带上文件直接进入工作空间与资料库。两种开始方式共享同一份本地记忆与任务体系，都能处理工作与生活中的事情。",
-    workspace: "看看 xopc 五大核心体验",
+    workspace: "了解 xopc 如何工作",
     learn: "探索与学习",
     faqTitle: "开始之前。",
     faqs: [
@@ -169,7 +169,7 @@ export const adaCopy = {
     relationship: "Ada lives in xopc.",
     relationshipBody:
       "Talk with Ada or bring files straight to the workspace and Library. Both ways to begin share the same local memory and task system across work and everyday life.",
-    workspace: "Explore five core xopc capabilities",
+    workspace: "See how xopc works",
     learn: "Explore & learn",
     faqTitle: "Before you begin.",
     faqs: [

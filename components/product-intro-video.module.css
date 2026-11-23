@@ -1,12 +1,11 @@
-.player { width:100%; min-height:0; display:flex; flex-direction:column; background:#fff; color:#30343b; overflow:hidden; isolation:isolate; color-scheme:light; }
-.screen { min-height:0; flex:1; display:flex; align-items:center; justify-content:center; background:#fff; overflow:hidden; }
-.player .screen video { display:block; width:100%; height:auto; max-height:100%; aspect-ratio:16/9; object-fit:contain; background:#fff; border-radius:0; margin:0; flex:none; }
-.screen video:focus-visible { outline:2px solid #1671e8; outline-offset:-2px; }
-.error { padding:8px 18px; margin:0; font-size:13px; }
-.error a { text-decoration:underline; }
-.screen { position: relative; }
-.play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:flex; align-items:center; gap:14px; min-height:64px; padding:14px 24px; border:1px solid var(--line); border-radius:99px; background:color-mix(in srgb, var(--surface) 94%, transparent); color:var(--ink); cursor:pointer; box-shadow:0 6px 24px #23332e15; transition:background .2s; }
-.play:hover { background:var(--surface); }
+.player { width:100%; min-height:0; display:flex; flex-direction:column; background:var(--surface); color:var(--ink); border-radius:14px; overflow:hidden; isolation:isolate; }
+.screen { position:relative; min-height:0; flex:1; display:flex; align-items:center; justify-content:center; background:var(--surface); overflow:hidden; }
+.player .screen video { display:block; width:100%; height:auto; max-height:100%; aspect-ratio:16/9; object-fit:contain; background:var(--surface); border-radius:0; margin:0; flex:none; }
+.screen video:focus-visible { outline:2px solid var(--blue); outline-offset:-2px; }
+.error { padding:8px 18px; margin:0; font-size:13px; color:var(--muted); }
+.error a { text-decoration:underline; color:var(--ink); }
+.play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:flex; align-items:center; gap:14px; min-height:64px; padding:14px 24px; border:1px solid var(--line); border-radius:99px; background:color-mix(in srgb, var(--surface) 94%, transparent); color:var(--ink); cursor:pointer; box-shadow:0 8px 28px color-mix(in srgb, #000 18%, transparent); transition:background .2s, border-color .2s; }
+.play:hover { background:var(--surface); border-color:var(--blue); }
 .play:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }
 .play span { display:flex; align-items:center; gap:14px; white-space:nowrap; font-size:17px; font-weight:500; }
 .play small { font-size:13px; font-weight:400; color:var(--muted); }
