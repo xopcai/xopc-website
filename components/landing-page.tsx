@@ -135,128 +135,142 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
           ))}
         </div>
         <p className={styles.filmNote}>{c.filmNote}</p>
+        <Link className={styles.textLink} href={`/${locale}/learn`}>
+          <Play size={14} aria-hidden="true" />
+          {c.moreFilms}
+          <ArrowUpRight size={14} aria-hidden="true" />
+        </Link>
       </section>
 
-      <section className={styles.pillars} id="loop" aria-labelledby="pillars-title">
-        <div className={styles.sectionHead}>
-          <p className={styles.filmEyebrow}>{c.pillarsEyebrow}</p>
-          <h2 id="pillars-title">{c.pillarsTitle}</h2>
+      <section className={styles.editorial} id="loop" aria-labelledby="editorial-title">
+        <div className={styles.editorialIntro}>
+          <p className={styles.filmEyebrow}>{c.spreads.eyebrow}</p>
+          <h2 id="editorial-title">{c.spreads.title}</h2>
         </div>
-        <div className={styles.pillarGrid}>
-          {c.pillars.map((item) => (
-            <article key={item.num} className={styles.pillarCard}>
-              <span className={styles.pillarNum}>{item.num}</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-              <Link className={styles.textLink} href={`/${locale}/${item.href}`}>
-                {item.linkLabel}
+
+        <article className={styles.spread}>
+          <div className={styles.spreadCopy}>
+            <p className={styles.spreadIndex}>
+              <span>{c.spreads.work.num}</span>
+              {c.spreads.work.tag}
+            </p>
+            <h3>{c.spreads.work.title}</h3>
+            <p>{c.spreads.work.body}</p>
+            <div className={styles.spreadActions}>
+              <ProductFilmButton
+                locale={locale}
+                film={work}
+                title={work.title}
+                label={c.spreads.work.watch}
+                className={styles.watchFilm}
+                analyticsMethod="work-overview"
+              />
+              <Link className={styles.textLink} href={`/${locale}/use-cases`}>
+                {c.spreads.work.linkLabel}
                 <ArrowUpRight size={14} aria-hidden="true" />
               </Link>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.demos} id="demos" aria-labelledby="demos-title">
-        <div className={styles.demosHead}>
-          <div>
-            <p className={styles.filmEyebrow}>{c.demosEyebrow}</p>
-            <h2 id="demos-title">{c.demosTitle}</h2>
+            </div>
           </div>
-          <p>{c.demosDesc}</p>
-        </div>
-
-        <div className={styles.demoGrid}>
-          <article className={styles.demoCard}>
+          <div className={styles.spreadMedia}>
             <ProductFilmButton
               locale={locale}
               film={work}
               title={work.title}
-              label={`${c.workDemo.watch} · ${work.duration}`}
-              className={styles.demoPosterBtn}
-              analyticsMethod="work-overview"
+              label={`${c.spreads.work.watch} · ${work.duration}`}
+              className={styles.mediaTrigger}
+              analyticsMethod="work-poster"
             >
               <Image
                 src={work.poster}
-                alt={c.workDemo.title}
+                alt={c.spreads.work.alt}
                 width={1280}
                 height={720}
-                sizes="(max-width: 849px) 92vw, 540px"
+                sizes="(max-width: 849px) 92vw, 660px"
               />
-              <span className={styles.demoPlayBadge}>
+              <span className={styles.mediaPlay}>
                 <Play size={16} fill="currentColor" aria-hidden="true" />
                 <span>{work.duration}</span>
               </span>
             </ProductFilmButton>
-            <div className={styles.demoBody}>
-              <span className={styles.demoTag}>{c.workDemo.tag}</span>
-              <h3>{c.workDemo.title}</h3>
-              <p>{c.workDemo.desc}</p>
-              <div className={styles.demoLinks}>
-                <ProductFilmButton
-                  locale={locale}
-                  film={work}
-                  title={work.title}
-                  label={c.workDemo.watch}
-                  className={styles.demoWatchInline}
-                  analyticsMethod="work-card"
-                />
-                <Link className={styles.textLink} href={`/${locale}/use-cases`}>
-                  {c.useCasesLink}
-                  <ArrowUpRight size={14} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article className={styles.demoCard}>
+        <article className={`${styles.spread} ${styles.spreadReverse}`}>
+          <div className={styles.spreadCopy}>
+            <p className={styles.spreadIndex}>
+              <span>{c.spreads.ada.num}</span>
+              {c.spreads.ada.tag}
+            </p>
+            <h3>{c.spreads.ada.title}</h3>
+            <p>{c.spreads.ada.body}</p>
+            <div className={styles.spreadActions}>
+              <ProductFilmButton
+                locale={locale}
+                film={ada}
+                title={c.spreads.ada.title.replace("\n", " ")}
+                label={c.spreads.ada.watch}
+                className={styles.watchFilm}
+                analyticsMethod="ada-home"
+              />
+              <Link className={styles.textLink} href={`/${locale}/ada`}>
+                {c.spreads.ada.linkLabel}
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+          <div className={styles.spreadMedia}>
             <ProductFilmButton
               locale={locale}
               film={ada}
-              title={c.adaDemo.title}
-              label={`${c.adaDemo.watch} · ${ada.duration}`}
-              className={styles.demoPosterBtn}
-              analyticsMethod="ada-home"
+              title={c.spreads.ada.title.replace("\n", " ")}
+              label={`${c.spreads.ada.watch} · ${ada.duration}`}
+              className={styles.mediaTrigger}
+              analyticsMethod="ada-poster"
             >
               <Image
                 src={ada.poster}
-                alt={c.adaDemo.title}
+                alt={c.spreads.ada.alt}
                 width={1280}
                 height={720}
-                sizes="(max-width: 849px) 92vw, 540px"
+                sizes="(max-width: 849px) 92vw, 660px"
               />
-              <span className={styles.demoPlayBadge}>
+              <span className={styles.mediaPlay}>
                 <Play size={16} fill="currentColor" aria-hidden="true" />
                 <span>{ada.duration}</span>
               </span>
             </ProductFilmButton>
-            <div className={styles.demoBody}>
-              <span className={styles.demoTag}>{c.adaDemo.tag}</span>
-              <h3>{c.adaDemo.title}</h3>
-              <p>{c.adaDemo.desc}</p>
-              <div className={styles.demoLinks}>
-                <ProductFilmButton
-                  locale={locale}
-                  film={ada}
-                  title={c.adaDemo.title}
-                  label={c.adaDemo.watch}
-                  className={styles.demoWatchInline}
-                  analyticsMethod="ada-card"
-                />
-                <Link className={styles.textLink} href={`/${locale}/ada`}>
-                  {c.adaDemo.pageLink}
+          </div>
+        </article>
+
+        <div className={styles.editorialRows}>
+          {c.spreads.rows.map((row) => (
+            <div key={row.num} className={styles.editorialRow}>
+              <span className={styles.rowNum}>{row.num}</span>
+              <h3>{row.title}</h3>
+              <div className={styles.rowRight}>
+                <p>{row.body}</p>
+                <Link className={styles.textLink} href={`/${locale}/${row.href}`}>
+                  {row.linkLabel}
                   <ArrowUpRight size={14} aria-hidden="true" />
                 </Link>
               </div>
             </div>
-          </article>
+          ))}
         </div>
+      </section>
 
-        <div className={styles.demosFooter}>
-          <Link className={styles.textLink} href={`/${locale}/learn`}>
-            <Play size={14} aria-hidden="true" />
-            {c.moreFilms}
-            <ArrowUpRight size={14} aria-hidden="true" />
+      <section className={styles.vision} id="vision" aria-labelledby="vision-title">
+        <span className={styles.visionRule} aria-hidden="true" />
+        <h2 id="vision-title">{c.visionTitle}</h2>
+        <p>{c.visionBody}</p>
+        <div className={styles.visionLinks}>
+          <a className={styles.textLink} href={`${docHome}product`}>
+            {c.visionLink}
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
+          <Link className={styles.textLink} href={`/${locale}/ada`}>
+            {c.everydayLink}
+            <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -276,21 +290,6 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
           {c.privacy}
           <ArrowUpRight size={15} aria-hidden="true" />
         </Link>
-      </section>
-
-      <section className={styles.intro} id="vision" aria-labelledby="vision-title">
-        <h2 id="vision-title">{c.visionTitle}</h2>
-        <p>{c.visionBody}</p>
-        <div className={styles.visionLinks}>
-          <a className={styles.textLink} href={`${docHome}product`}>
-            {c.visionLink}
-            <ArrowUpRight size={15} aria-hidden="true" />
-          </a>
-          <Link className={styles.textLink} href={`/${locale}/ada`}>
-            {c.everydayLink}
-            <ArrowUpRight size={15} aria-hidden="true" />
-          </Link>
-        </div>
       </section>
 
       <div className={styles.downloads}>
