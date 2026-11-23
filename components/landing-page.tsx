@@ -11,6 +11,7 @@ import { ProductIntroVideo } from "@/components/product-intro-video";
 import { ProductDesktopDownloads } from "@/components/product-desktop-downloads";
 import { MobileDownloads } from "@/components/mobile-downloads";
 import { TerminalInstallCommands } from "@/components/terminal-install-commands";
+import { LandingStory } from "@/components/landing-story";
 import { ProductFilmButton } from "@/components/product-film-button";
 import { adaFilm } from "@/lib/ada";
 import { launchFilm } from "@/lib/launch-film";
@@ -141,7 +142,9 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
         </Link>
       </section>
 
-      <section className={styles.editorial} id="loop" aria-labelledby="editorial-title">
+      <LandingStory locale={locale} />
+
+      <section className={styles.editorial} id="capabilities" aria-labelledby="editorial-title">
         <div className={styles.editorialIntro}>
           <p className={styles.filmEyebrow}>{c.spreads.eyebrow}</p>
           <h2 id="editorial-title">{c.spreads.title}</h2>
