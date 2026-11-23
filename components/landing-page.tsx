@@ -85,9 +85,8 @@ export function LandingPage({ locale, messages: m, docHome }: { locale: Locale; 
             <p className={styles.heroSupport}>{c.supporting}</p>
           </div>
 
-          <a className={styles.scrollCue} href="#film">
-            <span>{c.scrollHint}</span>
-            <ArrowDown size={15} aria-hidden="true" />
+          <a className={styles.scrollLine} href="#film" aria-label={c.filmEyebrow}>
+            <span aria-hidden="true" />
           </a>
         </div>
       </section>

@@ -100,11 +100,38 @@
   gap: 8px; color: var(--ink); font-size: 13.5px; font-weight: 500; text-underline-offset: 5px;
 }
 .page .heroSupport { margin: 20px auto 0; font-size: 13px; line-height: 1.6; color: var(--muted); letter-spacing: .01em; }
-.scrollCue {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 48px; min-height: 44px;
-  font-size: 12.5px; color: var(--muted); text-decoration: none; transition: color .2s, transform .2s;
+.scrollLine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 44px;
+  height: 52px;
+  margin-top: 44px;
+  overflow: hidden;
 }
-.scrollCue:hover { color: var(--ink); transform: translateY(2px); text-decoration: none; }
+.scrollLine::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: var(--line);
+}
+.scrollLine > span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1.5px;
+  height: 18px;
+  margin-left: -.75px;
+  background: var(--blue);
+  border-radius: 99px;
+  animation: scrollDrop 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+@keyframes scrollDrop {
+  0% { transform: translateY(-18px); opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: translateY(52px); opacity: 0; }
+}
 
 /* Screen 2 · Flagship Film */
 .filmSection { max-width: 1120px; margin: 24px auto 0; padding: 72px 32px 112px; }
@@ -235,7 +262,7 @@
   .page .heroCopy h1 { font-size: clamp(30px, 8.6vw, 44px); line-height: 1.22; }
   .page .heroCopy h1 > .headlineLead { display: block; }
   .page .heroDesc { font-size: 15px; }
-  .scrollCue { margin-top: 32px; }
+  .scrollLine { height: 40px; margin-top: 28px; }
   .filmSection { padding: 40px 20px 72px; }
   .film { padding: 5px; border-radius: 14px; }
   .filmChapters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
